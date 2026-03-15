@@ -1,5 +1,7 @@
 package com.lolzteam.codegen;
 
+import com.fasterxml.jackson.databind.JsonNode;
+
 import java.util.List;
 
 record MethodDefinition(
@@ -14,6 +16,7 @@ record MethodDefinition(
 	String responseType,
 	boolean bodyIsArray,
 	String bodyArrayItemType,
-	String bodyEncoding
+	String bodyEncoding,
+	JsonNode rawResponseSchema
 ) {
 }

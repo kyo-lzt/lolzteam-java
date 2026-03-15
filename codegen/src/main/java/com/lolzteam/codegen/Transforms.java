@@ -405,6 +405,33 @@ final class Transforms {
 		return schemaToTypeString(schema, spec);
 	}
 
+	// ─── Raw Response Schema Extraction ──────────────────────────────
+
+	/**
+	 * Extract the raw (un-dereferenced) response schema from an operation.
+	 * This preserves $ref pointers to component schemas.
+	 */
+	static JsonNode extractRawResponseSchema(JsonNode rawOperation, JsonNode rawSpec) {
+		if (rawOperation == null) return null;
+		var responses = rawOperation.get("responses");
+		if (responses == null || !responses.isObject()) return null;
+
+		var rawSuccess = responses.get("200");
+		if (rawSuccess == null) rawSuccess = responses.get("201");
+		if (rawSuccess == null) return null;
+
+		// Resolve response-level $ref (e.g. $ref: #/components/responses/SaveChanges)
+		var success = derefShallow(rawSuccess, rawSpec);
+		if (!success.isObject()) return null;
+
+		var content = success.get("content");
+		if (content == null || !content.isObject()) return null;
+		var jsonContent = content.get("application/json");
+		if (jsonContent == null || !jsonContent.isObject()) return null;
+		var schema = jsonContent.get("schema");
+		return schema;
+	}
+
 	// ─── Method Definition ────────────────────────────────────────────
 
 	static MethodDefinition extractMethodDefinition(
@@ -412,7 +439,9 @@ final class Transforms {
 		String methodName,
 		String httpMethod,
 		String path,
-		JsonNode operation
+		JsonNode operation,
+		JsonNode rawOperation,
+		JsonNode rawSpec
 	) {
 		var emptySpec = new ObjectMapper().createObjectNode();
 		var params = extractParameters(operation, emptySpec);
@@ -444,6 +473,9 @@ final class Transforms {
 			bodyRequired = false;
 		}
 
+		// Extract raw response schema (preserves $refs to component schemas)
+		var rawResponseSchema = extractRawResponseSchema(rawOperation, rawSpec);
+
 		return new MethodDefinition(
 			operationId,
 			methodName,
@@ -456,7 +488,8 @@ final class Transforms {
 			responseType,
 			!isGet && body.bodyIsArray(),
 			isGet ? null : body.bodyArrayItemType(),
-			isGet ? "form" : body.bodyEncoding()
+			isGet ? "form" : body.bodyEncoding(),
+			rawResponseSchema
 		);
 	}
 }

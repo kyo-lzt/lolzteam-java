@@ -3,6 +3,7 @@
 package com.lolzteam.api.generated.market;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.JsonNode;
 import java.util.List;
@@ -11,6 +12,327 @@ public final class Types {
 
 	private Types() {
 	}
+
+	// ─── Component Schemas ────────────────────────────────────────
+
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record DiscountModel(
+			@JsonProperty("category_id") long categoryId,
+			@JsonProperty("discount_id") long discountId,
+			@JsonProperty("discount_percent") long discountPercent,
+			@JsonProperty("discount_user_id") long discountUserId,
+			@JsonProperty("max_price") long maxPrice,
+			@JsonProperty("min_price") long minPrice,
+			@JsonProperty("user_id") long userId
+		) {}
+
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record UserModel(
+			@JsonProperty("active_items_count") long activeItemsCount,
+			@JsonProperty("activity_visible") boolean activityVisible,
+			long age,
+			String balance,
+			List<JsonNode> balances,
+			@JsonProperty("bump_item_period") long bumpItemPeriod,
+			@JsonProperty("can_edit") boolean canEdit,
+			@JsonProperty("can_follow") boolean canFollow,
+			@JsonProperty("can_ignore") boolean canIgnore,
+			@JsonProperty("can_post_profile") boolean canPostProfile,
+			@JsonProperty("can_view_profile") boolean canViewProfile,
+			@JsonProperty("can_view_profile_posts") boolean canViewProfilePosts,
+			@JsonProperty("can_warn") boolean canWarn,
+			@JsonProperty("contest_count") long contestCount,
+			@JsonProperty("conv_welcome_message") String convWelcomeMessage,
+			long convertedBalance,
+			long convertedDeposit,
+			long convertedHold,
+			String currency,
+			String currencyPhrase,
+			@JsonProperty("custom_account_download_format") String customAccountDownloadFormat,
+			@JsonProperty("custom_fields") JsonNode customFields,
+			@JsonProperty("custom_title") String customTitle,
+			long deposit,
+			JsonNode dob,
+			@JsonProperty("feedback_data") JsonNode feedbackData,
+			String hold,
+			String homepage,
+			@JsonProperty("imap_data") JsonNode imapData,
+			@JsonProperty("is_admin") boolean isAdmin,
+			@JsonProperty("is_banned") boolean isBanned,
+			@JsonProperty("is_followed") boolean isFollowed,
+			@JsonProperty("is_ignored") boolean isIgnored,
+			@JsonProperty("is_moderator") boolean isModerator,
+			@JsonProperty("is_staff") boolean isStaff,
+			@JsonProperty("is_super_admin") boolean isSuperAdmin,
+			@JsonProperty("joined_date") long joinedDate,
+			@JsonProperty("last_activity") long lastActivity,
+			@JsonProperty("like2_count") long like2Count,
+			@JsonProperty("like_count") long likeCount,
+			String location,
+			@JsonProperty("market_custom_title") String marketCustomTitle,
+			@JsonProperty("max_discount_percent") long maxDiscountPercent,
+			@JsonProperty("message_count") long messageCount,
+			@JsonProperty("paid_mail_left") long paidMailLeft,
+			@JsonProperty("public_tags") List<JsonNode> publicTags,
+			@JsonProperty("register_date") long registerDate,
+			JsonNode rendered,
+			@JsonProperty("restore_count") long restoreCount,
+			@JsonProperty("restore_data") JsonNode restoreData,
+			@JsonProperty("short_link") String shortLink,
+			@JsonProperty("sold_items_count") long soldItemsCount,
+			List<JsonNode> tags,
+			@JsonProperty("telegram_client") JsonNode telegramClient,
+			@JsonProperty("trophy_points") long trophyPoints,
+			@JsonProperty("user_allow_ask_discount") boolean userAllowAskDiscount,
+			@JsonProperty("user_id") long userId,
+			@JsonProperty("user_title") String userTitle,
+			String username,
+			@JsonProperty("view_url") String viewUrl,
+			boolean visible,
+			@JsonProperty("warning_points") long warningPoints
+		) {}
+
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record BalanceModel(
+			String balance,
+			@JsonProperty("balance_id") long balanceId,
+			@JsonProperty("custom_title") JsonNode customTitle,
+			String fullTitle,
+			@JsonProperty("merchant_id") long merchantId,
+			String title,
+			String type,
+			@JsonProperty("user_id") long userId
+		) {}
+
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ExtraModel(
+			String proxy,
+			@JsonProperty("close_item") Boolean closeItem,
+			String region,
+			String service,
+			String system,
+			String confirmationCode,
+			String cookies,
+			@JsonProperty("login_without_cookies") Boolean loginWithoutCookies,
+			@JsonProperty("cookie_login") Boolean cookieLogin,
+			@JsonProperty("mfa_file") String mfaFile,
+			@JsonProperty("dota2_mmr") Long dota2Mmr,
+			@JsonProperty("ea_games") Boolean eaGames,
+			@JsonProperty("uplay_games") Boolean uplayGames,
+			@JsonProperty("the_quarry") Boolean theQuarry,
+			Boolean warframe,
+			Boolean ark,
+			@JsonProperty("ark_ascended") Boolean arkAscended,
+			@JsonProperty("genshin_currency") Long genshinCurrency,
+			@JsonProperty("honkai_currency") Long honkaiCurrency,
+			@JsonProperty("zenless_currency") Long zenlessCurrency,
+			String password,
+			String telegramClient,
+			String telegramJson,
+			Boolean checkChannels,
+			Boolean checkSpam,
+			Boolean checkHypixelBan
+		) {}
+
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ConfirmationCodeModel(
+			ItemModel item,
+			JsonNode codeData
+		) {}
+
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ItemListModel(
+			List<ItemFromListModel> items,
+			long totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			long perPage,
+			long page,
+			String searchUrl,
+			List<ItemFromListModel> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
+
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ItemFromListModel(
+			@JsonProperty("item_id") Long itemId,
+			@JsonProperty("item_state") String itemState,
+			@JsonProperty("category_id") Long categoryId,
+			@JsonProperty("published_date") Long publishedDate,
+			String title,
+			String description,
+			Long price,
+			@JsonProperty("update_stat_date") Long updateStatDate,
+			@JsonProperty("refreshed_date") Long refreshedDate,
+			@JsonProperty("view_count") Long viewCount,
+			@JsonProperty("is_sticky") Long isSticky,
+			@JsonProperty("item_origin") String itemOrigin,
+			@JsonProperty("extended_guarantee") Long extendedGuarantee,
+			Long nsb,
+			@JsonProperty("allow_ask_discount") Long allowAskDiscount,
+			@JsonProperty("title_en") String titleEn,
+			@JsonProperty("description_en") String descriptionEn,
+			@JsonProperty("item_domain") String itemDomain,
+			@JsonProperty("resale_item_origin") String resaleItemOrigin,
+			Long isIgnored,
+			Boolean guarantee,
+			Boolean canViewLoginData,
+			Boolean canUpdateItemStats,
+			Boolean canViewEmailLoginData,
+			Boolean showGetEmailCodeButton,
+			Boolean canOpenItem,
+			Boolean canCloseItem,
+			Boolean canEditItem,
+			Boolean canDeleteItem,
+			Boolean canStickItem,
+			Boolean canUnstickItem,
+			JsonNode bumpSettings,
+			Boolean canBumpItem,
+			Boolean canBuyItem,
+			@JsonProperty("rub_price") Long rubPrice,
+			@JsonProperty("price_currency") String priceCurrency,
+			Boolean canValidateAccount,
+			Boolean canResellItemAfterPurchase,
+			Boolean canViewAccountLink,
+			String itemOriginPhrase,
+			List<String> tags,
+			@JsonProperty("note_text") String noteText,
+			@JsonProperty("description_html") String descriptionHtml,
+			@JsonProperty("description_html_en") String descriptionHtmlEn,
+			JsonNode seller
+		) {}
+
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ItemModel(
+			@JsonProperty("item_id") long itemId,
+			@JsonProperty("item_state") String itemState,
+			@JsonProperty("category_id") long categoryId,
+			@JsonProperty("published_date") long publishedDate,
+			String title,
+			String description,
+			long price,
+			@JsonProperty("update_stat_date") long updateStatDate,
+			@JsonProperty("refreshed_date") long refreshedDate,
+			@JsonProperty("edit_date") long editDate,
+			@JsonProperty("pending_deletion_date") long pendingDeletionDate,
+			String login,
+			@JsonProperty("temp_email") String tempEmail,
+			@JsonProperty("view_count") long viewCount,
+			@JsonProperty("is_sticky") long isSticky,
+			String information,
+			@JsonProperty("item_origin") String itemOrigin,
+			@JsonProperty("extended_guarantee") long extendedGuarantee,
+			long nsb,
+			@JsonProperty("allow_ask_discount") long allowAskDiscount,
+			@JsonProperty("title_en") String titleEn,
+			@JsonProperty("description_en") String descriptionEn,
+			@JsonProperty("information_en") String informationEn,
+			@JsonProperty("email_type") String emailType,
+			@JsonProperty("email_provider") String emailProvider,
+			@JsonProperty("item_domain") String itemDomain,
+			@JsonProperty("resale_item_origin") String resaleItemOrigin,
+			@JsonProperty("note_text") String noteText,
+			@JsonProperty("content_type") JsonNode contentType,
+			@JsonProperty("content_id") JsonNode contentId,
+			@JsonProperty("delete_date") long deleteDate,
+			@JsonProperty("delete_user_id") long deleteUserId,
+			@JsonProperty("delete_username") String deleteUsername,
+			@JsonProperty("delete_reason") String deleteReason,
+			@JsonProperty("user_allow_ask_discount") long userAllowAskDiscount,
+			@JsonProperty("max_discount_percent") long maxDiscountPercent,
+			@JsonProperty("market_custom_title") String marketCustomTitle,
+			@JsonProperty("feedback_data") String feedbackData,
+			@JsonProperty("buyer_display_icon_group_id") long buyerDisplayIconGroupId,
+			@JsonProperty("buyer_uniq_banner") String buyerUniqBanner,
+			@JsonProperty("buyer_avatar_date") long buyerAvatarDate,
+			@JsonProperty("buyer_user_group_id") long buyerUserGroupId,
+			@JsonProperty("is_fave") JsonNode isFave,
+			@JsonProperty("in_cart") JsonNode inCart,
+			@JsonProperty("cart_price") JsonNode cartPrice,
+			boolean canResellItem,
+			double priceWithSellerFee,
+			JsonNode guarantee,
+			boolean canViewLoginData,
+			boolean canUpdateItemStats,
+			boolean canReportItem,
+			boolean canViewItemViews,
+			JsonNode loginData,
+			boolean canViewEmailLoginData,
+			JsonNode copyFormatData,
+			boolean showGetEmailCodeButton,
+			JsonNode getEmailCodeDisplayLogin,
+			JsonNode buyer,
+			boolean isPersonalAccount,
+			@JsonProperty("rub_price") long rubPrice,
+			@JsonProperty("price_currency") String priceCurrency,
+			String priceWithSellerFeeLabel,
+			boolean canValidateAccount,
+			boolean canResellItemAfterPurchase,
+			boolean isSmallExf,
+			@JsonProperty("account_last_activity") long accountLastActivity,
+			boolean canViewAccountLink,
+			List<JsonNode> accountLinks,
+			String accountLink,
+			List<String> imagePreviewLinks,
+			boolean canChangePassword,
+			boolean canChangeEmailPassword,
+			boolean uniqueKeyExists,
+			String itemOriginPhrase,
+			boolean visitorIsAuthor,
+			boolean canAskDiscount,
+			JsonNode tags,
+			JsonNode customFields,
+			List<JsonNode> externalAuth,
+			boolean isTrusted,
+			boolean isBirthdayToday,
+			boolean isIgnored,
+			long deposit,
+			List<JsonNode> extraPrices,
+			boolean canViewAccountLoginAndTempEmail,
+			JsonNode bumpSettings,
+			boolean canCheckGuarantee,
+			boolean canShareItem,
+			boolean canCheckAiPrice,
+			long aiPrice,
+			long aiPriceCheckDate,
+			boolean needToRequireVideoToViewLoginData,
+			boolean canCheckAutoBuyPrice,
+			long autoBuyPrice,
+			long autoBuyPriceCheckDate,
+			String descriptionHtml,
+			String descriptionEnHtml,
+			String descriptionPlain,
+			String descriptionEnPlain,
+			JsonNode seller
+		) {}
+
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record InvoiceModel(
+			@JsonProperty("additional_data") String additionalData,
+			long amount,
+			String comment,
+			@JsonProperty("expires_at") long expiresAt,
+			@JsonProperty("invoice_date") long invoiceDate,
+			@JsonProperty("invoice_id") long invoiceId,
+			@JsonProperty("is_test") boolean isTest,
+			@JsonProperty("merchant_id") long merchantId,
+			@JsonProperty("paid_date") long paidDate,
+			@JsonProperty("payer_user_id") long payerUserId,
+			@JsonProperty("payment_id") String paymentId,
+			@JsonProperty("resend_attempts") long resendAttempts,
+			String status,
+			String url,
+			@JsonProperty("url_callback") String urlCallback,
+			@JsonProperty("url_success") String urlSuccess,
+			@JsonProperty("user_id") long userId
+		) {}
+
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record Resp_SystemInfo(
+			@JsonProperty("visitor_id") long visitorId,
+			long time,
+			@JsonProperty("log_id") long logId
+		) {}
 
 	// ─── CategoryApi Types ────────────────────────────────────────
 
@@ -47,10 +369,18 @@ public final class Types {
 			}
 		}
 
-		public record CategoryAllResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public CategoryAllResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record CategoryAllResponse(
+			List<ItemFromListModel> items,
+			long totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			long perPage,
+			long page,
+			String searchUrl,
+			List<ItemFromListModel> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record CategorySteamParams(
 			Integer page,
@@ -178,10 +508,22 @@ public final class Types {
 			}
 		}
 
-		public record CategorySteamResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public CategorySteamResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record CategorySteamResponse(
+			List<JsonNode> items,
+			long totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			long perPage,
+			long page,
+			boolean wasCached,
+			long cacheTTL,
+			long lastModified,
+			long serverTime,
+			String searchUrl,
+			List<JsonNode> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record CategoryFortniteParams(
 			Integer page,
@@ -265,10 +607,22 @@ public final class Types {
 			}
 		}
 
-		public record CategoryFortniteResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public CategoryFortniteResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record CategoryFortniteResponse(
+			List<JsonNode> items,
+			long totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			long perPage,
+			long page,
+			boolean wasCached,
+			long cacheTTL,
+			long lastModified,
+			long serverTime,
+			String searchUrl,
+			List<JsonNode> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record CategoryMihoyoParams(
 			Integer page,
@@ -359,10 +713,22 @@ public final class Types {
 			}
 		}
 
-		public record CategoryMihoyoResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public CategoryMihoyoResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record CategoryMihoyoResponse(
+			List<JsonNode> items,
+			long totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			long perPage,
+			long page,
+			boolean wasCached,
+			long cacheTTL,
+			long lastModified,
+			long serverTime,
+			String searchUrl,
+			List<JsonNode> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record CategoryRiotParams(
 			Integer page,
@@ -449,10 +815,22 @@ public final class Types {
 			}
 		}
 
-		public record CategoryRiotResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public CategoryRiotResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record CategoryRiotResponse(
+			List<JsonNode> items,
+			long totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			long perPage,
+			long page,
+			boolean wasCached,
+			long cacheTTL,
+			long lastModified,
+			long serverTime,
+			String searchUrl,
+			List<JsonNode> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record CategoryTelegramParams(
 			Integer page,
@@ -528,10 +906,22 @@ public final class Types {
 			}
 		}
 
-		public record CategoryTelegramResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public CategoryTelegramResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record CategoryTelegramResponse(
+			List<JsonNode> items,
+			long totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			long perPage,
+			long page,
+			boolean wasCached,
+			long cacheTTL,
+			long lastModified,
+			long serverTime,
+			String searchUrl,
+			List<JsonNode> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record CategorySupercellParams(
 			Integer page,
@@ -612,10 +1002,22 @@ public final class Types {
 			}
 		}
 
-		public record CategorySupercellResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public CategorySupercellResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record CategorySupercellResponse(
+			List<JsonNode> items,
+			long totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			long perPage,
+			long page,
+			boolean wasCached,
+			long cacheTTL,
+			long lastModified,
+			long serverTime,
+			String searchUrl,
+			List<JsonNode> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record CategoryEaParams(
 			Integer page,
@@ -666,10 +1068,22 @@ public final class Types {
 			}
 		}
 
-		public record CategoryEaResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public CategoryEaResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record CategoryEaResponse(
+			List<JsonNode> items,
+			long totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			long perPage,
+			long page,
+			boolean wasCached,
+			long cacheTTL,
+			long lastModified,
+			long serverTime,
+			String searchUrl,
+			List<JsonNode> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record CategoryWotParams(
 			Integer page,
@@ -734,10 +1148,22 @@ public final class Types {
 			}
 		}
 
-		public record CategoryWotResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public CategoryWotResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record CategoryWotResponse(
+			List<JsonNode> items,
+			long totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			long perPage,
+			long page,
+			boolean wasCached,
+			long cacheTTL,
+			long lastModified,
+			long serverTime,
+			String searchUrl,
+			List<JsonNode> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record CategoryWotBlitzParams(
 			Integer page,
@@ -802,10 +1228,22 @@ public final class Types {
 			}
 		}
 
-		public record CategoryWotBlitzResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public CategoryWotBlitzResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record CategoryWotBlitzResponse(
+			List<JsonNode> items,
+			long totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			long perPage,
+			long page,
+			boolean wasCached,
+			long cacheTTL,
+			long lastModified,
+			long serverTime,
+			String searchUrl,
+			List<JsonNode> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record CategoryGiftsParams(
 			Integer page,
@@ -838,10 +1276,22 @@ public final class Types {
 			}
 		}
 
-		public record CategoryGiftsResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public CategoryGiftsResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record CategoryGiftsResponse(
+			List<JsonNode> items,
+			long totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			long perPage,
+			long page,
+			boolean wasCached,
+			long cacheTTL,
+			long lastModified,
+			long serverTime,
+			String searchUrl,
+			List<JsonNode> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record CategoryEpicGamesParams(
 			Integer page,
@@ -888,10 +1338,22 @@ public final class Types {
 			}
 		}
 
-		public record CategoryEpicGamesResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public CategoryEpicGamesResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record CategoryEpicGamesResponse(
+			List<JsonNode> items,
+			long totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			long perPage,
+			long page,
+			boolean wasCached,
+			long cacheTTL,
+			long lastModified,
+			long serverTime,
+			String searchUrl,
+			List<JsonNode> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record CategoryEscapeFromTarkovParams(
 			Integer page,
@@ -931,10 +1393,22 @@ public final class Types {
 			}
 		}
 
-		public record CategoryEscapeFromTarkovResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public CategoryEscapeFromTarkovResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record CategoryEscapeFromTarkovResponse(
+			List<JsonNode> items,
+			long totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			long perPage,
+			long page,
+			boolean wasCached,
+			long cacheTTL,
+			long lastModified,
+			long serverTime,
+			String searchUrl,
+			List<JsonNode> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record CategorySocialClubParams(
 			Integer page,
@@ -972,10 +1446,22 @@ public final class Types {
 			}
 		}
 
-		public record CategorySocialClubResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public CategorySocialClubResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record CategorySocialClubResponse(
+			List<JsonNode> items,
+			long totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			long perPage,
+			long page,
+			boolean wasCached,
+			long cacheTTL,
+			long lastModified,
+			long serverTime,
+			String searchUrl,
+			List<JsonNode> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record CategoryUplayParams(
 			Integer page,
@@ -1035,10 +1521,22 @@ public final class Types {
 			}
 		}
 
-		public record CategoryUplayResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public CategoryUplayResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record CategoryUplayResponse(
+			List<JsonNode> items,
+			long totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			long perPage,
+			long page,
+			boolean wasCached,
+			long cacheTTL,
+			long lastModified,
+			long serverTime,
+			String searchUrl,
+			List<JsonNode> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record CategoryDiscordParams(
 			Integer page,
@@ -1108,10 +1606,22 @@ public final class Types {
 			}
 		}
 
-		public record CategoryDiscordResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public CategoryDiscordResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record CategoryDiscordResponse(
+			List<JsonNode> items,
+			long totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			long perPage,
+			long page,
+			boolean wasCached,
+			long cacheTTL,
+			long lastModified,
+			long serverTime,
+			String searchUrl,
+			List<JsonNode> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record CategoryTikTokParams(
 			Integer page,
@@ -1157,10 +1667,22 @@ public final class Types {
 			}
 		}
 
-		public record CategoryTikTokResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public CategoryTikTokResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record CategoryTikTokResponse(
+			List<JsonNode> items,
+			long totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			long perPage,
+			long page,
+			boolean wasCached,
+			long cacheTTL,
+			long lastModified,
+			long serverTime,
+			String searchUrl,
+			List<JsonNode> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record CategoryInstagramParams(
 			Integer page,
@@ -1203,10 +1725,22 @@ public final class Types {
 			}
 		}
 
-		public record CategoryInstagramResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public CategoryInstagramResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record CategoryInstagramResponse(
+			List<JsonNode> items,
+			long totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			long perPage,
+			long page,
+			boolean wasCached,
+			long cacheTTL,
+			long lastModified,
+			long serverTime,
+			String searchUrl,
+			List<JsonNode> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record CategoryBattleNetParams(
 			Integer page,
@@ -1251,10 +1785,22 @@ public final class Types {
 			}
 		}
 
-		public record CategoryBattleNetResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public CategoryBattleNetResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record CategoryBattleNetResponse(
+			List<JsonNode> items,
+			long totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			long perPage,
+			long page,
+			boolean wasCached,
+			long cacheTTL,
+			long lastModified,
+			long serverTime,
+			String searchUrl,
+			List<JsonNode> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record CategoryChatGPTParams(
 			Integer page,
@@ -1297,10 +1843,22 @@ public final class Types {
 			}
 		}
 
-		public record CategoryChatGPTResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public CategoryChatGPTResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record CategoryChatGPTResponse(
+			List<JsonNode> items,
+			long totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			long perPage,
+			long page,
+			boolean wasCached,
+			long cacheTTL,
+			long lastModified,
+			long serverTime,
+			String searchUrl,
+			List<JsonNode> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record CategoryVpnParams(
 			Integer page,
@@ -1334,10 +1892,22 @@ public final class Types {
 			}
 		}
 
-		public record CategoryVpnResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public CategoryVpnResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record CategoryVpnResponse(
+			List<JsonNode> items,
+			long totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			long perPage,
+			long page,
+			boolean wasCached,
+			long cacheTTL,
+			long lastModified,
+			long serverTime,
+			String searchUrl,
+			List<JsonNode> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record CategoryRobloxParams(
 			Integer page,
@@ -1404,10 +1974,22 @@ public final class Types {
 			}
 		}
 
-		public record CategoryRobloxResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public CategoryRobloxResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record CategoryRobloxResponse(
+			List<JsonNode> items,
+			long totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			long perPage,
+			long page,
+			boolean wasCached,
+			long cacheTTL,
+			long lastModified,
+			long serverTime,
+			String searchUrl,
+			List<JsonNode> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record CategoryWarfaceParams(
 			Integer page,
@@ -1447,10 +2029,22 @@ public final class Types {
 			}
 		}
 
-		public record CategoryWarfaceResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public CategoryWarfaceResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record CategoryWarfaceResponse(
+			List<JsonNode> items,
+			long totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			long perPage,
+			long page,
+			boolean wasCached,
+			long cacheTTL,
+			long lastModified,
+			long serverTime,
+			String searchUrl,
+			List<JsonNode> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record CategoryMinecraftParams(
 			Integer page,
@@ -1515,10 +2109,22 @@ public final class Types {
 			}
 		}
 
-		public record CategoryMinecraftResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public CategoryMinecraftResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record CategoryMinecraftResponse(
+			List<JsonNode> items,
+			long totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			long perPage,
+			long page,
+			boolean wasCached,
+			long cacheTTL,
+			long lastModified,
+			long serverTime,
+			String searchUrl,
+			List<JsonNode> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record CategoryHytaleParams(
 			Integer page,
@@ -1551,10 +2157,22 @@ public final class Types {
 			}
 		}
 
-		public record CategoryHytaleResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public CategoryHytaleResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record CategoryHytaleResponse(
+			List<JsonNode> items,
+			long totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			long perPage,
+			long page,
+			boolean wasCached,
+			long cacheTTL,
+			long lastModified,
+			long serverTime,
+			String searchUrl,
+			List<JsonNode> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record CategoryListParams(
 			@JsonProperty("top_queries") Boolean topQueries
@@ -1564,20 +2182,25 @@ public final class Types {
 			}
 		}
 
-		public record CategoryListResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public CategoryListResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record CategoryListResponse(
+			JsonNode category,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
-		public record CategoryParamsResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public CategoryParamsResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record CategoryParamsResponse(
+			JsonNode category,
+			List<JsonNode> params,
+			@JsonProperty("base_params") JsonNode baseParams,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
-		public record CategoryGamesResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public CategoryGamesResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record CategoryGamesResponse(
+			List<JsonNode> games,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 	}
 
@@ -1621,10 +2244,18 @@ public final class Types {
 			}
 		}
 
-		public record ListUserResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ListUserResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ListUserResponse(
+			List<ItemFromListModel> items,
+			long totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			long perPage,
+			long page,
+			String searchUrl,
+			List<ItemFromListModel> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record ListOrdersParams(
 			@JsonProperty("user_id") Integer userId,
@@ -1648,10 +2279,18 @@ public final class Types {
 			}
 		}
 
-		public record ListOrdersResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ListOrdersResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ListOrdersResponse(
+			List<ItemFromListModel> items,
+			long totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			long perPage,
+			long page,
+			String searchUrl,
+			List<ItemFromListModel> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record ListStatesParams(
 			@JsonProperty("user_id") JsonNode userId
@@ -1661,10 +2300,11 @@ public final class Types {
 			}
 		}
 
-		public record ListStatesResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ListStatesResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ListStatesResponse(
+			JsonNode userItemStates,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record ListDownloadParams(
 			String format,
@@ -1699,6 +2339,7 @@ public final class Types {
 			}
 		}
 
+		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ListDownloadResponse(JsonNode data) {
 			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
 			public ListDownloadResponse {}
@@ -1723,10 +2364,18 @@ public final class Types {
 			}
 		}
 
-		public record ListFavoritesResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ListFavoritesResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ListFavoritesResponse(
+			List<ItemFromListModel> items,
+			long totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			long perPage,
+			long page,
+			String searchUrl,
+			List<ItemFromListModel> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record ListViewedParams(
 			Integer page,
@@ -1747,10 +2396,18 @@ public final class Types {
 			}
 		}
 
-		public record ListViewedResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ListViewedResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ListViewedResponse(
+			List<ItemFromListModel> items,
+			long totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			long perPage,
+			long page,
+			String searchUrl,
+			List<ItemFromListModel> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 	}
 
@@ -1769,20 +2426,42 @@ public final class Types {
 			}
 		}
 
-		public record ManagingGetResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ManagingGetResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ManagingGetResponse(
+			ItemModel item,
+			boolean canStickItem,
+			boolean canUnstickItem,
+			boolean canBuyItem,
+			String cannotBuyItemError,
+			boolean canCloseItem,
+			boolean canOpenItem,
+			boolean canReportItem,
+			boolean canEditItem,
+			boolean canDeleteItem,
+			boolean canCancelConfirmedBuy,
+			boolean canViewItemHistory,
+			boolean faveCount,
+			boolean isVisibleItem,
+			boolean canViewLoginData,
+			boolean showToFavouritesButton,
+			String itemLink,
+			boolean canChangeOwner,
+			List<Long> sameItemsIds,
+			long sameItemsCount,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record ManagingDeleteBody(
 			String reason
 		) {
 		}
 
-		public record ManagingDeleteResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ManagingDeleteResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ManagingDeleteResponse(
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record ManagingCreateClaimBody(
 			@JsonProperty("item_id") Integer itemId,
@@ -1790,10 +2469,11 @@ public final class Types {
 		) {
 		}
 
-		public record ManagingCreateClaimResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ManagingCreateClaimResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ManagingCreateClaimResponse(
+			JsonNode thread,
+			@JsonProperty("system_info") JsonNode systemInfo
+		) {}
 
 		public record ManagingBulkGetBody(
 			@JsonProperty("item_id") List<Integer> itemId,
@@ -1804,10 +2484,12 @@ public final class Types {
 			}
 		}
 
-		public record ManagingBulkGetResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ManagingBulkGetResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ManagingBulkGetResponse(
+			List<JsonNode> items,
+			@JsonProperty("left_item_id") List<Long> leftItemId,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record ManagingSteamInventoryValueParams(
 			@JsonProperty("app_id") JsonNode appId,
@@ -1819,10 +2501,13 @@ public final class Types {
 			}
 		}
 
-		public record ManagingSteamInventoryValueResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ManagingSteamInventoryValueResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ManagingSteamInventoryValueResponse(
+			String query,
+			JsonNode data,
+			Long appId,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record ManagingSteamValueParams(
 			String link,
@@ -1835,10 +2520,13 @@ public final class Types {
 			}
 		}
 
-		public record ManagingSteamValueResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ManagingSteamValueResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ManagingSteamValueResponse(
+			String query,
+			JsonNode data,
+			Long appId,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record ManagingSteamPreviewParams(
 			String type
@@ -1848,6 +2536,7 @@ public final class Types {
 			}
 		}
 
+		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingSteamPreviewResponse(JsonNode data) {
 			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
 			public ManagingSteamPreviewResponse {}
@@ -1871,20 +2560,24 @@ public final class Types {
 			}
 		}
 
-		public record ManagingEditResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ManagingEditResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ManagingEditResponse(
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
-		public record ManagingAIPriceResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ManagingAIPriceResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ManagingAIPriceResponse(
+			long price,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
-		public record ManagingAutoBuyPriceResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ManagingAutoBuyPriceResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ManagingAutoBuyPriceResponse(
+			long price,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record ManagingNoteBody(
 			String text
@@ -1894,10 +2587,12 @@ public final class Types {
 			}
 		}
 
-		public record ManagingNoteResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ManagingNoteResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ManagingNoteResponse(
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record ManagingSteamUpdateValueBody(
 			Boolean all,
@@ -1909,40 +2604,52 @@ public final class Types {
 			}
 		}
 
-		public record ManagingSteamUpdateValueResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ManagingSteamUpdateValueResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ManagingSteamUpdateValueResponse(
+			String status,
+			ItemModel item,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
-		public record ManagingBumpResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ManagingBumpResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ManagingBumpResponse(
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record ManagingAutoBumpBody(
 			Integer hour
 		) {
 		}
 
-		public record ManagingAutoBumpResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ManagingAutoBumpResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ManagingAutoBumpResponse(
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
-		public record ManagingAutoBumpDisableResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ManagingAutoBumpDisableResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ManagingAutoBumpDisableResponse(
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
-		public record ManagingOpenResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ManagingOpenResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ManagingOpenResponse(
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
-		public record ManagingCloseResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ManagingCloseResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ManagingCloseResponse(
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record ManagingImageParams(
 			String type
@@ -1952,15 +2659,17 @@ public final class Types {
 			}
 		}
 
-		public record ManagingImageResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ManagingImageResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ManagingImageResponse(
+			String base64,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
-		public record ManagingEmailCodeResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ManagingEmailCodeResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ManagingEmailCodeResponse(
+			ItemModel item,
+			JsonNode codeData
+		) {}
 
 		public record ManagingGetLetters2Params(
 			@JsonProperty("email_password") String emailPassword,
@@ -1973,30 +2682,40 @@ public final class Types {
 			}
 		}
 
-		public record ManagingGetLetters2Response(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ManagingGetLetters2Response {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ManagingGetLetters2Response(
+			String email,
+			List<JsonNode> letters,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
-		public record ManagingSteamGetMafileResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ManagingSteamGetMafileResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ManagingSteamGetMafileResponse(
+			JsonNode maFile,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
-		public record ManagingSteamAddMafileResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ManagingSteamAddMafileResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ManagingSteamAddMafileResponse(
+			String status,
+			String message,
+			ItemModel item,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
-		public record ManagingSteamRemoveMafileResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ManagingSteamRemoveMafileResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ManagingSteamRemoveMafileResponse(
+			String status,
+			String message,
+			ItemModel item,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
-		public record ManagingSteamMafileCodeResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ManagingSteamMafileCodeResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ManagingSteamMafileCodeResponse(
+			ItemModel item,
+			JsonNode codeData
+		) {}
 
 		public record ManagingSteamSDABody(
 			Integer id,
@@ -2007,40 +2726,50 @@ public final class Types {
 			}
 		}
 
-		public record ManagingSteamSDAResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ManagingSteamSDAResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ManagingSteamSDAResponse(
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
-		public record ManagingTelegramCodeResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ManagingTelegramCodeResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ManagingTelegramCodeResponse(
+			ItemModel item,
+			JsonNode codes
+		) {}
 
-		public record ManagingTelegramResetAuthResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ManagingTelegramResetAuthResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ManagingTelegramResetAuthResponse(
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
-		public record ManagingRefuseGuaranteeResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ManagingRefuseGuaranteeResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ManagingRefuseGuaranteeResponse(
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record ManagingDeclineVideoRecordingBody(
 			@JsonProperty("i_voluntarily_and_with_full_awareness_of_my_actions_waive_any_claims_regarding_this_item") Boolean iVoluntarilyAndWithFullAwarenessOfMyActionsWaiveAnyClaimsRegardingThisItem
 		) {
 		}
 
-		public record ManagingDeclineVideoRecordingResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ManagingDeclineVideoRecordingResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ManagingDeclineVideoRecordingResponse(
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
-		public record ManagingCheckGuaranteeResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ManagingCheckGuaranteeResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ManagingCheckGuaranteeResponse(
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record ManagingChangePasswordBody(
 			@JsonProperty("_cancel") String Cancel
@@ -2050,75 +2779,101 @@ public final class Types {
 			}
 		}
 
-		public record ManagingChangePasswordResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ManagingChangePasswordResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ManagingChangePasswordResponse(
+			String status,
+			String message,
+			@JsonProperty("new_password") String newPassword
+		) {}
 
-		public record ManagingTempEmailPasswordResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ManagingTempEmailPasswordResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ManagingTempEmailPasswordResponse(
+			JsonNode item
+		) {}
 
 		public record ManagingTagBody(
 			@JsonProperty("tag_id") Integer tagId
 		) {
 		}
 
-		public record ManagingTagResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ManagingTagResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ManagingTagResponse(
+			long itemId,
+			JsonNode tag,
+			long addedTagId,
+			List<Long> deleteTags,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record ManagingUntagBody(
 			@JsonProperty("tag_id") Integer tagId
 		) {
 		}
 
-		public record ManagingUntagResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ManagingUntagResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ManagingUntagResponse(
+			long itemId,
+			JsonNode tag,
+			long addedTagId,
+			List<Long> deleteTags,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record ManagingPublicTagBody(
 			@JsonProperty("tag_id") Integer tagId
 		) {
 		}
 
-		public record ManagingPublicTagResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ManagingPublicTagResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ManagingPublicTagResponse(
+			long itemId,
+			JsonNode tag,
+			long addedTagId,
+			List<Long> deleteTags,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record ManagingPublicUntagBody(
 			@JsonProperty("tag_id") Integer tagId
 		) {
 		}
 
-		public record ManagingPublicUntagResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ManagingPublicUntagResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ManagingPublicUntagResponse(
+			long itemId,
+			JsonNode tag,
+			long addedTagId,
+			List<Long> deleteTags,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
-		public record ManagingFavoriteResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ManagingFavoriteResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ManagingFavoriteResponse(
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
-		public record ManagingUnfavoriteResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ManagingUnfavoriteResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ManagingUnfavoriteResponse(
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
-		public record ManagingStickResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ManagingStickResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ManagingStickResponse(
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
-		public record ManagingUnstickResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ManagingUnstickResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ManagingUnstickResponse(
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record ManagingTransferBody(
 			String username,
@@ -2126,10 +2881,12 @@ public final class Types {
 		) {
 		}
 
-		public record ManagingTransferResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ManagingTransferResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ManagingTransferResponse(
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 	}
 
@@ -2149,10 +2906,12 @@ public final class Types {
 			}
 		}
 
-		public record ProfileClaimsResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ProfileClaimsResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ProfileClaimsResponse(
+			List<JsonNode> claims,
+			JsonNode stats,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record ProfileGetParams(
 			@JsonProperty("fields_include") JsonNode fieldsInclude
@@ -2162,10 +2921,11 @@ public final class Types {
 			}
 		}
 
-		public record ProfileGetResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ProfileGetResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ProfileGetResponse(
+			UserModel user,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record ProfileEditBody(
 			JsonNode user,
@@ -2186,10 +2946,12 @@ public final class Types {
 			}
 		}
 
-		public record ProfileEditResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ProfileEditResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ProfileEditResponse(
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 	}
 
@@ -2229,20 +2991,29 @@ public final class Types {
 			}
 		}
 
-		public record CartGetResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public CartGetResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record CartGetResponse(
+			List<ItemFromListModel> items,
+			long totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			long perPage,
+			long page,
+			String searchUrl,
+			List<ItemFromListModel> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record CartAddBody(
 			@JsonProperty("item_id") Integer itemId
 		) {
 		}
 
-		public record CartAddResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public CartAddResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record CartAddResponse(
+			boolean success,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record CartDeleteBody(
 			@JsonProperty("item_id") Integer itemId
@@ -2252,10 +3023,11 @@ public final class Types {
 			}
 		}
 
-		public record CartDeleteResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public CartDeleteResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record CartDeleteResponse(
+			boolean success,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 	}
 
@@ -2275,15 +3047,20 @@ public final class Types {
 			}
 		}
 
-		public record PurchasingFastBuyResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public PurchasingFastBuyResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record PurchasingFastBuyResponse(
+			String status,
+			JsonNode item,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
-		public record PurchasingCheckResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public PurchasingCheckResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record PurchasingCheckResponse(
+			String status,
+			JsonNode item,
+			boolean requireVideoRecording,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record PurchasingConfirmBody(
 			Integer price,
@@ -2294,10 +3071,12 @@ public final class Types {
 			}
 		}
 
-		public record PurchasingConfirmResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public PurchasingConfirmResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record PurchasingConfirmResponse(
+			String status,
+			JsonNode item,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record PurchasingDiscountRequestBody(
 			@JsonProperty("discount_price") Double discountPrice,
@@ -2308,15 +3087,19 @@ public final class Types {
 			}
 		}
 
-		public record PurchasingDiscountRequestResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public PurchasingDiscountRequestResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record PurchasingDiscountRequestResponse(
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
-		public record PurchasingDiscountCancelResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public PurchasingDiscountCancelResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record PurchasingDiscountCancelResponse(
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 	}
 
@@ -2327,10 +3110,12 @@ public final class Types {
 		private CustomDiscountsApiTypes() {
 		}
 
-		public record CustomDiscountsGetResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public CustomDiscountsGetResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record CustomDiscountsGetResponse(
+			List<DiscountModel> discounts,
+			long total,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record CustomDiscountsCreateBody(
 			@JsonProperty("user_id") Integer userId,
@@ -2345,10 +3130,12 @@ public final class Types {
 			}
 		}
 
-		public record CustomDiscountsCreateResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public CustomDiscountsCreateResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record CustomDiscountsCreateResponse(
+			DiscountModel discount,
+			long total,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record CustomDiscountsEditBody(
 			@JsonProperty("discount_id") Integer discountId,
@@ -2361,20 +3148,24 @@ public final class Types {
 			}
 		}
 
-		public record CustomDiscountsEditResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public CustomDiscountsEditResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record CustomDiscountsEditResponse(
+			List<DiscountModel> discounts,
+			long total,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record CustomDiscountsDeleteBody(
 			@JsonProperty("discount_id") Integer discountId
 		) {
 		}
 
-		public record CustomDiscountsDeleteResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public CustomDiscountsDeleteResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record CustomDiscountsDeleteResponse(
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 	}
 
@@ -2411,10 +3202,12 @@ public final class Types {
 			}
 		}
 
-		public record PublishingFastSellResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public PublishingFastSellResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record PublishingFastSellResponse(
+			ItemModel item,
+			String itemLink,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record PublishingAddBody(
 			String title,
@@ -2440,10 +3233,12 @@ public final class Types {
 			}
 		}
 
-		public record PublishingAddResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public PublishingAddResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record PublishingAddResponse(
+			String status,
+			ItemModel item,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record PublishingCheckBody(
 			@JsonProperty("resell_item_id") Integer resellItemId,
@@ -2461,10 +3256,12 @@ public final class Types {
 			}
 		}
 
-		public record PublishingCheckResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public PublishingCheckResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record PublishingCheckResponse(
+			String status,
+			JsonNode item,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record PublishingExternalBody(
 			String type,
@@ -2477,10 +3274,12 @@ public final class Types {
 			}
 		}
 
-		public record PublishingExternalResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public PublishingExternalResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record PublishingExternalResponse(
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 	}
 
@@ -2500,10 +3299,11 @@ public final class Types {
 			}
 		}
 
-		public record PaymentsInvoiceGetResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public PaymentsInvoiceGetResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record PaymentsInvoiceGetResponse(
+			InvoiceModel invoice,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record PaymentsInvoiceCreateBody(
 			String currency,
@@ -2524,10 +3324,11 @@ public final class Types {
 			}
 		}
 
-		public record PaymentsInvoiceCreateResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public PaymentsInvoiceCreateResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record PaymentsInvoiceCreateResponse(
+			InvoiceModel invoice,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record PaymentsInvoiceListParams(
 			Integer page,
@@ -2541,20 +3342,29 @@ public final class Types {
 			}
 		}
 
-		public record PaymentsInvoiceListResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public PaymentsInvoiceListResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record PaymentsInvoiceListResponse(
+			List<InvoiceModel> invoices,
+			long count,
+			long page,
+			long perPage,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
-		public record PaymentsCurrencyResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public PaymentsCurrencyResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record PaymentsCurrencyResponse(
+			JsonNode currencyList,
+			long lastUpdate,
+			String visitorCurrency,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
-		public record PaymentsBalanceListResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public PaymentsBalanceListResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record PaymentsBalanceListResponse(
+			JsonNode from,
+			JsonNode to,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record PaymentsBalanceExchangeBody(
 			@JsonProperty("from_balance") String fromBalance,
@@ -2563,10 +3373,12 @@ public final class Types {
 		) {
 		}
 
-		public record PaymentsBalanceExchangeResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public PaymentsBalanceExchangeResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record PaymentsBalanceExchangeResponse(
+			JsonNode from,
+			JsonNode to,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record PaymentsTransferBody(
 			@JsonProperty("user_id") Integer userId,
@@ -2585,10 +3397,12 @@ public final class Types {
 			}
 		}
 
-		public record PaymentsTransferResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public PaymentsTransferResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record PaymentsTransferResponse(
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record PaymentsFeeParams(
 			Double amount
@@ -2598,20 +3412,25 @@ public final class Types {
 			}
 		}
 
-		public record PaymentsFeeResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public PaymentsFeeResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record PaymentsFeeResponse(
+			@JsonProperty("commission_percentage") long commissionPercentage,
+			long spentCurrentMonth,
+			JsonNode calculator,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record PaymentsCancelBody(
 			@JsonProperty("payment_id") Integer paymentId
 		) {
 		}
 
-		public record PaymentsCancelResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public PaymentsCancelResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record PaymentsCancelResponse(
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record PaymentsHistoryParams(
 			String type,
@@ -2635,15 +3454,29 @@ public final class Types {
 			}
 		}
 
-		public record PaymentsHistoryResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public PaymentsHistoryResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record PaymentsHistoryResponse(
+			JsonNode payments,
+			String perPage,
+			long page,
+			String pageNavLink,
+			JsonNode pageNavParams,
+			String periodLabel,
+			String periodLabelPhrase,
+			boolean filterDatesDefault,
+			JsonNode input,
+			JsonNode paymentStats,
+			boolean hasNextPage,
+			long lastOperationId,
+			String nextPageHref,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
-		public record PaymentsPayoutServicesResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public PaymentsPayoutServicesResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record PaymentsPayoutServicesResponse(
+			List<JsonNode> systems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record PaymentsPayoutBody(
 			@JsonProperty("payment_system") String paymentSystem,
@@ -2658,10 +3491,12 @@ public final class Types {
 			}
 		}
 
-		public record PaymentsPayoutResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public PaymentsPayoutResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record PaymentsPayoutResponse(
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 	}
 
@@ -2672,10 +3507,11 @@ public final class Types {
 		private AutoPaymentsApiTypes() {
 		}
 
-		public record AutoPaymentsListResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public AutoPaymentsListResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record AutoPaymentsListResponse(
+			JsonNode payments,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record AutoPaymentsCreateBody(
 			@JsonProperty("secret_answer") String secretAnswer,
@@ -2690,20 +3526,25 @@ public final class Types {
 			}
 		}
 
-		public record AutoPaymentsCreateResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public AutoPaymentsCreateResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record AutoPaymentsCreateResponse(
+			String status,
+			String message,
+			@JsonProperty("auto_payment_id") long autoPaymentId,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record AutoPaymentsDeleteBody(
 			@JsonProperty("auto_payment_id") Integer autoPaymentId
 		) {
 		}
 
-		public record AutoPaymentsDeleteResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public AutoPaymentsDeleteResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record AutoPaymentsDeleteResponse(
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 	}
 
@@ -2714,10 +3555,11 @@ public final class Types {
 		private ProxyApiTypes() {
 		}
 
-		public record ProxyGetResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ProxyGetResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ProxyGetResponse(
+			List<JsonNode> proxies,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record ProxyAddBody(
 			@JsonProperty("proxy_ip") String proxyIp,
@@ -2731,10 +3573,12 @@ public final class Types {
 			}
 		}
 
-		public record ProxyAddResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ProxyAddResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ProxyAddResponse(
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record ProxyDeleteBody(
 			@JsonProperty("proxy_id") Integer proxyId,
@@ -2745,10 +3589,12 @@ public final class Types {
 			}
 		}
 
-		public record ProxyDeleteResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ProxyDeleteResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ProxyDeleteResponse(
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 	}
 
@@ -2767,20 +3613,24 @@ public final class Types {
 		) {
 		}
 
-		public record ImapCreateResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ImapCreateResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ImapCreateResponse(
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 		public record ImapDeleteBody(
 			String domain
 		) {
 		}
 
-		public record ImapDeleteResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public ImapDeleteResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record ImapDeleteResponse(
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 	}
 
@@ -2791,10 +3641,11 @@ public final class Types {
 		private BatchApiTypes() {
 		}
 
-		public record BatchBatchResponse(JsonNode data) {
-			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-			public BatchBatchResponse {}
-		}
+		@JsonIgnoreProperties(ignoreUnknown = true)
+		public record BatchBatchResponse(
+			JsonNode jobs,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+		) {}
 
 	}
 

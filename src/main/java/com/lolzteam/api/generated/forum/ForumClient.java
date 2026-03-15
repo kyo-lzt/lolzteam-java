@@ -1881,7 +1881,7 @@ public class ForumClient implements Closeable {
 				if (body.x() != null) jsonBody.putPOJO("x", body.x());
 				if (body.y() != null) jsonBody.putPOJO("y", body.y());
 				if (body.crop() != null) jsonBody.putPOJO("crop", body.crop());
-				var byteFields = new java.util.HashMap<String, byte[]>();
+				var byteFields = new java.util.LinkedHashMap<String, byte[]>();
 				byteFields.put("avatar", body.avatar());
 				return mapper.convertValue(http.request(new RequestOptions(
 					"POST",
@@ -1915,7 +1915,7 @@ public class ForumClient implements Closeable {
 				if (body.x() != null) jsonBody.putPOJO("x", body.x());
 				if (body.y() != null) jsonBody.putPOJO("y", body.y());
 				if (body.crop() != null) jsonBody.putPOJO("crop", body.crop());
-				var byteFields = new java.util.HashMap<String, byte[]>();
+				var byteFields = new java.util.LinkedHashMap<String, byte[]>();
 				byteFields.put("avatar", body.avatar());
 				return http.requestAsync(new RequestOptions(
 					"POST",
@@ -2005,7 +2005,7 @@ public class ForumClient implements Closeable {
 				if (body.x() != null) jsonBody.putPOJO("x", body.x());
 				if (body.y() != null) jsonBody.putPOJO("y", body.y());
 				if (body.crop() != null) jsonBody.putPOJO("crop", body.crop());
-				var byteFields = new java.util.HashMap<String, byte[]>();
+				var byteFields = new java.util.LinkedHashMap<String, byte[]>();
 				byteFields.put("background", body.background());
 				return mapper.convertValue(http.request(new RequestOptions(
 					"POST",
@@ -2039,7 +2039,7 @@ public class ForumClient implements Closeable {
 				if (body.x() != null) jsonBody.putPOJO("x", body.x());
 				if (body.y() != null) jsonBody.putPOJO("y", body.y());
 				if (body.crop() != null) jsonBody.putPOJO("crop", body.crop());
-				var byteFields = new java.util.HashMap<String, byte[]>();
+				var byteFields = new java.util.LinkedHashMap<String, byte[]>();
 				byteFields.put("background", body.background());
 				return http.requestAsync(new RequestOptions(
 					"POST",

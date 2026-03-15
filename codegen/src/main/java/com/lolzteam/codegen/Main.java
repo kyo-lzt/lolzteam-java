@@ -56,7 +56,9 @@ public final class Main {
 			}
 
 			// Write Types file
-			var typesContent = Emitter.emitJavaTypesFile(result.groups(), config.subPackage());
+			var typesContent = Emitter.emitJavaTypesFile(
+				result.groups(), config.subPackage(), result.componentSchemas()
+			);
 			writeFile(new File(outDir, "Types.java"), typesContent);
 			System.out.println("  Types.java");
 

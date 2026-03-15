@@ -15,7 +15,7 @@ final class Naming {
 		"transient", "try", "void", "volatile", "while"
 	);
 
-	private static final Pattern SNAKE_PATTERN = Pattern.compile("_([a-z])");
+	private static final Pattern SNAKE_PATTERN = Pattern.compile("[_\\-]([a-z])");
 	private static final Pattern KEBAB_PATTERN1 = Pattern.compile("([a-z0-9])([A-Z])");
 	private static final Pattern KEBAB_PATTERN2 = Pattern.compile("([A-Z])([A-Z][a-z])");
 
@@ -97,7 +97,8 @@ final class Naming {
 		var sanitized = sanitizeName(name);
 		var camel = snakeToCamel(sanitized);
 		return !name.equals(camel) || !name.equals(sanitized)
-			|| (!camel.isEmpty() && Character.isDigit(camel.charAt(0)));
+			|| (!camel.isEmpty() && Character.isDigit(camel.charAt(0)))
+			|| name.contains("-");
 	}
 
 	static String lowercaseFirst(String s) {

@@ -1,7 +1,13 @@
 package com.lolzteam.codegen;
 
+import com.fasterxml.jackson.databind.JsonNode;
+
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 final class Emitter {
@@ -115,23 +121,276 @@ final class Emitter {
 		return sb.toString();
 	}
 
-	private static String emitResponseRecord(String group, MethodDefinition method) {
+	// ─── Response Record Generation ──────────────────────────────────
+
+	/**
+	 * Represents a field in a generated response record.
+	 */
+	private record ResponseField(String jsonName, String javaName, String javaType, boolean required) {
+	}
+
+	/**
+	 * Resolve a property schema to a Java type, respecting component schema $refs.
+	 */
+	private static String resolvePropertyType(
+		JsonNode propSchema, Set<String> componentSchemaNames, JsonNode rawSpec
+	) {
+		if (propSchema == null) return "JsonNode";
+
+		// Direct $ref to component schema
+		if (propSchema.isObject() && propSchema.has("$ref")) {
+			var ref = propSchema.get("$ref").asText();
+			if (ref.startsWith("#/components/schemas/")) {
+				var schemaName = ref.substring("#/components/schemas/".length());
+				if (componentSchemaNames.contains(schemaName)) {
+					return schemaName;
+				}
+			}
+		}
+
+		if (!propSchema.isObject()) return "JsonNode";
+
+		// Array type
+		var typeNode = propSchema.get("type");
+		if (typeNode != null && typeNode.isTextual() && "array".equals(typeNode.asText())) {
+			var items = propSchema.get("items");
+			if (items != null) {
+				var itemType = resolvePropertyType(items, componentSchemaNames, rawSpec);
+				return "List<" + boxType(itemType) + ">";
+			}
+			return "List<JsonNode>";
+		}
+
+		// Multi-type array: type: ['string', 'integer']
+		if (typeNode != null && typeNode.isArray()) {
+			return "JsonNode";
+		}
+
+		// oneOf / anyOf → JsonNode (union)
+		if (propSchema.has("oneOf") || propSchema.has("anyOf")) {
+			return "JsonNode";
+		}
+
+		// allOf → JsonNode
+		if (propSchema.has("allOf")) {
+			return "JsonNode";
+		}
+
+		// enum with string values → String
+		var enumNode = propSchema.get("enum");
+		if (enumNode != null && enumNode.isArray() && !enumNode.isEmpty()) {
+			return "String";
+		}
+
+		var type = typeNode != null && typeNode.isTextual() ? typeNode.asText() : null;
+
+		if ("object".equals(type) || propSchema.has("properties")) {
+			var props = propSchema.get("properties");
+			if (props != null && props.isObject() && !props.isEmpty()) {
+				// Inline object with properties → JsonNode (could nest, but keeping simple)
+				return "JsonNode";
+			}
+			return "JsonNode";
+		}
+
+		if (type != null) {
+			return switch (type) {
+				case "string" -> "String";
+				case "integer" -> "long";
+				case "number" -> "double";
+				case "boolean" -> "boolean";
+				default -> "JsonNode";
+			};
+		}
+
+		return "JsonNode";
+	}
+
+	/**
+	 * Box primitive types for use in generics.
+	 */
+	private static String boxType(String type) {
+		return switch (type) {
+			case "long" -> "Long";
+			case "double" -> "Double";
+			case "boolean" -> "Boolean";
+			default -> type;
+		};
+	}
+
+	/**
+	 * Extract response fields from a raw response schema.
+	 * Returns null if the schema can't be converted to typed fields (fallback to JsonNode).
+	 */
+	private static List<ResponseField> extractResponseFields(
+		JsonNode rawSchema, Set<String> componentSchemaNames, JsonNode rawSpec
+	) {
+		if (rawSchema == null || !rawSchema.isObject()) return null;
+
+		// If the schema itself is a $ref, resolve it to the component schema
+		if (rawSchema.has("$ref")) {
+			var ref = rawSchema.get("$ref").asText();
+			if (ref.startsWith("#/components/schemas/") && rawSpec != null) {
+				var schemaName = ref.substring("#/components/schemas/".length());
+				var resolved = rawSpec.at("/components/schemas/" + schemaName);
+				if (resolved != null && !resolved.isMissingNode()) {
+					return extractResponseFields(resolved, componentSchemaNames, rawSpec);
+				}
+			}
+			return null;
+		}
+
+		var properties = rawSchema.get("properties");
+		if (properties == null || !properties.isObject() || properties.isEmpty()) return null;
+
+		var requiredSet = new HashSet<String>();
+		var requiredArr = rawSchema.get("required");
+		if (requiredArr != null && requiredArr.isArray()) {
+			for (var r : requiredArr) {
+				requiredSet.add(r.asText());
+			}
+		}
+
+		var fields = new ArrayList<ResponseField>();
+		var propFields = properties.fields();
+		while (propFields.hasNext()) {
+			var entry = propFields.next();
+			var jsonName = entry.getKey();
+			var propSchema = entry.getValue();
+			var javaName = Naming.safeJavaName(jsonName);
+			var required = requiredSet.contains(jsonName);
+
+			var javaType = resolvePropertyType(propSchema, componentSchemaNames, rawSpec);
+
+			// For optional primitive fields, use boxed types
+			if (!required) {
+				javaType = boxType(javaType);
+			}
+
+			fields.add(new ResponseField(jsonName, javaName, javaType, required));
+		}
+
+		return fields;
+	}
+
+	private static String emitResponseRecord(
+		String group, MethodDefinition method,
+		Set<String> componentSchemaNames, JsonNode rawSpec
+	) {
 		var typeName = Naming.buildTypeName(group, method.methodName()) + "Response";
+		var rawSchema = method.rawResponseSchema();
+
+		var fields = extractResponseFields(rawSchema, componentSchemaNames, rawSpec);
+
+		if (fields == null || fields.isEmpty()) {
+			// Fallback to opaque JsonNode
+			var sb = new StringBuilder();
+			sb.append("\t@JsonIgnoreProperties(ignoreUnknown = true)\n");
+			sb.append("\tpublic record ").append(typeName).append("(JsonNode data) {\n");
+			sb.append("\t\t@JsonCreator(mode = JsonCreator.Mode.DELEGATING)\n");
+			sb.append("\t\tpublic ").append(typeName).append(" {}\n");
+			sb.append("\t}");
+			return sb.toString();
+		}
+
 		var sb = new StringBuilder();
-		sb.append("\tpublic record ").append(typeName).append("(JsonNode data) {\n");
-		sb.append("\t\t@JsonCreator(mode = JsonCreator.Mode.DELEGATING)\n");
-		sb.append("\t\tpublic ").append(typeName).append(" {}\n");
-		sb.append("\t}");
+		sb.append("\t@JsonIgnoreProperties(ignoreUnknown = true)\n");
+		sb.append("\tpublic record ").append(typeName).append("(\n");
+
+		var props = new ArrayList<String>();
+		for (var field : fields) {
+			var annotation = Naming.needsJsonProperty(field.jsonName())
+				? "\t\t@JsonProperty(\"" + field.jsonName() + "\") "
+				: "\t\t";
+			props.add(annotation + field.javaType() + " " + field.javaName());
+		}
+		sb.append(String.join(",\n", props)).append("\n");
+		sb.append("\t) {}");
 		return sb.toString();
 	}
 
-	static String emitJavaTypesFile(List<ParsedGroup> groups, String subPackage) {
+	// ─── Component Schema Record Generation ──────────────────────────
+
+	private static String emitComponentSchemaRecord(
+		String schemaName, JsonNode schema, Set<String> componentSchemaNames, JsonNode rawSpec
+	) {
+		if (schema == null || !schema.isObject()) return null;
+
+		var properties = schema.get("properties");
+		if (properties == null || !properties.isObject() || properties.isEmpty()) return null;
+
+		// Skip schemas that are just enums or primitives
+		var typeNode = schema.get("type");
+		if (typeNode != null && typeNode.isTextual()) {
+			var type = typeNode.asText();
+			if (!"object".equals(type)) return null;
+		}
+		// Multi-type schemas
+		if (typeNode != null && typeNode.isArray()) return null;
+
+		var requiredSet = new HashSet<String>();
+		var requiredArr = schema.get("required");
+		if (requiredArr != null && requiredArr.isArray()) {
+			for (var r : requiredArr) {
+				requiredSet.add(r.asText());
+			}
+		}
+
+		var sb = new StringBuilder();
+		sb.append("\t@JsonIgnoreProperties(ignoreUnknown = true)\n");
+		sb.append("\tpublic record ").append(schemaName).append("(\n");
+
+		var props = new ArrayList<String>();
+		var propFields = properties.fields();
+		while (propFields.hasNext()) {
+			var entry = propFields.next();
+			var jsonName = entry.getKey();
+			var propSchema = entry.getValue();
+			var javaName = Naming.safeJavaName(jsonName);
+			var required = requiredSet.contains(jsonName);
+
+			var javaType = resolvePropertyType(propSchema, componentSchemaNames, rawSpec);
+			if (!required) {
+				javaType = boxType(javaType);
+			}
+
+			var annotation = Naming.needsJsonProperty(jsonName)
+				? "\t\t@JsonProperty(\"" + jsonName + "\") "
+				: "\t\t";
+			props.add(annotation + javaType + " " + javaName);
+		}
+		sb.append(String.join(",\n", props)).append("\n");
+		sb.append("\t) {}");
+		return sb.toString();
+	}
+
+	// ─── Types File Assembly ─────────────────────────────────────────
+
+	static String emitJavaTypesFile(
+		List<ParsedGroup> groups, String subPackage, Map<String, JsonNode> componentSchemas
+	) {
 		var sb = new StringBuilder();
 		var fullPackage = PACKAGE + "." + subPackage;
+
+		// Build the set of component schema names for reference resolution
+		var componentSchemaNames = new HashSet<>(componentSchemas.keySet());
+
+		// We need a dummy rawSpec for resolvePropertyType — component schemas reference each other
+		// Build a minimal spec node with just the schemas section
+		var mapper = new com.fasterxml.jackson.databind.ObjectMapper();
+		var rawSpec = mapper.createObjectNode();
+		var components = mapper.createObjectNode();
+		var schemasNode = mapper.createObjectNode();
+		for (var entry : componentSchemas.entrySet()) {
+			schemasNode.set(entry.getKey(), entry.getValue());
+		}
+		components.set("schemas", schemasNode);
+		rawSpec.set("components", components);
 
 		sb.append("// Auto-generated. Do not edit manually.\n\n");
 		sb.append("package ").append(fullPackage).append(";\n\n");
 		sb.append("import com.fasterxml.jackson.annotation.JsonCreator;\n");
+		sb.append("import com.fasterxml.jackson.annotation.JsonIgnoreProperties;\n");
 		sb.append("import com.fasterxml.jackson.annotation.JsonProperty;\n");
 		sb.append("import com.fasterxml.jackson.databind.JsonNode;\n");
 		sb.append("import java.util.List;\n\n");
@@ -139,6 +398,22 @@ final class Emitter {
 		sb.append("public final class Types {\n\n");
 		sb.append("\tprivate Types() {\n\t}\n\n");
 
+		// Emit component schema records first
+		var hasComponentSchemas = false;
+		for (var entry : componentSchemas.entrySet()) {
+			var record = emitComponentSchemaRecord(
+				entry.getKey(), entry.getValue(), componentSchemaNames, rawSpec
+			);
+			if (record != null) {
+				if (!hasComponentSchemas) {
+					sb.append("\t// ─── Component Schemas ────────────────────────────────────────\n\n");
+					hasComponentSchemas = true;
+				}
+				sb.append("\t").append(record.replace("\n", "\n\t")).append("\n\n");
+			}
+		}
+
+		// Emit group types
 		for (var group : groups) {
 			var className = Naming.groupToClassName(group.groupName());
 			var groupTypes = new ArrayList<String>();
@@ -150,7 +425,9 @@ final class Emitter {
 				var bodyType = emitBodyClass(group.groupName(), method);
 				if (bodyType != null) groupTypes.add(bodyType);
 
-				groupTypes.add(emitResponseRecord(group.groupName(), method));
+				groupTypes.add(emitResponseRecord(
+					group.groupName(), method, componentSchemaNames, rawSpec
+				));
 			}
 
 			if (!groupTypes.isEmpty()) {
@@ -327,8 +604,8 @@ final class Emitter {
 				}
 			}
 
-			// Build byteArrayFields map
-			sb.append(indent).append("var byteFields = new java.util.HashMap<String, byte[]>();\n");
+			// Build byteArrayFields map — use LinkedHashMap for deterministic order
+			sb.append(indent).append("var byteFields = new java.util.LinkedHashMap<String, byte[]>();\n");
 			for (var name : byteArrayFieldNames) {
 				var camelName = Naming.snakeToCamel(Naming.sanitizeName(name));
 				var prop = method.bodyProperties().stream().filter(p -> p.name().equals(name)).findFirst().orElse(null);
