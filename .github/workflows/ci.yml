@@ -22,8 +22,8 @@ jobs:
       - uses: gradle/actions/setup-gradle@v4
       - run: ./gradlew assemble
 
-  codegen:
-    name: Code Generator
+  lint:
+    name: Code Quality
     needs: build
     runs-on: ubuntu-latest
     steps:
