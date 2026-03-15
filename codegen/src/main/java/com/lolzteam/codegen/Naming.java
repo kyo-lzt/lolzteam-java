@@ -72,12 +72,14 @@ final class Naming {
 		return sb.toString();
 	}
 
-	/** Strip trailing [] from parameter names. */
+	/** Strip trailing [] and replace non-identifier chars with underscores. */
 	static String sanitizeName(String name) {
-		if (name.endsWith("[]")) {
-			return name.substring(0, name.length() - 2);
+		var result = name;
+		if (result.endsWith("[]")) {
+			result = result.substring(0, result.length() - 2);
 		}
-		return name;
+		result = result.replaceAll("[^a-zA-Z0-9_]", "_");
+		return result;
 	}
 
 	/** Convert a parameter name to a safe Java identifier. Uses _ suffix for keywords. */

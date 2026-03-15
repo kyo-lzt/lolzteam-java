@@ -101,7 +101,17 @@ final class Transforms {
 
 		if (!schema.isObject()) return "unknown";
 
-		// enum
+		// Check type BEFORE enum — if type is a known non-string primitive with enum, return the primitive type
+		var typeElEarly = schema.get("type");
+		var typeEarly = typeElEarly != null && typeElEarly.isTextual() ? typeElEarly.asText() : null;
+		if (typeEarly != null && ("integer".equals(typeEarly) || "number".equals(typeEarly) || "boolean".equals(typeEarly))) {
+			var enumCheck = schema.get("enum");
+			if (enumCheck != null && enumCheck.isArray() && !enumCheck.isEmpty()) {
+				return primitiveType(typeEarly);
+			}
+		}
+
+		// enum (string literals)
 		var enumValues = schema.get("enum");
 		if (enumValues != null && enumValues.isArray() && !enumValues.isEmpty()) {
 			var literals = new ArrayList<String>();
@@ -203,8 +213,16 @@ final class Transforms {
 
 	/** Map intermediate type string to Java type. */
 	static String toJavaType(String tsType) {
+		// allOf intersection types — split on " & " first
+		if (tsType.contains(" & ")) {
+			var allOfParts = tsType.split(" & ");
+			if (allOfParts.length > 1) {
+				return "JsonNode";
+			}
+		}
+
 		// Union types
-		if (tsType.contains(" | ") || tsType.contains(" & ")) {
+		if (tsType.contains(" | ")) {
 			var parts = tsType.split(" \\| ");
 			var nonNull = new ArrayList<String>();
 			for (var p : parts) {
@@ -230,15 +248,21 @@ final class Transforms {
 			return "List<" + toJavaType(arrayMatch.group(1)) + ">";
 		}
 
+		// Record<string, T> → Map<String, JavaType>
+		var recordMatch = Pattern.compile("^Record<string, (.+)>$").matcher(tsType);
+		if (recordMatch.matches()) {
+			return "Map<String, " + toJavaType(recordMatch.group(1)) + ">";
+		}
+
 		// Inline objects
-		if (tsType.startsWith("{") || tsType.contains("Record<")) {
+		if (tsType.startsWith("{")) {
 			return "JsonNode";
 		}
 
 		return switch (tsType) {
 			case "string" -> "String";
 			case "number" -> "Double";
-			case "integer" -> "Integer";
+			case "integer" -> "Long";
 			case "boolean" -> "Boolean";
 			case "unknown" -> "JsonNode";
 			case "Blob" -> "byte[]";

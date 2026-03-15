@@ -17,6 +17,7 @@ final class Emitter {
 	private Emitter() {
 	}
 
+
 	// ─── Types File ───────────────────────────────────────────────────
 
 	private static String emitQueryParamsClass(String group, MethodDefinition method) {
@@ -133,7 +134,8 @@ final class Emitter {
 	 * Resolve a property schema to a Java type, respecting component schema $refs.
 	 */
 	private static String resolvePropertyType(
-		JsonNode propSchema, Set<String> componentSchemaNames, JsonNode rawSpec
+		JsonNode propSchema, Set<String> componentSchemaNames, JsonNode rawSpec,
+		String parentTypeName, String propName, List<String> nestedRecords
 	) {
 		if (propSchema == null) return "JsonNode";
 
@@ -155,7 +157,10 @@ final class Emitter {
 		if (typeNode != null && typeNode.isTextual() && "array".equals(typeNode.asText())) {
 			var items = propSchema.get("items");
 			if (items != null) {
-				var itemType = resolvePropertyType(items, componentSchemaNames, rawSpec);
+				var itemType = resolvePropertyType(
+					items, componentSchemaNames, rawSpec,
+					parentTypeName, propName, nestedRecords
+				);
 				return "List<" + boxType(itemType) + ">";
 			}
 			return "List<JsonNode>";
@@ -186,9 +191,16 @@ final class Emitter {
 
 		if ("object".equals(type) || propSchema.has("properties")) {
 			var props = propSchema.get("properties");
-			if (props != null && props.isObject() && !props.isEmpty()) {
-				// Inline object with properties → JsonNode (could nest, but keeping simple)
-				return "JsonNode";
+			if (props != null && props.isObject() && !props.isEmpty()
+				&& parentTypeName != null && propName != null && nestedRecords != null) {
+				// Generate a nested record for inline objects with properties
+				var nestedName = parentTypeName
+					+ Naming.capitalizeFirst(Naming.snakeToCamel(Naming.sanitizeName(propName)));
+				var nestedRecord = buildNestedRecord(
+					nestedName, propSchema, componentSchemaNames, rawSpec, nestedRecords
+				);
+				nestedRecords.add(nestedRecord);
+				return nestedName;
 			}
 			return "JsonNode";
 		}
@@ -207,6 +219,56 @@ final class Emitter {
 	}
 
 	/**
+	 * Build a nested record definition string for an inline object schema.
+	 */
+	private static String buildNestedRecord(
+		String recordName, JsonNode schema, Set<String> componentSchemaNames,
+		JsonNode rawSpec, List<String> nestedRecords
+	) {
+		var properties = schema.get("properties");
+
+		var requiredSet = new HashSet<String>();
+		var requiredArr = schema.get("required");
+		if (requiredArr != null && requiredArr.isArray()) {
+			for (var r : requiredArr) {
+				requiredSet.add(r.asText());
+			}
+		}
+
+		var sb = new StringBuilder();
+		sb.append("\t@JsonIgnoreProperties(ignoreUnknown = true)\n");
+		sb.append("\tpublic record ").append(recordName).append("(\n");
+
+		var props = new ArrayList<String>();
+		var seenJavaNames = new HashSet<String>();
+		var propFields = properties.fields();
+		while (propFields.hasNext()) {
+			var entry = propFields.next();
+			var jsonName = entry.getKey();
+			var propSchema = entry.getValue();
+			var javaName = Naming.safeJavaName(jsonName);
+			if (!seenJavaNames.add(javaName)) continue; // skip duplicate Java names
+			var required = requiredSet.contains(jsonName);
+
+			var javaType = resolvePropertyType(
+				propSchema, componentSchemaNames, rawSpec,
+				recordName, jsonName, nestedRecords
+			);
+			if (!required) {
+				javaType = boxType(javaType);
+			}
+
+			var annotation = Naming.needsJsonProperty(jsonName)
+				? "\t\t@JsonProperty(\"" + jsonName + "\") "
+				: "\t\t";
+			props.add(annotation + javaType + " " + javaName);
+		}
+		sb.append(String.join(",\n", props)).append("\n");
+		sb.append("\t) {}");
+		return sb.toString();
+	}
+
+	/**
 	 * Box primitive types for use in generics.
 	 */
 	private static String boxType(String type) {
@@ -219,11 +281,18 @@ final class Emitter {
 	}
 
 	/**
+	 * Result of extracting response fields, including any nested record definitions.
+	 */
+	private record ExtractedResponseFields(List<ResponseField> fields, List<String> nestedRecords) {
+	}
+
+	/**
 	 * Extract response fields from a raw response schema.
 	 * Returns null if the schema can't be converted to typed fields (fallback to JsonNode).
 	 */
-	private static List<ResponseField> extractResponseFields(
-		JsonNode rawSchema, Set<String> componentSchemaNames, JsonNode rawSpec
+	private static ExtractedResponseFields extractResponseFields(
+		JsonNode rawSchema, Set<String> componentSchemaNames, JsonNode rawSpec,
+		String parentTypeName, List<String> nestedRecords
 	) {
 		if (rawSchema == null || !rawSchema.isObject()) return null;
 
@@ -234,7 +303,10 @@ final class Emitter {
 				var schemaName = ref.substring("#/components/schemas/".length());
 				var resolved = rawSpec.at("/components/schemas/" + schemaName);
 				if (resolved != null && !resolved.isMissingNode()) {
-					return extractResponseFields(resolved, componentSchemaNames, rawSpec);
+					return extractResponseFields(
+						resolved, componentSchemaNames, rawSpec,
+						parentTypeName, nestedRecords
+					);
 				}
 			}
 			return null;
@@ -252,15 +324,20 @@ final class Emitter {
 		}
 
 		var fields = new ArrayList<ResponseField>();
+		var seenJavaNames = new HashSet<String>();
 		var propFields = properties.fields();
 		while (propFields.hasNext()) {
 			var entry = propFields.next();
 			var jsonName = entry.getKey();
 			var propSchema = entry.getValue();
 			var javaName = Naming.safeJavaName(jsonName);
+			if (!seenJavaNames.add(javaName)) continue; // skip duplicate Java names
 			var required = requiredSet.contains(jsonName);
 
-			var javaType = resolvePropertyType(propSchema, componentSchemaNames, rawSpec);
+			var javaType = resolvePropertyType(
+				propSchema, componentSchemaNames, rawSpec,
+				parentTypeName, jsonName, nestedRecords
+			);
 
 			// For optional primitive fields, use boxed types
 			if (!required) {
@@ -270,7 +347,7 @@ final class Emitter {
 			fields.add(new ResponseField(jsonName, javaName, javaType, required));
 		}
 
-		return fields;
+		return new ExtractedResponseFields(fields, nestedRecords);
 	}
 
 	private static String emitResponseRecord(
@@ -280,9 +357,12 @@ final class Emitter {
 		var typeName = Naming.buildTypeName(group, method.methodName()) + "Response";
 		var rawSchema = method.rawResponseSchema();
 
-		var fields = extractResponseFields(rawSchema, componentSchemaNames, rawSpec);
+		var nestedRecords = new ArrayList<String>();
+		var result = extractResponseFields(
+			rawSchema, componentSchemaNames, rawSpec, typeName, nestedRecords
+		);
 
-		if (fields == null || fields.isEmpty()) {
+		if (result == null || result.fields().isEmpty()) {
 			// Fallback to opaque JsonNode
 			var sb = new StringBuilder();
 			sb.append("\t@JsonIgnoreProperties(ignoreUnknown = true)\n");
@@ -298,7 +378,7 @@ final class Emitter {
 		sb.append("\tpublic record ").append(typeName).append("(\n");
 
 		var props = new ArrayList<String>();
-		for (var field : fields) {
+		for (var field : result.fields()) {
 			var annotation = Naming.needsJsonProperty(field.jsonName())
 				? "\t\t@JsonProperty(\"" + field.jsonName() + "\") "
 				: "\t\t";
@@ -306,6 +386,12 @@ final class Emitter {
 		}
 		sb.append(String.join(",\n", props)).append("\n");
 		sb.append("\t) {}");
+
+		// Append nested records after the response record
+		for (var nested : result.nestedRecords()) {
+			sb.append("\n\n").append(nested);
+		}
+
 		return sb.toString();
 	}
 
@@ -336,20 +422,27 @@ final class Emitter {
 			}
 		}
 
+		var nestedRecords = new ArrayList<String>();
+
 		var sb = new StringBuilder();
 		sb.append("\t@JsonIgnoreProperties(ignoreUnknown = true)\n");
 		sb.append("\tpublic record ").append(schemaName).append("(\n");
 
 		var props = new ArrayList<String>();
+		var seenJavaNames = new HashSet<String>();
 		var propFields = properties.fields();
 		while (propFields.hasNext()) {
 			var entry = propFields.next();
 			var jsonName = entry.getKey();
 			var propSchema = entry.getValue();
 			var javaName = Naming.safeJavaName(jsonName);
+			if (!seenJavaNames.add(javaName)) continue; // skip duplicate Java names
 			var required = requiredSet.contains(jsonName);
 
-			var javaType = resolvePropertyType(propSchema, componentSchemaNames, rawSpec);
+			var javaType = resolvePropertyType(
+				propSchema, componentSchemaNames, rawSpec,
+				schemaName, jsonName, nestedRecords
+			);
 			if (!required) {
 				javaType = boxType(javaType);
 			}
@@ -361,6 +454,12 @@ final class Emitter {
 		}
 		sb.append(String.join(",\n", props)).append("\n");
 		sb.append("\t) {}");
+
+		// Append nested records after the parent record
+		for (var nested : nestedRecords) {
+			sb.append("\n\n").append(nested);
+		}
+
 		return sb.toString();
 	}
 
@@ -393,7 +492,8 @@ final class Emitter {
 		sb.append("import com.fasterxml.jackson.annotation.JsonIgnoreProperties;\n");
 		sb.append("import com.fasterxml.jackson.annotation.JsonProperty;\n");
 		sb.append("import com.fasterxml.jackson.databind.JsonNode;\n");
-		sb.append("import java.util.List;\n\n");
+		sb.append("import java.util.List;\n");
+		sb.append("import java.util.Map;\n\n");
 
 		sb.append("public final class Types {\n\n");
 		sb.append("\tprivate Types() {\n\t}\n\n");
