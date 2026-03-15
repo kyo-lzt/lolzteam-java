@@ -117,7 +117,12 @@ final class Emitter {
 
 	private static String emitResponseRecord(String group, MethodDefinition method) {
 		var typeName = Naming.buildTypeName(group, method.methodName()) + "Response";
-		return "\tpublic record " + typeName + "(JsonNode data) {}";
+		var sb = new StringBuilder();
+		sb.append("\tpublic record ").append(typeName).append("(JsonNode data) {\n");
+		sb.append("\t\t@JsonCreator(mode = JsonCreator.Mode.DELEGATING)\n");
+		sb.append("\t\tpublic ").append(typeName).append(" {}\n");
+		sb.append("\t}");
+		return sb.toString();
 	}
 
 	static String emitJavaTypesFile(List<ParsedGroup> groups, String subPackage) {
@@ -126,6 +131,7 @@ final class Emitter {
 
 		sb.append("// Auto-generated. Do not edit manually.\n\n");
 		sb.append("package ").append(fullPackage).append(";\n\n");
+		sb.append("import com.fasterxml.jackson.annotation.JsonCreator;\n");
 		sb.append("import com.fasterxml.jackson.annotation.JsonProperty;\n");
 		sb.append("import com.fasterxml.jackson.databind.JsonNode;\n");
 		sb.append("import java.util.List;\n\n");
@@ -210,7 +216,7 @@ final class Emitter {
 
 		// Path params
 		for (var param : method.params().pathParams()) {
-			var javaType = Transforms.toJavaType(param.type());
+			var javaType = Transforms.toJavaPathParamType(param.type());
 			args.add(javaType + " " + Naming.snakeToCamel(param.name()));
 		}
 
@@ -255,7 +261,7 @@ final class Emitter {
 			if (isAsync) {
 				sb.append("\t\treturn http.requestAsync(new RequestOptions(\n");
 			} else {
-				sb.append("\t\treturn new ").append(responseTypeName).append("(http.request(new RequestOptions(\n");
+				sb.append("\t\treturn mapper.convertValue(http.request(new RequestOptions(\n");
 			}
 			sb.append("\t\t\t\"").append(method.httpMethod()).append("\",\n");
 			sb.append("\t\t\t").append(pathExpr).append(",\n");
@@ -282,9 +288,9 @@ final class Emitter {
 
 			sb.append("\t\t\t/* isSearch */ ").append(isSearch).append("\n");
 			if (isAsync) {
-				sb.append("\t\t)).thenApply(").append(responseTypeName).append("::new);\n");
+				sb.append("\t\t)).thenApply(node -> mapper.convertValue(node, ").append(responseTypeName).append(".class));\n");
 			} else {
-				sb.append("\t\t)));\n");
+				sb.append("\t\t)), ").append(responseTypeName).append(".class);\n");
 			}
 		}
 
@@ -336,7 +342,7 @@ final class Emitter {
 			if (isAsync) {
 				sb.append(indent).append("return http.requestAsync(new RequestOptions(\n");
 			} else {
-				sb.append(indent).append("return new ").append(responseTypeName).append("(http.request(new RequestOptions(\n");
+				sb.append(indent).append("return mapper.convertValue(http.request(new RequestOptions(\n");
 			}
 			sb.append(indent).append("\t\"").append(method.httpMethod()).append("\",\n");
 			sb.append(indent).append("\t").append(pathExpr).append(",\n");
@@ -356,9 +362,9 @@ final class Emitter {
 			sb.append(indent).append("\tbyteFields,\n");
 			sb.append(indent).append("\t/* isSearch */ ").append(isSearch).append("\n");
 			if (isAsync) {
-				sb.append(indent).append(")).thenApply(").append(responseTypeName).append("::new);\n");
+				sb.append(indent).append(")).thenApply(node -> mapper.convertValue(node, ").append(responseTypeName).append(".class));\n");
 			} else {
-				sb.append(indent).append(")));\n");
+				sb.append(indent).append(")), ").append(responseTypeName).append(".class);\n");
 			}
 		};
 
@@ -371,7 +377,7 @@ final class Emitter {
 			if (isAsync) {
 				sb.append("\t\t\treturn http.requestAsync(new RequestOptions(\n");
 			} else {
-				sb.append("\t\t\treturn new ").append(responseTypeName).append("(http.request(new RequestOptions(\n");
+				sb.append("\t\t\treturn mapper.convertValue(http.request(new RequestOptions(\n");
 			}
 			sb.append("\t\t\t\t\"").append(method.httpMethod()).append("\",\n");
 			sb.append("\t\t\t\t").append(pathExpr).append(",\n");
@@ -385,9 +391,9 @@ final class Emitter {
 			sb.append("\t\t\t\tjava.util.Map.of(),\n");
 			sb.append("\t\t\t\t/* isSearch */ ").append(isSearch).append("\n");
 			if (isAsync) {
-				sb.append("\t\t\t)).thenApply(").append(responseTypeName).append("::new);\n");
+				sb.append("\t\t\t)).thenApply(node -> mapper.convertValue(node, ").append(responseTypeName).append(".class));\n");
 			} else {
-				sb.append("\t\t\t)));\n");
+				sb.append("\t\t\t)), ").append(responseTypeName).append(".class);\n");
 			}
 			sb.append("\t\t}\n");
 		}
@@ -404,7 +410,7 @@ final class Emitter {
 
 		// Path params always required
 		for (var param : method.params().pathParams()) {
-			var javaType = Transforms.toJavaType(param.type());
+			var javaType = Transforms.toJavaPathParamType(param.type());
 			var name = Naming.snakeToCamel(param.name());
 			args.add(javaType + " " + name);
 			callArgs.add(name);
@@ -452,10 +458,10 @@ final class Emitter {
 		var className = Naming.groupToClassName(group.groupName());
 		var sb = new StringBuilder();
 
-		sb.append("class ").append(className).append(" {\n\n");
+		sb.append("public static class ").append(className).append(" {\n\n");
 		sb.append("\tprivate final LolzteamHttpClient http;\n");
 		sb.append("\tprivate final com.fasterxml.jackson.databind.ObjectMapper mapper;\n\n");
-		sb.append("\t").append(className).append("(LolzteamHttpClient http) {\n");
+		sb.append("\tpublic ").append(className).append("(LolzteamHttpClient http) {\n");
 		sb.append("\t\tthis.http = http;\n");
 		sb.append("\t\tthis.mapper = http.objectMapper();\n");
 		sb.append("\t}\n");
@@ -512,14 +518,15 @@ final class Emitter {
 		sb.append("import java.util.List;\n");
 		sb.append("import java.util.concurrent.CompletableFuture;\n\n");
 
-		// Group API classes
-		for (var group : groups) {
-			sb.append(emitGroupClass(group));
-			sb.append("\n");
-		}
-
 		// Main client class
 		sb.append("public class ").append(clientName).append(" implements Closeable {\n\n");
+
+		// Group API classes (as public static inner classes)
+		for (var group : groups) {
+			var groupClass = emitGroupClass(group);
+			// Add one level of indentation to nest inside client class
+			sb.append("\t").append(groupClass.replace("\n", "\n\t").stripTrailing()).append("\n\n");
+		}
 
 		// Properties
 		for (var group : groups) {

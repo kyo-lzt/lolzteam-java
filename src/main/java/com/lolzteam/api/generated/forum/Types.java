@@ -2,6 +2,7 @@
 
 package com.lolzteam.api.generated.forum;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.JsonNode;
 import java.util.List;
@@ -34,7 +35,10 @@ public final class Types {
 			}
 		}
 
-		public record OAuthTokenResponse(JsonNode data) {}
+		public record OAuthTokenResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public OAuthTokenResponse {}
+		}
 
 	}
 
@@ -53,7 +57,10 @@ public final class Types {
 			}
 		}
 
-		public record AssetsCssResponse(JsonNode data) {}
+		public record AssetsCssResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public AssetsCssResponse {}
+		}
 
 	}
 
@@ -74,9 +81,15 @@ public final class Types {
 			}
 		}
 
-		public record CategoriesListResponse(JsonNode data) {}
+		public record CategoriesListResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public CategoriesListResponse {}
+		}
 
-		public record CategoriesGetResponse(JsonNode data) {}
+		public record CategoriesGetResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public CategoriesGetResponse {}
+		}
 
 	}
 
@@ -97,13 +110,25 @@ public final class Types {
 			}
 		}
 
-		public record ForumsListResponse(JsonNode data) {}
+		public record ForumsListResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ForumsListResponse {}
+		}
 
-		public record ForumsGroupedResponse(JsonNode data) {}
+		public record ForumsGroupedResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ForumsGroupedResponse {}
+		}
 
-		public record ForumsGetResponse(JsonNode data) {}
+		public record ForumsGetResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ForumsGetResponse {}
+		}
 
-		public record ForumsFollowersResponse(JsonNode data) {}
+		public record ForumsFollowersResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ForumsFollowersResponse {}
+		}
 
 		public record ForumsFollowBody(
 			Boolean post,
@@ -117,9 +142,15 @@ public final class Types {
 			}
 		}
 
-		public record ForumsFollowResponse(JsonNode data) {}
+		public record ForumsFollowResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ForumsFollowResponse {}
+		}
 
-		public record ForumsUnfollowResponse(JsonNode data) {}
+		public record ForumsUnfollowResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ForumsUnfollowResponse {}
+		}
 
 		public record ForumsFollowedParams(
 			Boolean total
@@ -129,9 +160,15 @@ public final class Types {
 			}
 		}
 
-		public record ForumsFollowedResponse(JsonNode data) {}
+		public record ForumsFollowedResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ForumsFollowedResponse {}
+		}
 
-		public record ForumsGetFeedOptionsResponse(JsonNode data) {}
+		public record ForumsGetFeedOptionsResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ForumsGetFeedOptionsResponse {}
+		}
 
 		public record ForumsEditFeedOptionsBody(
 			@JsonProperty("node_ids") List<Integer> nodeIds,
@@ -142,7 +179,10 @@ public final class Types {
 			}
 		}
 
-		public record ForumsEditFeedOptionsResponse(JsonNode data) {}
+		public record ForumsEditFeedOptionsResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ForumsEditFeedOptionsResponse {}
+		}
 
 	}
 
@@ -153,9 +193,15 @@ public final class Types {
 		private LinksApiTypes() {
 		}
 
-		public record LinksListResponse(JsonNode data) {}
+		public record LinksListResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public LinksListResponse {}
+		}
 
-		public record LinksGetResponse(JsonNode data) {}
+		public record LinksGetResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public LinksGetResponse {}
+		}
 
 	}
 
@@ -175,9 +221,15 @@ public final class Types {
 			}
 		}
 
-		public record PagesListResponse(JsonNode data) {}
+		public record PagesListResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public PagesListResponse {}
+		}
 
-		public record PagesGetResponse(JsonNode data) {}
+		public record PagesGetResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public PagesGetResponse {}
+		}
 
 	}
 
@@ -196,7 +248,10 @@ public final class Types {
 			}
 		}
 
-		public record NavigationListResponse(JsonNode data) {}
+		public record NavigationListResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public NavigationListResponse {}
+		}
 
 	}
 
@@ -232,7 +287,10 @@ public final class Types {
 			}
 		}
 
-		public record ThreadsListResponse(JsonNode data) {}
+		public record ThreadsListResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ThreadsListResponse {}
+		}
 
 		public record ThreadsCreateBody(
 			@JsonProperty("post_body") String postBody,
@@ -257,7 +315,10 @@ public final class Types {
 			}
 		}
 
-		public record ThreadsCreateResponse(JsonNode data) {}
+		public record ThreadsCreateResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ThreadsCreateResponse {}
+		}
 
 		public record ThreadsCreateContestBody(
 			@JsonProperty("post_body") String postBody,
@@ -292,7 +353,10 @@ public final class Types {
 			}
 		}
 
-		public record ThreadsCreateContestResponse(JsonNode data) {}
+		public record ThreadsCreateContestResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ThreadsCreateContestResponse {}
+		}
 
 		public record ThreadsClaimBody(
 			@JsonProperty("as_responder") String asResponder,
@@ -323,7 +387,10 @@ public final class Types {
 			}
 		}
 
-		public record ThreadsClaimResponse(JsonNode data) {}
+		public record ThreadsClaimResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ThreadsClaimResponse {}
+		}
 
 		public record ThreadsGetParams(
 			@JsonProperty("fields_include") JsonNode fieldsInclude
@@ -333,7 +400,10 @@ public final class Types {
 			}
 		}
 
-		public record ThreadsGetResponse(JsonNode data) {}
+		public record ThreadsGetResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ThreadsGetResponse {}
+		}
 
 		public record ThreadsEditBody(
 			String title,
@@ -351,7 +421,10 @@ public final class Types {
 			}
 		}
 
-		public record ThreadsEditResponse(JsonNode data) {}
+		public record ThreadsEditResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ThreadsEditResponse {}
+		}
 
 		public record ThreadsDeleteBody(
 			String reason
@@ -361,7 +434,10 @@ public final class Types {
 			}
 		}
 
-		public record ThreadsDeleteResponse(JsonNode data) {}
+		public record ThreadsDeleteResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ThreadsDeleteResponse {}
+		}
 
 		public record ThreadsMoveBody(
 			@JsonProperty("node_id") String nodeId,
@@ -376,17 +452,35 @@ public final class Types {
 			}
 		}
 
-		public record ThreadsMoveResponse(JsonNode data) {}
+		public record ThreadsMoveResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ThreadsMoveResponse {}
+		}
 
-		public record ThreadsBumpResponse(JsonNode data) {}
+		public record ThreadsBumpResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ThreadsBumpResponse {}
+		}
 
-		public record ThreadsHideResponse(JsonNode data) {}
+		public record ThreadsHideResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ThreadsHideResponse {}
+		}
 
-		public record ThreadsStarResponse(JsonNode data) {}
+		public record ThreadsStarResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ThreadsStarResponse {}
+		}
 
-		public record ThreadsUnstarResponse(JsonNode data) {}
+		public record ThreadsUnstarResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ThreadsUnstarResponse {}
+		}
 
-		public record ThreadsFollowersResponse(JsonNode data) {}
+		public record ThreadsFollowersResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ThreadsFollowersResponse {}
+		}
 
 		public record ThreadsFollowBody(
 			Boolean email
@@ -396,9 +490,15 @@ public final class Types {
 			}
 		}
 
-		public record ThreadsFollowResponse(JsonNode data) {}
+		public record ThreadsFollowResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ThreadsFollowResponse {}
+		}
 
-		public record ThreadsUnfollowResponse(JsonNode data) {}
+		public record ThreadsUnfollowResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ThreadsUnfollowResponse {}
+		}
 
 		public record ThreadsFollowedParams(
 			Boolean total,
@@ -409,11 +509,20 @@ public final class Types {
 			}
 		}
 
-		public record ThreadsFollowedResponse(JsonNode data) {}
+		public record ThreadsFollowedResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ThreadsFollowedResponse {}
+		}
 
-		public record ThreadsNavigationResponse(JsonNode data) {}
+		public record ThreadsNavigationResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ThreadsNavigationResponse {}
+		}
 
-		public record ThreadsPollGetResponse(JsonNode data) {}
+		public record ThreadsPollGetResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ThreadsPollGetResponse {}
+		}
 
 		public record ThreadsPollVoteBody(
 			@JsonProperty("response_id") Integer responseId,
@@ -424,7 +533,10 @@ public final class Types {
 			}
 		}
 
-		public record ThreadsPollVoteResponse(JsonNode data) {}
+		public record ThreadsPollVoteResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ThreadsPollVoteResponse {}
+		}
 
 		public record ThreadsUnreadParams(
 			Integer limit,
@@ -436,7 +548,10 @@ public final class Types {
 			}
 		}
 
-		public record ThreadsUnreadResponse(JsonNode data) {}
+		public record ThreadsUnreadResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ThreadsUnreadResponse {}
+		}
 
 		public record ThreadsRecentParams(
 			Integer days,
@@ -449,9 +564,15 @@ public final class Types {
 			}
 		}
 
-		public record ThreadsRecentResponse(JsonNode data) {}
+		public record ThreadsRecentResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ThreadsRecentResponse {}
+		}
 
-		public record ThreadsFinishResponse(JsonNode data) {}
+		public record ThreadsFinishResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ThreadsFinishResponse {}
+		}
 
 	}
 
@@ -474,7 +595,10 @@ public final class Types {
 			}
 		}
 
-		public record PostsListResponse(JsonNode data) {}
+		public record PostsListResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public PostsListResponse {}
+		}
 
 		public record PostsCreateBody(
 			@JsonProperty("post_body") String postBody,
@@ -486,9 +610,15 @@ public final class Types {
 			}
 		}
 
-		public record PostsCreateResponse(JsonNode data) {}
+		public record PostsCreateResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public PostsCreateResponse {}
+		}
 
-		public record PostsGetResponse(JsonNode data) {}
+		public record PostsGetResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public PostsGetResponse {}
+		}
 
 		public record PostsEditBody(
 			@JsonProperty("post_body") String postBody
@@ -498,7 +628,10 @@ public final class Types {
 			}
 		}
 
-		public record PostsEditResponse(JsonNode data) {}
+		public record PostsEditResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public PostsEditResponse {}
+		}
 
 		public record PostsDeleteBody(
 			String reason
@@ -508,7 +641,10 @@ public final class Types {
 			}
 		}
 
-		public record PostsDeleteResponse(JsonNode data) {}
+		public record PostsDeleteResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public PostsDeleteResponse {}
+		}
 
 		public record PostsLikesParams(
 			Integer page,
@@ -519,20 +655,35 @@ public final class Types {
 			}
 		}
 
-		public record PostsLikesResponse(JsonNode data) {}
+		public record PostsLikesResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public PostsLikesResponse {}
+		}
 
-		public record PostsLikeResponse(JsonNode data) {}
+		public record PostsLikeResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public PostsLikeResponse {}
+		}
 
-		public record PostsUnlikeResponse(JsonNode data) {}
+		public record PostsUnlikeResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public PostsUnlikeResponse {}
+		}
 
-		public record PostsReportReasonsResponse(JsonNode data) {}
+		public record PostsReportReasonsResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public PostsReportReasonsResponse {}
+		}
 
 		public record PostsReportBody(
 			String message
 		) {
 		}
 
-		public record PostsReportResponse(JsonNode data) {}
+		public record PostsReportResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public PostsReportResponse {}
+		}
 
 		public record PostsCommentsGetParams(
 			@JsonProperty("post_id") Integer postId,
@@ -544,7 +695,10 @@ public final class Types {
 			}
 		}
 
-		public record PostsCommentsGetResponse(JsonNode data) {}
+		public record PostsCommentsGetResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public PostsCommentsGetResponse {}
+		}
 
 		public record PostsCommentsCreateBody(
 			@JsonProperty("post_id") Integer postId,
@@ -552,7 +706,10 @@ public final class Types {
 		) {
 		}
 
-		public record PostsCommentsCreateResponse(JsonNode data) {}
+		public record PostsCommentsCreateResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public PostsCommentsCreateResponse {}
+		}
 
 		public record PostsCommentsEditBody(
 			@JsonProperty("post_comment_id") Integer postCommentId,
@@ -560,7 +717,10 @@ public final class Types {
 		) {
 		}
 
-		public record PostsCommentsEditResponse(JsonNode data) {}
+		public record PostsCommentsEditResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public PostsCommentsEditResponse {}
+		}
 
 		public record PostsCommentsDeleteBody(
 			@JsonProperty("post_comment_id") Integer postCommentId,
@@ -571,7 +731,10 @@ public final class Types {
 			}
 		}
 
-		public record PostsCommentsDeleteResponse(JsonNode data) {}
+		public record PostsCommentsDeleteResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public PostsCommentsDeleteResponse {}
+		}
 
 		public record PostsCommentsReportBody(
 			@JsonProperty("post_comment_id") Integer postCommentId,
@@ -579,7 +742,10 @@ public final class Types {
 		) {
 		}
 
-		public record PostsCommentsReportResponse(JsonNode data) {}
+		public record PostsCommentsReportResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public PostsCommentsReportResponse {}
+		}
 
 	}
 
@@ -600,9 +766,15 @@ public final class Types {
 			}
 		}
 
-		public record UsersListResponse(JsonNode data) {}
+		public record UsersListResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public UsersListResponse {}
+		}
 
-		public record UsersFieldsResponse(JsonNode data) {}
+		public record UsersFieldsResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public UsersFieldsResponse {}
+		}
 
 		public record UsersFindParams(
 			String username,
@@ -614,7 +786,10 @@ public final class Types {
 			}
 		}
 
-		public record UsersFindResponse(JsonNode data) {}
+		public record UsersFindResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public UsersFindResponse {}
+		}
 
 		public record UsersGetParams(
 			@JsonProperty("fields_include") JsonNode fieldsInclude
@@ -624,7 +799,10 @@ public final class Types {
 			}
 		}
 
-		public record UsersGetResponse(JsonNode data) {}
+		public record UsersGetResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public UsersGetResponse {}
+		}
 
 		public record UsersEditBody(
 			String username,
@@ -660,7 +838,10 @@ public final class Types {
 			}
 		}
 
-		public record UsersEditResponse(JsonNode data) {}
+		public record UsersEditResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public UsersEditResponse {}
+		}
 
 		public record UsersClaimsParams(
 			String type,
@@ -671,7 +852,10 @@ public final class Types {
 			}
 		}
 
-		public record UsersClaimsResponse(JsonNode data) {}
+		public record UsersClaimsResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public UsersClaimsResponse {}
+		}
 
 		public record UsersAvatarUploadBody(
 			byte[] avatar,
@@ -684,9 +868,15 @@ public final class Types {
 			}
 		}
 
-		public record UsersAvatarUploadResponse(JsonNode data) {}
+		public record UsersAvatarUploadResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public UsersAvatarUploadResponse {}
+		}
 
-		public record UsersAvatarDeleteResponse(JsonNode data) {}
+		public record UsersAvatarDeleteResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public UsersAvatarDeleteResponse {}
+		}
 
 		public record UsersAvatarCropBody(
 			Integer x,
@@ -698,7 +888,10 @@ public final class Types {
 			}
 		}
 
-		public record UsersAvatarCropResponse(JsonNode data) {}
+		public record UsersAvatarCropResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public UsersAvatarCropResponse {}
+		}
 
 		public record UsersBackgroundUploadBody(
 			byte[] background,
@@ -711,9 +904,15 @@ public final class Types {
 			}
 		}
 
-		public record UsersBackgroundUploadResponse(JsonNode data) {}
+		public record UsersBackgroundUploadResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public UsersBackgroundUploadResponse {}
+		}
 
-		public record UsersBackgroundDeleteResponse(JsonNode data) {}
+		public record UsersBackgroundDeleteResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public UsersBackgroundDeleteResponse {}
+		}
 
 		public record UsersBackgroundCropBody(
 			Integer x,
@@ -725,7 +924,10 @@ public final class Types {
 			}
 		}
 
-		public record UsersBackgroundCropResponse(JsonNode data) {}
+		public record UsersBackgroundCropResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public UsersBackgroundCropResponse {}
+		}
 
 		public record UsersFollowersParams(
 			String order,
@@ -737,11 +939,20 @@ public final class Types {
 			}
 		}
 
-		public record UsersFollowersResponse(JsonNode data) {}
+		public record UsersFollowersResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public UsersFollowersResponse {}
+		}
 
-		public record UsersFollowResponse(JsonNode data) {}
+		public record UsersFollowResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public UsersFollowResponse {}
+		}
 
-		public record UsersUnfollowResponse(JsonNode data) {}
+		public record UsersUnfollowResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public UsersUnfollowResponse {}
+		}
 
 		public record UsersFollowingsParams(
 			String order,
@@ -753,7 +964,10 @@ public final class Types {
 			}
 		}
 
-		public record UsersFollowingsResponse(JsonNode data) {}
+		public record UsersFollowingsResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public UsersFollowingsResponse {}
+		}
 
 		public record UsersLikesParams(
 			@JsonProperty("node_id") Integer nodeId,
@@ -769,7 +983,10 @@ public final class Types {
 			}
 		}
 
-		public record UsersLikesResponse(JsonNode data) {}
+		public record UsersLikesResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public UsersLikesResponse {}
+		}
 
 		public record UsersIgnoredParams(
 			Boolean total
@@ -779,9 +996,15 @@ public final class Types {
 			}
 		}
 
-		public record UsersIgnoredResponse(JsonNode data) {}
+		public record UsersIgnoredResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public UsersIgnoredResponse {}
+		}
 
-		public record UsersIgnoreResponse(JsonNode data) {}
+		public record UsersIgnoreResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public UsersIgnoreResponse {}
+		}
 
 		public record UsersIgnoreEditParams(
 			@JsonProperty("ignore_conversations") Boolean ignoreConversations,
@@ -793,9 +1016,15 @@ public final class Types {
 			}
 		}
 
-		public record UsersIgnoreEditResponse(JsonNode data) {}
+		public record UsersIgnoreEditResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public UsersIgnoreEditResponse {}
+		}
 
-		public record UsersUnignoreResponse(JsonNode data) {}
+		public record UsersUnignoreResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public UsersUnignoreResponse {}
+		}
 
 		public record UsersContentsParams(
 			Integer page,
@@ -806,15 +1035,30 @@ public final class Types {
 			}
 		}
 
-		public record UsersContentsResponse(JsonNode data) {}
+		public record UsersContentsResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public UsersContentsResponse {}
+		}
 
-		public record UsersTrophiesResponse(JsonNode data) {}
+		public record UsersTrophiesResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public UsersTrophiesResponse {}
+		}
 
-		public record UsersSecretAnswerTypesResponse(JsonNode data) {}
+		public record UsersSecretAnswerTypesResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public UsersSecretAnswerTypesResponse {}
+		}
 
-		public record UsersSaResetResponse(JsonNode data) {}
+		public record UsersSaResetResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public UsersSaResetResponse {}
+		}
 
-		public record UsersSaCancelResetResponse(JsonNode data) {}
+		public record UsersSaCancelResetResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public UsersSaCancelResetResponse {}
+		}
 
 	}
 
@@ -836,9 +1080,15 @@ public final class Types {
 			}
 		}
 
-		public record ProfilePostsListResponse(JsonNode data) {}
+		public record ProfilePostsListResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ProfilePostsListResponse {}
+		}
 
-		public record ProfilePostsGetResponse(JsonNode data) {}
+		public record ProfilePostsGetResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ProfilePostsGetResponse {}
+		}
 
 		public record ProfilePostsEditBody(
 			@JsonProperty("post_body") String postBody,
@@ -849,7 +1099,10 @@ public final class Types {
 			}
 		}
 
-		public record ProfilePostsEditResponse(JsonNode data) {}
+		public record ProfilePostsEditResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ProfilePostsEditResponse {}
+		}
 
 		public record ProfilePostsDeleteParams(
 			String reason
@@ -859,16 +1112,25 @@ public final class Types {
 			}
 		}
 
-		public record ProfilePostsDeleteResponse(JsonNode data) {}
+		public record ProfilePostsDeleteResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ProfilePostsDeleteResponse {}
+		}
 
-		public record ProfilePostsReportReasonsResponse(JsonNode data) {}
+		public record ProfilePostsReportReasonsResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ProfilePostsReportReasonsResponse {}
+		}
 
 		public record ProfilePostsReportBody(
 			String message
 		) {
 		}
 
-		public record ProfilePostsReportResponse(JsonNode data) {}
+		public record ProfilePostsReportResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ProfilePostsReportResponse {}
+		}
 
 		public record ProfilePostsCreateBody(
 			@JsonProperty("user_id") JsonNode userId,
@@ -876,17 +1138,35 @@ public final class Types {
 		) {
 		}
 
-		public record ProfilePostsCreateResponse(JsonNode data) {}
+		public record ProfilePostsCreateResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ProfilePostsCreateResponse {}
+		}
 
-		public record ProfilePostsStickResponse(JsonNode data) {}
+		public record ProfilePostsStickResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ProfilePostsStickResponse {}
+		}
 
-		public record ProfilePostsUnstickResponse(JsonNode data) {}
+		public record ProfilePostsUnstickResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ProfilePostsUnstickResponse {}
+		}
 
-		public record ProfilePostsLikesResponse(JsonNode data) {}
+		public record ProfilePostsLikesResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ProfilePostsLikesResponse {}
+		}
 
-		public record ProfilePostsLikeResponse(JsonNode data) {}
+		public record ProfilePostsLikeResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ProfilePostsLikeResponse {}
+		}
 
-		public record ProfilePostsUnlikeResponse(JsonNode data) {}
+		public record ProfilePostsUnlikeResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ProfilePostsUnlikeResponse {}
+		}
 
 		public record ProfilePostsCommentsListParams(
 			@JsonProperty("profile_post_id") Integer profilePostId,
@@ -898,7 +1178,10 @@ public final class Types {
 			}
 		}
 
-		public record ProfilePostsCommentsListResponse(JsonNode data) {}
+		public record ProfilePostsCommentsListResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ProfilePostsCommentsListResponse {}
+		}
 
 		public record ProfilePostsCommentsCreateBody(
 			@JsonProperty("profile_post_id") Integer profilePostId,
@@ -906,7 +1189,10 @@ public final class Types {
 		) {
 		}
 
-		public record ProfilePostsCommentsCreateResponse(JsonNode data) {}
+		public record ProfilePostsCommentsCreateResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ProfilePostsCommentsCreateResponse {}
+		}
 
 		public record ProfilePostsCommentsEditBody(
 			@JsonProperty("comment_id") Integer commentId,
@@ -914,23 +1200,35 @@ public final class Types {
 		) {
 		}
 
-		public record ProfilePostsCommentsEditResponse(JsonNode data) {}
+		public record ProfilePostsCommentsEditResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ProfilePostsCommentsEditResponse {}
+		}
 
 		public record ProfilePostsCommentsDeleteBody(
 			@JsonProperty("comment_id") Integer commentId
 		) {
 		}
 
-		public record ProfilePostsCommentsDeleteResponse(JsonNode data) {}
+		public record ProfilePostsCommentsDeleteResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ProfilePostsCommentsDeleteResponse {}
+		}
 
-		public record ProfilePostsCommentsGetResponse(JsonNode data) {}
+		public record ProfilePostsCommentsGetResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ProfilePostsCommentsGetResponse {}
+		}
 
 		public record ProfilePostsCommentsReportBody(
 			String message
 		) {
 		}
 
-		public record ProfilePostsCommentsReportResponse(JsonNode data) {}
+		public record ProfilePostsCommentsReportResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ProfilePostsCommentsReportResponse {}
+		}
 
 	}
 
@@ -951,7 +1249,10 @@ public final class Types {
 			}
 		}
 
-		public record ConversationsListResponse(JsonNode data) {}
+		public record ConversationsListResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ConversationsListResponse {}
+		}
 
 		public record ConversationsCreateBody(
 			@JsonProperty("recipient_id") Integer recipientId,
@@ -969,7 +1270,10 @@ public final class Types {
 			}
 		}
 
-		public record ConversationsCreateResponse(JsonNode data) {}
+		public record ConversationsCreateResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ConversationsCreateResponse {}
+		}
 
 		public record ConversationsUpdateBody(
 			@JsonProperty("conversation_id") Integer conversationId,
@@ -985,7 +1289,10 @@ public final class Types {
 			}
 		}
 
-		public record ConversationsUpdateResponse(JsonNode data) {}
+		public record ConversationsUpdateResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ConversationsUpdateResponse {}
+		}
 
 		public record ConversationsDeleteBody(
 			@JsonProperty("conversation_id") Integer conversationId,
@@ -993,23 +1300,35 @@ public final class Types {
 		) {
 		}
 
-		public record ConversationsDeleteResponse(JsonNode data) {}
+		public record ConversationsDeleteResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ConversationsDeleteResponse {}
+		}
 
 		public record ConversationsStartBody(
 			@JsonProperty("user_id") JsonNode userId
 		) {
 		}
 
-		public record ConversationsStartResponse(JsonNode data) {}
+		public record ConversationsStartResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ConversationsStartResponse {}
+		}
 
 		public record ConversationsSaveBody(
 			String link
 		) {
 		}
 
-		public record ConversationsSaveResponse(JsonNode data) {}
+		public record ConversationsSaveResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ConversationsSaveResponse {}
+		}
 
-		public record ConversationsGetResponse(JsonNode data) {}
+		public record ConversationsGetResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ConversationsGetResponse {}
+		}
 
 		public record ConversationsMessagesListParams(
 			Integer page,
@@ -1023,7 +1342,10 @@ public final class Types {
 			}
 		}
 
-		public record ConversationsMessagesListResponse(JsonNode data) {}
+		public record ConversationsMessagesListResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ConversationsMessagesListResponse {}
+		}
 
 		public record ConversationsMessagesCreateBody(
 			@JsonProperty("reply_message_id") Integer replyMessageId,
@@ -1034,7 +1356,10 @@ public final class Types {
 			}
 		}
 
-		public record ConversationsMessagesCreateResponse(JsonNode data) {}
+		public record ConversationsMessagesCreateResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ConversationsMessagesCreateResponse {}
+		}
 
 		public record ConversationsSearchBody(
 			String q,
@@ -1046,48 +1371,90 @@ public final class Types {
 			}
 		}
 
-		public record ConversationsSearchResponse(JsonNode data) {}
+		public record ConversationsSearchResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ConversationsSearchResponse {}
+		}
 
-		public record ConversationsMessagesGetResponse(JsonNode data) {}
+		public record ConversationsMessagesGetResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ConversationsMessagesGetResponse {}
+		}
 
 		public record ConversationsMessagesEditBody(
 			@JsonProperty("message_body") String messageBody
 		) {
 		}
 
-		public record ConversationsMessagesEditResponse(JsonNode data) {}
+		public record ConversationsMessagesEditResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ConversationsMessagesEditResponse {}
+		}
 
-		public record ConversationsMessagesDeleteResponse(JsonNode data) {}
+		public record ConversationsMessagesDeleteResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ConversationsMessagesDeleteResponse {}
+		}
 
 		public record ConversationsInviteBody(
 			List<String> recipients
 		) {
 		}
 
-		public record ConversationsInviteResponse(JsonNode data) {}
+		public record ConversationsInviteResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ConversationsInviteResponse {}
+		}
 
 		public record ConversationsKickBody(
 			@JsonProperty("user_id") Integer userId
 		) {
 		}
 
-		public record ConversationsKickResponse(JsonNode data) {}
+		public record ConversationsKickResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ConversationsKickResponse {}
+		}
 
-		public record ConversationsReadResponse(JsonNode data) {}
+		public record ConversationsReadResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ConversationsReadResponse {}
+		}
 
-		public record ConversationsReadAllResponse(JsonNode data) {}
+		public record ConversationsReadAllResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ConversationsReadAllResponse {}
+		}
 
-		public record ConversationsMessagesStickResponse(JsonNode data) {}
+		public record ConversationsMessagesStickResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ConversationsMessagesStickResponse {}
+		}
 
-		public record ConversationsMessagesUnstickResponse(JsonNode data) {}
+		public record ConversationsMessagesUnstickResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ConversationsMessagesUnstickResponse {}
+		}
 
-		public record ConversationsStarResponse(JsonNode data) {}
+		public record ConversationsStarResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ConversationsStarResponse {}
+		}
 
-		public record ConversationsUnstarResponse(JsonNode data) {}
+		public record ConversationsUnstarResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ConversationsUnstarResponse {}
+		}
 
-		public record ConversationsAlertsEnableResponse(JsonNode data) {}
+		public record ConversationsAlertsEnableResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ConversationsAlertsEnableResponse {}
+		}
 
-		public record ConversationsAlertsDisableResponse(JsonNode data) {}
+		public record ConversationsAlertsDisableResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ConversationsAlertsDisableResponse {}
+		}
 
 	}
 
@@ -1108,9 +1475,15 @@ public final class Types {
 			}
 		}
 
-		public record NotificationsListResponse(JsonNode data) {}
+		public record NotificationsListResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public NotificationsListResponse {}
+		}
 
-		public record NotificationsGetResponse(JsonNode data) {}
+		public record NotificationsGetResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public NotificationsGetResponse {}
+		}
 
 		public record NotificationsReadBody(
 			@JsonProperty("notification_id") Integer notificationId
@@ -1120,7 +1493,10 @@ public final class Types {
 			}
 		}
 
-		public record NotificationsReadResponse(JsonNode data) {}
+		public record NotificationsReadResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public NotificationsReadResponse {}
+		}
 
 	}
 
@@ -1131,7 +1507,10 @@ public final class Types {
 		private TagsApiTypes() {
 		}
 
-		public record TagsPopularResponse(JsonNode data) {}
+		public record TagsPopularResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public TagsPopularResponse {}
+		}
 
 		public record TagsListParams(
 			Integer page,
@@ -1142,7 +1521,10 @@ public final class Types {
 			}
 		}
 
-		public record TagsListResponse(JsonNode data) {}
+		public record TagsListResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public TagsListResponse {}
+		}
 
 		public record TagsGetParams(
 			Integer page,
@@ -1153,7 +1535,10 @@ public final class Types {
 			}
 		}
 
-		public record TagsGetResponse(JsonNode data) {}
+		public record TagsGetResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public TagsGetResponse {}
+		}
 
 		public record TagsFindParams(
 			String tag
@@ -1163,7 +1548,10 @@ public final class Types {
 			}
 		}
 
-		public record TagsFindResponse(JsonNode data) {}
+		public record TagsFindResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public TagsFindResponse {}
+		}
 
 	}
 
@@ -1187,7 +1575,10 @@ public final class Types {
 			}
 		}
 
-		public record SearchAllResponse(JsonNode data) {}
+		public record SearchAllResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public SearchAllResponse {}
+		}
 
 		public record SearchThreadsBody(
 			String q,
@@ -1203,7 +1594,10 @@ public final class Types {
 			}
 		}
 
-		public record SearchThreadsResponse(JsonNode data) {}
+		public record SearchThreadsResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public SearchThreadsResponse {}
+		}
 
 		public record SearchPostsBody(
 			String q,
@@ -1219,7 +1613,10 @@ public final class Types {
 			}
 		}
 
-		public record SearchPostsResponse(JsonNode data) {}
+		public record SearchPostsResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public SearchPostsResponse {}
+		}
 
 		public record SearchUsersBody(
 			String q
@@ -1229,7 +1626,10 @@ public final class Types {
 			}
 		}
 
-		public record SearchUsersResponse(JsonNode data) {}
+		public record SearchUsersResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public SearchUsersResponse {}
+		}
 
 		public record SearchProfilePostsBody(
 			String q,
@@ -1242,7 +1642,10 @@ public final class Types {
 			}
 		}
 
-		public record SearchProfilePostsResponse(JsonNode data) {}
+		public record SearchProfilePostsResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public SearchProfilePostsResponse {}
+		}
 
 		public record SearchTaggedBody(
 			String tag,
@@ -1255,7 +1658,10 @@ public final class Types {
 			}
 		}
 
-		public record SearchTaggedResponse(JsonNode data) {}
+		public record SearchTaggedResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public SearchTaggedResponse {}
+		}
 
 		public record SearchResultsParams(
 			Integer page,
@@ -1266,7 +1672,10 @@ public final class Types {
 			}
 		}
 
-		public record SearchResultsResponse(JsonNode data) {}
+		public record SearchResultsResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public SearchResultsResponse {}
+		}
 
 	}
 
@@ -1277,7 +1686,10 @@ public final class Types {
 		private BatchApiTypes() {
 		}
 
-		public record BatchExecuteResponse(JsonNode data) {}
+		public record BatchExecuteResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public BatchExecuteResponse {}
+		}
 
 	}
 
@@ -1296,7 +1708,10 @@ public final class Types {
 			}
 		}
 
-		public record ChatboxIndexResponse(JsonNode data) {}
+		public record ChatboxIndexResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ChatboxIndexResponse {}
+		}
 
 		public record ChatboxGetMessagesParams(
 			@JsonProperty("room_id") JsonNode roomId,
@@ -1307,7 +1722,10 @@ public final class Types {
 			}
 		}
 
-		public record ChatboxGetMessagesResponse(JsonNode data) {}
+		public record ChatboxGetMessagesResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ChatboxGetMessagesResponse {}
+		}
 
 		public record ChatboxPostMessageBody(
 			@JsonProperty("room_id") JsonNode roomId,
@@ -1319,7 +1737,10 @@ public final class Types {
 			}
 		}
 
-		public record ChatboxPostMessageResponse(JsonNode data) {}
+		public record ChatboxPostMessageResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ChatboxPostMessageResponse {}
+		}
 
 		public record ChatboxEditMessageBody(
 			@JsonProperty("message_id") Integer messageId,
@@ -1327,14 +1748,20 @@ public final class Types {
 		) {
 		}
 
-		public record ChatboxEditMessageResponse(JsonNode data) {}
+		public record ChatboxEditMessageResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ChatboxEditMessageResponse {}
+		}
 
 		public record ChatboxDeleteMessageBody(
 			@JsonProperty("message_id") Integer messageId
 		) {
 		}
 
-		public record ChatboxDeleteMessageResponse(JsonNode data) {}
+		public record ChatboxDeleteMessageResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ChatboxDeleteMessageResponse {}
+		}
 
 		public record ChatboxOnlineParams(
 			@JsonProperty("room_id") JsonNode roomId
@@ -1344,7 +1771,10 @@ public final class Types {
 			}
 		}
 
-		public record ChatboxOnlineResponse(JsonNode data) {}
+		public record ChatboxOnlineResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ChatboxOnlineResponse {}
+		}
 
 		public record ChatboxReportReasonsParams(
 			@JsonProperty("message_id") Integer messageId
@@ -1354,7 +1784,10 @@ public final class Types {
 			}
 		}
 
-		public record ChatboxReportReasonsResponse(JsonNode data) {}
+		public record ChatboxReportReasonsResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ChatboxReportReasonsResponse {}
+		}
 
 		public record ChatboxReportBody(
 			@JsonProperty("message_id") Integer messageId,
@@ -1362,7 +1795,10 @@ public final class Types {
 		) {
 		}
 
-		public record ChatboxReportResponse(JsonNode data) {}
+		public record ChatboxReportResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ChatboxReportResponse {}
+		}
 
 		public record ChatboxGetLeaderboardParams(
 			String duration
@@ -1372,23 +1808,35 @@ public final class Types {
 			}
 		}
 
-		public record ChatboxGetLeaderboardResponse(JsonNode data) {}
+		public record ChatboxGetLeaderboardResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ChatboxGetLeaderboardResponse {}
+		}
 
-		public record ChatboxGetIgnoreResponse(JsonNode data) {}
+		public record ChatboxGetIgnoreResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ChatboxGetIgnoreResponse {}
+		}
 
 		public record ChatboxPostIgnoreBody(
 			@JsonProperty("user_id") JsonNode userId
 		) {
 		}
 
-		public record ChatboxPostIgnoreResponse(JsonNode data) {}
+		public record ChatboxPostIgnoreResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ChatboxPostIgnoreResponse {}
+		}
 
 		public record ChatboxDeleteIgnoreBody(
 			@JsonProperty("user_id") JsonNode userId
 		) {
 		}
 
-		public record ChatboxDeleteIgnoreResponse(JsonNode data) {}
+		public record ChatboxDeleteIgnoreResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public ChatboxDeleteIgnoreResponse {}
+		}
 
 	}
 
@@ -1407,7 +1855,10 @@ public final class Types {
 			}
 		}
 
-		public record FormsListResponse(JsonNode data) {}
+		public record FormsListResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public FormsListResponse {}
+		}
 
 		public record FormsCreateBody(
 			@JsonProperty("form_id") String formId,
@@ -1418,7 +1869,10 @@ public final class Types {
 			}
 		}
 
-		public record FormsCreateResponse(JsonNode data) {}
+		public record FormsCreateResponse(JsonNode data) {
+			@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+			public FormsCreateResponse {}
+		}
 
 	}
 

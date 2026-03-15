@@ -190,6 +190,17 @@ final class Transforms {
 		};
 	}
 
+	/** Map intermediate type string to a native Java type suitable for path parameters. */
+	static String toJavaPathParamType(String tsType) {
+		return switch (tsType) {
+			case "integer" -> "long";
+			case "string" -> "String";
+			case "number" -> "double";
+			case "boolean" -> "boolean";
+			default -> "String";
+		};
+	}
+
 	/** Map intermediate type string to Java type. */
 	static String toJavaType(String tsType) {
 		// Union types
