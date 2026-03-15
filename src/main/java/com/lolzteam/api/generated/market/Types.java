@@ -46,6 +46,8 @@ public final class Types {
 			}
 		}
 
+		public record CategoryAllResponse(JsonNode data) {}
+
 		public record CategorySteamParams(
 			Integer page,
 			Integer pmin,
@@ -172,6 +174,8 @@ public final class Types {
 			}
 		}
 
+		public record CategorySteamResponse(JsonNode data) {}
+
 		public record CategoryFortniteParams(
 			Integer page,
 			Integer pmin,
@@ -253,6 +257,8 @@ public final class Types {
 				this(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
 			}
 		}
+
+		public record CategoryFortniteResponse(JsonNode data) {}
 
 		public record CategoryMihoyoParams(
 			Integer page,
@@ -343,6 +349,8 @@ public final class Types {
 			}
 		}
 
+		public record CategoryMihoyoResponse(JsonNode data) {}
+
 		public record CategoryRiotParams(
 			Integer page,
 			Integer pmin,
@@ -428,6 +436,8 @@ public final class Types {
 			}
 		}
 
+		public record CategoryRiotResponse(JsonNode data) {}
+
 		public record CategoryTelegramParams(
 			Integer page,
 			Integer pmin,
@@ -501,6 +511,8 @@ public final class Types {
 				this(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
 			}
 		}
+
+		public record CategoryTelegramResponse(JsonNode data) {}
 
 		public record CategorySupercellParams(
 			Integer page,
@@ -581,6 +593,8 @@ public final class Types {
 			}
 		}
 
+		public record CategorySupercellResponse(JsonNode data) {}
+
 		public record CategoryEaParams(
 			Integer page,
 			Integer pmin,
@@ -629,6 +643,8 @@ public final class Types {
 				this(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
 			}
 		}
+
+		public record CategoryEaResponse(JsonNode data) {}
 
 		public record CategoryWotParams(
 			Integer page,
@@ -693,6 +709,8 @@ public final class Types {
 			}
 		}
 
+		public record CategoryWotResponse(JsonNode data) {}
+
 		public record CategoryWotBlitzParams(
 			Integer page,
 			Integer pmin,
@@ -756,6 +774,8 @@ public final class Types {
 			}
 		}
 
+		public record CategoryWotBlitzResponse(JsonNode data) {}
+
 		public record CategoryGiftsParams(
 			Integer page,
 			Integer pmin,
@@ -786,6 +806,8 @@ public final class Types {
 				this(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
 			}
 		}
+
+		public record CategoryGiftsResponse(JsonNode data) {}
 
 		public record CategoryEpicGamesParams(
 			Integer page,
@@ -832,6 +854,8 @@ public final class Types {
 			}
 		}
 
+		public record CategoryEpicGamesResponse(JsonNode data) {}
+
 		public record CategoryEscapeFromTarkovParams(
 			Integer page,
 			Integer pmin,
@@ -870,6 +894,8 @@ public final class Types {
 			}
 		}
 
+		public record CategoryEscapeFromTarkovResponse(JsonNode data) {}
+
 		public record CategorySocialClubParams(
 			Integer page,
 			Integer pmin,
@@ -905,6 +931,8 @@ public final class Types {
 				this(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
 			}
 		}
+
+		public record CategorySocialClubResponse(JsonNode data) {}
 
 		public record CategoryUplayParams(
 			Integer page,
@@ -963,6 +991,8 @@ public final class Types {
 				this(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
 			}
 		}
+
+		public record CategoryUplayResponse(JsonNode data) {}
 
 		public record CategoryDiscordParams(
 			Integer page,
@@ -1032,6 +1062,8 @@ public final class Types {
 			}
 		}
 
+		public record CategoryDiscordResponse(JsonNode data) {}
+
 		public record CategoryTikTokParams(
 			Integer page,
 			Integer pmin,
@@ -1076,6 +1108,8 @@ public final class Types {
 			}
 		}
 
+		public record CategoryTikTokResponse(JsonNode data) {}
+
 		public record CategoryInstagramParams(
 			Integer page,
 			Integer pmin,
@@ -1116,6 +1150,8 @@ public final class Types {
 				this(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
 			}
 		}
+
+		public record CategoryInstagramResponse(JsonNode data) {}
 
 		public record CategoryBattleNetParams(
 			Integer page,
@@ -1160,6 +1196,8 @@ public final class Types {
 			}
 		}
 
+		public record CategoryBattleNetResponse(JsonNode data) {}
+
 		public record CategoryChatGPTParams(
 			Integer page,
 			Integer pmin,
@@ -1201,6 +1239,8 @@ public final class Types {
 			}
 		}
 
+		public record CategoryChatGPTResponse(JsonNode data) {}
+
 		public record CategoryVpnParams(
 			Integer page,
 			Integer pmin,
@@ -1232,6 +1272,8 @@ public final class Types {
 				this(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
 			}
 		}
+
+		public record CategoryVpnResponse(JsonNode data) {}
 
 		public record CategoryRobloxParams(
 			Integer page,
@@ -1298,6 +1340,8 @@ public final class Types {
 			}
 		}
 
+		public record CategoryRobloxResponse(JsonNode data) {}
+
 		public record CategoryWarfaceParams(
 			Integer page,
 			Integer pmin,
@@ -1335,6 +1379,8 @@ public final class Types {
 				this(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
 			}
 		}
+
+		public record CategoryWarfaceResponse(JsonNode data) {}
 
 		public record CategoryMinecraftParams(
 			Integer page,
@@ -1399,6 +1445,8 @@ public final class Types {
 			}
 		}
 
+		public record CategoryMinecraftResponse(JsonNode data) {}
+
 		public record CategoryHytaleParams(
 			Integer page,
 			Integer pmin,
@@ -1430,6 +1478,8 @@ public final class Types {
 			}
 		}
 
+		public record CategoryHytaleResponse(JsonNode data) {}
+
 		public record CategoryListParams(
 			@JsonProperty("top_queries") Boolean topQueries
 		) {
@@ -1437,6 +1487,12 @@ public final class Types {
 				this(null);
 			}
 		}
+
+		public record CategoryListResponse(JsonNode data) {}
+
+		public record CategoryParamsResponse(JsonNode data) {}
+
+		public record CategoryGamesResponse(JsonNode data) {}
 
 	}
 
@@ -1480,6 +1536,8 @@ public final class Types {
 			}
 		}
 
+		public record ListUserResponse(JsonNode data) {}
+
 		public record ListOrdersParams(
 			@JsonProperty("user_id") Integer userId,
 			@JsonProperty("category_id") JsonNode categoryId,
@@ -1502,6 +1560,8 @@ public final class Types {
 			}
 		}
 
+		public record ListOrdersResponse(JsonNode data) {}
+
 		public record ListStatesParams(
 			@JsonProperty("user_id") JsonNode userId
 		) {
@@ -1509,6 +1569,8 @@ public final class Types {
 				this(null);
 			}
 		}
+
+		public record ListStatesResponse(JsonNode data) {}
 
 		public record ListDownloadParams(
 			String format,
@@ -1543,6 +1605,8 @@ public final class Types {
 			}
 		}
 
+		public record ListDownloadResponse(JsonNode data) {}
+
 		public record ListFavoritesParams(
 			Integer page,
 			String show,
@@ -1561,6 +1625,8 @@ public final class Types {
 				this(null, null, null, null, null, null, null, null, null, null, null, null);
 			}
 		}
+
+		public record ListFavoritesResponse(JsonNode data) {}
 
 		public record ListViewedParams(
 			Integer page,
@@ -1581,6 +1647,8 @@ public final class Types {
 			}
 		}
 
+		public record ListViewedResponse(JsonNode data) {}
+
 	}
 
 	// ─── ManagingApi Types ────────────────────────────────────────
@@ -1598,16 +1666,22 @@ public final class Types {
 			}
 		}
 
+		public record ManagingGetResponse(JsonNode data) {}
+
 		public record ManagingDeleteBody(
 			String reason
 		) {
 		}
+
+		public record ManagingDeleteResponse(JsonNode data) {}
 
 		public record ManagingCreateClaimBody(
 			@JsonProperty("item_id") Integer itemId,
 			@JsonProperty("post_body") String postBody
 		) {
 		}
+
+		public record ManagingCreateClaimResponse(JsonNode data) {}
 
 		public record ManagingBulkGetBody(
 			@JsonProperty("item_id") List<Integer> itemId,
@@ -1618,6 +1692,8 @@ public final class Types {
 			}
 		}
 
+		public record ManagingBulkGetResponse(JsonNode data) {}
+
 		public record ManagingSteamInventoryValueParams(
 			@JsonProperty("app_id") JsonNode appId,
 			String currency,
@@ -1627,6 +1703,8 @@ public final class Types {
 				this(null, null, null);
 			}
 		}
+
+		public record ManagingSteamInventoryValueResponse(JsonNode data) {}
 
 		public record ManagingSteamValueParams(
 			String link,
@@ -1639,6 +1717,8 @@ public final class Types {
 			}
 		}
 
+		public record ManagingSteamValueResponse(JsonNode data) {}
+
 		public record ManagingSteamPreviewParams(
 			String type
 		) {
@@ -1646,6 +1726,8 @@ public final class Types {
 				this(null);
 			}
 		}
+
+		public record ManagingSteamPreviewResponse(JsonNode data) {}
 
 		public record ManagingEditBody(
 			String title,
@@ -1665,6 +1747,12 @@ public final class Types {
 			}
 		}
 
+		public record ManagingEditResponse(JsonNode data) {}
+
+		public record ManagingAIPriceResponse(JsonNode data) {}
+
+		public record ManagingAutoBuyPriceResponse(JsonNode data) {}
+
 		public record ManagingNoteBody(
 			String text
 		) {
@@ -1672,6 +1760,8 @@ public final class Types {
 				this(null);
 			}
 		}
+
+		public record ManagingNoteResponse(JsonNode data) {}
 
 		public record ManagingSteamUpdateValueBody(
 			Boolean all,
@@ -1683,10 +1773,22 @@ public final class Types {
 			}
 		}
 
+		public record ManagingSteamUpdateValueResponse(JsonNode data) {}
+
+		public record ManagingBumpResponse(JsonNode data) {}
+
 		public record ManagingAutoBumpBody(
 			Integer hour
 		) {
 		}
+
+		public record ManagingAutoBumpResponse(JsonNode data) {}
+
+		public record ManagingAutoBumpDisableResponse(JsonNode data) {}
+
+		public record ManagingOpenResponse(JsonNode data) {}
+
+		public record ManagingCloseResponse(JsonNode data) {}
 
 		public record ManagingImageParams(
 			String type
@@ -1695,6 +1797,10 @@ public final class Types {
 				this(null);
 			}
 		}
+
+		public record ManagingImageResponse(JsonNode data) {}
+
+		public record ManagingEmailCodeResponse(JsonNode data) {}
 
 		public record ManagingGetLetters2Params(
 			@JsonProperty("email_password") String emailPassword,
@@ -1707,6 +1813,16 @@ public final class Types {
 			}
 		}
 
+		public record ManagingGetLetters2Response(JsonNode data) {}
+
+		public record ManagingSteamGetMafileResponse(JsonNode data) {}
+
+		public record ManagingSteamAddMafileResponse(JsonNode data) {}
+
+		public record ManagingSteamRemoveMafileResponse(JsonNode data) {}
+
+		public record ManagingSteamMafileCodeResponse(JsonNode data) {}
+
 		public record ManagingSteamSDABody(
 			Integer id,
 			Integer nonce
@@ -1716,10 +1832,22 @@ public final class Types {
 			}
 		}
 
+		public record ManagingSteamSDAResponse(JsonNode data) {}
+
+		public record ManagingTelegramCodeResponse(JsonNode data) {}
+
+		public record ManagingTelegramResetAuthResponse(JsonNode data) {}
+
+		public record ManagingRefuseGuaranteeResponse(JsonNode data) {}
+
 		public record ManagingDeclineVideoRecordingBody(
 			@JsonProperty("i_voluntarily_and_with_full_awareness_of_my_actions_waive_any_claims_regarding_this_item") Boolean iVoluntarilyAndWithFullAwarenessOfMyActionsWaiveAnyClaimsRegardingThisItem
 		) {
 		}
+
+		public record ManagingDeclineVideoRecordingResponse(JsonNode data) {}
+
+		public record ManagingCheckGuaranteeResponse(JsonNode data) {}
 
 		public record ManagingChangePasswordBody(
 			@JsonProperty("_cancel") String Cancel
@@ -1729,31 +1857,53 @@ public final class Types {
 			}
 		}
 
+		public record ManagingChangePasswordResponse(JsonNode data) {}
+
+		public record ManagingTempEmailPasswordResponse(JsonNode data) {}
+
 		public record ManagingTagBody(
 			@JsonProperty("tag_id") Integer tagId
 		) {
 		}
+
+		public record ManagingTagResponse(JsonNode data) {}
 
 		public record ManagingUntagBody(
 			@JsonProperty("tag_id") Integer tagId
 		) {
 		}
 
+		public record ManagingUntagResponse(JsonNode data) {}
+
 		public record ManagingPublicTagBody(
 			@JsonProperty("tag_id") Integer tagId
 		) {
 		}
+
+		public record ManagingPublicTagResponse(JsonNode data) {}
 
 		public record ManagingPublicUntagBody(
 			@JsonProperty("tag_id") Integer tagId
 		) {
 		}
 
+		public record ManagingPublicUntagResponse(JsonNode data) {}
+
+		public record ManagingFavoriteResponse(JsonNode data) {}
+
+		public record ManagingUnfavoriteResponse(JsonNode data) {}
+
+		public record ManagingStickResponse(JsonNode data) {}
+
+		public record ManagingUnstickResponse(JsonNode data) {}
+
 		public record ManagingTransferBody(
 			String username,
 			@JsonProperty("secret_answer") String secretAnswer
 		) {
 		}
+
+		public record ManagingTransferResponse(JsonNode data) {}
 
 	}
 
@@ -1773,6 +1923,8 @@ public final class Types {
 			}
 		}
 
+		public record ProfileClaimsResponse(JsonNode data) {}
+
 		public record ProfileGetParams(
 			@JsonProperty("fields_include") JsonNode fieldsInclude
 		) {
@@ -1780,6 +1932,8 @@ public final class Types {
 				this(null);
 			}
 		}
+
+		public record ProfileGetResponse(JsonNode data) {}
 
 		public record ProfileEditBody(
 			JsonNode user,
@@ -1799,6 +1953,8 @@ public final class Types {
 				this(null, null, null, null, null, null, null, null, null, null, null, null);
 			}
 		}
+
+		public record ProfileEditResponse(JsonNode data) {}
 
 	}
 
@@ -1838,10 +1994,14 @@ public final class Types {
 			}
 		}
 
+		public record CartGetResponse(JsonNode data) {}
+
 		public record CartAddBody(
 			@JsonProperty("item_id") Integer itemId
 		) {
 		}
+
+		public record CartAddResponse(JsonNode data) {}
 
 		public record CartDeleteBody(
 			@JsonProperty("item_id") Integer itemId
@@ -1850,6 +2010,8 @@ public final class Types {
 				this(null);
 			}
 		}
+
+		public record CartDeleteResponse(JsonNode data) {}
 
 	}
 
@@ -1869,6 +2031,10 @@ public final class Types {
 			}
 		}
 
+		public record PurchasingFastBuyResponse(JsonNode data) {}
+
+		public record PurchasingCheckResponse(JsonNode data) {}
+
 		public record PurchasingConfirmBody(
 			Integer price,
 			@JsonProperty("balance_id") Integer balanceId
@@ -1877,6 +2043,8 @@ public final class Types {
 				this(null, null);
 			}
 		}
+
+		public record PurchasingConfirmResponse(JsonNode data) {}
 
 		public record PurchasingDiscountRequestBody(
 			@JsonProperty("discount_price") Double discountPrice,
@@ -1887,6 +2055,10 @@ public final class Types {
 			}
 		}
 
+		public record PurchasingDiscountRequestResponse(JsonNode data) {}
+
+		public record PurchasingDiscountCancelResponse(JsonNode data) {}
+
 	}
 
 	// ─── CustomDiscountsApi Types ────────────────────────────────────────
@@ -1895,6 +2067,8 @@ public final class Types {
 
 		private CustomDiscountsApiTypes() {
 		}
+
+		public record CustomDiscountsGetResponse(JsonNode data) {}
 
 		public record CustomDiscountsCreateBody(
 			@JsonProperty("user_id") Integer userId,
@@ -1909,6 +2083,8 @@ public final class Types {
 			}
 		}
 
+		public record CustomDiscountsCreateResponse(JsonNode data) {}
+
 		public record CustomDiscountsEditBody(
 			@JsonProperty("discount_id") Integer discountId,
 			@JsonProperty("discount_percent") Double discountPercent,
@@ -1920,10 +2096,14 @@ public final class Types {
 			}
 		}
 
+		public record CustomDiscountsEditResponse(JsonNode data) {}
+
 		public record CustomDiscountsDeleteBody(
 			@JsonProperty("discount_id") Integer discountId
 		) {
 		}
+
+		public record CustomDiscountsDeleteResponse(JsonNode data) {}
 
 	}
 
@@ -1960,6 +2140,8 @@ public final class Types {
 			}
 		}
 
+		public record PublishingFastSellResponse(JsonNode data) {}
+
 		public record PublishingAddBody(
 			String title,
 			@JsonProperty("title_en") String titleEn,
@@ -1984,6 +2166,8 @@ public final class Types {
 			}
 		}
 
+		public record PublishingAddResponse(JsonNode data) {}
+
 		public record PublishingCheckBody(
 			@JsonProperty("resell_item_id") Integer resellItemId,
 			@JsonProperty("random_proxy") Boolean randomProxy,
@@ -2000,6 +2184,8 @@ public final class Types {
 			}
 		}
 
+		public record PublishingCheckResponse(JsonNode data) {}
+
 		public record PublishingExternalBody(
 			String type,
 			String login,
@@ -2010,6 +2196,8 @@ public final class Types {
 				this(type, null, null, null);
 			}
 		}
+
+		public record PublishingExternalResponse(JsonNode data) {}
 
 	}
 
@@ -2028,6 +2216,8 @@ public final class Types {
 				this(null, null);
 			}
 		}
+
+		public record PaymentsInvoiceGetResponse(JsonNode data) {}
 
 		public record PaymentsInvoiceCreateBody(
 			String currency,
@@ -2048,6 +2238,8 @@ public final class Types {
 			}
 		}
 
+		public record PaymentsInvoiceCreateResponse(JsonNode data) {}
+
 		public record PaymentsInvoiceListParams(
 			Integer page,
 			String currency,
@@ -2060,12 +2252,20 @@ public final class Types {
 			}
 		}
 
+		public record PaymentsInvoiceListResponse(JsonNode data) {}
+
+		public record PaymentsCurrencyResponse(JsonNode data) {}
+
+		public record PaymentsBalanceListResponse(JsonNode data) {}
+
 		public record PaymentsBalanceExchangeBody(
 			@JsonProperty("from_balance") String fromBalance,
 			@JsonProperty("to_balance") String toBalance,
 			Integer amount
 		) {
 		}
+
+		public record PaymentsBalanceExchangeResponse(JsonNode data) {}
 
 		public record PaymentsTransferBody(
 			@JsonProperty("user_id") Integer userId,
@@ -2084,6 +2284,8 @@ public final class Types {
 			}
 		}
 
+		public record PaymentsTransferResponse(JsonNode data) {}
+
 		public record PaymentsFeeParams(
 			Double amount
 		) {
@@ -2092,10 +2294,14 @@ public final class Types {
 			}
 		}
 
+		public record PaymentsFeeResponse(JsonNode data) {}
+
 		public record PaymentsCancelBody(
 			@JsonProperty("payment_id") Integer paymentId
 		) {
 		}
+
+		public record PaymentsCancelResponse(JsonNode data) {}
 
 		public record PaymentsHistoryParams(
 			String type,
@@ -2119,6 +2325,10 @@ public final class Types {
 			}
 		}
 
+		public record PaymentsHistoryResponse(JsonNode data) {}
+
+		public record PaymentsPayoutServicesResponse(JsonNode data) {}
+
 		public record PaymentsPayoutBody(
 			@JsonProperty("payment_system") String paymentSystem,
 			String wallet,
@@ -2132,6 +2342,8 @@ public final class Types {
 			}
 		}
 
+		public record PaymentsPayoutResponse(JsonNode data) {}
+
 	}
 
 	// ─── AutoPaymentsApi Types ────────────────────────────────────────
@@ -2140,6 +2352,8 @@ public final class Types {
 
 		private AutoPaymentsApiTypes() {
 		}
+
+		public record AutoPaymentsListResponse(JsonNode data) {}
 
 		public record AutoPaymentsCreateBody(
 			@JsonProperty("secret_answer") String secretAnswer,
@@ -2154,10 +2368,14 @@ public final class Types {
 			}
 		}
 
+		public record AutoPaymentsCreateResponse(JsonNode data) {}
+
 		public record AutoPaymentsDeleteBody(
 			@JsonProperty("auto_payment_id") Integer autoPaymentId
 		) {
 		}
+
+		public record AutoPaymentsDeleteResponse(JsonNode data) {}
 
 	}
 
@@ -2167,6 +2385,8 @@ public final class Types {
 
 		private ProxyApiTypes() {
 		}
+
+		public record ProxyGetResponse(JsonNode data) {}
 
 		public record ProxyAddBody(
 			@JsonProperty("proxy_ip") String proxyIp,
@@ -2180,6 +2400,8 @@ public final class Types {
 			}
 		}
 
+		public record ProxyAddResponse(JsonNode data) {}
+
 		public record ProxyDeleteBody(
 			@JsonProperty("proxy_id") Integer proxyId,
 			@JsonProperty("delete_all") Boolean deleteAll
@@ -2188,6 +2410,8 @@ public final class Types {
 				this(null, null);
 			}
 		}
+
+		public record ProxyDeleteResponse(JsonNode data) {}
 
 	}
 
@@ -2206,10 +2430,25 @@ public final class Types {
 		) {
 		}
 
+		public record ImapCreateResponse(JsonNode data) {}
+
 		public record ImapDeleteBody(
 			String domain
 		) {
 		}
+
+		public record ImapDeleteResponse(JsonNode data) {}
+
+	}
+
+	// ─── BatchApi Types ────────────────────────────────────────
+
+	public static final class BatchApiTypes {
+
+		private BatchApiTypes() {
+		}
+
+		public record BatchBatchResponse(JsonNode data) {}
 
 	}
 

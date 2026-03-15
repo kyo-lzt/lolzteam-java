@@ -34,7 +34,7 @@ public final class RateLimiter {
 					wait(waitMs);
 				} catch (InterruptedException e) {
 					Thread.currentThread().interrupt();
-					throw new RuntimeException("Rate limiter interrupted", e);
+					throw new NetworkException("Rate limiter interrupted", e);
 				}
 				refill();
 			}

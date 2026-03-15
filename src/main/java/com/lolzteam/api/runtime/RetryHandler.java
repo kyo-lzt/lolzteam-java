@@ -36,27 +36,25 @@ public final class RetryHandler {
 			} catch (Exception e) {
 				lastError = e;
 				if (!isRetryable(e) || attempt == config.maxRetries()) {
-					if (e instanceof RuntimeException re) {
-						throw re;
-					}
-					throw new RuntimeException(e);
+					break;
 				}
 				long delayMs = computeDelay(attempt, config, e);
-				if (onRetry != null && e instanceof LolzteamException le) {
-					onRetry.accept(new RetryInfo(attempt + 1, Duration.ofMillis(delayMs), le, method, path));
+				if (onRetry != null) {
+					var error = e instanceof LolzteamException le ? le : new NetworkException(e);
+					onRetry.accept(new RetryInfo(attempt + 1, Duration.ofMillis(delayMs), error, method, path));
 				}
 				try {
 					Thread.sleep(delayMs);
 				} catch (InterruptedException ie) {
 					Thread.currentThread().interrupt();
-					throw new RuntimeException("Retry interrupted", ie);
+					throw new NetworkException(ie);
 				}
 			}
 		}
-		if (lastError instanceof RuntimeException re) {
-			throw re;
+		if (lastError instanceof LolzteamException le) {
+			throw le;
 		}
-		throw new RuntimeException(lastError);
+		throw new RetryExhaustedError(config.maxRetries() + 1, lastError);
 	}
 
 	public static <T> CompletableFuture<T> withRetryAsync(
@@ -80,11 +78,17 @@ public final class RetryHandler {
 		return block.get().exceptionallyCompose(error -> {
 			var cause = unwrap(error);
 			if (!isRetryable(cause) || attempt >= config.maxRetries()) {
-				return CompletableFuture.failedFuture(cause);
+				if (cause instanceof LolzteamException) {
+					return CompletableFuture.failedFuture(cause);
+				}
+				return CompletableFuture.failedFuture(
+					new RetryExhaustedError(attempt + 1, cause)
+				);
 			}
 			long delayMs = computeDelay(attempt, config, cause);
-			if (onRetry != null && cause instanceof LolzteamException le) {
-				onRetry.accept(new RetryInfo(attempt + 1, Duration.ofMillis(delayMs), le, method, path));
+			if (onRetry != null) {
+				var retryError = cause instanceof LolzteamException le ? le : new NetworkException(cause);
+				onRetry.accept(new RetryInfo(attempt + 1, Duration.ofMillis(delayMs), retryError, method, path));
 			}
 			var delayed = new CompletableFuture<T>();
 			SCHEDULER.schedule(

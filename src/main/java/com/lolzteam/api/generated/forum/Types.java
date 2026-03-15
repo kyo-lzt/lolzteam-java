@@ -34,6 +34,8 @@ public final class Types {
 			}
 		}
 
+		public record OAuthTokenResponse(JsonNode data) {}
+
 	}
 
 	// ─── AssetsApi Types ────────────────────────────────────────
@@ -50,6 +52,8 @@ public final class Types {
 				this(null);
 			}
 		}
+
+		public record AssetsCssResponse(JsonNode data) {}
 
 	}
 
@@ -70,6 +74,10 @@ public final class Types {
 			}
 		}
 
+		public record CategoriesListResponse(JsonNode data) {}
+
+		public record CategoriesGetResponse(JsonNode data) {}
+
 	}
 
 	// ─── ForumsApi Types ────────────────────────────────────────
@@ -89,6 +97,14 @@ public final class Types {
 			}
 		}
 
+		public record ForumsListResponse(JsonNode data) {}
+
+		public record ForumsGroupedResponse(JsonNode data) {}
+
+		public record ForumsGetResponse(JsonNode data) {}
+
+		public record ForumsFollowersResponse(JsonNode data) {}
+
 		public record ForumsFollowBody(
 			Boolean post,
 			Boolean alert,
@@ -101,6 +117,10 @@ public final class Types {
 			}
 		}
 
+		public record ForumsFollowResponse(JsonNode data) {}
+
+		public record ForumsUnfollowResponse(JsonNode data) {}
+
 		public record ForumsFollowedParams(
 			Boolean total
 		) {
@@ -108,6 +128,10 @@ public final class Types {
 				this(null);
 			}
 		}
+
+		public record ForumsFollowedResponse(JsonNode data) {}
+
+		public record ForumsGetFeedOptionsResponse(JsonNode data) {}
 
 		public record ForumsEditFeedOptionsBody(
 			@JsonProperty("node_ids") List<Integer> nodeIds,
@@ -117,6 +141,21 @@ public final class Types {
 				this(null, null);
 			}
 		}
+
+		public record ForumsEditFeedOptionsResponse(JsonNode data) {}
+
+	}
+
+	// ─── LinksApi Types ────────────────────────────────────────
+
+	public static final class LinksApiTypes {
+
+		private LinksApiTypes() {
+		}
+
+		public record LinksListResponse(JsonNode data) {}
+
+		public record LinksGetResponse(JsonNode data) {}
 
 	}
 
@@ -136,6 +175,10 @@ public final class Types {
 			}
 		}
 
+		public record PagesListResponse(JsonNode data) {}
+
+		public record PagesGetResponse(JsonNode data) {}
+
 	}
 
 	// ─── NavigationApi Types ────────────────────────────────────────
@@ -152,6 +195,8 @@ public final class Types {
 				this(null);
 			}
 		}
+
+		public record NavigationListResponse(JsonNode data) {}
 
 	}
 
@@ -187,6 +232,8 @@ public final class Types {
 			}
 		}
 
+		public record ThreadsListResponse(JsonNode data) {}
+
 		public record ThreadsCreateBody(
 			@JsonProperty("post_body") String postBody,
 			@JsonProperty("forum_id") Integer forumId,
@@ -209,6 +256,8 @@ public final class Types {
 				this(postBody, forumId, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
 			}
 		}
+
+		public record ThreadsCreateResponse(JsonNode data) {}
 
 		public record ThreadsCreateContestBody(
 			@JsonProperty("post_body") String postBody,
@@ -243,6 +292,8 @@ public final class Types {
 			}
 		}
 
+		public record ThreadsCreateContestResponse(JsonNode data) {}
+
 		public record ThreadsClaimBody(
 			@JsonProperty("as_responder") String asResponder,
 			@JsonProperty("as_is_market_deal") Boolean asIsMarketDeal,
@@ -272,6 +323,8 @@ public final class Types {
 			}
 		}
 
+		public record ThreadsClaimResponse(JsonNode data) {}
+
 		public record ThreadsGetParams(
 			@JsonProperty("fields_include") JsonNode fieldsInclude
 		) {
@@ -279,6 +332,8 @@ public final class Types {
 				this(null);
 			}
 		}
+
+		public record ThreadsGetResponse(JsonNode data) {}
 
 		public record ThreadsEditBody(
 			String title,
@@ -296,6 +351,8 @@ public final class Types {
 			}
 		}
 
+		public record ThreadsEditResponse(JsonNode data) {}
+
 		public record ThreadsDeleteBody(
 			String reason
 		) {
@@ -303,6 +360,8 @@ public final class Types {
 				this(null);
 			}
 		}
+
+		public record ThreadsDeleteResponse(JsonNode data) {}
 
 		public record ThreadsMoveBody(
 			@JsonProperty("node_id") String nodeId,
@@ -317,6 +376,18 @@ public final class Types {
 			}
 		}
 
+		public record ThreadsMoveResponse(JsonNode data) {}
+
+		public record ThreadsBumpResponse(JsonNode data) {}
+
+		public record ThreadsHideResponse(JsonNode data) {}
+
+		public record ThreadsStarResponse(JsonNode data) {}
+
+		public record ThreadsUnstarResponse(JsonNode data) {}
+
+		public record ThreadsFollowersResponse(JsonNode data) {}
+
 		public record ThreadsFollowBody(
 			Boolean email
 		) {
@@ -324,6 +395,10 @@ public final class Types {
 				this(null);
 			}
 		}
+
+		public record ThreadsFollowResponse(JsonNode data) {}
+
+		public record ThreadsUnfollowResponse(JsonNode data) {}
 
 		public record ThreadsFollowedParams(
 			Boolean total,
@@ -334,6 +409,12 @@ public final class Types {
 			}
 		}
 
+		public record ThreadsFollowedResponse(JsonNode data) {}
+
+		public record ThreadsNavigationResponse(JsonNode data) {}
+
+		public record ThreadsPollGetResponse(JsonNode data) {}
+
 		public record ThreadsPollVoteBody(
 			@JsonProperty("response_id") Integer responseId,
 			@JsonProperty("response_ids") List<Integer> responseIds
@@ -342,6 +423,8 @@ public final class Types {
 				this(null, null);
 			}
 		}
+
+		public record ThreadsPollVoteResponse(JsonNode data) {}
 
 		public record ThreadsUnreadParams(
 			Integer limit,
@@ -353,6 +436,8 @@ public final class Types {
 			}
 		}
 
+		public record ThreadsUnreadResponse(JsonNode data) {}
+
 		public record ThreadsRecentParams(
 			Integer days,
 			Integer limit,
@@ -363,6 +448,10 @@ public final class Types {
 				this(null, null, null, null);
 			}
 		}
+
+		public record ThreadsRecentResponse(JsonNode data) {}
+
+		public record ThreadsFinishResponse(JsonNode data) {}
 
 	}
 
@@ -385,6 +474,8 @@ public final class Types {
 			}
 		}
 
+		public record PostsListResponse(JsonNode data) {}
+
 		public record PostsCreateBody(
 			@JsonProperty("post_body") String postBody,
 			@JsonProperty("thread_id") Integer threadId,
@@ -395,6 +486,10 @@ public final class Types {
 			}
 		}
 
+		public record PostsCreateResponse(JsonNode data) {}
+
+		public record PostsGetResponse(JsonNode data) {}
+
 		public record PostsEditBody(
 			@JsonProperty("post_body") String postBody
 		) {
@@ -403,6 +498,8 @@ public final class Types {
 			}
 		}
 
+		public record PostsEditResponse(JsonNode data) {}
+
 		public record PostsDeleteBody(
 			String reason
 		) {
@@ -410,6 +507,8 @@ public final class Types {
 				this(null);
 			}
 		}
+
+		public record PostsDeleteResponse(JsonNode data) {}
 
 		public record PostsLikesParams(
 			Integer page,
@@ -420,10 +519,20 @@ public final class Types {
 			}
 		}
 
+		public record PostsLikesResponse(JsonNode data) {}
+
+		public record PostsLikeResponse(JsonNode data) {}
+
+		public record PostsUnlikeResponse(JsonNode data) {}
+
+		public record PostsReportReasonsResponse(JsonNode data) {}
+
 		public record PostsReportBody(
 			String message
 		) {
 		}
+
+		public record PostsReportResponse(JsonNode data) {}
 
 		public record PostsCommentsGetParams(
 			@JsonProperty("post_id") Integer postId,
@@ -435,17 +544,23 @@ public final class Types {
 			}
 		}
 
+		public record PostsCommentsGetResponse(JsonNode data) {}
+
 		public record PostsCommentsCreateBody(
 			@JsonProperty("post_id") Integer postId,
 			@JsonProperty("comment_body") String commentBody
 		) {
 		}
 
+		public record PostsCommentsCreateResponse(JsonNode data) {}
+
 		public record PostsCommentsEditBody(
 			@JsonProperty("post_comment_id") Integer postCommentId,
 			@JsonProperty("comment_body") String commentBody
 		) {
 		}
+
+		public record PostsCommentsEditResponse(JsonNode data) {}
 
 		public record PostsCommentsDeleteBody(
 			@JsonProperty("post_comment_id") Integer postCommentId,
@@ -456,11 +571,15 @@ public final class Types {
 			}
 		}
 
+		public record PostsCommentsDeleteResponse(JsonNode data) {}
+
 		public record PostsCommentsReportBody(
 			@JsonProperty("post_comment_id") Integer postCommentId,
 			String message
 		) {
 		}
+
+		public record PostsCommentsReportResponse(JsonNode data) {}
 
 	}
 
@@ -481,6 +600,10 @@ public final class Types {
 			}
 		}
 
+		public record UsersListResponse(JsonNode data) {}
+
+		public record UsersFieldsResponse(JsonNode data) {}
+
 		public record UsersFindParams(
 			String username,
 			@JsonProperty("custom_fields") JsonNode customFields,
@@ -491,6 +614,8 @@ public final class Types {
 			}
 		}
 
+		public record UsersFindResponse(JsonNode data) {}
+
 		public record UsersGetParams(
 			@JsonProperty("fields_include") JsonNode fieldsInclude
 		) {
@@ -498,6 +623,8 @@ public final class Types {
 				this(null);
 			}
 		}
+
+		public record UsersGetResponse(JsonNode data) {}
 
 		public record UsersEditBody(
 			String username,
@@ -533,6 +660,8 @@ public final class Types {
 			}
 		}
 
+		public record UsersEditResponse(JsonNode data) {}
+
 		public record UsersClaimsParams(
 			String type,
 			@JsonProperty("claim_state") String claimState
@@ -541,6 +670,8 @@ public final class Types {
 				this(null, null);
 			}
 		}
+
+		public record UsersClaimsResponse(JsonNode data) {}
 
 		public record UsersAvatarUploadBody(
 			byte[] avatar,
@@ -553,6 +684,10 @@ public final class Types {
 			}
 		}
 
+		public record UsersAvatarUploadResponse(JsonNode data) {}
+
+		public record UsersAvatarDeleteResponse(JsonNode data) {}
+
 		public record UsersAvatarCropBody(
 			Integer x,
 			Integer y,
@@ -562,6 +697,8 @@ public final class Types {
 				this(null, null, null);
 			}
 		}
+
+		public record UsersAvatarCropResponse(JsonNode data) {}
 
 		public record UsersBackgroundUploadBody(
 			byte[] background,
@@ -574,6 +711,10 @@ public final class Types {
 			}
 		}
 
+		public record UsersBackgroundUploadResponse(JsonNode data) {}
+
+		public record UsersBackgroundDeleteResponse(JsonNode data) {}
+
 		public record UsersBackgroundCropBody(
 			Integer x,
 			Integer y,
@@ -583,6 +724,8 @@ public final class Types {
 				this(null, null, null);
 			}
 		}
+
+		public record UsersBackgroundCropResponse(JsonNode data) {}
 
 		public record UsersFollowersParams(
 			String order,
@@ -594,6 +737,12 @@ public final class Types {
 			}
 		}
 
+		public record UsersFollowersResponse(JsonNode data) {}
+
+		public record UsersFollowResponse(JsonNode data) {}
+
+		public record UsersUnfollowResponse(JsonNode data) {}
+
 		public record UsersFollowingsParams(
 			String order,
 			Integer page,
@@ -603,6 +752,8 @@ public final class Types {
 				this(null, null, null);
 			}
 		}
+
+		public record UsersFollowingsResponse(JsonNode data) {}
 
 		public record UsersLikesParams(
 			@JsonProperty("node_id") Integer nodeId,
@@ -618,6 +769,8 @@ public final class Types {
 			}
 		}
 
+		public record UsersLikesResponse(JsonNode data) {}
+
 		public record UsersIgnoredParams(
 			Boolean total
 		) {
@@ -625,6 +778,10 @@ public final class Types {
 				this(null);
 			}
 		}
+
+		public record UsersIgnoredResponse(JsonNode data) {}
+
+		public record UsersIgnoreResponse(JsonNode data) {}
 
 		public record UsersIgnoreEditParams(
 			@JsonProperty("ignore_conversations") Boolean ignoreConversations,
@@ -636,6 +793,10 @@ public final class Types {
 			}
 		}
 
+		public record UsersIgnoreEditResponse(JsonNode data) {}
+
+		public record UsersUnignoreResponse(JsonNode data) {}
+
 		public record UsersContentsParams(
 			Integer page,
 			Integer limit
@@ -644,6 +805,16 @@ public final class Types {
 				this(null, null);
 			}
 		}
+
+		public record UsersContentsResponse(JsonNode data) {}
+
+		public record UsersTrophiesResponse(JsonNode data) {}
+
+		public record UsersSecretAnswerTypesResponse(JsonNode data) {}
+
+		public record UsersSaResetResponse(JsonNode data) {}
+
+		public record UsersSaCancelResetResponse(JsonNode data) {}
 
 	}
 
@@ -665,6 +836,10 @@ public final class Types {
 			}
 		}
 
+		public record ProfilePostsListResponse(JsonNode data) {}
+
+		public record ProfilePostsGetResponse(JsonNode data) {}
+
 		public record ProfilePostsEditBody(
 			@JsonProperty("post_body") String postBody,
 			@JsonProperty("disable_comments") Boolean disableComments
@@ -674,6 +849,8 @@ public final class Types {
 			}
 		}
 
+		public record ProfilePostsEditResponse(JsonNode data) {}
+
 		public record ProfilePostsDeleteParams(
 			String reason
 		) {
@@ -682,16 +859,34 @@ public final class Types {
 			}
 		}
 
+		public record ProfilePostsDeleteResponse(JsonNode data) {}
+
+		public record ProfilePostsReportReasonsResponse(JsonNode data) {}
+
 		public record ProfilePostsReportBody(
 			String message
 		) {
 		}
+
+		public record ProfilePostsReportResponse(JsonNode data) {}
 
 		public record ProfilePostsCreateBody(
 			@JsonProperty("user_id") JsonNode userId,
 			@JsonProperty("post_body") String postBody
 		) {
 		}
+
+		public record ProfilePostsCreateResponse(JsonNode data) {}
+
+		public record ProfilePostsStickResponse(JsonNode data) {}
+
+		public record ProfilePostsUnstickResponse(JsonNode data) {}
+
+		public record ProfilePostsLikesResponse(JsonNode data) {}
+
+		public record ProfilePostsLikeResponse(JsonNode data) {}
+
+		public record ProfilePostsUnlikeResponse(JsonNode data) {}
 
 		public record ProfilePostsCommentsListParams(
 			@JsonProperty("profile_post_id") Integer profilePostId,
@@ -703,11 +898,15 @@ public final class Types {
 			}
 		}
 
+		public record ProfilePostsCommentsListResponse(JsonNode data) {}
+
 		public record ProfilePostsCommentsCreateBody(
 			@JsonProperty("profile_post_id") Integer profilePostId,
 			@JsonProperty("comment_body") String commentBody
 		) {
 		}
+
+		public record ProfilePostsCommentsCreateResponse(JsonNode data) {}
 
 		public record ProfilePostsCommentsEditBody(
 			@JsonProperty("comment_id") Integer commentId,
@@ -715,15 +914,23 @@ public final class Types {
 		) {
 		}
 
+		public record ProfilePostsCommentsEditResponse(JsonNode data) {}
+
 		public record ProfilePostsCommentsDeleteBody(
 			@JsonProperty("comment_id") Integer commentId
 		) {
 		}
 
+		public record ProfilePostsCommentsDeleteResponse(JsonNode data) {}
+
+		public record ProfilePostsCommentsGetResponse(JsonNode data) {}
+
 		public record ProfilePostsCommentsReportBody(
 			String message
 		) {
 		}
+
+		public record ProfilePostsCommentsReportResponse(JsonNode data) {}
 
 	}
 
@@ -744,6 +951,8 @@ public final class Types {
 			}
 		}
 
+		public record ConversationsListResponse(JsonNode data) {}
+
 		public record ConversationsCreateBody(
 			@JsonProperty("recipient_id") Integer recipientId,
 			List<String> recipients,
@@ -760,6 +969,8 @@ public final class Types {
 			}
 		}
 
+		public record ConversationsCreateResponse(JsonNode data) {}
+
 		public record ConversationsUpdateBody(
 			@JsonProperty("conversation_id") Integer conversationId,
 			String title,
@@ -774,21 +985,31 @@ public final class Types {
 			}
 		}
 
+		public record ConversationsUpdateResponse(JsonNode data) {}
+
 		public record ConversationsDeleteBody(
 			@JsonProperty("conversation_id") Integer conversationId,
 			@JsonProperty("delete_type") String deleteType
 		) {
 		}
 
+		public record ConversationsDeleteResponse(JsonNode data) {}
+
 		public record ConversationsStartBody(
 			@JsonProperty("user_id") JsonNode userId
 		) {
 		}
 
+		public record ConversationsStartResponse(JsonNode data) {}
+
 		public record ConversationsSaveBody(
 			String link
 		) {
 		}
+
+		public record ConversationsSaveResponse(JsonNode data) {}
+
+		public record ConversationsGetResponse(JsonNode data) {}
 
 		public record ConversationsMessagesListParams(
 			Integer page,
@@ -802,6 +1023,8 @@ public final class Types {
 			}
 		}
 
+		public record ConversationsMessagesListResponse(JsonNode data) {}
+
 		public record ConversationsMessagesCreateBody(
 			@JsonProperty("reply_message_id") Integer replyMessageId,
 			@JsonProperty("message_body") String messageBody
@@ -810,6 +1033,8 @@ public final class Types {
 				this(null, messageBody);
 			}
 		}
+
+		public record ConversationsMessagesCreateResponse(JsonNode data) {}
 
 		public record ConversationsSearchBody(
 			String q,
@@ -821,20 +1046,48 @@ public final class Types {
 			}
 		}
 
+		public record ConversationsSearchResponse(JsonNode data) {}
+
+		public record ConversationsMessagesGetResponse(JsonNode data) {}
+
 		public record ConversationsMessagesEditBody(
 			@JsonProperty("message_body") String messageBody
 		) {
 		}
+
+		public record ConversationsMessagesEditResponse(JsonNode data) {}
+
+		public record ConversationsMessagesDeleteResponse(JsonNode data) {}
 
 		public record ConversationsInviteBody(
 			List<String> recipients
 		) {
 		}
 
+		public record ConversationsInviteResponse(JsonNode data) {}
+
 		public record ConversationsKickBody(
 			@JsonProperty("user_id") Integer userId
 		) {
 		}
+
+		public record ConversationsKickResponse(JsonNode data) {}
+
+		public record ConversationsReadResponse(JsonNode data) {}
+
+		public record ConversationsReadAllResponse(JsonNode data) {}
+
+		public record ConversationsMessagesStickResponse(JsonNode data) {}
+
+		public record ConversationsMessagesUnstickResponse(JsonNode data) {}
+
+		public record ConversationsStarResponse(JsonNode data) {}
+
+		public record ConversationsUnstarResponse(JsonNode data) {}
+
+		public record ConversationsAlertsEnableResponse(JsonNode data) {}
+
+		public record ConversationsAlertsDisableResponse(JsonNode data) {}
 
 	}
 
@@ -855,6 +1108,10 @@ public final class Types {
 			}
 		}
 
+		public record NotificationsListResponse(JsonNode data) {}
+
+		public record NotificationsGetResponse(JsonNode data) {}
+
 		public record NotificationsReadBody(
 			@JsonProperty("notification_id") Integer notificationId
 		) {
@@ -862,6 +1119,8 @@ public final class Types {
 				this(null);
 			}
 		}
+
+		public record NotificationsReadResponse(JsonNode data) {}
 
 	}
 
@@ -872,6 +1131,8 @@ public final class Types {
 		private TagsApiTypes() {
 		}
 
+		public record TagsPopularResponse(JsonNode data) {}
+
 		public record TagsListParams(
 			Integer page,
 			Integer limit
@@ -880,6 +1141,8 @@ public final class Types {
 				this(null, null);
 			}
 		}
+
+		public record TagsListResponse(JsonNode data) {}
 
 		public record TagsGetParams(
 			Integer page,
@@ -890,6 +1153,8 @@ public final class Types {
 			}
 		}
 
+		public record TagsGetResponse(JsonNode data) {}
+
 		public record TagsFindParams(
 			String tag
 		) {
@@ -897,6 +1162,8 @@ public final class Types {
 				this(null);
 			}
 		}
+
+		public record TagsFindResponse(JsonNode data) {}
 
 	}
 
@@ -920,6 +1187,8 @@ public final class Types {
 			}
 		}
 
+		public record SearchAllResponse(JsonNode data) {}
+
 		public record SearchThreadsBody(
 			String q,
 			String tag,
@@ -933,6 +1202,8 @@ public final class Types {
 				this(null, null, null, null, null, null, null);
 			}
 		}
+
+		public record SearchThreadsResponse(JsonNode data) {}
 
 		public record SearchPostsBody(
 			String q,
@@ -948,6 +1219,8 @@ public final class Types {
 			}
 		}
 
+		public record SearchPostsResponse(JsonNode data) {}
+
 		public record SearchUsersBody(
 			String q
 		) {
@@ -955,6 +1228,8 @@ public final class Types {
 				this(null);
 			}
 		}
+
+		public record SearchUsersResponse(JsonNode data) {}
 
 		public record SearchProfilePostsBody(
 			String q,
@@ -967,6 +1242,8 @@ public final class Types {
 			}
 		}
 
+		public record SearchProfilePostsResponse(JsonNode data) {}
+
 		public record SearchTaggedBody(
 			String tag,
 			List<String> tags,
@@ -978,6 +1255,8 @@ public final class Types {
 			}
 		}
 
+		public record SearchTaggedResponse(JsonNode data) {}
+
 		public record SearchResultsParams(
 			Integer page,
 			Integer limit
@@ -986,6 +1265,19 @@ public final class Types {
 				this(null, null);
 			}
 		}
+
+		public record SearchResultsResponse(JsonNode data) {}
+
+	}
+
+	// ─── BatchApi Types ────────────────────────────────────────
+
+	public static final class BatchApiTypes {
+
+		private BatchApiTypes() {
+		}
+
+		public record BatchExecuteResponse(JsonNode data) {}
 
 	}
 
@@ -1004,6 +1296,8 @@ public final class Types {
 			}
 		}
 
+		public record ChatboxIndexResponse(JsonNode data) {}
+
 		public record ChatboxGetMessagesParams(
 			@JsonProperty("room_id") JsonNode roomId,
 			@JsonProperty("before_message_id") Integer beforeMessageId
@@ -1012,6 +1306,8 @@ public final class Types {
 				this(null, null);
 			}
 		}
+
+		public record ChatboxGetMessagesResponse(JsonNode data) {}
 
 		public record ChatboxPostMessageBody(
 			@JsonProperty("room_id") JsonNode roomId,
@@ -1023,16 +1319,22 @@ public final class Types {
 			}
 		}
 
+		public record ChatboxPostMessageResponse(JsonNode data) {}
+
 		public record ChatboxEditMessageBody(
 			@JsonProperty("message_id") Integer messageId,
 			String message
 		) {
 		}
 
+		public record ChatboxEditMessageResponse(JsonNode data) {}
+
 		public record ChatboxDeleteMessageBody(
 			@JsonProperty("message_id") Integer messageId
 		) {
 		}
+
+		public record ChatboxDeleteMessageResponse(JsonNode data) {}
 
 		public record ChatboxOnlineParams(
 			@JsonProperty("room_id") JsonNode roomId
@@ -1042,6 +1344,8 @@ public final class Types {
 			}
 		}
 
+		public record ChatboxOnlineResponse(JsonNode data) {}
+
 		public record ChatboxReportReasonsParams(
 			@JsonProperty("message_id") Integer messageId
 		) {
@@ -1050,11 +1354,15 @@ public final class Types {
 			}
 		}
 
+		public record ChatboxReportReasonsResponse(JsonNode data) {}
+
 		public record ChatboxReportBody(
 			@JsonProperty("message_id") Integer messageId,
 			String reason
 		) {
 		}
+
+		public record ChatboxReportResponse(JsonNode data) {}
 
 		public record ChatboxGetLeaderboardParams(
 			String duration
@@ -1064,15 +1372,23 @@ public final class Types {
 			}
 		}
 
+		public record ChatboxGetLeaderboardResponse(JsonNode data) {}
+
+		public record ChatboxGetIgnoreResponse(JsonNode data) {}
+
 		public record ChatboxPostIgnoreBody(
 			@JsonProperty("user_id") JsonNode userId
 		) {
 		}
 
+		public record ChatboxPostIgnoreResponse(JsonNode data) {}
+
 		public record ChatboxDeleteIgnoreBody(
 			@JsonProperty("user_id") JsonNode userId
 		) {
 		}
+
+		public record ChatboxDeleteIgnoreResponse(JsonNode data) {}
 
 	}
 
@@ -1091,6 +1407,8 @@ public final class Types {
 			}
 		}
 
+		public record FormsListResponse(JsonNode data) {}
+
 		public record FormsCreateBody(
 			@JsonProperty("form_id") String formId,
 			JsonNode fields
@@ -1099,6 +1417,8 @@ public final class Types {
 				this(null, null);
 			}
 		}
+
+		public record FormsCreateResponse(JsonNode data) {}
 
 	}
 

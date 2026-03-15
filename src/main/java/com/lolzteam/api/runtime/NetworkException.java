@@ -6,6 +6,10 @@ public final class NetworkException extends LolzteamException {
 		super(cause.getMessage() != null ? cause.getMessage() : "Network error", cause);
 	}
 
+	public NetworkException(String message, Throwable cause) {
+		super(message, cause);
+	}
+
 	public boolean isTransient() {
 		Throwable cause = getCause();
 		return cause instanceof java.net.http.HttpTimeoutException ||

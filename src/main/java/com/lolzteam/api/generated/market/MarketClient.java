@@ -22,8 +22,8 @@ class CategoryApi {
 		this.mapper = http.objectMapper();
 	}
 
-	public JsonNode all(Types.CategoryApiTypes.CategoryAllParams params) {
-		return http.request(new RequestOptions(
+	public Types.CategoryApiTypes.CategoryAllResponse all(Types.CategoryApiTypes.CategoryAllParams params) {
+		return new Types.CategoryApiTypes.CategoryAllResponse(http.request(new RequestOptions(
 			"GET",
 			"/",
 			params != null ? mapper.valueToTree(params) : null,
@@ -31,14 +31,14 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)));
 	}
 
-	public JsonNode all() {
+	public Types.CategoryApiTypes.CategoryAllResponse all() {
 		return all(null);
 	}
 
-	public CompletableFuture<JsonNode> allAsync(Types.CategoryApiTypes.CategoryAllParams params) {
+	public CompletableFuture<Types.CategoryApiTypes.CategoryAllResponse> allAsync(Types.CategoryApiTypes.CategoryAllParams params) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/",
@@ -47,15 +47,15 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)).thenApply(Types.CategoryApiTypes.CategoryAllResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> allAsync() {
+	public CompletableFuture<Types.CategoryApiTypes.CategoryAllResponse> allAsync() {
 		return allAsync(null);
 	}
 
-	public JsonNode steam(Types.CategoryApiTypes.CategorySteamParams params) {
-		return http.request(new RequestOptions(
+	public Types.CategoryApiTypes.CategorySteamResponse steam(Types.CategoryApiTypes.CategorySteamParams params) {
+		return new Types.CategoryApiTypes.CategorySteamResponse(http.request(new RequestOptions(
 			"GET",
 			"/steam",
 			params != null ? mapper.valueToTree(params) : null,
@@ -63,14 +63,14 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)));
 	}
 
-	public JsonNode steam() {
+	public Types.CategoryApiTypes.CategorySteamResponse steam() {
 		return steam(null);
 	}
 
-	public CompletableFuture<JsonNode> steamAsync(Types.CategoryApiTypes.CategorySteamParams params) {
+	public CompletableFuture<Types.CategoryApiTypes.CategorySteamResponse> steamAsync(Types.CategoryApiTypes.CategorySteamParams params) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/steam",
@@ -79,15 +79,15 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)).thenApply(Types.CategoryApiTypes.CategorySteamResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> steamAsync() {
+	public CompletableFuture<Types.CategoryApiTypes.CategorySteamResponse> steamAsync() {
 		return steamAsync(null);
 	}
 
-	public JsonNode fortnite(Types.CategoryApiTypes.CategoryFortniteParams params) {
-		return http.request(new RequestOptions(
+	public Types.CategoryApiTypes.CategoryFortniteResponse fortnite(Types.CategoryApiTypes.CategoryFortniteParams params) {
+		return new Types.CategoryApiTypes.CategoryFortniteResponse(http.request(new RequestOptions(
 			"GET",
 			"/fortnite",
 			params != null ? mapper.valueToTree(params) : null,
@@ -95,14 +95,14 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)));
 	}
 
-	public JsonNode fortnite() {
+	public Types.CategoryApiTypes.CategoryFortniteResponse fortnite() {
 		return fortnite(null);
 	}
 
-	public CompletableFuture<JsonNode> fortniteAsync(Types.CategoryApiTypes.CategoryFortniteParams params) {
+	public CompletableFuture<Types.CategoryApiTypes.CategoryFortniteResponse> fortniteAsync(Types.CategoryApiTypes.CategoryFortniteParams params) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/fortnite",
@@ -111,15 +111,15 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)).thenApply(Types.CategoryApiTypes.CategoryFortniteResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> fortniteAsync() {
+	public CompletableFuture<Types.CategoryApiTypes.CategoryFortniteResponse> fortniteAsync() {
 		return fortniteAsync(null);
 	}
 
-	public JsonNode mihoyo(Types.CategoryApiTypes.CategoryMihoyoParams params) {
-		return http.request(new RequestOptions(
+	public Types.CategoryApiTypes.CategoryMihoyoResponse mihoyo(Types.CategoryApiTypes.CategoryMihoyoParams params) {
+		return new Types.CategoryApiTypes.CategoryMihoyoResponse(http.request(new RequestOptions(
 			"GET",
 			"/mihoyo",
 			params != null ? mapper.valueToTree(params) : null,
@@ -127,14 +127,14 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)));
 	}
 
-	public JsonNode mihoyo() {
+	public Types.CategoryApiTypes.CategoryMihoyoResponse mihoyo() {
 		return mihoyo(null);
 	}
 
-	public CompletableFuture<JsonNode> mihoyoAsync(Types.CategoryApiTypes.CategoryMihoyoParams params) {
+	public CompletableFuture<Types.CategoryApiTypes.CategoryMihoyoResponse> mihoyoAsync(Types.CategoryApiTypes.CategoryMihoyoParams params) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/mihoyo",
@@ -143,15 +143,15 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)).thenApply(Types.CategoryApiTypes.CategoryMihoyoResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> mihoyoAsync() {
+	public CompletableFuture<Types.CategoryApiTypes.CategoryMihoyoResponse> mihoyoAsync() {
 		return mihoyoAsync(null);
 	}
 
-	public JsonNode riot(Types.CategoryApiTypes.CategoryRiotParams params) {
-		return http.request(new RequestOptions(
+	public Types.CategoryApiTypes.CategoryRiotResponse riot(Types.CategoryApiTypes.CategoryRiotParams params) {
+		return new Types.CategoryApiTypes.CategoryRiotResponse(http.request(new RequestOptions(
 			"GET",
 			"/riot",
 			params != null ? mapper.valueToTree(params) : null,
@@ -159,14 +159,14 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)));
 	}
 
-	public JsonNode riot() {
+	public Types.CategoryApiTypes.CategoryRiotResponse riot() {
 		return riot(null);
 	}
 
-	public CompletableFuture<JsonNode> riotAsync(Types.CategoryApiTypes.CategoryRiotParams params) {
+	public CompletableFuture<Types.CategoryApiTypes.CategoryRiotResponse> riotAsync(Types.CategoryApiTypes.CategoryRiotParams params) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/riot",
@@ -175,15 +175,15 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)).thenApply(Types.CategoryApiTypes.CategoryRiotResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> riotAsync() {
+	public CompletableFuture<Types.CategoryApiTypes.CategoryRiotResponse> riotAsync() {
 		return riotAsync(null);
 	}
 
-	public JsonNode telegram(Types.CategoryApiTypes.CategoryTelegramParams params) {
-		return http.request(new RequestOptions(
+	public Types.CategoryApiTypes.CategoryTelegramResponse telegram(Types.CategoryApiTypes.CategoryTelegramParams params) {
+		return new Types.CategoryApiTypes.CategoryTelegramResponse(http.request(new RequestOptions(
 			"GET",
 			"/telegram",
 			params != null ? mapper.valueToTree(params) : null,
@@ -191,14 +191,14 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)));
 	}
 
-	public JsonNode telegram() {
+	public Types.CategoryApiTypes.CategoryTelegramResponse telegram() {
 		return telegram(null);
 	}
 
-	public CompletableFuture<JsonNode> telegramAsync(Types.CategoryApiTypes.CategoryTelegramParams params) {
+	public CompletableFuture<Types.CategoryApiTypes.CategoryTelegramResponse> telegramAsync(Types.CategoryApiTypes.CategoryTelegramParams params) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/telegram",
@@ -207,15 +207,15 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)).thenApply(Types.CategoryApiTypes.CategoryTelegramResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> telegramAsync() {
+	public CompletableFuture<Types.CategoryApiTypes.CategoryTelegramResponse> telegramAsync() {
 		return telegramAsync(null);
 	}
 
-	public JsonNode supercell(Types.CategoryApiTypes.CategorySupercellParams params) {
-		return http.request(new RequestOptions(
+	public Types.CategoryApiTypes.CategorySupercellResponse supercell(Types.CategoryApiTypes.CategorySupercellParams params) {
+		return new Types.CategoryApiTypes.CategorySupercellResponse(http.request(new RequestOptions(
 			"GET",
 			"/supercell",
 			params != null ? mapper.valueToTree(params) : null,
@@ -223,14 +223,14 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)));
 	}
 
-	public JsonNode supercell() {
+	public Types.CategoryApiTypes.CategorySupercellResponse supercell() {
 		return supercell(null);
 	}
 
-	public CompletableFuture<JsonNode> supercellAsync(Types.CategoryApiTypes.CategorySupercellParams params) {
+	public CompletableFuture<Types.CategoryApiTypes.CategorySupercellResponse> supercellAsync(Types.CategoryApiTypes.CategorySupercellParams params) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/supercell",
@@ -239,15 +239,15 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)).thenApply(Types.CategoryApiTypes.CategorySupercellResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> supercellAsync() {
+	public CompletableFuture<Types.CategoryApiTypes.CategorySupercellResponse> supercellAsync() {
 		return supercellAsync(null);
 	}
 
-	public JsonNode ea(Types.CategoryApiTypes.CategoryEaParams params) {
-		return http.request(new RequestOptions(
+	public Types.CategoryApiTypes.CategoryEaResponse ea(Types.CategoryApiTypes.CategoryEaParams params) {
+		return new Types.CategoryApiTypes.CategoryEaResponse(http.request(new RequestOptions(
 			"GET",
 			"/ea",
 			params != null ? mapper.valueToTree(params) : null,
@@ -255,14 +255,14 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)));
 	}
 
-	public JsonNode ea() {
+	public Types.CategoryApiTypes.CategoryEaResponse ea() {
 		return ea(null);
 	}
 
-	public CompletableFuture<JsonNode> eaAsync(Types.CategoryApiTypes.CategoryEaParams params) {
+	public CompletableFuture<Types.CategoryApiTypes.CategoryEaResponse> eaAsync(Types.CategoryApiTypes.CategoryEaParams params) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/ea",
@@ -271,15 +271,15 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)).thenApply(Types.CategoryApiTypes.CategoryEaResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> eaAsync() {
+	public CompletableFuture<Types.CategoryApiTypes.CategoryEaResponse> eaAsync() {
 		return eaAsync(null);
 	}
 
-	public JsonNode wot(Types.CategoryApiTypes.CategoryWotParams params) {
-		return http.request(new RequestOptions(
+	public Types.CategoryApiTypes.CategoryWotResponse wot(Types.CategoryApiTypes.CategoryWotParams params) {
+		return new Types.CategoryApiTypes.CategoryWotResponse(http.request(new RequestOptions(
 			"GET",
 			"/world-of-tanks",
 			params != null ? mapper.valueToTree(params) : null,
@@ -287,14 +287,14 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)));
 	}
 
-	public JsonNode wot() {
+	public Types.CategoryApiTypes.CategoryWotResponse wot() {
 		return wot(null);
 	}
 
-	public CompletableFuture<JsonNode> wotAsync(Types.CategoryApiTypes.CategoryWotParams params) {
+	public CompletableFuture<Types.CategoryApiTypes.CategoryWotResponse> wotAsync(Types.CategoryApiTypes.CategoryWotParams params) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/world-of-tanks",
@@ -303,15 +303,15 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)).thenApply(Types.CategoryApiTypes.CategoryWotResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> wotAsync() {
+	public CompletableFuture<Types.CategoryApiTypes.CategoryWotResponse> wotAsync() {
 		return wotAsync(null);
 	}
 
-	public JsonNode wotBlitz(Types.CategoryApiTypes.CategoryWotBlitzParams params) {
-		return http.request(new RequestOptions(
+	public Types.CategoryApiTypes.CategoryWotBlitzResponse wotBlitz(Types.CategoryApiTypes.CategoryWotBlitzParams params) {
+		return new Types.CategoryApiTypes.CategoryWotBlitzResponse(http.request(new RequestOptions(
 			"GET",
 			"/wot-blitz",
 			params != null ? mapper.valueToTree(params) : null,
@@ -319,14 +319,14 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)));
 	}
 
-	public JsonNode wotBlitz() {
+	public Types.CategoryApiTypes.CategoryWotBlitzResponse wotBlitz() {
 		return wotBlitz(null);
 	}
 
-	public CompletableFuture<JsonNode> wotBlitzAsync(Types.CategoryApiTypes.CategoryWotBlitzParams params) {
+	public CompletableFuture<Types.CategoryApiTypes.CategoryWotBlitzResponse> wotBlitzAsync(Types.CategoryApiTypes.CategoryWotBlitzParams params) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/wot-blitz",
@@ -335,15 +335,15 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)).thenApply(Types.CategoryApiTypes.CategoryWotBlitzResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> wotBlitzAsync() {
+	public CompletableFuture<Types.CategoryApiTypes.CategoryWotBlitzResponse> wotBlitzAsync() {
 		return wotBlitzAsync(null);
 	}
 
-	public JsonNode gifts(Types.CategoryApiTypes.CategoryGiftsParams params) {
-		return http.request(new RequestOptions(
+	public Types.CategoryApiTypes.CategoryGiftsResponse gifts(Types.CategoryApiTypes.CategoryGiftsParams params) {
+		return new Types.CategoryApiTypes.CategoryGiftsResponse(http.request(new RequestOptions(
 			"GET",
 			"/gifts",
 			params != null ? mapper.valueToTree(params) : null,
@@ -351,14 +351,14 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)));
 	}
 
-	public JsonNode gifts() {
+	public Types.CategoryApiTypes.CategoryGiftsResponse gifts() {
 		return gifts(null);
 	}
 
-	public CompletableFuture<JsonNode> giftsAsync(Types.CategoryApiTypes.CategoryGiftsParams params) {
+	public CompletableFuture<Types.CategoryApiTypes.CategoryGiftsResponse> giftsAsync(Types.CategoryApiTypes.CategoryGiftsParams params) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/gifts",
@@ -367,15 +367,15 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)).thenApply(Types.CategoryApiTypes.CategoryGiftsResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> giftsAsync() {
+	public CompletableFuture<Types.CategoryApiTypes.CategoryGiftsResponse> giftsAsync() {
 		return giftsAsync(null);
 	}
 
-	public JsonNode epicGames(Types.CategoryApiTypes.CategoryEpicGamesParams params) {
-		return http.request(new RequestOptions(
+	public Types.CategoryApiTypes.CategoryEpicGamesResponse epicGames(Types.CategoryApiTypes.CategoryEpicGamesParams params) {
+		return new Types.CategoryApiTypes.CategoryEpicGamesResponse(http.request(new RequestOptions(
 			"GET",
 			"/epicgames",
 			params != null ? mapper.valueToTree(params) : null,
@@ -383,14 +383,14 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)));
 	}
 
-	public JsonNode epicGames() {
+	public Types.CategoryApiTypes.CategoryEpicGamesResponse epicGames() {
 		return epicGames(null);
 	}
 
-	public CompletableFuture<JsonNode> epicGamesAsync(Types.CategoryApiTypes.CategoryEpicGamesParams params) {
+	public CompletableFuture<Types.CategoryApiTypes.CategoryEpicGamesResponse> epicGamesAsync(Types.CategoryApiTypes.CategoryEpicGamesParams params) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/epicgames",
@@ -399,15 +399,15 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)).thenApply(Types.CategoryApiTypes.CategoryEpicGamesResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> epicGamesAsync() {
+	public CompletableFuture<Types.CategoryApiTypes.CategoryEpicGamesResponse> epicGamesAsync() {
 		return epicGamesAsync(null);
 	}
 
-	public JsonNode escapeFromTarkov(Types.CategoryApiTypes.CategoryEscapeFromTarkovParams params) {
-		return http.request(new RequestOptions(
+	public Types.CategoryApiTypes.CategoryEscapeFromTarkovResponse escapeFromTarkov(Types.CategoryApiTypes.CategoryEscapeFromTarkovParams params) {
+		return new Types.CategoryApiTypes.CategoryEscapeFromTarkovResponse(http.request(new RequestOptions(
 			"GET",
 			"/escape-from-tarkov",
 			params != null ? mapper.valueToTree(params) : null,
@@ -415,14 +415,14 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)));
 	}
 
-	public JsonNode escapeFromTarkov() {
+	public Types.CategoryApiTypes.CategoryEscapeFromTarkovResponse escapeFromTarkov() {
 		return escapeFromTarkov(null);
 	}
 
-	public CompletableFuture<JsonNode> escapeFromTarkovAsync(Types.CategoryApiTypes.CategoryEscapeFromTarkovParams params) {
+	public CompletableFuture<Types.CategoryApiTypes.CategoryEscapeFromTarkovResponse> escapeFromTarkovAsync(Types.CategoryApiTypes.CategoryEscapeFromTarkovParams params) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/escape-from-tarkov",
@@ -431,15 +431,15 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)).thenApply(Types.CategoryApiTypes.CategoryEscapeFromTarkovResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> escapeFromTarkovAsync() {
+	public CompletableFuture<Types.CategoryApiTypes.CategoryEscapeFromTarkovResponse> escapeFromTarkovAsync() {
 		return escapeFromTarkovAsync(null);
 	}
 
-	public JsonNode socialClub(Types.CategoryApiTypes.CategorySocialClubParams params) {
-		return http.request(new RequestOptions(
+	public Types.CategoryApiTypes.CategorySocialClubResponse socialClub(Types.CategoryApiTypes.CategorySocialClubParams params) {
+		return new Types.CategoryApiTypes.CategorySocialClubResponse(http.request(new RequestOptions(
 			"GET",
 			"/socialclub",
 			params != null ? mapper.valueToTree(params) : null,
@@ -447,14 +447,14 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)));
 	}
 
-	public JsonNode socialClub() {
+	public Types.CategoryApiTypes.CategorySocialClubResponse socialClub() {
 		return socialClub(null);
 	}
 
-	public CompletableFuture<JsonNode> socialClubAsync(Types.CategoryApiTypes.CategorySocialClubParams params) {
+	public CompletableFuture<Types.CategoryApiTypes.CategorySocialClubResponse> socialClubAsync(Types.CategoryApiTypes.CategorySocialClubParams params) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/socialclub",
@@ -463,15 +463,15 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)).thenApply(Types.CategoryApiTypes.CategorySocialClubResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> socialClubAsync() {
+	public CompletableFuture<Types.CategoryApiTypes.CategorySocialClubResponse> socialClubAsync() {
 		return socialClubAsync(null);
 	}
 
-	public JsonNode uplay(Types.CategoryApiTypes.CategoryUplayParams params) {
-		return http.request(new RequestOptions(
+	public Types.CategoryApiTypes.CategoryUplayResponse uplay(Types.CategoryApiTypes.CategoryUplayParams params) {
+		return new Types.CategoryApiTypes.CategoryUplayResponse(http.request(new RequestOptions(
 			"GET",
 			"/uplay",
 			params != null ? mapper.valueToTree(params) : null,
@@ -479,14 +479,14 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)));
 	}
 
-	public JsonNode uplay() {
+	public Types.CategoryApiTypes.CategoryUplayResponse uplay() {
 		return uplay(null);
 	}
 
-	public CompletableFuture<JsonNode> uplayAsync(Types.CategoryApiTypes.CategoryUplayParams params) {
+	public CompletableFuture<Types.CategoryApiTypes.CategoryUplayResponse> uplayAsync(Types.CategoryApiTypes.CategoryUplayParams params) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/uplay",
@@ -495,15 +495,15 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)).thenApply(Types.CategoryApiTypes.CategoryUplayResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> uplayAsync() {
+	public CompletableFuture<Types.CategoryApiTypes.CategoryUplayResponse> uplayAsync() {
 		return uplayAsync(null);
 	}
 
-	public JsonNode discord(Types.CategoryApiTypes.CategoryDiscordParams params) {
-		return http.request(new RequestOptions(
+	public Types.CategoryApiTypes.CategoryDiscordResponse discord(Types.CategoryApiTypes.CategoryDiscordParams params) {
+		return new Types.CategoryApiTypes.CategoryDiscordResponse(http.request(new RequestOptions(
 			"GET",
 			"/discord",
 			params != null ? mapper.valueToTree(params) : null,
@@ -511,14 +511,14 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)));
 	}
 
-	public JsonNode discord() {
+	public Types.CategoryApiTypes.CategoryDiscordResponse discord() {
 		return discord(null);
 	}
 
-	public CompletableFuture<JsonNode> discordAsync(Types.CategoryApiTypes.CategoryDiscordParams params) {
+	public CompletableFuture<Types.CategoryApiTypes.CategoryDiscordResponse> discordAsync(Types.CategoryApiTypes.CategoryDiscordParams params) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/discord",
@@ -527,15 +527,15 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)).thenApply(Types.CategoryApiTypes.CategoryDiscordResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> discordAsync() {
+	public CompletableFuture<Types.CategoryApiTypes.CategoryDiscordResponse> discordAsync() {
 		return discordAsync(null);
 	}
 
-	public JsonNode tikTok(Types.CategoryApiTypes.CategoryTikTokParams params) {
-		return http.request(new RequestOptions(
+	public Types.CategoryApiTypes.CategoryTikTokResponse tikTok(Types.CategoryApiTypes.CategoryTikTokParams params) {
+		return new Types.CategoryApiTypes.CategoryTikTokResponse(http.request(new RequestOptions(
 			"GET",
 			"/tiktok",
 			params != null ? mapper.valueToTree(params) : null,
@@ -543,14 +543,14 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)));
 	}
 
-	public JsonNode tikTok() {
+	public Types.CategoryApiTypes.CategoryTikTokResponse tikTok() {
 		return tikTok(null);
 	}
 
-	public CompletableFuture<JsonNode> tikTokAsync(Types.CategoryApiTypes.CategoryTikTokParams params) {
+	public CompletableFuture<Types.CategoryApiTypes.CategoryTikTokResponse> tikTokAsync(Types.CategoryApiTypes.CategoryTikTokParams params) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/tiktok",
@@ -559,15 +559,15 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)).thenApply(Types.CategoryApiTypes.CategoryTikTokResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> tikTokAsync() {
+	public CompletableFuture<Types.CategoryApiTypes.CategoryTikTokResponse> tikTokAsync() {
 		return tikTokAsync(null);
 	}
 
-	public JsonNode instagram(Types.CategoryApiTypes.CategoryInstagramParams params) {
-		return http.request(new RequestOptions(
+	public Types.CategoryApiTypes.CategoryInstagramResponse instagram(Types.CategoryApiTypes.CategoryInstagramParams params) {
+		return new Types.CategoryApiTypes.CategoryInstagramResponse(http.request(new RequestOptions(
 			"GET",
 			"/instagram",
 			params != null ? mapper.valueToTree(params) : null,
@@ -575,14 +575,14 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)));
 	}
 
-	public JsonNode instagram() {
+	public Types.CategoryApiTypes.CategoryInstagramResponse instagram() {
 		return instagram(null);
 	}
 
-	public CompletableFuture<JsonNode> instagramAsync(Types.CategoryApiTypes.CategoryInstagramParams params) {
+	public CompletableFuture<Types.CategoryApiTypes.CategoryInstagramResponse> instagramAsync(Types.CategoryApiTypes.CategoryInstagramParams params) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/instagram",
@@ -591,15 +591,15 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)).thenApply(Types.CategoryApiTypes.CategoryInstagramResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> instagramAsync() {
+	public CompletableFuture<Types.CategoryApiTypes.CategoryInstagramResponse> instagramAsync() {
 		return instagramAsync(null);
 	}
 
-	public JsonNode battleNet(Types.CategoryApiTypes.CategoryBattleNetParams params) {
-		return http.request(new RequestOptions(
+	public Types.CategoryApiTypes.CategoryBattleNetResponse battleNet(Types.CategoryApiTypes.CategoryBattleNetParams params) {
+		return new Types.CategoryApiTypes.CategoryBattleNetResponse(http.request(new RequestOptions(
 			"GET",
 			"/battlenet",
 			params != null ? mapper.valueToTree(params) : null,
@@ -607,14 +607,14 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)));
 	}
 
-	public JsonNode battleNet() {
+	public Types.CategoryApiTypes.CategoryBattleNetResponse battleNet() {
 		return battleNet(null);
 	}
 
-	public CompletableFuture<JsonNode> battleNetAsync(Types.CategoryApiTypes.CategoryBattleNetParams params) {
+	public CompletableFuture<Types.CategoryApiTypes.CategoryBattleNetResponse> battleNetAsync(Types.CategoryApiTypes.CategoryBattleNetParams params) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/battlenet",
@@ -623,15 +623,15 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)).thenApply(Types.CategoryApiTypes.CategoryBattleNetResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> battleNetAsync() {
+	public CompletableFuture<Types.CategoryApiTypes.CategoryBattleNetResponse> battleNetAsync() {
 		return battleNetAsync(null);
 	}
 
-	public JsonNode chatGPT(Types.CategoryApiTypes.CategoryChatGPTParams params) {
-		return http.request(new RequestOptions(
+	public Types.CategoryApiTypes.CategoryChatGPTResponse chatGPT(Types.CategoryApiTypes.CategoryChatGPTParams params) {
+		return new Types.CategoryApiTypes.CategoryChatGPTResponse(http.request(new RequestOptions(
 			"GET",
 			"/chatgpt",
 			params != null ? mapper.valueToTree(params) : null,
@@ -639,14 +639,14 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)));
 	}
 
-	public JsonNode chatGPT() {
+	public Types.CategoryApiTypes.CategoryChatGPTResponse chatGPT() {
 		return chatGPT(null);
 	}
 
-	public CompletableFuture<JsonNode> chatGPTAsync(Types.CategoryApiTypes.CategoryChatGPTParams params) {
+	public CompletableFuture<Types.CategoryApiTypes.CategoryChatGPTResponse> chatGPTAsync(Types.CategoryApiTypes.CategoryChatGPTParams params) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/chatgpt",
@@ -655,15 +655,15 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)).thenApply(Types.CategoryApiTypes.CategoryChatGPTResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> chatGPTAsync() {
+	public CompletableFuture<Types.CategoryApiTypes.CategoryChatGPTResponse> chatGPTAsync() {
 		return chatGPTAsync(null);
 	}
 
-	public JsonNode vpn(Types.CategoryApiTypes.CategoryVpnParams params) {
-		return http.request(new RequestOptions(
+	public Types.CategoryApiTypes.CategoryVpnResponse vpn(Types.CategoryApiTypes.CategoryVpnParams params) {
+		return new Types.CategoryApiTypes.CategoryVpnResponse(http.request(new RequestOptions(
 			"GET",
 			"/vpn",
 			params != null ? mapper.valueToTree(params) : null,
@@ -671,14 +671,14 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)));
 	}
 
-	public JsonNode vpn() {
+	public Types.CategoryApiTypes.CategoryVpnResponse vpn() {
 		return vpn(null);
 	}
 
-	public CompletableFuture<JsonNode> vpnAsync(Types.CategoryApiTypes.CategoryVpnParams params) {
+	public CompletableFuture<Types.CategoryApiTypes.CategoryVpnResponse> vpnAsync(Types.CategoryApiTypes.CategoryVpnParams params) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/vpn",
@@ -687,15 +687,15 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)).thenApply(Types.CategoryApiTypes.CategoryVpnResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> vpnAsync() {
+	public CompletableFuture<Types.CategoryApiTypes.CategoryVpnResponse> vpnAsync() {
 		return vpnAsync(null);
 	}
 
-	public JsonNode roblox(Types.CategoryApiTypes.CategoryRobloxParams params) {
-		return http.request(new RequestOptions(
+	public Types.CategoryApiTypes.CategoryRobloxResponse roblox(Types.CategoryApiTypes.CategoryRobloxParams params) {
+		return new Types.CategoryApiTypes.CategoryRobloxResponse(http.request(new RequestOptions(
 			"GET",
 			"/roblox",
 			params != null ? mapper.valueToTree(params) : null,
@@ -703,14 +703,14 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)));
 	}
 
-	public JsonNode roblox() {
+	public Types.CategoryApiTypes.CategoryRobloxResponse roblox() {
 		return roblox(null);
 	}
 
-	public CompletableFuture<JsonNode> robloxAsync(Types.CategoryApiTypes.CategoryRobloxParams params) {
+	public CompletableFuture<Types.CategoryApiTypes.CategoryRobloxResponse> robloxAsync(Types.CategoryApiTypes.CategoryRobloxParams params) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/roblox",
@@ -719,15 +719,15 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)).thenApply(Types.CategoryApiTypes.CategoryRobloxResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> robloxAsync() {
+	public CompletableFuture<Types.CategoryApiTypes.CategoryRobloxResponse> robloxAsync() {
 		return robloxAsync(null);
 	}
 
-	public JsonNode warface(Types.CategoryApiTypes.CategoryWarfaceParams params) {
-		return http.request(new RequestOptions(
+	public Types.CategoryApiTypes.CategoryWarfaceResponse warface(Types.CategoryApiTypes.CategoryWarfaceParams params) {
+		return new Types.CategoryApiTypes.CategoryWarfaceResponse(http.request(new RequestOptions(
 			"GET",
 			"/warface",
 			params != null ? mapper.valueToTree(params) : null,
@@ -735,14 +735,14 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)));
 	}
 
-	public JsonNode warface() {
+	public Types.CategoryApiTypes.CategoryWarfaceResponse warface() {
 		return warface(null);
 	}
 
-	public CompletableFuture<JsonNode> warfaceAsync(Types.CategoryApiTypes.CategoryWarfaceParams params) {
+	public CompletableFuture<Types.CategoryApiTypes.CategoryWarfaceResponse> warfaceAsync(Types.CategoryApiTypes.CategoryWarfaceParams params) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/warface",
@@ -751,15 +751,15 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)).thenApply(Types.CategoryApiTypes.CategoryWarfaceResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> warfaceAsync() {
+	public CompletableFuture<Types.CategoryApiTypes.CategoryWarfaceResponse> warfaceAsync() {
 		return warfaceAsync(null);
 	}
 
-	public JsonNode minecraft(Types.CategoryApiTypes.CategoryMinecraftParams params) {
-		return http.request(new RequestOptions(
+	public Types.CategoryApiTypes.CategoryMinecraftResponse minecraft(Types.CategoryApiTypes.CategoryMinecraftParams params) {
+		return new Types.CategoryApiTypes.CategoryMinecraftResponse(http.request(new RequestOptions(
 			"GET",
 			"/minecraft",
 			params != null ? mapper.valueToTree(params) : null,
@@ -767,14 +767,14 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)));
 	}
 
-	public JsonNode minecraft() {
+	public Types.CategoryApiTypes.CategoryMinecraftResponse minecraft() {
 		return minecraft(null);
 	}
 
-	public CompletableFuture<JsonNode> minecraftAsync(Types.CategoryApiTypes.CategoryMinecraftParams params) {
+	public CompletableFuture<Types.CategoryApiTypes.CategoryMinecraftResponse> minecraftAsync(Types.CategoryApiTypes.CategoryMinecraftParams params) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/minecraft",
@@ -783,15 +783,15 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)).thenApply(Types.CategoryApiTypes.CategoryMinecraftResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> minecraftAsync() {
+	public CompletableFuture<Types.CategoryApiTypes.CategoryMinecraftResponse> minecraftAsync() {
 		return minecraftAsync(null);
 	}
 
-	public JsonNode hytale(Types.CategoryApiTypes.CategoryHytaleParams params) {
-		return http.request(new RequestOptions(
+	public Types.CategoryApiTypes.CategoryHytaleResponse hytale(Types.CategoryApiTypes.CategoryHytaleParams params) {
+		return new Types.CategoryApiTypes.CategoryHytaleResponse(http.request(new RequestOptions(
 			"GET",
 			"/hytale",
 			params != null ? mapper.valueToTree(params) : null,
@@ -799,14 +799,14 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)));
 	}
 
-	public JsonNode hytale() {
+	public Types.CategoryApiTypes.CategoryHytaleResponse hytale() {
 		return hytale(null);
 	}
 
-	public CompletableFuture<JsonNode> hytaleAsync(Types.CategoryApiTypes.CategoryHytaleParams params) {
+	public CompletableFuture<Types.CategoryApiTypes.CategoryHytaleResponse> hytaleAsync(Types.CategoryApiTypes.CategoryHytaleParams params) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/hytale",
@@ -815,15 +815,15 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)).thenApply(Types.CategoryApiTypes.CategoryHytaleResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> hytaleAsync() {
+	public CompletableFuture<Types.CategoryApiTypes.CategoryHytaleResponse> hytaleAsync() {
 		return hytaleAsync(null);
 	}
 
-	public JsonNode list(Types.CategoryApiTypes.CategoryListParams params) {
-		return http.request(new RequestOptions(
+	public Types.CategoryApiTypes.CategoryListResponse list(Types.CategoryApiTypes.CategoryListParams params) {
+		return new Types.CategoryApiTypes.CategoryListResponse(http.request(new RequestOptions(
 			"GET",
 			"/category",
 			params != null ? mapper.valueToTree(params) : null,
@@ -831,14 +831,14 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)));
 	}
 
-	public JsonNode list() {
+	public Types.CategoryApiTypes.CategoryListResponse list() {
 		return list(null);
 	}
 
-	public CompletableFuture<JsonNode> listAsync(Types.CategoryApiTypes.CategoryListParams params) {
+	public CompletableFuture<Types.CategoryApiTypes.CategoryListResponse> listAsync(Types.CategoryApiTypes.CategoryListParams params) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/category",
@@ -847,15 +847,15 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)).thenApply(Types.CategoryApiTypes.CategoryListResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> listAsync() {
+	public CompletableFuture<Types.CategoryApiTypes.CategoryListResponse> listAsync() {
 		return listAsync(null);
 	}
 
-	public JsonNode params(String categoryName) {
-		return http.request(new RequestOptions(
+	public Types.CategoryApiTypes.CategoryParamsResponse params(String categoryName) {
+		return new Types.CategoryApiTypes.CategoryParamsResponse(http.request(new RequestOptions(
 			"GET",
 			"/" + categoryName + "/params",
 			null,
@@ -863,10 +863,10 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)));
 	}
 
-	public CompletableFuture<JsonNode> paramsAsync(String categoryName) {
+	public CompletableFuture<Types.CategoryApiTypes.CategoryParamsResponse> paramsAsync(String categoryName) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/" + categoryName + "/params",
@@ -875,11 +875,11 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)).thenApply(Types.CategoryApiTypes.CategoryParamsResponse::new);
 	}
 
-	public JsonNode games(String categoryName) {
-		return http.request(new RequestOptions(
+	public Types.CategoryApiTypes.CategoryGamesResponse games(String categoryName) {
+		return new Types.CategoryApiTypes.CategoryGamesResponse(http.request(new RequestOptions(
 			"GET",
 			"/" + categoryName + "/games",
 			null,
@@ -887,10 +887,10 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)));
 	}
 
-	public CompletableFuture<JsonNode> gamesAsync(String categoryName) {
+	public CompletableFuture<Types.CategoryApiTypes.CategoryGamesResponse> gamesAsync(String categoryName) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/" + categoryName + "/games",
@@ -899,7 +899,7 @@ class CategoryApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ true
-		));
+		)).thenApply(Types.CategoryApiTypes.CategoryGamesResponse::new);
 	}
 }
 
@@ -913,8 +913,8 @@ class ListApi {
 		this.mapper = http.objectMapper();
 	}
 
-	public JsonNode user(Types.ListApiTypes.ListUserParams params) {
-		return http.request(new RequestOptions(
+	public Types.ListApiTypes.ListUserResponse user(Types.ListApiTypes.ListUserParams params) {
+		return new Types.ListApiTypes.ListUserResponse(http.request(new RequestOptions(
 			"GET",
 			"/user/items",
 			params != null ? mapper.valueToTree(params) : null,
@@ -922,14 +922,14 @@ class ListApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode user() {
+	public Types.ListApiTypes.ListUserResponse user() {
 		return user(null);
 	}
 
-	public CompletableFuture<JsonNode> userAsync(Types.ListApiTypes.ListUserParams params) {
+	public CompletableFuture<Types.ListApiTypes.ListUserResponse> userAsync(Types.ListApiTypes.ListUserParams params) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/user/items",
@@ -938,15 +938,15 @@ class ListApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ListApiTypes.ListUserResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> userAsync() {
+	public CompletableFuture<Types.ListApiTypes.ListUserResponse> userAsync() {
 		return userAsync(null);
 	}
 
-	public JsonNode orders(Types.ListApiTypes.ListOrdersParams params) {
-		return http.request(new RequestOptions(
+	public Types.ListApiTypes.ListOrdersResponse orders(Types.ListApiTypes.ListOrdersParams params) {
+		return new Types.ListApiTypes.ListOrdersResponse(http.request(new RequestOptions(
 			"GET",
 			"/user/orders",
 			params != null ? mapper.valueToTree(params) : null,
@@ -954,14 +954,14 @@ class ListApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode orders() {
+	public Types.ListApiTypes.ListOrdersResponse orders() {
 		return orders(null);
 	}
 
-	public CompletableFuture<JsonNode> ordersAsync(Types.ListApiTypes.ListOrdersParams params) {
+	public CompletableFuture<Types.ListApiTypes.ListOrdersResponse> ordersAsync(Types.ListApiTypes.ListOrdersParams params) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/user/orders",
@@ -970,15 +970,15 @@ class ListApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ListApiTypes.ListOrdersResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> ordersAsync() {
+	public CompletableFuture<Types.ListApiTypes.ListOrdersResponse> ordersAsync() {
 		return ordersAsync(null);
 	}
 
-	public JsonNode states(Types.ListApiTypes.ListStatesParams params) {
-		return http.request(new RequestOptions(
+	public Types.ListApiTypes.ListStatesResponse states(Types.ListApiTypes.ListStatesParams params) {
+		return new Types.ListApiTypes.ListStatesResponse(http.request(new RequestOptions(
 			"GET",
 			"/user/item-states",
 			params != null ? mapper.valueToTree(params) : null,
@@ -986,14 +986,14 @@ class ListApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode states() {
+	public Types.ListApiTypes.ListStatesResponse states() {
 		return states(null);
 	}
 
-	public CompletableFuture<JsonNode> statesAsync(Types.ListApiTypes.ListStatesParams params) {
+	public CompletableFuture<Types.ListApiTypes.ListStatesResponse> statesAsync(Types.ListApiTypes.ListStatesParams params) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/user/item-states",
@@ -1002,15 +1002,15 @@ class ListApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ListApiTypes.ListStatesResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> statesAsync() {
+	public CompletableFuture<Types.ListApiTypes.ListStatesResponse> statesAsync() {
 		return statesAsync(null);
 	}
 
-	public JsonNode download(String type, Types.ListApiTypes.ListDownloadParams params) {
-		return http.request(new RequestOptions(
+	public Types.ListApiTypes.ListDownloadResponse download(String type, Types.ListApiTypes.ListDownloadParams params) {
+		return new Types.ListApiTypes.ListDownloadResponse(http.request(new RequestOptions(
 			"GET",
 			"/user/" + type + "/download",
 			params != null ? mapper.valueToTree(params) : null,
@@ -1018,14 +1018,14 @@ class ListApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode download(String type) {
+	public Types.ListApiTypes.ListDownloadResponse download(String type) {
 		return download(type, null);
 	}
 
-	public CompletableFuture<JsonNode> downloadAsync(String type, Types.ListApiTypes.ListDownloadParams params) {
+	public CompletableFuture<Types.ListApiTypes.ListDownloadResponse> downloadAsync(String type, Types.ListApiTypes.ListDownloadParams params) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/user/" + type + "/download",
@@ -1034,15 +1034,15 @@ class ListApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ListApiTypes.ListDownloadResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> downloadAsync(String type) {
+	public CompletableFuture<Types.ListApiTypes.ListDownloadResponse> downloadAsync(String type) {
 		return downloadAsync(type, null);
 	}
 
-	public JsonNode favorites(Types.ListApiTypes.ListFavoritesParams params) {
-		return http.request(new RequestOptions(
+	public Types.ListApiTypes.ListFavoritesResponse favorites(Types.ListApiTypes.ListFavoritesParams params) {
+		return new Types.ListApiTypes.ListFavoritesResponse(http.request(new RequestOptions(
 			"GET",
 			"/fave",
 			params != null ? mapper.valueToTree(params) : null,
@@ -1050,14 +1050,14 @@ class ListApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode favorites() {
+	public Types.ListApiTypes.ListFavoritesResponse favorites() {
 		return favorites(null);
 	}
 
-	public CompletableFuture<JsonNode> favoritesAsync(Types.ListApiTypes.ListFavoritesParams params) {
+	public CompletableFuture<Types.ListApiTypes.ListFavoritesResponse> favoritesAsync(Types.ListApiTypes.ListFavoritesParams params) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/fave",
@@ -1066,15 +1066,15 @@ class ListApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ListApiTypes.ListFavoritesResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> favoritesAsync() {
+	public CompletableFuture<Types.ListApiTypes.ListFavoritesResponse> favoritesAsync() {
 		return favoritesAsync(null);
 	}
 
-	public JsonNode viewed(Types.ListApiTypes.ListViewedParams params) {
-		return http.request(new RequestOptions(
+	public Types.ListApiTypes.ListViewedResponse viewed(Types.ListApiTypes.ListViewedParams params) {
+		return new Types.ListApiTypes.ListViewedResponse(http.request(new RequestOptions(
 			"GET",
 			"/viewed",
 			params != null ? mapper.valueToTree(params) : null,
@@ -1082,14 +1082,14 @@ class ListApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode viewed() {
+	public Types.ListApiTypes.ListViewedResponse viewed() {
 		return viewed(null);
 	}
 
-	public CompletableFuture<JsonNode> viewedAsync(Types.ListApiTypes.ListViewedParams params) {
+	public CompletableFuture<Types.ListApiTypes.ListViewedResponse> viewedAsync(Types.ListApiTypes.ListViewedParams params) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/viewed",
@@ -1098,10 +1098,10 @@ class ListApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ListApiTypes.ListViewedResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> viewedAsync() {
+	public CompletableFuture<Types.ListApiTypes.ListViewedResponse> viewedAsync() {
 		return viewedAsync(null);
 	}
 }
@@ -1116,8 +1116,8 @@ class ManagingApi {
 		this.mapper = http.objectMapper();
 	}
 
-	public JsonNode get(Integer itemId, Types.ManagingApiTypes.ManagingGetParams params) {
-		return http.request(new RequestOptions(
+	public Types.ManagingApiTypes.ManagingGetResponse get(Integer itemId, Types.ManagingApiTypes.ManagingGetParams params) {
+		return new Types.ManagingApiTypes.ManagingGetResponse(http.request(new RequestOptions(
 			"GET",
 			"/" + itemId,
 			params != null ? mapper.valueToTree(params) : null,
@@ -1125,14 +1125,14 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode get(Integer itemId) {
+	public Types.ManagingApiTypes.ManagingGetResponse get(Integer itemId) {
 		return get(itemId, null);
 	}
 
-	public CompletableFuture<JsonNode> getAsync(Integer itemId, Types.ManagingApiTypes.ManagingGetParams params) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingGetResponse> getAsync(Integer itemId, Types.ManagingApiTypes.ManagingGetParams params) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/" + itemId,
@@ -1141,15 +1141,15 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ManagingApiTypes.ManagingGetResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> getAsync(Integer itemId) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingGetResponse> getAsync(Integer itemId) {
 		return getAsync(itemId, null);
 	}
 
-	public JsonNode delete(Integer itemId, Types.ManagingApiTypes.ManagingDeleteBody body) {
-		return http.request(new RequestOptions(
+	public Types.ManagingApiTypes.ManagingDeleteResponse delete(Integer itemId, Types.ManagingApiTypes.ManagingDeleteBody body) {
+		return new Types.ManagingApiTypes.ManagingDeleteResponse(http.request(new RequestOptions(
 			"DELETE",
 			"/" + itemId,
 			null,
@@ -1157,14 +1157,14 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode delete(Integer itemId) {
+	public Types.ManagingApiTypes.ManagingDeleteResponse delete(Integer itemId) {
 		return delete(itemId, null);
 	}
 
-	public CompletableFuture<JsonNode> deleteAsync(Integer itemId, Types.ManagingApiTypes.ManagingDeleteBody body) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingDeleteResponse> deleteAsync(Integer itemId, Types.ManagingApiTypes.ManagingDeleteBody body) {
 		return http.requestAsync(new RequestOptions(
 			"DELETE",
 			"/" + itemId,
@@ -1173,15 +1173,15 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ManagingApiTypes.ManagingDeleteResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> deleteAsync(Integer itemId) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingDeleteResponse> deleteAsync(Integer itemId) {
 		return deleteAsync(itemId, null);
 	}
 
-	public JsonNode createClaim(Types.ManagingApiTypes.ManagingCreateClaimBody body) {
-		return http.request(new RequestOptions(
+	public Types.ManagingApiTypes.ManagingCreateClaimResponse createClaim(Types.ManagingApiTypes.ManagingCreateClaimBody body) {
+		return new Types.ManagingApiTypes.ManagingCreateClaimResponse(http.request(new RequestOptions(
 			"POST",
 			"/claims",
 			null,
@@ -1189,14 +1189,14 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode createClaim() {
+	public Types.ManagingApiTypes.ManagingCreateClaimResponse createClaim() {
 		return createClaim(null);
 	}
 
-	public CompletableFuture<JsonNode> createClaimAsync(Types.ManagingApiTypes.ManagingCreateClaimBody body) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingCreateClaimResponse> createClaimAsync(Types.ManagingApiTypes.ManagingCreateClaimBody body) {
 		return http.requestAsync(new RequestOptions(
 			"POST",
 			"/claims",
@@ -1205,15 +1205,15 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ManagingApiTypes.ManagingCreateClaimResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> createClaimAsync() {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingCreateClaimResponse> createClaimAsync() {
 		return createClaimAsync(null);
 	}
 
-	public JsonNode bulkGet(Types.ManagingApiTypes.ManagingBulkGetBody body) {
-		return http.request(new RequestOptions(
+	public Types.ManagingApiTypes.ManagingBulkGetResponse bulkGet(Types.ManagingApiTypes.ManagingBulkGetBody body) {
+		return new Types.ManagingApiTypes.ManagingBulkGetResponse(http.request(new RequestOptions(
 			"POST",
 			"/bulk/items",
 			null,
@@ -1221,10 +1221,10 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public CompletableFuture<JsonNode> bulkGetAsync(Types.ManagingApiTypes.ManagingBulkGetBody body) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingBulkGetResponse> bulkGetAsync(Types.ManagingApiTypes.ManagingBulkGetBody body) {
 		return http.requestAsync(new RequestOptions(
 			"POST",
 			"/bulk/items",
@@ -1233,11 +1233,11 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ManagingApiTypes.ManagingBulkGetResponse::new);
 	}
 
-	public JsonNode steamInventoryValue(Integer itemId, Types.ManagingApiTypes.ManagingSteamInventoryValueParams params) {
-		return http.request(new RequestOptions(
+	public Types.ManagingApiTypes.ManagingSteamInventoryValueResponse steamInventoryValue(Integer itemId, Types.ManagingApiTypes.ManagingSteamInventoryValueParams params) {
+		return new Types.ManagingApiTypes.ManagingSteamInventoryValueResponse(http.request(new RequestOptions(
 			"GET",
 			"/" + itemId + "/inventory-value",
 			params != null ? mapper.valueToTree(params) : null,
@@ -1245,14 +1245,14 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode steamInventoryValue(Integer itemId) {
+	public Types.ManagingApiTypes.ManagingSteamInventoryValueResponse steamInventoryValue(Integer itemId) {
 		return steamInventoryValue(itemId, null);
 	}
 
-	public CompletableFuture<JsonNode> steamInventoryValueAsync(Integer itemId, Types.ManagingApiTypes.ManagingSteamInventoryValueParams params) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingSteamInventoryValueResponse> steamInventoryValueAsync(Integer itemId, Types.ManagingApiTypes.ManagingSteamInventoryValueParams params) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/" + itemId + "/inventory-value",
@@ -1261,15 +1261,15 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ManagingApiTypes.ManagingSteamInventoryValueResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> steamInventoryValueAsync(Integer itemId) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingSteamInventoryValueResponse> steamInventoryValueAsync(Integer itemId) {
 		return steamInventoryValueAsync(itemId, null);
 	}
 
-	public JsonNode steamValue(Types.ManagingApiTypes.ManagingSteamValueParams params) {
-		return http.request(new RequestOptions(
+	public Types.ManagingApiTypes.ManagingSteamValueResponse steamValue(Types.ManagingApiTypes.ManagingSteamValueParams params) {
+		return new Types.ManagingApiTypes.ManagingSteamValueResponse(http.request(new RequestOptions(
 			"GET",
 			"/steam-value",
 			params != null ? mapper.valueToTree(params) : null,
@@ -1277,14 +1277,14 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode steamValue() {
+	public Types.ManagingApiTypes.ManagingSteamValueResponse steamValue() {
 		return steamValue(null);
 	}
 
-	public CompletableFuture<JsonNode> steamValueAsync(Types.ManagingApiTypes.ManagingSteamValueParams params) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingSteamValueResponse> steamValueAsync(Types.ManagingApiTypes.ManagingSteamValueParams params) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/steam-value",
@@ -1293,15 +1293,15 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ManagingApiTypes.ManagingSteamValueResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> steamValueAsync() {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingSteamValueResponse> steamValueAsync() {
 		return steamValueAsync(null);
 	}
 
-	public JsonNode steamPreview(Integer itemId, Types.ManagingApiTypes.ManagingSteamPreviewParams params) {
-		return http.request(new RequestOptions(
+	public Types.ManagingApiTypes.ManagingSteamPreviewResponse steamPreview(Integer itemId, Types.ManagingApiTypes.ManagingSteamPreviewParams params) {
+		return new Types.ManagingApiTypes.ManagingSteamPreviewResponse(http.request(new RequestOptions(
 			"GET",
 			"/" + itemId + "/steam-preview",
 			params != null ? mapper.valueToTree(params) : null,
@@ -1309,14 +1309,14 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode steamPreview(Integer itemId) {
+	public Types.ManagingApiTypes.ManagingSteamPreviewResponse steamPreview(Integer itemId) {
 		return steamPreview(itemId, null);
 	}
 
-	public CompletableFuture<JsonNode> steamPreviewAsync(Integer itemId, Types.ManagingApiTypes.ManagingSteamPreviewParams params) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingSteamPreviewResponse> steamPreviewAsync(Integer itemId, Types.ManagingApiTypes.ManagingSteamPreviewParams params) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/" + itemId + "/steam-preview",
@@ -1325,15 +1325,15 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ManagingApiTypes.ManagingSteamPreviewResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> steamPreviewAsync(Integer itemId) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingSteamPreviewResponse> steamPreviewAsync(Integer itemId) {
 		return steamPreviewAsync(itemId, null);
 	}
 
-	public JsonNode edit(Integer itemId, Types.ManagingApiTypes.ManagingEditBody body) {
-		return http.request(new RequestOptions(
+	public Types.ManagingApiTypes.ManagingEditResponse edit(Integer itemId, Types.ManagingApiTypes.ManagingEditBody body) {
+		return new Types.ManagingApiTypes.ManagingEditResponse(http.request(new RequestOptions(
 			"PUT",
 			"/" + itemId + "/edit",
 			null,
@@ -1341,14 +1341,14 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode edit(Integer itemId) {
+	public Types.ManagingApiTypes.ManagingEditResponse edit(Integer itemId) {
 		return edit(itemId, null);
 	}
 
-	public CompletableFuture<JsonNode> editAsync(Integer itemId, Types.ManagingApiTypes.ManagingEditBody body) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingEditResponse> editAsync(Integer itemId, Types.ManagingApiTypes.ManagingEditBody body) {
 		return http.requestAsync(new RequestOptions(
 			"PUT",
 			"/" + itemId + "/edit",
@@ -1357,15 +1357,15 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ManagingApiTypes.ManagingEditResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> editAsync(Integer itemId) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingEditResponse> editAsync(Integer itemId) {
 		return editAsync(itemId, null);
 	}
 
-	public JsonNode aIPrice(Integer itemId) {
-		return http.request(new RequestOptions(
+	public Types.ManagingApiTypes.ManagingAIPriceResponse aIPrice(Integer itemId) {
+		return new Types.ManagingApiTypes.ManagingAIPriceResponse(http.request(new RequestOptions(
 			"GET",
 			"/" + itemId + "/ai-price",
 			null,
@@ -1373,10 +1373,10 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public CompletableFuture<JsonNode> aIPriceAsync(Integer itemId) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingAIPriceResponse> aIPriceAsync(Integer itemId) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/" + itemId + "/ai-price",
@@ -1385,11 +1385,11 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ManagingApiTypes.ManagingAIPriceResponse::new);
 	}
 
-	public JsonNode autoBuyPrice(Integer itemId) {
-		return http.request(new RequestOptions(
+	public Types.ManagingApiTypes.ManagingAutoBuyPriceResponse autoBuyPrice(Integer itemId) {
+		return new Types.ManagingApiTypes.ManagingAutoBuyPriceResponse(http.request(new RequestOptions(
 			"GET",
 			"/" + itemId + "/auto-buy-price",
 			null,
@@ -1397,10 +1397,10 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public CompletableFuture<JsonNode> autoBuyPriceAsync(Integer itemId) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingAutoBuyPriceResponse> autoBuyPriceAsync(Integer itemId) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/" + itemId + "/auto-buy-price",
@@ -1409,11 +1409,11 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ManagingApiTypes.ManagingAutoBuyPriceResponse::new);
 	}
 
-	public JsonNode note(Integer itemId, Types.ManagingApiTypes.ManagingNoteBody body) {
-		return http.request(new RequestOptions(
+	public Types.ManagingApiTypes.ManagingNoteResponse note(Integer itemId, Types.ManagingApiTypes.ManagingNoteBody body) {
+		return new Types.ManagingApiTypes.ManagingNoteResponse(http.request(new RequestOptions(
 			"POST",
 			"/" + itemId + "/note-save",
 			null,
@@ -1421,14 +1421,14 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode note(Integer itemId) {
+	public Types.ManagingApiTypes.ManagingNoteResponse note(Integer itemId) {
 		return note(itemId, null);
 	}
 
-	public CompletableFuture<JsonNode> noteAsync(Integer itemId, Types.ManagingApiTypes.ManagingNoteBody body) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingNoteResponse> noteAsync(Integer itemId, Types.ManagingApiTypes.ManagingNoteBody body) {
 		return http.requestAsync(new RequestOptions(
 			"POST",
 			"/" + itemId + "/note-save",
@@ -1437,15 +1437,15 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ManagingApiTypes.ManagingNoteResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> noteAsync(Integer itemId) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingNoteResponse> noteAsync(Integer itemId) {
 		return noteAsync(itemId, null);
 	}
 
-	public JsonNode steamUpdateValue(Integer itemId, Types.ManagingApiTypes.ManagingSteamUpdateValueBody body) {
-		return http.request(new RequestOptions(
+	public Types.ManagingApiTypes.ManagingSteamUpdateValueResponse steamUpdateValue(Integer itemId, Types.ManagingApiTypes.ManagingSteamUpdateValueBody body) {
+		return new Types.ManagingApiTypes.ManagingSteamUpdateValueResponse(http.request(new RequestOptions(
 			"POST",
 			"/" + itemId + "/update-inventory",
 			null,
@@ -1453,14 +1453,14 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode steamUpdateValue(Integer itemId) {
+	public Types.ManagingApiTypes.ManagingSteamUpdateValueResponse steamUpdateValue(Integer itemId) {
 		return steamUpdateValue(itemId, null);
 	}
 
-	public CompletableFuture<JsonNode> steamUpdateValueAsync(Integer itemId, Types.ManagingApiTypes.ManagingSteamUpdateValueBody body) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingSteamUpdateValueResponse> steamUpdateValueAsync(Integer itemId, Types.ManagingApiTypes.ManagingSteamUpdateValueBody body) {
 		return http.requestAsync(new RequestOptions(
 			"POST",
 			"/" + itemId + "/update-inventory",
@@ -1469,15 +1469,15 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ManagingApiTypes.ManagingSteamUpdateValueResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> steamUpdateValueAsync(Integer itemId) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingSteamUpdateValueResponse> steamUpdateValueAsync(Integer itemId) {
 		return steamUpdateValueAsync(itemId, null);
 	}
 
-	public JsonNode bump(Integer itemId) {
-		return http.request(new RequestOptions(
+	public Types.ManagingApiTypes.ManagingBumpResponse bump(Integer itemId) {
+		return new Types.ManagingApiTypes.ManagingBumpResponse(http.request(new RequestOptions(
 			"POST",
 			"/" + itemId + "/bump",
 			null,
@@ -1485,10 +1485,10 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public CompletableFuture<JsonNode> bumpAsync(Integer itemId) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingBumpResponse> bumpAsync(Integer itemId) {
 		return http.requestAsync(new RequestOptions(
 			"POST",
 			"/" + itemId + "/bump",
@@ -1497,11 +1497,11 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ManagingApiTypes.ManagingBumpResponse::new);
 	}
 
-	public JsonNode autoBump(Integer itemId, Types.ManagingApiTypes.ManagingAutoBumpBody body) {
-		return http.request(new RequestOptions(
+	public Types.ManagingApiTypes.ManagingAutoBumpResponse autoBump(Integer itemId, Types.ManagingApiTypes.ManagingAutoBumpBody body) {
+		return new Types.ManagingApiTypes.ManagingAutoBumpResponse(http.request(new RequestOptions(
 			"POST",
 			"/" + itemId + "/auto-bump",
 			null,
@@ -1509,14 +1509,14 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode autoBump(Integer itemId) {
+	public Types.ManagingApiTypes.ManagingAutoBumpResponse autoBump(Integer itemId) {
 		return autoBump(itemId, null);
 	}
 
-	public CompletableFuture<JsonNode> autoBumpAsync(Integer itemId, Types.ManagingApiTypes.ManagingAutoBumpBody body) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingAutoBumpResponse> autoBumpAsync(Integer itemId, Types.ManagingApiTypes.ManagingAutoBumpBody body) {
 		return http.requestAsync(new RequestOptions(
 			"POST",
 			"/" + itemId + "/auto-bump",
@@ -1525,15 +1525,15 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ManagingApiTypes.ManagingAutoBumpResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> autoBumpAsync(Integer itemId) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingAutoBumpResponse> autoBumpAsync(Integer itemId) {
 		return autoBumpAsync(itemId, null);
 	}
 
-	public JsonNode autoBumpDisable(Integer itemId) {
-		return http.request(new RequestOptions(
+	public Types.ManagingApiTypes.ManagingAutoBumpDisableResponse autoBumpDisable(Integer itemId) {
+		return new Types.ManagingApiTypes.ManagingAutoBumpDisableResponse(http.request(new RequestOptions(
 			"DELETE",
 			"/" + itemId + "/auto-bump",
 			null,
@@ -1541,10 +1541,10 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public CompletableFuture<JsonNode> autoBumpDisableAsync(Integer itemId) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingAutoBumpDisableResponse> autoBumpDisableAsync(Integer itemId) {
 		return http.requestAsync(new RequestOptions(
 			"DELETE",
 			"/" + itemId + "/auto-bump",
@@ -1553,11 +1553,11 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ManagingApiTypes.ManagingAutoBumpDisableResponse::new);
 	}
 
-	public JsonNode open(Integer itemId) {
-		return http.request(new RequestOptions(
+	public Types.ManagingApiTypes.ManagingOpenResponse open(Integer itemId) {
+		return new Types.ManagingApiTypes.ManagingOpenResponse(http.request(new RequestOptions(
 			"POST",
 			"/" + itemId + "/open",
 			null,
@@ -1565,10 +1565,10 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public CompletableFuture<JsonNode> openAsync(Integer itemId) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingOpenResponse> openAsync(Integer itemId) {
 		return http.requestAsync(new RequestOptions(
 			"POST",
 			"/" + itemId + "/open",
@@ -1577,11 +1577,11 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ManagingApiTypes.ManagingOpenResponse::new);
 	}
 
-	public JsonNode close(Integer itemId) {
-		return http.request(new RequestOptions(
+	public Types.ManagingApiTypes.ManagingCloseResponse close(Integer itemId) {
+		return new Types.ManagingApiTypes.ManagingCloseResponse(http.request(new RequestOptions(
 			"POST",
 			"/" + itemId + "/close",
 			null,
@@ -1589,10 +1589,10 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public CompletableFuture<JsonNode> closeAsync(Integer itemId) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingCloseResponse> closeAsync(Integer itemId) {
 		return http.requestAsync(new RequestOptions(
 			"POST",
 			"/" + itemId + "/close",
@@ -1601,11 +1601,11 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ManagingApiTypes.ManagingCloseResponse::new);
 	}
 
-	public JsonNode image(Integer itemId, Types.ManagingApiTypes.ManagingImageParams params) {
-		return http.request(new RequestOptions(
+	public Types.ManagingApiTypes.ManagingImageResponse image(Integer itemId, Types.ManagingApiTypes.ManagingImageParams params) {
+		return new Types.ManagingApiTypes.ManagingImageResponse(http.request(new RequestOptions(
 			"GET",
 			"/" + itemId + "/image",
 			params != null ? mapper.valueToTree(params) : null,
@@ -1613,14 +1613,14 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode image(Integer itemId) {
+	public Types.ManagingApiTypes.ManagingImageResponse image(Integer itemId) {
 		return image(itemId, null);
 	}
 
-	public CompletableFuture<JsonNode> imageAsync(Integer itemId, Types.ManagingApiTypes.ManagingImageParams params) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingImageResponse> imageAsync(Integer itemId, Types.ManagingApiTypes.ManagingImageParams params) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/" + itemId + "/image",
@@ -1629,15 +1629,15 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ManagingApiTypes.ManagingImageResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> imageAsync(Integer itemId) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingImageResponse> imageAsync(Integer itemId) {
 		return imageAsync(itemId, null);
 	}
 
-	public JsonNode emailCode(Integer itemId) {
-		return http.request(new RequestOptions(
+	public Types.ManagingApiTypes.ManagingEmailCodeResponse emailCode(Integer itemId) {
+		return new Types.ManagingApiTypes.ManagingEmailCodeResponse(http.request(new RequestOptions(
 			"GET",
 			"/" + itemId + "/email-code",
 			null,
@@ -1645,10 +1645,10 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public CompletableFuture<JsonNode> emailCodeAsync(Integer itemId) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingEmailCodeResponse> emailCodeAsync(Integer itemId) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/" + itemId + "/email-code",
@@ -1657,11 +1657,11 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ManagingApiTypes.ManagingEmailCodeResponse::new);
 	}
 
-	public JsonNode getLetters2(Types.ManagingApiTypes.ManagingGetLetters2Params params) {
-		return http.request(new RequestOptions(
+	public Types.ManagingApiTypes.ManagingGetLetters2Response getLetters2(Types.ManagingApiTypes.ManagingGetLetters2Params params) {
+		return new Types.ManagingApiTypes.ManagingGetLetters2Response(http.request(new RequestOptions(
 			"GET",
 			"/letters2",
 			params != null ? mapper.valueToTree(params) : null,
@@ -1669,14 +1669,14 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode getLetters2() {
+	public Types.ManagingApiTypes.ManagingGetLetters2Response getLetters2() {
 		return getLetters2(null);
 	}
 
-	public CompletableFuture<JsonNode> getLetters2Async(Types.ManagingApiTypes.ManagingGetLetters2Params params) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingGetLetters2Response> getLetters2Async(Types.ManagingApiTypes.ManagingGetLetters2Params params) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/letters2",
@@ -1685,15 +1685,15 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ManagingApiTypes.ManagingGetLetters2Response::new);
 	}
 
-	public CompletableFuture<JsonNode> getLetters2Async() {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingGetLetters2Response> getLetters2Async() {
 		return getLetters2Async(null);
 	}
 
-	public JsonNode steamGetMafile(Integer itemId) {
-		return http.request(new RequestOptions(
+	public Types.ManagingApiTypes.ManagingSteamGetMafileResponse steamGetMafile(Integer itemId) {
+		return new Types.ManagingApiTypes.ManagingSteamGetMafileResponse(http.request(new RequestOptions(
 			"GET",
 			"/" + itemId + "/mafile",
 			null,
@@ -1701,10 +1701,10 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public CompletableFuture<JsonNode> steamGetMafileAsync(Integer itemId) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingSteamGetMafileResponse> steamGetMafileAsync(Integer itemId) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/" + itemId + "/mafile",
@@ -1713,11 +1713,11 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ManagingApiTypes.ManagingSteamGetMafileResponse::new);
 	}
 
-	public JsonNode steamAddMafile(Integer itemId) {
-		return http.request(new RequestOptions(
+	public Types.ManagingApiTypes.ManagingSteamAddMafileResponse steamAddMafile(Integer itemId) {
+		return new Types.ManagingApiTypes.ManagingSteamAddMafileResponse(http.request(new RequestOptions(
 			"POST",
 			"/" + itemId + "/mafile",
 			null,
@@ -1725,10 +1725,10 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public CompletableFuture<JsonNode> steamAddMafileAsync(Integer itemId) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingSteamAddMafileResponse> steamAddMafileAsync(Integer itemId) {
 		return http.requestAsync(new RequestOptions(
 			"POST",
 			"/" + itemId + "/mafile",
@@ -1737,11 +1737,11 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ManagingApiTypes.ManagingSteamAddMafileResponse::new);
 	}
 
-	public JsonNode steamRemoveMafile(Integer itemId) {
-		return http.request(new RequestOptions(
+	public Types.ManagingApiTypes.ManagingSteamRemoveMafileResponse steamRemoveMafile(Integer itemId) {
+		return new Types.ManagingApiTypes.ManagingSteamRemoveMafileResponse(http.request(new RequestOptions(
 			"DELETE",
 			"/" + itemId + "/mafile",
 			null,
@@ -1749,10 +1749,10 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public CompletableFuture<JsonNode> steamRemoveMafileAsync(Integer itemId) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingSteamRemoveMafileResponse> steamRemoveMafileAsync(Integer itemId) {
 		return http.requestAsync(new RequestOptions(
 			"DELETE",
 			"/" + itemId + "/mafile",
@@ -1761,11 +1761,11 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ManagingApiTypes.ManagingSteamRemoveMafileResponse::new);
 	}
 
-	public JsonNode steamMafileCode(Integer itemId) {
-		return http.request(new RequestOptions(
+	public Types.ManagingApiTypes.ManagingSteamMafileCodeResponse steamMafileCode(Integer itemId) {
+		return new Types.ManagingApiTypes.ManagingSteamMafileCodeResponse(http.request(new RequestOptions(
 			"GET",
 			"/" + itemId + "/guard-code",
 			null,
@@ -1773,10 +1773,10 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public CompletableFuture<JsonNode> steamMafileCodeAsync(Integer itemId) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingSteamMafileCodeResponse> steamMafileCodeAsync(Integer itemId) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/" + itemId + "/guard-code",
@@ -1785,11 +1785,11 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ManagingApiTypes.ManagingSteamMafileCodeResponse::new);
 	}
 
-	public JsonNode steamSDA(Integer itemId, Types.ManagingApiTypes.ManagingSteamSDABody body) {
-		return http.request(new RequestOptions(
+	public Types.ManagingApiTypes.ManagingSteamSDAResponse steamSDA(Integer itemId, Types.ManagingApiTypes.ManagingSteamSDABody body) {
+		return new Types.ManagingApiTypes.ManagingSteamSDAResponse(http.request(new RequestOptions(
 			"POST",
 			"/" + itemId + "/confirm-sda",
 			null,
@@ -1797,14 +1797,14 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode steamSDA(Integer itemId) {
+	public Types.ManagingApiTypes.ManagingSteamSDAResponse steamSDA(Integer itemId) {
 		return steamSDA(itemId, null);
 	}
 
-	public CompletableFuture<JsonNode> steamSDAAsync(Integer itemId, Types.ManagingApiTypes.ManagingSteamSDABody body) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingSteamSDAResponse> steamSDAAsync(Integer itemId, Types.ManagingApiTypes.ManagingSteamSDABody body) {
 		return http.requestAsync(new RequestOptions(
 			"POST",
 			"/" + itemId + "/confirm-sda",
@@ -1813,15 +1813,15 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ManagingApiTypes.ManagingSteamSDAResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> steamSDAAsync(Integer itemId) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingSteamSDAResponse> steamSDAAsync(Integer itemId) {
 		return steamSDAAsync(itemId, null);
 	}
 
-	public JsonNode telegramCode(Integer itemId) {
-		return http.request(new RequestOptions(
+	public Types.ManagingApiTypes.ManagingTelegramCodeResponse telegramCode(Integer itemId) {
+		return new Types.ManagingApiTypes.ManagingTelegramCodeResponse(http.request(new RequestOptions(
 			"GET",
 			"/" + itemId + "/telegram-login-code",
 			null,
@@ -1829,10 +1829,10 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public CompletableFuture<JsonNode> telegramCodeAsync(Integer itemId) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingTelegramCodeResponse> telegramCodeAsync(Integer itemId) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/" + itemId + "/telegram-login-code",
@@ -1841,11 +1841,11 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ManagingApiTypes.ManagingTelegramCodeResponse::new);
 	}
 
-	public JsonNode telegramResetAuth(Integer itemId) {
-		return http.request(new RequestOptions(
+	public Types.ManagingApiTypes.ManagingTelegramResetAuthResponse telegramResetAuth(Integer itemId) {
+		return new Types.ManagingApiTypes.ManagingTelegramResetAuthResponse(http.request(new RequestOptions(
 			"POST",
 			"/" + itemId + "/telegram-reset-authorizations",
 			null,
@@ -1853,10 +1853,10 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public CompletableFuture<JsonNode> telegramResetAuthAsync(Integer itemId) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingTelegramResetAuthResponse> telegramResetAuthAsync(Integer itemId) {
 		return http.requestAsync(new RequestOptions(
 			"POST",
 			"/" + itemId + "/telegram-reset-authorizations",
@@ -1865,11 +1865,11 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ManagingApiTypes.ManagingTelegramResetAuthResponse::new);
 	}
 
-	public JsonNode refuseGuarantee(Integer itemId) {
-		return http.request(new RequestOptions(
+	public Types.ManagingApiTypes.ManagingRefuseGuaranteeResponse refuseGuarantee(Integer itemId) {
+		return new Types.ManagingApiTypes.ManagingRefuseGuaranteeResponse(http.request(new RequestOptions(
 			"POST",
 			"/" + itemId + "/refuse-guarantee",
 			null,
@@ -1877,10 +1877,10 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public CompletableFuture<JsonNode> refuseGuaranteeAsync(Integer itemId) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingRefuseGuaranteeResponse> refuseGuaranteeAsync(Integer itemId) {
 		return http.requestAsync(new RequestOptions(
 			"POST",
 			"/" + itemId + "/refuse-guarantee",
@@ -1889,11 +1889,11 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ManagingApiTypes.ManagingRefuseGuaranteeResponse::new);
 	}
 
-	public JsonNode declineVideoRecording(Integer itemId, Types.ManagingApiTypes.ManagingDeclineVideoRecordingBody body) {
-		return http.request(new RequestOptions(
+	public Types.ManagingApiTypes.ManagingDeclineVideoRecordingResponse declineVideoRecording(Integer itemId, Types.ManagingApiTypes.ManagingDeclineVideoRecordingBody body) {
+		return new Types.ManagingApiTypes.ManagingDeclineVideoRecordingResponse(http.request(new RequestOptions(
 			"POST",
 			"/" + itemId + "/decline-video-recording",
 			null,
@@ -1901,14 +1901,14 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode declineVideoRecording(Integer itemId) {
+	public Types.ManagingApiTypes.ManagingDeclineVideoRecordingResponse declineVideoRecording(Integer itemId) {
 		return declineVideoRecording(itemId, null);
 	}
 
-	public CompletableFuture<JsonNode> declineVideoRecordingAsync(Integer itemId, Types.ManagingApiTypes.ManagingDeclineVideoRecordingBody body) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingDeclineVideoRecordingResponse> declineVideoRecordingAsync(Integer itemId, Types.ManagingApiTypes.ManagingDeclineVideoRecordingBody body) {
 		return http.requestAsync(new RequestOptions(
 			"POST",
 			"/" + itemId + "/decline-video-recording",
@@ -1917,15 +1917,15 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ManagingApiTypes.ManagingDeclineVideoRecordingResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> declineVideoRecordingAsync(Integer itemId) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingDeclineVideoRecordingResponse> declineVideoRecordingAsync(Integer itemId) {
 		return declineVideoRecordingAsync(itemId, null);
 	}
 
-	public JsonNode checkGuarantee(Integer itemId) {
-		return http.request(new RequestOptions(
+	public Types.ManagingApiTypes.ManagingCheckGuaranteeResponse checkGuarantee(Integer itemId) {
+		return new Types.ManagingApiTypes.ManagingCheckGuaranteeResponse(http.request(new RequestOptions(
 			"POST",
 			"/" + itemId + "/check-guarantee",
 			null,
@@ -1933,10 +1933,10 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public CompletableFuture<JsonNode> checkGuaranteeAsync(Integer itemId) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingCheckGuaranteeResponse> checkGuaranteeAsync(Integer itemId) {
 		return http.requestAsync(new RequestOptions(
 			"POST",
 			"/" + itemId + "/check-guarantee",
@@ -1945,11 +1945,11 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ManagingApiTypes.ManagingCheckGuaranteeResponse::new);
 	}
 
-	public JsonNode changePassword(Integer itemId, Types.ManagingApiTypes.ManagingChangePasswordBody body) {
-		return http.request(new RequestOptions(
+	public Types.ManagingApiTypes.ManagingChangePasswordResponse changePassword(Integer itemId, Types.ManagingApiTypes.ManagingChangePasswordBody body) {
+		return new Types.ManagingApiTypes.ManagingChangePasswordResponse(http.request(new RequestOptions(
 			"POST",
 			"/" + itemId + "/change-password",
 			null,
@@ -1957,14 +1957,14 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode changePassword(Integer itemId) {
+	public Types.ManagingApiTypes.ManagingChangePasswordResponse changePassword(Integer itemId) {
 		return changePassword(itemId, null);
 	}
 
-	public CompletableFuture<JsonNode> changePasswordAsync(Integer itemId, Types.ManagingApiTypes.ManagingChangePasswordBody body) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingChangePasswordResponse> changePasswordAsync(Integer itemId, Types.ManagingApiTypes.ManagingChangePasswordBody body) {
 		return http.requestAsync(new RequestOptions(
 			"POST",
 			"/" + itemId + "/change-password",
@@ -1973,15 +1973,15 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ManagingApiTypes.ManagingChangePasswordResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> changePasswordAsync(Integer itemId) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingChangePasswordResponse> changePasswordAsync(Integer itemId) {
 		return changePasswordAsync(itemId, null);
 	}
 
-	public JsonNode tempEmailPassword(Integer itemId) {
-		return http.request(new RequestOptions(
+	public Types.ManagingApiTypes.ManagingTempEmailPasswordResponse tempEmailPassword(Integer itemId) {
+		return new Types.ManagingApiTypes.ManagingTempEmailPasswordResponse(http.request(new RequestOptions(
 			"GET",
 			"/" + itemId + "/temp-email-password",
 			null,
@@ -1989,10 +1989,10 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public CompletableFuture<JsonNode> tempEmailPasswordAsync(Integer itemId) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingTempEmailPasswordResponse> tempEmailPasswordAsync(Integer itemId) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/" + itemId + "/temp-email-password",
@@ -2001,11 +2001,11 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ManagingApiTypes.ManagingTempEmailPasswordResponse::new);
 	}
 
-	public JsonNode tag(Integer itemId, Types.ManagingApiTypes.ManagingTagBody body) {
-		return http.request(new RequestOptions(
+	public Types.ManagingApiTypes.ManagingTagResponse tag(Integer itemId, Types.ManagingApiTypes.ManagingTagBody body) {
+		return new Types.ManagingApiTypes.ManagingTagResponse(http.request(new RequestOptions(
 			"POST",
 			"/" + itemId + "/tag",
 			null,
@@ -2013,14 +2013,14 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode tag(Integer itemId) {
+	public Types.ManagingApiTypes.ManagingTagResponse tag(Integer itemId) {
 		return tag(itemId, null);
 	}
 
-	public CompletableFuture<JsonNode> tagAsync(Integer itemId, Types.ManagingApiTypes.ManagingTagBody body) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingTagResponse> tagAsync(Integer itemId, Types.ManagingApiTypes.ManagingTagBody body) {
 		return http.requestAsync(new RequestOptions(
 			"POST",
 			"/" + itemId + "/tag",
@@ -2029,15 +2029,15 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ManagingApiTypes.ManagingTagResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> tagAsync(Integer itemId) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingTagResponse> tagAsync(Integer itemId) {
 		return tagAsync(itemId, null);
 	}
 
-	public JsonNode untag(Integer itemId, Types.ManagingApiTypes.ManagingUntagBody body) {
-		return http.request(new RequestOptions(
+	public Types.ManagingApiTypes.ManagingUntagResponse untag(Integer itemId, Types.ManagingApiTypes.ManagingUntagBody body) {
+		return new Types.ManagingApiTypes.ManagingUntagResponse(http.request(new RequestOptions(
 			"DELETE",
 			"/" + itemId + "/tag",
 			null,
@@ -2045,14 +2045,14 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode untag(Integer itemId) {
+	public Types.ManagingApiTypes.ManagingUntagResponse untag(Integer itemId) {
 		return untag(itemId, null);
 	}
 
-	public CompletableFuture<JsonNode> untagAsync(Integer itemId, Types.ManagingApiTypes.ManagingUntagBody body) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingUntagResponse> untagAsync(Integer itemId, Types.ManagingApiTypes.ManagingUntagBody body) {
 		return http.requestAsync(new RequestOptions(
 			"DELETE",
 			"/" + itemId + "/tag",
@@ -2061,15 +2061,15 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ManagingApiTypes.ManagingUntagResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> untagAsync(Integer itemId) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingUntagResponse> untagAsync(Integer itemId) {
 		return untagAsync(itemId, null);
 	}
 
-	public JsonNode publicTag(Integer itemId, Types.ManagingApiTypes.ManagingPublicTagBody body) {
-		return http.request(new RequestOptions(
+	public Types.ManagingApiTypes.ManagingPublicTagResponse publicTag(Integer itemId, Types.ManagingApiTypes.ManagingPublicTagBody body) {
+		return new Types.ManagingApiTypes.ManagingPublicTagResponse(http.request(new RequestOptions(
 			"POST",
 			"/" + itemId + "/public-tag",
 			null,
@@ -2077,14 +2077,14 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode publicTag(Integer itemId) {
+	public Types.ManagingApiTypes.ManagingPublicTagResponse publicTag(Integer itemId) {
 		return publicTag(itemId, null);
 	}
 
-	public CompletableFuture<JsonNode> publicTagAsync(Integer itemId, Types.ManagingApiTypes.ManagingPublicTagBody body) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingPublicTagResponse> publicTagAsync(Integer itemId, Types.ManagingApiTypes.ManagingPublicTagBody body) {
 		return http.requestAsync(new RequestOptions(
 			"POST",
 			"/" + itemId + "/public-tag",
@@ -2093,15 +2093,15 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ManagingApiTypes.ManagingPublicTagResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> publicTagAsync(Integer itemId) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingPublicTagResponse> publicTagAsync(Integer itemId) {
 		return publicTagAsync(itemId, null);
 	}
 
-	public JsonNode publicUntag(Integer itemId, Types.ManagingApiTypes.ManagingPublicUntagBody body) {
-		return http.request(new RequestOptions(
+	public Types.ManagingApiTypes.ManagingPublicUntagResponse publicUntag(Integer itemId, Types.ManagingApiTypes.ManagingPublicUntagBody body) {
+		return new Types.ManagingApiTypes.ManagingPublicUntagResponse(http.request(new RequestOptions(
 			"DELETE",
 			"/" + itemId + "/public-tag",
 			null,
@@ -2109,14 +2109,14 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode publicUntag(Integer itemId) {
+	public Types.ManagingApiTypes.ManagingPublicUntagResponse publicUntag(Integer itemId) {
 		return publicUntag(itemId, null);
 	}
 
-	public CompletableFuture<JsonNode> publicUntagAsync(Integer itemId, Types.ManagingApiTypes.ManagingPublicUntagBody body) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingPublicUntagResponse> publicUntagAsync(Integer itemId, Types.ManagingApiTypes.ManagingPublicUntagBody body) {
 		return http.requestAsync(new RequestOptions(
 			"DELETE",
 			"/" + itemId + "/public-tag",
@@ -2125,15 +2125,15 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ManagingApiTypes.ManagingPublicUntagResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> publicUntagAsync(Integer itemId) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingPublicUntagResponse> publicUntagAsync(Integer itemId) {
 		return publicUntagAsync(itemId, null);
 	}
 
-	public JsonNode favorite(Integer itemId) {
-		return http.request(new RequestOptions(
+	public Types.ManagingApiTypes.ManagingFavoriteResponse favorite(Integer itemId) {
+		return new Types.ManagingApiTypes.ManagingFavoriteResponse(http.request(new RequestOptions(
 			"POST",
 			"/" + itemId + "/star",
 			null,
@@ -2141,10 +2141,10 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public CompletableFuture<JsonNode> favoriteAsync(Integer itemId) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingFavoriteResponse> favoriteAsync(Integer itemId) {
 		return http.requestAsync(new RequestOptions(
 			"POST",
 			"/" + itemId + "/star",
@@ -2153,11 +2153,11 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ManagingApiTypes.ManagingFavoriteResponse::new);
 	}
 
-	public JsonNode unfavorite(Integer itemId) {
-		return http.request(new RequestOptions(
+	public Types.ManagingApiTypes.ManagingUnfavoriteResponse unfavorite(Integer itemId) {
+		return new Types.ManagingApiTypes.ManagingUnfavoriteResponse(http.request(new RequestOptions(
 			"DELETE",
 			"/" + itemId + "/star",
 			null,
@@ -2165,10 +2165,10 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public CompletableFuture<JsonNode> unfavoriteAsync(Integer itemId) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingUnfavoriteResponse> unfavoriteAsync(Integer itemId) {
 		return http.requestAsync(new RequestOptions(
 			"DELETE",
 			"/" + itemId + "/star",
@@ -2177,11 +2177,11 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ManagingApiTypes.ManagingUnfavoriteResponse::new);
 	}
 
-	public JsonNode stick(Integer itemId) {
-		return http.request(new RequestOptions(
+	public Types.ManagingApiTypes.ManagingStickResponse stick(Integer itemId) {
+		return new Types.ManagingApiTypes.ManagingStickResponse(http.request(new RequestOptions(
 			"POST",
 			"/" + itemId + "/stick",
 			null,
@@ -2189,10 +2189,10 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public CompletableFuture<JsonNode> stickAsync(Integer itemId) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingStickResponse> stickAsync(Integer itemId) {
 		return http.requestAsync(new RequestOptions(
 			"POST",
 			"/" + itemId + "/stick",
@@ -2201,11 +2201,11 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ManagingApiTypes.ManagingStickResponse::new);
 	}
 
-	public JsonNode unstick(Integer itemId) {
-		return http.request(new RequestOptions(
+	public Types.ManagingApiTypes.ManagingUnstickResponse unstick(Integer itemId) {
+		return new Types.ManagingApiTypes.ManagingUnstickResponse(http.request(new RequestOptions(
 			"DELETE",
 			"/" + itemId + "/stick",
 			null,
@@ -2213,10 +2213,10 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public CompletableFuture<JsonNode> unstickAsync(Integer itemId) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingUnstickResponse> unstickAsync(Integer itemId) {
 		return http.requestAsync(new RequestOptions(
 			"DELETE",
 			"/" + itemId + "/stick",
@@ -2225,11 +2225,11 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ManagingApiTypes.ManagingUnstickResponse::new);
 	}
 
-	public JsonNode transfer(Integer itemId, Types.ManagingApiTypes.ManagingTransferBody body) {
-		return http.request(new RequestOptions(
+	public Types.ManagingApiTypes.ManagingTransferResponse transfer(Integer itemId, Types.ManagingApiTypes.ManagingTransferBody body) {
+		return new Types.ManagingApiTypes.ManagingTransferResponse(http.request(new RequestOptions(
 			"POST",
 			"/" + itemId + "/change-owner",
 			null,
@@ -2237,14 +2237,14 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode transfer(Integer itemId) {
+	public Types.ManagingApiTypes.ManagingTransferResponse transfer(Integer itemId) {
 		return transfer(itemId, null);
 	}
 
-	public CompletableFuture<JsonNode> transferAsync(Integer itemId, Types.ManagingApiTypes.ManagingTransferBody body) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingTransferResponse> transferAsync(Integer itemId, Types.ManagingApiTypes.ManagingTransferBody body) {
 		return http.requestAsync(new RequestOptions(
 			"POST",
 			"/" + itemId + "/change-owner",
@@ -2253,10 +2253,10 @@ class ManagingApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ManagingApiTypes.ManagingTransferResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> transferAsync(Integer itemId) {
+	public CompletableFuture<Types.ManagingApiTypes.ManagingTransferResponse> transferAsync(Integer itemId) {
 		return transferAsync(itemId, null);
 	}
 }
@@ -2271,8 +2271,8 @@ class ProfileApi {
 		this.mapper = http.objectMapper();
 	}
 
-	public JsonNode claims(Types.ProfileApiTypes.ProfileClaimsParams params) {
-		return http.request(new RequestOptions(
+	public Types.ProfileApiTypes.ProfileClaimsResponse claims(Types.ProfileApiTypes.ProfileClaimsParams params) {
+		return new Types.ProfileApiTypes.ProfileClaimsResponse(http.request(new RequestOptions(
 			"GET",
 			"/claims",
 			params != null ? mapper.valueToTree(params) : null,
@@ -2280,14 +2280,14 @@ class ProfileApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode claims() {
+	public Types.ProfileApiTypes.ProfileClaimsResponse claims() {
 		return claims(null);
 	}
 
-	public CompletableFuture<JsonNode> claimsAsync(Types.ProfileApiTypes.ProfileClaimsParams params) {
+	public CompletableFuture<Types.ProfileApiTypes.ProfileClaimsResponse> claimsAsync(Types.ProfileApiTypes.ProfileClaimsParams params) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/claims",
@@ -2296,15 +2296,15 @@ class ProfileApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ProfileApiTypes.ProfileClaimsResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> claimsAsync() {
+	public CompletableFuture<Types.ProfileApiTypes.ProfileClaimsResponse> claimsAsync() {
 		return claimsAsync(null);
 	}
 
-	public JsonNode get(Types.ProfileApiTypes.ProfileGetParams params) {
-		return http.request(new RequestOptions(
+	public Types.ProfileApiTypes.ProfileGetResponse get(Types.ProfileApiTypes.ProfileGetParams params) {
+		return new Types.ProfileApiTypes.ProfileGetResponse(http.request(new RequestOptions(
 			"GET",
 			"/me",
 			params != null ? mapper.valueToTree(params) : null,
@@ -2312,14 +2312,14 @@ class ProfileApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode get() {
+	public Types.ProfileApiTypes.ProfileGetResponse get() {
 		return get(null);
 	}
 
-	public CompletableFuture<JsonNode> getAsync(Types.ProfileApiTypes.ProfileGetParams params) {
+	public CompletableFuture<Types.ProfileApiTypes.ProfileGetResponse> getAsync(Types.ProfileApiTypes.ProfileGetParams params) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/me",
@@ -2328,15 +2328,15 @@ class ProfileApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ProfileApiTypes.ProfileGetResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> getAsync() {
+	public CompletableFuture<Types.ProfileApiTypes.ProfileGetResponse> getAsync() {
 		return getAsync(null);
 	}
 
-	public JsonNode edit(Types.ProfileApiTypes.ProfileEditBody body) {
-		return http.request(new RequestOptions(
+	public Types.ProfileApiTypes.ProfileEditResponse edit(Types.ProfileApiTypes.ProfileEditBody body) {
+		return new Types.ProfileApiTypes.ProfileEditResponse(http.request(new RequestOptions(
 			"PUT",
 			"/me",
 			null,
@@ -2344,14 +2344,14 @@ class ProfileApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode edit() {
+	public Types.ProfileApiTypes.ProfileEditResponse edit() {
 		return edit(null);
 	}
 
-	public CompletableFuture<JsonNode> editAsync(Types.ProfileApiTypes.ProfileEditBody body) {
+	public CompletableFuture<Types.ProfileApiTypes.ProfileEditResponse> editAsync(Types.ProfileApiTypes.ProfileEditBody body) {
 		return http.requestAsync(new RequestOptions(
 			"PUT",
 			"/me",
@@ -2360,10 +2360,10 @@ class ProfileApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ProfileApiTypes.ProfileEditResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> editAsync() {
+	public CompletableFuture<Types.ProfileApiTypes.ProfileEditResponse> editAsync() {
 		return editAsync(null);
 	}
 }
@@ -2378,8 +2378,8 @@ class CartApi {
 		this.mapper = http.objectMapper();
 	}
 
-	public JsonNode get(Types.CartApiTypes.CartGetParams params) {
-		return http.request(new RequestOptions(
+	public Types.CartApiTypes.CartGetResponse get(Types.CartApiTypes.CartGetParams params) {
+		return new Types.CartApiTypes.CartGetResponse(http.request(new RequestOptions(
 			"GET",
 			"/cart",
 			params != null ? mapper.valueToTree(params) : null,
@@ -2387,14 +2387,14 @@ class CartApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode get() {
+	public Types.CartApiTypes.CartGetResponse get() {
 		return get(null);
 	}
 
-	public CompletableFuture<JsonNode> getAsync(Types.CartApiTypes.CartGetParams params) {
+	public CompletableFuture<Types.CartApiTypes.CartGetResponse> getAsync(Types.CartApiTypes.CartGetParams params) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/cart",
@@ -2403,15 +2403,15 @@ class CartApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.CartApiTypes.CartGetResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> getAsync() {
+	public CompletableFuture<Types.CartApiTypes.CartGetResponse> getAsync() {
 		return getAsync(null);
 	}
 
-	public JsonNode add(Types.CartApiTypes.CartAddBody body) {
-		return http.request(new RequestOptions(
+	public Types.CartApiTypes.CartAddResponse add(Types.CartApiTypes.CartAddBody body) {
+		return new Types.CartApiTypes.CartAddResponse(http.request(new RequestOptions(
 			"POST",
 			"/cart",
 			null,
@@ -2419,10 +2419,10 @@ class CartApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public CompletableFuture<JsonNode> addAsync(Types.CartApiTypes.CartAddBody body) {
+	public CompletableFuture<Types.CartApiTypes.CartAddResponse> addAsync(Types.CartApiTypes.CartAddBody body) {
 		return http.requestAsync(new RequestOptions(
 			"POST",
 			"/cart",
@@ -2431,11 +2431,11 @@ class CartApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.CartApiTypes.CartAddResponse::new);
 	}
 
-	public JsonNode delete(Types.CartApiTypes.CartDeleteBody body) {
-		return http.request(new RequestOptions(
+	public Types.CartApiTypes.CartDeleteResponse delete(Types.CartApiTypes.CartDeleteBody body) {
+		return new Types.CartApiTypes.CartDeleteResponse(http.request(new RequestOptions(
 			"DELETE",
 			"/cart",
 			null,
@@ -2443,14 +2443,14 @@ class CartApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode delete() {
+	public Types.CartApiTypes.CartDeleteResponse delete() {
 		return delete(null);
 	}
 
-	public CompletableFuture<JsonNode> deleteAsync(Types.CartApiTypes.CartDeleteBody body) {
+	public CompletableFuture<Types.CartApiTypes.CartDeleteResponse> deleteAsync(Types.CartApiTypes.CartDeleteBody body) {
 		return http.requestAsync(new RequestOptions(
 			"DELETE",
 			"/cart",
@@ -2459,10 +2459,10 @@ class CartApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.CartApiTypes.CartDeleteResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> deleteAsync() {
+	public CompletableFuture<Types.CartApiTypes.CartDeleteResponse> deleteAsync() {
 		return deleteAsync(null);
 	}
 }
@@ -2477,8 +2477,8 @@ class PurchasingApi {
 		this.mapper = http.objectMapper();
 	}
 
-	public JsonNode fastBuy(Integer itemId, Types.PurchasingApiTypes.PurchasingFastBuyBody body) {
-		return http.request(new RequestOptions(
+	public Types.PurchasingApiTypes.PurchasingFastBuyResponse fastBuy(Integer itemId, Types.PurchasingApiTypes.PurchasingFastBuyBody body) {
+		return new Types.PurchasingApiTypes.PurchasingFastBuyResponse(http.request(new RequestOptions(
 			"POST",
 			"/" + itemId + "/fast-buy",
 			null,
@@ -2486,14 +2486,14 @@ class PurchasingApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode fastBuy(Integer itemId) {
+	public Types.PurchasingApiTypes.PurchasingFastBuyResponse fastBuy(Integer itemId) {
 		return fastBuy(itemId, null);
 	}
 
-	public CompletableFuture<JsonNode> fastBuyAsync(Integer itemId, Types.PurchasingApiTypes.PurchasingFastBuyBody body) {
+	public CompletableFuture<Types.PurchasingApiTypes.PurchasingFastBuyResponse> fastBuyAsync(Integer itemId, Types.PurchasingApiTypes.PurchasingFastBuyBody body) {
 		return http.requestAsync(new RequestOptions(
 			"POST",
 			"/" + itemId + "/fast-buy",
@@ -2502,15 +2502,15 @@ class PurchasingApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.PurchasingApiTypes.PurchasingFastBuyResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> fastBuyAsync(Integer itemId) {
+	public CompletableFuture<Types.PurchasingApiTypes.PurchasingFastBuyResponse> fastBuyAsync(Integer itemId) {
 		return fastBuyAsync(itemId, null);
 	}
 
-	public JsonNode check(Integer itemId) {
-		return http.request(new RequestOptions(
+	public Types.PurchasingApiTypes.PurchasingCheckResponse check(Integer itemId) {
+		return new Types.PurchasingApiTypes.PurchasingCheckResponse(http.request(new RequestOptions(
 			"POST",
 			"/" + itemId + "/check-account",
 			null,
@@ -2518,10 +2518,10 @@ class PurchasingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public CompletableFuture<JsonNode> checkAsync(Integer itemId) {
+	public CompletableFuture<Types.PurchasingApiTypes.PurchasingCheckResponse> checkAsync(Integer itemId) {
 		return http.requestAsync(new RequestOptions(
 			"POST",
 			"/" + itemId + "/check-account",
@@ -2530,11 +2530,11 @@ class PurchasingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.PurchasingApiTypes.PurchasingCheckResponse::new);
 	}
 
-	public JsonNode confirm(Integer itemId, Types.PurchasingApiTypes.PurchasingConfirmBody body) {
-		return http.request(new RequestOptions(
+	public Types.PurchasingApiTypes.PurchasingConfirmResponse confirm(Integer itemId, Types.PurchasingApiTypes.PurchasingConfirmBody body) {
+		return new Types.PurchasingApiTypes.PurchasingConfirmResponse(http.request(new RequestOptions(
 			"POST",
 			"/" + itemId + "/confirm-buy",
 			null,
@@ -2542,14 +2542,14 @@ class PurchasingApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode confirm(Integer itemId) {
+	public Types.PurchasingApiTypes.PurchasingConfirmResponse confirm(Integer itemId) {
 		return confirm(itemId, null);
 	}
 
-	public CompletableFuture<JsonNode> confirmAsync(Integer itemId, Types.PurchasingApiTypes.PurchasingConfirmBody body) {
+	public CompletableFuture<Types.PurchasingApiTypes.PurchasingConfirmResponse> confirmAsync(Integer itemId, Types.PurchasingApiTypes.PurchasingConfirmBody body) {
 		return http.requestAsync(new RequestOptions(
 			"POST",
 			"/" + itemId + "/confirm-buy",
@@ -2558,15 +2558,15 @@ class PurchasingApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.PurchasingApiTypes.PurchasingConfirmResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> confirmAsync(Integer itemId) {
+	public CompletableFuture<Types.PurchasingApiTypes.PurchasingConfirmResponse> confirmAsync(Integer itemId) {
 		return confirmAsync(itemId, null);
 	}
 
-	public JsonNode discountRequest(Integer itemId, Types.PurchasingApiTypes.PurchasingDiscountRequestBody body) {
-		return http.request(new RequestOptions(
+	public Types.PurchasingApiTypes.PurchasingDiscountRequestResponse discountRequest(Integer itemId, Types.PurchasingApiTypes.PurchasingDiscountRequestBody body) {
+		return new Types.PurchasingApiTypes.PurchasingDiscountRequestResponse(http.request(new RequestOptions(
 			"POST",
 			"/" + itemId + "/discount",
 			null,
@@ -2574,14 +2574,14 @@ class PurchasingApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode discountRequest(Integer itemId) {
+	public Types.PurchasingApiTypes.PurchasingDiscountRequestResponse discountRequest(Integer itemId) {
 		return discountRequest(itemId, null);
 	}
 
-	public CompletableFuture<JsonNode> discountRequestAsync(Integer itemId, Types.PurchasingApiTypes.PurchasingDiscountRequestBody body) {
+	public CompletableFuture<Types.PurchasingApiTypes.PurchasingDiscountRequestResponse> discountRequestAsync(Integer itemId, Types.PurchasingApiTypes.PurchasingDiscountRequestBody body) {
 		return http.requestAsync(new RequestOptions(
 			"POST",
 			"/" + itemId + "/discount",
@@ -2590,15 +2590,15 @@ class PurchasingApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.PurchasingApiTypes.PurchasingDiscountRequestResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> discountRequestAsync(Integer itemId) {
+	public CompletableFuture<Types.PurchasingApiTypes.PurchasingDiscountRequestResponse> discountRequestAsync(Integer itemId) {
 		return discountRequestAsync(itemId, null);
 	}
 
-	public JsonNode discountCancel(Integer itemId) {
-		return http.request(new RequestOptions(
+	public Types.PurchasingApiTypes.PurchasingDiscountCancelResponse discountCancel(Integer itemId) {
+		return new Types.PurchasingApiTypes.PurchasingDiscountCancelResponse(http.request(new RequestOptions(
 			"DELETE",
 			"/" + itemId + "/discount",
 			null,
@@ -2606,10 +2606,10 @@ class PurchasingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public CompletableFuture<JsonNode> discountCancelAsync(Integer itemId) {
+	public CompletableFuture<Types.PurchasingApiTypes.PurchasingDiscountCancelResponse> discountCancelAsync(Integer itemId) {
 		return http.requestAsync(new RequestOptions(
 			"DELETE",
 			"/" + itemId + "/discount",
@@ -2618,7 +2618,7 @@ class PurchasingApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.PurchasingApiTypes.PurchasingDiscountCancelResponse::new);
 	}
 }
 
@@ -2632,8 +2632,8 @@ class CustomDiscountsApi {
 		this.mapper = http.objectMapper();
 	}
 
-	public JsonNode get() {
-		return http.request(new RequestOptions(
+	public Types.CustomDiscountsApiTypes.CustomDiscountsGetResponse get() {
+		return new Types.CustomDiscountsApiTypes.CustomDiscountsGetResponse(http.request(new RequestOptions(
 			"GET",
 			"/custom-discounts",
 			null,
@@ -2641,10 +2641,10 @@ class CustomDiscountsApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public CompletableFuture<JsonNode> getAsync() {
+	public CompletableFuture<Types.CustomDiscountsApiTypes.CustomDiscountsGetResponse> getAsync() {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/custom-discounts",
@@ -2653,11 +2653,11 @@ class CustomDiscountsApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.CustomDiscountsApiTypes.CustomDiscountsGetResponse::new);
 	}
 
-	public JsonNode create(Types.CustomDiscountsApiTypes.CustomDiscountsCreateBody body) {
-		return http.request(new RequestOptions(
+	public Types.CustomDiscountsApiTypes.CustomDiscountsCreateResponse create(Types.CustomDiscountsApiTypes.CustomDiscountsCreateBody body) {
+		return new Types.CustomDiscountsApiTypes.CustomDiscountsCreateResponse(http.request(new RequestOptions(
 			"POST",
 			"/custom-discounts",
 			null,
@@ -2665,14 +2665,14 @@ class CustomDiscountsApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode create() {
+	public Types.CustomDiscountsApiTypes.CustomDiscountsCreateResponse create() {
 		return create(null);
 	}
 
-	public CompletableFuture<JsonNode> createAsync(Types.CustomDiscountsApiTypes.CustomDiscountsCreateBody body) {
+	public CompletableFuture<Types.CustomDiscountsApiTypes.CustomDiscountsCreateResponse> createAsync(Types.CustomDiscountsApiTypes.CustomDiscountsCreateBody body) {
 		return http.requestAsync(new RequestOptions(
 			"POST",
 			"/custom-discounts",
@@ -2681,15 +2681,15 @@ class CustomDiscountsApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.CustomDiscountsApiTypes.CustomDiscountsCreateResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> createAsync() {
+	public CompletableFuture<Types.CustomDiscountsApiTypes.CustomDiscountsCreateResponse> createAsync() {
 		return createAsync(null);
 	}
 
-	public JsonNode edit(Types.CustomDiscountsApiTypes.CustomDiscountsEditBody body) {
-		return http.request(new RequestOptions(
+	public Types.CustomDiscountsApiTypes.CustomDiscountsEditResponse edit(Types.CustomDiscountsApiTypes.CustomDiscountsEditBody body) {
+		return new Types.CustomDiscountsApiTypes.CustomDiscountsEditResponse(http.request(new RequestOptions(
 			"PUT",
 			"/custom-discounts",
 			null,
@@ -2697,14 +2697,14 @@ class CustomDiscountsApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode edit() {
+	public Types.CustomDiscountsApiTypes.CustomDiscountsEditResponse edit() {
 		return edit(null);
 	}
 
-	public CompletableFuture<JsonNode> editAsync(Types.CustomDiscountsApiTypes.CustomDiscountsEditBody body) {
+	public CompletableFuture<Types.CustomDiscountsApiTypes.CustomDiscountsEditResponse> editAsync(Types.CustomDiscountsApiTypes.CustomDiscountsEditBody body) {
 		return http.requestAsync(new RequestOptions(
 			"PUT",
 			"/custom-discounts",
@@ -2713,15 +2713,15 @@ class CustomDiscountsApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.CustomDiscountsApiTypes.CustomDiscountsEditResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> editAsync() {
+	public CompletableFuture<Types.CustomDiscountsApiTypes.CustomDiscountsEditResponse> editAsync() {
 		return editAsync(null);
 	}
 
-	public JsonNode delete(Types.CustomDiscountsApiTypes.CustomDiscountsDeleteBody body) {
-		return http.request(new RequestOptions(
+	public Types.CustomDiscountsApiTypes.CustomDiscountsDeleteResponse delete(Types.CustomDiscountsApiTypes.CustomDiscountsDeleteBody body) {
+		return new Types.CustomDiscountsApiTypes.CustomDiscountsDeleteResponse(http.request(new RequestOptions(
 			"DELETE",
 			"/custom-discounts",
 			null,
@@ -2729,14 +2729,14 @@ class CustomDiscountsApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode delete() {
+	public Types.CustomDiscountsApiTypes.CustomDiscountsDeleteResponse delete() {
 		return delete(null);
 	}
 
-	public CompletableFuture<JsonNode> deleteAsync(Types.CustomDiscountsApiTypes.CustomDiscountsDeleteBody body) {
+	public CompletableFuture<Types.CustomDiscountsApiTypes.CustomDiscountsDeleteResponse> deleteAsync(Types.CustomDiscountsApiTypes.CustomDiscountsDeleteBody body) {
 		return http.requestAsync(new RequestOptions(
 			"DELETE",
 			"/custom-discounts",
@@ -2745,10 +2745,10 @@ class CustomDiscountsApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.CustomDiscountsApiTypes.CustomDiscountsDeleteResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> deleteAsync() {
+	public CompletableFuture<Types.CustomDiscountsApiTypes.CustomDiscountsDeleteResponse> deleteAsync() {
 		return deleteAsync(null);
 	}
 }
@@ -2763,8 +2763,8 @@ class PublishingApi {
 		this.mapper = http.objectMapper();
 	}
 
-	public JsonNode fastSell(Types.PublishingApiTypes.PublishingFastSellBody body) {
-		return http.request(new RequestOptions(
+	public Types.PublishingApiTypes.PublishingFastSellResponse fastSell(Types.PublishingApiTypes.PublishingFastSellBody body) {
+		return new Types.PublishingApiTypes.PublishingFastSellResponse(http.request(new RequestOptions(
 			"POST",
 			"/item/fast-sell",
 			null,
@@ -2772,14 +2772,14 @@ class PublishingApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode fastSell() {
+	public Types.PublishingApiTypes.PublishingFastSellResponse fastSell() {
 		return fastSell(null);
 	}
 
-	public CompletableFuture<JsonNode> fastSellAsync(Types.PublishingApiTypes.PublishingFastSellBody body) {
+	public CompletableFuture<Types.PublishingApiTypes.PublishingFastSellResponse> fastSellAsync(Types.PublishingApiTypes.PublishingFastSellBody body) {
 		return http.requestAsync(new RequestOptions(
 			"POST",
 			"/item/fast-sell",
@@ -2788,15 +2788,15 @@ class PublishingApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.PublishingApiTypes.PublishingFastSellResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> fastSellAsync() {
+	public CompletableFuture<Types.PublishingApiTypes.PublishingFastSellResponse> fastSellAsync() {
 		return fastSellAsync(null);
 	}
 
-	public JsonNode add(Types.PublishingApiTypes.PublishingAddBody body) {
-		return http.request(new RequestOptions(
+	public Types.PublishingApiTypes.PublishingAddResponse add(Types.PublishingApiTypes.PublishingAddBody body) {
+		return new Types.PublishingApiTypes.PublishingAddResponse(http.request(new RequestOptions(
 			"POST",
 			"/item/add",
 			null,
@@ -2804,14 +2804,14 @@ class PublishingApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode add() {
+	public Types.PublishingApiTypes.PublishingAddResponse add() {
 		return add(null);
 	}
 
-	public CompletableFuture<JsonNode> addAsync(Types.PublishingApiTypes.PublishingAddBody body) {
+	public CompletableFuture<Types.PublishingApiTypes.PublishingAddResponse> addAsync(Types.PublishingApiTypes.PublishingAddBody body) {
 		return http.requestAsync(new RequestOptions(
 			"POST",
 			"/item/add",
@@ -2820,15 +2820,15 @@ class PublishingApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.PublishingApiTypes.PublishingAddResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> addAsync() {
+	public CompletableFuture<Types.PublishingApiTypes.PublishingAddResponse> addAsync() {
 		return addAsync(null);
 	}
 
-	public JsonNode check(Integer itemId, Types.PublishingApiTypes.PublishingCheckBody body) {
-		return http.request(new RequestOptions(
+	public Types.PublishingApiTypes.PublishingCheckResponse check(Integer itemId, Types.PublishingApiTypes.PublishingCheckBody body) {
+		return new Types.PublishingApiTypes.PublishingCheckResponse(http.request(new RequestOptions(
 			"POST",
 			"/" + itemId + "/goods/check",
 			null,
@@ -2836,14 +2836,14 @@ class PublishingApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode check(Integer itemId) {
+	public Types.PublishingApiTypes.PublishingCheckResponse check(Integer itemId) {
 		return check(itemId, null);
 	}
 
-	public CompletableFuture<JsonNode> checkAsync(Integer itemId, Types.PublishingApiTypes.PublishingCheckBody body) {
+	public CompletableFuture<Types.PublishingApiTypes.PublishingCheckResponse> checkAsync(Integer itemId, Types.PublishingApiTypes.PublishingCheckBody body) {
 		return http.requestAsync(new RequestOptions(
 			"POST",
 			"/" + itemId + "/goods/check",
@@ -2852,15 +2852,15 @@ class PublishingApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.PublishingApiTypes.PublishingCheckResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> checkAsync(Integer itemId) {
+	public CompletableFuture<Types.PublishingApiTypes.PublishingCheckResponse> checkAsync(Integer itemId) {
 		return checkAsync(itemId, null);
 	}
 
-	public JsonNode external(Integer itemId, Types.PublishingApiTypes.PublishingExternalBody body) {
-		return http.request(new RequestOptions(
+	public Types.PublishingApiTypes.PublishingExternalResponse external(Integer itemId, Types.PublishingApiTypes.PublishingExternalBody body) {
+		return new Types.PublishingApiTypes.PublishingExternalResponse(http.request(new RequestOptions(
 			"POST",
 			"/" + itemId + "/external-account",
 			null,
@@ -2868,14 +2868,14 @@ class PublishingApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode external(Integer itemId) {
+	public Types.PublishingApiTypes.PublishingExternalResponse external(Integer itemId) {
 		return external(itemId, null);
 	}
 
-	public CompletableFuture<JsonNode> externalAsync(Integer itemId, Types.PublishingApiTypes.PublishingExternalBody body) {
+	public CompletableFuture<Types.PublishingApiTypes.PublishingExternalResponse> externalAsync(Integer itemId, Types.PublishingApiTypes.PublishingExternalBody body) {
 		return http.requestAsync(new RequestOptions(
 			"POST",
 			"/" + itemId + "/external-account",
@@ -2884,10 +2884,10 @@ class PublishingApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.PublishingApiTypes.PublishingExternalResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> externalAsync(Integer itemId) {
+	public CompletableFuture<Types.PublishingApiTypes.PublishingExternalResponse> externalAsync(Integer itemId) {
 		return externalAsync(itemId, null);
 	}
 }
@@ -2902,8 +2902,8 @@ class PaymentsApi {
 		this.mapper = http.objectMapper();
 	}
 
-	public JsonNode invoiceGet(Types.PaymentsApiTypes.PaymentsInvoiceGetParams params) {
-		return http.request(new RequestOptions(
+	public Types.PaymentsApiTypes.PaymentsInvoiceGetResponse invoiceGet(Types.PaymentsApiTypes.PaymentsInvoiceGetParams params) {
+		return new Types.PaymentsApiTypes.PaymentsInvoiceGetResponse(http.request(new RequestOptions(
 			"GET",
 			"/invoice",
 			params != null ? mapper.valueToTree(params) : null,
@@ -2911,14 +2911,14 @@ class PaymentsApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode invoiceGet() {
+	public Types.PaymentsApiTypes.PaymentsInvoiceGetResponse invoiceGet() {
 		return invoiceGet(null);
 	}
 
-	public CompletableFuture<JsonNode> invoiceGetAsync(Types.PaymentsApiTypes.PaymentsInvoiceGetParams params) {
+	public CompletableFuture<Types.PaymentsApiTypes.PaymentsInvoiceGetResponse> invoiceGetAsync(Types.PaymentsApiTypes.PaymentsInvoiceGetParams params) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/invoice",
@@ -2927,15 +2927,15 @@ class PaymentsApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.PaymentsApiTypes.PaymentsInvoiceGetResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> invoiceGetAsync() {
+	public CompletableFuture<Types.PaymentsApiTypes.PaymentsInvoiceGetResponse> invoiceGetAsync() {
 		return invoiceGetAsync(null);
 	}
 
-	public JsonNode invoiceCreate(Types.PaymentsApiTypes.PaymentsInvoiceCreateBody body) {
-		return http.request(new RequestOptions(
+	public Types.PaymentsApiTypes.PaymentsInvoiceCreateResponse invoiceCreate(Types.PaymentsApiTypes.PaymentsInvoiceCreateBody body) {
+		return new Types.PaymentsApiTypes.PaymentsInvoiceCreateResponse(http.request(new RequestOptions(
 			"POST",
 			"/invoice",
 			null,
@@ -2943,14 +2943,14 @@ class PaymentsApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode invoiceCreate() {
+	public Types.PaymentsApiTypes.PaymentsInvoiceCreateResponse invoiceCreate() {
 		return invoiceCreate(null);
 	}
 
-	public CompletableFuture<JsonNode> invoiceCreateAsync(Types.PaymentsApiTypes.PaymentsInvoiceCreateBody body) {
+	public CompletableFuture<Types.PaymentsApiTypes.PaymentsInvoiceCreateResponse> invoiceCreateAsync(Types.PaymentsApiTypes.PaymentsInvoiceCreateBody body) {
 		return http.requestAsync(new RequestOptions(
 			"POST",
 			"/invoice",
@@ -2959,15 +2959,15 @@ class PaymentsApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.PaymentsApiTypes.PaymentsInvoiceCreateResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> invoiceCreateAsync() {
+	public CompletableFuture<Types.PaymentsApiTypes.PaymentsInvoiceCreateResponse> invoiceCreateAsync() {
 		return invoiceCreateAsync(null);
 	}
 
-	public JsonNode invoiceList(Types.PaymentsApiTypes.PaymentsInvoiceListParams params) {
-		return http.request(new RequestOptions(
+	public Types.PaymentsApiTypes.PaymentsInvoiceListResponse invoiceList(Types.PaymentsApiTypes.PaymentsInvoiceListParams params) {
+		return new Types.PaymentsApiTypes.PaymentsInvoiceListResponse(http.request(new RequestOptions(
 			"GET",
 			"/invoice/list",
 			params != null ? mapper.valueToTree(params) : null,
@@ -2975,14 +2975,14 @@ class PaymentsApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode invoiceList() {
+	public Types.PaymentsApiTypes.PaymentsInvoiceListResponse invoiceList() {
 		return invoiceList(null);
 	}
 
-	public CompletableFuture<JsonNode> invoiceListAsync(Types.PaymentsApiTypes.PaymentsInvoiceListParams params) {
+	public CompletableFuture<Types.PaymentsApiTypes.PaymentsInvoiceListResponse> invoiceListAsync(Types.PaymentsApiTypes.PaymentsInvoiceListParams params) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/invoice/list",
@@ -2991,15 +2991,15 @@ class PaymentsApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.PaymentsApiTypes.PaymentsInvoiceListResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> invoiceListAsync() {
+	public CompletableFuture<Types.PaymentsApiTypes.PaymentsInvoiceListResponse> invoiceListAsync() {
 		return invoiceListAsync(null);
 	}
 
-	public JsonNode currency() {
-		return http.request(new RequestOptions(
+	public Types.PaymentsApiTypes.PaymentsCurrencyResponse currency() {
+		return new Types.PaymentsApiTypes.PaymentsCurrencyResponse(http.request(new RequestOptions(
 			"GET",
 			"/currency",
 			null,
@@ -3007,10 +3007,10 @@ class PaymentsApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public CompletableFuture<JsonNode> currencyAsync() {
+	public CompletableFuture<Types.PaymentsApiTypes.PaymentsCurrencyResponse> currencyAsync() {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/currency",
@@ -3019,11 +3019,11 @@ class PaymentsApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.PaymentsApiTypes.PaymentsCurrencyResponse::new);
 	}
 
-	public JsonNode balanceList() {
-		return http.request(new RequestOptions(
+	public Types.PaymentsApiTypes.PaymentsBalanceListResponse balanceList() {
+		return new Types.PaymentsApiTypes.PaymentsBalanceListResponse(http.request(new RequestOptions(
 			"GET",
 			"/balance/exchange",
 			null,
@@ -3031,10 +3031,10 @@ class PaymentsApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public CompletableFuture<JsonNode> balanceListAsync() {
+	public CompletableFuture<Types.PaymentsApiTypes.PaymentsBalanceListResponse> balanceListAsync() {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/balance/exchange",
@@ -3043,11 +3043,11 @@ class PaymentsApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.PaymentsApiTypes.PaymentsBalanceListResponse::new);
 	}
 
-	public JsonNode balanceExchange(Types.PaymentsApiTypes.PaymentsBalanceExchangeBody body) {
-		return http.request(new RequestOptions(
+	public Types.PaymentsApiTypes.PaymentsBalanceExchangeResponse balanceExchange(Types.PaymentsApiTypes.PaymentsBalanceExchangeBody body) {
+		return new Types.PaymentsApiTypes.PaymentsBalanceExchangeResponse(http.request(new RequestOptions(
 			"POST",
 			"/balance/exchange",
 			null,
@@ -3055,14 +3055,14 @@ class PaymentsApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode balanceExchange() {
+	public Types.PaymentsApiTypes.PaymentsBalanceExchangeResponse balanceExchange() {
 		return balanceExchange(null);
 	}
 
-	public CompletableFuture<JsonNode> balanceExchangeAsync(Types.PaymentsApiTypes.PaymentsBalanceExchangeBody body) {
+	public CompletableFuture<Types.PaymentsApiTypes.PaymentsBalanceExchangeResponse> balanceExchangeAsync(Types.PaymentsApiTypes.PaymentsBalanceExchangeBody body) {
 		return http.requestAsync(new RequestOptions(
 			"POST",
 			"/balance/exchange",
@@ -3071,15 +3071,15 @@ class PaymentsApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.PaymentsApiTypes.PaymentsBalanceExchangeResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> balanceExchangeAsync() {
+	public CompletableFuture<Types.PaymentsApiTypes.PaymentsBalanceExchangeResponse> balanceExchangeAsync() {
 		return balanceExchangeAsync(null);
 	}
 
-	public JsonNode transfer(Types.PaymentsApiTypes.PaymentsTransferBody body) {
-		return http.request(new RequestOptions(
+	public Types.PaymentsApiTypes.PaymentsTransferResponse transfer(Types.PaymentsApiTypes.PaymentsTransferBody body) {
+		return new Types.PaymentsApiTypes.PaymentsTransferResponse(http.request(new RequestOptions(
 			"POST",
 			"/balance/transfer",
 			null,
@@ -3087,14 +3087,14 @@ class PaymentsApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode transfer() {
+	public Types.PaymentsApiTypes.PaymentsTransferResponse transfer() {
 		return transfer(null);
 	}
 
-	public CompletableFuture<JsonNode> transferAsync(Types.PaymentsApiTypes.PaymentsTransferBody body) {
+	public CompletableFuture<Types.PaymentsApiTypes.PaymentsTransferResponse> transferAsync(Types.PaymentsApiTypes.PaymentsTransferBody body) {
 		return http.requestAsync(new RequestOptions(
 			"POST",
 			"/balance/transfer",
@@ -3103,15 +3103,15 @@ class PaymentsApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.PaymentsApiTypes.PaymentsTransferResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> transferAsync() {
+	public CompletableFuture<Types.PaymentsApiTypes.PaymentsTransferResponse> transferAsync() {
 		return transferAsync(null);
 	}
 
-	public JsonNode fee(Types.PaymentsApiTypes.PaymentsFeeParams params) {
-		return http.request(new RequestOptions(
+	public Types.PaymentsApiTypes.PaymentsFeeResponse fee(Types.PaymentsApiTypes.PaymentsFeeParams params) {
+		return new Types.PaymentsApiTypes.PaymentsFeeResponse(http.request(new RequestOptions(
 			"GET",
 			"/balance/transfer/fee",
 			params != null ? mapper.valueToTree(params) : null,
@@ -3119,14 +3119,14 @@ class PaymentsApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode fee() {
+	public Types.PaymentsApiTypes.PaymentsFeeResponse fee() {
 		return fee(null);
 	}
 
-	public CompletableFuture<JsonNode> feeAsync(Types.PaymentsApiTypes.PaymentsFeeParams params) {
+	public CompletableFuture<Types.PaymentsApiTypes.PaymentsFeeResponse> feeAsync(Types.PaymentsApiTypes.PaymentsFeeParams params) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/balance/transfer/fee",
@@ -3135,15 +3135,15 @@ class PaymentsApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.PaymentsApiTypes.PaymentsFeeResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> feeAsync() {
+	public CompletableFuture<Types.PaymentsApiTypes.PaymentsFeeResponse> feeAsync() {
 		return feeAsync(null);
 	}
 
-	public JsonNode cancel(Types.PaymentsApiTypes.PaymentsCancelBody body) {
-		return http.request(new RequestOptions(
+	public Types.PaymentsApiTypes.PaymentsCancelResponse cancel(Types.PaymentsApiTypes.PaymentsCancelBody body) {
+		return new Types.PaymentsApiTypes.PaymentsCancelResponse(http.request(new RequestOptions(
 			"POST",
 			"/balance/transfer/cancel",
 			null,
@@ -3151,14 +3151,14 @@ class PaymentsApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode cancel() {
+	public Types.PaymentsApiTypes.PaymentsCancelResponse cancel() {
 		return cancel(null);
 	}
 
-	public CompletableFuture<JsonNode> cancelAsync(Types.PaymentsApiTypes.PaymentsCancelBody body) {
+	public CompletableFuture<Types.PaymentsApiTypes.PaymentsCancelResponse> cancelAsync(Types.PaymentsApiTypes.PaymentsCancelBody body) {
 		return http.requestAsync(new RequestOptions(
 			"POST",
 			"/balance/transfer/cancel",
@@ -3167,15 +3167,15 @@ class PaymentsApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.PaymentsApiTypes.PaymentsCancelResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> cancelAsync() {
+	public CompletableFuture<Types.PaymentsApiTypes.PaymentsCancelResponse> cancelAsync() {
 		return cancelAsync(null);
 	}
 
-	public JsonNode history(Types.PaymentsApiTypes.PaymentsHistoryParams params) {
-		return http.request(new RequestOptions(
+	public Types.PaymentsApiTypes.PaymentsHistoryResponse history(Types.PaymentsApiTypes.PaymentsHistoryParams params) {
+		return new Types.PaymentsApiTypes.PaymentsHistoryResponse(http.request(new RequestOptions(
 			"GET",
 			"/user/payments",
 			params != null ? mapper.valueToTree(params) : null,
@@ -3183,14 +3183,14 @@ class PaymentsApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode history() {
+	public Types.PaymentsApiTypes.PaymentsHistoryResponse history() {
 		return history(null);
 	}
 
-	public CompletableFuture<JsonNode> historyAsync(Types.PaymentsApiTypes.PaymentsHistoryParams params) {
+	public CompletableFuture<Types.PaymentsApiTypes.PaymentsHistoryResponse> historyAsync(Types.PaymentsApiTypes.PaymentsHistoryParams params) {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/user/payments",
@@ -3199,15 +3199,15 @@ class PaymentsApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.PaymentsApiTypes.PaymentsHistoryResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> historyAsync() {
+	public CompletableFuture<Types.PaymentsApiTypes.PaymentsHistoryResponse> historyAsync() {
 		return historyAsync(null);
 	}
 
-	public JsonNode payoutServices() {
-		return http.request(new RequestOptions(
+	public Types.PaymentsApiTypes.PaymentsPayoutServicesResponse payoutServices() {
+		return new Types.PaymentsApiTypes.PaymentsPayoutServicesResponse(http.request(new RequestOptions(
 			"GET",
 			"/balance/payout/services",
 			null,
@@ -3215,10 +3215,10 @@ class PaymentsApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public CompletableFuture<JsonNode> payoutServicesAsync() {
+	public CompletableFuture<Types.PaymentsApiTypes.PaymentsPayoutServicesResponse> payoutServicesAsync() {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/balance/payout/services",
@@ -3227,11 +3227,11 @@ class PaymentsApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.PaymentsApiTypes.PaymentsPayoutServicesResponse::new);
 	}
 
-	public JsonNode payout(Types.PaymentsApiTypes.PaymentsPayoutBody body) {
-		return http.request(new RequestOptions(
+	public Types.PaymentsApiTypes.PaymentsPayoutResponse payout(Types.PaymentsApiTypes.PaymentsPayoutBody body) {
+		return new Types.PaymentsApiTypes.PaymentsPayoutResponse(http.request(new RequestOptions(
 			"POST",
 			"/balance/payout",
 			null,
@@ -3239,14 +3239,14 @@ class PaymentsApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode payout() {
+	public Types.PaymentsApiTypes.PaymentsPayoutResponse payout() {
 		return payout(null);
 	}
 
-	public CompletableFuture<JsonNode> payoutAsync(Types.PaymentsApiTypes.PaymentsPayoutBody body) {
+	public CompletableFuture<Types.PaymentsApiTypes.PaymentsPayoutResponse> payoutAsync(Types.PaymentsApiTypes.PaymentsPayoutBody body) {
 		return http.requestAsync(new RequestOptions(
 			"POST",
 			"/balance/payout",
@@ -3255,10 +3255,10 @@ class PaymentsApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.PaymentsApiTypes.PaymentsPayoutResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> payoutAsync() {
+	public CompletableFuture<Types.PaymentsApiTypes.PaymentsPayoutResponse> payoutAsync() {
 		return payoutAsync(null);
 	}
 }
@@ -3273,8 +3273,8 @@ class AutoPaymentsApi {
 		this.mapper = http.objectMapper();
 	}
 
-	public JsonNode list() {
-		return http.request(new RequestOptions(
+	public Types.AutoPaymentsApiTypes.AutoPaymentsListResponse list() {
+		return new Types.AutoPaymentsApiTypes.AutoPaymentsListResponse(http.request(new RequestOptions(
 			"GET",
 			"/auto-payments",
 			null,
@@ -3282,10 +3282,10 @@ class AutoPaymentsApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public CompletableFuture<JsonNode> listAsync() {
+	public CompletableFuture<Types.AutoPaymentsApiTypes.AutoPaymentsListResponse> listAsync() {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/auto-payments",
@@ -3294,11 +3294,11 @@ class AutoPaymentsApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.AutoPaymentsApiTypes.AutoPaymentsListResponse::new);
 	}
 
-	public JsonNode create(Types.AutoPaymentsApiTypes.AutoPaymentsCreateBody body) {
-		return http.request(new RequestOptions(
+	public Types.AutoPaymentsApiTypes.AutoPaymentsCreateResponse create(Types.AutoPaymentsApiTypes.AutoPaymentsCreateBody body) {
+		return new Types.AutoPaymentsApiTypes.AutoPaymentsCreateResponse(http.request(new RequestOptions(
 			"POST",
 			"/auto-payment",
 			null,
@@ -3306,14 +3306,14 @@ class AutoPaymentsApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode create() {
+	public Types.AutoPaymentsApiTypes.AutoPaymentsCreateResponse create() {
 		return create(null);
 	}
 
-	public CompletableFuture<JsonNode> createAsync(Types.AutoPaymentsApiTypes.AutoPaymentsCreateBody body) {
+	public CompletableFuture<Types.AutoPaymentsApiTypes.AutoPaymentsCreateResponse> createAsync(Types.AutoPaymentsApiTypes.AutoPaymentsCreateBody body) {
 		return http.requestAsync(new RequestOptions(
 			"POST",
 			"/auto-payment",
@@ -3322,15 +3322,15 @@ class AutoPaymentsApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.AutoPaymentsApiTypes.AutoPaymentsCreateResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> createAsync() {
+	public CompletableFuture<Types.AutoPaymentsApiTypes.AutoPaymentsCreateResponse> createAsync() {
 		return createAsync(null);
 	}
 
-	public JsonNode delete(Types.AutoPaymentsApiTypes.AutoPaymentsDeleteBody body) {
-		return http.request(new RequestOptions(
+	public Types.AutoPaymentsApiTypes.AutoPaymentsDeleteResponse delete(Types.AutoPaymentsApiTypes.AutoPaymentsDeleteBody body) {
+		return new Types.AutoPaymentsApiTypes.AutoPaymentsDeleteResponse(http.request(new RequestOptions(
 			"DELETE",
 			"/auto-payment",
 			null,
@@ -3338,14 +3338,14 @@ class AutoPaymentsApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode delete() {
+	public Types.AutoPaymentsApiTypes.AutoPaymentsDeleteResponse delete() {
 		return delete(null);
 	}
 
-	public CompletableFuture<JsonNode> deleteAsync(Types.AutoPaymentsApiTypes.AutoPaymentsDeleteBody body) {
+	public CompletableFuture<Types.AutoPaymentsApiTypes.AutoPaymentsDeleteResponse> deleteAsync(Types.AutoPaymentsApiTypes.AutoPaymentsDeleteBody body) {
 		return http.requestAsync(new RequestOptions(
 			"DELETE",
 			"/auto-payment",
@@ -3354,10 +3354,10 @@ class AutoPaymentsApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.AutoPaymentsApiTypes.AutoPaymentsDeleteResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> deleteAsync() {
+	public CompletableFuture<Types.AutoPaymentsApiTypes.AutoPaymentsDeleteResponse> deleteAsync() {
 		return deleteAsync(null);
 	}
 }
@@ -3372,8 +3372,8 @@ class ProxyApi {
 		this.mapper = http.objectMapper();
 	}
 
-	public JsonNode get() {
-		return http.request(new RequestOptions(
+	public Types.ProxyApiTypes.ProxyGetResponse get() {
+		return new Types.ProxyApiTypes.ProxyGetResponse(http.request(new RequestOptions(
 			"GET",
 			"/proxy",
 			null,
@@ -3381,10 +3381,10 @@ class ProxyApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public CompletableFuture<JsonNode> getAsync() {
+	public CompletableFuture<Types.ProxyApiTypes.ProxyGetResponse> getAsync() {
 		return http.requestAsync(new RequestOptions(
 			"GET",
 			"/proxy",
@@ -3393,11 +3393,11 @@ class ProxyApi {
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ProxyApiTypes.ProxyGetResponse::new);
 	}
 
-	public JsonNode add(Types.ProxyApiTypes.ProxyAddBody body) {
-		return http.request(new RequestOptions(
+	public Types.ProxyApiTypes.ProxyAddResponse add(Types.ProxyApiTypes.ProxyAddBody body) {
+		return new Types.ProxyApiTypes.ProxyAddResponse(http.request(new RequestOptions(
 			"POST",
 			"/proxy",
 			null,
@@ -3405,10 +3405,10 @@ class ProxyApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public CompletableFuture<JsonNode> addAsync(Types.ProxyApiTypes.ProxyAddBody body) {
+	public CompletableFuture<Types.ProxyApiTypes.ProxyAddResponse> addAsync(Types.ProxyApiTypes.ProxyAddBody body) {
 		return http.requestAsync(new RequestOptions(
 			"POST",
 			"/proxy",
@@ -3417,11 +3417,11 @@ class ProxyApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ProxyApiTypes.ProxyAddResponse::new);
 	}
 
-	public JsonNode delete(Types.ProxyApiTypes.ProxyDeleteBody body) {
-		return http.request(new RequestOptions(
+	public Types.ProxyApiTypes.ProxyDeleteResponse delete(Types.ProxyApiTypes.ProxyDeleteBody body) {
+		return new Types.ProxyApiTypes.ProxyDeleteResponse(http.request(new RequestOptions(
 			"DELETE",
 			"/proxy",
 			null,
@@ -3429,14 +3429,14 @@ class ProxyApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode delete() {
+	public Types.ProxyApiTypes.ProxyDeleteResponse delete() {
 		return delete(null);
 	}
 
-	public CompletableFuture<JsonNode> deleteAsync(Types.ProxyApiTypes.ProxyDeleteBody body) {
+	public CompletableFuture<Types.ProxyApiTypes.ProxyDeleteResponse> deleteAsync(Types.ProxyApiTypes.ProxyDeleteBody body) {
 		return http.requestAsync(new RequestOptions(
 			"DELETE",
 			"/proxy",
@@ -3445,10 +3445,10 @@ class ProxyApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ProxyApiTypes.ProxyDeleteResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> deleteAsync() {
+	public CompletableFuture<Types.ProxyApiTypes.ProxyDeleteResponse> deleteAsync() {
 		return deleteAsync(null);
 	}
 }
@@ -3463,8 +3463,8 @@ class ImapApi {
 		this.mapper = http.objectMapper();
 	}
 
-	public JsonNode create(Types.ImapApiTypes.ImapCreateBody body) {
-		return http.request(new RequestOptions(
+	public Types.ImapApiTypes.ImapCreateResponse create(Types.ImapApiTypes.ImapCreateBody body) {
+		return new Types.ImapApiTypes.ImapCreateResponse(http.request(new RequestOptions(
 			"POST",
 			"/imap",
 			null,
@@ -3472,14 +3472,14 @@ class ImapApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode create() {
+	public Types.ImapApiTypes.ImapCreateResponse create() {
 		return create(null);
 	}
 
-	public CompletableFuture<JsonNode> createAsync(Types.ImapApiTypes.ImapCreateBody body) {
+	public CompletableFuture<Types.ImapApiTypes.ImapCreateResponse> createAsync(Types.ImapApiTypes.ImapCreateBody body) {
 		return http.requestAsync(new RequestOptions(
 			"POST",
 			"/imap",
@@ -3488,15 +3488,15 @@ class ImapApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ImapApiTypes.ImapCreateResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> createAsync() {
+	public CompletableFuture<Types.ImapApiTypes.ImapCreateResponse> createAsync() {
 		return createAsync(null);
 	}
 
-	public JsonNode delete(Types.ImapApiTypes.ImapDeleteBody body) {
-		return http.request(new RequestOptions(
+	public Types.ImapApiTypes.ImapDeleteResponse delete(Types.ImapApiTypes.ImapDeleteBody body) {
+		return new Types.ImapApiTypes.ImapDeleteResponse(http.request(new RequestOptions(
 			"DELETE",
 			"/imap",
 			null,
@@ -3504,14 +3504,14 @@ class ImapApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public JsonNode delete() {
+	public Types.ImapApiTypes.ImapDeleteResponse delete() {
 		return delete(null);
 	}
 
-	public CompletableFuture<JsonNode> deleteAsync(Types.ImapApiTypes.ImapDeleteBody body) {
+	public CompletableFuture<Types.ImapApiTypes.ImapDeleteResponse> deleteAsync(Types.ImapApiTypes.ImapDeleteBody body) {
 		return http.requestAsync(new RequestOptions(
 			"DELETE",
 			"/imap",
@@ -3520,10 +3520,10 @@ class ImapApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.ImapApiTypes.ImapDeleteResponse::new);
 	}
 
-	public CompletableFuture<JsonNode> deleteAsync() {
+	public CompletableFuture<Types.ImapApiTypes.ImapDeleteResponse> deleteAsync() {
 		return deleteAsync(null);
 	}
 }
@@ -3538,8 +3538,8 @@ class BatchApi {
 		this.mapper = http.objectMapper();
 	}
 
-	public JsonNode batch(List<JsonNode> body) {
-		return http.request(new RequestOptions(
+	public Types.BatchApiTypes.BatchBatchResponse batch(List<JsonNode> body) {
+		return new Types.BatchApiTypes.BatchBatchResponse(http.request(new RequestOptions(
 			"POST",
 			"/batch",
 			null,
@@ -3547,10 +3547,10 @@ class BatchApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)));
 	}
 
-	public CompletableFuture<JsonNode> batchAsync(List<JsonNode> body) {
+	public CompletableFuture<Types.BatchApiTypes.BatchBatchResponse> batchAsync(List<JsonNode> body) {
 		return http.requestAsync(new RequestOptions(
 			"POST",
 			"/batch",
@@ -3559,7 +3559,7 @@ class BatchApi {
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
 			/* isSearch */ false
-		));
+		)).thenApply(Types.BatchApiTypes.BatchBatchResponse::new);
 	}
 }
 

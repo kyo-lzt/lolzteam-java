@@ -115,6 +115,11 @@ final class Emitter {
 		return sb.toString();
 	}
 
+	private static String emitResponseRecord(String group, MethodDefinition method) {
+		var typeName = Naming.buildTypeName(group, method.methodName()) + "Response";
+		return "\tpublic record " + typeName + "(JsonNode data) {}";
+	}
+
 	static String emitJavaTypesFile(List<ParsedGroup> groups, String subPackage) {
 		var sb = new StringBuilder();
 		var fullPackage = PACKAGE + "." + subPackage;
@@ -138,6 +143,8 @@ final class Emitter {
 
 				var bodyType = emitBodyClass(group.groupName(), method);
 				if (bodyType != null) groupTypes.add(bodyType);
+
+				groupTypes.add(emitResponseRecord(group.groupName(), method));
 			}
 
 			if (!groupTypes.isEmpty()) {
@@ -228,7 +235,8 @@ final class Emitter {
 		var argStr = String.join(", ", args);
 		var pathExpr = buildPathExpression(method.path());
 
-		var returnType = isAsync ? "CompletableFuture<JsonNode>" : "JsonNode";
+		var responseTypeName = "Types." + className + "Types." + typeName + "Response";
+		var returnType = isAsync ? "CompletableFuture<" + responseTypeName + ">" : responseTypeName;
 		var methodSuffix = isAsync ? "Async" : "";
 		var httpMethod = isAsync ? "requestAsync" : "request";
 
@@ -241,10 +249,14 @@ final class Emitter {
 		var isSearch = group.equalsIgnoreCase("category");
 
 		if (isMultipart && hasByteArrayFields) {
-			emitMultipartByteArrayMethod(sb, method, typeName, className, pathExpr, hasQueryType, hasBodyType, httpMethod, isSearch);
+			emitMultipartByteArrayMethod(sb, method, typeName, className, pathExpr, hasQueryType, hasBodyType, httpMethod, isSearch, isAsync, responseTypeName);
 		} else {
 			var encodingLiteral = bodyEncodingLiteral(method.bodyEncoding());
-			sb.append("\t\treturn http.").append(httpMethod).append("(new RequestOptions(\n");
+			if (isAsync) {
+				sb.append("\t\treturn http.requestAsync(new RequestOptions(\n");
+			} else {
+				sb.append("\t\treturn new ").append(responseTypeName).append("(http.request(new RequestOptions(\n");
+			}
 			sb.append("\t\t\t\"").append(method.httpMethod()).append("\",\n");
 			sb.append("\t\t\t").append(pathExpr).append(",\n");
 
@@ -269,7 +281,11 @@ final class Emitter {
 			}
 
 			sb.append("\t\t\t/* isSearch */ ").append(isSearch).append("\n");
-			sb.append("\t\t));\n");
+			if (isAsync) {
+				sb.append("\t\t)).thenApply(").append(responseTypeName).append("::new);\n");
+			} else {
+				sb.append("\t\t)));\n");
+			}
 		}
 
 		sb.append("\t}");
@@ -278,7 +294,8 @@ final class Emitter {
 
 	private static void emitMultipartByteArrayMethod(
 		StringBuilder sb, MethodDefinition method, String typeName, String className,
-		String pathExpr, boolean hasQueryType, boolean hasBodyType, String httpMethod, boolean isSearch
+		String pathExpr, boolean hasQueryType, boolean hasBodyType, String httpMethod, boolean isSearch,
+		boolean isAsync, String responseTypeName
 	) {
 		var serializableProps = method.bodyProperties().stream()
 			.filter(p -> !"Blob".equals(p.type()))
@@ -316,7 +333,11 @@ final class Emitter {
 				}
 			}
 
-			sb.append(indent).append("return http.").append(httpMethod).append("(new RequestOptions(\n");
+			if (isAsync) {
+				sb.append(indent).append("return http.requestAsync(new RequestOptions(\n");
+			} else {
+				sb.append(indent).append("return new ").append(responseTypeName).append("(http.request(new RequestOptions(\n");
+			}
 			sb.append(indent).append("\t\"").append(method.httpMethod()).append("\",\n");
 			sb.append(indent).append("\t").append(pathExpr).append(",\n");
 
@@ -334,7 +355,11 @@ final class Emitter {
 			sb.append(indent).append("\tcom.lolzteam.api.runtime.BodyEncoding.MULTIPART,\n");
 			sb.append(indent).append("\tbyteFields,\n");
 			sb.append(indent).append("\t/* isSearch */ ").append(isSearch).append("\n");
-			sb.append(indent).append("));\n");
+			if (isAsync) {
+				sb.append(indent).append(")).thenApply(").append(responseTypeName).append("::new);\n");
+			} else {
+				sb.append(indent).append(")));\n");
+			}
 		};
 
 		if (method.bodyRequired()) {
@@ -343,7 +368,11 @@ final class Emitter {
 			sb.append("\t\tif (body != null) {\n");
 			emitBody.run();
 			sb.append("\t\t} else {\n");
-			sb.append("\t\t\treturn http.").append(httpMethod).append("(new RequestOptions(\n");
+			if (isAsync) {
+				sb.append("\t\t\treturn http.requestAsync(new RequestOptions(\n");
+			} else {
+				sb.append("\t\t\treturn new ").append(responseTypeName).append("(http.request(new RequestOptions(\n");
+			}
 			sb.append("\t\t\t\t\"").append(method.httpMethod()).append("\",\n");
 			sb.append("\t\t\t\t").append(pathExpr).append(",\n");
 			if (hasQueryType) {
@@ -355,7 +384,11 @@ final class Emitter {
 			sb.append("\t\t\t\tcom.lolzteam.api.runtime.BodyEncoding.MULTIPART,\n");
 			sb.append("\t\t\t\tjava.util.Map.of(),\n");
 			sb.append("\t\t\t\t/* isSearch */ ").append(isSearch).append("\n");
-			sb.append("\t\t\t));\n");
+			if (isAsync) {
+				sb.append("\t\t\t)).thenApply(").append(responseTypeName).append("::new);\n");
+			} else {
+				sb.append("\t\t\t)));\n");
+			}
 			sb.append("\t\t}\n");
 		}
 	}
@@ -395,7 +428,8 @@ final class Emitter {
 			callArgs.add("null");
 		}
 
-		var returnType = isAsync ? "CompletableFuture<JsonNode>" : "JsonNode";
+		var responseTypeName = "Types." + className + "Types." + typeName + "Response";
+		var returnType = isAsync ? "CompletableFuture<" + responseTypeName + ">" : responseTypeName;
 		var methodSuffix = isAsync ? "Async" : "";
 
 		sb.append("\tpublic ").append(returnType).append(" ").append(method.methodName())
