@@ -63,6 +63,9 @@ var config = ClientConfig.builder("your_token")
     .proxy(new ProxyConfig("http://user:pass@127.0.0.1:8080"))
     .retry(new RetryConfig(5, Duration.ofSeconds(1), Duration.ofSeconds(30)))
     .rateLimit(new RateLimitConfig(200))
+    .searchRateLimit(new RateLimitConfig(30))
+    .timeout(Duration.ofSeconds(15))
+    .onRetry(info -> System.out.printf("Retry #%d: %s %s%n", info.attempt(), info.method(), info.path()))
     .build();
 ```
 
@@ -73,6 +76,9 @@ var config = ClientConfig.builder("your_token")
 | `proxy` | `ProxyConfig` | `null` | HTTP proxy URL |
 | `retry` | `RetryConfig` | 3 retries, 1s base, 30s max | Retry behavior |
 | `rateLimit` | `RateLimitConfig` | Forum: 300/min, Market: 120/min | Requests per minute |
+| `searchRateLimit` | `RateLimitConfig` | Market: 20/min | Search requests per minute |
+| `timeout` | `Duration` | `null` | Request timeout |
+| `onRetry` | `Consumer<RetryInfo>` | `null` | Callback on each retry attempt |
 
 ## Retry Logic
 
