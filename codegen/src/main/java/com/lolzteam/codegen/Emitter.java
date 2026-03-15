@@ -104,19 +104,50 @@ final class Emitter {
 		sb.append(String.join(",\n", props)).append("\n");
 		sb.append("\t) {\n");
 
-		// Builder-style static factory for optional params
-		sb.append("\t\tpublic ").append(typeName).append("() {\n");
-		sb.append("\t\t\tthis(");
-		var defaults = method.params().queryParams().stream()
-			.map(p -> {
-				var et = enums.resolve(method.operationId(), p.name());
-				var jt = et != null ? et : Transforms.toJavaType(p.type());
-				return defaultLiteral(p.defaultValue(), jt, et, enums);
-			})
-			.collect(Collectors.joining(", "));
-		sb.append(defaults);
-		sb.append(");\n");
-		sb.append("\t\t}\n");
+		// Convenience constructor: required-only if there are optional params
+		var hasOptional = method.params().queryParams().stream().anyMatch(p -> !p.required());
+		if (hasOptional) {
+			var requiredParams = method.params().queryParams().stream()
+				.filter(ParsedParameter::required)
+				.toList();
+			if (!requiredParams.isEmpty()) {
+				// Constructor with required params only
+				sb.append("\t\tpublic ").append(typeName).append("(");
+				var reqSig = requiredParams.stream()
+					.map(p -> {
+						var et = enums.resolve(method.operationId(), p.name());
+						var jt = et != null ? et : Transforms.toJavaType(p.type());
+						return jt + " " + Naming.safeJavaName(p.name());
+					})
+					.collect(Collectors.joining(", "));
+				sb.append(reqSig).append(") {\n");
+				sb.append("\t\t\tthis(");
+				var allArgs = method.params().queryParams().stream()
+					.map(p -> {
+						if (p.required()) return Naming.safeJavaName(p.name());
+						var et = enums.resolve(method.operationId(), p.name());
+						var jt = et != null ? et : Transforms.toJavaType(p.type());
+						return defaultLiteral(p.defaultValue(), jt, et, enums);
+					})
+					.collect(Collectors.joining(", "));
+				sb.append(allArgs).append(");\n");
+				sb.append("\t\t}\n");
+			} else {
+				// All optional: no-arg constructor
+				sb.append("\t\tpublic ").append(typeName).append("() {\n");
+				sb.append("\t\t\tthis(");
+				var defaults = method.params().queryParams().stream()
+					.map(p -> {
+						var et = enums.resolve(method.operationId(), p.name());
+						var jt = et != null ? et : Transforms.toJavaType(p.type());
+						return defaultLiteral(p.defaultValue(), jt, et, enums);
+					})
+					.collect(Collectors.joining(", "));
+				sb.append(defaults).append(");\n");
+				sb.append("\t\t}\n");
+			}
+		}
+
 		sb.append("\t}");
 		return sb.toString();
 	}

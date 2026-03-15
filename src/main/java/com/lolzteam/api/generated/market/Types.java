@@ -1585,6 +1585,21 @@ public final class Types {
 		}
 	}
 
+	public enum PublishingType {
+		SOCIALCLUB("socialclub");
+
+		private final String value;
+
+		PublishingType(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
 	public enum PaymentsType {
 		PAID_ITEM("paid_item"),
 		SOLD_ITEM("sold_item"),
@@ -1667,6 +1682,21 @@ public final class Types {
 
 		@JsonValue
 		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum Cancel {
+		V1(1L);
+
+		private final long value;
+
+		Cancel(long value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public long getValue() {
 			return value;
 		}
 	}
@@ -9431,8 +9461,8 @@ public final class Types {
 			Currency currency,
 			@JsonProperty("ignore_cache") Boolean ignoreCache
 		) {
-			public ManagingSteamValueParams() {
-				this(null, null, null, null);
+			public ManagingSteamValueParams(String link) {
+				this(link, null, null, null);
 			}
 		}
 
@@ -9613,9 +9643,6 @@ public final class Types {
 		public record ManagingImageParams(
 			ManagingTypeImage type
 		) {
-			public ManagingImageParams() {
-				this(null);
-			}
 		}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
@@ -9783,7 +9810,7 @@ public final class Types {
 		) {}
 
 		public record ManagingChangePasswordBody(
-			@JsonProperty("_cancel") String Cancel
+			@JsonProperty("_cancel") Cancel Cancel
 		) {
 			public ManagingChangePasswordBody() {
 				this(null);
@@ -10912,12 +10939,12 @@ public final class Types {
 		) {}
 
 		public record PublishingExternalBody(
-			String type,
+			PublishingType type,
 			String login,
 			@JsonProperty("email_login_data") String emailLoginData,
 			String cookies
 		) {
-			public PublishingExternalBody(String type) {
+			public PublishingExternalBody(PublishingType type) {
 				this(type, null, null, null);
 			}
 		}

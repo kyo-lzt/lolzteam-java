@@ -134,10 +134,9 @@ final class EnumCollector {
 	 */
 	private static List<String> parseEnumValues(String typeString) {
 		if (typeString == null || typeString.isEmpty()) return null;
-		if (!typeString.contains("|")) return null;
 
 		var parts = typeString.split("\\s*\\|\\s*");
-		if (parts.length < 2) return null;
+		if (parts.length < 1) return null;
 
 		var values = new ArrayList<String>();
 		for (var part : parts) {

@@ -20,6 +20,21 @@ public final class Types {
 
 	// ─── Enums ───────────────────────────────────────────────────
 
+	public enum GrantType {
+		PASSWORD("password");
+
+		private final String value;
+
+		GrantType(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
 	public enum CategoriesOrder {
 		NATURAL("natural"),
 		LIST("list");
@@ -174,6 +189,21 @@ public final class Types {
 
 		@JsonValue
 		public long getValue() {
+			return value;
+		}
+	}
+
+	public enum ContestType {
+		BY_FINISH_DATE("by_finish_date");
+
+		private final String value;
+
+		ContestType(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
 			return value;
 		}
 	}
@@ -669,6 +699,21 @@ public final class Types {
 
 		@JsonValue
 		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum FormId {
+		V3(3L);
+
+		private final long value;
+
+		FormId(long value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public long getValue() {
 			return value;
 		}
 	}
@@ -2248,7 +2293,7 @@ public final class Types {
 			String title,
 			@JsonProperty("title_en") String titleEn,
 			/** Default: by_finish_date */
-			@JsonProperty("contest_type") String contestType,
+			@JsonProperty("contest_type") ContestType contestType,
 			@JsonProperty("length_value") Long lengthValue,
 			@JsonProperty("length_option") LengthOption lengthOption,
 			@JsonProperty("prize_type") PrizeType prizeType,
@@ -2273,7 +2318,7 @@ public final class Types {
 			@JsonProperty("watch_thread") Boolean watchThread,
 			@JsonProperty("watch_thread_email") Boolean watchThreadEmail
 		) {
-			public ThreadsCreateContestBody(String postBody, String contestType, PrizeType prizeType, Long requireLikeCount, Long requireTotalLikeCount) {
+			public ThreadsCreateContestBody(String postBody, ContestType contestType, PrizeType prizeType, Long requireLikeCount, Long requireTotalLikeCount) {
 				this(postBody, null, null, contestType, null, null, prizeType, null, null, null, null, null, requireLikeCount, requireTotalLikeCount, null, null, ReplyGroup.V2, null, null, null, null, null, null, null, null, null);
 			}
 		}
@@ -3186,8 +3231,8 @@ public final class Types {
 			Long before,
 			@JsonProperty("before_comment") Long beforeComment
 		) {
-			public PostsCommentsGetParams() {
-				this(null, null, null);
+			public PostsCommentsGetParams(Long postId) {
+				this(postId, null, null);
 			}
 		}
 
@@ -4354,8 +4399,8 @@ public final class Types {
 			Long before,
 			Long limit
 		) {
-			public ProfilePostsCommentsListParams() {
-				this(null, null, null);
+			public ProfilePostsCommentsListParams(Long profilePostId) {
+				this(profilePostId, null, null);
 			}
 		}
 
@@ -5141,9 +5186,6 @@ public final class Types {
 		public record TagsFindParams(
 			String tag
 		) {
-			public TagsFindParams() {
-				this(null);
-			}
 		}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
@@ -6263,8 +6305,8 @@ public final class Types {
 			@JsonProperty("room_id") RoomId roomId,
 			@JsonProperty("before_message_id") Long beforeMessageId
 		) {
-			public ChatboxGetMessagesParams() {
-				this(null, null);
+			public ChatboxGetMessagesParams(RoomId roomId) {
+				this(roomId, null);
 			}
 		}
 
@@ -6317,9 +6359,6 @@ public final class Types {
 		public record ChatboxOnlineParams(
 			@JsonProperty("room_id") RoomId roomId
 		) {
-			public ChatboxOnlineParams() {
-				this(null);
-			}
 		}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
@@ -6380,9 +6419,6 @@ public final class Types {
 		public record ChatboxReportReasonsParams(
 			@JsonProperty("message_id") Long messageId
 		) {
-			public ChatboxReportReasonsParams() {
-				this(null);
-			}
 		}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
