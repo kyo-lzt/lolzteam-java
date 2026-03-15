@@ -6,10 +6,15 @@ record BodyExtractionResult(
 	List<BodyProperty> properties,
 	boolean bodyIsArray,
 	String bodyArrayItemType,
-	String bodyEncoding
+	String bodyEncoding,
+	DiscriminatedUnion discriminatedUnion
 ) {
 
 	BodyExtractionResult(List<BodyProperty> properties) {
-		this(properties, false, null, "form");
+		this(properties, false, null, "form", null);
+	}
+
+	BodyExtractionResult(List<BodyProperty> properties, boolean bodyIsArray, String bodyArrayItemType, String bodyEncoding) {
+		this(properties, bodyIsArray, bodyArrayItemType, bodyEncoding, null);
 	}
 }

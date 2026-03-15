@@ -17,10 +17,71 @@ final class Emitter {
 	private Emitter() {
 	}
 
+	/**
+	 * Convert a schema default value + Java type into a Java literal for use in constructors.
+	 * Returns "null" when no default is present.
+	 */
+	private static String defaultLiteral(String defaultValue, String javaType) {
+		return defaultLiteral(defaultValue, javaType, null, null);
+	}
+
+	/**
+	 * Convert a schema default value + Java type into a Java literal for use in constructors.
+	 * When enumTypeName and enums are provided, resolves enum variant names.
+	 */
+	private static String defaultLiteral(
+		String defaultValue, String javaType,
+		String enumTypeName, EnumCollector.CollectResult enums
+	) {
+		if (defaultValue == null) return "null";
+		return switch (javaType) {
+			case "String" -> "\"" + escapeJavaString(defaultValue) + "\"";
+			case "Long", "long" -> {
+				try {
+					Long.parseLong(defaultValue);
+					yield defaultValue + "L";
+				} catch (NumberFormatException e) {
+					yield "null";
+				}
+			}
+			case "Double", "double" -> {
+				try {
+					Double.parseDouble(defaultValue);
+					yield defaultValue + "D";
+				} catch (NumberFormatException e) {
+					yield "null";
+				}
+			}
+			case "Boolean", "boolean" -> {
+				if ("true".equalsIgnoreCase(defaultValue) || "1".equals(defaultValue)) {
+					yield "true";
+				} else if ("false".equalsIgnoreCase(defaultValue) || "0".equals(defaultValue)) {
+					yield "false";
+				}
+				yield "null";
+			}
+			default -> {
+				// Enum types — resolve variant name from enum definition
+				if (enumTypeName != null && enums != null) {
+					var def = enums.definitions().get(enumTypeName);
+					if (def != null && def.values().contains(defaultValue)) {
+						var isInteger = "integer".equals(def.valueType());
+						var variantName = isInteger
+							? integerVariantName(defaultValue)
+							: stringVariantName(defaultValue);
+						yield enumTypeName + "." + variantName;
+					}
+				}
+				yield "null";
+			}
+		};
+	}
 
 	// ─── Types File ───────────────────────────────────────────────────
 
-	private static String emitQueryParamsClass(String group, MethodDefinition method) {
+	private static String emitQueryParamsClass(
+		String group, MethodDefinition method, EnumCollector.CollectResult enums
+	) {
 		if (method.params().queryParams().isEmpty()) return null;
 
 		var typeName = Naming.buildTypeName(group, method.methodName()) + "Params";
@@ -29,12 +90,16 @@ final class Emitter {
 
 		var props = new ArrayList<String>();
 		for (var param : method.params().queryParams()) {
-			var javaType = Transforms.toJavaType(param.type());
+			var enumTypeName = enums.resolve(method.operationId(), param.name());
+			var javaType = enumTypeName != null ? enumTypeName : Transforms.toJavaType(param.type());
 			var fieldName = Naming.safeJavaName(param.name());
 			var annotation = Naming.needsJsonProperty(param.name())
 				? "\t\t@JsonProperty(\"" + param.name() + "\") "
 				: "\t\t";
-			props.add(annotation + javaType + " " + fieldName);
+			var doc = param.defaultValue() != null
+				? "\t\t/** Default: " + param.defaultValue() + " */\n"
+				: "";
+			props.add(doc + annotation + javaType + " " + fieldName);
 		}
 		sb.append(String.join(",\n", props)).append("\n");
 		sb.append("\t) {\n");
@@ -43,7 +108,11 @@ final class Emitter {
 		sb.append("\t\tpublic ").append(typeName).append("() {\n");
 		sb.append("\t\t\tthis(");
 		var defaults = method.params().queryParams().stream()
-			.map(p -> "null")
+			.map(p -> {
+				var et = enums.resolve(method.operationId(), p.name());
+				var jt = et != null ? et : Transforms.toJavaType(p.type());
+				return defaultLiteral(p.defaultValue(), jt, et, enums);
+			})
 			.collect(Collectors.joining(", "));
 		sb.append(defaults);
 		sb.append(");\n");
@@ -52,10 +121,17 @@ final class Emitter {
 		return sb.toString();
 	}
 
-	private static String emitBodyClass(String group, MethodDefinition method) {
+	private static String emitBodyClass(
+		String group, MethodDefinition method, EnumCollector.CollectResult enums
+	) {
 		if (!method.hasBody()) return null;
 
 		var typeName = Naming.buildTypeName(group, method.methodName()) + "Body";
+
+		// Discriminated union → sealed interface + variant records
+		if (method.discriminatedUnion() != null) {
+			return emitDiscriminatedUnionBody(typeName, method, enums);
+		}
 
 		// Array body
 		if (method.bodyIsArray()) {
@@ -73,7 +149,10 @@ final class Emitter {
 
 		var props = new ArrayList<String>();
 		for (var prop : method.bodyProperties()) {
-			var javaType = "Blob".equals(prop.type()) ? "byte[]" : Transforms.toJavaType(prop.type());
+			var enumTypeName = enums.resolve(method.operationId(), prop.name());
+			var javaType = enumTypeName != null
+				? enumTypeName
+				: ("Blob".equals(prop.type()) ? "byte[]" : Transforms.toJavaType(prop.type()));
 			var fieldName = Naming.safeJavaName(prop.name());
 			String annotation;
 			if (!hasByteArrayFields && Naming.needsJsonProperty(prop.name())) {
@@ -81,7 +160,10 @@ final class Emitter {
 			} else {
 				annotation = "\t\t";
 			}
-			props.add(annotation + javaType + " " + fieldName);
+			var doc = prop.defaultValue() != null
+				? "\t\t/** Default: " + prop.defaultValue() + " */\n"
+				: "";
+			props.add(doc + annotation + javaType + " " + fieldName);
 		}
 		sb.append(String.join(",\n", props)).append("\n");
 		sb.append("\t) {\n");
@@ -96,14 +178,22 @@ final class Emitter {
 				sb.append("\t\tpublic ").append(typeName).append("(");
 				var reqParams = requiredProps.stream()
 					.map(p -> {
-						var jt = "Blob".equals(p.type()) ? "byte[]" : Transforms.toJavaType(p.type());
+						var et = enums.resolve(method.operationId(), p.name());
+						var jt = et != null ? et
+							: ("Blob".equals(p.type()) ? "byte[]" : Transforms.toJavaType(p.type()));
 						return jt + " " + Naming.safeJavaName(p.name());
 					})
 					.collect(Collectors.joining(", "));
 				sb.append(reqParams).append(") {\n");
 				sb.append("\t\t\tthis(");
 				var allArgs = method.bodyProperties().stream()
-					.map(p -> p.required() ? Naming.safeJavaName(p.name()) : "null")
+					.map(p -> {
+						if (p.required()) return Naming.safeJavaName(p.name());
+						var et = enums.resolve(method.operationId(), p.name());
+						var jt = et != null ? et
+							: ("Blob".equals(p.type()) ? "byte[]" : Transforms.toJavaType(p.type()));
+						return defaultLiteral(p.defaultValue(), jt, et, enums);
+					})
 					.collect(Collectors.joining(", "));
 				sb.append(allArgs).append(");\n");
 				sb.append("\t\t}\n");
@@ -111,7 +201,12 @@ final class Emitter {
 				sb.append("\t\tpublic ").append(typeName).append("() {\n");
 				sb.append("\t\t\tthis(");
 				var nulls = method.bodyProperties().stream()
-					.map(p -> "null")
+					.map(p -> {
+						var et = enums.resolve(method.operationId(), p.name());
+						var jt = et != null ? et
+							: ("Blob".equals(p.type()) ? "byte[]" : Transforms.toJavaType(p.type()));
+						return defaultLiteral(p.defaultValue(), jt, et, enums);
+					})
 					.collect(Collectors.joining(", "));
 				sb.append(nulls).append(");\n");
 				sb.append("\t\t}\n");
@@ -120,6 +215,187 @@ final class Emitter {
 
 		sb.append("\t}");
 		return sb.toString();
+	}
+
+	private static String emitDiscriminatedUnionBody(
+		String typeName, MethodDefinition method, EnumCollector.CollectResult enums
+	) {
+		var union = method.discriminatedUnion();
+		var sb = new StringBuilder();
+
+		// Build variant class names
+		var variantNames = new ArrayList<String>();
+		for (var variant : union.variants()) {
+			variantNames.add(typeName + discriminatorValueToSuffix(variant.discriminatorValue()));
+		}
+
+		// Sealed interface with Jackson polymorphism annotations
+		var isIntegerDiscriminator = "integer".equals(union.discriminatorType());
+
+		sb.append("\t@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = \"")
+			.append(union.discriminatorProperty()).append("\")\n");
+		sb.append("\t@JsonSubTypes({\n");
+		for (int i = 0; i < union.variants().size(); i++) {
+			var variant = union.variants().get(i);
+			var variantClassName = variantNames.get(i);
+			var comma = i < union.variants().size() - 1 ? "," : "";
+			if (isIntegerDiscriminator) {
+				sb.append("\t\t@JsonSubTypes.Type(value = ").append(variantClassName)
+					.append(".class, name = \"").append(variant.discriminatorValue()).append("\")").append(comma).append("\n");
+			} else {
+				sb.append("\t\t@JsonSubTypes.Type(value = ").append(variantClassName)
+					.append(".class, name = \"").append(variant.discriminatorValue()).append("\")").append(comma).append("\n");
+			}
+		}
+		sb.append("\t})\n");
+		sb.append("\tpublic sealed interface ").append(typeName).append(" permits\n");
+		sb.append("\t\t").append(String.join(", ", variantNames)).append(" {\n");
+		sb.append("\t}\n");
+
+		// Emit each variant record
+		for (int i = 0; i < union.variants().size(); i++) {
+			var variant = union.variants().get(i);
+			var variantClassName = variantNames.get(i);
+
+			sb.append("\n");
+			sb.append("\t@JsonTypeName(\"").append(variant.discriminatorValue()).append("\")\n");
+			sb.append("\tpublic record ").append(variantClassName).append("(\n");
+
+			var props = new ArrayList<String>();
+			for (var prop : variant.properties()) {
+				var enumTypeName = enums.resolve(method.operationId(), prop.name());
+				var javaType = enumTypeName != null ? enumTypeName : Transforms.toJavaType(prop.type());
+				var fieldName = Naming.safeJavaName(prop.name());
+				String annotation;
+				if (Naming.needsJsonProperty(prop.name())) {
+					annotation = "\t\t@JsonProperty(\"" + prop.name() + "\") ";
+				} else {
+					annotation = "\t\t";
+				}
+				if (!prop.required()) {
+					javaType = boxType(javaType);
+				}
+				var doc = prop.defaultValue() != null
+					? "\t\t/** Default: " + prop.defaultValue() + " */\n"
+					: "";
+				props.add(doc + annotation + javaType + " " + fieldName);
+			}
+			sb.append(String.join(",\n", props)).append("\n");
+			sb.append("\t) implements ").append(typeName).append(" {\n");
+
+			// Convenience constructor with only required params
+			var hasOptional = variant.properties().stream().anyMatch(p -> !p.required());
+			if (hasOptional) {
+				var requiredProps = variant.properties().stream()
+					.filter(BodyProperty::required)
+					.toList();
+				if (!requiredProps.isEmpty()) {
+					sb.append("\t\tpublic ").append(variantClassName).append("(");
+					var reqParams = requiredProps.stream()
+						.map(p -> {
+							var et = enums.resolve(method.operationId(), p.name());
+							var jt = et != null ? et : Transforms.toJavaType(p.type());
+							return jt + " " + Naming.safeJavaName(p.name());
+						})
+						.collect(Collectors.joining(", "));
+					sb.append(reqParams).append(") {\n");
+					sb.append("\t\t\tthis(");
+					var allArgs = variant.properties().stream()
+						.map(p -> {
+							if (p.required()) return Naming.safeJavaName(p.name());
+							var et = enums.resolve(method.operationId(), p.name());
+							var jt = et != null ? et : Transforms.toJavaType(p.type());
+							return defaultLiteral(p.defaultValue(), jt, et, enums);
+						})
+						.collect(Collectors.joining(", "));
+					sb.append(allArgs).append(");\n");
+					sb.append("\t\t}\n");
+				} else {
+					sb.append("\t\tpublic ").append(variantClassName).append("() {\n");
+					sb.append("\t\t\tthis(");
+					var nulls = variant.properties().stream()
+						.map(p -> {
+							var et = enums.resolve(method.operationId(), p.name());
+							var jt = et != null ? et : Transforms.toJavaType(p.type());
+							return defaultLiteral(p.defaultValue(), jt, et, enums);
+						})
+						.collect(Collectors.joining(", "));
+					sb.append(nulls).append(");\n");
+					sb.append("\t\t}\n");
+				}
+			}
+
+			sb.append("\t}");
+		}
+
+		return sb.toString();
+	}
+
+	/**
+	 * Convert a discriminator value to a PascalCase suffix for the variant class name.
+	 * e.g. "client_credentials" → "ClientCredentials", "1" → "V1"
+	 */
+	private static String discriminatorValueToSuffix(String value) {
+		if (value.matches("-?\\d+")) {
+			return "V" + value;
+		}
+		return Naming.capitalizeFirst(Naming.snakeToCamel(value));
+	}
+
+	// ─── Enum Generation ────────────────────────────────────────────
+
+	private static String emitEnumClass(EnumDefinition def) {
+		var sb = new StringBuilder();
+		var isInteger = "integer".equals(def.valueType());
+		var javaValueType = isInteger ? "long" : "String";
+
+		sb.append("\tpublic enum ").append(def.typeName()).append(" {\n");
+
+		var variants = new ArrayList<String>();
+		for (var value : def.values()) {
+			var variantName = isInteger ? integerVariantName(value) : stringVariantName(value);
+			var literal = isInteger ? value + "L" : "\"" + escapeJavaString(value) + "\"";
+			variants.add("\t\t" + variantName + "(" + literal + ")");
+		}
+		sb.append(String.join(",\n", variants)).append(";\n\n");
+
+		sb.append("\t\tprivate final ").append(javaValueType).append(" value;\n\n");
+		sb.append("\t\t").append(def.typeName()).append("(").append(javaValueType).append(" value) {\n");
+		sb.append("\t\t\tthis.value = value;\n");
+		sb.append("\t\t}\n\n");
+		sb.append("\t\t@JsonValue\n");
+		sb.append("\t\tpublic ").append(javaValueType).append(" getValue() {\n");
+		sb.append("\t\t\treturn value;\n");
+		sb.append("\t\t}\n");
+		sb.append("\t}");
+		return sb.toString();
+	}
+
+	private static String integerVariantName(String value) {
+		if (value.startsWith("-")) {
+			return "V_" + value.substring(1);
+		}
+		return "V" + value;
+	}
+
+	private static String stringVariantName(String value) {
+		// Convert to UPPER_SNAKE_CASE
+		var result = value
+			.replaceAll("([a-z0-9])([A-Z])", "$1_$2")
+			.replaceAll("[^a-zA-Z0-9]", "_")
+			.toUpperCase();
+		// Ensure starts with letter
+		if (!result.isEmpty() && Character.isDigit(result.charAt(0))) {
+			result = "V_" + result;
+		}
+		if (result.isEmpty()) {
+			result = "EMPTY";
+		}
+		return result;
+	}
+
+	private static String escapeJavaString(String s) {
+		return s.replace("\\", "\\\\").replace("\"", "\\\"");
 	}
 
 	// ─── Response Record Generation ──────────────────────────────────
@@ -168,6 +444,15 @@ final class Emitter {
 
 		// Multi-type array: type: ['string', 'integer']
 		if (typeNode != null && typeNode.isArray()) {
+			var nonNullTypes = new ArrayList<String>();
+			for (var t : typeNode) {
+				var ts = t.asText();
+				if (!"null".equals(ts)) nonNullTypes.add(ts);
+			}
+			if (nonNullTypes.size() == 2
+				&& nonNullTypes.contains("string") && nonNullTypes.contains("integer")) {
+				return "com.lolzteam.api.runtime.StringOrInt";
+			}
 			return "JsonNode";
 		}
 
@@ -466,7 +751,8 @@ final class Emitter {
 	// ─── Types File Assembly ─────────────────────────────────────────
 
 	static String emitJavaTypesFile(
-		List<ParsedGroup> groups, String subPackage, Map<String, JsonNode> componentSchemas
+		List<ParsedGroup> groups, String subPackage, Map<String, JsonNode> componentSchemas,
+		EnumCollector.CollectResult enums
 	) {
 		var sb = new StringBuilder();
 		var fullPackage = PACKAGE + "." + subPackage;
@@ -491,12 +777,24 @@ final class Emitter {
 		sb.append("import com.fasterxml.jackson.annotation.JsonCreator;\n");
 		sb.append("import com.fasterxml.jackson.annotation.JsonIgnoreProperties;\n");
 		sb.append("import com.fasterxml.jackson.annotation.JsonProperty;\n");
+		sb.append("import com.fasterxml.jackson.annotation.JsonSubTypes;\n");
+		sb.append("import com.fasterxml.jackson.annotation.JsonTypeInfo;\n");
+		sb.append("import com.fasterxml.jackson.annotation.JsonTypeName;\n");
+		sb.append("import com.fasterxml.jackson.annotation.JsonValue;\n");
 		sb.append("import com.fasterxml.jackson.databind.JsonNode;\n");
 		sb.append("import java.util.List;\n");
 		sb.append("import java.util.Map;\n\n");
 
 		sb.append("public final class Types {\n\n");
 		sb.append("\tprivate Types() {\n\t}\n\n");
+
+		// Emit enum types
+		if (!enums.definitions().isEmpty()) {
+			sb.append("\t// ─── Enums ───────────────────────────────────────────────────\n\n");
+			for (var def : enums.definitions().values()) {
+				sb.append(emitEnumClass(def)).append("\n\n");
+			}
+		}
 
 		// Emit component schema records first
 		var hasComponentSchemas = false;
@@ -519,10 +817,10 @@ final class Emitter {
 			var groupTypes = new ArrayList<String>();
 
 			for (var method : group.methods()) {
-				var queryType = emitQueryParamsClass(group.groupName(), method);
+				var queryType = emitQueryParamsClass(group.groupName(), method, enums);
 				if (queryType != null) groupTypes.add(queryType);
 
-				var bodyType = emitBodyClass(group.groupName(), method);
+				var bodyType = emitBodyClass(group.groupName(), method, enums);
 				if (bodyType != null) groupTypes.add(bodyType);
 
 				groupTypes.add(emitResponseRecord(
@@ -619,7 +917,10 @@ final class Emitter {
 		var pathExpr = buildPathExpression(method.path());
 
 		var responseTypeName = "Types." + className + "Types." + typeName + "Response";
-		var returnType = isAsync ? "CompletableFuture<" + responseTypeName + ">" : responseTypeName;
+		var isHtml = method.htmlResponse();
+		var returnType = isHtml
+			? (isAsync ? "CompletableFuture<String>" : "String")
+			: (isAsync ? "CompletableFuture<" + responseTypeName + ">" : responseTypeName);
 		var methodSuffix = isAsync ? "Async" : "";
 		var httpMethod = isAsync ? "requestAsync" : "request";
 
@@ -631,7 +932,23 @@ final class Emitter {
 
 		var isSearch = group.equalsIgnoreCase("category");
 
-		if (isMultipart && hasByteArrayFields) {
+		if (isHtml) {
+			// text/html endpoints — return raw String via requestRaw
+			var rawMethod = isAsync ? "requestRawAsync" : "requestRaw";
+			sb.append("\t\treturn http.").append(rawMethod).append("(new RequestOptions(\n");
+			sb.append("\t\t\t\"").append(method.httpMethod()).append("\",\n");
+			sb.append("\t\t\t").append(pathExpr).append(",\n");
+			if (hasQueryType) {
+				sb.append("\t\t\tparams != null ? mapper.valueToTree(params) : null,\n");
+			} else {
+				sb.append("\t\t\tnull,\n");
+			}
+			sb.append("\t\t\tnull,\n");
+			sb.append("\t\t\t").append(bodyEncodingLiteral(method.bodyEncoding())).append(",\n");
+			sb.append("\t\t\tjava.util.Map.of(),\n");
+			sb.append("\t\t\t/* isSearch */ ").append(isSearch).append("\n");
+			sb.append("\t\t));\n");
+		} else if (isMultipart && hasByteArrayFields) {
 			emitMultipartByteArrayMethod(sb, method, typeName, className, pathExpr, hasQueryType, hasBodyType, httpMethod, isSearch, isAsync, responseTypeName);
 		} else {
 			var encodingLiteral = bodyEncodingLiteral(method.bodyEncoding());
@@ -812,7 +1129,10 @@ final class Emitter {
 		}
 
 		var responseTypeName = "Types." + className + "Types." + typeName + "Response";
-		var returnType = isAsync ? "CompletableFuture<" + responseTypeName + ">" : responseTypeName;
+		var isHtml = method.htmlResponse();
+		var returnType = isHtml
+			? (isAsync ? "CompletableFuture<String>" : "String")
+			: (isAsync ? "CompletableFuture<" + responseTypeName + ">" : responseTypeName);
 		var methodSuffix = isAsync ? "Async" : "";
 
 		sb.append("\tpublic ").append(returnType).append(" ").append(method.methodName())

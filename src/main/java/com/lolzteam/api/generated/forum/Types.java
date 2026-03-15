@@ -5,6 +5,10 @@ package com.lolzteam.api.generated.forum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.fasterxml.jackson.databind.JsonNode;
 import java.util.List;
 import java.util.Map;
@@ -12,6 +16,661 @@ import java.util.Map;
 public final class Types {
 
 	private Types() {
+	}
+
+	// ─── Enums ───────────────────────────────────────────────────
+
+	public enum CategoriesOrder {
+		NATURAL("natural"),
+		LIST("list");
+
+		private final String value;
+
+		CategoriesOrder(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum ThreadsOrder {
+		POST_DATE("post_date"),
+		LAST_POST_DATE("last_post_date"),
+		REPLY_COUNT("reply_count"),
+		REPLY_COUNT_ASC("reply_count_asc"),
+		FIRST_POST_LIKES("first_post_likes"),
+		VOTE_COUNT("vote_count");
+
+		private final String value;
+
+		ThreadsOrder(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum PostsOrder {
+		NATURAL("natural"),
+		NATURAL_REVERSE("natural_reverse"),
+		POST_LIKES("post_likes"),
+		POST_LIKES_REVERSE("post_likes_reverse");
+
+		private final String value;
+
+		PostsOrder(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum UsersOrder {
+		NATURAL("natural"),
+		FOLLOW_DATE("follow_date"),
+		FOLLOW_DATE_REVERSE("follow_date_reverse");
+
+		private final String value;
+
+		UsersOrder(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum ConversationsOrder {
+		NATURAL("natural"),
+		NATURAL_REVERSE("natural_reverse");
+
+		private final String value;
+
+		ConversationsOrder(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum State {
+		ACTIVE("active"),
+		CLOSED("closed");
+
+		private final String value;
+
+		State(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum Period {
+		DAY("day"),
+		WEEK("week"),
+		MONTH("month"),
+		YEAR("year");
+
+		private final String value;
+
+		Period(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum Direction {
+		ASC("asc"),
+		DESC("desc");
+
+		private final String value;
+
+		Direction(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum ReplyGroup {
+		V0(0L),
+		V2(2L),
+		V21(21L),
+		V22(22L),
+		V23(23L),
+		V60(60L),
+		V351(351L);
+
+		private final long value;
+
+		ReplyGroup(long value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public long getValue() {
+			return value;
+		}
+	}
+
+	public enum LengthOption {
+		MINUTES("minutes"),
+		HOURS("hours"),
+		DAYS("days");
+
+		private final String value;
+
+		LengthOption(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum PrizeType {
+		MONEY("money"),
+		UPGRADES("upgrades");
+
+		private final String value;
+
+		PrizeType(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum PrizeDataUpgrade {
+		V1(1L),
+		V6(6L),
+		V12(12L),
+		V14(14L),
+		V17(17L),
+		V19(19L),
+		V20(20L),
+		V21(21L),
+		V22(22L);
+
+		private final long value;
+
+		PrizeDataUpgrade(long value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public long getValue() {
+			return value;
+		}
+	}
+
+	public enum Currency {
+		RUB("rub"),
+		UAH("uah"),
+		KZT("kzt"),
+		BYN("byn"),
+		USD("usd"),
+		EUR("eur"),
+		GBP("gbp"),
+		CNY("cny"),
+		TRY("try");
+
+		private final String value;
+
+		Currency(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum TransferType {
+		GUARANTOR("guarantor"),
+		SAFE("safe"),
+		NOTSAFE("notsafe");
+
+		private final String value;
+
+		TransferType(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum PayClaim {
+		NOW("now"),
+		LATER("later");
+
+		private final String value;
+
+		PayClaim(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum LanguageId {
+		V1(1L),
+		V2(2L);
+
+		private final long value;
+
+		LanguageId(long value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public long getValue() {
+			return value;
+		}
+	}
+
+	public enum Gender {
+		EMPTY(""),
+		MALE("male"),
+		FEMALE("female");
+
+		private final String value;
+
+		Gender(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum Timezone {
+		PACIFIC_MIDWAY("Pacific/Midway"),
+		PACIFIC_HONOLULU("Pacific/Honolulu"),
+		PACIFIC_MARQUESAS("Pacific/Marquesas"),
+		AMERICA_ANCHORAGE("America/Anchorage"),
+		AMERICA_LOS_ANGELES("America/Los_Angeles"),
+		AMERICA_SANTA_ISABEL("America/Santa_Isabel"),
+		AMERICA_TIJUANA("America/Tijuana"),
+		AMERICA_DENVER("America/Denver"),
+		AMERICA_CHIHUAHUA("America/Chihuahua"),
+		AMERICA_PHOENIX("America/Phoenix"),
+		AMERICA_CHICAGO("America/Chicago"),
+		AMERICA_BELIZE("America/Belize"),
+		AMERICA_MEXICO_CITY("America/Mexico_City"),
+		PACIFIC_EASTER("Pacific/Easter"),
+		AMERICA_NEW_YORK("America/New_York"),
+		AMERICA_HAVANA("America/Havana"),
+		AMERICA_BOGOTA("America/Bogota"),
+		AMERICA_CARACAS("America/Caracas"),
+		AMERICA_HALIFAX("America/Halifax"),
+		AMERICA_GOOSE_BAY("America/Goose_Bay"),
+		AMERICA_ASUNCION("America/Asuncion"),
+		AMERICA_SANTIAGO("America/Santiago"),
+		AMERICA_CUIABA("America/Cuiaba"),
+		AMERICA_LA_PAZ("America/La_Paz"),
+		AMERICA_ST_JOHNS("America/St_Johns"),
+		AMERICA_ARGENTINA_BUENOS_AIRES("America/Argentina/Buenos_Aires"),
+		AMERICA_ARGENTINA_SAN_LUIS("America/Argentina/San_Luis"),
+		AMERICA_ARGENTINA_MENDOZA("America/Argentina/Mendoza"),
+		ATLANTIC_STANLEY("Atlantic/Stanley"),
+		AMERICA_GODTHAB("America/Godthab"),
+		AMERICA_MONTEVIDEO("America/Montevideo"),
+		AMERICA_SAO_PAULO("America/Sao_Paulo"),
+		AMERICA_MIQUELON("America/Miquelon"),
+		AMERICA_NORONHA("America/Noronha"),
+		ATLANTIC_CAPE_VERDE("Atlantic/Cape_Verde"),
+		ATLANTIC_AZORES("Atlantic/Azores"),
+		EUROPE_LONDON("Europe/London"),
+		AFRICA_CASABLANCA("Africa/Casablanca"),
+		ATLANTIC_REYKJAVIK("Atlantic/Reykjavik"),
+		EUROPE_AMSTERDAM("Europe/Amsterdam"),
+		AFRICA_ALGIERS("Africa/Algiers"),
+		AFRICA_WINDHOEK("Africa/Windhoek"),
+		AFRICA_TUNIS("Africa/Tunis"),
+		EUROPE_ATHENS("Europe/Athens"),
+		AFRICA_JOHANNESBURG("Africa/Johannesburg"),
+		EUROPE_KALININGRAD("Europe/Kaliningrad"),
+		ASIA_AMMAN("Asia/Amman"),
+		ASIA_BEIRUT("Asia/Beirut"),
+		AFRICA_CAIRO("Africa/Cairo"),
+		ASIA_JERUSALEM("Asia/Jerusalem"),
+		ASIA_GAZA("Asia/Gaza"),
+		ASIA_DAMASCUS("Asia/Damascus"),
+		EUROPE_MOSCOW("Europe/Moscow"),
+		EUROPE_MINSK("Europe/Minsk"),
+		AFRICA_NAIROBI("Africa/Nairobi"),
+		ASIA_TEHRAN("Asia/Tehran"),
+		ASIA_DUBAI("Asia/Dubai"),
+		ASIA_YEREVAN("Asia/Yerevan"),
+		ASIA_BAKU("Asia/Baku"),
+		INDIAN_MAURITIUS("Indian/Mauritius"),
+		ASIA_KABUL("Asia/Kabul"),
+		ASIA_YEKATERINBURG("Asia/Yekaterinburg"),
+		ASIA_TASHKENT("Asia/Tashkent"),
+		ASIA_KOLKATA("Asia/Kolkata"),
+		ASIA_KATHMANDU("Asia/Kathmandu"),
+		ASIA_NOVOSIBIRSK("Asia/Novosibirsk"),
+		ASIA_DHAKA("Asia/Dhaka"),
+		ASIA_ALMATY("Asia/Almaty"),
+		ASIA_RANGOON("Asia/Rangoon"),
+		ASIA_KRASNOYARSK("Asia/Krasnoyarsk"),
+		ASIA_BANGKOK("Asia/Bangkok"),
+		ASIA_IRKUTSK("Asia/Irkutsk"),
+		ASIA_HONG_KONG("Asia/Hong_Kong"),
+		ASIA_SINGAPORE("Asia/Singapore"),
+		AUSTRALIA_PERTH("Australia/Perth"),
+		ASIA_YAKUTSK("Asia/Yakutsk"),
+		ASIA_TOKYO("Asia/Tokyo"),
+		ASIA_SEOUL("Asia/Seoul"),
+		AUSTRALIA_ADELAIDE("Australia/Adelaide"),
+		AUSTRALIA_DARWIN("Australia/Darwin"),
+		ASIA_VLADIVOSTOK("Asia/Vladivostok"),
+		ASIA_MAGADAN("Asia/Magadan"),
+		AUSTRALIA_BRISBANE("Australia/Brisbane"),
+		AUSTRALIA_SYDNEY("Australia/Sydney"),
+		PACIFIC_NOUMEA("Pacific/Noumea"),
+		PACIFIC_NORFOLK("Pacific/Norfolk"),
+		ASIA_ANADYR("Asia/Anadyr"),
+		PACIFIC_AUCKLAND("Pacific/Auckland"),
+		PACIFIC_FIJI("Pacific/Fiji"),
+		PACIFIC_CHATHAM("Pacific/Chatham"),
+		PACIFIC_TONGATAPU("Pacific/Tongatapu"),
+		PACIFIC_APIA("Pacific/Apia"),
+		PACIFIC_KIRITIMATI("Pacific/Kiritimati");
+
+		private final String value;
+
+		Timezone(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum AllowViewProfile {
+		NONE("none"),
+		MEMBERS("members"),
+		FOLLOWED("followed");
+
+		private final String value;
+
+		AllowViewProfile(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum AllowPostProfile {
+		NONE("none"),
+		MEMBERS("members"),
+		FOLLOWED("followed");
+
+		private final String value;
+
+		AllowPostProfile(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum AllowSendPersonalConversation {
+		NONE("none"),
+		MEMBERS("members"),
+		FOLLOWED("followed");
+
+		private final String value;
+
+		AllowSendPersonalConversation(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum AllowInviteGroup {
+		NONE("none"),
+		MEMBERS("members"),
+		FOLLOWED("followed");
+
+		private final String value;
+
+		AllowInviteGroup(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum AllowReceiveNewsFeed {
+		NONE("none"),
+		MEMBERS("members"),
+		FOLLOWED("followed");
+
+		private final String value;
+
+		AllowReceiveNewsFeed(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum UsersType {
+		MARKET("market"),
+		NOMARKET("nomarket");
+
+		private final String value;
+
+		UsersType(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum UsersTypeLikes {
+		GOTTEN("gotten"),
+		GIVEN("given");
+
+		private final String value;
+
+		UsersTypeLikes(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum ClaimState {
+		ACTIVE("active"),
+		SOLVED("solved"),
+		REJECTED("rejected"),
+		SETTLED("settled");
+
+		private final String value;
+
+		ClaimState(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum LikeType {
+		LIKE("like"),
+		LIKE2("like2");
+
+		private final String value;
+
+		LikeType(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum ContentType {
+		POST("post"),
+		POST_COMMENT("post_comment"),
+		PROFILE_POST("profile_post"),
+		PROFILE_POST_COMMENT("profile_post_comment");
+
+		private final String value;
+
+		ContentType(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum Folder {
+		ALL("all"),
+		UNREAD("unread"),
+		GROUPS("groups"),
+		MARKET("market"),
+		MARKET_REPLACEMENTS("market_replacements"),
+		STAFF("staff"),
+		GIVEAWAYS("giveaways"),
+		P2P("p2p");
+
+		private final String value;
+
+		Folder(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum DeleteType {
+		DELETE("delete"),
+		DELETE_IGNORE("delete_ignore");
+
+		private final String value;
+
+		DeleteType(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum RoomId {
+		V1(1L),
+		V2(2L),
+		V3(3L),
+		V4(4L),
+		V13(13L);
+
+		private final long value;
+
+		RoomId(long value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public long getValue() {
+			return value;
+		}
+	}
+
+	public enum Duration {
+		DAY("day"),
+		WEEK("week"),
+		MONTH("month");
+
+		private final String value;
+
+		Duration(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
 	}
 
 	// ─── Component Schemas ────────────────────────────────────────
@@ -791,20 +1450,48 @@ public final class Types {
 		private OAuthApiTypes() {
 		}
 
-		public record OAuthTokenBody(
-			@JsonProperty("grant_type") String grantType,
+		@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "grant_type")
+		@JsonSubTypes({
+			@JsonSubTypes.Type(value = OAuthTokenBodyClientCredentials.class, name = "client_credentials"),
+			@JsonSubTypes.Type(value = OAuthTokenBodyAuthorizationCode.class, name = "authorization_code"),
+			@JsonSubTypes.Type(value = OAuthTokenBodyRefreshToken.class, name = "refresh_token"),
+			@JsonSubTypes.Type(value = OAuthTokenBodyPassword.class, name = "password")
+		})
+		public sealed interface OAuthTokenBody permits
+			OAuthTokenBodyClientCredentials, OAuthTokenBodyAuthorizationCode, OAuthTokenBodyRefreshToken, OAuthTokenBodyPassword {
+		}
+	
+		@JsonTypeName("client_credentials")
+		public record OAuthTokenBodyClientCredentials(
 			@JsonProperty("client_id") String clientId,
 			@JsonProperty("client_secret") String clientSecret,
-			JsonNode scope,
+			JsonNode scope
+		) implements OAuthTokenBody {
+		}
+		@JsonTypeName("authorization_code")
+		public record OAuthTokenBodyAuthorizationCode(
 			String code,
+			@JsonProperty("client_id") String clientId,
+			@JsonProperty("client_secret") String clientSecret,
 			@JsonProperty("redirect_uri") String redirectUri,
+			JsonNode scope
+		) implements OAuthTokenBody {
+		}
+		@JsonTypeName("refresh_token")
+		public record OAuthTokenBodyRefreshToken(
 			@JsonProperty("refresh_token") String refreshToken,
+			@JsonProperty("client_id") String clientId,
+			@JsonProperty("client_secret") String clientSecret
+		) implements OAuthTokenBody {
+		}
+		@JsonTypeName("password")
+		public record OAuthTokenBodyPassword(
 			String username,
-			String password
-		) {
-			public OAuthTokenBody() {
-				this(null, null, null, null, null, null, null, null, null);
-			}
+			String password,
+			@JsonProperty("client_id") String clientId,
+			@JsonProperty("client_secret") String clientSecret,
+			JsonNode scope
+		) implements OAuthTokenBody {
 		}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
@@ -851,7 +1538,7 @@ public final class Types {
 		public record CategoriesListParams(
 			@JsonProperty("parent_category_id") Long parentCategoryId,
 			@JsonProperty("parent_forum_id") Long parentForumId,
-			String order
+			CategoriesOrder order
 		) {
 			public CategoriesListParams() {
 				this(null, null, null);
@@ -931,7 +1618,7 @@ public final class Types {
 		public record ForumsListParams(
 			@JsonProperty("parent_category_id") Long parentCategoryId,
 			@JsonProperty("parent_forum_id") Long parentForumId,
-			String order
+			CategoriesOrder order
 		) {
 			public ForumsListParams() {
 				this(null, null, null);
@@ -1319,7 +2006,7 @@ public final class Types {
 
 		public record PagesListParams(
 			@JsonProperty("parent_page_id") Long parentPageId,
-			String order
+			CategoriesOrder order
 		) {
 			public PagesListParams() {
 				this(null, null);
@@ -1452,8 +2139,8 @@ public final class Types {
 		public record ThreadsListParams(
 			@JsonProperty("forum_id") Long forumId,
 			String tab,
-			String state,
-			String period,
+			State state,
+			Period period,
 			String title,
 			@JsonProperty("title_only") Boolean titleOnly,
 			@JsonProperty("creator_user_id") Long creatorUserId,
@@ -1463,8 +2150,8 @@ public final class Types {
 			@JsonProperty("thread_tag_id") Long threadTagId,
 			Long page,
 			Long limit,
-			String order,
-			String direction,
+			ThreadsOrder order,
+			Direction direction,
 			@JsonProperty("thread_create_date") Long threadCreateDate,
 			@JsonProperty("thread_update_date") Long threadUpdateDate,
 			@JsonProperty("fields_include") JsonNode fieldsInclude
@@ -1535,7 +2222,8 @@ public final class Types {
 			List<String> tags,
 			@JsonProperty("hide_contacts") Boolean hideContacts,
 			@JsonProperty("allow_ask_hidden_content") Boolean allowAskHiddenContent,
-			@JsonProperty("reply_group") Long replyGroup,
+			/** Default: 2 */
+			@JsonProperty("reply_group") ReplyGroup replyGroup,
 			@JsonProperty("comment_ignore_group") Boolean commentIgnoreGroup,
 			@JsonProperty("dont_alert_followers") Boolean dontAlertFollowers,
 			@JsonProperty("schedule_date") String scheduleDate,
@@ -1545,7 +2233,7 @@ public final class Types {
 			@JsonProperty("watch_thread_email") Boolean watchThreadEmail
 		) {
 			public ThreadsCreateBody(String postBody, Long forumId) {
-				this(postBody, forumId, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
+				this(postBody, forumId, null, null, null, null, null, null, ReplyGroup.V2, null, null, null, null, null, null, null);
 			}
 		}
 
@@ -1559,20 +2247,22 @@ public final class Types {
 			@JsonProperty("post_body") String postBody,
 			String title,
 			@JsonProperty("title_en") String titleEn,
+			/** Default: by_finish_date */
 			@JsonProperty("contest_type") String contestType,
 			@JsonProperty("length_value") Long lengthValue,
-			@JsonProperty("length_option") String lengthOption,
-			@JsonProperty("prize_type") String prizeType,
+			@JsonProperty("length_option") LengthOption lengthOption,
+			@JsonProperty("prize_type") PrizeType prizeType,
 			@JsonProperty("count_winners") Long countWinners,
 			@JsonProperty("prize_data_money") Double prizeDataMoney,
 			@JsonProperty("is_money_places") Boolean isMoneyPlaces,
 			@JsonProperty("prize_data_places") List<Double> prizeDataPlaces,
-			@JsonProperty("prize_data_upgrade") Long prizeDataUpgrade,
+			@JsonProperty("prize_data_upgrade") PrizeDataUpgrade prizeDataUpgrade,
 			@JsonProperty("require_like_count") Long requireLikeCount,
 			@JsonProperty("require_total_like_count") Long requireTotalLikeCount,
 			@JsonProperty("secret_answer") String secretAnswer,
 			List<String> tags,
-			@JsonProperty("reply_group") Long replyGroup,
+			/** Default: 2 */
+			@JsonProperty("reply_group") ReplyGroup replyGroup,
 			@JsonProperty("comment_ignore_group") Boolean commentIgnoreGroup,
 			@JsonProperty("dont_alert_followers") Boolean dontAlertFollowers,
 			@JsonProperty("hide_contacts") Boolean hideContacts,
@@ -1583,8 +2273,8 @@ public final class Types {
 			@JsonProperty("watch_thread") Boolean watchThread,
 			@JsonProperty("watch_thread_email") Boolean watchThreadEmail
 		) {
-			public ThreadsCreateContestBody(String postBody, String contestType, String prizeType, Long requireLikeCount, Long requireTotalLikeCount) {
-				this(postBody, null, null, contestType, null, null, prizeType, null, null, null, null, null, requireLikeCount, requireTotalLikeCount, null, null, null, null, null, null, null, null, null, null, null, null);
+			public ThreadsCreateContestBody(String postBody, String contestType, PrizeType prizeType, Long requireLikeCount, Long requireTotalLikeCount) {
+				this(postBody, null, null, contestType, null, null, prizeType, null, null, null, null, null, requireLikeCount, requireTotalLikeCount, null, null, ReplyGroup.V2, null, null, null, null, null, null, null, null, null);
 			}
 		}
 
@@ -1600,15 +2290,16 @@ public final class Types {
 			@JsonProperty("as_market_item_id") Long asMarketItemId,
 			@JsonProperty("as_data") String asData,
 			@JsonProperty("as_amount") Double asAmount,
-			String currency,
-			@JsonProperty("transfer_type") String transferType,
-			@JsonProperty("pay_claim") String payClaim,
+			Currency currency,
+			@JsonProperty("transfer_type") TransferType transferType,
+			@JsonProperty("pay_claim") PayClaim payClaim,
 			@JsonProperty("as_funds_receipt") String asFundsReceipt,
 			@JsonProperty("as_tg_login_screenshot") String asTgLoginScreenshot,
 			List<String> tags,
 			@JsonProperty("hide_contacts") Boolean hideContacts,
 			@JsonProperty("allow_ask_hidden_content") Boolean allowAskHiddenContent,
-			@JsonProperty("reply_group") Long replyGroup,
+			/** Default: 2 */
+			@JsonProperty("reply_group") ReplyGroup replyGroup,
 			@JsonProperty("comment_ignore_group") Boolean commentIgnoreGroup,
 			@JsonProperty("dont_alert_followers") Boolean dontAlertFollowers,
 			@JsonProperty("schedule_date") String scheduleDate,
@@ -1618,8 +2309,8 @@ public final class Types {
 			@JsonProperty("watch_thread_email") Boolean watchThreadEmail,
 			@JsonProperty("post_body") String postBody
 		) {
-			public ThreadsClaimBody(String asResponder, Boolean asIsMarketDeal, Double asAmount, String transferType, String postBody) {
-				this(asResponder, asIsMarketDeal, null, null, asAmount, null, transferType, null, null, null, null, null, null, null, null, null, null, null, null, null, null, postBody);
+			public ThreadsClaimBody(String asResponder, Boolean asIsMarketDeal, Double asAmount, TransferType transferType, String postBody) {
+				this(asResponder, asIsMarketDeal, null, null, asAmount, null, transferType, null, null, null, null, null, null, ReplyGroup.V2, null, null, null, null, null, null, null, postBody);
 			}
 		}
 
@@ -1651,7 +2342,7 @@ public final class Types {
 			@JsonProperty("discussion_open") Boolean discussionOpen,
 			@JsonProperty("hide_contacts") Boolean hideContacts,
 			@JsonProperty("allow_ask_hidden_content") Boolean allowAskHiddenContent,
-			@JsonProperty("reply_group") Long replyGroup,
+			@JsonProperty("reply_group") ReplyGroup replyGroup,
 			@JsonProperty("comment_ignore_group") Boolean commentIgnoreGroup
 		) {
 			public ThreadsEditBody() {
@@ -2371,7 +3062,7 @@ public final class Types {
 			@JsonProperty("page_of_post_id") Long pageOfPostId,
 			Long page,
 			Long limit,
-			String order
+			PostsOrder order
 		) {
 			public PostsListParams() {
 				this(null, null, null, null, null);
@@ -2735,19 +3426,19 @@ public final class Types {
 			@JsonProperty("secret_answer") String secretAnswer,
 			@JsonProperty("secret_answer_type") Long secretAnswerType,
 			@JsonProperty("short_link") String shortLink,
-			@JsonProperty("language_id") Long languageId,
-			String gender,
-			String timezone,
+			@JsonProperty("language_id") LanguageId languageId,
+			Gender gender,
+			Timezone timezone,
 			@JsonProperty("receive_admin_email") Boolean receiveAdminEmail,
 			@JsonProperty("activity_visible") Boolean activityVisible,
 			@JsonProperty("show_dob_date") Boolean showDobDate,
 			@JsonProperty("show_dob_year") Boolean showDobYear,
 			@JsonProperty("hide_username_change_logs") Boolean hideUsernameChangeLogs,
-			@JsonProperty("allow_view_profile") String allowViewProfile,
-			@JsonProperty("allow_post_profile") String allowPostProfile,
-			@JsonProperty("allow_send_personal_conversation") String allowSendPersonalConversation,
-			@JsonProperty("allow_invite_group") String allowInviteGroup,
-			@JsonProperty("allow_receive_news_feed") String allowReceiveNewsFeed,
+			@JsonProperty("allow_view_profile") AllowViewProfile allowViewProfile,
+			@JsonProperty("allow_post_profile") AllowPostProfile allowPostProfile,
+			@JsonProperty("allow_send_personal_conversation") AllowSendPersonalConversation allowSendPersonalConversation,
+			@JsonProperty("allow_invite_group") AllowInviteGroup allowInviteGroup,
+			@JsonProperty("allow_receive_news_feed") AllowReceiveNewsFeed allowReceiveNewsFeed,
 			Map<String, Boolean> alert,
 			JsonNode fields
 		) {
@@ -2764,8 +3455,8 @@ public final class Types {
 		) {}
 
 		public record UsersClaimsParams(
-			String type,
-			@JsonProperty("claim_state") String claimState
+			UsersType type,
+			@JsonProperty("claim_state") ClaimState claimState
 		) {
 			public UsersClaimsParams() {
 				this(null, null);
@@ -2899,7 +3590,7 @@ public final class Types {
 		) {}
 
 		public record UsersFollowersParams(
-			String order,
+			UsersOrder order,
 			Long page,
 			Long limit
 		) {
@@ -2998,7 +3689,7 @@ public final class Types {
 		) {}
 
 		public record UsersFollowingsParams(
-			String order,
+			UsersOrder order,
 			Long page,
 			Long limit
 		) {
@@ -3094,15 +3785,17 @@ public final class Types {
 
 		public record UsersLikesParams(
 			@JsonProperty("node_id") Long nodeId,
-			@JsonProperty("like_type") String likeType,
-			String type,
+			@JsonProperty("like_type") LikeType likeType,
+			/** Default: gotten */
+			UsersTypeLikes type,
 			Long page,
-			@JsonProperty("content_type") String contentType,
+			/** Default: post */
+			@JsonProperty("content_type") ContentType contentType,
 			@JsonProperty("search_user_id") Long searchUserId,
 			Boolean stats
 		) {
 			public UsersLikesParams() {
-				this(null, null, null, null, null, null, null);
+				this(null, null, UsersTypeLikes.GOTTEN, null, ContentType.POST, null, null);
 			}
 		}
 
@@ -3563,7 +4256,7 @@ public final class Types {
 		) {}
 
 		public record ProfilePostsCreateBody(
-			@JsonProperty("user_id") JsonNode userId,
+			@JsonProperty("user_id") com.lolzteam.api.runtime.StringOrInt userId,
 			@JsonProperty("post_body") String postBody
 		) {
 		}
@@ -3843,7 +4536,7 @@ public final class Types {
 		}
 
 		public record ConversationsListParams(
-			String folder,
+			Folder folder,
 			Long page,
 			Long limit
 		) {
@@ -3878,6 +4571,7 @@ public final class Types {
 		public record ConversationsCreateBody(
 			@JsonProperty("recipient_id") Long recipientId,
 			List<String> recipients,
+			/** Default: false */
 			@JsonProperty("is_group") Boolean isGroup,
 			String title,
 			@JsonProperty("open_invite") Boolean openInvite,
@@ -3887,7 +4581,7 @@ public final class Types {
 			@JsonProperty("message_body") String messageBody
 		) {
 			public ConversationsCreateBody() {
-				this(null, null, null, null, null, null, null, null, null);
+				this(null, null, false, null, null, null, null, null, null);
 			}
 		}
 
@@ -3919,7 +4613,7 @@ public final class Types {
 
 		public record ConversationsDeleteBody(
 			@JsonProperty("conversation_id") Long conversationId,
-			@JsonProperty("delete_type") String deleteType
+			@JsonProperty("delete_type") DeleteType deleteType
 		) {
 		}
 
@@ -3931,7 +4625,7 @@ public final class Types {
 		) {}
 
 		public record ConversationsStartBody(
-			@JsonProperty("user_id") JsonNode userId
+			@JsonProperty("user_id") com.lolzteam.api.runtime.StringOrInt userId
 		) {
 		}
 
@@ -3962,7 +4656,7 @@ public final class Types {
 		public record ConversationsMessagesListParams(
 			Long page,
 			Long limit,
-			String order,
+			ConversationsOrder order,
 			Long before,
 			Long after
 		) {
@@ -4132,7 +4826,7 @@ public final class Types {
 		}
 
 		public record NotificationsListParams(
-			String type,
+			UsersType type,
 			Long page,
 			Long limit
 		) {
@@ -4472,7 +5166,7 @@ public final class Types {
 			String q,
 			String tag,
 			@JsonProperty("forum_id") Long forumId,
-			@JsonProperty("user_id") JsonNode userId,
+			@JsonProperty("user_id") com.lolzteam.api.runtime.StringOrInt userId,
 			Long page,
 			Long limit
 		) {
@@ -4694,7 +5388,7 @@ public final class Types {
 			String q,
 			String tag,
 			@JsonProperty("forum_id") Long forumId,
-			@JsonProperty("user_id") JsonNode userId,
+			@JsonProperty("user_id") com.lolzteam.api.runtime.StringOrInt userId,
 			Long page,
 			Long limit,
 			@JsonProperty("data_limit") Long dataLimit
@@ -4857,7 +5551,7 @@ public final class Types {
 			String q,
 			String tag,
 			@JsonProperty("forum_id") Long forumId,
-			@JsonProperty("user_id") JsonNode userId,
+			@JsonProperty("user_id") com.lolzteam.api.runtime.StringOrInt userId,
 			Long page,
 			Long limit,
 			@JsonProperty("data_limit") Long dataLimit
@@ -5482,7 +6176,7 @@ public final class Types {
 		}
 
 		public record ChatboxIndexParams(
-			@JsonProperty("room_id") Long roomId
+			@JsonProperty("room_id") RoomId roomId
 		) {
 			public ChatboxIndexParams() {
 				this(null);
@@ -5566,7 +6260,7 @@ public final class Types {
 		) {}
 
 		public record ChatboxGetMessagesParams(
-			@JsonProperty("room_id") Long roomId,
+			@JsonProperty("room_id") RoomId roomId,
 			@JsonProperty("before_message_id") Long beforeMessageId
 		) {
 			public ChatboxGetMessagesParams() {
@@ -5581,11 +6275,11 @@ public final class Types {
 		) {}
 
 		public record ChatboxPostMessageBody(
-			@JsonProperty("room_id") Long roomId,
+			@JsonProperty("room_id") RoomId roomId,
 			@JsonProperty("reply_message_id") Long replyMessageId,
 			String message
 		) {
-			public ChatboxPostMessageBody(Long roomId, String message) {
+			public ChatboxPostMessageBody(RoomId roomId, String message) {
 				this(roomId, null, message);
 			}
 		}
@@ -5621,7 +6315,7 @@ public final class Types {
 		) {}
 
 		public record ChatboxOnlineParams(
-			@JsonProperty("room_id") Long roomId
+			@JsonProperty("room_id") RoomId roomId
 		) {
 			public ChatboxOnlineParams() {
 				this(null);
@@ -5711,7 +6405,7 @@ public final class Types {
 		) {}
 
 		public record ChatboxGetLeaderboardParams(
-			String duration
+			Duration duration
 		) {
 			public ChatboxGetLeaderboardParams() {
 				this(null);
@@ -5815,7 +6509,7 @@ public final class Types {
 		) {}
 
 		public record ChatboxPostIgnoreBody(
-			@JsonProperty("user_id") JsonNode userId
+			@JsonProperty("user_id") com.lolzteam.api.runtime.StringOrInt userId
 		) {
 		}
 
@@ -5827,7 +6521,7 @@ public final class Types {
 		) {}
 
 		public record ChatboxDeleteIgnoreBody(
-			@JsonProperty("user_id") JsonNode userId
+			@JsonProperty("user_id") com.lolzteam.api.runtime.StringOrInt userId
 		) {
 		}
 
@@ -5888,13 +6582,24 @@ public final class Types {
 			List<FormsListResponseFormsFields> fields
 		) {}
 
-		public record FormsCreateBody(
-			@JsonProperty("form_id") Long formId,
+		@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "form_id")
+		@JsonSubTypes({
+			@JsonSubTypes.Type(value = FormsCreateBodyV1.class, name = "1"),
+			@JsonSubTypes.Type(value = FormsCreateBodyV3.class, name = "3")
+		})
+		public sealed interface FormsCreateBody permits
+			FormsCreateBodyV1, FormsCreateBodyV3 {
+		}
+	
+		@JsonTypeName("1")
+		public record FormsCreateBodyV1(
 			JsonNode fields
-		) {
-			public FormsCreateBody() {
-				this(null, null);
-			}
+		) implements FormsCreateBody {
+		}
+		@JsonTypeName("3")
+		public record FormsCreateBodyV3(
+			JsonNode fields
+		) implements FormsCreateBody {
 		}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)

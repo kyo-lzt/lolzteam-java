@@ -1779,7 +1779,7 @@ public class ForumClient implements Closeable {
 			return findAsync(null);
 		}
 	
-		public Types.UsersApiTypes.UsersGetResponse get(String userId, Types.UsersApiTypes.UsersGetParams params) {
+		public Types.UsersApiTypes.UsersGetResponse get(com.lolzteam.api.runtime.StringOrInt userId, Types.UsersApiTypes.UsersGetParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
 				"/users/" + userId,
@@ -1791,11 +1791,11 @@ public class ForumClient implements Closeable {
 			)), Types.UsersApiTypes.UsersGetResponse.class);
 		}
 	
-		public Types.UsersApiTypes.UsersGetResponse get(String userId) {
+		public Types.UsersApiTypes.UsersGetResponse get(com.lolzteam.api.runtime.StringOrInt userId) {
 			return get(userId, null);
 		}
 	
-		public CompletableFuture<Types.UsersApiTypes.UsersGetResponse> getAsync(String userId, Types.UsersApiTypes.UsersGetParams params) {
+		public CompletableFuture<Types.UsersApiTypes.UsersGetResponse> getAsync(com.lolzteam.api.runtime.StringOrInt userId, Types.UsersApiTypes.UsersGetParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
 				"/users/" + userId,
@@ -1807,11 +1807,11 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.UsersApiTypes.UsersGetResponse.class));
 		}
 	
-		public CompletableFuture<Types.UsersApiTypes.UsersGetResponse> getAsync(String userId) {
+		public CompletableFuture<Types.UsersApiTypes.UsersGetResponse> getAsync(com.lolzteam.api.runtime.StringOrInt userId) {
 			return getAsync(userId, null);
 		}
 	
-		public Types.UsersApiTypes.UsersEditResponse edit(String userId, Types.UsersApiTypes.UsersEditBody body) {
+		public Types.UsersApiTypes.UsersEditResponse edit(com.lolzteam.api.runtime.StringOrInt userId, Types.UsersApiTypes.UsersEditBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"PUT",
 				"/users/" + userId,
@@ -1823,11 +1823,11 @@ public class ForumClient implements Closeable {
 			)), Types.UsersApiTypes.UsersEditResponse.class);
 		}
 	
-		public Types.UsersApiTypes.UsersEditResponse edit(String userId) {
+		public Types.UsersApiTypes.UsersEditResponse edit(com.lolzteam.api.runtime.StringOrInt userId) {
 			return edit(userId, null);
 		}
 	
-		public CompletableFuture<Types.UsersApiTypes.UsersEditResponse> editAsync(String userId, Types.UsersApiTypes.UsersEditBody body) {
+		public CompletableFuture<Types.UsersApiTypes.UsersEditResponse> editAsync(com.lolzteam.api.runtime.StringOrInt userId, Types.UsersApiTypes.UsersEditBody body) {
 			return http.requestAsync(new RequestOptions(
 				"PUT",
 				"/users/" + userId,
@@ -1839,11 +1839,11 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.UsersApiTypes.UsersEditResponse.class));
 		}
 	
-		public CompletableFuture<Types.UsersApiTypes.UsersEditResponse> editAsync(String userId) {
+		public CompletableFuture<Types.UsersApiTypes.UsersEditResponse> editAsync(com.lolzteam.api.runtime.StringOrInt userId) {
 			return editAsync(userId, null);
 		}
 	
-		public Types.UsersApiTypes.UsersClaimsResponse claims(String userId, Types.UsersApiTypes.UsersClaimsParams params) {
+		public Types.UsersApiTypes.UsersClaimsResponse claims(com.lolzteam.api.runtime.StringOrInt userId, Types.UsersApiTypes.UsersClaimsParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
 				"/users/" + userId + "/claims",
@@ -1855,11 +1855,11 @@ public class ForumClient implements Closeable {
 			)), Types.UsersApiTypes.UsersClaimsResponse.class);
 		}
 	
-		public Types.UsersApiTypes.UsersClaimsResponse claims(String userId) {
+		public Types.UsersApiTypes.UsersClaimsResponse claims(com.lolzteam.api.runtime.StringOrInt userId) {
 			return claims(userId, null);
 		}
 	
-		public CompletableFuture<Types.UsersApiTypes.UsersClaimsResponse> claimsAsync(String userId, Types.UsersApiTypes.UsersClaimsParams params) {
+		public CompletableFuture<Types.UsersApiTypes.UsersClaimsResponse> claimsAsync(com.lolzteam.api.runtime.StringOrInt userId, Types.UsersApiTypes.UsersClaimsParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
 				"/users/" + userId + "/claims",
@@ -1871,11 +1871,11 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.UsersApiTypes.UsersClaimsResponse.class));
 		}
 	
-		public CompletableFuture<Types.UsersApiTypes.UsersClaimsResponse> claimsAsync(String userId) {
+		public CompletableFuture<Types.UsersApiTypes.UsersClaimsResponse> claimsAsync(com.lolzteam.api.runtime.StringOrInt userId) {
 			return claimsAsync(userId, null);
 		}
 	
-		public Types.UsersApiTypes.UsersAvatarUploadResponse avatarUpload(String userId, Types.UsersApiTypes.UsersAvatarUploadBody body) {
+		public Types.UsersApiTypes.UsersAvatarUploadResponse avatarUpload(com.lolzteam.api.runtime.StringOrInt userId, Types.UsersApiTypes.UsersAvatarUploadBody body) {
 			if (body != null) {
 				var jsonBody = mapper.createObjectNode();
 				if (body.x() != null) jsonBody.putPOJO("x", body.x());
@@ -1905,11 +1905,11 @@ public class ForumClient implements Closeable {
 			}
 		}
 	
-		public Types.UsersApiTypes.UsersAvatarUploadResponse avatarUpload(String userId) {
+		public Types.UsersApiTypes.UsersAvatarUploadResponse avatarUpload(com.lolzteam.api.runtime.StringOrInt userId) {
 			return avatarUpload(userId, null);
 		}
 	
-		public CompletableFuture<Types.UsersApiTypes.UsersAvatarUploadResponse> avatarUploadAsync(String userId, Types.UsersApiTypes.UsersAvatarUploadBody body) {
+		public CompletableFuture<Types.UsersApiTypes.UsersAvatarUploadResponse> avatarUploadAsync(com.lolzteam.api.runtime.StringOrInt userId, Types.UsersApiTypes.UsersAvatarUploadBody body) {
 			if (body != null) {
 				var jsonBody = mapper.createObjectNode();
 				if (body.x() != null) jsonBody.putPOJO("x", body.x());
@@ -1939,11 +1939,11 @@ public class ForumClient implements Closeable {
 			}
 		}
 	
-		public CompletableFuture<Types.UsersApiTypes.UsersAvatarUploadResponse> avatarUploadAsync(String userId) {
+		public CompletableFuture<Types.UsersApiTypes.UsersAvatarUploadResponse> avatarUploadAsync(com.lolzteam.api.runtime.StringOrInt userId) {
 			return avatarUploadAsync(userId, null);
 		}
 	
-		public Types.UsersApiTypes.UsersAvatarDeleteResponse avatarDelete(String userId) {
+		public Types.UsersApiTypes.UsersAvatarDeleteResponse avatarDelete(com.lolzteam.api.runtime.StringOrInt userId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"DELETE",
 				"/users/" + userId + "/avatar",
@@ -1955,7 +1955,7 @@ public class ForumClient implements Closeable {
 			)), Types.UsersApiTypes.UsersAvatarDeleteResponse.class);
 		}
 	
-		public CompletableFuture<Types.UsersApiTypes.UsersAvatarDeleteResponse> avatarDeleteAsync(String userId) {
+		public CompletableFuture<Types.UsersApiTypes.UsersAvatarDeleteResponse> avatarDeleteAsync(com.lolzteam.api.runtime.StringOrInt userId) {
 			return http.requestAsync(new RequestOptions(
 				"DELETE",
 				"/users/" + userId + "/avatar",
@@ -1967,7 +1967,7 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.UsersApiTypes.UsersAvatarDeleteResponse.class));
 		}
 	
-		public Types.UsersApiTypes.UsersAvatarCropResponse avatarCrop(String userId, Types.UsersApiTypes.UsersAvatarCropBody body) {
+		public Types.UsersApiTypes.UsersAvatarCropResponse avatarCrop(com.lolzteam.api.runtime.StringOrInt userId, Types.UsersApiTypes.UsersAvatarCropBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
 				"/users/" + userId + "/avatar/crop",
@@ -1979,11 +1979,11 @@ public class ForumClient implements Closeable {
 			)), Types.UsersApiTypes.UsersAvatarCropResponse.class);
 		}
 	
-		public Types.UsersApiTypes.UsersAvatarCropResponse avatarCrop(String userId) {
+		public Types.UsersApiTypes.UsersAvatarCropResponse avatarCrop(com.lolzteam.api.runtime.StringOrInt userId) {
 			return avatarCrop(userId, null);
 		}
 	
-		public CompletableFuture<Types.UsersApiTypes.UsersAvatarCropResponse> avatarCropAsync(String userId, Types.UsersApiTypes.UsersAvatarCropBody body) {
+		public CompletableFuture<Types.UsersApiTypes.UsersAvatarCropResponse> avatarCropAsync(com.lolzteam.api.runtime.StringOrInt userId, Types.UsersApiTypes.UsersAvatarCropBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
 				"/users/" + userId + "/avatar/crop",
@@ -1995,11 +1995,11 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.UsersApiTypes.UsersAvatarCropResponse.class));
 		}
 	
-		public CompletableFuture<Types.UsersApiTypes.UsersAvatarCropResponse> avatarCropAsync(String userId) {
+		public CompletableFuture<Types.UsersApiTypes.UsersAvatarCropResponse> avatarCropAsync(com.lolzteam.api.runtime.StringOrInt userId) {
 			return avatarCropAsync(userId, null);
 		}
 	
-		public Types.UsersApiTypes.UsersBackgroundUploadResponse backgroundUpload(String userId, Types.UsersApiTypes.UsersBackgroundUploadBody body) {
+		public Types.UsersApiTypes.UsersBackgroundUploadResponse backgroundUpload(com.lolzteam.api.runtime.StringOrInt userId, Types.UsersApiTypes.UsersBackgroundUploadBody body) {
 			if (body != null) {
 				var jsonBody = mapper.createObjectNode();
 				if (body.x() != null) jsonBody.putPOJO("x", body.x());
@@ -2029,11 +2029,11 @@ public class ForumClient implements Closeable {
 			}
 		}
 	
-		public Types.UsersApiTypes.UsersBackgroundUploadResponse backgroundUpload(String userId) {
+		public Types.UsersApiTypes.UsersBackgroundUploadResponse backgroundUpload(com.lolzteam.api.runtime.StringOrInt userId) {
 			return backgroundUpload(userId, null);
 		}
 	
-		public CompletableFuture<Types.UsersApiTypes.UsersBackgroundUploadResponse> backgroundUploadAsync(String userId, Types.UsersApiTypes.UsersBackgroundUploadBody body) {
+		public CompletableFuture<Types.UsersApiTypes.UsersBackgroundUploadResponse> backgroundUploadAsync(com.lolzteam.api.runtime.StringOrInt userId, Types.UsersApiTypes.UsersBackgroundUploadBody body) {
 			if (body != null) {
 				var jsonBody = mapper.createObjectNode();
 				if (body.x() != null) jsonBody.putPOJO("x", body.x());
@@ -2063,11 +2063,11 @@ public class ForumClient implements Closeable {
 			}
 		}
 	
-		public CompletableFuture<Types.UsersApiTypes.UsersBackgroundUploadResponse> backgroundUploadAsync(String userId) {
+		public CompletableFuture<Types.UsersApiTypes.UsersBackgroundUploadResponse> backgroundUploadAsync(com.lolzteam.api.runtime.StringOrInt userId) {
 			return backgroundUploadAsync(userId, null);
 		}
 	
-		public Types.UsersApiTypes.UsersBackgroundDeleteResponse backgroundDelete(String userId) {
+		public Types.UsersApiTypes.UsersBackgroundDeleteResponse backgroundDelete(com.lolzteam.api.runtime.StringOrInt userId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"DELETE",
 				"/users/" + userId + "/background",
@@ -2079,7 +2079,7 @@ public class ForumClient implements Closeable {
 			)), Types.UsersApiTypes.UsersBackgroundDeleteResponse.class);
 		}
 	
-		public CompletableFuture<Types.UsersApiTypes.UsersBackgroundDeleteResponse> backgroundDeleteAsync(String userId) {
+		public CompletableFuture<Types.UsersApiTypes.UsersBackgroundDeleteResponse> backgroundDeleteAsync(com.lolzteam.api.runtime.StringOrInt userId) {
 			return http.requestAsync(new RequestOptions(
 				"DELETE",
 				"/users/" + userId + "/background",
@@ -2091,7 +2091,7 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.UsersApiTypes.UsersBackgroundDeleteResponse.class));
 		}
 	
-		public Types.UsersApiTypes.UsersBackgroundCropResponse backgroundCrop(String userId, Types.UsersApiTypes.UsersBackgroundCropBody body) {
+		public Types.UsersApiTypes.UsersBackgroundCropResponse backgroundCrop(com.lolzteam.api.runtime.StringOrInt userId, Types.UsersApiTypes.UsersBackgroundCropBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
 				"/users/" + userId + "/background/crop",
@@ -2103,7 +2103,7 @@ public class ForumClient implements Closeable {
 			)), Types.UsersApiTypes.UsersBackgroundCropResponse.class);
 		}
 	
-		public CompletableFuture<Types.UsersApiTypes.UsersBackgroundCropResponse> backgroundCropAsync(String userId, Types.UsersApiTypes.UsersBackgroundCropBody body) {
+		public CompletableFuture<Types.UsersApiTypes.UsersBackgroundCropResponse> backgroundCropAsync(com.lolzteam.api.runtime.StringOrInt userId, Types.UsersApiTypes.UsersBackgroundCropBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
 				"/users/" + userId + "/background/crop",
@@ -2115,7 +2115,7 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.UsersApiTypes.UsersBackgroundCropResponse.class));
 		}
 	
-		public Types.UsersApiTypes.UsersFollowersResponse followers(String userId, Types.UsersApiTypes.UsersFollowersParams params) {
+		public Types.UsersApiTypes.UsersFollowersResponse followers(com.lolzteam.api.runtime.StringOrInt userId, Types.UsersApiTypes.UsersFollowersParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
 				"/users/" + userId + "/followers",
@@ -2127,11 +2127,11 @@ public class ForumClient implements Closeable {
 			)), Types.UsersApiTypes.UsersFollowersResponse.class);
 		}
 	
-		public Types.UsersApiTypes.UsersFollowersResponse followers(String userId) {
+		public Types.UsersApiTypes.UsersFollowersResponse followers(com.lolzteam.api.runtime.StringOrInt userId) {
 			return followers(userId, null);
 		}
 	
-		public CompletableFuture<Types.UsersApiTypes.UsersFollowersResponse> followersAsync(String userId, Types.UsersApiTypes.UsersFollowersParams params) {
+		public CompletableFuture<Types.UsersApiTypes.UsersFollowersResponse> followersAsync(com.lolzteam.api.runtime.StringOrInt userId, Types.UsersApiTypes.UsersFollowersParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
 				"/users/" + userId + "/followers",
@@ -2143,11 +2143,11 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.UsersApiTypes.UsersFollowersResponse.class));
 		}
 	
-		public CompletableFuture<Types.UsersApiTypes.UsersFollowersResponse> followersAsync(String userId) {
+		public CompletableFuture<Types.UsersApiTypes.UsersFollowersResponse> followersAsync(com.lolzteam.api.runtime.StringOrInt userId) {
 			return followersAsync(userId, null);
 		}
 	
-		public Types.UsersApiTypes.UsersFollowResponse follow(String userId) {
+		public Types.UsersApiTypes.UsersFollowResponse follow(com.lolzteam.api.runtime.StringOrInt userId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
 				"/users/" + userId + "/followers",
@@ -2159,7 +2159,7 @@ public class ForumClient implements Closeable {
 			)), Types.UsersApiTypes.UsersFollowResponse.class);
 		}
 	
-		public CompletableFuture<Types.UsersApiTypes.UsersFollowResponse> followAsync(String userId) {
+		public CompletableFuture<Types.UsersApiTypes.UsersFollowResponse> followAsync(com.lolzteam.api.runtime.StringOrInt userId) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
 				"/users/" + userId + "/followers",
@@ -2171,7 +2171,7 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.UsersApiTypes.UsersFollowResponse.class));
 		}
 	
-		public Types.UsersApiTypes.UsersUnfollowResponse unfollow(String userId) {
+		public Types.UsersApiTypes.UsersUnfollowResponse unfollow(com.lolzteam.api.runtime.StringOrInt userId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"DELETE",
 				"/users/" + userId + "/followers",
@@ -2183,7 +2183,7 @@ public class ForumClient implements Closeable {
 			)), Types.UsersApiTypes.UsersUnfollowResponse.class);
 		}
 	
-		public CompletableFuture<Types.UsersApiTypes.UsersUnfollowResponse> unfollowAsync(String userId) {
+		public CompletableFuture<Types.UsersApiTypes.UsersUnfollowResponse> unfollowAsync(com.lolzteam.api.runtime.StringOrInt userId) {
 			return http.requestAsync(new RequestOptions(
 				"DELETE",
 				"/users/" + userId + "/followers",
@@ -2195,7 +2195,7 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.UsersApiTypes.UsersUnfollowResponse.class));
 		}
 	
-		public Types.UsersApiTypes.UsersFollowingsResponse followings(String userId, Types.UsersApiTypes.UsersFollowingsParams params) {
+		public Types.UsersApiTypes.UsersFollowingsResponse followings(com.lolzteam.api.runtime.StringOrInt userId, Types.UsersApiTypes.UsersFollowingsParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
 				"/users/" + userId + "/followings",
@@ -2207,11 +2207,11 @@ public class ForumClient implements Closeable {
 			)), Types.UsersApiTypes.UsersFollowingsResponse.class);
 		}
 	
-		public Types.UsersApiTypes.UsersFollowingsResponse followings(String userId) {
+		public Types.UsersApiTypes.UsersFollowingsResponse followings(com.lolzteam.api.runtime.StringOrInt userId) {
 			return followings(userId, null);
 		}
 	
-		public CompletableFuture<Types.UsersApiTypes.UsersFollowingsResponse> followingsAsync(String userId, Types.UsersApiTypes.UsersFollowingsParams params) {
+		public CompletableFuture<Types.UsersApiTypes.UsersFollowingsResponse> followingsAsync(com.lolzteam.api.runtime.StringOrInt userId, Types.UsersApiTypes.UsersFollowingsParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
 				"/users/" + userId + "/followings",
@@ -2223,11 +2223,11 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.UsersApiTypes.UsersFollowingsResponse.class));
 		}
 	
-		public CompletableFuture<Types.UsersApiTypes.UsersFollowingsResponse> followingsAsync(String userId) {
+		public CompletableFuture<Types.UsersApiTypes.UsersFollowingsResponse> followingsAsync(com.lolzteam.api.runtime.StringOrInt userId) {
 			return followingsAsync(userId, null);
 		}
 	
-		public Types.UsersApiTypes.UsersLikesResponse likes(String userId, Types.UsersApiTypes.UsersLikesParams params) {
+		public Types.UsersApiTypes.UsersLikesResponse likes(com.lolzteam.api.runtime.StringOrInt userId, Types.UsersApiTypes.UsersLikesParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
 				"/users/" + userId + "/likes",
@@ -2239,11 +2239,11 @@ public class ForumClient implements Closeable {
 			)), Types.UsersApiTypes.UsersLikesResponse.class);
 		}
 	
-		public Types.UsersApiTypes.UsersLikesResponse likes(String userId) {
+		public Types.UsersApiTypes.UsersLikesResponse likes(com.lolzteam.api.runtime.StringOrInt userId) {
 			return likes(userId, null);
 		}
 	
-		public CompletableFuture<Types.UsersApiTypes.UsersLikesResponse> likesAsync(String userId, Types.UsersApiTypes.UsersLikesParams params) {
+		public CompletableFuture<Types.UsersApiTypes.UsersLikesResponse> likesAsync(com.lolzteam.api.runtime.StringOrInt userId, Types.UsersApiTypes.UsersLikesParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
 				"/users/" + userId + "/likes",
@@ -2255,7 +2255,7 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.UsersApiTypes.UsersLikesResponse.class));
 		}
 	
-		public CompletableFuture<Types.UsersApiTypes.UsersLikesResponse> likesAsync(String userId) {
+		public CompletableFuture<Types.UsersApiTypes.UsersLikesResponse> likesAsync(com.lolzteam.api.runtime.StringOrInt userId) {
 			return likesAsync(userId, null);
 		}
 	
@@ -2291,7 +2291,7 @@ public class ForumClient implements Closeable {
 			return ignoredAsync(null);
 		}
 	
-		public Types.UsersApiTypes.UsersIgnoreResponse ignore(String userId) {
+		public Types.UsersApiTypes.UsersIgnoreResponse ignore(com.lolzteam.api.runtime.StringOrInt userId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
 				"/users/" + userId + "/ignore",
@@ -2303,7 +2303,7 @@ public class ForumClient implements Closeable {
 			)), Types.UsersApiTypes.UsersIgnoreResponse.class);
 		}
 	
-		public CompletableFuture<Types.UsersApiTypes.UsersIgnoreResponse> ignoreAsync(String userId) {
+		public CompletableFuture<Types.UsersApiTypes.UsersIgnoreResponse> ignoreAsync(com.lolzteam.api.runtime.StringOrInt userId) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
 				"/users/" + userId + "/ignore",
@@ -2315,7 +2315,7 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.UsersApiTypes.UsersIgnoreResponse.class));
 		}
 	
-		public Types.UsersApiTypes.UsersIgnoreEditResponse ignoreEdit(String userId, Types.UsersApiTypes.UsersIgnoreEditParams params) {
+		public Types.UsersApiTypes.UsersIgnoreEditResponse ignoreEdit(com.lolzteam.api.runtime.StringOrInt userId, Types.UsersApiTypes.UsersIgnoreEditParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"PUT",
 				"/users/" + userId + "/ignore",
@@ -2327,11 +2327,11 @@ public class ForumClient implements Closeable {
 			)), Types.UsersApiTypes.UsersIgnoreEditResponse.class);
 		}
 	
-		public Types.UsersApiTypes.UsersIgnoreEditResponse ignoreEdit(String userId) {
+		public Types.UsersApiTypes.UsersIgnoreEditResponse ignoreEdit(com.lolzteam.api.runtime.StringOrInt userId) {
 			return ignoreEdit(userId, null);
 		}
 	
-		public CompletableFuture<Types.UsersApiTypes.UsersIgnoreEditResponse> ignoreEditAsync(String userId, Types.UsersApiTypes.UsersIgnoreEditParams params) {
+		public CompletableFuture<Types.UsersApiTypes.UsersIgnoreEditResponse> ignoreEditAsync(com.lolzteam.api.runtime.StringOrInt userId, Types.UsersApiTypes.UsersIgnoreEditParams params) {
 			return http.requestAsync(new RequestOptions(
 				"PUT",
 				"/users/" + userId + "/ignore",
@@ -2343,11 +2343,11 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.UsersApiTypes.UsersIgnoreEditResponse.class));
 		}
 	
-		public CompletableFuture<Types.UsersApiTypes.UsersIgnoreEditResponse> ignoreEditAsync(String userId) {
+		public CompletableFuture<Types.UsersApiTypes.UsersIgnoreEditResponse> ignoreEditAsync(com.lolzteam.api.runtime.StringOrInt userId) {
 			return ignoreEditAsync(userId, null);
 		}
 	
-		public Types.UsersApiTypes.UsersUnignoreResponse unignore(String userId) {
+		public Types.UsersApiTypes.UsersUnignoreResponse unignore(com.lolzteam.api.runtime.StringOrInt userId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"DELETE",
 				"/users/" + userId + "/ignore",
@@ -2359,7 +2359,7 @@ public class ForumClient implements Closeable {
 			)), Types.UsersApiTypes.UsersUnignoreResponse.class);
 		}
 	
-		public CompletableFuture<Types.UsersApiTypes.UsersUnignoreResponse> unignoreAsync(String userId) {
+		public CompletableFuture<Types.UsersApiTypes.UsersUnignoreResponse> unignoreAsync(com.lolzteam.api.runtime.StringOrInt userId) {
 			return http.requestAsync(new RequestOptions(
 				"DELETE",
 				"/users/" + userId + "/ignore",
@@ -2371,7 +2371,7 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.UsersApiTypes.UsersUnignoreResponse.class));
 		}
 	
-		public Types.UsersApiTypes.UsersContentsResponse contents(String userId, Types.UsersApiTypes.UsersContentsParams params) {
+		public Types.UsersApiTypes.UsersContentsResponse contents(com.lolzteam.api.runtime.StringOrInt userId, Types.UsersApiTypes.UsersContentsParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
 				"/users/" + userId + "/timeline",
@@ -2383,11 +2383,11 @@ public class ForumClient implements Closeable {
 			)), Types.UsersApiTypes.UsersContentsResponse.class);
 		}
 	
-		public Types.UsersApiTypes.UsersContentsResponse contents(String userId) {
+		public Types.UsersApiTypes.UsersContentsResponse contents(com.lolzteam.api.runtime.StringOrInt userId) {
 			return contents(userId, null);
 		}
 	
-		public CompletableFuture<Types.UsersApiTypes.UsersContentsResponse> contentsAsync(String userId, Types.UsersApiTypes.UsersContentsParams params) {
+		public CompletableFuture<Types.UsersApiTypes.UsersContentsResponse> contentsAsync(com.lolzteam.api.runtime.StringOrInt userId, Types.UsersApiTypes.UsersContentsParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
 				"/users/" + userId + "/timeline",
@@ -2399,11 +2399,11 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.UsersApiTypes.UsersContentsResponse.class));
 		}
 	
-		public CompletableFuture<Types.UsersApiTypes.UsersContentsResponse> contentsAsync(String userId) {
+		public CompletableFuture<Types.UsersApiTypes.UsersContentsResponse> contentsAsync(com.lolzteam.api.runtime.StringOrInt userId) {
 			return contentsAsync(userId, null);
 		}
 	
-		public Types.UsersApiTypes.UsersTrophiesResponse trophies(String userId) {
+		public Types.UsersApiTypes.UsersTrophiesResponse trophies(com.lolzteam.api.runtime.StringOrInt userId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
 				"/users/" + userId + "/trophies",
@@ -2415,7 +2415,7 @@ public class ForumClient implements Closeable {
 			)), Types.UsersApiTypes.UsersTrophiesResponse.class);
 		}
 	
-		public CompletableFuture<Types.UsersApiTypes.UsersTrophiesResponse> trophiesAsync(String userId) {
+		public CompletableFuture<Types.UsersApiTypes.UsersTrophiesResponse> trophiesAsync(com.lolzteam.api.runtime.StringOrInt userId) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
 				"/users/" + userId + "/trophies",
@@ -2510,7 +2510,7 @@ public class ForumClient implements Closeable {
 			this.mapper = http.objectMapper();
 		}
 	
-		public Types.ProfilePostsApiTypes.ProfilePostsListResponse list(String userId, Types.ProfilePostsApiTypes.ProfilePostsListParams params) {
+		public Types.ProfilePostsApiTypes.ProfilePostsListResponse list(com.lolzteam.api.runtime.StringOrInt userId, Types.ProfilePostsApiTypes.ProfilePostsListParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
 				"/users/" + userId + "/profile-posts",
@@ -2522,11 +2522,11 @@ public class ForumClient implements Closeable {
 			)), Types.ProfilePostsApiTypes.ProfilePostsListResponse.class);
 		}
 	
-		public Types.ProfilePostsApiTypes.ProfilePostsListResponse list(String userId) {
+		public Types.ProfilePostsApiTypes.ProfilePostsListResponse list(com.lolzteam.api.runtime.StringOrInt userId) {
 			return list(userId, null);
 		}
 	
-		public CompletableFuture<Types.ProfilePostsApiTypes.ProfilePostsListResponse> listAsync(String userId, Types.ProfilePostsApiTypes.ProfilePostsListParams params) {
+		public CompletableFuture<Types.ProfilePostsApiTypes.ProfilePostsListResponse> listAsync(com.lolzteam.api.runtime.StringOrInt userId, Types.ProfilePostsApiTypes.ProfilePostsListParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
 				"/users/" + userId + "/profile-posts",
@@ -2538,7 +2538,7 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ProfilePostsApiTypes.ProfilePostsListResponse.class));
 		}
 	
-		public CompletableFuture<Types.ProfilePostsApiTypes.ProfilePostsListResponse> listAsync(String userId) {
+		public CompletableFuture<Types.ProfilePostsApiTypes.ProfilePostsListResponse> listAsync(com.lolzteam.api.runtime.StringOrInt userId) {
 			return listAsync(userId, null);
 		}
 	
@@ -4114,7 +4114,7 @@ public class ForumClient implements Closeable {
 			return taggedAsync(null);
 		}
 	
-		public Types.SearchApiTypes.SearchResultsResponse results(String searchId, Types.SearchApiTypes.SearchResultsParams params) {
+		public Types.SearchApiTypes.SearchResultsResponse results(com.lolzteam.api.runtime.StringOrInt searchId, Types.SearchApiTypes.SearchResultsParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
 				"/search/" + searchId + "/results",
@@ -4126,11 +4126,11 @@ public class ForumClient implements Closeable {
 			)), Types.SearchApiTypes.SearchResultsResponse.class);
 		}
 	
-		public Types.SearchApiTypes.SearchResultsResponse results(String searchId) {
+		public Types.SearchApiTypes.SearchResultsResponse results(com.lolzteam.api.runtime.StringOrInt searchId) {
 			return results(searchId, null);
 		}
 	
-		public CompletableFuture<Types.SearchApiTypes.SearchResultsResponse> resultsAsync(String searchId, Types.SearchApiTypes.SearchResultsParams params) {
+		public CompletableFuture<Types.SearchApiTypes.SearchResultsResponse> resultsAsync(com.lolzteam.api.runtime.StringOrInt searchId, Types.SearchApiTypes.SearchResultsParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
 				"/search/" + searchId + "/results",
@@ -4142,7 +4142,7 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.SearchApiTypes.SearchResultsResponse.class));
 		}
 	
-		public CompletableFuture<Types.SearchApiTypes.SearchResultsResponse> resultsAsync(String searchId) {
+		public CompletableFuture<Types.SearchApiTypes.SearchResultsResponse> resultsAsync(com.lolzteam.api.runtime.StringOrInt searchId) {
 			return resultsAsync(searchId, null);
 		}
 	}

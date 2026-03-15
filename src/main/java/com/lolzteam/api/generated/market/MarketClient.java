@@ -1011,8 +1011,8 @@ public class MarketClient implements Closeable {
 			return statesAsync(null);
 		}
 	
-		public Types.ListApiTypes.ListDownloadResponse download(String type, Types.ListApiTypes.ListDownloadParams params) {
-			return mapper.convertValue(http.request(new RequestOptions(
+		public String download(String type, Types.ListApiTypes.ListDownloadParams params) {
+			return http.requestRaw(new RequestOptions(
 				"GET",
 				"/user/" + type + "/download",
 				params != null ? mapper.valueToTree(params) : null,
@@ -1020,15 +1020,15 @@ public class MarketClient implements Closeable {
 				com.lolzteam.api.runtime.BodyEncoding.FORM,
 				java.util.Map.of(),
 				/* isSearch */ false
-			)), Types.ListApiTypes.ListDownloadResponse.class);
+			));
 		}
 	
-		public Types.ListApiTypes.ListDownloadResponse download(String type) {
+		public String download(String type) {
 			return download(type, null);
 		}
 	
-		public CompletableFuture<Types.ListApiTypes.ListDownloadResponse> downloadAsync(String type, Types.ListApiTypes.ListDownloadParams params) {
-			return http.requestAsync(new RequestOptions(
+		public CompletableFuture<String> downloadAsync(String type, Types.ListApiTypes.ListDownloadParams params) {
+			return http.requestRawAsync(new RequestOptions(
 				"GET",
 				"/user/" + type + "/download",
 				params != null ? mapper.valueToTree(params) : null,
@@ -1036,10 +1036,10 @@ public class MarketClient implements Closeable {
 				com.lolzteam.api.runtime.BodyEncoding.FORM,
 				java.util.Map.of(),
 				/* isSearch */ false
-			)).thenApply(node -> mapper.convertValue(node, Types.ListApiTypes.ListDownloadResponse.class));
+			));
 		}
 	
-		public CompletableFuture<Types.ListApiTypes.ListDownloadResponse> downloadAsync(String type) {
+		public CompletableFuture<String> downloadAsync(String type) {
 			return downloadAsync(type, null);
 		}
 	
@@ -1302,8 +1302,8 @@ public class MarketClient implements Closeable {
 			return steamValueAsync(null);
 		}
 	
-		public Types.ManagingApiTypes.ManagingSteamPreviewResponse steamPreview(long itemId, Types.ManagingApiTypes.ManagingSteamPreviewParams params) {
-			return mapper.convertValue(http.request(new RequestOptions(
+		public String steamPreview(long itemId, Types.ManagingApiTypes.ManagingSteamPreviewParams params) {
+			return http.requestRaw(new RequestOptions(
 				"GET",
 				"/" + itemId + "/steam-preview",
 				params != null ? mapper.valueToTree(params) : null,
@@ -1311,15 +1311,15 @@ public class MarketClient implements Closeable {
 				com.lolzteam.api.runtime.BodyEncoding.FORM,
 				java.util.Map.of(),
 				/* isSearch */ false
-			)), Types.ManagingApiTypes.ManagingSteamPreviewResponse.class);
+			));
 		}
 	
-		public Types.ManagingApiTypes.ManagingSteamPreviewResponse steamPreview(long itemId) {
+		public String steamPreview(long itemId) {
 			return steamPreview(itemId, null);
 		}
 	
-		public CompletableFuture<Types.ManagingApiTypes.ManagingSteamPreviewResponse> steamPreviewAsync(long itemId, Types.ManagingApiTypes.ManagingSteamPreviewParams params) {
-			return http.requestAsync(new RequestOptions(
+		public CompletableFuture<String> steamPreviewAsync(long itemId, Types.ManagingApiTypes.ManagingSteamPreviewParams params) {
+			return http.requestRawAsync(new RequestOptions(
 				"GET",
 				"/" + itemId + "/steam-preview",
 				params != null ? mapper.valueToTree(params) : null,
@@ -1327,10 +1327,10 @@ public class MarketClient implements Closeable {
 				com.lolzteam.api.runtime.BodyEncoding.FORM,
 				java.util.Map.of(),
 				/* isSearch */ false
-			)).thenApply(node -> mapper.convertValue(node, Types.ManagingApiTypes.ManagingSteamPreviewResponse.class));
+			));
 		}
 	
-		public CompletableFuture<Types.ManagingApiTypes.ManagingSteamPreviewResponse> steamPreviewAsync(long itemId) {
+		public CompletableFuture<String> steamPreviewAsync(long itemId) {
 			return steamPreviewAsync(itemId, null);
 		}
 	

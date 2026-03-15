@@ -86,6 +86,42 @@ public final class LolzteamHttpClient implements Closeable {
 		return objectMapper;
 	}
 
+	/**
+	 * Execute a request and return the raw response body as a String (for text/html endpoints).
+	 */
+	public String requestRaw(RequestOptions options) {
+		if (rateLimiter != null) {
+			rateLimiter.acquire();
+		}
+		if (options.isSearch() && searchRateLimiter != null) {
+			searchRateLimiter.acquire();
+		}
+		if (retryConfig == null) {
+			return executeRaw(options);
+		}
+		return RetryHandler.withRetry(retryConfig, onRetry, options.method(), options.path(), () -> executeRaw(options));
+	}
+
+	/**
+	 * Execute an async request and return the raw response body as a String (for text/html endpoints).
+	 */
+	public CompletableFuture<String> requestRawAsync(RequestOptions options) {
+		CompletableFuture<Void> rateLimitFuture = rateLimiter != null
+			? rateLimiter.acquireAsync()
+			: CompletableFuture.completedFuture(null);
+
+		CompletableFuture<Void> searchRateLimitFuture = options.isSearch() && searchRateLimiter != null
+			? rateLimitFuture.thenCompose(ignored -> searchRateLimiter.acquireAsync())
+			: rateLimitFuture;
+
+		if (retryConfig == null) {
+			return searchRateLimitFuture.thenCompose(ignored -> executeRawAsync(options));
+		}
+		return searchRateLimitFuture.thenCompose(ignored ->
+			RetryHandler.withRetryAsync(retryConfig, onRetry, options.method(), options.path(), () -> executeRawAsync(options))
+		);
+	}
+
 	public JsonNode request(RequestOptions options) {
 		if (rateLimiter != null) {
 			rateLimiter.acquire();
@@ -114,6 +150,33 @@ public final class LolzteamHttpClient implements Closeable {
 		return searchRateLimitFuture.thenCompose(ignored ->
 			RetryHandler.withRetryAsync(retryConfig, onRetry, options.method(), options.path(), () -> executeAsync(options))
 		);
+	}
+
+	private String executeRaw(RequestOptions options) {
+		var httpRequest = buildHttpRequest(options);
+		try {
+			var response = client.send(httpRequest, HttpResponse.BodyHandlers.ofString());
+			return handleRawResponse(response);
+		} catch (IOException e) {
+			throw new NetworkException(e);
+		} catch (InterruptedException e) {
+			Thread.currentThread().interrupt();
+			throw new NetworkException(e);
+		}
+	}
+
+	private CompletableFuture<String> executeRawAsync(RequestOptions options) {
+		var httpRequest = buildHttpRequest(options);
+		return client.sendAsync(httpRequest, HttpResponse.BodyHandlers.ofString())
+			.thenApply(this::handleRawResponse)
+			.exceptionallyCompose(error -> {
+				var cause = error instanceof java.util.concurrent.CompletionException
+					? error.getCause() : error;
+				if (cause instanceof LolzteamException) {
+					return CompletableFuture.failedFuture(cause);
+				}
+				return CompletableFuture.failedFuture(new NetworkException(cause));
+			});
 	}
 
 	private JsonNode execute(RequestOptions options) {
@@ -247,6 +310,17 @@ public final class LolzteamHttpClient implements Closeable {
 		baos.write(header.getBytes(StandardCharsets.UTF_8));
 		baos.write(data);
 		baos.write("\r\n".getBytes(StandardCharsets.UTF_8));
+	}
+
+	private String handleRawResponse(HttpResponse<String> response) {
+		var statusCode = response.statusCode();
+		var bodyText = response.body();
+
+		if (statusCode < 200 || statusCode >= 300) {
+			throw HttpException.create(statusCode, bodyText, response.headers());
+		}
+
+		return bodyText;
 	}
 
 	private JsonNode handleResponse(HttpResponse<String> response) {

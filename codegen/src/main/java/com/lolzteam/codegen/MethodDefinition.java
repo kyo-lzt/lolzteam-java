@@ -17,6 +17,8 @@ record MethodDefinition(
 	boolean bodyIsArray,
 	String bodyArrayItemType,
 	String bodyEncoding,
-	JsonNode rawResponseSchema
+	JsonNode rawResponseSchema,
+	DiscriminatedUnion discriminatedUnion,
+	boolean htmlResponse
 ) {
 }

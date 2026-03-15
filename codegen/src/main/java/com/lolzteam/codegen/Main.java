@@ -55,9 +55,12 @@ public final class Main {
 				}
 			}
 
+			// Collect enums from parsed groups
+			var enums = EnumCollector.collect(result.groups());
+
 			// Write Types file
 			var typesContent = Emitter.emitJavaTypesFile(
-				result.groups(), config.subPackage(), result.componentSchemas()
+				result.groups(), config.subPackage(), result.componentSchemas(), enums
 			);
 			writeFile(new File(outDir, "Types.java"), typesContent);
 			System.out.println("  Types.java");

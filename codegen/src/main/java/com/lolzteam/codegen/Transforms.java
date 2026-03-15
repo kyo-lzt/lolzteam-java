@@ -101,13 +101,17 @@ final class Transforms {
 
 		if (!schema.isObject()) return "unknown";
 
-		// Check type BEFORE enum — if type is a known non-string primitive with enum, return the primitive type
+		// Check type BEFORE enum — for non-string primitives with enum, emit as literal union
 		var typeElEarly = schema.get("type");
 		var typeEarly = typeElEarly != null && typeElEarly.isTextual() ? typeElEarly.asText() : null;
 		if (typeEarly != null && ("integer".equals(typeEarly) || "number".equals(typeEarly) || "boolean".equals(typeEarly))) {
 			var enumCheck = schema.get("enum");
 			if (enumCheck != null && enumCheck.isArray() && !enumCheck.isEmpty()) {
-				return primitiveType(typeEarly);
+				var literals = new ArrayList<String>();
+				for (var el : enumCheck) {
+					literals.add(el.asText());
+				}
+				return String.join(" | ", literals);
 			}
 		}
 
@@ -202,6 +206,19 @@ final class Transforms {
 
 	/** Map intermediate type string to a native Java type suitable for path parameters. */
 	static String toJavaPathParamType(String tsType) {
+		// string | integer → StringOrInt
+		if (tsType.contains(" | ")) {
+			var parts = tsType.split(" \\| ");
+			var nonNull = new java.util.ArrayList<String>();
+			for (var p : parts) {
+				var trimmed = p.trim();
+				if (!"null".equals(trimmed)) nonNull.add(trimmed);
+			}
+			if (nonNull.size() == 2
+				&& nonNull.contains("string") && nonNull.contains("integer")) {
+				return "com.lolzteam.api.runtime.StringOrInt";
+			}
+		}
 		return switch (tsType) {
 			case "integer" -> "long";
 			case "string" -> "String";
@@ -235,9 +252,18 @@ final class Transforms {
 				// nullable single type
 				return toJavaType(nonNull.get(0));
 			}
+			// string | integer → StringOrInt
+			if (nonNull.size() == 2
+				&& nonNull.contains("string") && nonNull.contains("integer")) {
+				return "com.lolzteam.api.runtime.StringOrInt";
+			}
 			// All string literals → String
 			if (!nonNull.isEmpty() && nonNull.stream().allMatch(s -> s.startsWith("\"") && s.endsWith("\""))) {
 				return "String";
+			}
+			// All integer literals → Long
+			if (!nonNull.isEmpty() && nonNull.stream().allMatch(s -> s.matches("-?\\d+"))) {
+				return "Long";
 			}
 			return "JsonNode";
 		}
@@ -295,13 +321,16 @@ final class Transforms {
 			var nameNode = param.get("name");
 			if (nameNode == null) continue;
 			var name = nameNode.asText();
-			var type = schemaToTypeString(param.get("schema"), spec);
+			var schemaNode = param.get("schema");
+			var type = schemaToTypeString(schemaNode, spec);
 			var required = param.has("required") && param.get("required").asBoolean(false);
+			var defaultValue = extractDefaultValue(schemaNode);
 
 			var parsed = new ParsedParameter(
 				name,
 				type,
-				"path".equals(inValue) || required
+				"path".equals(inValue) || required,
+				defaultValue
 			);
 
 			if ("path".equals(inValue)) {
@@ -364,6 +393,9 @@ final class Transforms {
 		// oneOf
 		var oneOf = schema.get("oneOf");
 		if (oneOf != null && oneOf.isArray()) {
+			// Try to detect discriminated union
+			var union = detectDiscriminatedUnion(oneOf, spec);
+
 			var allProps = new LinkedHashMap<String, JsonNode>();
 			for (var variant : oneOf) {
 				if (!variant.isObject()) continue;
@@ -382,6 +414,8 @@ final class Transforms {
 					false
 				));
 			}
+
+			return new BodyExtractionResult(bodyProperties, false, null, bodyEncoding, union);
 		} else {
 			var properties = schema.get("properties");
 			if (properties != null && properties.isObject()) {
@@ -401,12 +435,102 @@ final class Transforms {
 					var format = propSchema.isObject() && propSchema.has("format")
 						? propSchema.get("format").asText() : null;
 					var type = "binary".equals(format) ? "Blob" : schemaToTypeString(propSchema, spec);
-					bodyProperties.add(new BodyProperty(name, type, requiredSet.contains(name)));
+					var defaultVal = extractDefaultValue(propSchema);
+					bodyProperties.add(new BodyProperty(name, type, requiredSet.contains(name), defaultVal));
 				}
 			}
 		}
 
 		return new BodyExtractionResult(bodyProperties, false, null, bodyEncoding);
+	}
+
+	// ─── Discriminated Union Detection ───────────────────────────────
+
+	/**
+	 * Detect if a oneOf array represents a discriminated union.
+	 * Returns null if not a discriminated union.
+	 *
+	 * A discriminated union is detected when every variant has a property with
+	 * a single-value enum, and that property name is the same across all variants.
+	 */
+	static DiscriminatedUnion detectDiscriminatedUnion(JsonNode oneOfArray, JsonNode spec) {
+		if (oneOfArray == null || !oneOfArray.isArray() || oneOfArray.size() < 2) return null;
+
+		// Find candidate discriminator: a property that in every variant has a single-value enum
+		String discriminatorProp = null;
+		String discriminatorType = null;
+
+		for (int i = 0; i < oneOfArray.size(); i++) {
+			var variant = oneOfArray.get(i);
+			if (!variant.isObject()) return null;
+			var props = variant.get("properties");
+			if (props == null || !props.isObject()) return null;
+
+			// For the first variant, find all candidates
+			if (i == 0) {
+				var fields = props.fields();
+				while (fields.hasNext()) {
+					var entry = fields.next();
+					var propSchema = entry.getValue();
+					if (propSchema.isObject() && propSchema.has("enum")) {
+						var enumArr = propSchema.get("enum");
+						if (enumArr.isArray() && enumArr.size() == 1) {
+							discriminatorProp = entry.getKey();
+							var typeNode = propSchema.get("type");
+							discriminatorType = typeNode != null && typeNode.isTextual()
+								? typeNode.asText() : "string";
+							break;
+						}
+					}
+				}
+				if (discriminatorProp == null) return null;
+			} else {
+				// Verify the candidate exists in this variant with a single-value enum
+				var propSchema = props.get(discriminatorProp);
+				if (propSchema == null || !propSchema.isObject()) return null;
+				var enumArr = propSchema.get("enum");
+				if (enumArr == null || !enumArr.isArray() || enumArr.size() != 1) return null;
+			}
+		}
+
+		// Build variants
+		var variants = new ArrayList<OneOfVariant>();
+		for (var variant : oneOfArray) {
+			var props = variant.get("properties");
+			var titleNode = variant.get("title");
+			var title = titleNode != null && titleNode.isTextual() ? titleNode.asText() : null;
+
+			var discPropSchema = props.get(discriminatorProp);
+			var discValue = discPropSchema.get("enum").get(0).asText();
+
+			// Collect required fields for this variant
+			var requiredSet = new HashSet<String>();
+			var requiredArr = variant.get("required");
+			if (requiredArr != null && requiredArr.isArray()) {
+				for (var r : requiredArr) {
+					requiredSet.add(r.asText());
+				}
+			}
+
+			// Collect properties excluding the discriminator
+			var variantProps = new ArrayList<BodyProperty>();
+			var fields = props.fields();
+			while (fields.hasNext()) {
+				var entry = fields.next();
+				var name = entry.getKey();
+				if (name.equals(discriminatorProp)) continue;
+				var propSchema = entry.getValue();
+				var format = propSchema.isObject() && propSchema.has("format")
+					? propSchema.get("format").asText() : null;
+				var type = "binary".equals(format) ? "Blob" : schemaToTypeString(propSchema, spec);
+				var defaultVal = extractDefaultValue(propSchema);
+				variantProps.add(new BodyProperty(name, type, requiredSet.contains(name), defaultVal));
+			}
+
+			variants.add(new OneOfVariant(discValue, title, variantProps));
+		}
+
+		return new DiscriminatedUnion(discriminatorProp, discriminatorType, variants);
 	}
 
 	// ─── Response Extraction ──────────────────────────────────────────
@@ -456,6 +580,35 @@ final class Transforms {
 		return schema;
 	}
 
+	// ─── HTML Response Detection ────────────────────────────────────
+
+	/** Check if an operation returns text/html (not application/json). */
+	static boolean isHtmlResponse(JsonNode operation, JsonNode spec) {
+		var responses = operation.get("responses");
+		if (responses == null || !responses.isObject()) return false;
+		var rawSuccess = responses.get("200");
+		if (rawSuccess == null) rawSuccess = responses.get("201");
+		if (rawSuccess == null) return false;
+		var success = derefShallow(rawSuccess, spec);
+		if (!success.isObject()) return false;
+		var content = success.get("content");
+		if (content == null || !content.isObject()) return false;
+		return content.has("text/html") && !content.has("application/json");
+	}
+
+	// ─── Default Value Extraction ────────────────────────────────────
+
+	/** Extract the "default" value from a schema node as a string, or null if absent. */
+	static String extractDefaultValue(JsonNode schema) {
+		if (schema == null || !schema.isObject()) return null;
+		var defaultNode = schema.get("default");
+		if (defaultNode == null || defaultNode.isNull()) return null;
+		if (defaultNode.isTextual()) return defaultNode.asText();
+		if (defaultNode.isBoolean()) return String.valueOf(defaultNode.asBoolean());
+		if (defaultNode.isNumber()) return defaultNode.asText();
+		return defaultNode.asText();
+	}
+
 	// ─── Method Definition ────────────────────────────────────────────
 
 	static MethodDefinition extractMethodDefinition(
@@ -479,7 +632,7 @@ final class Transforms {
 		if (isGet) {
 			var combined = new ArrayList<>(params.queryParams());
 			for (var prop : body.properties()) {
-				combined.add(new ParsedParameter(prop.name(), prop.type(), false));
+				combined.add(new ParsedParameter(prop.name(), prop.type(), false, prop.defaultValue()));
 			}
 			effectiveQueryParams = combined;
 		} else {
@@ -500,6 +653,9 @@ final class Transforms {
 		// Extract raw response schema (preserves $refs to component schemas)
 		var rawResponseSchema = extractRawResponseSchema(rawOperation, rawSpec);
 
+		// Detect text/html response
+		var htmlResponse = isHtmlResponse(operation, emptySpec);
+
 		return new MethodDefinition(
 			operationId,
 			methodName,
@@ -513,7 +669,9 @@ final class Transforms {
 			!isGet && body.bodyIsArray(),
 			isGet ? null : body.bodyArrayItemType(),
 			isGet ? "form" : body.bodyEncoding(),
-			rawResponseSchema
+			rawResponseSchema,
+			isGet ? null : body.discriminatedUnion(),
+			htmlResponse
 		);
 	}
 }

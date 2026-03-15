@@ -5,6 +5,10 @@ package com.lolzteam.api.generated.market;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.fasterxml.jackson.databind.JsonNode;
 import java.util.List;
 import java.util.Map;
@@ -12,6 +16,1772 @@ import java.util.Map;
 public final class Types {
 
 	private Types() {
+	}
+
+	// ─── Enums ───────────────────────────────────────────────────
+
+	public enum OrderBy {
+		PRICE_TO_UP("price_to_up"),
+		PRICE_TO_DOWN("price_to_down"),
+		PDATE_TO_DOWN("pdate_to_down"),
+		PDATE_TO_UP("pdate_to_up"),
+		PDATE_TO_DOWN_UPLOAD("pdate_to_down_upload"),
+		PDATE_TO_UP_UPLOAD("pdate_to_up_upload"),
+		EDATE_TO_UP("edate_to_up"),
+		EDATE_TO_DOWN("edate_to_down"),
+		DDATE_TO_UP("ddate_to_up"),
+		DDATE_TO_DOWN("ddate_to_down");
+
+		private final String value;
+
+		OrderBy(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum Currency {
+		RUB("rub"),
+		UAH("uah"),
+		KZT("kzt"),
+		BYN("byn"),
+		USD("usd"),
+		EUR("eur"),
+		GBP("gbp"),
+		CNY("cny"),
+		TRY("try"),
+		JPY("jpy"),
+		BRL("brl");
+
+		private final String value;
+
+		Currency(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum NotEmailProvider {
+		OTHER("other"),
+		RAMBLER("rambler"),
+		OUTLOOK("outlook"),
+		FIRSTMAIL("firstmail"),
+		NOTLETTERS("notletters"),
+		MAIL_RU("mail_ru");
+
+		private final String value;
+
+		NotEmailProvider(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum CategoryEg {
+		V_1(-1L),
+		V0(0L),
+		V1(1L);
+
+		private final long value;
+
+		CategoryEg(long value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public long getValue() {
+			return value;
+		}
+	}
+
+	public enum CategoryEgFortnite {
+		V_1(-1L),
+		V0(0L),
+		V1(1L),
+		V2(2L);
+
+		private final long value;
+
+		CategoryEgFortnite(long value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public long getValue() {
+			return value;
+		}
+	}
+
+	public enum CategoryEgBattleNet {
+		V0(0L),
+		V1(1L);
+
+		private final long value;
+
+		CategoryEgBattleNet(long value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public long getValue() {
+			return value;
+		}
+	}
+
+	public enum Rt {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		Rt(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum TradeBan {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		TradeBan(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum TradeLimit {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		TradeLimit(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum Limit {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		Limit(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum Mafile {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		Mafile(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum RegPeriod {
+		DAY("day"),
+		MONTH("month"),
+		YEAR("year");
+
+		private final String value;
+
+		RegPeriod(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum MmBan {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		MmBan(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum LastTransDatePeriod {
+		DAY("day"),
+		MONTH("month"),
+		YEAR("year");
+
+		private final String value;
+
+		LastTransDatePeriod(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum LastTransDatePeriodLater {
+		DAY("day"),
+		MONTH("month"),
+		YEAR("year");
+
+		private final String value;
+
+		LastTransDatePeriodLater(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum HasActivatedKeys {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		HasActivatedKeys(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum Cs2MapRank {
+		V1(1L),
+		V2(2L),
+		V3(3L),
+		V4(4L),
+		V5(5L),
+		V6(6L),
+		V7(7L),
+		V8(8L),
+		V9(9L),
+		V10(10L),
+		V11(11L),
+		V12(12L),
+		V13(13L);
+
+		private final long value;
+
+		Cs2MapRank(long value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public long getValue() {
+			return value;
+		}
+	}
+
+	public enum HasFaceit {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		HasFaceit(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum D2LastMatchDatePeriod {
+		DAY("day"),
+		MONTH("month"),
+		YEAR("year");
+
+		private final String value;
+
+		D2LastMatchDatePeriod(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum TempEmail {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		TempEmail(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum ChangeEmail {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		ChangeEmail(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum Bp {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		Bp(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum XboxLinkable {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		XboxLinkable(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum PsnLinkable {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		PsnLinkable(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum Email {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		Email(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum Ea {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		Ea(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum Tel {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		Tel(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum Spam {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		Spam(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum Password {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		Password(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum Premium {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		Premium(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum PremiumExpirationPeriod {
+		DAY("day"),
+		MONTH("month"),
+		YEAR("year");
+
+		private final String value;
+
+		PremiumExpirationPeriod(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum BirthdayPeriod {
+		DAY("day"),
+		MONTH("month"),
+		YEAR("year");
+
+		private final String value;
+
+		BirthdayPeriod(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum BirthdayAfterPeriod {
+		DAY("day"),
+		MONTH("month"),
+		YEAR("year");
+
+		private final String value;
+
+		BirthdayAfterPeriod(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum BrawlPass {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		BrawlPass(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum RoyalePass {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		RoyalePass(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum ClashPass {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		ClashPass(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum HasBan {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		HasBan(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum XboxConnected {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		XboxConnected(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum SteamConnected {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		SteamConnected(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum PsnConnected {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		PsnConnected(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum CategorySubscription {
+		EA_PLAY("EA Play"),
+		EA_PLAY_PRO("EA Play Pro");
+
+		private final String value;
+
+		CategorySubscription(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum CategorySubscriptionGifts {
+		DISCORD_NITRO("discord_nitro"),
+		DISCORD_NITRO_BASIC("discord_nitro_basic"),
+		DISCORD_NITRO_TRIAL("discord_nitro_trial"),
+		TELEGRAM_PREMIUM("telegram_premium");
+
+		private final String value;
+
+		CategorySubscriptionGifts(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum CategorySubscriptionUplay {
+		BASIC("basic"),
+		PREMIUM("premium"),
+		PREMIUM_ANYWHERE("premiumAnywhere");
+
+		private final String value;
+
+		CategorySubscriptionUplay(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum CategorySubscriptionRoblox {
+		ROBLOX_PREMIUM1000("RobloxPremium1000"),
+		ROBLOX_PREMIUM100012_MONTHS("RobloxPremium100012Months"),
+		ROBLOX_PREMIUM1000_ONE_MONTH("RobloxPremium1000OneMonth"),
+		ROBLOX_PREMIUM2200("RobloxPremium2200"),
+		ROBLOX_PREMIUM2200_ONE_MONTH("RobloxPremium2200OneMonth"),
+		ROBLOX_PREMIUM450("RobloxPremium450"),
+		ROBLOX_PREMIUM450_ONE_MONTH("RobloxPremium450OneMonth");
+
+		private final String value;
+
+		CategorySubscriptionRoblox(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum CategorySubscriptionMinecraft {
+		PC_GAME_PASS("PC Game Pass"),
+		XBOX_GAME_PASS_ULTIMATE("Xbox Game Pass Ultimate");
+
+		private final String value;
+
+		CategorySubscriptionMinecraft(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum SubscriptionPeriod {
+		DAY("day"),
+		MONTH("month"),
+		YEAR("year");
+
+		private final String value;
+
+		SubscriptionPeriod(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum Transactions {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		Transactions(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum Clan {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		Clan(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum Region {
+		AF("af"),
+		AS("as"),
+		CIS("cis"),
+		EU("eu"),
+		ME("me"),
+		OC("oc"),
+		US("us");
+
+		private final String value;
+
+		Region(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum Pve {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		Pve(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum Side {
+		BEAR("Bear"),
+		SAVAGE("Savage");
+
+		private final String value;
+
+		Side(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum R6Ban {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		R6Ban(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum Nitro {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		Nitro(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum NitroPeriod {
+		DAY("day"),
+		MONTH("month"),
+		YEAR("year");
+
+		private final String value;
+
+		NitroPeriod(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum Billing {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		Billing(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum Gifts {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		Gifts(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum Clans {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		Clans(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum _2fa {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		_2fa(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum CookieLogin {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		CookieLogin(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum Verified {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		Verified(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum Cookies {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		Cookies(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum LoginWithoutCookies {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		LoginWithoutCookies(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum EditBtag {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		EditBtag(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum ChangeableFn {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		ChangeableFn(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum RealId {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		RealId(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum ParentControl {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		ParentControl(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum NoBans {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		NoBans(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum Autorenewal {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		Autorenewal(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum AgeVerified {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		AgeVerified(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum GameDonations {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		GameDonations(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum Voice {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		Voice(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum Java {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		Java(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum Bedrock {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		Bedrock(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum Dungeons {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		Dungeons(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum Legends {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		Legends(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum ChangeNickname {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		ChangeNickname(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum HypixelBan {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		HypixelBan(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum HypixelSkyblockApiEnabled {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		HypixelSkyblockApiEnabled(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum LastLoginHypixelPeriod {
+		DAY("day"),
+		MONTH("month"),
+		YEAR("year");
+
+		private final String value;
+
+		LastLoginHypixelPeriod(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum CanChangeDetails {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		CanChangeDetails(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum HypixelBanParsed {
+		YES("yes"),
+		NO("no"),
+		NOMATTER("nomatter");
+
+		private final String value;
+
+		HypixelBanParsed(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum CategoryId {
+		V1(1L),
+		V3(3L),
+		V4(4L),
+		V5(5L),
+		V6(6L),
+		V7(7L),
+		V8(8L),
+		V9(9L),
+		V10(10L),
+		V11(11L),
+		V12(12L),
+		V13(13L),
+		V14(14L),
+		V15(15L),
+		V16(16L),
+		V17(17L),
+		V18(18L),
+		V19(19L),
+		V20(20L),
+		V22(22L),
+		V24(24L),
+		V28(28L),
+		V30(30L),
+		V31(31L);
+
+		private final long value;
+
+		CategoryId(long value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public long getValue() {
+			return value;
+		}
+	}
+
+	public enum Show {
+		ACTIVE("active"),
+		PAID("paid"),
+		DELETED("deleted"),
+		AWAITING("awaiting"),
+		CLOSED("closed"),
+		DISCOUNT_REQUEST("discount_request"),
+		STICKIED("stickied"),
+		PRE_ACTIVE("pre_active");
+
+		private final String value;
+
+		Show(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum Format {
+		SHORT("short"),
+		CUSTOM("custom"),
+		MFA_FILE_STEAM_ID("mfa_file_steam_id"),
+		MFA_FILE_LOGIN("mfa_file_login");
+
+		private final String value;
+
+		Format(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum AppId {
+		V730(730L),
+		V578080(578080L),
+		V753(753L),
+		V570(570L),
+		V440(440L),
+		V252490(252490L),
+		V304930(304930L),
+		V232090(232090L),
+		V322330(322330L);
+
+		private final long value;
+
+		AppId(long value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public long getValue() {
+			return value;
+		}
+	}
+
+	public enum ManagingType {
+		PROFILES("profiles"),
+		GAMES("games");
+
+		private final String value;
+
+		ManagingType(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum ManagingTypeImage {
+		SKINS("skins"),
+		PICKAXES("pickaxes"),
+		DANCES("dances"),
+		GLIDERS("gliders"),
+		WEAPONS("weapons"),
+		AGENTS("agents"),
+		BUDDIES("buddies");
+
+		private final String value;
+
+		ManagingTypeImage(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum ProfileType {
+		MARKET("market"),
+		NOMARKET("nomarket");
+
+		private final String value;
+
+		ProfileType(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum PaymentsType {
+		PAID_ITEM("paid_item"),
+		SOLD_ITEM("sold_item"),
+		WITHDRAWAL_BALANCE("withdrawal_balance"),
+		REFILLED_BALANCE("refilled_balance"),
+		INTERNAL_PURCHASE("internal_purchase"),
+		MONEY_TRANSFER("money_transfer"),
+		RECEIVING_MONEY("receiving_money"),
+		CLAIM_HOLD("claim_hold"),
+		INSURANCE_DEPOSIT("insurance_deposit"),
+		PAID_MAIL("paid_mail"),
+		CONTEST("contest"),
+		INVOICE("invoice"),
+		BALANCE_EXCHANGE("balance_exchange");
+
+		private final String value;
+
+		PaymentsType(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum ManagingItemOrigin {
+		BRUTE("brute"),
+		PHISHING("phishing"),
+		STEALER("stealer"),
+		PERSONAL("personal"),
+		RESALE("resale"),
+		AUTOREG("autoreg"),
+		DUMMY("dummy");
+
+		private final String value;
+
+		ManagingItemOrigin(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum PublishingItemOrigin {
+		BRUTE("brute"),
+		PHISHING("phishing"),
+		STEALER("stealer"),
+		PERSONAL("personal"),
+		RESALE("resale"),
+		AUTOREG("autoreg"),
+		DUMMY("dummy"),
+		SELF_REGISTRATION("self_registration");
+
+		private final String value;
+
+		PublishingItemOrigin(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum EmailType {
+		NATIVE("native"),
+		AUTOREG("autoreg");
+
+		private final String value;
+
+		EmailType(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum ClaimState {
+		ACTIVE("active"),
+		SOLVED("solved"),
+		REJECTED("rejected"),
+		SETTLED("settled");
+
+		private final String value;
+
+		ClaimState(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum ExtendedGuarantee {
+		V_1(-1L),
+		V0(0L),
+		V1(1L);
+
+		private final long value;
+
+		ExtendedGuarantee(long value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public long getValue() {
+			return value;
+		}
+	}
+
+	public enum Status {
+		PAID("paid"),
+		NOT_PAID("not_paid");
+
+		private final String value;
+
+		Status(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum HoldLengthOption {
+		HOUR("hour"),
+		DAY("day"),
+		WEEK("week"),
+		MONTH("month"),
+		YEAR("year");
+
+		private final String value;
+
+		HoldLengthOption(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
+	public enum Day {
+		V0(0L),
+		V1(1L),
+		V2(2L),
+		V3(3L),
+		V4(4L),
+		V5(5L),
+		V6(6L),
+		V7(7L),
+		V8(8L),
+		V9(9L),
+		V10(10L),
+		V11(11L),
+		V12(12L),
+		V13(13L),
+		V14(14L),
+		V15(15L),
+		V16(16L),
+		V17(17L),
+		V18(18L),
+		V19(19L),
+		V20(20L),
+		V21(21L),
+		V22(22L),
+		V23(23L),
+		V24(24L),
+		V25(25L),
+		V26(26L),
+		V27(27L),
+		V28(28L);
+
+		private final long value;
+
+		Day(long value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public long getValue() {
+			return value;
+		}
 	}
 
 	// ─── Component Schemas ────────────────────────────────────────
@@ -618,7 +2388,7 @@ public final class Types {
 			Long pmin,
 			Long pmax,
 			String title,
-			@JsonProperty("order_by") String orderBy,
+			@JsonProperty("order_by") OrderBy orderBy,
 			@JsonProperty("tag_id[]") List<Long> tagId,
 			@JsonProperty("not_tag_id[]") List<Long> notTagId,
 			@JsonProperty("public_tag_id[]") List<Long> publicTagId,
@@ -630,10 +2400,10 @@ public final class Types {
 			Boolean sb,
 			@JsonProperty("nsb_by_me") Boolean nsbByMe,
 			@JsonProperty("sb_by_me") Boolean sbByMe,
-			String currency,
+			Currency currency,
 			@JsonProperty("email_login_data") Boolean emailLoginData,
 			@JsonProperty("email_provider[]") JsonNode emailProvider,
-			@JsonProperty("not_email_provider[]") String notEmailProvider,
+			@JsonProperty("not_email_provider[]") NotEmailProvider notEmailProvider,
 			@JsonProperty("parse_same_item_ids") Boolean parseSameItemIds
 		) {
 			public CategoryAllParams() {
@@ -659,7 +2429,7 @@ public final class Types {
 			Long pmin,
 			Long pmax,
 			String title,
-			@JsonProperty("order_by") String orderBy,
+			@JsonProperty("order_by") OrderBy orderBy,
 			@JsonProperty("tag_id[]") List<Long> tagId,
 			@JsonProperty("not_tag_id[]") List<Long> notTagId,
 			@JsonProperty("public_tag_id[]") List<Long> publicTagId,
@@ -671,27 +2441,28 @@ public final class Types {
 			Boolean sb,
 			@JsonProperty("nsb_by_me") Boolean nsbByMe,
 			@JsonProperty("sb_by_me") Boolean sbByMe,
-			String currency,
+			Currency currency,
 			@JsonProperty("email_login_data") Boolean emailLoginData,
 			@JsonProperty("email_type[]") JsonNode emailType,
 			@JsonProperty("email_provider[]") JsonNode emailProvider,
-			@JsonProperty("not_email_provider[]") String notEmailProvider,
+			@JsonProperty("not_email_provider[]") NotEmailProvider notEmailProvider,
 			@JsonProperty("parse_same_item_ids") Boolean parseSameItemIds,
 			@JsonProperty("item_domain") String itemDomain,
 			@JsonProperty("game[]") List<Long> game,
 			@JsonProperty("hours_played") Map<String, Long> hoursPlayed,
 			@JsonProperty("hours_played_max") Map<String, Long> hoursPlayedMax,
-			Long eg,
+			CategoryEg eg,
 			@JsonProperty("vac[]") List<Long> vac,
 			@JsonProperty("vac_skip_game_check") Boolean vacSkipGameCheck,
-			String rt,
-			@JsonProperty("trade_ban") String tradeBan,
-			@JsonProperty("trade_limit") String tradeLimit,
+			/** Default: no */
+			Rt rt,
+			@JsonProperty("trade_ban") TradeBan tradeBan,
+			@JsonProperty("trade_limit") TradeLimit tradeLimit,
 			Long daybreak,
-			String limit,
-			String mafile,
+			Limit limit,
+			Mafile mafile,
 			Long reg,
-			@JsonProperty("reg_period") String regPeriod,
+			@JsonProperty("reg_period") RegPeriod regPeriod,
 			Long lmin,
 			Long lmax,
 			Long rmin,
@@ -699,7 +2470,7 @@ public final class Types {
 			@JsonProperty("wingman_rmin") Long wingmanRmin,
 			@JsonProperty("wingman_rmax") Long wingmanRmax,
 			@JsonProperty("no_vac") Boolean noVac,
-			@JsonProperty("mm_ban") String mmBan,
+			@JsonProperty("mm_ban") MmBan mmBan,
 			@JsonProperty("balance_min") Long balanceMin,
 			@JsonProperty("balance_max") Long balanceMax,
 			@JsonProperty("inv_game") Long invGame,
@@ -711,7 +2482,7 @@ public final class Types {
 			Long gmax,
 			@JsonProperty("win_count_min") Long winCountMin,
 			@JsonProperty("win_count_max") Long winCountMax,
-			@JsonProperty("medal_id[]") List<Long> medalId,
+			@JsonProperty("medal_id[]") JsonNode medalId,
 			@JsonProperty("medal_operator_or") Boolean medalOperatorOr,
 			@JsonProperty("medal_min") Long medalMin,
 			@JsonProperty("medal_max") Long medalMax,
@@ -739,9 +2510,9 @@ public final class Types {
 			@JsonProperty("relevant_gmin") Long relevantGmin,
 			@JsonProperty("relevant_gmax") Long relevantGmax,
 			@JsonProperty("last_trans_date") Long lastTransDate,
-			@JsonProperty("last_trans_date_period") String lastTransDatePeriod,
+			@JsonProperty("last_trans_date_period") LastTransDatePeriod lastTransDatePeriod,
 			@JsonProperty("last_trans_date_later") Long lastTransDateLater,
-			@JsonProperty("last_trans_date_period_later") String lastTransDatePeriodLater,
+			@JsonProperty("last_trans_date_period_later") LastTransDatePeriodLater lastTransDatePeriodLater,
 			@JsonProperty("no_trans") Boolean noTrans,
 			Boolean trans,
 			@JsonProperty("gifts_purchase_min") Double giftsPurchaseMin,
@@ -754,13 +2525,13 @@ public final class Types {
 			@JsonProperty("games_purchase_max") Double gamesPurchaseMax,
 			@JsonProperty("purchase_min") Double purchaseMin,
 			@JsonProperty("purchase_max") Double purchaseMax,
-			@JsonProperty("has_activated_keys") String hasActivatedKeys,
+			@JsonProperty("has_activated_keys") HasActivatedKeys hasActivatedKeys,
 			@JsonProperty("elo_min") Long eloMin,
 			@JsonProperty("elo_max") Long eloMax,
-			@JsonProperty("cs2_map_rank") Long cs2MapRank,
+			@JsonProperty("cs2_map_rank") Cs2MapRank cs2MapRank,
 			@JsonProperty("cs2_map_rmin") Long cs2MapRmin,
 			@JsonProperty("cs2_map_rmax") Long cs2MapRmax,
-			@JsonProperty("has_faceit") String hasFaceit,
+			@JsonProperty("has_faceit") HasFaceit hasFaceit,
 			@JsonProperty("faceit_csgo_lvl_min") Long faceitCsgoLvlMin,
 			@JsonProperty("faceit_csgo_lvl_max") Long faceitCsgoLvlMax,
 			@JsonProperty("rust_deaths_min") Long rustDeathsMin,
@@ -768,7 +2539,7 @@ public final class Types {
 			@JsonProperty("rust_kills_min") Long rustKillsMin,
 			@JsonProperty("rust_kills_max") Long rustKillsMax,
 			@JsonProperty("d2_last_match_date") Long d2LastMatchDate,
-			@JsonProperty("d2_last_match_date_period") String d2LastMatchDatePeriod,
+			@JsonProperty("d2_last_match_date_period") D2LastMatchDatePeriod d2LastMatchDatePeriod,
 			@JsonProperty("cards_min") Long cardsMin,
 			@JsonProperty("cards_max") Long cardsMax,
 			@JsonProperty("cards_games_min") Long cardsGamesMin,
@@ -776,7 +2547,7 @@ public final class Types {
 			@JsonProperty("skip_vac_inv") Boolean skipVacInv
 		) {
 			public CategorySteamParams() {
-				this(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
+				this(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, Rt.NO, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
 			}
 		}
 
@@ -1021,7 +2792,7 @@ public final class Types {
 			Long pmin,
 			Long pmax,
 			String title,
-			@JsonProperty("order_by") String orderBy,
+			@JsonProperty("order_by") OrderBy orderBy,
 			@JsonProperty("tag_id[]") List<Long> tagId,
 			@JsonProperty("not_tag_id[]") List<Long> notTagId,
 			@JsonProperty("public_tag_id[]") List<Long> publicTagId,
@@ -1033,15 +2804,15 @@ public final class Types {
 			Boolean sb,
 			@JsonProperty("nsb_by_me") Boolean nsbByMe,
 			@JsonProperty("sb_by_me") Boolean sbByMe,
-			String currency,
+			Currency currency,
 			@JsonProperty("email_login_data") Boolean emailLoginData,
 			@JsonProperty("email_provider[]") JsonNode emailProvider,
 			@JsonProperty("email_type[]") JsonNode emailType,
-			@JsonProperty("not_email_provider[]") String notEmailProvider,
+			@JsonProperty("not_email_provider[]") NotEmailProvider notEmailProvider,
 			@JsonProperty("parse_same_item_ids") Boolean parseSameItemIds,
-			@JsonProperty("temp_email") String tempEmail,
+			@JsonProperty("temp_email") TempEmail tempEmail,
 			@JsonProperty("item_domain") String itemDomain,
-			Long eg,
+			CategoryEgFortnite eg,
 			Long smin,
 			Long smax,
 			Long vbmin,
@@ -1050,7 +2821,7 @@ public final class Types {
 			@JsonProperty("pickaxe[]") JsonNode pickaxe,
 			@JsonProperty("glider[]") JsonNode glider,
 			@JsonProperty("dance[]") JsonNode dance,
-			@JsonProperty("change_email") String changeEmail,
+			@JsonProperty("change_email") ChangeEmail changeEmail,
 			@JsonProperty("platform[]") JsonNode platform,
 			@JsonProperty("skins_shop_min") Long skinsShopMin,
 			@JsonProperty("skins_shop_max") Long skinsShopMax,
@@ -1068,20 +2839,20 @@ public final class Types {
 			@JsonProperty("dances_shop_vbmax") Long dancesShopVbmax,
 			@JsonProperty("gliders_shop_vbmin") Long glidersShopVbmin,
 			@JsonProperty("gliders_shop_vbmax") Long glidersShopVbmax,
-			String bp,
+			Bp bp,
 			Long lmin,
 			Long lmax,
 			@JsonProperty("bp_lmin") Long bpLmin,
 			@JsonProperty("bp_lmax") Long bpLmax,
 			@JsonProperty("last_trans_date") Long lastTransDate,
-			@JsonProperty("last_trans_date_period") String lastTransDatePeriod,
+			@JsonProperty("last_trans_date_period") LastTransDatePeriod lastTransDatePeriod,
 			@JsonProperty("no_trans") Boolean noTrans,
-			@JsonProperty("xbox_linkable") String xboxLinkable,
-			@JsonProperty("psn_linkable") String psnLinkable,
+			@JsonProperty("xbox_linkable") XboxLinkable xboxLinkable,
+			@JsonProperty("psn_linkable") PsnLinkable psnLinkable,
 			Long daybreak,
 			@JsonProperty("rl_purchases") Boolean rlPurchases,
 			Long reg,
-			@JsonProperty("reg_period") String regPeriod,
+			@JsonProperty("reg_period") RegPeriod regPeriod,
 			@JsonProperty("refund_credits_min") Long refundCreditsMin,
 			@JsonProperty("refund_credits_max") Long refundCreditsMax,
 			@JsonProperty("pickaxe_min") Long pickaxeMin,
@@ -1305,7 +3076,7 @@ public final class Types {
 			Long pmin,
 			Long pmax,
 			String title,
-			@JsonProperty("order_by") String orderBy,
+			@JsonProperty("order_by") OrderBy orderBy,
 			@JsonProperty("tag_id[]") List<Long> tagId,
 			@JsonProperty("not_tag_id[]") List<Long> notTagId,
 			@JsonProperty("public_tag_id[]") List<Long> publicTagId,
@@ -1317,21 +3088,21 @@ public final class Types {
 			Boolean sb,
 			@JsonProperty("nsb_by_me") Boolean nsbByMe,
 			@JsonProperty("sb_by_me") Boolean sbByMe,
-			String currency,
+			Currency currency,
 			@JsonProperty("email_login_data") Boolean emailLoginData,
 			@JsonProperty("email_provider[]") JsonNode emailProvider,
-			@JsonProperty("not_email_provider[]") String notEmailProvider,
+			@JsonProperty("not_email_provider[]") NotEmailProvider notEmailProvider,
 			@JsonProperty("email_type[]") JsonNode emailType,
 			@JsonProperty("parse_same_item_ids") Boolean parseSameItemIds,
 			@JsonProperty("item_domain") String itemDomain,
-			String email,
-			String ea,
+			Email email,
+			Ea ea,
 			JsonNode region,
 			@JsonProperty("not_region") JsonNode notRegion,
-			@JsonProperty("genshin_character[]") List<Long> genshinCharacter,
+			@JsonProperty("genshin_character[]") JsonNode genshinCharacter,
 			@JsonProperty("genshin_character_constellations") Map<String, Long> genshinCharacterConstellations,
 			@JsonProperty("genshin_character_constellations_max") Map<String, Long> genshinCharacterConstellationsMax,
-			@JsonProperty("genshin_weapon[]") List<Long> genshinWeapon,
+			@JsonProperty("genshin_weapon[]") JsonNode genshinWeapon,
 			@JsonProperty("genshin_char_min") Long genshinCharMin,
 			@JsonProperty("genshin_char_max") Long genshinCharMax,
 			@JsonProperty("genshin_legendary_min") Long genshinLegendaryMin,
@@ -1346,10 +3117,10 @@ public final class Types {
 			@JsonProperty("genshin_achievement_max") Long genshinAchievementMax,
 			@JsonProperty("genshin_currency_min") Long genshinCurrencyMin,
 			@JsonProperty("genshin_currency_max") Long genshinCurrencyMax,
-			@JsonProperty("honkai_character[]") List<Long> honkaiCharacter,
+			@JsonProperty("honkai_character[]") JsonNode honkaiCharacter,
 			@JsonProperty("honkai_character_eidolons") Map<String, Long> honkaiCharacterEidolons,
 			@JsonProperty("honkai_character_eidolons_max") Map<String, Long> honkaiCharacterEidolonsMax,
-			@JsonProperty("honkai_weapon[]") List<Long> honkaiWeapon,
+			@JsonProperty("honkai_weapon[]") JsonNode honkaiWeapon,
 			@JsonProperty("honkai_char_min") Long honkaiCharMin,
 			@JsonProperty("honkai_char_max") Long honkaiCharMax,
 			@JsonProperty("honkai_legendary_min") Long honkaiLegendaryMin,
@@ -1364,10 +3135,10 @@ public final class Types {
 			@JsonProperty("honkai_achievement_max") Long honkaiAchievementMax,
 			@JsonProperty("honkai_currency_min") Long honkaiCurrencyMin,
 			@JsonProperty("honkai_currency_max") Long honkaiCurrencyMax,
-			@JsonProperty("zenless_character[]") List<Long> zenlessCharacter,
+			@JsonProperty("zenless_character[]") JsonNode zenlessCharacter,
 			@JsonProperty("zenless_character_cinemas") Map<String, Long> zenlessCharacterCinemas,
 			@JsonProperty("zenless_character_cinemas_max") Map<String, Long> zenlessCharacterCinemasMax,
-			@JsonProperty("zenless_weapon[]") List<Long> zenlessWeapon,
+			@JsonProperty("zenless_weapon[]") JsonNode zenlessWeapon,
 			@JsonProperty("zenless_legendary_min") Long zenlessLegendaryMin,
 			@JsonProperty("zenless_legendary_max") Long zenlessLegendaryMax,
 			@JsonProperty("cinemas_min") Long cinemasMin,
@@ -1723,7 +3494,7 @@ public final class Types {
 			Long pmin,
 			Long pmax,
 			String title,
-			@JsonProperty("order_by") String orderBy,
+			@JsonProperty("order_by") OrderBy orderBy,
 			@JsonProperty("tag_id[]") List<Long> tagId,
 			@JsonProperty("not_tag_id[]") List<Long> notTagId,
 			@JsonProperty("public_tag_id[]") List<Long> publicTagId,
@@ -1735,10 +3506,10 @@ public final class Types {
 			Boolean sb,
 			@JsonProperty("nsb_by_me") Boolean nsbByMe,
 			@JsonProperty("sb_by_me") Boolean sbByMe,
-			String currency,
+			Currency currency,
 			@JsonProperty("email_login_data") Boolean emailLoginData,
 			@JsonProperty("email_provider[]") JsonNode emailProvider,
-			@JsonProperty("not_email_provider[]") String notEmailProvider,
+			@JsonProperty("not_email_provider[]") NotEmailProvider notEmailProvider,
 			@JsonProperty("parse_same_item_ids") Boolean parseSameItemIds,
 			@JsonProperty("email_type[]") JsonNode emailType,
 			@JsonProperty("item_domain") String itemDomain,
@@ -1788,8 +3559,8 @@ public final class Types {
 			@JsonProperty("mythic_max") Long mythicMax,
 			@JsonProperty("riot_min") Long riotMin,
 			@JsonProperty("riot_max") Long riotMax,
-			String email,
-			String tel,
+			Email email,
+			Tel tel,
 			@JsonProperty("valorant_knife_min") Long valorantKnifeMin,
 			@JsonProperty("valorant_knife_max") Long valorantKnifeMax,
 			@JsonProperty("rp_min") Long rpMin,
@@ -1972,7 +3743,7 @@ public final class Types {
 			Long pmin,
 			Long pmax,
 			String title,
-			@JsonProperty("order_by") String orderBy,
+			@JsonProperty("order_by") OrderBy orderBy,
 			@JsonProperty("tag_id[]") List<Long> tagId,
 			@JsonProperty("not_tag_id[]") List<Long> notTagId,
 			@JsonProperty("public_tag_id[]") List<Long> publicTagId,
@@ -1984,16 +3755,16 @@ public final class Types {
 			Boolean sb,
 			@JsonProperty("nsb_by_me") Boolean nsbByMe,
 			@JsonProperty("sb_by_me") Boolean sbByMe,
-			String currency,
+			Currency currency,
 			@JsonProperty("email_login_data") Boolean emailLoginData,
 			@JsonProperty("email_provider[]") JsonNode emailProvider,
-			@JsonProperty("not_email_provider[]") String notEmailProvider,
+			@JsonProperty("not_email_provider[]") NotEmailProvider notEmailProvider,
 			@JsonProperty("parse_same_item_ids") Boolean parseSameItemIds,
-			String spam,
-			String password,
-			String premium,
+			Spam spam,
+			Password password,
+			Premium premium,
 			@JsonProperty("premium_expiration") Long premiumExpiration,
-			@JsonProperty("premium_expiration_period") String premiumExpirationPeriod,
+			@JsonProperty("premium_expiration_period") PremiumExpirationPeriod premiumExpirationPeriod,
 			@JsonProperty("country[]") List<String> country,
 			@JsonProperty("not_country[]") List<String> notCountry,
 			Long daybreak,
@@ -2014,9 +3785,9 @@ public final class Types {
 			@JsonProperty("min_stars") Long minStars,
 			@JsonProperty("max_stars") Long maxStars,
 			Long birthday,
-			@JsonProperty("birthday_period") String birthdayPeriod,
+			@JsonProperty("birthday_period") BirthdayPeriod birthdayPeriod,
 			@JsonProperty("birthday_after") Long birthdayAfter,
-			@JsonProperty("birthday_after_period") String birthdayAfterPeriod,
+			@JsonProperty("birthday_after_period") BirthdayAfterPeriod birthdayAfterPeriod,
 			@JsonProperty("min_id") Long minId,
 			@JsonProperty("max_id") Long maxId,
 			@JsonProperty("allow_geo_spamblock") Boolean allowGeoSpamblock,
@@ -2030,7 +3801,7 @@ public final class Types {
 			@JsonProperty("max_gifts_convert_stars") Long maxGiftsConvertStars,
 			@JsonProperty("dc_id[]") List<Long> dcId,
 			@JsonProperty("not_dc_id[]") List<Long> notDcId,
-			String email,
+			Email email,
 			@JsonProperty("min_bots") Long minBots,
 			@JsonProperty("max_bots") Long maxBots,
 			@JsonProperty("min_bot_active_users") Long minBotActiveUsers,
@@ -2169,7 +3940,7 @@ public final class Types {
 			Long pmin,
 			Long pmax,
 			String title,
-			@JsonProperty("order_by") String orderBy,
+			@JsonProperty("order_by") OrderBy orderBy,
 			@JsonProperty("tag_id[]") List<Long> tagId,
 			@JsonProperty("not_tag_id[]") List<Long> notTagId,
 			@JsonProperty("public_tag_id[]") List<Long> publicTagId,
@@ -2181,23 +3952,23 @@ public final class Types {
 			Boolean sb,
 			@JsonProperty("nsb_by_me") Boolean nsbByMe,
 			@JsonProperty("sb_by_me") Boolean sbByMe,
-			String currency,
+			Currency currency,
 			@JsonProperty("email_login_data") Boolean emailLoginData,
 			@JsonProperty("email_provider[]") JsonNode emailProvider,
-			@JsonProperty("not_email_provider[]") String notEmailProvider,
+			@JsonProperty("not_email_provider[]") NotEmailProvider notEmailProvider,
 			@JsonProperty("parse_same_item_ids") Boolean parseSameItemIds,
 			Long daybreak,
 			@JsonProperty("email_type[]") JsonNode emailType,
 			@JsonProperty("item_domain") String itemDomain,
-			Long eg,
-			String tel,
+			CategoryEgFortnite eg,
+			Tel tel,
 			@JsonProperty("brawl_level_min") Long brawlLevelMin,
 			@JsonProperty("brawl_level_max") Long brawlLevelMax,
 			@JsonProperty("brawl_cup_min") Long brawlCupMin,
 			@JsonProperty("brawl_cup_max") Long brawlCupMax,
 			@JsonProperty("brawl_wins_min") Long brawlWinsMin,
 			@JsonProperty("brawl_wins_max") Long brawlWinsMax,
-			@JsonProperty("brawl_pass") String brawlPass,
+			@JsonProperty("brawl_pass") BrawlPass brawlPass,
 			@JsonProperty("brawler[]") JsonNode brawler,
 			@JsonProperty("brawlers_min") Long brawlersMin,
 			@JsonProperty("brawlers_max") Long brawlersMax,
@@ -2211,14 +3982,14 @@ public final class Types {
 			@JsonProperty("royale_wins_max") Long royaleWinsMax,
 			@JsonProperty("king_level_min") Long kingLevelMin,
 			@JsonProperty("king_level_max") Long kingLevelMax,
-			@JsonProperty("royale_pass") String royalePass,
+			@JsonProperty("royale_pass") RoyalePass royalePass,
 			@JsonProperty("clash_level_min") Long clashLevelMin,
 			@JsonProperty("clash_level_max") Long clashLevelMax,
 			@JsonProperty("clash_cup_min") Long clashCupMin,
 			@JsonProperty("clash_cup_max") Long clashCupMax,
 			@JsonProperty("clash_wins_min") Long clashWinsMin,
 			@JsonProperty("clash_wins_max") Long clashWinsMax,
-			@JsonProperty("clash_pass") String clashPass,
+			@JsonProperty("clash_pass") ClashPass clashPass,
 			@JsonProperty("total_heroes_level_min") Long totalHeroesLevelMin,
 			@JsonProperty("total_heroes_level_max") Long totalHeroesLevelMax,
 			@JsonProperty("total_troops_level_min") Long totalTroopsLevelMin,
@@ -2386,7 +4157,7 @@ public final class Types {
 			Long pmin,
 			Long pmax,
 			String title,
-			@JsonProperty("order_by") String orderBy,
+			@JsonProperty("order_by") OrderBy orderBy,
 			@JsonProperty("tag_id[]") List<Long> tagId,
 			@JsonProperty("not_tag_id[]") List<Long> notTagId,
 			@JsonProperty("public_tag_id[]") List<Long> publicTagId,
@@ -2398,10 +4169,10 @@ public final class Types {
 			Boolean sb,
 			@JsonProperty("nsb_by_me") Boolean nsbByMe,
 			@JsonProperty("sb_by_me") Boolean sbByMe,
-			String currency,
+			Currency currency,
 			@JsonProperty("email_login_data") Boolean emailLoginData,
 			@JsonProperty("email_provider[]") JsonNode emailProvider,
-			@JsonProperty("not_email_provider[]") String notEmailProvider,
+			@JsonProperty("not_email_provider[]") NotEmailProvider notEmailProvider,
 			@JsonProperty("parse_same_item_ids") Boolean parseSameItemIds,
 			@JsonProperty("email_type[]") JsonNode emailType,
 			@JsonProperty("item_domain") String itemDomain,
@@ -2414,16 +4185,16 @@ public final class Types {
 			@JsonProperty("al_rank_max") Long alRankMax,
 			@JsonProperty("al_level_min") Long alLevelMin,
 			@JsonProperty("al_level_max") Long alLevelMax,
-			@JsonProperty("has_ban") String hasBan,
-			@JsonProperty("xbox_connected") String xboxConnected,
-			@JsonProperty("steam_connected") String steamConnected,
-			@JsonProperty("psn_connected") String psnConnected,
-			String subscription,
+			@JsonProperty("has_ban") HasBan hasBan,
+			@JsonProperty("xbox_connected") XboxConnected xboxConnected,
+			@JsonProperty("steam_connected") SteamConnected steamConnected,
+			@JsonProperty("psn_connected") PsnConnected psnConnected,
+			CategorySubscription subscription,
 			@JsonProperty("subscription_length") Long subscriptionLength,
-			@JsonProperty("subscription_period") String subscriptionPeriod,
+			@JsonProperty("subscription_period") SubscriptionPeriod subscriptionPeriod,
 			@JsonProperty("hours_played") Map<String, Long> hoursPlayed,
 			@JsonProperty("hours_played_max") Map<String, Long> hoursPlayedMax,
-			String transactions
+			Transactions transactions
 		) {
 			public CategoryEaParams() {
 				this(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
@@ -2574,7 +4345,7 @@ public final class Types {
 			Long pmin,
 			Long pmax,
 			String title,
-			@JsonProperty("order_by") String orderBy,
+			@JsonProperty("order_by") OrderBy orderBy,
 			@JsonProperty("tag_id[]") List<Long> tagId,
 			@JsonProperty("not_tag_id[]") List<Long> notTagId,
 			@JsonProperty("public_tag_id[]") List<Long> publicTagId,
@@ -2586,14 +4357,14 @@ public final class Types {
 			Boolean sb,
 			@JsonProperty("nsb_by_me") Boolean nsbByMe,
 			@JsonProperty("sb_by_me") Boolean sbByMe,
-			String currency,
+			Currency currency,
 			@JsonProperty("email_login_data") Boolean emailLoginData,
 			@JsonProperty("email_provider[]") JsonNode emailProvider,
-			@JsonProperty("not_email_provider[]") String notEmailProvider,
+			@JsonProperty("not_email_provider[]") NotEmailProvider notEmailProvider,
 			@JsonProperty("parse_same_item_ids") Boolean parseSameItemIds,
 			@JsonProperty("email_type[]") JsonNode emailType,
 			@JsonProperty("item_domain") String itemDomain,
-			String tel,
+			Tel tel,
 			Long daybreak,
 			@JsonProperty("battles_min") Long battlesMin,
 			@JsonProperty("battles_max") Long battlesMax,
@@ -2612,10 +4383,10 @@ public final class Types {
 			@JsonProperty("tank[]") List<Long> tank,
 			@JsonProperty("region[]") JsonNode region,
 			@JsonProperty("not_region[]") JsonNode notRegion,
-			String premium,
+			Premium premium,
 			@JsonProperty("premium_expiration") Long premiumExpiration,
-			@JsonProperty("premium_expiration_period") String premiumExpirationPeriod,
-			String clan,
+			@JsonProperty("premium_expiration_period") PremiumExpirationPeriod premiumExpirationPeriod,
+			Clan clan,
 			@JsonProperty("clan_role[]") JsonNode clanRole,
 			@JsonProperty("not_clan_role[]") JsonNode notClanRole,
 			@JsonProperty("clan_gold_min") Long clanGoldMin,
@@ -2777,7 +4548,7 @@ public final class Types {
 			Long pmin,
 			Long pmax,
 			String title,
-			@JsonProperty("order_by") String orderBy,
+			@JsonProperty("order_by") OrderBy orderBy,
 			@JsonProperty("tag_id[]") List<Long> tagId,
 			@JsonProperty("not_tag_id[]") List<Long> notTagId,
 			@JsonProperty("public_tag_id[]") List<Long> publicTagId,
@@ -2789,14 +4560,14 @@ public final class Types {
 			Boolean sb,
 			@JsonProperty("nsb_by_me") Boolean nsbByMe,
 			@JsonProperty("sb_by_me") Boolean sbByMe,
-			String currency,
+			Currency currency,
 			@JsonProperty("email_login_data") Boolean emailLoginData,
 			@JsonProperty("email_provider[]") JsonNode emailProvider,
-			@JsonProperty("not_email_provider[]") String notEmailProvider,
+			@JsonProperty("not_email_provider[]") NotEmailProvider notEmailProvider,
 			@JsonProperty("parse_same_item_ids") Boolean parseSameItemIds,
 			@JsonProperty("email_type[]") JsonNode emailType,
 			@JsonProperty("item_domain") String itemDomain,
-			String tel,
+			Tel tel,
 			Long daybreak,
 			@JsonProperty("battles_min") Long battlesMin,
 			@JsonProperty("battles_max") Long battlesMax,
@@ -2815,10 +4586,10 @@ public final class Types {
 			@JsonProperty("tank[]") List<Long> tank,
 			@JsonProperty("region[]") JsonNode region,
 			@JsonProperty("not_region[]") JsonNode notRegion,
-			String premium,
+			Premium premium,
 			@JsonProperty("premium_expiration") Long premiumExpiration,
-			@JsonProperty("premium_expiration_period") String premiumExpirationPeriod,
-			String clan,
+			@JsonProperty("premium_expiration_period") PremiumExpirationPeriod premiumExpirationPeriod,
+			Clan clan,
 			@JsonProperty("clan_role[]") JsonNode clanRole,
 			@JsonProperty("not_clan_role[]") JsonNode notClanRole,
 			@JsonProperty("clan_gold_min") Long clanGoldMin,
@@ -4349,7 +6120,7 @@ public final class Types {
 			Long pmin,
 			Long pmax,
 			String title,
-			@JsonProperty("order_by") String orderBy,
+			@JsonProperty("order_by") OrderBy orderBy,
 			@JsonProperty("tag_id[]") List<Long> tagId,
 			@JsonProperty("not_tag_id[]") List<Long> notTagId,
 			@JsonProperty("public_tag_id[]") List<Long> publicTagId,
@@ -4361,14 +6132,14 @@ public final class Types {
 			Boolean sb,
 			@JsonProperty("nsb_by_me") Boolean nsbByMe,
 			@JsonProperty("sb_by_me") Boolean sbByMe,
-			String currency,
+			Currency currency,
 			@JsonProperty("email_login_data") Boolean emailLoginData,
 			@JsonProperty("email_provider[]") JsonNode emailProvider,
-			@JsonProperty("not_email_provider[]") String notEmailProvider,
+			@JsonProperty("not_email_provider[]") NotEmailProvider notEmailProvider,
 			@JsonProperty("parse_same_item_ids") Boolean parseSameItemIds,
-			String subscription,
+			CategorySubscriptionGifts subscription,
 			@JsonProperty("subscription_length") Long subscriptionLength,
-			@JsonProperty("subscription_period") String subscriptionPeriod
+			@JsonProperty("subscription_period") SubscriptionPeriod subscriptionPeriod
 		) {
 			public CategoryGiftsParams() {
 				this(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
@@ -4483,7 +6254,7 @@ public final class Types {
 			Long pmin,
 			Long pmax,
 			String title,
-			@JsonProperty("order_by") String orderBy,
+			@JsonProperty("order_by") OrderBy orderBy,
 			@JsonProperty("tag_id[]") List<Long> tagId,
 			@JsonProperty("not_tag_id[]") List<Long> notTagId,
 			@JsonProperty("public_tag_id[]") List<Long> publicTagId,
@@ -4495,16 +6266,16 @@ public final class Types {
 			Boolean sb,
 			@JsonProperty("nsb_by_me") Boolean nsbByMe,
 			@JsonProperty("sb_by_me") Boolean sbByMe,
-			String currency,
+			Currency currency,
 			@JsonProperty("email_login_data") Boolean emailLoginData,
 			@JsonProperty("email_provider[]") JsonNode emailProvider,
-			@JsonProperty("not_email_provider[]") String notEmailProvider,
+			@JsonProperty("not_email_provider[]") NotEmailProvider notEmailProvider,
 			@JsonProperty("parse_same_item_ids") Boolean parseSameItemIds,
 			@JsonProperty("email_type[]") JsonNode emailType,
 			@JsonProperty("item_domain") String itemDomain,
-			Long eg,
+			CategoryEgFortnite eg,
 			@JsonProperty("game[]") List<String> game,
-			@JsonProperty("change_email") String changeEmail,
+			@JsonProperty("change_email") ChangeEmail changeEmail,
 			@JsonProperty("rl_purchases") Boolean rlPurchases,
 			@JsonProperty("balance_min") Double balanceMin,
 			@JsonProperty("balance_max") Double balanceMax,
@@ -4673,7 +6444,7 @@ public final class Types {
 			Long pmin,
 			Long pmax,
 			String title,
-			@JsonProperty("order_by") String orderBy,
+			@JsonProperty("order_by") OrderBy orderBy,
 			@JsonProperty("tag_id[]") List<Long> tagId,
 			@JsonProperty("not_tag_id[]") List<Long> notTagId,
 			@JsonProperty("public_tag_id[]") List<Long> publicTagId,
@@ -4685,21 +6456,21 @@ public final class Types {
 			Boolean sb,
 			@JsonProperty("nsb_by_me") Boolean nsbByMe,
 			@JsonProperty("sb_by_me") Boolean sbByMe,
-			String currency,
+			Currency currency,
 			@JsonProperty("email_login_data") Boolean emailLoginData,
 			@JsonProperty("email_provider[]") JsonNode emailProvider,
-			@JsonProperty("not_email_provider[]") String notEmailProvider,
+			@JsonProperty("not_email_provider[]") NotEmailProvider notEmailProvider,
 			@JsonProperty("parse_same_item_ids") Boolean parseSameItemIds,
 			@JsonProperty("email_type[]") JsonNode emailType,
 			@JsonProperty("item_domain") String itemDomain,
-			String region,
+			Region region,
 			@JsonProperty("version[]") JsonNode version,
 			Long reg,
-			@JsonProperty("reg_period") String regPeriod,
+			@JsonProperty("reg_period") RegPeriod regPeriod,
 			@JsonProperty("level_min") Long levelMin,
 			@JsonProperty("level_max") Long levelMax,
-			String pve,
-			String side
+			Pve pve,
+			Side side
 		) {
 			public CategoryEscapeFromTarkovParams() {
 				this(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
@@ -4834,7 +6605,7 @@ public final class Types {
 			Long pmin,
 			Long pmax,
 			String title,
-			@JsonProperty("order_by") String orderBy,
+			@JsonProperty("order_by") OrderBy orderBy,
 			@JsonProperty("tag_id[]") List<Long> tagId,
 			@JsonProperty("not_tag_id[]") List<Long> notTagId,
 			@JsonProperty("public_tag_id[]") List<Long> publicTagId,
@@ -4846,10 +6617,10 @@ public final class Types {
 			Boolean sb,
 			@JsonProperty("nsb_by_me") Boolean nsbByMe,
 			@JsonProperty("sb_by_me") Boolean sbByMe,
-			String currency,
+			Currency currency,
 			@JsonProperty("email_login_data") Boolean emailLoginData,
 			@JsonProperty("email_provider[]") JsonNode emailProvider,
-			@JsonProperty("not_email_provider[]") String notEmailProvider,
+			@JsonProperty("not_email_provider[]") NotEmailProvider notEmailProvider,
 			@JsonProperty("parse_same_item_ids") Boolean parseSameItemIds,
 			Long daybreak,
 			@JsonProperty("level_min") Long levelMin,
@@ -4996,7 +6767,7 @@ public final class Types {
 			Long pmin,
 			Long pmax,
 			String title,
-			@JsonProperty("order_by") String orderBy,
+			@JsonProperty("order_by") OrderBy orderBy,
 			@JsonProperty("tag_id[]") List<Long> tagId,
 			@JsonProperty("not_tag_id[]") List<Long> notTagId,
 			@JsonProperty("public_tag_id[]") List<Long> publicTagId,
@@ -5008,10 +6779,10 @@ public final class Types {
 			Boolean sb,
 			@JsonProperty("nsb_by_me") Boolean nsbByMe,
 			@JsonProperty("sb_by_me") Boolean sbByMe,
-			String currency,
+			Currency currency,
 			@JsonProperty("email_login_data") Boolean emailLoginData,
 			@JsonProperty("email_provider[]") JsonNode emailProvider,
-			@JsonProperty("not_email_provider[]") String notEmailProvider,
+			@JsonProperty("not_email_provider[]") NotEmailProvider notEmailProvider,
 			@JsonProperty("parse_same_item_ids") Boolean parseSameItemIds,
 			@JsonProperty("email_type[]") JsonNode emailType,
 			@JsonProperty("item_domain") String itemDomain,
@@ -5021,28 +6792,28 @@ public final class Types {
 			Long daybreak,
 			Long gmin,
 			Long gmax,
-			String subscription,
+			CategorySubscriptionUplay subscription,
 			@JsonProperty("subscription_length") Long subscriptionLength,
-			@JsonProperty("subscription_period") String subscriptionPeriod,
+			@JsonProperty("subscription_period") SubscriptionPeriod subscriptionPeriod,
 			@JsonProperty("r6_level_min") Long r6LevelMin,
 			@JsonProperty("r6_level_max") Long r6LevelMax,
 			@JsonProperty("r6_rank_min") Long r6RankMin,
 			@JsonProperty("r6_rank_max") Long r6RankMax,
 			@JsonProperty("r6_operators_min") Long r6OperatorsMin,
 			@JsonProperty("r6_operators_max") Long r6OperatorsMax,
-			@JsonProperty("r6_ban") String r6Ban,
+			@JsonProperty("r6_ban") R6Ban r6Ban,
 			@JsonProperty("r6_smin") Long r6Smin,
 			@JsonProperty("r6_smax") Long r6Smax,
 			@JsonProperty("r6_skin[]") List<String> r6Skin,
 			@JsonProperty("r6_operator[]") List<String> r6Operator,
-			@JsonProperty("xbox_connected") String xboxConnected,
-			@JsonProperty("psn_connected") String psnConnected,
-			@JsonProperty("steam_connected") String steamConnected,
+			@JsonProperty("xbox_connected") XboxConnected xboxConnected,
+			@JsonProperty("psn_connected") PsnConnected psnConnected,
+			@JsonProperty("steam_connected") SteamConnected steamConnected,
 			@JsonProperty("balance_min") Double balanceMin,
 			@JsonProperty("balance_max") Double balanceMax,
-			String transactions,
+			Transactions transactions,
 			Long reg,
-			@JsonProperty("reg_period") String regPeriod
+			@JsonProperty("reg_period") RegPeriod regPeriod
 		) {
 			public CategoryUplayParams() {
 				this(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
@@ -5203,7 +6974,7 @@ public final class Types {
 			Long pmin,
 			Long pmax,
 			String title,
-			@JsonProperty("order_by") String orderBy,
+			@JsonProperty("order_by") OrderBy orderBy,
 			@JsonProperty("tag_id[]") List<Long> tagId,
 			@JsonProperty("not_tag_id[]") List<Long> notTagId,
 			@JsonProperty("public_tag_id[]") List<Long> publicTagId,
@@ -5215,23 +6986,23 @@ public final class Types {
 			Boolean sb,
 			@JsonProperty("nsb_by_me") Boolean nsbByMe,
 			@JsonProperty("sb_by_me") Boolean sbByMe,
-			String currency,
+			Currency currency,
 			@JsonProperty("email_login_data") Boolean emailLoginData,
 			@JsonProperty("email_provider[]") JsonNode emailProvider,
-			@JsonProperty("not_email_provider[]") String notEmailProvider,
+			@JsonProperty("not_email_provider[]") NotEmailProvider notEmailProvider,
 			@JsonProperty("parse_same_item_ids") Boolean parseSameItemIds,
 			@JsonProperty("email_type[]") JsonNode emailType,
 			@JsonProperty("item_domain") String itemDomain,
-			String tel,
-			String nitro,
+			Tel tel,
+			Nitro nitro,
 			@JsonProperty("nitro_type[]") JsonNode nitroType,
 			@JsonProperty("nitro_length") Long nitroLength,
-			@JsonProperty("nitro_period") String nitroPeriod,
+			@JsonProperty("nitro_period") NitroPeriod nitroPeriod,
 			@JsonProperty("boosts_min") Long boostsMin,
 			@JsonProperty("boosts_max") Long boostsMax,
-			String billing,
-			String gifts,
-			String transactions,
+			Billing billing,
+			Gifts gifts,
+			Transactions transactions,
 			@JsonProperty("badge[]") JsonNode badge,
 			@JsonProperty("condition[]") JsonNode condition,
 			@JsonProperty("chat_min") Long chatMin,
@@ -5241,10 +7012,10 @@ public final class Types {
 			@JsonProperty("min_admin") Long minAdmin,
 			@JsonProperty("max_admin") Long maxAdmin,
 			Long reg,
-			@JsonProperty("reg_period") String regPeriod,
+			@JsonProperty("reg_period") RegPeriod regPeriod,
 			@JsonProperty("language[]") List<String> language,
 			@JsonProperty("not_language[]") List<String> notLanguage,
-			String clans,
+			Clans clans,
 			@JsonProperty("min_admin_clans") Long minAdminClans,
 			@JsonProperty("max_admin_clans") Long maxAdminClans,
 			@JsonProperty("min_owner_clans") Long minOwnerClans,
@@ -5253,7 +7024,7 @@ public final class Types {
 			@JsonProperty("not_country[]") List<String> notCountry,
 			@JsonProperty("min_servers") Long minServers,
 			@JsonProperty("max_servers") Long maxServers,
-			@JsonProperty("2fa") String _2fa,
+			@JsonProperty("2fa") _2fa _2fa,
 			@JsonProperty("min_full_credits") Long minFullCredits,
 			@JsonProperty("max_full_credits") Long maxFullCredits,
 			@JsonProperty("min_basic_credits") Long minBasicCredits,
@@ -5385,7 +7156,7 @@ public final class Types {
 			Long pmin,
 			Long pmax,
 			String title,
-			@JsonProperty("order_by") String orderBy,
+			@JsonProperty("order_by") OrderBy orderBy,
 			@JsonProperty("tag_id[]") List<Long> tagId,
 			@JsonProperty("not_tag_id[]") List<Long> notTagId,
 			@JsonProperty("public_tag_id[]") List<Long> publicTagId,
@@ -5397,16 +7168,16 @@ public final class Types {
 			Boolean sb,
 			@JsonProperty("nsb_by_me") Boolean nsbByMe,
 			@JsonProperty("sb_by_me") Boolean sbByMe,
-			String currency,
+			Currency currency,
 			@JsonProperty("email_login_data") Boolean emailLoginData,
 			@JsonProperty("email_provider[]") JsonNode emailProvider,
-			@JsonProperty("not_email_provider[]") String notEmailProvider,
+			@JsonProperty("not_email_provider[]") NotEmailProvider notEmailProvider,
 			@JsonProperty("parse_same_item_ids") Boolean parseSameItemIds,
 			@JsonProperty("email_type[]") JsonNode emailType,
 			@JsonProperty("item_domain") String itemDomain,
-			String tel,
+			Tel tel,
 			Long reg,
-			@JsonProperty("reg_period") String regPeriod,
+			@JsonProperty("reg_period") RegPeriod regPeriod,
 			@JsonProperty("followers_min") Long followersMin,
 			@JsonProperty("followers_max") Long followersMax,
 			@JsonProperty("post_min") Long postMin,
@@ -5415,9 +7186,9 @@ public final class Types {
 			@JsonProperty("like_max") Long likeMax,
 			@JsonProperty("coins_min") Long coinsMin,
 			@JsonProperty("coins_max") Long coinsMax,
-			@JsonProperty("cookie_login") String cookieLogin,
-			String verified,
-			String email
+			@JsonProperty("cookie_login") CookieLogin cookieLogin,
+			Verified verified,
+			Email email
 		) {
 			public CategoryTikTokParams() {
 				this(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
@@ -5556,7 +7327,7 @@ public final class Types {
 			Long pmin,
 			Long pmax,
 			String title,
-			@JsonProperty("order_by") String orderBy,
+			@JsonProperty("order_by") OrderBy orderBy,
 			@JsonProperty("tag_id[]") List<Long> tagId,
 			@JsonProperty("not_tag_id[]") List<Long> notTagId,
 			@JsonProperty("public_tag_id[]") List<Long> publicTagId,
@@ -5568,24 +7339,24 @@ public final class Types {
 			Boolean sb,
 			@JsonProperty("nsb_by_me") Boolean nsbByMe,
 			@JsonProperty("sb_by_me") Boolean sbByMe,
-			String currency,
+			Currency currency,
 			@JsonProperty("email_login_data") Boolean emailLoginData,
 			@JsonProperty("email_provider[]") JsonNode emailProvider,
-			@JsonProperty("not_email_provider[]") String notEmailProvider,
+			@JsonProperty("not_email_provider[]") NotEmailProvider notEmailProvider,
 			@JsonProperty("parse_same_item_ids") Boolean parseSameItemIds,
 			@JsonProperty("email_type[]") JsonNode emailType,
 			@JsonProperty("item_domain") String itemDomain,
-			String tel,
+			Tel tel,
 			@JsonProperty("country[]") List<String> country,
 			@JsonProperty("not_country[]") List<String> notCountry,
-			String cookies,
-			@JsonProperty("login_without_cookies") String loginWithoutCookies,
+			Cookies cookies,
+			@JsonProperty("login_without_cookies") LoginWithoutCookies loginWithoutCookies,
 			@JsonProperty("followers_min") Long followersMin,
 			@JsonProperty("followers_max") Long followersMax,
 			@JsonProperty("post_min") Long postMin,
 			@JsonProperty("post_max") Long postMax,
 			Long reg,
-			@JsonProperty("reg_period") String regPeriod
+			@JsonProperty("reg_period") RegPeriod regPeriod
 		) {
 			public CategoryInstagramParams() {
 				this(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
@@ -5715,7 +7486,7 @@ public final class Types {
 			Long pmin,
 			Long pmax,
 			String title,
-			@JsonProperty("order_by") String orderBy,
+			@JsonProperty("order_by") OrderBy orderBy,
 			@JsonProperty("tag_id[]") List<Long> tagId,
 			@JsonProperty("not_tag_id[]") List<Long> notTagId,
 			@JsonProperty("public_tag_id[]") List<Long> publicTagId,
@@ -5727,24 +7498,24 @@ public final class Types {
 			Boolean sb,
 			@JsonProperty("nsb_by_me") Boolean nsbByMe,
 			@JsonProperty("sb_by_me") Boolean sbByMe,
-			String currency,
+			Currency currency,
 			@JsonProperty("email_login_data") Boolean emailLoginData,
 			@JsonProperty("email_provider[]") JsonNode emailProvider,
-			@JsonProperty("not_email_provider[]") String notEmailProvider,
+			@JsonProperty("not_email_provider[]") NotEmailProvider notEmailProvider,
 			@JsonProperty("parse_same_item_ids") Boolean parseSameItemIds,
 			@JsonProperty("email_type[]") JsonNode emailType,
 			@JsonProperty("item_domain") String itemDomain,
-			Long eg,
+			CategoryEgBattleNet eg,
 			@JsonProperty("game[]") List<Long> game,
 			Long daybreak,
 			@JsonProperty("country[]") List<String> country,
 			@JsonProperty("not_country[]") List<String> notCountry,
-			String tel,
-			@JsonProperty("edit_btag") String editBtag,
-			@JsonProperty("changeable_fn") String changeableFn,
-			@JsonProperty("real_id") String realId,
-			@JsonProperty("parent_control") String parentControl,
-			@JsonProperty("no_bans") String noBans,
+			Tel tel,
+			@JsonProperty("edit_btag") EditBtag editBtag,
+			@JsonProperty("changeable_fn") ChangeableFn changeableFn,
+			@JsonProperty("real_id") RealId realId,
+			@JsonProperty("parent_control") ParentControl parentControl,
+			@JsonProperty("no_bans") NoBans noBans,
 			@JsonProperty("balance_min") Long balanceMin,
 			@JsonProperty("balance_max") Long balanceMax
 		) {
@@ -5912,7 +7683,7 @@ public final class Types {
 			Long pmin,
 			Long pmax,
 			String title,
-			@JsonProperty("order_by") String orderBy,
+			@JsonProperty("order_by") OrderBy orderBy,
 			@JsonProperty("tag_id[]") List<Long> tagId,
 			@JsonProperty("not_tag_id[]") List<Long> notTagId,
 			@JsonProperty("public_tag_id[]") List<Long> publicTagId,
@@ -5924,21 +7695,21 @@ public final class Types {
 			Boolean sb,
 			@JsonProperty("nsb_by_me") Boolean nsbByMe,
 			@JsonProperty("sb_by_me") Boolean sbByMe,
-			String currency,
+			Currency currency,
 			@JsonProperty("email_login_data") Boolean emailLoginData,
 			@JsonProperty("email_provider[]") JsonNode emailProvider,
-			@JsonProperty("not_email_provider[]") String notEmailProvider,
+			@JsonProperty("not_email_provider[]") NotEmailProvider notEmailProvider,
 			@JsonProperty("parse_same_item_ids") Boolean parseSameItemIds,
 			@JsonProperty("email_type[]") JsonNode emailType,
 			@JsonProperty("item_domain") String itemDomain,
 			@JsonProperty("subscription[]") JsonNode subscription,
 			@JsonProperty("subscription_length") Long subscriptionLength,
-			@JsonProperty("subscription_period") String subscriptionPeriod,
-			String autorenewal,
-			String tel,
-			String transactions,
+			@JsonProperty("subscription_period") SubscriptionPeriod subscriptionPeriod,
+			Autorenewal autorenewal,
+			Tel tel,
+			Transactions transactions,
 			Long reg,
-			@JsonProperty("reg_period") String regPeriod,
+			@JsonProperty("reg_period") RegPeriod regPeriod,
 			@JsonProperty("openai_tier[]") JsonNode openaiTier,
 			@JsonProperty("openai_balance_min") Long openaiBalanceMin,
 			@JsonProperty("openai_balance_max") Long openaiBalanceMax
@@ -6070,7 +7841,7 @@ public final class Types {
 			Long pmin,
 			Long pmax,
 			String title,
-			@JsonProperty("order_by") String orderBy,
+			@JsonProperty("order_by") OrderBy orderBy,
 			@JsonProperty("tag_id[]") List<Long> tagId,
 			@JsonProperty("not_tag_id[]") List<Long> notTagId,
 			@JsonProperty("public_tag_id[]") List<Long> publicTagId,
@@ -6082,15 +7853,15 @@ public final class Types {
 			Boolean sb,
 			@JsonProperty("nsb_by_me") Boolean nsbByMe,
 			@JsonProperty("sb_by_me") Boolean sbByMe,
-			String currency,
+			Currency currency,
 			@JsonProperty("email_login_data") Boolean emailLoginData,
 			@JsonProperty("email_provider[]") JsonNode emailProvider,
-			@JsonProperty("not_email_provider[]") String notEmailProvider,
+			@JsonProperty("not_email_provider[]") NotEmailProvider notEmailProvider,
 			@JsonProperty("parse_same_item_ids") Boolean parseSameItemIds,
 			@JsonProperty("service[]") JsonNode service,
 			@JsonProperty("subscription_length") Long subscriptionLength,
-			@JsonProperty("subscription_period") String subscriptionPeriod,
-			String autorenewal
+			@JsonProperty("subscription_period") SubscriptionPeriod subscriptionPeriod,
+			Autorenewal autorenewal
 		) {
 			public CategoryVpnParams() {
 				this(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
@@ -6206,7 +7977,7 @@ public final class Types {
 			Long pmin,
 			Long pmax,
 			String title,
-			@JsonProperty("order_by") String orderBy,
+			@JsonProperty("order_by") OrderBy orderBy,
 			@JsonProperty("tag_id[]") List<Long> tagId,
 			@JsonProperty("not_tag_id[]") List<Long> notTagId,
 			@JsonProperty("public_tag_id[]") List<Long> publicTagId,
@@ -6218,12 +7989,12 @@ public final class Types {
 			Boolean sb,
 			@JsonProperty("nsb_by_me") Boolean nsbByMe,
 			@JsonProperty("sb_by_me") Boolean sbByMe,
-			String currency,
+			Currency currency,
 			@JsonProperty("email_login_data") Boolean emailLoginData,
 			@JsonProperty("email_provider[]") JsonNode emailProvider,
-			@JsonProperty("not_email_provider[]") String notEmailProvider,
+			@JsonProperty("not_email_provider[]") NotEmailProvider notEmailProvider,
 			@JsonProperty("parse_same_item_ids") Boolean parseSameItemIds,
-			String email,
+			Email email,
 			@JsonProperty("robux_min") Long robuxMin,
 			@JsonProperty("robux_max") Long robuxMax,
 			@JsonProperty("friends_min") Long friendsMin,
@@ -6233,22 +8004,22 @@ public final class Types {
 			List<String> country,
 			@JsonProperty("not_country") List<String> notCountry,
 			Long reg,
-			@JsonProperty("reg_period") String regPeriod,
-			String subscription,
+			@JsonProperty("reg_period") RegPeriod regPeriod,
+			CategorySubscriptionRoblox subscription,
 			@JsonProperty("subscription_length") Long subscriptionLength,
-			@JsonProperty("subscription_period") String subscriptionPeriod,
-			String autorenewal,
-			@JsonProperty("xbox_connected") String xboxConnected,
-			@JsonProperty("psn_connected") String psnConnected,
-			String verified,
-			@JsonProperty("age_verified") String ageVerified,
+			@JsonProperty("subscription_period") SubscriptionPeriod subscriptionPeriod,
+			Autorenewal autorenewal,
+			@JsonProperty("xbox_connected") XboxConnected xboxConnected,
+			@JsonProperty("psn_connected") PsnConnected psnConnected,
+			Verified verified,
+			@JsonProperty("age_verified") AgeVerified ageVerified,
 			@JsonProperty("incoming_robux_total_min") Long incomingRobuxTotalMin,
 			@JsonProperty("incoming_robux_total_max") Long incomingRobuxTotalMax,
 			@JsonProperty("limited_price_min") Long limitedPriceMin,
 			@JsonProperty("limited_price_max") Long limitedPriceMax,
 			@JsonProperty("gamepass_min") Long gamepassMin,
 			@JsonProperty("gamepass_max") Long gamepassMax,
-			@JsonProperty("game_donations") String gameDonations,
+			@JsonProperty("game_donations") GameDonations gameDonations,
 			@JsonProperty("inv_min") Long invMin,
 			@JsonProperty("inv_max") Long invMax,
 			@JsonProperty("ugc_limited_price_min") Long ugcLimitedPriceMin,
@@ -6257,7 +8028,7 @@ public final class Types {
 			@JsonProperty("credit_balance_max") Long creditBalanceMax,
 			@JsonProperty("offsale_min") Long offsaleMin,
 			@JsonProperty("offsale_max") Long offsaleMax,
-			String voice,
+			Voice voice,
 			@JsonProperty("age_group[]") List<String> ageGroup,
 			@JsonProperty("not_age_group[]") List<String> notAgeGroup
 		) {
@@ -6413,7 +8184,7 @@ public final class Types {
 			Long pmin,
 			Long pmax,
 			String title,
-			@JsonProperty("order_by") String orderBy,
+			@JsonProperty("order_by") OrderBy orderBy,
 			@JsonProperty("tag_id[]") List<Long> tagId,
 			@JsonProperty("not_tag_id[]") List<Long> notTagId,
 			@JsonProperty("public_tag_id[]") List<Long> publicTagId,
@@ -6425,16 +8196,16 @@ public final class Types {
 			Boolean sb,
 			@JsonProperty("nsb_by_me") Boolean nsbByMe,
 			@JsonProperty("sb_by_me") Boolean sbByMe,
-			String currency,
+			Currency currency,
 			@JsonProperty("email_login_data") Boolean emailLoginData,
 			@JsonProperty("email_provider[]") JsonNode emailProvider,
-			@JsonProperty("not_email_provider[]") String notEmailProvider,
+			@JsonProperty("not_email_provider[]") NotEmailProvider notEmailProvider,
 			@JsonProperty("parse_same_item_ids") Boolean parseSameItemIds,
 			@JsonProperty("rank_min") Long rankMin,
 			@JsonProperty("rank_max") Long rankMax,
 			@JsonProperty("bonus_rank_min") Long bonusRankMin,
 			@JsonProperty("bonus_rank_max") Long bonusRankMax,
-			String tel,
+			Tel tel,
 			Long daybreak,
 			@JsonProperty("kredits_min") Long kreditsMin,
 			@JsonProperty("kredits_max") Long kreditsMax,
@@ -6573,7 +8344,7 @@ public final class Types {
 			Long pmin,
 			Long pmax,
 			String title,
-			@JsonProperty("order_by") String orderBy,
+			@JsonProperty("order_by") OrderBy orderBy,
 			@JsonProperty("tag_id[]") List<Long> tagId,
 			@JsonProperty("not_tag_id[]") List<Long> notTagId,
 			@JsonProperty("public_tag_id[]") List<Long> publicTagId,
@@ -6585,27 +8356,27 @@ public final class Types {
 			Boolean sb,
 			@JsonProperty("nsb_by_me") Boolean nsbByMe,
 			@JsonProperty("sb_by_me") Boolean sbByMe,
-			String currency,
+			Currency currency,
 			@JsonProperty("email_login_data") Boolean emailLoginData,
 			@JsonProperty("email_provider[]") JsonNode emailProvider,
-			@JsonProperty("not_email_provider[]") String notEmailProvider,
+			@JsonProperty("not_email_provider[]") NotEmailProvider notEmailProvider,
 			@JsonProperty("parse_same_item_ids") Boolean parseSameItemIds,
-			String subscription,
+			CategorySubscriptionMinecraft subscription,
 			@JsonProperty("subscription_length") Long subscriptionLength,
-			@JsonProperty("subscription_period") String subscriptionPeriod,
-			String autorenewal,
-			String java,
-			String bedrock,
-			String dungeons,
-			String legends,
-			@JsonProperty("change_nickname") String changeNickname,
+			@JsonProperty("subscription_period") SubscriptionPeriod subscriptionPeriod,
+			Autorenewal autorenewal,
+			Java java,
+			Bedrock bedrock,
+			Dungeons dungeons,
+			Legends legends,
+			@JsonProperty("change_nickname") ChangeNickname changeNickname,
 			@JsonProperty("capes[]") List<String> capes,
 			@JsonProperty("capes_min") Long capesMin,
 			@JsonProperty("capes_max") Long capesMax,
 			@JsonProperty("country[]") List<String> country,
 			@JsonProperty("not_country[]") List<String> notCountry,
-			@JsonProperty("hypixel_ban") String hypixelBan,
-			@JsonProperty("hypixel_skyblock_api_enabled") String hypixelSkyblockApiEnabled,
+			@JsonProperty("hypixel_ban") HypixelBan hypixelBan,
+			@JsonProperty("hypixel_skyblock_api_enabled") HypixelSkyblockApiEnabled hypixelSkyblockApiEnabled,
 			@JsonProperty("rank_hypixel[]") JsonNode rankHypixel,
 			@JsonProperty("level_hypixel_min") Long levelHypixelMin,
 			@JsonProperty("level_hypixel_max") Long levelHypixelMax,
@@ -6616,13 +8387,13 @@ public final class Types {
 			@JsonProperty("net_worth_hypixel_skyblock_min") Long netWorthHypixelSkyblockMin,
 			@JsonProperty("net_worth_hypixel_skyblock_max") Long netWorthHypixelSkyblockMax,
 			Long reg,
-			@JsonProperty("reg_period") String regPeriod,
+			@JsonProperty("reg_period") RegPeriod regPeriod,
 			@JsonProperty("last_login_hypixel") Long lastLoginHypixel,
-			@JsonProperty("last_login_hypixel_period") String lastLoginHypixelPeriod,
-			@JsonProperty("can_change_details") String canChangeDetails,
+			@JsonProperty("last_login_hypixel_period") LastLoginHypixelPeriod lastLoginHypixelPeriod,
+			@JsonProperty("can_change_details") CanChangeDetails canChangeDetails,
 			@JsonProperty("nickname_length_min") Long nicknameLengthMin,
 			@JsonProperty("nickname_length_max") Long nicknameLengthMax,
-			@JsonProperty("hypixel_ban_parsed") String hypixelBanParsed,
+			@JsonProperty("hypixel_ban_parsed") HypixelBanParsed hypixelBanParsed,
 			@JsonProperty("minecoins_min") Long minecoinsMin,
 			@JsonProperty("minecoins_max") Long minecoinsMax
 		) {
@@ -6769,7 +8540,7 @@ public final class Types {
 			Long pmin,
 			Long pmax,
 			String title,
-			@JsonProperty("order_by") String orderBy,
+			@JsonProperty("order_by") OrderBy orderBy,
 			@JsonProperty("tag_id[]") List<Long> tagId,
 			@JsonProperty("not_tag_id[]") List<Long> notTagId,
 			@JsonProperty("public_tag_id[]") List<Long> publicTagId,
@@ -6781,10 +8552,10 @@ public final class Types {
 			Boolean sb,
 			@JsonProperty("nsb_by_me") Boolean nsbByMe,
 			@JsonProperty("sb_by_me") Boolean sbByMe,
-			String currency,
+			Currency currency,
 			@JsonProperty("email_login_data") Boolean emailLoginData,
 			@JsonProperty("email_provider[]") JsonNode emailProvider,
-			@JsonProperty("not_email_provider[]") String notEmailProvider,
+			@JsonProperty("not_email_provider[]") NotEmailProvider notEmailProvider,
 			@JsonProperty("parse_same_item_ids") Boolean parseSameItemIds,
 			@JsonProperty("edition[]") JsonNode edition,
 			@JsonProperty("profiles_min") Long profilesMin,
@@ -7042,9 +8813,9 @@ public final class Types {
 
 		public record ListUserParams(
 			@JsonProperty("user_id") Long userId,
-			@JsonProperty("category_id") Long categoryId,
+			@JsonProperty("category_id") CategoryId categoryId,
 			Long page,
-			String show,
+			Show show,
 			@JsonProperty("delete_reason") String deleteReason,
 			String title,
 			Long pmin,
@@ -7052,7 +8823,7 @@ public final class Types {
 			String login,
 			@JsonProperty("origin[]") JsonNode origin,
 			@JsonProperty("not_origin[]") JsonNode notOrigin,
-			@JsonProperty("order_by") String orderBy,
+			@JsonProperty("order_by") OrderBy orderBy,
 			Boolean sb,
 			@JsonProperty("sb_by_me") Boolean sbByMe,
 			Boolean nsb,
@@ -7088,16 +8859,16 @@ public final class Types {
 
 		public record ListOrdersParams(
 			@JsonProperty("user_id") Long userId,
-			@JsonProperty("category_id") Long categoryId,
+			@JsonProperty("category_id") CategoryId categoryId,
 			Long page,
-			String show,
+			Show show,
 			String title,
 			Long pmin,
 			Long pmax,
 			String login,
 			@JsonProperty("origin[]") JsonNode origin,
 			@JsonProperty("not_origin[]") JsonNode notOrigin,
-			@JsonProperty("order_by") String orderBy,
+			@JsonProperty("order_by") OrderBy orderBy,
 			Boolean sb,
 			@JsonProperty("sb_by_me") Boolean sbByMe,
 			Boolean nsb,
@@ -7122,7 +8893,7 @@ public final class Types {
 		) {}
 
 		public record ListStatesParams(
-			@JsonProperty("user_id") JsonNode userId
+			@JsonProperty("user_id") com.lolzteam.api.runtime.StringOrInt userId
 		) {
 			public ListStatesParams() {
 				this(null);
@@ -7245,18 +9016,18 @@ public final class Types {
 		) {}
 
 		public record ListDownloadParams(
-			String format,
+			Format format,
 			@JsonProperty("custom_format") String customFormat,
-			@JsonProperty("category_id") Long categoryId,
+			@JsonProperty("category_id") CategoryId categoryId,
 			Long page,
-			String show,
+			Show show,
 			@JsonProperty("delete_reason") String deleteReason,
 			String title,
 			Long pmin,
 			Long pmax,
 			@JsonProperty("origin[]") JsonNode origin,
 			@JsonProperty("not_origin[]") JsonNode notOrigin,
-			@JsonProperty("order_by") String orderBy,
+			@JsonProperty("order_by") OrderBy orderBy,
 			Boolean sb,
 			@JsonProperty("sb_by_me") Boolean sbByMe,
 			Boolean nsb,
@@ -7285,13 +9056,13 @@ public final class Types {
 
 		public record ListFavoritesParams(
 			Long page,
-			String show,
+			Show show,
 			String title,
 			Long pmin,
 			Long pmax,
 			@JsonProperty("origin[]") JsonNode origin,
 			@JsonProperty("not_origin[]") JsonNode notOrigin,
-			@JsonProperty("order_by") String orderBy,
+			@JsonProperty("order_by") OrderBy orderBy,
 			Boolean sb,
 			@JsonProperty("sb_by_me") Boolean sbByMe,
 			Boolean nsb,
@@ -7317,13 +9088,13 @@ public final class Types {
 
 		public record ListViewedParams(
 			Long page,
-			String show,
+			Show show,
 			String title,
 			Long pmin,
 			Long pmax,
 			@JsonProperty("origin[]") JsonNode origin,
 			@JsonProperty("not_origin[]") JsonNode notOrigin,
-			@JsonProperty("order_by") String orderBy,
+			@JsonProperty("order_by") OrderBy orderBy,
 			Boolean sb,
 			@JsonProperty("sb_by_me") Boolean sbByMe,
 			Boolean nsb,
@@ -7594,8 +9365,8 @@ public final class Types {
 		) {}
 
 		public record ManagingSteamInventoryValueParams(
-			@JsonProperty("app_id") Long appId,
-			String currency,
+			@JsonProperty("app_id") AppId appId,
+			Currency currency,
 			@JsonProperty("ignore_cache") Boolean ignoreCache
 		) {
 			public ManagingSteamInventoryValueParams() {
@@ -7656,8 +9427,8 @@ public final class Types {
 
 		public record ManagingSteamValueParams(
 			String link,
-			@JsonProperty("app_id") Long appId,
-			String currency,
+			@JsonProperty("app_id") AppId appId,
+			Currency currency,
 			@JsonProperty("ignore_cache") Boolean ignoreCache
 		) {
 			public ManagingSteamValueParams() {
@@ -7717,7 +9488,7 @@ public final class Types {
 		) {}
 
 		public record ManagingSteamPreviewParams(
-			String type
+			ManagingType type
 		) {
 			public ManagingSteamPreviewParams() {
 				this(null);
@@ -7734,10 +9505,10 @@ public final class Types {
 			String title,
 			@JsonProperty("title_en") String titleEn,
 			Long price,
-			String currency,
-			@JsonProperty("item_origin") String itemOrigin,
+			Currency currency,
+			@JsonProperty("item_origin") ManagingItemOrigin itemOrigin,
 			@JsonProperty("email_login_data") String emailLoginData,
-			@JsonProperty("email_type") String emailType,
+			@JsonProperty("email_type") EmailType emailType,
 			@JsonProperty("allow_ask_discount") Boolean allowAskDiscount,
 			@JsonProperty("proxy_id") Long proxyId,
 			String description,
@@ -7784,7 +9555,7 @@ public final class Types {
 
 		public record ManagingSteamUpdateValueBody(
 			Boolean all,
-			@JsonProperty("app_id") Long appId,
+			@JsonProperty("app_id") AppId appId,
 			Boolean authorize
 		) {
 			public ManagingSteamUpdateValueBody() {
@@ -7840,7 +9611,7 @@ public final class Types {
 		) {}
 
 		public record ManagingImageParams(
-			String type
+			ManagingTypeImage type
 		) {
 			public ManagingImageParams() {
 				this(null);
@@ -8012,7 +9783,7 @@ public final class Types {
 		) {}
 
 		public record ManagingChangePasswordBody(
-			@JsonProperty("_cancel") Long Cancel
+			@JsonProperty("_cancel") String Cancel
 		) {
 			public ManagingChangePasswordBody() {
 				this(null);
@@ -8179,8 +9950,8 @@ public final class Types {
 		}
 
 		public record ProfileClaimsParams(
-			String type,
-			@JsonProperty("claim_state") String claimState
+			ProfileType type,
+			@JsonProperty("claim_state") ClaimState claimState
 		) {
 			public ProfileClaimsParams() {
 				this(null, null);
@@ -8332,12 +10103,12 @@ public final class Types {
 		}
 
 		public record CartGetParams(
-			@JsonProperty("category_id") Long categoryId,
+			@JsonProperty("category_id") CategoryId categoryId,
 			Long page,
 			Long pmin,
 			Long pmax,
 			String title,
-			@JsonProperty("order_by") String orderBy,
+			@JsonProperty("order_by") OrderBy orderBy,
 			@JsonProperty("tag_id[]") List<Long> tagId,
 			@JsonProperty("not_tag_id[]") List<Long> notTagId,
 			@JsonProperty("public_tag_id[]") List<Long> publicTagId,
@@ -8349,10 +10120,10 @@ public final class Types {
 			Boolean sb,
 			@JsonProperty("nsb_by_me") Boolean nsbByMe,
 			@JsonProperty("sb_by_me") Boolean sbByMe,
-			String currency,
+			Currency currency,
 			@JsonProperty("email_login_data") Boolean emailLoginData,
 			@JsonProperty("email_provider[]") JsonNode emailProvider,
-			@JsonProperty("not_email_provider[]") String notEmailProvider,
+			@JsonProperty("not_email_provider[]") NotEmailProvider notEmailProvider,
 			@JsonProperty("parse_same_item_ids") Boolean parseSameItemIds
 		) {
 			public CartGetParams() {
@@ -8819,13 +10590,13 @@ public final class Types {
 
 		public record CustomDiscountsCreateBody(
 			@JsonProperty("user_id") Long userId,
-			@JsonProperty("category_id") Long categoryId,
+			@JsonProperty("category_id") CategoryId categoryId,
 			@JsonProperty("discount_percent") Double discountPercent,
 			@JsonProperty("min_price") Double minPrice,
 			@JsonProperty("max_price") Double maxPrice,
-			String currency
+			Currency currency
 		) {
-			public CustomDiscountsCreateBody(Long userId, Long categoryId, Double discountPercent, Double minPrice) {
+			public CustomDiscountsCreateBody(Long userId, CategoryId categoryId, Double discountPercent, Double minPrice) {
 				this(userId, categoryId, discountPercent, minPrice, null, null);
 			}
 		}
@@ -8880,10 +10651,10 @@ public final class Types {
 			String title,
 			@JsonProperty("title_en") String titleEn,
 			Double price,
-			@JsonProperty("category_id") Long categoryId,
-			String currency,
-			@JsonProperty("item_origin") String itemOrigin,
-			@JsonProperty("extended_guarantee") Long extendedGuarantee,
+			@JsonProperty("category_id") CategoryId categoryId,
+			Currency currency,
+			@JsonProperty("item_origin") PublishingItemOrigin itemOrigin,
+			@JsonProperty("extended_guarantee") ExtendedGuarantee extendedGuarantee,
 			@JsonProperty("allow_ask_discount") Boolean allowAskDiscount,
 			@JsonProperty("proxy_id") Long proxyId,
 			@JsonProperty("random_proxy") Boolean randomProxy,
@@ -8894,10 +10665,10 @@ public final class Types {
 			@JsonProperty("login_password") String loginPassword,
 			@JsonProperty("has_email_login_data") Boolean hasEmailLoginData,
 			@JsonProperty("email_login_data") String emailLoginData,
-			@JsonProperty("email_type") String emailType,
+			@JsonProperty("email_type") EmailType emailType,
 			JsonNode extra
 		) {
-			public PublishingFastSellBody(Double price, Long categoryId, String currency, String itemOrigin) {
+			public PublishingFastSellBody(Double price, CategoryId categoryId, Currency currency, PublishingItemOrigin itemOrigin) {
 				this(null, null, price, categoryId, currency, itemOrigin, null, null, null, null, null, null, null, null, null, null, null, null, null);
 			}
 		}
@@ -8913,22 +10684,22 @@ public final class Types {
 			String title,
 			@JsonProperty("title_en") String titleEn,
 			Double price,
-			@JsonProperty("category_id") Long categoryId,
-			String currency,
-			@JsonProperty("item_origin") String itemOrigin,
-			@JsonProperty("extended_guarantee") Long extendedGuarantee,
+			@JsonProperty("category_id") CategoryId categoryId,
+			Currency currency,
+			@JsonProperty("item_origin") PublishingItemOrigin itemOrigin,
+			@JsonProperty("extended_guarantee") ExtendedGuarantee extendedGuarantee,
 			String description,
 			String information,
 			Boolean forceTempEmail,
 			@JsonProperty("resell_item_id") Long resellItemId,
 			@JsonProperty("has_email_login_data") Boolean hasEmailLoginData,
 			@JsonProperty("email_login_data") String emailLoginData,
-			@JsonProperty("email_type") String emailType,
+			@JsonProperty("email_type") EmailType emailType,
 			@JsonProperty("allow_ask_discount") Boolean allowAskDiscount,
 			@JsonProperty("proxy_id") Long proxyId,
 			@JsonProperty("random_proxy") Boolean randomProxy
 		) {
-			public PublishingAddBody(Double price, Long categoryId, String currency, String itemOrigin) {
+			public PublishingAddBody(Double price, CategoryId categoryId, Currency currency, PublishingItemOrigin itemOrigin) {
 				this(null, null, price, categoryId, currency, itemOrigin, null, null, null, null, null, null, null, null, null, null, null);
 			}
 		}
@@ -8948,7 +10719,7 @@ public final class Types {
 			@JsonProperty("login_password") String loginPassword,
 			@JsonProperty("has_email_login_data") Boolean hasEmailLoginData,
 			@JsonProperty("email_login_data") String emailLoginData,
-			@JsonProperty("email_type") String emailType,
+			@JsonProperty("email_type") EmailType emailType,
 			JsonNode extra
 		) {
 			public PublishingCheckBody() {
@@ -9183,7 +10954,7 @@ public final class Types {
 		) {}
 
 		public record PaymentsInvoiceCreateBody(
-			String currency,
+			Currency currency,
 			Double amount,
 			@JsonProperty("payment_id") String paymentId,
 			String comment,
@@ -9192,12 +10963,13 @@ public final class Types {
 			@JsonProperty("merchant_id") Long merchantId,
 			@JsonProperty("required_telegram_id") Long requiredTelegramId,
 			@JsonProperty("required_telegram_username") String requiredTelegramUsername,
+			/** Default: 3600 */
 			Double lifetime,
 			@JsonProperty("additional_data") String additionalData,
 			@JsonProperty("is_test") Boolean isTest
 		) {
-			public PaymentsInvoiceCreateBody(String currency, Double amount, String paymentId, String comment, String urlSuccess, Long merchantId) {
-				this(currency, amount, paymentId, comment, urlSuccess, null, merchantId, null, null, null, null, null);
+			public PaymentsInvoiceCreateBody(Currency currency, Double amount, String paymentId, String comment, String urlSuccess, Long merchantId) {
+				this(currency, amount, paymentId, comment, urlSuccess, null, merchantId, null, null, 3600D, null, null);
 			}
 		}
 
@@ -9209,8 +10981,8 @@ public final class Types {
 
 		public record PaymentsInvoiceListParams(
 			Long page,
-			String currency,
-			String status,
+			Currency currency,
+			Status status,
 			Double amount,
 			@JsonProperty("merchant_id") Long merchantId
 		) {
@@ -9845,15 +11617,15 @@ public final class Types {
 			@JsonProperty("user_id") Long userId,
 			String username,
 			Long amount,
-			String currency,
+			Currency currency,
 			String comment,
 			@JsonProperty("telegram_deal") Boolean telegramDeal,
 			@JsonProperty("telegram_username") String telegramUsername,
 			@JsonProperty("transfer_hold") Boolean transferHold,
 			@JsonProperty("hold_length_value") Long holdLengthValue,
-			@JsonProperty("hold_length_option") String holdLengthOption
+			@JsonProperty("hold_length_option") HoldLengthOption holdLengthOption
 		) {
-			public PaymentsTransferBody(Long amount, String currency) {
+			public PaymentsTransferBody(Long amount, Currency currency) {
 				this(null, null, amount, currency, null, null, null, null, null, null);
 			}
 		}
@@ -9901,10 +11673,10 @@ public final class Types {
 		) {}
 
 		public record PaymentsHistoryParams(
-			String type,
+			PaymentsType type,
 			Long pmin,
 			Long pmax,
-			String currency,
+			Currency currency,
 			Long page,
 			@JsonProperty("operation_id_lt") Long operationIdLt,
 			String receiver,
@@ -10174,11 +11946,11 @@ public final class Types {
 			@JsonProperty("payment_system") String paymentSystem,
 			String wallet,
 			Double amount,
-			String currency,
+			Currency currency,
 			@JsonProperty("include_fee") Boolean includeFee,
 			JsonNode extra
 		) {
-			public PaymentsPayoutBody(String paymentSystem, String wallet, Double amount, String currency) {
+			public PaymentsPayoutBody(String paymentSystem, String wallet, Double amount, Currency currency) {
 				this(paymentSystem, wallet, amount, currency, null, null);
 			}
 		}
@@ -10285,12 +12057,12 @@ public final class Types {
 		public record AutoPaymentsCreateBody(
 			@JsonProperty("secret_answer") String secretAnswer,
 			@JsonProperty("username_receiver") String usernameReceiver,
-			Long day,
+			Day day,
 			Double amount,
-			String currency,
+			Currency currency,
 			String description
 		) {
-			public AutoPaymentsCreateBody(String usernameReceiver, Long day, Double amount) {
+			public AutoPaymentsCreateBody(String usernameReceiver, Day day, Double amount) {
 				this(null, usernameReceiver, day, amount, null, null);
 			}
 		}
