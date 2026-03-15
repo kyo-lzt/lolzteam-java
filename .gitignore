@@ -1,0 +1,14 @@
+.gradle/
+build/
+*.iml
+local.properties
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
