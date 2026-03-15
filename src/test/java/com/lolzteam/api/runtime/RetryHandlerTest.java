@@ -19,7 +19,7 @@ class RetryHandlerTest {
 	@Test
 	void retriesOnRateLimitException() {
 		var attempts = new AtomicInteger(0);
-		var result = RetryHandler.withRetry(FAST_RETRY, () -> {
+		var result = RetryHandler.withRetry(FAST_RETRY, null, "GET", "/test", () -> {
 			if (attempts.incrementAndGet() < 3) {
 				throw new RateLimitException("rate limited", EMPTY_HEADERS);
 			}
@@ -32,7 +32,7 @@ class RetryHandlerTest {
 	@Test
 	void retriesOnServerException502() {
 		var attempts = new AtomicInteger(0);
-		var result = RetryHandler.withRetry(FAST_RETRY, () -> {
+		var result = RetryHandler.withRetry(FAST_RETRY, null, "GET", "/test", () -> {
 			if (attempts.incrementAndGet() < 2) {
 				throw new ServerException(502, "bad gateway", EMPTY_HEADERS);
 			}
@@ -46,7 +46,7 @@ class RetryHandlerTest {
 	void doesNotRetryOnAuthException() {
 		var attempts = new AtomicInteger(0);
 		assertThrows(AuthException.class, () ->
-			RetryHandler.withRetry(FAST_RETRY, () -> {
+			RetryHandler.withRetry(FAST_RETRY, null, "GET", "/test", () -> {
 				attempts.incrementAndGet();
 				throw new AuthException(401, "unauthorized", EMPTY_HEADERS);
 			})
@@ -58,7 +58,7 @@ class RetryHandlerTest {
 	void doesNotRetryOnNotFoundException() {
 		var attempts = new AtomicInteger(0);
 		assertThrows(NotFoundException.class, () ->
-			RetryHandler.withRetry(FAST_RETRY, () -> {
+			RetryHandler.withRetry(FAST_RETRY, null, "GET", "/test", () -> {
 				attempts.incrementAndGet();
 				throw new NotFoundException("not found", EMPTY_HEADERS);
 			})
@@ -70,7 +70,7 @@ class RetryHandlerTest {
 	void throwsAfterMaxRetriesExhausted() {
 		var attempts = new AtomicInteger(0);
 		assertThrows(RateLimitException.class, () ->
-			RetryHandler.withRetry(FAST_RETRY, () -> {
+			RetryHandler.withRetry(FAST_RETRY, null, "GET", "/test", () -> {
 				attempts.incrementAndGet();
 				throw new RateLimitException("rate limited", EMPTY_HEADERS);
 			})
@@ -81,7 +81,7 @@ class RetryHandlerTest {
 	@Test
 	void asyncRetries() {
 		var attempts = new AtomicInteger(0);
-		var future = RetryHandler.withRetryAsync(FAST_RETRY, () -> {
+		var future = RetryHandler.withRetryAsync(FAST_RETRY, null, "GET", "/test", () -> {
 			if (attempts.incrementAndGet() < 3) {
 				var f = new java.util.concurrent.CompletableFuture<String>();
 				f.completeExceptionally(new RateLimitException("rate limited", EMPTY_HEADERS));

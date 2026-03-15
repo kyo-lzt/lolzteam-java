@@ -268,7 +268,7 @@ final class Emitter {
 				sb.append("\t\t\tjava.util.Map.of(),\n");
 			}
 
-			sb.append("\t\t\t").append(isSearch).append("\n");
+			sb.append("\t\t\t/* isSearch */ ").append(isSearch).append("\n");
 			sb.append("\t\t));\n");
 		}
 
@@ -333,7 +333,7 @@ final class Emitter {
 			}
 			sb.append(indent).append("\tcom.lolzteam.api.runtime.BodyEncoding.MULTIPART,\n");
 			sb.append(indent).append("\tbyteFields,\n");
-			sb.append(indent).append("\t").append(isSearch).append("\n");
+			sb.append(indent).append("\t/* isSearch */ ").append(isSearch).append("\n");
 			sb.append(indent).append("));\n");
 		};
 
@@ -354,7 +354,7 @@ final class Emitter {
 			sb.append("\t\t\t\tnull,\n");
 			sb.append("\t\t\t\tcom.lolzteam.api.runtime.BodyEncoding.MULTIPART,\n");
 			sb.append("\t\t\t\tjava.util.Map.of(),\n");
-			sb.append("\t\t\t\t").append(isSearch).append("\n");
+			sb.append("\t\t\t\t/* isSearch */ ").append(isSearch).append("\n");
 			sb.append("\t\t\t));\n");
 			sb.append("\t\t}\n");
 		}

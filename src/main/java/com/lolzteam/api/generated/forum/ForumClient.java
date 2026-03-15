@@ -30,7 +30,7 @@ class OAuthApi {
 			mapper.valueToTree(body),
 			com.lolzteam.api.runtime.BodyEncoding.MULTIPART,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -42,7 +42,7 @@ class OAuthApi {
 			mapper.valueToTree(body),
 			com.lolzteam.api.runtime.BodyEncoding.MULTIPART,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 }
@@ -65,7 +65,7 @@ class AssetsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -81,7 +81,7 @@ class AssetsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -108,7 +108,7 @@ class CategoriesApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -124,7 +124,7 @@ class CategoriesApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -140,7 +140,7 @@ class CategoriesApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -152,7 +152,7 @@ class CategoriesApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 }
@@ -175,7 +175,7 @@ class ForumsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -191,7 +191,7 @@ class ForumsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -207,7 +207,7 @@ class ForumsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -219,7 +219,7 @@ class ForumsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -231,7 +231,7 @@ class ForumsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -243,7 +243,7 @@ class ForumsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -255,7 +255,7 @@ class ForumsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -267,7 +267,7 @@ class ForumsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -279,7 +279,7 @@ class ForumsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -295,7 +295,7 @@ class ForumsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -311,7 +311,7 @@ class ForumsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -323,7 +323,7 @@ class ForumsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -335,7 +335,7 @@ class ForumsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -351,7 +351,7 @@ class ForumsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -367,7 +367,7 @@ class ForumsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -379,7 +379,7 @@ class ForumsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -391,7 +391,7 @@ class ForumsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -407,7 +407,7 @@ class ForumsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -434,7 +434,7 @@ class LinksApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -446,7 +446,7 @@ class LinksApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -458,7 +458,7 @@ class LinksApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -470,7 +470,7 @@ class LinksApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 }
@@ -493,7 +493,7 @@ class PagesApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -509,7 +509,7 @@ class PagesApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -525,7 +525,7 @@ class PagesApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -537,7 +537,7 @@ class PagesApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 }
@@ -560,7 +560,7 @@ class NavigationApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -576,7 +576,7 @@ class NavigationApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -603,7 +603,7 @@ class ThreadsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -619,7 +619,7 @@ class ThreadsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -635,7 +635,7 @@ class ThreadsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -651,7 +651,7 @@ class ThreadsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -667,7 +667,7 @@ class ThreadsApi {
 			mapper.valueToTree(body),
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -679,7 +679,7 @@ class ThreadsApi {
 			mapper.valueToTree(body),
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -691,7 +691,7 @@ class ThreadsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -707,7 +707,7 @@ class ThreadsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -723,7 +723,7 @@ class ThreadsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -739,7 +739,7 @@ class ThreadsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -755,7 +755,7 @@ class ThreadsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -771,7 +771,7 @@ class ThreadsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -787,7 +787,7 @@ class ThreadsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -803,7 +803,7 @@ class ThreadsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -819,7 +819,7 @@ class ThreadsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -835,7 +835,7 @@ class ThreadsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -851,7 +851,7 @@ class ThreadsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -863,7 +863,7 @@ class ThreadsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -875,7 +875,7 @@ class ThreadsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -887,7 +887,7 @@ class ThreadsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -899,7 +899,7 @@ class ThreadsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -911,7 +911,7 @@ class ThreadsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -923,7 +923,7 @@ class ThreadsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -935,7 +935,7 @@ class ThreadsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -947,7 +947,7 @@ class ThreadsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -959,7 +959,7 @@ class ThreadsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -971,7 +971,7 @@ class ThreadsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -987,7 +987,7 @@ class ThreadsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1003,7 +1003,7 @@ class ThreadsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1015,7 +1015,7 @@ class ThreadsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1027,7 +1027,7 @@ class ThreadsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1043,7 +1043,7 @@ class ThreadsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1059,7 +1059,7 @@ class ThreadsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1071,7 +1071,7 @@ class ThreadsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1083,7 +1083,7 @@ class ThreadsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1095,7 +1095,7 @@ class ThreadsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1107,7 +1107,7 @@ class ThreadsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1123,7 +1123,7 @@ class ThreadsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1139,7 +1139,7 @@ class ThreadsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1155,7 +1155,7 @@ class ThreadsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1171,7 +1171,7 @@ class ThreadsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1187,7 +1187,7 @@ class ThreadsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1203,7 +1203,7 @@ class ThreadsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1215,7 +1215,7 @@ class ThreadsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 }
@@ -1238,7 +1238,7 @@ class PostsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1254,7 +1254,7 @@ class PostsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1270,7 +1270,7 @@ class PostsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1286,7 +1286,7 @@ class PostsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1302,7 +1302,7 @@ class PostsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1314,7 +1314,7 @@ class PostsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1326,7 +1326,7 @@ class PostsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1342,7 +1342,7 @@ class PostsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1358,7 +1358,7 @@ class PostsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1374,7 +1374,7 @@ class PostsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1390,7 +1390,7 @@ class PostsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1406,7 +1406,7 @@ class PostsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1422,7 +1422,7 @@ class PostsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1434,7 +1434,7 @@ class PostsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1446,7 +1446,7 @@ class PostsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1458,7 +1458,7 @@ class PostsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1470,7 +1470,7 @@ class PostsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1482,7 +1482,7 @@ class PostsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1494,7 +1494,7 @@ class PostsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1510,7 +1510,7 @@ class PostsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1526,7 +1526,7 @@ class PostsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1542,7 +1542,7 @@ class PostsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1558,7 +1558,7 @@ class PostsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1574,7 +1574,7 @@ class PostsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1590,7 +1590,7 @@ class PostsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1606,7 +1606,7 @@ class PostsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1622,7 +1622,7 @@ class PostsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1638,7 +1638,7 @@ class PostsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1654,7 +1654,7 @@ class PostsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1670,7 +1670,7 @@ class PostsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1697,7 +1697,7 @@ class UsersApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1713,7 +1713,7 @@ class UsersApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1729,7 +1729,7 @@ class UsersApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1741,7 +1741,7 @@ class UsersApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1753,7 +1753,7 @@ class UsersApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1769,7 +1769,7 @@ class UsersApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1785,7 +1785,7 @@ class UsersApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1801,7 +1801,7 @@ class UsersApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1817,7 +1817,7 @@ class UsersApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1833,7 +1833,7 @@ class UsersApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1849,7 +1849,7 @@ class UsersApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1865,7 +1865,7 @@ class UsersApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1888,7 +1888,7 @@ class UsersApi {
 				jsonBody,
 				com.lolzteam.api.runtime.BodyEncoding.MULTIPART,
 				byteFields,
-				false
+				/* isSearch */ false
 			));
 		} else {
 			return http.request(new RequestOptions(
@@ -1898,7 +1898,7 @@ class UsersApi {
 				null,
 				com.lolzteam.api.runtime.BodyEncoding.MULTIPART,
 				java.util.Map.of(),
-				false
+				/* isSearch */ false
 			));
 		}
 	}
@@ -1922,7 +1922,7 @@ class UsersApi {
 				jsonBody,
 				com.lolzteam.api.runtime.BodyEncoding.MULTIPART,
 				byteFields,
-				false
+				/* isSearch */ false
 			));
 		} else {
 			return http.requestAsync(new RequestOptions(
@@ -1932,7 +1932,7 @@ class UsersApi {
 				null,
 				com.lolzteam.api.runtime.BodyEncoding.MULTIPART,
 				java.util.Map.of(),
-				false
+				/* isSearch */ false
 			));
 		}
 	}
@@ -1949,7 +1949,7 @@ class UsersApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1961,7 +1961,7 @@ class UsersApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1973,7 +1973,7 @@ class UsersApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -1989,7 +1989,7 @@ class UsersApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2012,7 +2012,7 @@ class UsersApi {
 				jsonBody,
 				com.lolzteam.api.runtime.BodyEncoding.MULTIPART,
 				byteFields,
-				false
+				/* isSearch */ false
 			));
 		} else {
 			return http.request(new RequestOptions(
@@ -2022,7 +2022,7 @@ class UsersApi {
 				null,
 				com.lolzteam.api.runtime.BodyEncoding.MULTIPART,
 				java.util.Map.of(),
-				false
+				/* isSearch */ false
 			));
 		}
 	}
@@ -2046,7 +2046,7 @@ class UsersApi {
 				jsonBody,
 				com.lolzteam.api.runtime.BodyEncoding.MULTIPART,
 				byteFields,
-				false
+				/* isSearch */ false
 			));
 		} else {
 			return http.requestAsync(new RequestOptions(
@@ -2056,7 +2056,7 @@ class UsersApi {
 				null,
 				com.lolzteam.api.runtime.BodyEncoding.MULTIPART,
 				java.util.Map.of(),
-				false
+				/* isSearch */ false
 			));
 		}
 	}
@@ -2073,7 +2073,7 @@ class UsersApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2085,7 +2085,7 @@ class UsersApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2097,7 +2097,7 @@ class UsersApi {
 			mapper.valueToTree(body),
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2109,7 +2109,7 @@ class UsersApi {
 			mapper.valueToTree(body),
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2121,7 +2121,7 @@ class UsersApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2137,7 +2137,7 @@ class UsersApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2153,7 +2153,7 @@ class UsersApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2165,7 +2165,7 @@ class UsersApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2177,7 +2177,7 @@ class UsersApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2189,7 +2189,7 @@ class UsersApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2201,7 +2201,7 @@ class UsersApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2217,7 +2217,7 @@ class UsersApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2233,7 +2233,7 @@ class UsersApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2249,7 +2249,7 @@ class UsersApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2265,7 +2265,7 @@ class UsersApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2281,7 +2281,7 @@ class UsersApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2297,7 +2297,7 @@ class UsersApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2309,7 +2309,7 @@ class UsersApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2321,7 +2321,7 @@ class UsersApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2337,7 +2337,7 @@ class UsersApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2353,7 +2353,7 @@ class UsersApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2365,7 +2365,7 @@ class UsersApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2377,7 +2377,7 @@ class UsersApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2393,7 +2393,7 @@ class UsersApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2409,7 +2409,7 @@ class UsersApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2421,7 +2421,7 @@ class UsersApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2433,7 +2433,7 @@ class UsersApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2445,7 +2445,7 @@ class UsersApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2457,7 +2457,7 @@ class UsersApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2469,7 +2469,7 @@ class UsersApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2481,7 +2481,7 @@ class UsersApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2493,7 +2493,7 @@ class UsersApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 }
@@ -2516,7 +2516,7 @@ class ProfilePostsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2532,7 +2532,7 @@ class ProfilePostsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2548,7 +2548,7 @@ class ProfilePostsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2560,7 +2560,7 @@ class ProfilePostsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2572,7 +2572,7 @@ class ProfilePostsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2588,7 +2588,7 @@ class ProfilePostsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2604,7 +2604,7 @@ class ProfilePostsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2620,7 +2620,7 @@ class ProfilePostsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2636,7 +2636,7 @@ class ProfilePostsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2648,7 +2648,7 @@ class ProfilePostsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2660,7 +2660,7 @@ class ProfilePostsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2676,7 +2676,7 @@ class ProfilePostsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2692,7 +2692,7 @@ class ProfilePostsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2708,7 +2708,7 @@ class ProfilePostsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2724,7 +2724,7 @@ class ProfilePostsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2736,7 +2736,7 @@ class ProfilePostsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2748,7 +2748,7 @@ class ProfilePostsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2760,7 +2760,7 @@ class ProfilePostsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2772,7 +2772,7 @@ class ProfilePostsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2784,7 +2784,7 @@ class ProfilePostsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2796,7 +2796,7 @@ class ProfilePostsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2808,7 +2808,7 @@ class ProfilePostsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2820,7 +2820,7 @@ class ProfilePostsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2832,7 +2832,7 @@ class ProfilePostsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2844,7 +2844,7 @@ class ProfilePostsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2860,7 +2860,7 @@ class ProfilePostsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2876,7 +2876,7 @@ class ProfilePostsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2892,7 +2892,7 @@ class ProfilePostsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2908,7 +2908,7 @@ class ProfilePostsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2924,7 +2924,7 @@ class ProfilePostsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2940,7 +2940,7 @@ class ProfilePostsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2956,7 +2956,7 @@ class ProfilePostsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2972,7 +2972,7 @@ class ProfilePostsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2984,7 +2984,7 @@ class ProfilePostsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -2996,7 +2996,7 @@ class ProfilePostsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3012,7 +3012,7 @@ class ProfilePostsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3039,7 +3039,7 @@ class ConversationsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3055,7 +3055,7 @@ class ConversationsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3071,7 +3071,7 @@ class ConversationsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3087,7 +3087,7 @@ class ConversationsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3103,7 +3103,7 @@ class ConversationsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3119,7 +3119,7 @@ class ConversationsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3135,7 +3135,7 @@ class ConversationsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3151,7 +3151,7 @@ class ConversationsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3167,7 +3167,7 @@ class ConversationsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3183,7 +3183,7 @@ class ConversationsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3199,7 +3199,7 @@ class ConversationsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3215,7 +3215,7 @@ class ConversationsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3231,7 +3231,7 @@ class ConversationsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3243,7 +3243,7 @@ class ConversationsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3255,7 +3255,7 @@ class ConversationsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3271,7 +3271,7 @@ class ConversationsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3287,7 +3287,7 @@ class ConversationsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3303,7 +3303,7 @@ class ConversationsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3319,7 +3319,7 @@ class ConversationsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3335,7 +3335,7 @@ class ConversationsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3351,7 +3351,7 @@ class ConversationsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3363,7 +3363,7 @@ class ConversationsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3375,7 +3375,7 @@ class ConversationsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3391,7 +3391,7 @@ class ConversationsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3407,7 +3407,7 @@ class ConversationsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3419,7 +3419,7 @@ class ConversationsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3431,7 +3431,7 @@ class ConversationsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3447,7 +3447,7 @@ class ConversationsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3463,7 +3463,7 @@ class ConversationsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3479,7 +3479,7 @@ class ConversationsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3495,7 +3495,7 @@ class ConversationsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3507,7 +3507,7 @@ class ConversationsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3519,7 +3519,7 @@ class ConversationsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3531,7 +3531,7 @@ class ConversationsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3543,7 +3543,7 @@ class ConversationsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3555,7 +3555,7 @@ class ConversationsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3567,7 +3567,7 @@ class ConversationsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3579,7 +3579,7 @@ class ConversationsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3591,7 +3591,7 @@ class ConversationsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3603,7 +3603,7 @@ class ConversationsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3615,7 +3615,7 @@ class ConversationsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3627,7 +3627,7 @@ class ConversationsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3639,7 +3639,7 @@ class ConversationsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3651,7 +3651,7 @@ class ConversationsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3663,7 +3663,7 @@ class ConversationsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3675,7 +3675,7 @@ class ConversationsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 }
@@ -3698,7 +3698,7 @@ class NotificationsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3714,7 +3714,7 @@ class NotificationsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3730,7 +3730,7 @@ class NotificationsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3742,7 +3742,7 @@ class NotificationsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3754,7 +3754,7 @@ class NotificationsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3770,7 +3770,7 @@ class NotificationsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3797,7 +3797,7 @@ class TagsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3809,7 +3809,7 @@ class TagsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3821,7 +3821,7 @@ class TagsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3837,7 +3837,7 @@ class TagsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3853,7 +3853,7 @@ class TagsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3869,7 +3869,7 @@ class TagsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3885,7 +3885,7 @@ class TagsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3901,7 +3901,7 @@ class TagsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3928,7 +3928,7 @@ class SearchApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3944,7 +3944,7 @@ class SearchApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3960,7 +3960,7 @@ class SearchApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3976,7 +3976,7 @@ class SearchApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -3992,7 +3992,7 @@ class SearchApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -4008,7 +4008,7 @@ class SearchApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -4024,7 +4024,7 @@ class SearchApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -4040,7 +4040,7 @@ class SearchApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -4056,7 +4056,7 @@ class SearchApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -4072,7 +4072,7 @@ class SearchApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -4088,7 +4088,7 @@ class SearchApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -4104,7 +4104,7 @@ class SearchApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -4120,7 +4120,7 @@ class SearchApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -4136,7 +4136,7 @@ class SearchApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -4163,7 +4163,7 @@ class BatchApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -4179,7 +4179,7 @@ class BatchApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -4206,7 +4206,7 @@ class ChatboxApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -4222,7 +4222,7 @@ class ChatboxApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -4238,7 +4238,7 @@ class ChatboxApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -4254,7 +4254,7 @@ class ChatboxApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -4270,7 +4270,7 @@ class ChatboxApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -4286,7 +4286,7 @@ class ChatboxApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -4302,7 +4302,7 @@ class ChatboxApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -4318,7 +4318,7 @@ class ChatboxApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -4334,7 +4334,7 @@ class ChatboxApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -4350,7 +4350,7 @@ class ChatboxApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -4366,7 +4366,7 @@ class ChatboxApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -4382,7 +4382,7 @@ class ChatboxApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -4398,7 +4398,7 @@ class ChatboxApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -4414,7 +4414,7 @@ class ChatboxApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -4430,7 +4430,7 @@ class ChatboxApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -4446,7 +4446,7 @@ class ChatboxApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -4462,7 +4462,7 @@ class ChatboxApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -4478,7 +4478,7 @@ class ChatboxApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -4494,7 +4494,7 @@ class ChatboxApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -4506,7 +4506,7 @@ class ChatboxApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -4518,7 +4518,7 @@ class ChatboxApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -4534,7 +4534,7 @@ class ChatboxApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -4550,7 +4550,7 @@ class ChatboxApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -4566,7 +4566,7 @@ class ChatboxApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -4593,7 +4593,7 @@ class FormsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -4609,7 +4609,7 @@ class FormsApi {
 			null,
 			com.lolzteam.api.runtime.BodyEncoding.FORM,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -4625,7 +4625,7 @@ class FormsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 
@@ -4641,7 +4641,7 @@ class FormsApi {
 			body != null ? mapper.valueToTree(body) : null,
 			com.lolzteam.api.runtime.BodyEncoding.JSON,
 			java.util.Map.of(),
-			false
+			/* isSearch */ false
 		));
 	}
 

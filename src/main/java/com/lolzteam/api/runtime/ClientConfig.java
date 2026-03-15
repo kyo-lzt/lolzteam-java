@@ -1,12 +1,17 @@
 package com.lolzteam.api.runtime;
 
+import java.time.Duration;
+import java.util.function.Consumer;
+
 public record ClientConfig(
 	String token,
 	String baseUrl,
 	ProxyConfig proxy,
 	RetryConfig retry,
 	RateLimitConfig rateLimit,
-	RateLimitConfig searchRateLimit
+	RateLimitConfig searchRateLimit,
+	Duration timeout,
+	Consumer<RetryInfo> onRetry
 ) {
 
 	public static Builder builder(String token) {
@@ -14,15 +19,15 @@ public record ClientConfig(
 	}
 
 	public ClientConfig withBaseUrl(String baseUrl) {
-		return new ClientConfig(token, baseUrl, proxy, retry, rateLimit, searchRateLimit);
+		return new ClientConfig(token, baseUrl, proxy, retry, rateLimit, searchRateLimit, timeout, onRetry);
 	}
 
 	public ClientConfig withRateLimit(RateLimitConfig rateLimit) {
-		return new ClientConfig(token, baseUrl, proxy, retry, rateLimit, searchRateLimit);
+		return new ClientConfig(token, baseUrl, proxy, retry, rateLimit, searchRateLimit, timeout, onRetry);
 	}
 
 	public ClientConfig withSearchRateLimit(RateLimitConfig searchRateLimit) {
-		return new ClientConfig(token, baseUrl, proxy, retry, rateLimit, searchRateLimit);
+		return new ClientConfig(token, baseUrl, proxy, retry, rateLimit, searchRateLimit, timeout, onRetry);
 	}
 
 	public static final class Builder {
@@ -32,6 +37,8 @@ public record ClientConfig(
 		private RetryConfig retry = new RetryConfig();
 		private RateLimitConfig rateLimit;
 		private RateLimitConfig searchRateLimit;
+		private Duration timeout;
+		private Consumer<RetryInfo> onRetry;
 
 		private Builder(String token) {
 			this.token = token;
@@ -62,8 +69,18 @@ public record ClientConfig(
 			return this;
 		}
 
+		public Builder timeout(Duration timeout) {
+			this.timeout = timeout;
+			return this;
+		}
+
+		public Builder onRetry(Consumer<RetryInfo> onRetry) {
+			this.onRetry = onRetry;
+			return this;
+		}
+
 		public ClientConfig build() {
-			return new ClientConfig(token, baseUrl, proxy, retry, rateLimit, searchRateLimit);
+			return new ClientConfig(token, baseUrl, proxy, retry, rateLimit, searchRateLimit, timeout, onRetry);
 		}
 	}
 }

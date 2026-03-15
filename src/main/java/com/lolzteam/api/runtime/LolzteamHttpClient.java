@@ -17,17 +17,21 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
+import java.util.function.Consumer;
 
 public final class LolzteamHttpClient implements Closeable {
 
 	private final String baseUrl;
 	private final String token;
 	private final RetryConfig retryConfig;
+	private final Duration timeout;
+	private final Consumer<RetryInfo> onRetry;
 	private final RateLimiter rateLimiter;
 	private final RateLimiter searchRateLimiter;
 	private final HttpClient client;
@@ -44,6 +48,8 @@ public final class LolzteamHttpClient implements Closeable {
 		this.baseUrl = config.baseUrl().replaceAll("/+$", "");
 		this.token = config.token();
 		this.retryConfig = config.retry();
+		this.timeout = config.timeout();
+		this.onRetry = config.onRetry();
 		this.rateLimiter = config.rateLimit() != null
 			? new RateLimiter(config.rateLimit().requestsPerMinute())
 			: null;
@@ -60,6 +66,10 @@ public final class LolzteamHttpClient implements Closeable {
 			var builder = HttpClient.newBuilder()
 				.version(HttpClient.Version.HTTP_1_1)
 				.followRedirects(HttpClient.Redirect.NORMAL);
+
+			if (config.timeout() != null) {
+				builder.connectTimeout(config.timeout());
+			}
 
 			if (config.proxy() != null) {
 				var proxyUri = parseProxyUri(config.proxy().url());
@@ -83,7 +93,10 @@ public final class LolzteamHttpClient implements Closeable {
 		if (options.isSearch() && searchRateLimiter != null) {
 			searchRateLimiter.acquire();
 		}
-		return RetryHandler.withRetry(retryConfig, () -> execute(options));
+		if (retryConfig == null) {
+			return execute(options);
+		}
+		return RetryHandler.withRetry(retryConfig, onRetry, options.method(), options.path(), () -> execute(options));
 	}
 
 	public CompletableFuture<JsonNode> requestAsync(RequestOptions options) {
@@ -95,8 +108,11 @@ public final class LolzteamHttpClient implements Closeable {
 			? rateLimitFuture.thenCompose(ignored -> searchRateLimiter.acquireAsync())
 			: rateLimitFuture;
 
+		if (retryConfig == null) {
+			return searchRateLimitFuture.thenCompose(ignored -> executeAsync(options));
+		}
 		return searchRateLimitFuture.thenCompose(ignored ->
-			RetryHandler.withRetryAsync(retryConfig, () -> executeAsync(options))
+			RetryHandler.withRetryAsync(retryConfig, onRetry, options.method(), options.path(), () -> executeAsync(options))
 		);
 	}
 
@@ -137,6 +153,10 @@ public final class LolzteamHttpClient implements Closeable {
 		var builder = HttpRequest.newBuilder()
 			.uri(URI.create(url.toString()))
 			.header("Authorization", "Bearer " + token);
+
+		if (timeout != null) {
+			builder.timeout(timeout);
+		}
 
 		var method = options.method().toUpperCase();
 		if ("GET".equals(method)) {

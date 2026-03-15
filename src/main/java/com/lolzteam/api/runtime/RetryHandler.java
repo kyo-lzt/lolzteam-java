@@ -1,11 +1,13 @@
 package com.lolzteam.api.runtime;
 
+import java.time.Duration;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
+import java.util.function.Consumer;
 import java.util.function.Supplier;
 
 public final class RetryHandler {
@@ -20,7 +22,13 @@ public final class RetryHandler {
 	private RetryHandler() {
 	}
 
-	public static <T> T withRetry(RetryConfig config, Callable<T> block) {
+	public static <T> T withRetry(
+		RetryConfig config,
+		Consumer<RetryInfo> onRetry,
+		String method,
+		String path,
+		Callable<T> block
+	) {
 		Throwable lastError = null;
 		for (int attempt = 0; attempt <= config.maxRetries(); attempt++) {
 			try {
@@ -34,6 +42,9 @@ public final class RetryHandler {
 					throw new RuntimeException(e);
 				}
 				long delayMs = computeDelay(attempt, config, e);
+				if (onRetry != null && e instanceof LolzteamException le) {
+					onRetry.accept(new RetryInfo(attempt + 1, Duration.ofMillis(delayMs), le, method, path));
+				}
 				try {
 					Thread.sleep(delayMs);
 				} catch (InterruptedException ie) {
@@ -50,13 +61,19 @@ public final class RetryHandler {
 
 	public static <T> CompletableFuture<T> withRetryAsync(
 		RetryConfig config,
+		Consumer<RetryInfo> onRetry,
+		String method,
+		String path,
 		Supplier<CompletableFuture<T>> block
 	) {
-		return retryAttempt(config, block, 0);
+		return retryAttempt(config, onRetry, method, path, block, 0);
 	}
 
 	private static <T> CompletableFuture<T> retryAttempt(
 		RetryConfig config,
+		Consumer<RetryInfo> onRetry,
+		String method,
+		String path,
 		Supplier<CompletableFuture<T>> block,
 		int attempt
 	) {
@@ -66,9 +83,12 @@ public final class RetryHandler {
 				return CompletableFuture.failedFuture(cause);
 			}
 			long delayMs = computeDelay(attempt, config, cause);
+			if (onRetry != null && cause instanceof LolzteamException le) {
+				onRetry.accept(new RetryInfo(attempt + 1, Duration.ofMillis(delayMs), le, method, path));
+			}
 			var delayed = new CompletableFuture<T>();
 			SCHEDULER.schedule(
-				() -> retryAttempt(config, block, attempt + 1)
+				() -> retryAttempt(config, onRetry, method, path, block, attempt + 1)
 					.whenComplete((result, ex) -> {
 						if (ex != null) {
 							delayed.completeExceptionally(unwrap(ex));
@@ -88,7 +108,10 @@ public final class RetryHandler {
 			return true;
 		}
 		if (error instanceof ServerException se) {
-			return se.statusCode() == 502 || se.statusCode() == 503;
+			return se.statusCode() == 502 || se.statusCode() == 503 || se.statusCode() == 504;
+		}
+		if (error instanceof NetworkException ne && ne.isTransient()) {
+			return true;
 		}
 		return false;
 	}
