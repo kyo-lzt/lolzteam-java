@@ -1,6 +1,6 @@
 plugins {
     `java-library`
-    `maven-publish`
+    id("com.vanniktech.maven.publish") version "0.36.0"
     id("com.diffplug.spotless") version "7.0.2"
 }
 
@@ -40,21 +40,33 @@ tasks.withType<JavaCompile> {
     options.compilerArgs.addAll(listOf("-Xlint:all,-serial", "-Werror"))
 }
 
-publishing {
-    publications {
-        create<MavenPublication>("maven") {
-            from(components["java"])
-            pom {
-                name.set("lolzteam-java")
-                description.set("Java API wrapper for Lolzteam Forum and Market")
-                url.set("https://github.com/kyo-lzt/lolzteam-java")
-                licenses {
-                    license {
-                        name.set("MIT")
-                        url.set("https://opensource.org/licenses/MIT")
-                    }
-                }
+mavenPublishing {
+    publishToMavenCentral(automaticRelease = true)
+    signAllPublications()
+
+    coordinates("com.lolzteam", "lolzteam-java", version.toString())
+
+    pom {
+        name.set("lolzteam-java")
+        description.set("Java API wrapper for Lolzteam Forum and Market")
+        url.set("https://github.com/kyo-lzt/lolzteam-java")
+        licenses {
+            license {
+                name.set("MIT")
+                url.set("https://opensource.org/licenses/MIT")
             }
+        }
+        developers {
+            developer {
+                id.set("kyo-lzt")
+                name.set("kyo-lzt")
+                url.set("https://github.com/kyo-lzt")
+            }
+        }
+        scm {
+            url.set("https://github.com/kyo-lzt/lolzteam-java")
+            connection.set("scm:git:git://github.com/kyo-lzt/lolzteam-java.git")
+            developerConnection.set("scm:git:ssh://git@github.com/kyo-lzt/lolzteam-java.git")
         }
     }
 }
