@@ -40,7 +40,8 @@ public final class RetryHandler {
         long delayMs = computeDelay(attempt, config, e);
         if (onRetry != null) {
           var error = e instanceof LolzteamException le ? le : new NetworkException(e);
-          onRetry.accept(new RetryInfo(attempt + 1, Duration.ofMillis(delayMs), error, method, path));
+          onRetry.accept(
+              new RetryInfo(attempt + 1, Duration.ofMillis(delayMs), error, method, path));
         }
         try {
           Thread.sleep(delayMs);

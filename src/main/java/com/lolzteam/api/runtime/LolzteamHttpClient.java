@@ -80,17 +80,18 @@ public final class LolzteamHttpClient implements Closeable {
         if ("socks5".equals(scheme)) {
           var port = proxyUri.getPort() != -1 ? proxyUri.getPort() : 1080;
           var addr = new InetSocketAddress(proxyUri.getHost(), port);
-          builder.proxy(new ProxySelector() {
-            @Override
-            public List<Proxy> select(URI uri) {
-              return List.of(new Proxy(Proxy.Type.SOCKS, addr));
-            }
+          builder.proxy(
+              new ProxySelector() {
+                @Override
+                public List<Proxy> select(URI uri) {
+                  return List.of(new Proxy(Proxy.Type.SOCKS, addr));
+                }
 
-            @Override
-            public void connectFailed(URI uri, SocketAddress sa, IOException ioe) {
-              // no-op
-            }
-          });
+                @Override
+                public void connectFailed(URI uri, SocketAddress sa, IOException ioe) {
+                  // no-op
+                }
+              });
         } else {
           builder.proxy(
               ProxySelector.of(new InetSocketAddress(proxyUri.getHost(), proxyUri.getPort())));
