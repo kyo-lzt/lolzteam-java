@@ -1312,6 +1312,11 @@ final class Emitter {
 
 		sb.append("\t}\n\n");
 
+		// Convenience factory
+		sb.append("\tpublic static ").append(clientName).append(" create(String token) {\n");
+		sb.append("\t\treturn new ").append(clientName).append("(ClientConfig.builder(token).build());\n");
+		sb.append("\t}\n\n");
+
 		// Getters
 		for (var group : groups) {
 			var propClassName = Naming.groupToClassName(group.groupName());

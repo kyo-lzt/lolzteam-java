@@ -1,4 +1,3 @@
 package com.lolzteam.api.runtime;
 
-public record ProxyConfig(String url) {
-}
+public record ProxyConfig(String url) {}

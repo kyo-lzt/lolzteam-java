@@ -1,10 +1,19 @@
 plugins {
     `java-library`
     `maven-publish`
+    id("com.diffplug.spotless") version "7.0.2"
+}
+
+spotless {
+    java {
+        targetExclude("src/main/java/com/lolzteam/api/generated/**")
+        googleJavaFormat()
+        removeUnusedImports()
+    }
 }
 
 group = "com.lolzteam"
-version = "0.1.0"
+version = findProperty("version") as String? ?: "0.0.0-dev"
 
 java {
     toolchain {
@@ -38,7 +47,7 @@ publishing {
             pom {
                 name.set("lolzteam-java")
                 description.set("Java API wrapper for Lolzteam Forum and Market")
-                url.set("https://github.com/lolzteam/api-wrapper")
+                url.set("https://github.com/kyo-lzt/lolzteam-java")
                 licenses {
                     license {
                         name.set("MIT")

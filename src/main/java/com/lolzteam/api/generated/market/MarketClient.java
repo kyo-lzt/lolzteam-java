@@ -3607,6 +3607,10 @@ public class MarketClient implements Closeable {
 		this.batch = new BatchApi(http);
 	}
 
+	public static MarketClient create(String token) {
+		return new MarketClient(ClientConfig.builder(token).build());
+	}
+
 	public CategoryApi category() {
 		return category;
 	}

@@ -4701,6 +4701,10 @@ public class ForumClient implements Closeable {
 		this.forms = new FormsApi(http);
 	}
 
+	public static ForumClient create(String token) {
+		return new ForumClient(ClientConfig.builder(token).build());
+	}
+
 	public OAuthApi oAuth() {
 		return oAuth;
 	}
