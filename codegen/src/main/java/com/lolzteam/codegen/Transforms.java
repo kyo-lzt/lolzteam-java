@@ -397,21 +397,45 @@ final class Transforms {
 			var union = detectDiscriminatedUnion(oneOf, spec);
 
 			var allProps = new LinkedHashMap<String, JsonNode>();
+			// Collect which property names appear in each variant and their required sets
+			var variantPropertyNames = new ArrayList<Set<String>>();
+			var variantRequiredSets = new ArrayList<Set<String>>();
 			for (var variant : oneOf) {
 				if (!variant.isObject()) continue;
 				var variantProps = variant.get("properties");
 				if (variantProps == null || !variantProps.isObject()) continue;
+				var names = new HashSet<String>();
 				var fields = variantProps.fields();
 				while (fields.hasNext()) {
 					var entry = fields.next();
+					names.add(entry.getKey());
 					allProps.put(entry.getKey(), entry.getValue());
 				}
+				variantPropertyNames.add(names);
+				var reqSet = new HashSet<String>();
+				var reqArr = variant.get("required");
+				if (reqArr != null && reqArr.isArray()) {
+					for (var r : reqArr) {
+						reqSet.add(r.asText());
+					}
+				}
+				variantRequiredSets.add(reqSet);
 			}
+			// A field is required only if present AND required in ALL variants
 			for (var entry : allProps.entrySet()) {
+				var name = entry.getKey();
+				var requiredInAll = true;
+				for (int i = 0; i < variantPropertyNames.size(); i++) {
+					if (!variantPropertyNames.get(i).contains(name)
+						|| !variantRequiredSets.get(i).contains(name)) {
+						requiredInAll = false;
+						break;
+					}
+				}
 				bodyProperties.add(new BodyProperty(
 					entry.getKey(),
 					schemaToTypeString(entry.getValue(), spec),
-					false
+					requiredInAll
 				));
 			}
 

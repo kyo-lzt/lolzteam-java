@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.fasterxml.jackson.databind.JsonNode;
+import com.lolzteam.api.runtime.Nullable;
 import java.util.List;
 import java.util.Map;
 
@@ -2030,16 +2031,16 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ExtraModel(
-			String proxy,
+			@Nullable String proxy,
 			@JsonProperty("close_item") Boolean closeItem,
-			String region,
-			String service,
-			String system,
-			String confirmationCode,
-			String cookies,
+			@Nullable String region,
+			@Nullable String service,
+			@Nullable String system,
+			@Nullable String confirmationCode,
+			@Nullable String cookies,
 			@JsonProperty("login_without_cookies") Boolean loginWithoutCookies,
 			@JsonProperty("cookie_login") Boolean cookieLogin,
-			@JsonProperty("mfa_file") String mfaFile,
+			@JsonProperty("mfa_file") @Nullable String mfaFile,
 			@JsonProperty("dota2_mmr") Long dota2Mmr,
 			@JsonProperty("ea_games") Boolean eaGames,
 			@JsonProperty("uplay_games") Boolean uplayGames,
@@ -2050,9 +2051,9 @@ public final class Types {
 			@JsonProperty("genshin_currency") Long genshinCurrency,
 			@JsonProperty("honkai_currency") Long honkaiCurrency,
 			@JsonProperty("zenless_currency") Long zenlessCurrency,
-			String password,
-			String telegramClient,
-			String telegramJson,
+			@Nullable String password,
+			@Nullable String telegramClient,
+			@Nullable String telegramJson,
 			Boolean checkChannels,
 			Boolean checkSpam,
 			Boolean checkHypixelBan
@@ -2087,24 +2088,24 @@ public final class Types {
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ItemFromListModel(
 			@JsonProperty("item_id") Long itemId,
-			@JsonProperty("item_state") String itemState,
+			@JsonProperty("item_state") @Nullable String itemState,
 			@JsonProperty("category_id") Long categoryId,
 			@JsonProperty("published_date") Long publishedDate,
-			String title,
-			String description,
+			@Nullable String title,
+			@Nullable String description,
 			Long price,
 			@JsonProperty("update_stat_date") Long updateStatDate,
 			@JsonProperty("refreshed_date") Long refreshedDate,
 			@JsonProperty("view_count") Long viewCount,
 			@JsonProperty("is_sticky") Long isSticky,
-			@JsonProperty("item_origin") String itemOrigin,
+			@JsonProperty("item_origin") @Nullable String itemOrigin,
 			@JsonProperty("extended_guarantee") Long extendedGuarantee,
 			Long nsb,
 			@JsonProperty("allow_ask_discount") Long allowAskDiscount,
-			@JsonProperty("title_en") String titleEn,
-			@JsonProperty("description_en") String descriptionEn,
-			@JsonProperty("item_domain") String itemDomain,
-			@JsonProperty("resale_item_origin") String resaleItemOrigin,
+			@JsonProperty("title_en") @Nullable String titleEn,
+			@JsonProperty("description_en") @Nullable String descriptionEn,
+			@JsonProperty("item_domain") @Nullable String itemDomain,
+			@JsonProperty("resale_item_origin") @Nullable String resaleItemOrigin,
 			Long isIgnored,
 			Boolean guarantee,
 			Boolean canViewLoginData,
@@ -2117,28 +2118,28 @@ public final class Types {
 			Boolean canDeleteItem,
 			Boolean canStickItem,
 			Boolean canUnstickItem,
-			ItemFromListModelBumpSettings bumpSettings,
+			@Nullable ItemFromListModelBumpSettings bumpSettings,
 			Boolean canBumpItem,
 			Boolean canBuyItem,
 			@JsonProperty("rub_price") Long rubPrice,
-			@JsonProperty("price_currency") String priceCurrency,
+			@JsonProperty("price_currency") @Nullable String priceCurrency,
 			Boolean canValidateAccount,
 			Boolean canResellItemAfterPurchase,
 			Boolean canViewAccountLink,
-			String itemOriginPhrase,
-			List<String> tags,
-			@JsonProperty("note_text") String noteText,
-			@JsonProperty("description_html") String descriptionHtml,
-			@JsonProperty("description_html_en") String descriptionHtmlEn,
-			ItemFromListModelSeller seller
+			@Nullable String itemOriginPhrase,
+			@Nullable List<String> tags,
+			@JsonProperty("note_text") @Nullable String noteText,
+			@JsonProperty("description_html") @Nullable String descriptionHtml,
+			@JsonProperty("description_html_en") @Nullable String descriptionHtmlEn,
+			@Nullable ItemFromListModelSeller seller
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ItemFromListModelBumpSettings(
 			Boolean canBumpItem,
 			Boolean canBumpItemGlobally,
-			String shortErrorPhrase,
-			String errorPhrase
+			@Nullable String shortErrorPhrase,
+			@Nullable String errorPhrase
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
@@ -2146,8 +2147,8 @@ public final class Types {
 			@JsonProperty("user_id") Long userId,
 			@JsonProperty("sold_items_count") Long soldItemsCount,
 			@JsonProperty("active_item_count") Long activeItemCount,
-			@JsonProperty("restore_data") String restoreData,
-			String username,
+			@JsonProperty("restore_data") @Nullable String restoreData,
+			@Nullable String username,
 			@JsonProperty("avatar_date") Long avatarDate,
 			@JsonProperty("is_banned") Long isBanned,
 			@JsonProperty("display_style_group_id") Long displayStyleGroupId,
@@ -4461,10 +4462,10 @@ public final class Types {
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryWotResponseItemsWotTanks00000(
 			@JsonProperty("tank_id") Long tankId,
-			String name,
+			@Nullable String name,
 			@JsonProperty("is_premium") Long isPremium,
-			@JsonProperty("image_url") String imageUrl,
-			@JsonProperty("short_name") String shortName,
+			@JsonProperty("image_url") @Nullable String imageUrl,
+			@JsonProperty("short_name") @Nullable String shortName,
 			Long tier
 		) {}
 	
@@ -8750,10 +8751,10 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryParamsResponse(
-			CategoryParamsResponseCategory category,
-			List<CategoryParamsResponseParams> params,
-			@JsonProperty("base_params") CategoryParamsResponseBaseParams baseParams,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable CategoryParamsResponseCategory category,
+			@Nullable List<CategoryParamsResponseParams> params,
+			@JsonProperty("base_params") @Nullable CategoryParamsResponseBaseParams baseParams,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
@@ -8817,8 +8818,8 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryGamesResponse(
-			List<CategoryGamesResponseGames> games,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable List<CategoryGamesResponseGames> games,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
@@ -9220,7 +9221,7 @@ public final class Types {
 			String username,
 			@JsonProperty("display_style_group_id") Long displayStyleGroupId,
 			@JsonProperty("is_banned") Long isBanned,
-			@JsonProperty("uniq_username_css") String uniqUsernameCss
+			@JsonProperty("uniq_username_css") @Nullable String uniqUsernameCss
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
@@ -9391,7 +9392,7 @@ public final class Types {
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingBulkGetResponseItems(
-			@JsonProperty("0") ItemModel _0
+			@JsonProperty("0") @Nullable ItemModel _0
 		) {}
 
 		public record ManagingSteamInventoryValueParams(
@@ -9406,10 +9407,10 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingSteamInventoryValueResponse(
-			String query,
-			ManagingSteamInventoryValueResponseData data,
+			@Nullable String query,
+			@Nullable ManagingSteamInventoryValueResponseData data,
 			Long appId,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
@@ -9437,7 +9438,7 @@ public final class Types {
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingSteamInventoryValueResponseDataItems(
-			@JsonProperty("0") ManagingSteamInventoryValueResponseDataItems0 _0
+			@JsonProperty("0") @Nullable ManagingSteamInventoryValueResponseDataItems0 _0
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
@@ -9468,10 +9469,10 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingSteamValueResponse(
-			String query,
-			ManagingSteamValueResponseData data,
+			@Nullable String query,
+			@Nullable ManagingSteamValueResponseData data,
 			Long appId,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
@@ -9499,7 +9500,7 @@ public final class Types {
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingSteamValueResponseDataItems(
-			@JsonProperty("0") ManagingSteamValueResponseDataItems0 _0
+			@JsonProperty("0") @Nullable ManagingSteamValueResponseDataItems0 _0
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
@@ -9551,9 +9552,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingEditResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
@@ -9773,22 +9774,22 @@ public final class Types {
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingTelegramCodeResponseCodes(
-			String code,
+			@Nullable String code,
 			Long date
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingTelegramResetAuthResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingRefuseGuaranteeResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record ManagingDeclineVideoRecordingBody(
@@ -9798,9 +9799,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingDeclineVideoRecordingResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
@@ -9819,8 +9820,8 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingChangePasswordResponse(
-			String status,
-			String message,
+			@Nullable String status,
+			@Nullable String message,
 			@JsonProperty("new_password") String newPassword
 		) {}
 
@@ -9935,23 +9936,23 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingUnfavoriteResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingStickResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingUnstickResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record ManagingTransferBody(
@@ -9962,9 +9963,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingTransferResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 	}
@@ -10115,9 +10116,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfileEditResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 	}
@@ -10554,7 +10555,7 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PurchasingConfirmResponse(
-			String status,
+			@Nullable String status,
 			PurchasingConfirmResponseItem item,
 			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
@@ -10587,16 +10588,16 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PurchasingDiscountRequestResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PurchasingDiscountCancelResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 	}
@@ -10660,9 +10661,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CustomDiscountsDeleteResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 	}
@@ -10951,9 +10952,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PublishingExternalResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 	}
@@ -11984,9 +11985,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsPayoutResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 	}
@@ -12159,9 +12160,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProxyAddResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record ProxyDeleteBody(
@@ -12175,9 +12176,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProxyDeleteResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 	}
@@ -12199,9 +12200,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ImapCreateResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record ImapDeleteBody(
@@ -12211,9 +12212,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ImapDeleteResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 	}
@@ -12228,13 +12229,13 @@ public final class Types {
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record BatchBatchResponse(
 			BatchBatchResponseJobs jobs,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record BatchBatchResponseJobsJobId(
-			@JsonProperty("_job_result") String JobResult,
-			@JsonProperty("_job_error") String JobError
+			@JsonProperty("_job_result") @Nullable String JobResult,
+			@JsonProperty("_job_error") @Nullable String JobError
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.fasterxml.jackson.databind.JsonNode;
+import com.lolzteam.api.runtime.Nullable;
 import java.util.List;
 import java.util.Map;
 
@@ -934,7 +935,7 @@ public final class Types {
 			String description,
 			String position,
 			@JsonProperty("is_required") boolean isRequired,
-			String value,
+			@Nullable String value,
 			@JsonProperty("is_multi_choice") boolean isMultiChoice,
 			List<Resp_UserModelFieldsChoices> choices,
 			List<JsonNode> values
@@ -1544,8 +1545,8 @@ public final class Types {
 			@JsonProperty("access_token") String accessToken,
 			@JsonProperty("token_type") String tokenType,
 			@JsonProperty("expires_in") long expiresIn,
-			@JsonProperty("refresh_token") String refreshToken,
-			String scope
+			@JsonProperty("refresh_token") @Nullable String refreshToken,
+			@Nullable String scope
 		) {}
 
 	}
@@ -1879,16 +1880,16 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ForumsFollowResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ForumsUnfollowResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record ForumsFollowedParams(
@@ -2013,9 +2014,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ForumsEditFeedOptionsResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 	}
@@ -2411,9 +2412,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsDeleteResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record ThreadsMoveBody(
@@ -2431,9 +2432,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsMoveResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
@@ -2452,16 +2453,16 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsStarResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsUnstarResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
@@ -2493,16 +2494,16 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsFollowResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsUnfollowResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record ThreadsFollowedParams(
@@ -2766,9 +2767,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsPollVoteResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record ThreadsUnreadParams(
@@ -3088,9 +3089,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsFinishResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 	}
@@ -3168,9 +3169,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PostsDeleteResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record PostsLikesParams(
@@ -3196,16 +3197,16 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PostsLikeResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PostsUnlikeResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
@@ -3221,9 +3222,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PostsReportResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record PostsCommentsGetParams(
@@ -3361,9 +3362,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PostsCommentsDeleteResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record PostsCommentsReportBody(
@@ -3374,9 +3375,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PostsCommentsReportResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 	}
@@ -3494,9 +3495,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersEditResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record UsersClaimsParams(
@@ -3570,9 +3571,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersAvatarDeleteResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record UsersAvatarCropBody(
@@ -3612,9 +3613,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersBackgroundDeleteResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record UsersBackgroundCropBody(
@@ -3721,16 +3722,16 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersFollowResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersUnfollowResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record UsersFollowingsParams(
@@ -3967,9 +3968,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersIgnoreResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record UsersIgnoreEditParams(
@@ -3984,16 +3985,16 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersIgnoreEditResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersUnignoreResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record UsersContentsParams(
@@ -4163,9 +4164,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersSaCancelResetResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 	}
@@ -4277,9 +4278,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfilePostsDeleteResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
@@ -4295,9 +4296,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfilePostsReportResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record ProfilePostsCreateBody(
@@ -4356,16 +4357,16 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfilePostsStickResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfilePostsUnstickResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
@@ -4382,16 +4383,16 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfilePostsLikeResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfilePostsUnlikeResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record ProfilePostsCommentsListParams(
@@ -4548,9 +4549,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfilePostsCommentsDeleteResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
@@ -4566,9 +4567,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfilePostsCommentsReportResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 	}
@@ -4664,9 +4665,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ConversationsDeleteResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record ConversationsStartBody(
@@ -4687,9 +4688,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ConversationsSaveResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
@@ -4776,9 +4777,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ConversationsMessagesDeleteResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record ConversationsInviteBody(
@@ -4788,9 +4789,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ConversationsInviteResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record ConversationsKickBody(
@@ -4800,16 +4801,16 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ConversationsKickResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ConversationsReadResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
@@ -4821,16 +4822,16 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ConversationsMessagesStickResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ConversationsMessagesUnstickResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
@@ -4913,9 +4914,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record NotificationsReadResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 	}
@@ -6351,9 +6352,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ChatboxDeleteMessageResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record ChatboxOnlineParams(
@@ -6435,9 +6436,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ChatboxReportResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record ChatboxGetLeaderboardParams(
@@ -6551,9 +6552,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ChatboxPostIgnoreResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record ChatboxDeleteIgnoreBody(
@@ -6563,9 +6564,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ChatboxDeleteIgnoreResponse(
-			String status,
-			String message,
-			@JsonProperty("system_info") Resp_SystemInfo systemInfo
+			@Nullable String status,
+			@Nullable String message,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 	}

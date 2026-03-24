@@ -577,6 +577,9 @@ final class Emitter {
 			var annotation = Naming.needsJsonProperty(jsonName)
 				? "\t\t@JsonProperty(\"" + jsonName + "\") "
 				: "\t\t";
+			if (!required && needsNullableAnnotation(javaType)) {
+				annotation = annotation + "@Nullable ";
+			}
 			props.add(annotation + javaType + " " + javaName);
 		}
 		sb.append(String.join(",\n", props)).append("\n");
@@ -594,6 +597,21 @@ final class Emitter {
 			case "boolean" -> "Boolean";
 			default -> type;
 		};
+	}
+
+	private static final Set<String> BOXED_PRIMITIVES = Set.of("Long", "Double", "Boolean");
+
+	/**
+	 * Whether an optional reference-type field needs a @Nullable annotation.
+	 * Boxed primitives already signal optionality via boxing (long → Long).
+	 * Primitives are never optional. Reference types need @Nullable.
+	 */
+	private static boolean needsNullableAnnotation(String javaType) {
+		if (BOXED_PRIMITIVES.contains(javaType)) return false;
+		if ("long".equals(javaType) || "double".equals(javaType) || "boolean".equals(javaType)) {
+			return false;
+		}
+		return true;
 	}
 
 	/**
@@ -698,6 +716,9 @@ final class Emitter {
 			var annotation = Naming.needsJsonProperty(field.jsonName())
 				? "\t\t@JsonProperty(\"" + field.jsonName() + "\") "
 				: "\t\t";
+			if (!field.required() && needsNullableAnnotation(field.javaType())) {
+				annotation = annotation + "@Nullable ";
+			}
 			props.add(annotation + field.javaType() + " " + field.javaName());
 		}
 		sb.append(String.join(",\n", props)).append("\n");
@@ -766,6 +787,9 @@ final class Emitter {
 			var annotation = Naming.needsJsonProperty(jsonName)
 				? "\t\t@JsonProperty(\"" + jsonName + "\") "
 				: "\t\t";
+			if (!required && needsNullableAnnotation(javaType)) {
+				annotation = annotation + "@Nullable ";
+			}
 			props.add(annotation + javaType + " " + javaName);
 		}
 		sb.append(String.join(",\n", props)).append("\n");
@@ -813,6 +837,7 @@ final class Emitter {
 		sb.append("import com.fasterxml.jackson.annotation.JsonTypeName;\n");
 		sb.append("import com.fasterxml.jackson.annotation.JsonValue;\n");
 		sb.append("import com.fasterxml.jackson.databind.JsonNode;\n");
+		sb.append("import com.lolzteam.api.runtime.Nullable;\n");
 		sb.append("import java.util.List;\n");
 		sb.append("import java.util.Map;\n\n");
 
