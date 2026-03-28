@@ -19,6 +19,8 @@ record MethodDefinition(
 	String bodyEncoding,
 	JsonNode rawResponseSchema,
 	DiscriminatedUnion discriminatedUnion,
-	boolean htmlResponse
+	boolean htmlResponse,
+	String summary,
+	String description
 ) {
 }

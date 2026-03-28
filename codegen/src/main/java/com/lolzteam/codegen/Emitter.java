@@ -96,9 +96,7 @@ final class Emitter {
 			var annotation = Naming.needsJsonProperty(param.name())
 				? "\t\t@JsonProperty(\"" + param.name() + "\") "
 				: "\t\t";
-			var doc = param.defaultValue() != null
-				? "\t\t/** Default: " + param.defaultValue() + " */\n"
-				: "";
+			var doc = fieldDoc(param.description(), param.defaultValue(), "\t\t");
 			props.add(doc + annotation + javaType + " " + fieldName);
 		}
 		sb.append(String.join(",\n", props)).append("\n");
@@ -191,9 +189,7 @@ final class Emitter {
 			} else {
 				annotation = "\t\t";
 			}
-			var doc = prop.defaultValue() != null
-				? "\t\t/** Default: " + prop.defaultValue() + " */\n"
-				: "";
+			var doc = fieldDoc(prop.description(), prop.defaultValue(), "\t\t");
 			props.add(doc + annotation + javaType + " " + fieldName);
 		}
 		sb.append(String.join(",\n", props)).append("\n");
@@ -306,9 +302,7 @@ final class Emitter {
 				if (!prop.required()) {
 					javaType = boxType(javaType);
 				}
-				var doc = prop.defaultValue() != null
-					? "\t\t/** Default: " + prop.defaultValue() + " */\n"
-					: "";
+				var doc = fieldDoc(prop.description(), prop.defaultValue(), "\t\t");
 				props.add(doc + annotation + javaType + " " + fieldName);
 			}
 			sb.append(String.join(",\n", props)).append("\n");
@@ -429,6 +423,21 @@ final class Emitter {
 		return s.replace("\\", "\\\\").replace("\"", "\\\"");
 	}
 
+	/** Escape HTML special characters for Javadoc. */
+	private static String escapeJavadoc(String s) {
+		return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+			.replace("/*", "/ *").replace("*/", "* /");
+	}
+
+	/** Build a Javadoc field comment combining description and default value. */
+	private static String fieldDoc(String description, String defaultValue, String indent) {
+		if (description == null && defaultValue == null) return "";
+		var parts = new ArrayList<String>();
+		if (description != null) parts.add(escapeJavadoc(description.replaceAll("\\s*\\n\\s*", " ")));
+		if (defaultValue != null) parts.add("Default: " + escapeJavadoc(defaultValue));
+		return indent + "/** " + String.join(" ", parts) + " */\n";
+	}
+
 	// ─── Response Record Generation ──────────────────────────────────
 
 	/**
@@ -446,14 +455,11 @@ final class Emitter {
 	) {
 		if (propSchema == null) return "JsonNode";
 
-		// Direct $ref to component schema
+		// Direct $ref to component schema → JsonNode (API may return [] where object expected)
 		if (propSchema.isObject() && propSchema.has("$ref")) {
 			var ref = propSchema.get("$ref").asText();
 			if (ref.startsWith("#/components/schemas/")) {
-				var schemaName = ref.substring("#/components/schemas/".length());
-				if (componentSchemaNames.contains(schemaName)) {
-					return schemaName;
-				}
+				return "JsonNode";
 			}
 		}
 
@@ -507,16 +513,21 @@ final class Emitter {
 
 		if ("object".equals(type) || propSchema.has("properties")) {
 			var props = propSchema.get("properties");
-			if (props != null && props.isObject() && !props.isEmpty()
-				&& parentTypeName != null && propName != null && nestedRecords != null) {
-				// Generate a nested record for inline objects with properties
-				var nestedName = parentTypeName
-					+ Naming.capitalizeFirst(Naming.snakeToCamel(Naming.sanitizeName(propName)));
-				var nestedRecord = buildNestedRecord(
-					nestedName, propSchema, componentSchemaNames, rawSpec, nestedRecords
-				);
-				nestedRecords.add(nestedRecord);
-				return nestedName;
+			if (props != null && props.isObject() && !props.isEmpty()) {
+				// Objects with all-numeric property keys → JsonNode (API may return array or mixed values)
+				if (Transforms.hasAllNumericKeys(props)) {
+					return "JsonNode";
+				}
+				if (parentTypeName != null && propName != null && nestedRecords != null) {
+					// Generate a nested record for inline objects with properties
+					var nestedName = parentTypeName
+						+ Naming.capitalizeFirst(Naming.snakeToCamel(Naming.sanitizeName(propName)));
+					var nestedRecord = buildNestedRecord(
+						nestedName, propSchema, componentSchemaNames, rawSpec, nestedRecords
+					);
+					nestedRecords.add(nestedRecord);
+					return nestedName;
+				}
 			}
 			return "JsonNode";
 		}
@@ -524,9 +535,10 @@ final class Emitter {
 		if (type != null) {
 			return switch (type) {
 				case "string" -> "String";
-				case "integer" -> "long";
+				case "integer" -> "double";
 				case "number" -> "double";
-				case "boolean" -> "boolean";
+				// boolean → JsonNode (API may return object where boolean expected, e.g. guarantee)
+				case "boolean" -> "JsonNode";
 				default -> "JsonNode";
 			};
 		}
@@ -570,14 +582,13 @@ final class Emitter {
 				propSchema, componentSchemaNames, rawSpec,
 				recordName, jsonName, nestedRecords
 			);
-			if (!required) {
-				javaType = boxType(javaType);
-			}
+			// Always box primitives to tolerate null/missing values from the API
+			javaType = boxType(javaType);
 
 			var annotation = Naming.needsJsonProperty(jsonName)
 				? "\t\t@JsonProperty(\"" + jsonName + "\") "
 				: "\t\t";
-			if (!required && needsNullableAnnotation(javaType)) {
+			if (needsNullableAnnotation(javaType)) {
 				annotation = annotation + "@Nullable ";
 			}
 			props.add(annotation + javaType + " " + javaName);
@@ -673,12 +684,10 @@ final class Emitter {
 				parentTypeName, jsonName, nestedRecords
 			);
 
-			// For optional primitive fields, use boxed types
-			if (!required) {
-				javaType = boxType(javaType);
-			}
+			// Always box primitives to tolerate null/missing values from the API
+			javaType = boxType(javaType);
 
-			fields.add(new ResponseField(jsonName, javaName, javaType, required));
+			fields.add(new ResponseField(jsonName, javaName, javaType, false));
 		}
 
 		return new ExtractedResponseFields(fields, nestedRecords);
@@ -780,14 +789,13 @@ final class Emitter {
 				propSchema, componentSchemaNames, rawSpec,
 				schemaName, jsonName, nestedRecords
 			);
-			if (!required) {
-				javaType = boxType(javaType);
-			}
+			// Always box primitives to tolerate null/missing values from the API
+			javaType = boxType(javaType);
 
 			var annotation = Naming.needsJsonProperty(jsonName)
 				? "\t\t@JsonProperty(\"" + jsonName + "\") "
 				: "\t\t";
-			if (!required && needsNullableAnnotation(javaType)) {
+			if (needsNullableAnnotation(javaType)) {
 				annotation = annotation + "@Nullable ";
 			}
 			props.add(annotation + javaType + " " + javaName);
@@ -979,6 +987,40 @@ final class Emitter {
 			: (isAsync ? "CompletableFuture<" + responseTypeName + ">" : responseTypeName);
 		var methodSuffix = isAsync ? "Async" : "";
 		var httpMethod = isAsync ? "requestAsync" : "request";
+
+		// Javadoc
+		if (method.summary() != null || method.description() != null) {
+			sb.append("\t/**\n");
+			if (method.summary() != null) {
+				sb.append("\t * ").append(escapeJavadoc(method.summary())).append("\n");
+			}
+			if (method.description() != null) {
+				if (method.summary() != null) sb.append("\t *\n");
+				sb.append("\t * <p>");
+				var descLines = escapeJavadoc(method.description()).split("\n");
+				for (int li = 0; li < descLines.length; li++) {
+					if (li > 0) sb.append("\n\t * ");
+					sb.append(descLines[li]);
+				}
+				sb.append("</p>\n");
+			}
+			// @param tags for path params
+			for (var param : method.params().pathParams()) {
+				if (param.description() != null) {
+					sb.append("\t * @param ").append(Naming.snakeToCamel(param.name()))
+						.append(" ").append(escapeJavadoc(param.description())).append("\n");
+				}
+			}
+			// @param body
+			if (hasBodyType) {
+				sb.append("\t * @param body Request body.\n");
+			}
+			// @param params
+			if (hasQueryType) {
+				sb.append("\t * @param params Query parameters.\n");
+			}
+			sb.append("\t */\n");
+		}
 
 		sb.append("\tpublic ").append(returnType).append(" ").append(method.methodName())
 			.append(methodSuffix).append("(").append(argStr).append(") {\n");

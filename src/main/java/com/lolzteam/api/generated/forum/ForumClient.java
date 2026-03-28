@@ -24,6 +24,18 @@ public class ForumClient implements Closeable {
 			this.mapper = http.objectMapper();
 		}
 	
+		/**
+		 * Get Access Token
+		 *
+		 * <p>Obtain an access token using various grant types.
+		 * 
+		 * Supports the following grant types:
+		 * - Client Credentials
+		 * - Authorization Code
+		 * - Refresh Token
+		 * - Password</p>
+		 * @param body Request body.
+		 */
 		public Types.OAuthApiTypes.OAuthTokenResponse token(Types.OAuthApiTypes.OAuthTokenBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -36,6 +48,18 @@ public class ForumClient implements Closeable {
 			)), Types.OAuthApiTypes.OAuthTokenResponse.class);
 		}
 	
+		/**
+		 * Get Access Token
+		 *
+		 * <p>Obtain an access token using various grant types.
+		 * 
+		 * Supports the following grant types:
+		 * - Client Credentials
+		 * - Authorization Code
+		 * - Refresh Token
+		 * - Password</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.OAuthApiTypes.OAuthTokenResponse> tokenAsync(Types.OAuthApiTypes.OAuthTokenBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -59,6 +83,12 @@ public class ForumClient implements Closeable {
 			this.mapper = http.objectMapper();
 		}
 	
+		/**
+		 * Get CSS
+		 *
+		 * <p>Gets css rulesets for requested selectors.</p>
+		 * @param params Query parameters.
+		 */
 		public Types.AssetsApiTypes.AssetsCssResponse css(Types.AssetsApiTypes.AssetsCssParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -75,6 +105,12 @@ public class ForumClient implements Closeable {
 			return css(null);
 		}
 	
+		/**
+		 * Get CSS
+		 *
+		 * <p>Gets css rulesets for requested selectors.</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.AssetsApiTypes.AssetsCssResponse> cssAsync(Types.AssetsApiTypes.AssetsCssParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -102,6 +138,15 @@ public class ForumClient implements Closeable {
 			this.mapper = http.objectMapper();
 		}
 	
+		/**
+		 * Get Categories
+		 *
+		 * <p>List of all categories in the system.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param params Query parameters.
+		 */
 		public Types.CategoriesApiTypes.CategoriesListResponse list(Types.CategoriesApiTypes.CategoriesListParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -118,6 +163,15 @@ public class ForumClient implements Closeable {
 			return list(null);
 		}
 	
+		/**
+		 * Get Categories
+		 *
+		 * <p>List of all categories in the system.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.CategoriesApiTypes.CategoriesListResponse> listAsync(Types.CategoriesApiTypes.CategoriesListParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -134,6 +188,15 @@ public class ForumClient implements Closeable {
 			return listAsync(null);
 		}
 	
+		/**
+		 * Get Category
+		 *
+		 * <p>Detail information of a category.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param categoryId Id of category.
+		 */
 		public Types.CategoriesApiTypes.CategoriesGetResponse get(long categoryId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -146,6 +209,15 @@ public class ForumClient implements Closeable {
 			)), Types.CategoriesApiTypes.CategoriesGetResponse.class);
 		}
 	
+		/**
+		 * Get Category
+		 *
+		 * <p>Detail information of a category.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param categoryId Id of category.
+		 */
 		public CompletableFuture<Types.CategoriesApiTypes.CategoriesGetResponse> getAsync(long categoryId) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -169,6 +241,15 @@ public class ForumClient implements Closeable {
 			this.mapper = http.objectMapper();
 		}
 	
+		/**
+		 * Get Forums
+		 *
+		 * <p>List of all forums in the system.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param params Query parameters.
+		 */
 		public Types.ForumsApiTypes.ForumsListResponse list(Types.ForumsApiTypes.ForumsListParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -185,6 +266,15 @@ public class ForumClient implements Closeable {
 			return list(null);
 		}
 	
+		/**
+		 * Get Forums
+		 *
+		 * <p>List of all forums in the system.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.ForumsApiTypes.ForumsListResponse> listAsync(Types.ForumsApiTypes.ForumsListParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -201,6 +291,14 @@ public class ForumClient implements Closeable {
 			return listAsync(null);
 		}
 	
+		/**
+		 * Get Forums Tree
+		 *
+		 * <p>Returns grouped forums.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 */
 		public Types.ForumsApiTypes.ForumsGroupedResponse grouped() {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -213,6 +311,14 @@ public class ForumClient implements Closeable {
 			)), Types.ForumsApiTypes.ForumsGroupedResponse.class);
 		}
 	
+		/**
+		 * Get Forums Tree
+		 *
+		 * <p>Returns grouped forums.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 */
 		public CompletableFuture<Types.ForumsApiTypes.ForumsGroupedResponse> groupedAsync() {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -225,6 +331,15 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ForumsApiTypes.ForumsGroupedResponse.class));
 		}
 	
+		/**
+		 * Get Forum
+		 *
+		 * <p>Detail information of a forum.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param forumId Id of forum.
+		 */
 		public Types.ForumsApiTypes.ForumsGetResponse get(long forumId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -237,6 +352,15 @@ public class ForumClient implements Closeable {
 			)), Types.ForumsApiTypes.ForumsGetResponse.class);
 		}
 	
+		/**
+		 * Get Forum
+		 *
+		 * <p>Detail information of a forum.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param forumId Id of forum.
+		 */
 		public CompletableFuture<Types.ForumsApiTypes.ForumsGetResponse> getAsync(long forumId) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -249,6 +373,15 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ForumsApiTypes.ForumsGetResponse.class));
 		}
 	
+		/**
+		 * Get Followers
+		 *
+		 * <p>List of a forum's followers. For privacy reason, only the current user will be included in the list (if the user follows the specified forum).
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param forumId Id of forum.
+		 */
 		public Types.ForumsApiTypes.ForumsFollowersResponse followers(long forumId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -261,6 +394,15 @@ public class ForumClient implements Closeable {
 			)), Types.ForumsApiTypes.ForumsFollowersResponse.class);
 		}
 	
+		/**
+		 * Get Followers
+		 *
+		 * <p>List of a forum's followers. For privacy reason, only the current user will be included in the list (if the user follows the specified forum).
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param forumId Id of forum.
+		 */
 		public CompletableFuture<Types.ForumsApiTypes.ForumsFollowersResponse> followersAsync(long forumId) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -273,6 +415,16 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ForumsApiTypes.ForumsFollowersResponse.class));
 		}
 	
+		/**
+		 * Follow Forum
+		 *
+		 * <p>Follow a forum.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param forumId Id of forum.
+		 * @param body Request body.
+		 */
 		public Types.ForumsApiTypes.ForumsFollowResponse follow(long forumId, Types.ForumsApiTypes.ForumsFollowBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -289,6 +441,16 @@ public class ForumClient implements Closeable {
 			return follow(forumId, null);
 		}
 	
+		/**
+		 * Follow Forum
+		 *
+		 * <p>Follow a forum.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param forumId Id of forum.
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ForumsApiTypes.ForumsFollowResponse> followAsync(long forumId, Types.ForumsApiTypes.ForumsFollowBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -305,6 +467,15 @@ public class ForumClient implements Closeable {
 			return followAsync(forumId, null);
 		}
 	
+		/**
+		 * Unfollow Forum
+		 *
+		 * <p>Unfollow a forum.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param forumId Id of forum.
+		 */
 		public Types.ForumsApiTypes.ForumsUnfollowResponse unfollow(long forumId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"DELETE",
@@ -317,6 +488,15 @@ public class ForumClient implements Closeable {
 			)), Types.ForumsApiTypes.ForumsUnfollowResponse.class);
 		}
 	
+		/**
+		 * Unfollow Forum
+		 *
+		 * <p>Unfollow a forum.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param forumId Id of forum.
+		 */
 		public CompletableFuture<Types.ForumsApiTypes.ForumsUnfollowResponse> unfollowAsync(long forumId) {
 			return http.requestAsync(new RequestOptions(
 				"DELETE",
@@ -329,6 +509,15 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ForumsApiTypes.ForumsUnfollowResponse.class));
 		}
 	
+		/**
+		 * Get Followed Forums
+		 *
+		 * <p>List of followed forums by current user.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param params Query parameters.
+		 */
 		public Types.ForumsApiTypes.ForumsFollowedResponse followed(Types.ForumsApiTypes.ForumsFollowedParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -345,6 +534,15 @@ public class ForumClient implements Closeable {
 			return followed(null);
 		}
 	
+		/**
+		 * Get Followed Forums
+		 *
+		 * <p>List of followed forums by current user.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.ForumsApiTypes.ForumsFollowedResponse> followedAsync(Types.ForumsApiTypes.ForumsFollowedParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -361,6 +559,14 @@ public class ForumClient implements Closeable {
 			return followedAsync(null);
 		}
 	
+		/**
+		 * Get Feed Options
+		 *
+		 * <p>Returns available options for the forums feed.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 */
 		public Types.ForumsApiTypes.ForumsGetFeedOptionsResponse getFeedOptions() {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -373,6 +579,14 @@ public class ForumClient implements Closeable {
 			)), Types.ForumsApiTypes.ForumsGetFeedOptionsResponse.class);
 		}
 	
+		/**
+		 * Get Feed Options
+		 *
+		 * <p>Returns available options for the forums feed.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 */
 		public CompletableFuture<Types.ForumsApiTypes.ForumsGetFeedOptionsResponse> getFeedOptionsAsync() {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -385,6 +599,15 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ForumsApiTypes.ForumsGetFeedOptionsResponse.class));
 		}
 	
+		/**
+		 * Edit Feed Options
+		 *
+		 * <p>Edit feed options.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param body Request body.
+		 */
 		public Types.ForumsApiTypes.ForumsEditFeedOptionsResponse editFeedOptions(Types.ForumsApiTypes.ForumsEditFeedOptionsBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"PUT",
@@ -401,6 +624,15 @@ public class ForumClient implements Closeable {
 			return editFeedOptions(null);
 		}
 	
+		/**
+		 * Edit Feed Options
+		 *
+		 * <p>Edit feed options.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ForumsApiTypes.ForumsEditFeedOptionsResponse> editFeedOptionsAsync(Types.ForumsApiTypes.ForumsEditFeedOptionsBody body) {
 			return http.requestAsync(new RequestOptions(
 				"PUT",
@@ -428,6 +660,14 @@ public class ForumClient implements Closeable {
 			this.mapper = http.objectMapper();
 		}
 	
+		/**
+		 * Get Links Forum
+		 *
+		 * <p>List of all link forums.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 */
 		public Types.LinksApiTypes.LinksListResponse list() {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -440,6 +680,14 @@ public class ForumClient implements Closeable {
 			)), Types.LinksApiTypes.LinksListResponse.class);
 		}
 	
+		/**
+		 * Get Links Forum
+		 *
+		 * <p>List of all link forums.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 */
 		public CompletableFuture<Types.LinksApiTypes.LinksListResponse> listAsync() {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -452,6 +700,15 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.LinksApiTypes.LinksListResponse.class));
 		}
 	
+		/**
+		 * Get Link Forum
+		 *
+		 * <p>Detail information of a link forum.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param linkId Id of link forum.
+		 */
 		public Types.LinksApiTypes.LinksGetResponse get(long linkId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -464,6 +721,15 @@ public class ForumClient implements Closeable {
 			)), Types.LinksApiTypes.LinksGetResponse.class);
 		}
 	
+		/**
+		 * Get Link Forum
+		 *
+		 * <p>Detail information of a link forum.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param linkId Id of link forum.
+		 */
 		public CompletableFuture<Types.LinksApiTypes.LinksGetResponse> getAsync(long linkId) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -487,6 +753,15 @@ public class ForumClient implements Closeable {
 			this.mapper = http.objectMapper();
 		}
 	
+		/**
+		 * Get Pages
+		 *
+		 * <p>List of all pages in the system.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param params Query parameters.
+		 */
 		public Types.PagesApiTypes.PagesListResponse list(Types.PagesApiTypes.PagesListParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -503,6 +778,15 @@ public class ForumClient implements Closeable {
 			return list(null);
 		}
 	
+		/**
+		 * Get Pages
+		 *
+		 * <p>List of all pages in the system.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.PagesApiTypes.PagesListResponse> listAsync(Types.PagesApiTypes.PagesListParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -519,6 +803,15 @@ public class ForumClient implements Closeable {
 			return listAsync(null);
 		}
 	
+		/**
+		 * Get Page
+		 *
+		 * <p>Detail information of a page.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param pageId Id of page.
+		 */
 		public Types.PagesApiTypes.PagesGetResponse get(long pageId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -531,6 +824,15 @@ public class ForumClient implements Closeable {
 			)), Types.PagesApiTypes.PagesGetResponse.class);
 		}
 	
+		/**
+		 * Get Page
+		 *
+		 * <p>Detail information of a page.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param pageId Id of page.
+		 */
 		public CompletableFuture<Types.PagesApiTypes.PagesGetResponse> getAsync(long pageId) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -554,6 +856,15 @@ public class ForumClient implements Closeable {
 			this.mapper = http.objectMapper();
 		}
 	
+		/**
+		 * Get Navigation
+		 *
+		 * <p>List of navigation elements within the system.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param params Query parameters.
+		 */
 		public Types.NavigationApiTypes.NavigationListResponse list(Types.NavigationApiTypes.NavigationListParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -570,6 +881,15 @@ public class ForumClient implements Closeable {
 			return list(null);
 		}
 	
+		/**
+		 * Get Navigation
+		 *
+		 * <p>List of navigation elements within the system.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.NavigationApiTypes.NavigationListResponse> listAsync(Types.NavigationApiTypes.NavigationListParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -597,6 +917,15 @@ public class ForumClient implements Closeable {
 			this.mapper = http.objectMapper();
 		}
 	
+		/**
+		 * Get Threads
+		 *
+		 * <p>List of threads in a forum (with pagination).
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param params Query parameters.
+		 */
 		public Types.ThreadsApiTypes.ThreadsListResponse list(Types.ThreadsApiTypes.ThreadsListParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -613,6 +942,15 @@ public class ForumClient implements Closeable {
 			return list(null);
 		}
 	
+		/**
+		 * Get Threads
+		 *
+		 * <p>List of threads in a forum (with pagination).
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.ThreadsApiTypes.ThreadsListResponse> listAsync(Types.ThreadsApiTypes.ThreadsListParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -629,6 +967,15 @@ public class ForumClient implements Closeable {
 			return listAsync(null);
 		}
 	
+		/**
+		 * Create Thread
+		 *
+		 * <p>Create a new thread.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param body Request body.
+		 */
 		public Types.ThreadsApiTypes.ThreadsCreateResponse create(Types.ThreadsApiTypes.ThreadsCreateBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -645,6 +992,15 @@ public class ForumClient implements Closeable {
 			return create(null);
 		}
 	
+		/**
+		 * Create Thread
+		 *
+		 * <p>Create a new thread.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ThreadsApiTypes.ThreadsCreateResponse> createAsync(Types.ThreadsApiTypes.ThreadsCreateBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -661,6 +1017,15 @@ public class ForumClient implements Closeable {
 			return createAsync(null);
 		}
 	
+		/**
+		 * Create Contest
+		 *
+		 * <p>Create a new contest.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param body Request body.
+		 */
 		public Types.ThreadsApiTypes.ThreadsCreateContestResponse createContest(Types.ThreadsApiTypes.ThreadsCreateContestBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -673,6 +1038,15 @@ public class ForumClient implements Closeable {
 			)), Types.ThreadsApiTypes.ThreadsCreateContestResponse.class);
 		}
 	
+		/**
+		 * Create Contest
+		 *
+		 * <p>Create a new contest.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ThreadsApiTypes.ThreadsCreateContestResponse> createContestAsync(Types.ThreadsApiTypes.ThreadsCreateContestBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -685,6 +1059,15 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ThreadsApiTypes.ThreadsCreateContestResponse.class));
 		}
 	
+		/**
+		 * Create Claim
+		 *
+		 * <p>Create a Claim.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param body Request body.
+		 */
 		public Types.ThreadsApiTypes.ThreadsClaimResponse claim(Types.ThreadsApiTypes.ThreadsClaimBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -701,6 +1084,15 @@ public class ForumClient implements Closeable {
 			return claim(null);
 		}
 	
+		/**
+		 * Create Claim
+		 *
+		 * <p>Create a Claim.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ThreadsApiTypes.ThreadsClaimResponse> claimAsync(Types.ThreadsApiTypes.ThreadsClaimBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -717,6 +1109,16 @@ public class ForumClient implements Closeable {
 			return claimAsync(null);
 		}
 	
+		/**
+		 * Get Thread
+		 *
+		 * <p>Detail information of a thread.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param threadId Id of thread.
+		 * @param params Query parameters.
+		 */
 		public Types.ThreadsApiTypes.ThreadsGetResponse get(long threadId, Types.ThreadsApiTypes.ThreadsGetParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -733,6 +1135,16 @@ public class ForumClient implements Closeable {
 			return get(threadId, null);
 		}
 	
+		/**
+		 * Get Thread
+		 *
+		 * <p>Detail information of a thread.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param threadId Id of thread.
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.ThreadsApiTypes.ThreadsGetResponse> getAsync(long threadId, Types.ThreadsApiTypes.ThreadsGetParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -749,6 +1161,16 @@ public class ForumClient implements Closeable {
 			return getAsync(threadId, null);
 		}
 	
+		/**
+		 * Edit thread
+		 *
+		 * <p>Edit a thread.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param threadId Id of thread.
+		 * @param body Request body.
+		 */
 		public Types.ThreadsApiTypes.ThreadsEditResponse edit(long threadId, Types.ThreadsApiTypes.ThreadsEditBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"PUT",
@@ -765,6 +1187,16 @@ public class ForumClient implements Closeable {
 			return edit(threadId, null);
 		}
 	
+		/**
+		 * Edit thread
+		 *
+		 * <p>Edit a thread.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param threadId Id of thread.
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ThreadsApiTypes.ThreadsEditResponse> editAsync(long threadId, Types.ThreadsApiTypes.ThreadsEditBody body) {
 			return http.requestAsync(new RequestOptions(
 				"PUT",
@@ -781,6 +1213,16 @@ public class ForumClient implements Closeable {
 			return editAsync(threadId, null);
 		}
 	
+		/**
+		 * Delete Thread
+		 *
+		 * <p>Delete a thread.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param threadId Id of thread.
+		 * @param body Request body.
+		 */
 		public Types.ThreadsApiTypes.ThreadsDeleteResponse delete(long threadId, Types.ThreadsApiTypes.ThreadsDeleteBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"DELETE",
@@ -797,6 +1239,16 @@ public class ForumClient implements Closeable {
 			return delete(threadId, null);
 		}
 	
+		/**
+		 * Delete Thread
+		 *
+		 * <p>Delete a thread.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param threadId Id of thread.
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ThreadsApiTypes.ThreadsDeleteResponse> deleteAsync(long threadId, Types.ThreadsApiTypes.ThreadsDeleteBody body) {
 			return http.requestAsync(new RequestOptions(
 				"DELETE",
@@ -813,6 +1265,16 @@ public class ForumClient implements Closeable {
 			return deleteAsync(threadId, null);
 		}
 	
+		/**
+		 * Move Thread
+		 *
+		 * <p>Move a thread to another forum.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param threadId Id of thread.
+		 * @param body Request body.
+		 */
 		public Types.ThreadsApiTypes.ThreadsMoveResponse move(long threadId, Types.ThreadsApiTypes.ThreadsMoveBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -829,6 +1291,16 @@ public class ForumClient implements Closeable {
 			return move(threadId, null);
 		}
 	
+		/**
+		 * Move Thread
+		 *
+		 * <p>Move a thread to another forum.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param threadId Id of thread.
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ThreadsApiTypes.ThreadsMoveResponse> moveAsync(long threadId, Types.ThreadsApiTypes.ThreadsMoveBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -845,6 +1317,15 @@ public class ForumClient implements Closeable {
 			return moveAsync(threadId, null);
 		}
 	
+		/**
+		 * Bump Thread
+		 *
+		 * <p>Bump a thread.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param threadId Id of thread.
+		 */
 		public Types.ThreadsApiTypes.ThreadsBumpResponse bump(long threadId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -857,6 +1338,15 @@ public class ForumClient implements Closeable {
 			)), Types.ThreadsApiTypes.ThreadsBumpResponse.class);
 		}
 	
+		/**
+		 * Bump Thread
+		 *
+		 * <p>Bump a thread.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param threadId Id of thread.
+		 */
 		public CompletableFuture<Types.ThreadsApiTypes.ThreadsBumpResponse> bumpAsync(long threadId) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -869,6 +1359,15 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ThreadsApiTypes.ThreadsBumpResponse.class));
 		}
 	
+		/**
+		 * Hide Thread
+		 *
+		 * <p>Hide a thread from your feed.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param threadId Id of thread.
+		 */
 		public Types.ThreadsApiTypes.ThreadsHideResponse hide(long threadId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -881,6 +1380,15 @@ public class ForumClient implements Closeable {
 			)), Types.ThreadsApiTypes.ThreadsHideResponse.class);
 		}
 	
+		/**
+		 * Hide Thread
+		 *
+		 * <p>Hide a thread from your feed.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param threadId Id of thread.
+		 */
 		public CompletableFuture<Types.ThreadsApiTypes.ThreadsHideResponse> hideAsync(long threadId) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -893,6 +1401,15 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ThreadsApiTypes.ThreadsHideResponse.class));
 		}
 	
+		/**
+		 * Bookmark Thread
+		 *
+		 * <p>Bookmark a thread.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param threadId Id of thread.
+		 */
 		public Types.ThreadsApiTypes.ThreadsStarResponse star(long threadId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -905,6 +1422,15 @@ public class ForumClient implements Closeable {
 			)), Types.ThreadsApiTypes.ThreadsStarResponse.class);
 		}
 	
+		/**
+		 * Bookmark Thread
+		 *
+		 * <p>Bookmark a thread.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param threadId Id of thread.
+		 */
 		public CompletableFuture<Types.ThreadsApiTypes.ThreadsStarResponse> starAsync(long threadId) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -917,6 +1443,15 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ThreadsApiTypes.ThreadsStarResponse.class));
 		}
 	
+		/**
+		 * Unbookmark Thread
+		 *
+		 * <p>Unbookmark a thread.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param threadId Id of thread.
+		 */
 		public Types.ThreadsApiTypes.ThreadsUnstarResponse unstar(long threadId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"DELETE",
@@ -929,6 +1464,15 @@ public class ForumClient implements Closeable {
 			)), Types.ThreadsApiTypes.ThreadsUnstarResponse.class);
 		}
 	
+		/**
+		 * Unbookmark Thread
+		 *
+		 * <p>Unbookmark a thread.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param threadId Id of thread.
+		 */
 		public CompletableFuture<Types.ThreadsApiTypes.ThreadsUnstarResponse> unstarAsync(long threadId) {
 			return http.requestAsync(new RequestOptions(
 				"DELETE",
@@ -941,6 +1485,15 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ThreadsApiTypes.ThreadsUnstarResponse.class));
 		}
 	
+		/**
+		 * Get Thread Followers
+		 *
+		 * <p>List of a thread's followers. For privacy reason, only the current user will be included in the list.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param threadId Id of thread.
+		 */
 		public Types.ThreadsApiTypes.ThreadsFollowersResponse followers(long threadId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -953,6 +1506,15 @@ public class ForumClient implements Closeable {
 			)), Types.ThreadsApiTypes.ThreadsFollowersResponse.class);
 		}
 	
+		/**
+		 * Get Thread Followers
+		 *
+		 * <p>List of a thread's followers. For privacy reason, only the current user will be included in the list.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param threadId Id of thread.
+		 */
 		public CompletableFuture<Types.ThreadsApiTypes.ThreadsFollowersResponse> followersAsync(long threadId) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -965,6 +1527,16 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ThreadsApiTypes.ThreadsFollowersResponse.class));
 		}
 	
+		/**
+		 * Follow Thread
+		 *
+		 * <p>Follow a thread.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param threadId Id of thread.
+		 * @param body Request body.
+		 */
 		public Types.ThreadsApiTypes.ThreadsFollowResponse follow(long threadId, Types.ThreadsApiTypes.ThreadsFollowBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -981,6 +1553,16 @@ public class ForumClient implements Closeable {
 			return follow(threadId, null);
 		}
 	
+		/**
+		 * Follow Thread
+		 *
+		 * <p>Follow a thread.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param threadId Id of thread.
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ThreadsApiTypes.ThreadsFollowResponse> followAsync(long threadId, Types.ThreadsApiTypes.ThreadsFollowBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -997,6 +1579,15 @@ public class ForumClient implements Closeable {
 			return followAsync(threadId, null);
 		}
 	
+		/**
+		 * Unfollow Thread
+		 *
+		 * <p>Unfollow a thread.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param threadId Id of thread.
+		 */
 		public Types.ThreadsApiTypes.ThreadsUnfollowResponse unfollow(long threadId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"DELETE",
@@ -1009,6 +1600,15 @@ public class ForumClient implements Closeable {
 			)), Types.ThreadsApiTypes.ThreadsUnfollowResponse.class);
 		}
 	
+		/**
+		 * Unfollow Thread
+		 *
+		 * <p>Unfollow a thread.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param threadId Id of thread.
+		 */
 		public CompletableFuture<Types.ThreadsApiTypes.ThreadsUnfollowResponse> unfollowAsync(long threadId) {
 			return http.requestAsync(new RequestOptions(
 				"DELETE",
@@ -1021,6 +1621,15 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ThreadsApiTypes.ThreadsUnfollowResponse.class));
 		}
 	
+		/**
+		 * Get Followed Threads
+		 *
+		 * <p>List of followed threads by current user.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param params Query parameters.
+		 */
 		public Types.ThreadsApiTypes.ThreadsFollowedResponse followed(Types.ThreadsApiTypes.ThreadsFollowedParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -1037,6 +1646,15 @@ public class ForumClient implements Closeable {
 			return followed(null);
 		}
 	
+		/**
+		 * Get Followed Threads
+		 *
+		 * <p>List of followed threads by current user.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.ThreadsApiTypes.ThreadsFollowedResponse> followedAsync(Types.ThreadsApiTypes.ThreadsFollowedParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -1053,6 +1671,15 @@ public class ForumClient implements Closeable {
 			return followedAsync(null);
 		}
 	
+		/**
+		 * Get Navigation Elements
+		 *
+		 * <p>List of navigation elements to reach the specified thread.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param threadId Id of thread.
+		 */
 		public Types.ThreadsApiTypes.ThreadsNavigationResponse navigation(long threadId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -1065,6 +1692,15 @@ public class ForumClient implements Closeable {
 			)), Types.ThreadsApiTypes.ThreadsNavigationResponse.class);
 		}
 	
+		/**
+		 * Get Navigation Elements
+		 *
+		 * <p>List of navigation elements to reach the specified thread.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param threadId Id of thread.
+		 */
 		public CompletableFuture<Types.ThreadsApiTypes.ThreadsNavigationResponse> navigationAsync(long threadId) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -1077,6 +1713,15 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ThreadsApiTypes.ThreadsNavigationResponse.class));
 		}
 	
+		/**
+		 * Get Poll
+		 *
+		 * <p>Detail information of a poll.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param threadId Id of thread.
+		 */
 		public Types.ThreadsApiTypes.ThreadsPollGetResponse pollGet(long threadId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -1089,6 +1734,15 @@ public class ForumClient implements Closeable {
 			)), Types.ThreadsApiTypes.ThreadsPollGetResponse.class);
 		}
 	
+		/**
+		 * Get Poll
+		 *
+		 * <p>Detail information of a poll.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param threadId Id of thread.
+		 */
 		public CompletableFuture<Types.ThreadsApiTypes.ThreadsPollGetResponse> pollGetAsync(long threadId) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -1101,6 +1755,16 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ThreadsApiTypes.ThreadsPollGetResponse.class));
 		}
 	
+		/**
+		 * Vote Poll
+		 *
+		 * <p>Vote on a thread poll.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param threadId Id of thread.
+		 * @param body Request body.
+		 */
 		public Types.ThreadsApiTypes.ThreadsPollVoteResponse pollVote(long threadId, Types.ThreadsApiTypes.ThreadsPollVoteBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -1117,6 +1781,16 @@ public class ForumClient implements Closeable {
 			return pollVote(threadId, null);
 		}
 	
+		/**
+		 * Vote Poll
+		 *
+		 * <p>Vote on a thread poll.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param threadId Id of thread.
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ThreadsApiTypes.ThreadsPollVoteResponse> pollVoteAsync(long threadId, Types.ThreadsApiTypes.ThreadsPollVoteBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -1133,6 +1807,15 @@ public class ForumClient implements Closeable {
 			return pollVoteAsync(threadId, null);
 		}
 	
+		/**
+		 * Get Unread Threads
+		 *
+		 * <p>List of unread threads (must be logged in).
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param params Query parameters.
+		 */
 		public Types.ThreadsApiTypes.ThreadsUnreadResponse unread(Types.ThreadsApiTypes.ThreadsUnreadParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -1149,6 +1832,15 @@ public class ForumClient implements Closeable {
 			return unread(null);
 		}
 	
+		/**
+		 * Get Unread Threads
+		 *
+		 * <p>List of unread threads (must be logged in).
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.ThreadsApiTypes.ThreadsUnreadResponse> unreadAsync(Types.ThreadsApiTypes.ThreadsUnreadParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -1165,6 +1857,15 @@ public class ForumClient implements Closeable {
 			return unreadAsync(null);
 		}
 	
+		/**
+		 * Get Recent Threads
+		 *
+		 * <p>List of recent threads.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param params Query parameters.
+		 */
 		public Types.ThreadsApiTypes.ThreadsRecentResponse recent(Types.ThreadsApiTypes.ThreadsRecentParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -1181,6 +1882,15 @@ public class ForumClient implements Closeable {
 			return recent(null);
 		}
 	
+		/**
+		 * Get Recent Threads
+		 *
+		 * <p>List of recent threads.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.ThreadsApiTypes.ThreadsRecentResponse> recentAsync(Types.ThreadsApiTypes.ThreadsRecentParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -1197,6 +1907,15 @@ public class ForumClient implements Closeable {
 			return recentAsync(null);
 		}
 	
+		/**
+		 * Finish Contest
+		 *
+		 * <p>Finishes a contest.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param threadId Id of thread.
+		 */
 		public Types.ThreadsApiTypes.ThreadsFinishResponse finish(long threadId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -1209,6 +1928,15 @@ public class ForumClient implements Closeable {
 			)), Types.ThreadsApiTypes.ThreadsFinishResponse.class);
 		}
 	
+		/**
+		 * Finish Contest
+		 *
+		 * <p>Finishes a contest.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param threadId Id of thread.
+		 */
 		public CompletableFuture<Types.ThreadsApiTypes.ThreadsFinishResponse> finishAsync(long threadId) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -1232,6 +1960,15 @@ public class ForumClient implements Closeable {
 			this.mapper = http.objectMapper();
 		}
 	
+		/**
+		 * Get Posts
+		 *
+		 * <p>List of posts in a thread (with pagination).
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param params Query parameters.
+		 */
 		public Types.PostsApiTypes.PostsListResponse list(Types.PostsApiTypes.PostsListParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -1248,6 +1985,15 @@ public class ForumClient implements Closeable {
 			return list(null);
 		}
 	
+		/**
+		 * Get Posts
+		 *
+		 * <p>List of posts in a thread (with pagination).
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.PostsApiTypes.PostsListResponse> listAsync(Types.PostsApiTypes.PostsListParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -1264,6 +2010,15 @@ public class ForumClient implements Closeable {
 			return listAsync(null);
 		}
 	
+		/**
+		 * Create Post
+		 *
+		 * <p>Create a new post.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param body Request body.
+		 */
 		public Types.PostsApiTypes.PostsCreateResponse create(Types.PostsApiTypes.PostsCreateBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -1280,6 +2035,15 @@ public class ForumClient implements Closeable {
 			return create(null);
 		}
 	
+		/**
+		 * Create Post
+		 *
+		 * <p>Create a new post.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.PostsApiTypes.PostsCreateResponse> createAsync(Types.PostsApiTypes.PostsCreateBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -1296,6 +2060,15 @@ public class ForumClient implements Closeable {
 			return createAsync(null);
 		}
 	
+		/**
+		 * Get Post
+		 *
+		 * <p>Detail information of a post.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param postId Id of post.
+		 */
 		public Types.PostsApiTypes.PostsGetResponse get(long postId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -1308,6 +2081,15 @@ public class ForumClient implements Closeable {
 			)), Types.PostsApiTypes.PostsGetResponse.class);
 		}
 	
+		/**
+		 * Get Post
+		 *
+		 * <p>Detail information of a post.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param postId Id of post.
+		 */
 		public CompletableFuture<Types.PostsApiTypes.PostsGetResponse> getAsync(long postId) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -1320,6 +2102,16 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.PostsApiTypes.PostsGetResponse.class));
 		}
 	
+		/**
+		 * Edit Post
+		 *
+		 * <p>Edit a post.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param postId Id of post.
+		 * @param body Request body.
+		 */
 		public Types.PostsApiTypes.PostsEditResponse edit(long postId, Types.PostsApiTypes.PostsEditBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"PUT",
@@ -1336,6 +2128,16 @@ public class ForumClient implements Closeable {
 			return edit(postId, null);
 		}
 	
+		/**
+		 * Edit Post
+		 *
+		 * <p>Edit a post.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param postId Id of post.
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.PostsApiTypes.PostsEditResponse> editAsync(long postId, Types.PostsApiTypes.PostsEditBody body) {
 			return http.requestAsync(new RequestOptions(
 				"PUT",
@@ -1352,6 +2154,16 @@ public class ForumClient implements Closeable {
 			return editAsync(postId, null);
 		}
 	
+		/**
+		 * Delete Post
+		 *
+		 * <p>Delete a post.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param postId Id of post.
+		 * @param body Request body.
+		 */
 		public Types.PostsApiTypes.PostsDeleteResponse delete(long postId, Types.PostsApiTypes.PostsDeleteBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"DELETE",
@@ -1368,6 +2180,16 @@ public class ForumClient implements Closeable {
 			return delete(postId, null);
 		}
 	
+		/**
+		 * Delete Post
+		 *
+		 * <p>Delete a post.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param postId Id of post.
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.PostsApiTypes.PostsDeleteResponse> deleteAsync(long postId, Types.PostsApiTypes.PostsDeleteBody body) {
 			return http.requestAsync(new RequestOptions(
 				"DELETE",
@@ -1384,6 +2206,16 @@ public class ForumClient implements Closeable {
 			return deleteAsync(postId, null);
 		}
 	
+		/**
+		 * Get Post Likes
+		 *
+		 * <p>List of users who liked a post.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param postId Id of post.
+		 * @param params Query parameters.
+		 */
 		public Types.PostsApiTypes.PostsLikesResponse likes(long postId, Types.PostsApiTypes.PostsLikesParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -1400,6 +2232,16 @@ public class ForumClient implements Closeable {
 			return likes(postId, null);
 		}
 	
+		/**
+		 * Get Post Likes
+		 *
+		 * <p>List of users who liked a post.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param postId Id of post.
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.PostsApiTypes.PostsLikesResponse> likesAsync(long postId, Types.PostsApiTypes.PostsLikesParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -1416,6 +2258,15 @@ public class ForumClient implements Closeable {
 			return likesAsync(postId, null);
 		}
 	
+		/**
+		 * Like Post
+		 *
+		 * <p>Like a post.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param postId Id of post.
+		 */
 		public Types.PostsApiTypes.PostsLikeResponse like(long postId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -1428,6 +2279,15 @@ public class ForumClient implements Closeable {
 			)), Types.PostsApiTypes.PostsLikeResponse.class);
 		}
 	
+		/**
+		 * Like Post
+		 *
+		 * <p>Like a post.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param postId Id of post.
+		 */
 		public CompletableFuture<Types.PostsApiTypes.PostsLikeResponse> likeAsync(long postId) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -1440,6 +2300,15 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.PostsApiTypes.PostsLikeResponse.class));
 		}
 	
+		/**
+		 * Unlike Post
+		 *
+		 * <p>Unlike a post.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param postId Id of post.
+		 */
 		public Types.PostsApiTypes.PostsUnlikeResponse unlike(long postId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"DELETE",
@@ -1452,6 +2321,15 @@ public class ForumClient implements Closeable {
 			)), Types.PostsApiTypes.PostsUnlikeResponse.class);
 		}
 	
+		/**
+		 * Unlike Post
+		 *
+		 * <p>Unlike a post.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param postId Id of post.
+		 */
 		public CompletableFuture<Types.PostsApiTypes.PostsUnlikeResponse> unlikeAsync(long postId) {
 			return http.requestAsync(new RequestOptions(
 				"DELETE",
@@ -1464,6 +2342,15 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.PostsApiTypes.PostsUnlikeResponse.class));
 		}
 	
+		/**
+		 * Get Post Report Reasons
+		 *
+		 * <p>Get post report reasons.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param postId Id of post.
+		 */
 		public Types.PostsApiTypes.PostsReportReasonsResponse reportReasons(long postId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -1476,6 +2363,15 @@ public class ForumClient implements Closeable {
 			)), Types.PostsApiTypes.PostsReportReasonsResponse.class);
 		}
 	
+		/**
+		 * Get Post Report Reasons
+		 *
+		 * <p>Get post report reasons.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param postId Id of post.
+		 */
 		public CompletableFuture<Types.PostsApiTypes.PostsReportReasonsResponse> reportReasonsAsync(long postId) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -1488,6 +2384,16 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.PostsApiTypes.PostsReportReasonsResponse.class));
 		}
 	
+		/**
+		 * Report Post
+		 *
+		 * <p>Report a post.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param postId Id of post.
+		 * @param body Request body.
+		 */
 		public Types.PostsApiTypes.PostsReportResponse report(long postId, Types.PostsApiTypes.PostsReportBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -1504,6 +2410,16 @@ public class ForumClient implements Closeable {
 			return report(postId, null);
 		}
 	
+		/**
+		 * Report Post
+		 *
+		 * <p>Report a post.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param postId Id of post.
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.PostsApiTypes.PostsReportResponse> reportAsync(long postId, Types.PostsApiTypes.PostsReportBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -1520,6 +2436,15 @@ public class ForumClient implements Closeable {
 			return reportAsync(postId, null);
 		}
 	
+		/**
+		 * Get Post Comments
+		 *
+		 * <p>List of post comments in a thread.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param params Query parameters.
+		 */
 		public Types.PostsApiTypes.PostsCommentsGetResponse commentsGet(Types.PostsApiTypes.PostsCommentsGetParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -1536,6 +2461,15 @@ public class ForumClient implements Closeable {
 			return commentsGet(null);
 		}
 	
+		/**
+		 * Get Post Comments
+		 *
+		 * <p>List of post comments in a thread.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.PostsApiTypes.PostsCommentsGetResponse> commentsGetAsync(Types.PostsApiTypes.PostsCommentsGetParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -1552,6 +2486,15 @@ public class ForumClient implements Closeable {
 			return commentsGetAsync(null);
 		}
 	
+		/**
+		 * Create Post Comment
+		 *
+		 * <p>Create a post comment.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param body Request body.
+		 */
 		public Types.PostsApiTypes.PostsCommentsCreateResponse commentsCreate(Types.PostsApiTypes.PostsCommentsCreateBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -1568,6 +2511,15 @@ public class ForumClient implements Closeable {
 			return commentsCreate(null);
 		}
 	
+		/**
+		 * Create Post Comment
+		 *
+		 * <p>Create a post comment.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.PostsApiTypes.PostsCommentsCreateResponse> commentsCreateAsync(Types.PostsApiTypes.PostsCommentsCreateBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -1584,6 +2536,15 @@ public class ForumClient implements Closeable {
 			return commentsCreateAsync(null);
 		}
 	
+		/**
+		 * Edit Post Comment
+		 *
+		 * <p>Edit a post comment.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param body Request body.
+		 */
 		public Types.PostsApiTypes.PostsCommentsEditResponse commentsEdit(Types.PostsApiTypes.PostsCommentsEditBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"PUT",
@@ -1600,6 +2561,15 @@ public class ForumClient implements Closeable {
 			return commentsEdit(null);
 		}
 	
+		/**
+		 * Edit Post Comment
+		 *
+		 * <p>Edit a post comment.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.PostsApiTypes.PostsCommentsEditResponse> commentsEditAsync(Types.PostsApiTypes.PostsCommentsEditBody body) {
 			return http.requestAsync(new RequestOptions(
 				"PUT",
@@ -1616,6 +2586,15 @@ public class ForumClient implements Closeable {
 			return commentsEditAsync(null);
 		}
 	
+		/**
+		 * Delete Post Comment
+		 *
+		 * <p>Delete a post comment.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param body Request body.
+		 */
 		public Types.PostsApiTypes.PostsCommentsDeleteResponse commentsDelete(Types.PostsApiTypes.PostsCommentsDeleteBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"DELETE",
@@ -1632,6 +2611,15 @@ public class ForumClient implements Closeable {
 			return commentsDelete(null);
 		}
 	
+		/**
+		 * Delete Post Comment
+		 *
+		 * <p>Delete a post comment.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.PostsApiTypes.PostsCommentsDeleteResponse> commentsDeleteAsync(Types.PostsApiTypes.PostsCommentsDeleteBody body) {
 			return http.requestAsync(new RequestOptions(
 				"DELETE",
@@ -1648,6 +2636,15 @@ public class ForumClient implements Closeable {
 			return commentsDeleteAsync(null);
 		}
 	
+		/**
+		 * Report Post Comment
+		 *
+		 * <p>Report a post comment.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param body Request body.
+		 */
 		public Types.PostsApiTypes.PostsCommentsReportResponse commentsReport(Types.PostsApiTypes.PostsCommentsReportBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -1664,6 +2661,15 @@ public class ForumClient implements Closeable {
 			return commentsReport(null);
 		}
 	
+		/**
+		 * Report Post Comment
+		 *
+		 * <p>Report a post comment.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.PostsApiTypes.PostsCommentsReportResponse> commentsReportAsync(Types.PostsApiTypes.PostsCommentsReportBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -1691,6 +2697,15 @@ public class ForumClient implements Closeable {
 			this.mapper = http.objectMapper();
 		}
 	
+		/**
+		 * Get Users
+		 *
+		 * <p>List of users (with pagination).
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param params Query parameters.
+		 */
 		public Types.UsersApiTypes.UsersListResponse list(Types.UsersApiTypes.UsersListParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -1707,6 +2722,15 @@ public class ForumClient implements Closeable {
 			return list(null);
 		}
 	
+		/**
+		 * Get Users
+		 *
+		 * <p>List of users (with pagination).
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.UsersApiTypes.UsersListResponse> listAsync(Types.UsersApiTypes.UsersListParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -1723,6 +2747,14 @@ public class ForumClient implements Closeable {
 			return listAsync(null);
 		}
 	
+		/**
+		 * Get User Fields
+		 *
+		 * <p>List of user fields.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 */
 		public Types.UsersApiTypes.UsersFieldsResponse fields() {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -1735,6 +2767,14 @@ public class ForumClient implements Closeable {
 			)), Types.UsersApiTypes.UsersFieldsResponse.class);
 		}
 	
+		/**
+		 * Get User Fields
+		 *
+		 * <p>List of user fields.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 */
 		public CompletableFuture<Types.UsersApiTypes.UsersFieldsResponse> fieldsAsync() {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -1747,6 +2787,15 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.UsersApiTypes.UsersFieldsResponse.class));
 		}
 	
+		/**
+		 * Find Users
+		 *
+		 * <p>List of users filtered by username, email or custom fields.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param params Query parameters.
+		 */
 		public Types.UsersApiTypes.UsersFindResponse find(Types.UsersApiTypes.UsersFindParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -1763,6 +2812,15 @@ public class ForumClient implements Closeable {
 			return find(null);
 		}
 	
+		/**
+		 * Find Users
+		 *
+		 * <p>List of users filtered by username, email or custom fields.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.UsersApiTypes.UsersFindResponse> findAsync(Types.UsersApiTypes.UsersFindParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -1779,6 +2837,18 @@ public class ForumClient implements Closeable {
 			return findAsync(null);
 		}
 	
+		/**
+		 * Get User
+		 *
+		 * <p>Detail information of a user.
+		 * 
+		 * Required scopes:
+		 * + **read**
+		 * + **basic**</p>
+		 * @param userId User ID.
+	&gt; You can use shortlink `me` to interact with your profile.
+		 * @param params Query parameters.
+		 */
 		public Types.UsersApiTypes.UsersGetResponse get(com.lolzteam.api.runtime.StringOrInt userId, Types.UsersApiTypes.UsersGetParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -1795,6 +2865,18 @@ public class ForumClient implements Closeable {
 			return get(userId, null);
 		}
 	
+		/**
+		 * Get User
+		 *
+		 * <p>Detail information of a user.
+		 * 
+		 * Required scopes:
+		 * + **read**
+		 * + **basic**</p>
+		 * @param userId User ID.
+	&gt; You can use shortlink `me` to interact with your profile.
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.UsersApiTypes.UsersGetResponse> getAsync(com.lolzteam.api.runtime.StringOrInt userId, Types.UsersApiTypes.UsersGetParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -1811,6 +2893,17 @@ public class ForumClient implements Closeable {
 			return getAsync(userId, null);
 		}
 	
+		/**
+		 * Edit User
+		 *
+		 * <p>Edit a user.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param userId User ID.
+	&gt; You can use shortlink `me` to interact with your profile.
+		 * @param body Request body.
+		 */
 		public Types.UsersApiTypes.UsersEditResponse edit(com.lolzteam.api.runtime.StringOrInt userId, Types.UsersApiTypes.UsersEditBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"PUT",
@@ -1827,6 +2920,17 @@ public class ForumClient implements Closeable {
 			return edit(userId, null);
 		}
 	
+		/**
+		 * Edit User
+		 *
+		 * <p>Edit a user.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param userId User ID.
+	&gt; You can use shortlink `me` to interact with your profile.
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.UsersApiTypes.UsersEditResponse> editAsync(com.lolzteam.api.runtime.StringOrInt userId, Types.UsersApiTypes.UsersEditBody body) {
 			return http.requestAsync(new RequestOptions(
 				"PUT",
@@ -1843,6 +2947,17 @@ public class ForumClient implements Closeable {
 			return editAsync(userId, null);
 		}
 	
+		/**
+		 * Get User Claims
+		 *
+		 * <p>Get user claims.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param userId User ID.
+	&gt; You can use shortlink `me` to interact with your profile.
+		 * @param params Query parameters.
+		 */
 		public Types.UsersApiTypes.UsersClaimsResponse claims(com.lolzteam.api.runtime.StringOrInt userId, Types.UsersApiTypes.UsersClaimsParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -1859,6 +2974,17 @@ public class ForumClient implements Closeable {
 			return claims(userId, null);
 		}
 	
+		/**
+		 * Get User Claims
+		 *
+		 * <p>Get user claims.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param userId User ID.
+	&gt; You can use shortlink `me` to interact with your profile.
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.UsersApiTypes.UsersClaimsResponse> claimsAsync(com.lolzteam.api.runtime.StringOrInt userId, Types.UsersApiTypes.UsersClaimsParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -1875,6 +3001,17 @@ public class ForumClient implements Closeable {
 			return claimsAsync(userId, null);
 		}
 	
+		/**
+		 * Upload Avatar
+		 *
+		 * <p>Upload avatar for a user.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param userId User ID.
+	&gt; You can use shortlink `me` to interact with your profile.
+		 * @param body Request body.
+		 */
 		public Types.UsersApiTypes.UsersAvatarUploadResponse avatarUpload(com.lolzteam.api.runtime.StringOrInt userId, Types.UsersApiTypes.UsersAvatarUploadBody body) {
 			if (body != null) {
 				var jsonBody = mapper.createObjectNode();
@@ -1909,6 +3046,17 @@ public class ForumClient implements Closeable {
 			return avatarUpload(userId, null);
 		}
 	
+		/**
+		 * Upload Avatar
+		 *
+		 * <p>Upload avatar for a user.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param userId User ID.
+	&gt; You can use shortlink `me` to interact with your profile.
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.UsersApiTypes.UsersAvatarUploadResponse> avatarUploadAsync(com.lolzteam.api.runtime.StringOrInt userId, Types.UsersApiTypes.UsersAvatarUploadBody body) {
 			if (body != null) {
 				var jsonBody = mapper.createObjectNode();
@@ -1943,6 +3091,16 @@ public class ForumClient implements Closeable {
 			return avatarUploadAsync(userId, null);
 		}
 	
+		/**
+		 * Delete Avatar
+		 *
+		 * <p>Delete avatar for a user.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param userId User ID.
+	&gt; You can use shortlink `me` to interact with your profile.
+		 */
 		public Types.UsersApiTypes.UsersAvatarDeleteResponse avatarDelete(com.lolzteam.api.runtime.StringOrInt userId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"DELETE",
@@ -1955,6 +3113,16 @@ public class ForumClient implements Closeable {
 			)), Types.UsersApiTypes.UsersAvatarDeleteResponse.class);
 		}
 	
+		/**
+		 * Delete Avatar
+		 *
+		 * <p>Delete avatar for a user.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param userId User ID.
+	&gt; You can use shortlink `me` to interact with your profile.
+		 */
 		public CompletableFuture<Types.UsersApiTypes.UsersAvatarDeleteResponse> avatarDeleteAsync(com.lolzteam.api.runtime.StringOrInt userId) {
 			return http.requestAsync(new RequestOptions(
 				"DELETE",
@@ -1967,6 +3135,17 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.UsersApiTypes.UsersAvatarDeleteResponse.class));
 		}
 	
+		/**
+		 * Crop Avatar
+		 *
+		 * <p>Crop avatar for a user.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param userId User ID.
+	&gt; You can use shortlink `me` to interact with your profile.
+		 * @param body Request body.
+		 */
 		public Types.UsersApiTypes.UsersAvatarCropResponse avatarCrop(com.lolzteam.api.runtime.StringOrInt userId, Types.UsersApiTypes.UsersAvatarCropBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -1983,6 +3162,17 @@ public class ForumClient implements Closeable {
 			return avatarCrop(userId, null);
 		}
 	
+		/**
+		 * Crop Avatar
+		 *
+		 * <p>Crop avatar for a user.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param userId User ID.
+	&gt; You can use shortlink `me` to interact with your profile.
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.UsersApiTypes.UsersAvatarCropResponse> avatarCropAsync(com.lolzteam.api.runtime.StringOrInt userId, Types.UsersApiTypes.UsersAvatarCropBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -1999,6 +3189,17 @@ public class ForumClient implements Closeable {
 			return avatarCropAsync(userId, null);
 		}
 	
+		/**
+		 * Upload Background
+		 *
+		 * <p>Upload background for a user.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param userId User ID.
+	&gt; You can use shortlink `me` to interact with your profile.
+		 * @param body Request body.
+		 */
 		public Types.UsersApiTypes.UsersBackgroundUploadResponse backgroundUpload(com.lolzteam.api.runtime.StringOrInt userId, Types.UsersApiTypes.UsersBackgroundUploadBody body) {
 			if (body != null) {
 				var jsonBody = mapper.createObjectNode();
@@ -2033,6 +3234,17 @@ public class ForumClient implements Closeable {
 			return backgroundUpload(userId, null);
 		}
 	
+		/**
+		 * Upload Background
+		 *
+		 * <p>Upload background for a user.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param userId User ID.
+	&gt; You can use shortlink `me` to interact with your profile.
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.UsersApiTypes.UsersBackgroundUploadResponse> backgroundUploadAsync(com.lolzteam.api.runtime.StringOrInt userId, Types.UsersApiTypes.UsersBackgroundUploadBody body) {
 			if (body != null) {
 				var jsonBody = mapper.createObjectNode();
@@ -2067,6 +3279,16 @@ public class ForumClient implements Closeable {
 			return backgroundUploadAsync(userId, null);
 		}
 	
+		/**
+		 * Delete Background
+		 *
+		 * <p>Delete background for a user.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param userId User ID.
+	&gt; You can use shortlink `me` to interact with your profile.
+		 */
 		public Types.UsersApiTypes.UsersBackgroundDeleteResponse backgroundDelete(com.lolzteam.api.runtime.StringOrInt userId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"DELETE",
@@ -2079,6 +3301,16 @@ public class ForumClient implements Closeable {
 			)), Types.UsersApiTypes.UsersBackgroundDeleteResponse.class);
 		}
 	
+		/**
+		 * Delete Background
+		 *
+		 * <p>Delete background for a user.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param userId User ID.
+	&gt; You can use shortlink `me` to interact with your profile.
+		 */
 		public CompletableFuture<Types.UsersApiTypes.UsersBackgroundDeleteResponse> backgroundDeleteAsync(com.lolzteam.api.runtime.StringOrInt userId) {
 			return http.requestAsync(new RequestOptions(
 				"DELETE",
@@ -2091,6 +3323,17 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.UsersApiTypes.UsersBackgroundDeleteResponse.class));
 		}
 	
+		/**
+		 * Crop Background
+		 *
+		 * <p>Crop background for a user.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param userId User ID.
+	&gt; You can use shortlink `me` to interact with your profile.
+		 * @param body Request body.
+		 */
 		public Types.UsersApiTypes.UsersBackgroundCropResponse backgroundCrop(com.lolzteam.api.runtime.StringOrInt userId, Types.UsersApiTypes.UsersBackgroundCropBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -2103,6 +3346,17 @@ public class ForumClient implements Closeable {
 			)), Types.UsersApiTypes.UsersBackgroundCropResponse.class);
 		}
 	
+		/**
+		 * Crop Background
+		 *
+		 * <p>Crop background for a user.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param userId User ID.
+	&gt; You can use shortlink `me` to interact with your profile.
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.UsersApiTypes.UsersBackgroundCropResponse> backgroundCropAsync(com.lolzteam.api.runtime.StringOrInt userId, Types.UsersApiTypes.UsersBackgroundCropBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -2115,6 +3369,17 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.UsersApiTypes.UsersBackgroundCropResponse.class));
 		}
 	
+		/**
+		 * Get User Followers
+		 *
+		 * <p>List of a user's followers.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param userId User ID.
+	&gt; You can use shortlink `me` to interact with your profile.
+		 * @param params Query parameters.
+		 */
 		public Types.UsersApiTypes.UsersFollowersResponse followers(com.lolzteam.api.runtime.StringOrInt userId, Types.UsersApiTypes.UsersFollowersParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -2131,6 +3396,17 @@ public class ForumClient implements Closeable {
 			return followers(userId, null);
 		}
 	
+		/**
+		 * Get User Followers
+		 *
+		 * <p>List of a user's followers.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param userId User ID.
+	&gt; You can use shortlink `me` to interact with your profile.
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.UsersApiTypes.UsersFollowersResponse> followersAsync(com.lolzteam.api.runtime.StringOrInt userId, Types.UsersApiTypes.UsersFollowersParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -2147,6 +3423,16 @@ public class ForumClient implements Closeable {
 			return followersAsync(userId, null);
 		}
 	
+		/**
+		 * Follow User
+		 *
+		 * <p>Follow a user.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param userId User ID.
+	&gt; You can use shortlink `me` to interact with your profile.
+		 */
 		public Types.UsersApiTypes.UsersFollowResponse follow(com.lolzteam.api.runtime.StringOrInt userId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -2159,6 +3445,16 @@ public class ForumClient implements Closeable {
 			)), Types.UsersApiTypes.UsersFollowResponse.class);
 		}
 	
+		/**
+		 * Follow User
+		 *
+		 * <p>Follow a user.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param userId User ID.
+	&gt; You can use shortlink `me` to interact with your profile.
+		 */
 		public CompletableFuture<Types.UsersApiTypes.UsersFollowResponse> followAsync(com.lolzteam.api.runtime.StringOrInt userId) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -2171,6 +3467,16 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.UsersApiTypes.UsersFollowResponse.class));
 		}
 	
+		/**
+		 * Unfollow User
+		 *
+		 * <p>Unfollow a user.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param userId User ID.
+	&gt; You can use shortlink `me` to interact with your profile.
+		 */
 		public Types.UsersApiTypes.UsersUnfollowResponse unfollow(com.lolzteam.api.runtime.StringOrInt userId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"DELETE",
@@ -2183,6 +3489,16 @@ public class ForumClient implements Closeable {
 			)), Types.UsersApiTypes.UsersUnfollowResponse.class);
 		}
 	
+		/**
+		 * Unfollow User
+		 *
+		 * <p>Unfollow a user.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param userId User ID.
+	&gt; You can use shortlink `me` to interact with your profile.
+		 */
 		public CompletableFuture<Types.UsersApiTypes.UsersUnfollowResponse> unfollowAsync(com.lolzteam.api.runtime.StringOrInt userId) {
 			return http.requestAsync(new RequestOptions(
 				"DELETE",
@@ -2195,6 +3511,17 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.UsersApiTypes.UsersUnfollowResponse.class));
 		}
 	
+		/**
+		 * Get Followed Users By User
+		 *
+		 * <p>List of users whom are followed by a user.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param userId User ID.
+	&gt; You can use shortlink `me` to interact with your profile.
+		 * @param params Query parameters.
+		 */
 		public Types.UsersApiTypes.UsersFollowingsResponse followings(com.lolzteam.api.runtime.StringOrInt userId, Types.UsersApiTypes.UsersFollowingsParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -2211,6 +3538,17 @@ public class ForumClient implements Closeable {
 			return followings(userId, null);
 		}
 	
+		/**
+		 * Get Followed Users By User
+		 *
+		 * <p>List of users whom are followed by a user.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param userId User ID.
+	&gt; You can use shortlink `me` to interact with your profile.
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.UsersApiTypes.UsersFollowingsResponse> followingsAsync(com.lolzteam.api.runtime.StringOrInt userId, Types.UsersApiTypes.UsersFollowingsParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -2227,6 +3565,17 @@ public class ForumClient implements Closeable {
 			return followingsAsync(userId, null);
 		}
 	
+		/**
+		 * Get User Likes
+		 *
+		 * <p>Get information about user likes.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param userId User ID.
+	&gt; You can use shortlink `me` to interact with your profile.
+		 * @param params Query parameters.
+		 */
 		public Types.UsersApiTypes.UsersLikesResponse likes(com.lolzteam.api.runtime.StringOrInt userId, Types.UsersApiTypes.UsersLikesParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -2243,6 +3592,17 @@ public class ForumClient implements Closeable {
 			return likes(userId, null);
 		}
 	
+		/**
+		 * Get User Likes
+		 *
+		 * <p>Get information about user likes.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param userId User ID.
+	&gt; You can use shortlink `me` to interact with your profile.
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.UsersApiTypes.UsersLikesResponse> likesAsync(com.lolzteam.api.runtime.StringOrInt userId, Types.UsersApiTypes.UsersLikesParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -2259,6 +3619,15 @@ public class ForumClient implements Closeable {
 			return likesAsync(userId, null);
 		}
 	
+		/**
+		 * Get Ignored Users
+		 *
+		 * <p>List of ignored users of current user.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param params Query parameters.
+		 */
 		public Types.UsersApiTypes.UsersIgnoredResponse ignored(Types.UsersApiTypes.UsersIgnoredParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -2275,6 +3644,15 @@ public class ForumClient implements Closeable {
 			return ignored(null);
 		}
 	
+		/**
+		 * Get Ignored Users
+		 *
+		 * <p>List of ignored users of current user.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.UsersApiTypes.UsersIgnoredResponse> ignoredAsync(Types.UsersApiTypes.UsersIgnoredParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -2291,6 +3669,16 @@ public class ForumClient implements Closeable {
 			return ignoredAsync(null);
 		}
 	
+		/**
+		 * Ignore User
+		 *
+		 * <p>Ignore a user.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param userId User ID.
+	&gt; You can use shortlink `me` to interact with your profile.
+		 */
 		public Types.UsersApiTypes.UsersIgnoreResponse ignore(com.lolzteam.api.runtime.StringOrInt userId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -2303,6 +3691,16 @@ public class ForumClient implements Closeable {
 			)), Types.UsersApiTypes.UsersIgnoreResponse.class);
 		}
 	
+		/**
+		 * Ignore User
+		 *
+		 * <p>Ignore a user.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param userId User ID.
+	&gt; You can use shortlink `me` to interact with your profile.
+		 */
 		public CompletableFuture<Types.UsersApiTypes.UsersIgnoreResponse> ignoreAsync(com.lolzteam.api.runtime.StringOrInt userId) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -2315,6 +3713,17 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.UsersApiTypes.UsersIgnoreResponse.class));
 		}
 	
+		/**
+		 * Edit Ignoring Options
+		 *
+		 * <p>Edit ignoring options.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param userId User ID.
+	&gt; You can use shortlink `me` to interact with your profile.
+		 * @param params Query parameters.
+		 */
 		public Types.UsersApiTypes.UsersIgnoreEditResponse ignoreEdit(com.lolzteam.api.runtime.StringOrInt userId, Types.UsersApiTypes.UsersIgnoreEditParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"PUT",
@@ -2331,6 +3740,17 @@ public class ForumClient implements Closeable {
 			return ignoreEdit(userId, null);
 		}
 	
+		/**
+		 * Edit Ignoring Options
+		 *
+		 * <p>Edit ignoring options.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param userId User ID.
+	&gt; You can use shortlink `me` to interact with your profile.
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.UsersApiTypes.UsersIgnoreEditResponse> ignoreEditAsync(com.lolzteam.api.runtime.StringOrInt userId, Types.UsersApiTypes.UsersIgnoreEditParams params) {
 			return http.requestAsync(new RequestOptions(
 				"PUT",
@@ -2347,6 +3767,16 @@ public class ForumClient implements Closeable {
 			return ignoreEditAsync(userId, null);
 		}
 	
+		/**
+		 * Unignore User
+		 *
+		 * <p>Stop ignoring a user.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param userId User ID.
+	&gt; You can use shortlink `me` to interact with your profile.
+		 */
 		public Types.UsersApiTypes.UsersUnignoreResponse unignore(com.lolzteam.api.runtime.StringOrInt userId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"DELETE",
@@ -2359,6 +3789,16 @@ public class ForumClient implements Closeable {
 			)), Types.UsersApiTypes.UsersUnignoreResponse.class);
 		}
 	
+		/**
+		 * Unignore User
+		 *
+		 * <p>Stop ignoring a user.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param userId User ID.
+	&gt; You can use shortlink `me` to interact with your profile.
+		 */
 		public CompletableFuture<Types.UsersApiTypes.UsersUnignoreResponse> unignoreAsync(com.lolzteam.api.runtime.StringOrInt userId) {
 			return http.requestAsync(new RequestOptions(
 				"DELETE",
@@ -2371,6 +3811,17 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.UsersApiTypes.UsersUnignoreResponse.class));
 		}
 	
+		/**
+		 * Get Contents
+		 *
+		 * <p>List of contents created by user (with pagination).
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param userId User ID.
+	&gt; You can use shortlink `me` to interact with your profile.
+		 * @param params Query parameters.
+		 */
 		public Types.UsersApiTypes.UsersContentsResponse contents(com.lolzteam.api.runtime.StringOrInt userId, Types.UsersApiTypes.UsersContentsParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -2387,6 +3838,17 @@ public class ForumClient implements Closeable {
 			return contents(userId, null);
 		}
 	
+		/**
+		 * Get Contents
+		 *
+		 * <p>List of contents created by user (with pagination).
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param userId User ID.
+	&gt; You can use shortlink `me` to interact with your profile.
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.UsersApiTypes.UsersContentsResponse> contentsAsync(com.lolzteam.api.runtime.StringOrInt userId, Types.UsersApiTypes.UsersContentsParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -2403,6 +3865,16 @@ public class ForumClient implements Closeable {
 			return contentsAsync(userId, null);
 		}
 	
+		/**
+		 * Get Trophies
+		 *
+		 * <p>List of user trophies.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param userId User ID.
+	&gt; You can use shortlink `me` to interact with your profile.
+		 */
 		public Types.UsersApiTypes.UsersTrophiesResponse trophies(com.lolzteam.api.runtime.StringOrInt userId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -2415,6 +3887,16 @@ public class ForumClient implements Closeable {
 			)), Types.UsersApiTypes.UsersTrophiesResponse.class);
 		}
 	
+		/**
+		 * Get Trophies
+		 *
+		 * <p>List of user trophies.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param userId User ID.
+	&gt; You can use shortlink `me` to interact with your profile.
+		 */
 		public CompletableFuture<Types.UsersApiTypes.UsersTrophiesResponse> trophiesAsync(com.lolzteam.api.runtime.StringOrInt userId) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -2427,6 +3909,14 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.UsersApiTypes.UsersTrophiesResponse.class));
 		}
 	
+		/**
+		 * Get Secret Answer Types
+		 *
+		 * <p>Get available secret answer types for user account security.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 */
 		public Types.UsersApiTypes.UsersSecretAnswerTypesResponse secretAnswerTypes() {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -2439,6 +3929,14 @@ public class ForumClient implements Closeable {
 			)), Types.UsersApiTypes.UsersSecretAnswerTypesResponse.class);
 		}
 	
+		/**
+		 * Get Secret Answer Types
+		 *
+		 * <p>Get available secret answer types for user account security.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 */
 		public CompletableFuture<Types.UsersApiTypes.UsersSecretAnswerTypesResponse> secretAnswerTypesAsync() {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -2451,6 +3949,14 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.UsersApiTypes.UsersSecretAnswerTypesResponse.class));
 		}
 	
+		/**
+		 * Reset Secret Answer
+		 *
+		 * <p>Request a reset of the secret answer for the account.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 */
 		public Types.UsersApiTypes.UsersSaResetResponse saReset() {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -2463,6 +3969,14 @@ public class ForumClient implements Closeable {
 			)), Types.UsersApiTypes.UsersSaResetResponse.class);
 		}
 	
+		/**
+		 * Reset Secret Answer
+		 *
+		 * <p>Request a reset of the secret answer for the account.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 */
 		public CompletableFuture<Types.UsersApiTypes.UsersSaResetResponse> saResetAsync() {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -2475,6 +3989,14 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.UsersApiTypes.UsersSaResetResponse.class));
 		}
 	
+		/**
+		 * Cancel Secret Answer Reset
+		 *
+		 * <p>Cancel a pending secret answer reset request for the account.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 */
 		public Types.UsersApiTypes.UsersSaCancelResetResponse saCancelReset() {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"DELETE",
@@ -2487,6 +4009,14 @@ public class ForumClient implements Closeable {
 			)), Types.UsersApiTypes.UsersSaCancelResetResponse.class);
 		}
 	
+		/**
+		 * Cancel Secret Answer Reset
+		 *
+		 * <p>Cancel a pending secret answer reset request for the account.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 */
 		public CompletableFuture<Types.UsersApiTypes.UsersSaCancelResetResponse> saCancelResetAsync() {
 			return http.requestAsync(new RequestOptions(
 				"DELETE",
@@ -2510,6 +4040,17 @@ public class ForumClient implements Closeable {
 			this.mapper = http.objectMapper();
 		}
 	
+		/**
+		 * Get Profile Posts
+		 *
+		 * <p>List of profile posts (with pagination).
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param userId User ID.
+	&gt; You can use shortlink `me` to interact with your profile.
+		 * @param params Query parameters.
+		 */
 		public Types.ProfilePostsApiTypes.ProfilePostsListResponse list(com.lolzteam.api.runtime.StringOrInt userId, Types.ProfilePostsApiTypes.ProfilePostsListParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -2526,6 +4067,17 @@ public class ForumClient implements Closeable {
 			return list(userId, null);
 		}
 	
+		/**
+		 * Get Profile Posts
+		 *
+		 * <p>List of profile posts (with pagination).
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param userId User ID.
+	&gt; You can use shortlink `me` to interact with your profile.
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.ProfilePostsApiTypes.ProfilePostsListResponse> listAsync(com.lolzteam.api.runtime.StringOrInt userId, Types.ProfilePostsApiTypes.ProfilePostsListParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -2542,6 +4094,15 @@ public class ForumClient implements Closeable {
 			return listAsync(userId, null);
 		}
 	
+		/**
+		 * Get Profile Post
+		 *
+		 * <p>Detail information of a profile post.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param profilePostId Id of profile post.
+		 */
 		public Types.ProfilePostsApiTypes.ProfilePostsGetResponse get(long profilePostId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -2554,6 +4115,15 @@ public class ForumClient implements Closeable {
 			)), Types.ProfilePostsApiTypes.ProfilePostsGetResponse.class);
 		}
 	
+		/**
+		 * Get Profile Post
+		 *
+		 * <p>Detail information of a profile post.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param profilePostId Id of profile post.
+		 */
 		public CompletableFuture<Types.ProfilePostsApiTypes.ProfilePostsGetResponse> getAsync(long profilePostId) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -2566,6 +4136,16 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ProfilePostsApiTypes.ProfilePostsGetResponse.class));
 		}
 	
+		/**
+		 * Edit Profile Post
+		 *
+		 * <p>Edit a profile post.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param profilePostId Id of profile post.
+		 * @param body Request body.
+		 */
 		public Types.ProfilePostsApiTypes.ProfilePostsEditResponse edit(long profilePostId, Types.ProfilePostsApiTypes.ProfilePostsEditBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"PUT",
@@ -2582,6 +4162,16 @@ public class ForumClient implements Closeable {
 			return edit(profilePostId, null);
 		}
 	
+		/**
+		 * Edit Profile Post
+		 *
+		 * <p>Edit a profile post.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param profilePostId Id of profile post.
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ProfilePostsApiTypes.ProfilePostsEditResponse> editAsync(long profilePostId, Types.ProfilePostsApiTypes.ProfilePostsEditBody body) {
 			return http.requestAsync(new RequestOptions(
 				"PUT",
@@ -2598,6 +4188,16 @@ public class ForumClient implements Closeable {
 			return editAsync(profilePostId, null);
 		}
 	
+		/**
+		 * Delete Profile Post
+		 *
+		 * <p>Delete a profile post.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param profilePostId Id of profile post.
+		 * @param params Query parameters.
+		 */
 		public Types.ProfilePostsApiTypes.ProfilePostsDeleteResponse delete(long profilePostId, Types.ProfilePostsApiTypes.ProfilePostsDeleteParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"DELETE",
@@ -2614,6 +4214,16 @@ public class ForumClient implements Closeable {
 			return delete(profilePostId, null);
 		}
 	
+		/**
+		 * Delete Profile Post
+		 *
+		 * <p>Delete a profile post.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param profilePostId Id of profile post.
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.ProfilePostsApiTypes.ProfilePostsDeleteResponse> deleteAsync(long profilePostId, Types.ProfilePostsApiTypes.ProfilePostsDeleteParams params) {
 			return http.requestAsync(new RequestOptions(
 				"DELETE",
@@ -2630,6 +4240,15 @@ public class ForumClient implements Closeable {
 			return deleteAsync(profilePostId, null);
 		}
 	
+		/**
+		 * Get Profile Post Report Reasons
+		 *
+		 * <p>Get Profile Post Report Reasons.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param profilePostId Id of profile post.
+		 */
 		public Types.ProfilePostsApiTypes.ProfilePostsReportReasonsResponse reportReasons(long profilePostId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -2642,6 +4261,15 @@ public class ForumClient implements Closeable {
 			)), Types.ProfilePostsApiTypes.ProfilePostsReportReasonsResponse.class);
 		}
 	
+		/**
+		 * Get Profile Post Report Reasons
+		 *
+		 * <p>Get Profile Post Report Reasons.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param profilePostId Id of profile post.
+		 */
 		public CompletableFuture<Types.ProfilePostsApiTypes.ProfilePostsReportReasonsResponse> reportReasonsAsync(long profilePostId) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -2654,6 +4282,16 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ProfilePostsApiTypes.ProfilePostsReportReasonsResponse.class));
 		}
 	
+		/**
+		 * Report a Profile Post
+		 *
+		 * <p>Report a profile post.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param profilePostId Id of profile post.
+		 * @param body Request body.
+		 */
 		public Types.ProfilePostsApiTypes.ProfilePostsReportResponse report(long profilePostId, Types.ProfilePostsApiTypes.ProfilePostsReportBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -2670,6 +4308,16 @@ public class ForumClient implements Closeable {
 			return report(profilePostId, null);
 		}
 	
+		/**
+		 * Report a Profile Post
+		 *
+		 * <p>Report a profile post.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param profilePostId Id of profile post.
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ProfilePostsApiTypes.ProfilePostsReportResponse> reportAsync(long profilePostId, Types.ProfilePostsApiTypes.ProfilePostsReportBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -2686,6 +4334,15 @@ public class ForumClient implements Closeable {
 			return reportAsync(profilePostId, null);
 		}
 	
+		/**
+		 * Create Profile Post
+		 *
+		 * <p>Create a profile post on a user profile.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param body Request body.
+		 */
 		public Types.ProfilePostsApiTypes.ProfilePostsCreateResponse create(Types.ProfilePostsApiTypes.ProfilePostsCreateBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -2702,6 +4359,15 @@ public class ForumClient implements Closeable {
 			return create(null);
 		}
 	
+		/**
+		 * Create Profile Post
+		 *
+		 * <p>Create a profile post on a user profile.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ProfilePostsApiTypes.ProfilePostsCreateResponse> createAsync(Types.ProfilePostsApiTypes.ProfilePostsCreateBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -2718,6 +4384,15 @@ public class ForumClient implements Closeable {
 			return createAsync(null);
 		}
 	
+		/**
+		 * Stick Profile Post
+		 *
+		 * <p>Stick a profile post.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param profilePostId Id of profile post.
+		 */
 		public Types.ProfilePostsApiTypes.ProfilePostsStickResponse stick(long profilePostId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -2730,6 +4405,15 @@ public class ForumClient implements Closeable {
 			)), Types.ProfilePostsApiTypes.ProfilePostsStickResponse.class);
 		}
 	
+		/**
+		 * Stick Profile Post
+		 *
+		 * <p>Stick a profile post.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param profilePostId Id of profile post.
+		 */
 		public CompletableFuture<Types.ProfilePostsApiTypes.ProfilePostsStickResponse> stickAsync(long profilePostId) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -2742,6 +4426,15 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ProfilePostsApiTypes.ProfilePostsStickResponse.class));
 		}
 	
+		/**
+		 * Unstick Profile Post
+		 *
+		 * <p>Unstick a profile post.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param profilePostId Id of profile post.
+		 */
 		public Types.ProfilePostsApiTypes.ProfilePostsUnstickResponse unstick(long profilePostId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"DELETE",
@@ -2754,6 +4447,15 @@ public class ForumClient implements Closeable {
 			)), Types.ProfilePostsApiTypes.ProfilePostsUnstickResponse.class);
 		}
 	
+		/**
+		 * Unstick Profile Post
+		 *
+		 * <p>Unstick a profile post.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param profilePostId Id of profile post.
+		 */
 		public CompletableFuture<Types.ProfilePostsApiTypes.ProfilePostsUnstickResponse> unstickAsync(long profilePostId) {
 			return http.requestAsync(new RequestOptions(
 				"DELETE",
@@ -2766,6 +4468,15 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ProfilePostsApiTypes.ProfilePostsUnstickResponse.class));
 		}
 	
+		/**
+		 * Get Profile Post Likes
+		 *
+		 * <p>List of users who liked a profile post.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param profilePostId Id of profile post.
+		 */
 		public Types.ProfilePostsApiTypes.ProfilePostsLikesResponse likes(long profilePostId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -2778,6 +4489,15 @@ public class ForumClient implements Closeable {
 			)), Types.ProfilePostsApiTypes.ProfilePostsLikesResponse.class);
 		}
 	
+		/**
+		 * Get Profile Post Likes
+		 *
+		 * <p>List of users who liked a profile post.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param profilePostId Id of profile post.
+		 */
 		public CompletableFuture<Types.ProfilePostsApiTypes.ProfilePostsLikesResponse> likesAsync(long profilePostId) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -2790,6 +4510,15 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ProfilePostsApiTypes.ProfilePostsLikesResponse.class));
 		}
 	
+		/**
+		 * Like Profile Post
+		 *
+		 * <p>Like a profile post.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param profilePostId Id of profile post.
+		 */
 		public Types.ProfilePostsApiTypes.ProfilePostsLikeResponse like(long profilePostId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -2802,6 +4531,15 @@ public class ForumClient implements Closeable {
 			)), Types.ProfilePostsApiTypes.ProfilePostsLikeResponse.class);
 		}
 	
+		/**
+		 * Like Profile Post
+		 *
+		 * <p>Like a profile post.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param profilePostId Id of profile post.
+		 */
 		public CompletableFuture<Types.ProfilePostsApiTypes.ProfilePostsLikeResponse> likeAsync(long profilePostId) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -2814,6 +4552,15 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ProfilePostsApiTypes.ProfilePostsLikeResponse.class));
 		}
 	
+		/**
+		 * Unlike Profile Post
+		 *
+		 * <p>Unlike a profile post.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param profilePostId Id of profile post.
+		 */
 		public Types.ProfilePostsApiTypes.ProfilePostsUnlikeResponse unlike(long profilePostId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"DELETE",
@@ -2826,6 +4573,15 @@ public class ForumClient implements Closeable {
 			)), Types.ProfilePostsApiTypes.ProfilePostsUnlikeResponse.class);
 		}
 	
+		/**
+		 * Unlike Profile Post
+		 *
+		 * <p>Unlike a profile post.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param profilePostId Id of profile post.
+		 */
 		public CompletableFuture<Types.ProfilePostsApiTypes.ProfilePostsUnlikeResponse> unlikeAsync(long profilePostId) {
 			return http.requestAsync(new RequestOptions(
 				"DELETE",
@@ -2838,6 +4594,15 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ProfilePostsApiTypes.ProfilePostsUnlikeResponse.class));
 		}
 	
+		/**
+		 * Get Profile Post Comments
+		 *
+		 * <p>List of comments of a profile post.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param params Query parameters.
+		 */
 		public Types.ProfilePostsApiTypes.ProfilePostsCommentsListResponse commentsList(Types.ProfilePostsApiTypes.ProfilePostsCommentsListParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -2854,6 +4619,15 @@ public class ForumClient implements Closeable {
 			return commentsList(null);
 		}
 	
+		/**
+		 * Get Profile Post Comments
+		 *
+		 * <p>List of comments of a profile post.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.ProfilePostsApiTypes.ProfilePostsCommentsListResponse> commentsListAsync(Types.ProfilePostsApiTypes.ProfilePostsCommentsListParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -2870,6 +4644,15 @@ public class ForumClient implements Closeable {
 			return commentsListAsync(null);
 		}
 	
+		/**
+		 * Create Profile Post Comment
+		 *
+		 * <p>Create a new profile post comment.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param body Request body.
+		 */
 		public Types.ProfilePostsApiTypes.ProfilePostsCommentsCreateResponse commentsCreate(Types.ProfilePostsApiTypes.ProfilePostsCommentsCreateBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -2886,6 +4669,15 @@ public class ForumClient implements Closeable {
 			return commentsCreate(null);
 		}
 	
+		/**
+		 * Create Profile Post Comment
+		 *
+		 * <p>Create a new profile post comment.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ProfilePostsApiTypes.ProfilePostsCommentsCreateResponse> commentsCreateAsync(Types.ProfilePostsApiTypes.ProfilePostsCommentsCreateBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -2902,6 +4694,15 @@ public class ForumClient implements Closeable {
 			return commentsCreateAsync(null);
 		}
 	
+		/**
+		 * Edit Profile Post Comment
+		 *
+		 * <p>Edit a profile post comment.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param body Request body.
+		 */
 		public Types.ProfilePostsApiTypes.ProfilePostsCommentsEditResponse commentsEdit(Types.ProfilePostsApiTypes.ProfilePostsCommentsEditBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"PUT",
@@ -2918,6 +4719,15 @@ public class ForumClient implements Closeable {
 			return commentsEdit(null);
 		}
 	
+		/**
+		 * Edit Profile Post Comment
+		 *
+		 * <p>Edit a profile post comment.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ProfilePostsApiTypes.ProfilePostsCommentsEditResponse> commentsEditAsync(Types.ProfilePostsApiTypes.ProfilePostsCommentsEditBody body) {
 			return http.requestAsync(new RequestOptions(
 				"PUT",
@@ -2934,6 +4744,15 @@ public class ForumClient implements Closeable {
 			return commentsEditAsync(null);
 		}
 	
+		/**
+		 * Delete Profile Post Comment
+		 *
+		 * <p>Delete a profile post comment.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param body Request body.
+		 */
 		public Types.ProfilePostsApiTypes.ProfilePostsCommentsDeleteResponse commentsDelete(Types.ProfilePostsApiTypes.ProfilePostsCommentsDeleteBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"DELETE",
@@ -2950,6 +4769,15 @@ public class ForumClient implements Closeable {
 			return commentsDelete(null);
 		}
 	
+		/**
+		 * Delete Profile Post Comment
+		 *
+		 * <p>Delete a profile post comment.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ProfilePostsApiTypes.ProfilePostsCommentsDeleteResponse> commentsDeleteAsync(Types.ProfilePostsApiTypes.ProfilePostsCommentsDeleteBody body) {
 			return http.requestAsync(new RequestOptions(
 				"DELETE",
@@ -2966,6 +4794,16 @@ public class ForumClient implements Closeable {
 			return commentsDeleteAsync(null);
 		}
 	
+		/**
+		 * Get Profile Post Comment
+		 *
+		 * <p>Detail information of a profile post comment.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param profilePostId Id of profile post.
+		 * @param commentId Id of profile post comment.
+		 */
 		public Types.ProfilePostsApiTypes.ProfilePostsCommentsGetResponse commentsGet(long profilePostId, long commentId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -2978,6 +4816,16 @@ public class ForumClient implements Closeable {
 			)), Types.ProfilePostsApiTypes.ProfilePostsCommentsGetResponse.class);
 		}
 	
+		/**
+		 * Get Profile Post Comment
+		 *
+		 * <p>Detail information of a profile post comment.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param profilePostId Id of profile post.
+		 * @param commentId Id of profile post comment.
+		 */
 		public CompletableFuture<Types.ProfilePostsApiTypes.ProfilePostsCommentsGetResponse> commentsGetAsync(long profilePostId, long commentId) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -2990,6 +4838,16 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ProfilePostsApiTypes.ProfilePostsCommentsGetResponse.class));
 		}
 	
+		/**
+		 * Report a Profile Post Comment
+		 *
+		 * <p>Report a profile post comment.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param commentId Id of profile post comment.
+		 * @param body Request body.
+		 */
 		public Types.ProfilePostsApiTypes.ProfilePostsCommentsReportResponse commentsReport(long commentId, Types.ProfilePostsApiTypes.ProfilePostsCommentsReportBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -3006,6 +4864,16 @@ public class ForumClient implements Closeable {
 			return commentsReport(commentId, null);
 		}
 	
+		/**
+		 * Report a Profile Post Comment
+		 *
+		 * <p>Report a profile post comment.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param commentId Id of profile post comment.
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ProfilePostsApiTypes.ProfilePostsCommentsReportResponse> commentsReportAsync(long commentId, Types.ProfilePostsApiTypes.ProfilePostsCommentsReportBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -3033,6 +4901,16 @@ public class ForumClient implements Closeable {
 			this.mapper = http.objectMapper();
 		}
 	
+		/**
+		 * Get Conversations
+		 *
+		 * <p>List of conversations (with pagination).
+		 * 
+		 * Required scopes:
+		 * + **read**
+		 * + **conversate**</p>
+		 * @param params Query parameters.
+		 */
 		public Types.ConversationsApiTypes.ConversationsListResponse list(Types.ConversationsApiTypes.ConversationsListParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -3049,6 +4927,16 @@ public class ForumClient implements Closeable {
 			return list(null);
 		}
 	
+		/**
+		 * Get Conversations
+		 *
+		 * <p>List of conversations (with pagination).
+		 * 
+		 * Required scopes:
+		 * + **read**
+		 * + **conversate**</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.ConversationsApiTypes.ConversationsListResponse> listAsync(Types.ConversationsApiTypes.ConversationsListParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -3065,6 +4953,16 @@ public class ForumClient implements Closeable {
 			return listAsync(null);
 		}
 	
+		/**
+		 * Create Conversation
+		 *
+		 * <p>Create a new conversation.
+		 * 
+		 * Required scopes:
+		 * + **post**
+		 * + **conversate**</p>
+		 * @param body Request body.
+		 */
 		public Types.ConversationsApiTypes.ConversationsCreateResponse create(Types.ConversationsApiTypes.ConversationsCreateBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -3081,6 +4979,16 @@ public class ForumClient implements Closeable {
 			return create(null);
 		}
 	
+		/**
+		 * Create Conversation
+		 *
+		 * <p>Create a new conversation.
+		 * 
+		 * Required scopes:
+		 * + **post**
+		 * + **conversate**</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ConversationsApiTypes.ConversationsCreateResponse> createAsync(Types.ConversationsApiTypes.ConversationsCreateBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -3097,6 +5005,15 @@ public class ForumClient implements Closeable {
 			return createAsync(null);
 		}
 	
+		/**
+		 * Edit Conversation
+		 *
+		 * <p>Edit conversation.
+		 * 
+		 * Required scopes:
+		 * + **conversate**</p>
+		 * @param body Request body.
+		 */
 		public Types.ConversationsApiTypes.ConversationsUpdateResponse update(Types.ConversationsApiTypes.ConversationsUpdateBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"PUT",
@@ -3113,6 +5030,15 @@ public class ForumClient implements Closeable {
 			return update(null);
 		}
 	
+		/**
+		 * Edit Conversation
+		 *
+		 * <p>Edit conversation.
+		 * 
+		 * Required scopes:
+		 * + **conversate**</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ConversationsApiTypes.ConversationsUpdateResponse> updateAsync(Types.ConversationsApiTypes.ConversationsUpdateBody body) {
 			return http.requestAsync(new RequestOptions(
 				"PUT",
@@ -3129,6 +5055,16 @@ public class ForumClient implements Closeable {
 			return updateAsync(null);
 		}
 	
+		/**
+		 * Leave Conversation
+		 *
+		 * <p>Leave the conversation.
+		 * 
+		 * Required scopes:
+		 * + **post**
+		 * + **conversate**</p>
+		 * @param body Request body.
+		 */
 		public Types.ConversationsApiTypes.ConversationsDeleteResponse delete(Types.ConversationsApiTypes.ConversationsDeleteBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"DELETE",
@@ -3145,6 +5081,16 @@ public class ForumClient implements Closeable {
 			return delete(null);
 		}
 	
+		/**
+		 * Leave Conversation
+		 *
+		 * <p>Leave the conversation.
+		 * 
+		 * Required scopes:
+		 * + **post**
+		 * + **conversate**</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ConversationsApiTypes.ConversationsDeleteResponse> deleteAsync(Types.ConversationsApiTypes.ConversationsDeleteBody body) {
 			return http.requestAsync(new RequestOptions(
 				"DELETE",
@@ -3161,6 +5107,15 @@ public class ForumClient implements Closeable {
 			return deleteAsync(null);
 		}
 	
+		/**
+		 * Start Conversation
+		 *
+		 * <p>Start a new conversation with a user.
+		 * 
+		 * Required scopes:
+		 * + **conversate**</p>
+		 * @param body Request body.
+		 */
 		public Types.ConversationsApiTypes.ConversationsStartResponse start(Types.ConversationsApiTypes.ConversationsStartBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -3177,6 +5132,15 @@ public class ForumClient implements Closeable {
 			return start(null);
 		}
 	
+		/**
+		 * Start Conversation
+		 *
+		 * <p>Start a new conversation with a user.
+		 * 
+		 * Required scopes:
+		 * + **conversate**</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ConversationsApiTypes.ConversationsStartResponse> startAsync(Types.ConversationsApiTypes.ConversationsStartBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -3193,6 +5157,15 @@ public class ForumClient implements Closeable {
 			return startAsync(null);
 		}
 	
+		/**
+		 * Send Content To Saved Messages
+		 *
+		 * <p>Send content to Saved Messages.
+		 * 
+		 * Required scopes:
+		 * + **conversate**</p>
+		 * @param body Request body.
+		 */
 		public Types.ConversationsApiTypes.ConversationsSaveResponse save(Types.ConversationsApiTypes.ConversationsSaveBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -3209,6 +5182,15 @@ public class ForumClient implements Closeable {
 			return save(null);
 		}
 	
+		/**
+		 * Send Content To Saved Messages
+		 *
+		 * <p>Send content to Saved Messages.
+		 * 
+		 * Required scopes:
+		 * + **conversate**</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ConversationsApiTypes.ConversationsSaveResponse> saveAsync(Types.ConversationsApiTypes.ConversationsSaveBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -3225,6 +5207,16 @@ public class ForumClient implements Closeable {
 			return saveAsync(null);
 		}
 	
+		/**
+		 * Get Conversation
+		 *
+		 * <p>Detail information of a conversation.
+		 * 
+		 * Required scopes:
+		 * + **read**
+		 * + **conversate**</p>
+		 * @param conversationId Id of conversation.
+		 */
 		public Types.ConversationsApiTypes.ConversationsGetResponse get(long conversationId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -3237,6 +5229,16 @@ public class ForumClient implements Closeable {
 			)), Types.ConversationsApiTypes.ConversationsGetResponse.class);
 		}
 	
+		/**
+		 * Get Conversation
+		 *
+		 * <p>Detail information of a conversation.
+		 * 
+		 * Required scopes:
+		 * + **read**
+		 * + **conversate**</p>
+		 * @param conversationId Id of conversation.
+		 */
 		public CompletableFuture<Types.ConversationsApiTypes.ConversationsGetResponse> getAsync(long conversationId) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -3249,6 +5251,17 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ConversationsApiTypes.ConversationsGetResponse.class));
 		}
 	
+		/**
+		 * Get Conversation Messages
+		 *
+		 * <p>List of messages in a conversation (with pagination).
+		 * 
+		 * Required scopes:
+		 * + **read**
+		 * + **conversate**</p>
+		 * @param conversationId Id of conversation.
+		 * @param params Query parameters.
+		 */
 		public Types.ConversationsApiTypes.ConversationsMessagesListResponse messagesList(long conversationId, Types.ConversationsApiTypes.ConversationsMessagesListParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -3265,6 +5278,17 @@ public class ForumClient implements Closeable {
 			return messagesList(conversationId, null);
 		}
 	
+		/**
+		 * Get Conversation Messages
+		 *
+		 * <p>List of messages in a conversation (with pagination).
+		 * 
+		 * Required scopes:
+		 * + **read**
+		 * + **conversate**</p>
+		 * @param conversationId Id of conversation.
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.ConversationsApiTypes.ConversationsMessagesListResponse> messagesListAsync(long conversationId, Types.ConversationsApiTypes.ConversationsMessagesListParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -3281,6 +5305,17 @@ public class ForumClient implements Closeable {
 			return messagesListAsync(conversationId, null);
 		}
 	
+		/**
+		 * Create Conversation Message
+		 *
+		 * <p>Create a new conversation message.
+		 * 
+		 * Required scopes:
+		 * + **post**
+		 * + **conversate**</p>
+		 * @param conversationId Id of conversation.
+		 * @param body Request body.
+		 */
 		public Types.ConversationsApiTypes.ConversationsMessagesCreateResponse messagesCreate(long conversationId, Types.ConversationsApiTypes.ConversationsMessagesCreateBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -3297,6 +5332,17 @@ public class ForumClient implements Closeable {
 			return messagesCreate(conversationId, null);
 		}
 	
+		/**
+		 * Create Conversation Message
+		 *
+		 * <p>Create a new conversation message.
+		 * 
+		 * Required scopes:
+		 * + **post**
+		 * + **conversate**</p>
+		 * @param conversationId Id of conversation.
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ConversationsApiTypes.ConversationsMessagesCreateResponse> messagesCreateAsync(long conversationId, Types.ConversationsApiTypes.ConversationsMessagesCreateBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -3313,6 +5359,16 @@ public class ForumClient implements Closeable {
 			return messagesCreateAsync(conversationId, null);
 		}
 	
+		/**
+		 * Search Conversations Messages
+		 *
+		 * <p>Search for conversations messages or recipients.
+		 * 
+		 * Required scopes:
+		 * + **read**
+		 * + **conversate**</p>
+		 * @param body Request body.
+		 */
 		public Types.ConversationsApiTypes.ConversationsSearchResponse search(Types.ConversationsApiTypes.ConversationsSearchBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -3329,6 +5385,16 @@ public class ForumClient implements Closeable {
 			return search(null);
 		}
 	
+		/**
+		 * Search Conversations Messages
+		 *
+		 * <p>Search for conversations messages or recipients.
+		 * 
+		 * Required scopes:
+		 * + **read**
+		 * + **conversate**</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ConversationsApiTypes.ConversationsSearchResponse> searchAsync(Types.ConversationsApiTypes.ConversationsSearchBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -3345,6 +5411,16 @@ public class ForumClient implements Closeable {
 			return searchAsync(null);
 		}
 	
+		/**
+		 * Get Conversation Message
+		 *
+		 * <p>Detail information of a message.
+		 * 
+		 * Required scopes:
+		 * + **read**
+		 * + **conversate**</p>
+		 * @param messageId Id of message.
+		 */
 		public Types.ConversationsApiTypes.ConversationsMessagesGetResponse messagesGet(long messageId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -3357,6 +5433,16 @@ public class ForumClient implements Closeable {
 			)), Types.ConversationsApiTypes.ConversationsMessagesGetResponse.class);
 		}
 	
+		/**
+		 * Get Conversation Message
+		 *
+		 * <p>Detail information of a message.
+		 * 
+		 * Required scopes:
+		 * + **read**
+		 * + **conversate**</p>
+		 * @param messageId Id of message.
+		 */
 		public CompletableFuture<Types.ConversationsApiTypes.ConversationsMessagesGetResponse> messagesGetAsync(long messageId) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -3369,6 +5455,18 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ConversationsApiTypes.ConversationsMessagesGetResponse.class));
 		}
 	
+		/**
+		 * Edit Conversation Message
+		 *
+		 * <p>Edit a message.
+		 * 
+		 * Required scopes:
+		 * + **post**
+		 * + **conversate**</p>
+		 * @param conversationId Id of conversation.
+		 * @param messageId Id of message.
+		 * @param body Request body.
+		 */
 		public Types.ConversationsApiTypes.ConversationsMessagesEditResponse messagesEdit(long conversationId, long messageId, Types.ConversationsApiTypes.ConversationsMessagesEditBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"PUT",
@@ -3385,6 +5483,18 @@ public class ForumClient implements Closeable {
 			return messagesEdit(conversationId, messageId, null);
 		}
 	
+		/**
+		 * Edit Conversation Message
+		 *
+		 * <p>Edit a message.
+		 * 
+		 * Required scopes:
+		 * + **post**
+		 * + **conversate**</p>
+		 * @param conversationId Id of conversation.
+		 * @param messageId Id of message.
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ConversationsApiTypes.ConversationsMessagesEditResponse> messagesEditAsync(long conversationId, long messageId, Types.ConversationsApiTypes.ConversationsMessagesEditBody body) {
 			return http.requestAsync(new RequestOptions(
 				"PUT",
@@ -3401,6 +5511,16 @@ public class ForumClient implements Closeable {
 			return messagesEditAsync(conversationId, messageId, null);
 		}
 	
+		/**
+		 * Delete Conversation Message
+		 *
+		 * <p>Deletes a message from a conversation.
+		 * 
+		 * Required scopes:
+		 * + **conversate**</p>
+		 * @param conversationId Id of conversation.
+		 * @param messageId Id of message.
+		 */
 		public Types.ConversationsApiTypes.ConversationsMessagesDeleteResponse messagesDelete(long conversationId, long messageId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"DELETE",
@@ -3413,6 +5533,16 @@ public class ForumClient implements Closeable {
 			)), Types.ConversationsApiTypes.ConversationsMessagesDeleteResponse.class);
 		}
 	
+		/**
+		 * Delete Conversation Message
+		 *
+		 * <p>Deletes a message from a conversation.
+		 * 
+		 * Required scopes:
+		 * + **conversate**</p>
+		 * @param conversationId Id of conversation.
+		 * @param messageId Id of message.
+		 */
 		public CompletableFuture<Types.ConversationsApiTypes.ConversationsMessagesDeleteResponse> messagesDeleteAsync(long conversationId, long messageId) {
 			return http.requestAsync(new RequestOptions(
 				"DELETE",
@@ -3425,6 +5555,17 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ConversationsApiTypes.ConversationsMessagesDeleteResponse.class));
 		}
 	
+		/**
+		 * Invite Users to Conversation
+		 *
+		 * <p>Invite one or more users to an existing conversation.
+		 * 
+		 * Required scopes:
+		 * + **conversate**
+		 * + **post**</p>
+		 * @param conversationId Id of conversation.
+		 * @param body Request body.
+		 */
 		public Types.ConversationsApiTypes.ConversationsInviteResponse invite(long conversationId, Types.ConversationsApiTypes.ConversationsInviteBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -3441,6 +5582,17 @@ public class ForumClient implements Closeable {
 			return invite(conversationId, null);
 		}
 	
+		/**
+		 * Invite Users to Conversation
+		 *
+		 * <p>Invite one or more users to an existing conversation.
+		 * 
+		 * Required scopes:
+		 * + **conversate**
+		 * + **post**</p>
+		 * @param conversationId Id of conversation.
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ConversationsApiTypes.ConversationsInviteResponse> inviteAsync(long conversationId, Types.ConversationsApiTypes.ConversationsInviteBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -3457,6 +5609,16 @@ public class ForumClient implements Closeable {
 			return inviteAsync(conversationId, null);
 		}
 	
+		/**
+		 * Kick User from Conversation
+		 *
+		 * <p>Kicks a user from a conversation.
+		 * 
+		 * Required scopes:
+		 * + **conversate**</p>
+		 * @param conversationId Id of conversation.
+		 * @param body Request body.
+		 */
 		public Types.ConversationsApiTypes.ConversationsKickResponse kick(long conversationId, Types.ConversationsApiTypes.ConversationsKickBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -3473,6 +5635,16 @@ public class ForumClient implements Closeable {
 			return kick(conversationId, null);
 		}
 	
+		/**
+		 * Kick User from Conversation
+		 *
+		 * <p>Kicks a user from a conversation.
+		 * 
+		 * Required scopes:
+		 * + **conversate**</p>
+		 * @param conversationId Id of conversation.
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ConversationsApiTypes.ConversationsKickResponse> kickAsync(long conversationId, Types.ConversationsApiTypes.ConversationsKickBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -3489,6 +5661,15 @@ public class ForumClient implements Closeable {
 			return kickAsync(conversationId, null);
 		}
 	
+		/**
+		 * Read a Conversation
+		 *
+		 * <p>Read a specific conversation.
+		 * 
+		 * Required scopes:
+		 * + **conversate**</p>
+		 * @param conversationId Id of conversation.
+		 */
 		public Types.ConversationsApiTypes.ConversationsReadResponse read(long conversationId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -3501,6 +5682,15 @@ public class ForumClient implements Closeable {
 			)), Types.ConversationsApiTypes.ConversationsReadResponse.class);
 		}
 	
+		/**
+		 * Read a Conversation
+		 *
+		 * <p>Read a specific conversation.
+		 * 
+		 * Required scopes:
+		 * + **conversate**</p>
+		 * @param conversationId Id of conversation.
+		 */
 		public CompletableFuture<Types.ConversationsApiTypes.ConversationsReadResponse> readAsync(long conversationId) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -3513,6 +5703,15 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ConversationsApiTypes.ConversationsReadResponse.class));
 		}
 	
+		/**
+		 * Read All Conversations
+		 *
+		 * <p>Mark all conversations as read.
+		 * 
+		 * Required scopes:
+		 * + **read**
+		 * + **conversate**</p>
+		 */
 		public Types.ConversationsApiTypes.ConversationsReadAllResponse readAll() {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -3525,6 +5724,15 @@ public class ForumClient implements Closeable {
 			)), Types.ConversationsApiTypes.ConversationsReadAllResponse.class);
 		}
 	
+		/**
+		 * Read All Conversations
+		 *
+		 * <p>Mark all conversations as read.
+		 * 
+		 * Required scopes:
+		 * + **read**
+		 * + **conversate**</p>
+		 */
 		public CompletableFuture<Types.ConversationsApiTypes.ConversationsReadAllResponse> readAllAsync() {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -3537,6 +5745,17 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ConversationsApiTypes.ConversationsReadAllResponse.class));
 		}
 	
+		/**
+		 * Stick Conversation Message
+		 *
+		 * <p>Stick a message in a conversation.
+		 * 
+		 * Required scopes:
+		 * + **post**
+		 * + **conversate**</p>
+		 * @param conversationId Id of conversation.
+		 * @param messageId Id of message.
+		 */
 		public Types.ConversationsApiTypes.ConversationsMessagesStickResponse messagesStick(long conversationId, long messageId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -3549,6 +5768,17 @@ public class ForumClient implements Closeable {
 			)), Types.ConversationsApiTypes.ConversationsMessagesStickResponse.class);
 		}
 	
+		/**
+		 * Stick Conversation Message
+		 *
+		 * <p>Stick a message in a conversation.
+		 * 
+		 * Required scopes:
+		 * + **post**
+		 * + **conversate**</p>
+		 * @param conversationId Id of conversation.
+		 * @param messageId Id of message.
+		 */
 		public CompletableFuture<Types.ConversationsApiTypes.ConversationsMessagesStickResponse> messagesStickAsync(long conversationId, long messageId) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -3561,6 +5791,17 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ConversationsApiTypes.ConversationsMessagesStickResponse.class));
 		}
 	
+		/**
+		 * Unstick Conversation Message
+		 *
+		 * <p>Unstick a message in a conversation.
+		 * 
+		 * Required scopes:
+		 * + **post**
+		 * + **conversate**</p>
+		 * @param conversationId Id of conversation.
+		 * @param messageId Id of message.
+		 */
 		public Types.ConversationsApiTypes.ConversationsMessagesUnstickResponse messagesUnstick(long conversationId, long messageId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"DELETE",
@@ -3573,6 +5814,17 @@ public class ForumClient implements Closeable {
 			)), Types.ConversationsApiTypes.ConversationsMessagesUnstickResponse.class);
 		}
 	
+		/**
+		 * Unstick Conversation Message
+		 *
+		 * <p>Unstick a message in a conversation.
+		 * 
+		 * Required scopes:
+		 * + **post**
+		 * + **conversate**</p>
+		 * @param conversationId Id of conversation.
+		 * @param messageId Id of message.
+		 */
 		public CompletableFuture<Types.ConversationsApiTypes.ConversationsMessagesUnstickResponse> messagesUnstickAsync(long conversationId, long messageId) {
 			return http.requestAsync(new RequestOptions(
 				"DELETE",
@@ -3585,6 +5837,16 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ConversationsApiTypes.ConversationsMessagesUnstickResponse.class));
 		}
 	
+		/**
+		 * Star Conversation
+		 *
+		 * <p>Star conversation.
+		 * 
+		 * Required scopes:
+		 * + **post**
+		 * + **conversate**</p>
+		 * @param conversationId Id of conversation.
+		 */
 		public Types.ConversationsApiTypes.ConversationsStarResponse star(long conversationId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -3597,6 +5859,16 @@ public class ForumClient implements Closeable {
 			)), Types.ConversationsApiTypes.ConversationsStarResponse.class);
 		}
 	
+		/**
+		 * Star Conversation
+		 *
+		 * <p>Star conversation.
+		 * 
+		 * Required scopes:
+		 * + **post**
+		 * + **conversate**</p>
+		 * @param conversationId Id of conversation.
+		 */
 		public CompletableFuture<Types.ConversationsApiTypes.ConversationsStarResponse> starAsync(long conversationId) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -3609,6 +5881,16 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ConversationsApiTypes.ConversationsStarResponse.class));
 		}
 	
+		/**
+		 * Unstar Conversation
+		 *
+		 * <p>Unstar conversation.
+		 * 
+		 * Required scopes:
+		 * + **post**
+		 * + **conversate**</p>
+		 * @param conversationId Id of conversation.
+		 */
 		public Types.ConversationsApiTypes.ConversationsUnstarResponse unstar(long conversationId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"DELETE",
@@ -3621,6 +5903,16 @@ public class ForumClient implements Closeable {
 			)), Types.ConversationsApiTypes.ConversationsUnstarResponse.class);
 		}
 	
+		/**
+		 * Unstar Conversation
+		 *
+		 * <p>Unstar conversation.
+		 * 
+		 * Required scopes:
+		 * + **post**
+		 * + **conversate**</p>
+		 * @param conversationId Id of conversation.
+		 */
 		public CompletableFuture<Types.ConversationsApiTypes.ConversationsUnstarResponse> unstarAsync(long conversationId) {
 			return http.requestAsync(new RequestOptions(
 				"DELETE",
@@ -3633,6 +5925,16 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ConversationsApiTypes.ConversationsUnstarResponse.class));
 		}
 	
+		/**
+		 * Enable Conversation Alerts
+		 *
+		 * <p>Enable alerts for conversation.
+		 * 
+		 * Required scopes:
+		 * + **post**
+		 * + **conversate**</p>
+		 * @param conversationId Id of conversation.
+		 */
 		public Types.ConversationsApiTypes.ConversationsAlertsEnableResponse alertsEnable(long conversationId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -3645,6 +5947,16 @@ public class ForumClient implements Closeable {
 			)), Types.ConversationsApiTypes.ConversationsAlertsEnableResponse.class);
 		}
 	
+		/**
+		 * Enable Conversation Alerts
+		 *
+		 * <p>Enable alerts for conversation.
+		 * 
+		 * Required scopes:
+		 * + **post**
+		 * + **conversate**</p>
+		 * @param conversationId Id of conversation.
+		 */
 		public CompletableFuture<Types.ConversationsApiTypes.ConversationsAlertsEnableResponse> alertsEnableAsync(long conversationId) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -3657,6 +5969,16 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ConversationsApiTypes.ConversationsAlertsEnableResponse.class));
 		}
 	
+		/**
+		 * Disable Conversation Alerts
+		 *
+		 * <p>Disable alerts for conversation.
+		 * 
+		 * Required scopes:
+		 * + **post**
+		 * + **conversate**</p>
+		 * @param conversationId Id of conversation.
+		 */
 		public Types.ConversationsApiTypes.ConversationsAlertsDisableResponse alertsDisable(long conversationId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"DELETE",
@@ -3669,6 +5991,16 @@ public class ForumClient implements Closeable {
 			)), Types.ConversationsApiTypes.ConversationsAlertsDisableResponse.class);
 		}
 	
+		/**
+		 * Disable Conversation Alerts
+		 *
+		 * <p>Disable alerts for conversation.
+		 * 
+		 * Required scopes:
+		 * + **post**
+		 * + **conversate**</p>
+		 * @param conversationId Id of conversation.
+		 */
 		public CompletableFuture<Types.ConversationsApiTypes.ConversationsAlertsDisableResponse> alertsDisableAsync(long conversationId) {
 			return http.requestAsync(new RequestOptions(
 				"DELETE",
@@ -3692,6 +6024,15 @@ public class ForumClient implements Closeable {
 			this.mapper = http.objectMapper();
 		}
 	
+		/**
+		 * Get Notifications
+		 *
+		 * <p>List of notifications (both read and unread).
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param params Query parameters.
+		 */
 		public Types.NotificationsApiTypes.NotificationsListResponse list(Types.NotificationsApiTypes.NotificationsListParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -3708,6 +6049,15 @@ public class ForumClient implements Closeable {
 			return list(null);
 		}
 	
+		/**
+		 * Get Notifications
+		 *
+		 * <p>List of notifications (both read and unread).
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.NotificationsApiTypes.NotificationsListResponse> listAsync(Types.NotificationsApiTypes.NotificationsListParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -3724,6 +6074,15 @@ public class ForumClient implements Closeable {
 			return listAsync(null);
 		}
 	
+		/**
+		 * Get Notification
+		 *
+		 * <p>Get associated content of notification. The response depends on the content type.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param notificationId Id of notification.
+		 */
 		public Types.NotificationsApiTypes.NotificationsGetResponse get(long notificationId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -3736,6 +6095,15 @@ public class ForumClient implements Closeable {
 			)), Types.NotificationsApiTypes.NotificationsGetResponse.class);
 		}
 	
+		/**
+		 * Get Notification
+		 *
+		 * <p>Get associated content of notification. The response depends on the content type.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param notificationId Id of notification.
+		 */
 		public CompletableFuture<Types.NotificationsApiTypes.NotificationsGetResponse> getAsync(long notificationId) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -3748,6 +6116,15 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.NotificationsApiTypes.NotificationsGetResponse.class));
 		}
 	
+		/**
+		 * Mark Notification Read
+		 *
+		 * <p>Mark single notification or all existing notifications read.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param body Request body.
+		 */
 		public Types.NotificationsApiTypes.NotificationsReadResponse read(Types.NotificationsApiTypes.NotificationsReadBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -3764,6 +6141,15 @@ public class ForumClient implements Closeable {
 			return read(null);
 		}
 	
+		/**
+		 * Mark Notification Read
+		 *
+		 * <p>Mark single notification or all existing notifications read.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.NotificationsApiTypes.NotificationsReadResponse> readAsync(Types.NotificationsApiTypes.NotificationsReadBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -3791,6 +6177,14 @@ public class ForumClient implements Closeable {
 			this.mapper = http.objectMapper();
 		}
 	
+		/**
+		 * Get Popular Tags
+		 *
+		 * <p>List of popular tags (no pagination).
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 */
 		public Types.TagsApiTypes.TagsPopularResponse popular() {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -3803,6 +6197,14 @@ public class ForumClient implements Closeable {
 			)), Types.TagsApiTypes.TagsPopularResponse.class);
 		}
 	
+		/**
+		 * Get Popular Tags
+		 *
+		 * <p>List of popular tags (no pagination).
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 */
 		public CompletableFuture<Types.TagsApiTypes.TagsPopularResponse> popularAsync() {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -3815,6 +6217,15 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.TagsApiTypes.TagsPopularResponse.class));
 		}
 	
+		/**
+		 * Get Tags
+		 *
+		 * <p>List of tags.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param params Query parameters.
+		 */
 		public Types.TagsApiTypes.TagsListResponse list(Types.TagsApiTypes.TagsListParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -3831,6 +6242,15 @@ public class ForumClient implements Closeable {
 			return list(null);
 		}
 	
+		/**
+		 * Get Tags
+		 *
+		 * <p>List of tags.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.TagsApiTypes.TagsListResponse> listAsync(Types.TagsApiTypes.TagsListParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -3847,6 +6267,16 @@ public class ForumClient implements Closeable {
 			return listAsync(null);
 		}
 	
+		/**
+		 * Get Tagged Content
+		 *
+		 * <p>List of tagged contents.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param tagId Id of tag.
+		 * @param params Query parameters.
+		 */
 		public Types.TagsApiTypes.TagsGetResponse get(long tagId, Types.TagsApiTypes.TagsGetParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -3863,6 +6293,16 @@ public class ForumClient implements Closeable {
 			return get(tagId, null);
 		}
 	
+		/**
+		 * Get Tagged Content
+		 *
+		 * <p>List of tagged contents.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param tagId Id of tag.
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.TagsApiTypes.TagsGetResponse> getAsync(long tagId, Types.TagsApiTypes.TagsGetParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -3879,6 +6319,15 @@ public class ForumClient implements Closeable {
 			return getAsync(tagId, null);
 		}
 	
+		/**
+		 * Get Filtered Content
+		 *
+		 * <p>Filtered list of tags.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param params Query parameters.
+		 */
 		public Types.TagsApiTypes.TagsFindResponse find(Types.TagsApiTypes.TagsFindParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -3895,6 +6344,15 @@ public class ForumClient implements Closeable {
 			return find(null);
 		}
 	
+		/**
+		 * Get Filtered Content
+		 *
+		 * <p>Filtered list of tags.
+		 * 
+		 * Required scopes:
+		 * + **read**</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.TagsApiTypes.TagsFindResponse> findAsync(Types.TagsApiTypes.TagsFindParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -3922,6 +6380,15 @@ public class ForumClient implements Closeable {
 			this.mapper = http.objectMapper();
 		}
 	
+		/**
+		 * Search
+		 *
+		 * <p>Search for all supported contents.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param body Request body.
+		 */
 		public Types.SearchApiTypes.SearchAllResponse all(Types.SearchApiTypes.SearchAllBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -3938,6 +6405,15 @@ public class ForumClient implements Closeable {
 			return all(null);
 		}
 	
+		/**
+		 * Search
+		 *
+		 * <p>Search for all supported contents.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.SearchApiTypes.SearchAllResponse> allAsync(Types.SearchApiTypes.SearchAllBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -3954,6 +6430,15 @@ public class ForumClient implements Closeable {
 			return allAsync(null);
 		}
 	
+		/**
+		 * Search Thread
+		 *
+		 * <p>Search for threads.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param body Request body.
+		 */
 		public Types.SearchApiTypes.SearchThreadsResponse threads(Types.SearchApiTypes.SearchThreadsBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -3970,6 +6455,15 @@ public class ForumClient implements Closeable {
 			return threads(null);
 		}
 	
+		/**
+		 * Search Thread
+		 *
+		 * <p>Search for threads.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.SearchApiTypes.SearchThreadsResponse> threadsAsync(Types.SearchApiTypes.SearchThreadsBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -3986,6 +6480,15 @@ public class ForumClient implements Closeable {
 			return threadsAsync(null);
 		}
 	
+		/**
+		 * Search Post
+		 *
+		 * <p>Search for posts.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param body Request body.
+		 */
 		public Types.SearchApiTypes.SearchPostsResponse posts(Types.SearchApiTypes.SearchPostsBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -4002,6 +6505,15 @@ public class ForumClient implements Closeable {
 			return posts(null);
 		}
 	
+		/**
+		 * Search Post
+		 *
+		 * <p>Search for posts.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.SearchApiTypes.SearchPostsResponse> postsAsync(Types.SearchApiTypes.SearchPostsBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -4018,6 +6530,15 @@ public class ForumClient implements Closeable {
 			return postsAsync(null);
 		}
 	
+		/**
+		 * Search Users
+		 *
+		 * <p>Search for users.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param body Request body.
+		 */
 		public Types.SearchApiTypes.SearchUsersResponse users(Types.SearchApiTypes.SearchUsersBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -4034,6 +6555,15 @@ public class ForumClient implements Closeable {
 			return users(null);
 		}
 	
+		/**
+		 * Search Users
+		 *
+		 * <p>Search for users.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.SearchApiTypes.SearchUsersResponse> usersAsync(Types.SearchApiTypes.SearchUsersBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -4050,6 +6580,15 @@ public class ForumClient implements Closeable {
 			return usersAsync(null);
 		}
 	
+		/**
+		 * Search Profile Posts
+		 *
+		 * <p>Search for profile posts.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param body Request body.
+		 */
 		public Types.SearchApiTypes.SearchProfilePostsResponse profilePosts(Types.SearchApiTypes.SearchProfilePostsBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -4066,6 +6605,15 @@ public class ForumClient implements Closeable {
 			return profilePosts(null);
 		}
 	
+		/**
+		 * Search Profile Posts
+		 *
+		 * <p>Search for profile posts.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.SearchApiTypes.SearchProfilePostsResponse> profilePostsAsync(Types.SearchApiTypes.SearchProfilePostsBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -4082,6 +6630,15 @@ public class ForumClient implements Closeable {
 			return profilePostsAsync(null);
 		}
 	
+		/**
+		 * Search Tagged
+		 *
+		 * <p>Search for tagged contents.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param body Request body.
+		 */
 		public Types.SearchApiTypes.SearchTaggedResponse tagged(Types.SearchApiTypes.SearchTaggedBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -4098,6 +6655,15 @@ public class ForumClient implements Closeable {
 			return tagged(null);
 		}
 	
+		/**
+		 * Search Tagged
+		 *
+		 * <p>Search for tagged contents.
+		 * 
+		 * Required scopes:
+		 * + **post**</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.SearchApiTypes.SearchTaggedResponse> taggedAsync(Types.SearchApiTypes.SearchTaggedBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -4114,6 +6680,16 @@ public class ForumClient implements Closeable {
 			return taggedAsync(null);
 		}
 	
+		/**
+		 * Get Search Results
+		 *
+		 * <p>List of search results (with pagination).
+		 * 
+		 * Required scopes:
+		 * + **get**</p>
+		 * @param searchId Search ID.
+		 * @param params Query parameters.
+		 */
 		public Types.SearchApiTypes.SearchResultsResponse results(com.lolzteam.api.runtime.StringOrInt searchId, Types.SearchApiTypes.SearchResultsParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -4130,6 +6706,16 @@ public class ForumClient implements Closeable {
 			return results(searchId, null);
 		}
 	
+		/**
+		 * Get Search Results
+		 *
+		 * <p>List of search results (with pagination).
+		 * 
+		 * Required scopes:
+		 * + **get**</p>
+		 * @param searchId Search ID.
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.SearchApiTypes.SearchResultsResponse> resultsAsync(com.lolzteam.api.runtime.StringOrInt searchId, Types.SearchApiTypes.SearchResultsParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -4157,6 +6743,15 @@ public class ForumClient implements Closeable {
 			this.mapper = http.objectMapper();
 		}
 	
+		/**
+		 * Batch
+		 *
+		 * <p>Execute multiple API requests at once (Separated by comma). Maximum batch jobs is 10.
+		 * 
+		 * Required scopes:
+		 * + Same as called API requests.</p>
+		 * @param body Request body.
+		 */
 		public Types.BatchApiTypes.BatchExecuteResponse execute(List<JsonNode> body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -4173,6 +6768,15 @@ public class ForumClient implements Closeable {
 			return execute(null);
 		}
 	
+		/**
+		 * Batch
+		 *
+		 * <p>Execute multiple API requests at once (Separated by comma). Maximum batch jobs is 10.
+		 * 
+		 * Required scopes:
+		 * + Same as called API requests.</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.BatchApiTypes.BatchExecuteResponse> executeAsync(List<JsonNode> body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -4200,6 +6804,15 @@ public class ForumClient implements Closeable {
 			this.mapper = http.objectMapper();
 		}
 	
+		/**
+		 * Get Chats
+		 *
+		 * <p>Get chat rooms.
+		 * 
+		 * Required scopes:
+		 * + **chatbox**</p>
+		 * @param params Query parameters.
+		 */
 		public Types.ChatboxApiTypes.ChatboxIndexResponse index(Types.ChatboxApiTypes.ChatboxIndexParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -4216,6 +6829,15 @@ public class ForumClient implements Closeable {
 			return index(null);
 		}
 	
+		/**
+		 * Get Chats
+		 *
+		 * <p>Get chat rooms.
+		 * 
+		 * Required scopes:
+		 * + **chatbox**</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.ChatboxApiTypes.ChatboxIndexResponse> indexAsync(Types.ChatboxApiTypes.ChatboxIndexParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -4232,6 +6854,15 @@ public class ForumClient implements Closeable {
 			return indexAsync(null);
 		}
 	
+		/**
+		 * Get Chat Messages
+		 *
+		 * <p>Get chat messages.
+		 * 
+		 * Required scopes:
+		 * + **chatbox**</p>
+		 * @param params Query parameters.
+		 */
 		public Types.ChatboxApiTypes.ChatboxGetMessagesResponse getMessages(Types.ChatboxApiTypes.ChatboxGetMessagesParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -4248,6 +6879,15 @@ public class ForumClient implements Closeable {
 			return getMessages(null);
 		}
 	
+		/**
+		 * Get Chat Messages
+		 *
+		 * <p>Get chat messages.
+		 * 
+		 * Required scopes:
+		 * + **chatbox**</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.ChatboxApiTypes.ChatboxGetMessagesResponse> getMessagesAsync(Types.ChatboxApiTypes.ChatboxGetMessagesParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -4264,6 +6904,15 @@ public class ForumClient implements Closeable {
 			return getMessagesAsync(null);
 		}
 	
+		/**
+		 * Create Chat Message
+		 *
+		 * <p>Create chat message.
+		 * 
+		 * Required scopes:
+		 * + **chatbox**</p>
+		 * @param body Request body.
+		 */
 		public Types.ChatboxApiTypes.ChatboxPostMessageResponse postMessage(Types.ChatboxApiTypes.ChatboxPostMessageBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -4280,6 +6929,15 @@ public class ForumClient implements Closeable {
 			return postMessage(null);
 		}
 	
+		/**
+		 * Create Chat Message
+		 *
+		 * <p>Create chat message.
+		 * 
+		 * Required scopes:
+		 * + **chatbox**</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ChatboxApiTypes.ChatboxPostMessageResponse> postMessageAsync(Types.ChatboxApiTypes.ChatboxPostMessageBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -4296,6 +6954,15 @@ public class ForumClient implements Closeable {
 			return postMessageAsync(null);
 		}
 	
+		/**
+		 * Edit Chat Message
+		 *
+		 * <p>Edit chat message.
+		 * 
+		 * Required scopes:
+		 * + **chatbox**</p>
+		 * @param body Request body.
+		 */
 		public Types.ChatboxApiTypes.ChatboxEditMessageResponse editMessage(Types.ChatboxApiTypes.ChatboxEditMessageBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"PUT",
@@ -4312,6 +6979,15 @@ public class ForumClient implements Closeable {
 			return editMessage(null);
 		}
 	
+		/**
+		 * Edit Chat Message
+		 *
+		 * <p>Edit chat message.
+		 * 
+		 * Required scopes:
+		 * + **chatbox**</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ChatboxApiTypes.ChatboxEditMessageResponse> editMessageAsync(Types.ChatboxApiTypes.ChatboxEditMessageBody body) {
 			return http.requestAsync(new RequestOptions(
 				"PUT",
@@ -4328,6 +7004,15 @@ public class ForumClient implements Closeable {
 			return editMessageAsync(null);
 		}
 	
+		/**
+		 * Delete Chat Message
+		 *
+		 * <p>Delete chat message.
+		 * 
+		 * Required scopes:
+		 * + **chatbox**</p>
+		 * @param body Request body.
+		 */
 		public Types.ChatboxApiTypes.ChatboxDeleteMessageResponse deleteMessage(Types.ChatboxApiTypes.ChatboxDeleteMessageBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"DELETE",
@@ -4344,6 +7029,15 @@ public class ForumClient implements Closeable {
 			return deleteMessage(null);
 		}
 	
+		/**
+		 * Delete Chat Message
+		 *
+		 * <p>Delete chat message.
+		 * 
+		 * Required scopes:
+		 * + **chatbox**</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ChatboxApiTypes.ChatboxDeleteMessageResponse> deleteMessageAsync(Types.ChatboxApiTypes.ChatboxDeleteMessageBody body) {
 			return http.requestAsync(new RequestOptions(
 				"DELETE",
@@ -4360,6 +7054,15 @@ public class ForumClient implements Closeable {
 			return deleteMessageAsync(null);
 		}
 	
+		/**
+		 * Get Chat Online
+		 *
+		 * <p>Get chat Online Users.
+		 * 
+		 * Required scopes:
+		 * + **chatbox**</p>
+		 * @param params Query parameters.
+		 */
 		public Types.ChatboxApiTypes.ChatboxOnlineResponse online(Types.ChatboxApiTypes.ChatboxOnlineParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -4376,6 +7079,15 @@ public class ForumClient implements Closeable {
 			return online(null);
 		}
 	
+		/**
+		 * Get Chat Online
+		 *
+		 * <p>Get chat Online Users.
+		 * 
+		 * Required scopes:
+		 * + **chatbox**</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.ChatboxApiTypes.ChatboxOnlineResponse> onlineAsync(Types.ChatboxApiTypes.ChatboxOnlineParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -4392,6 +7104,15 @@ public class ForumClient implements Closeable {
 			return onlineAsync(null);
 		}
 	
+		/**
+		 * Get Chat Message Report Reasons
+		 *
+		 * <p>Report chat message.
+		 * 
+		 * Required scopes:
+		 * + **chatbox**</p>
+		 * @param params Query parameters.
+		 */
 		public Types.ChatboxApiTypes.ChatboxReportReasonsResponse reportReasons(Types.ChatboxApiTypes.ChatboxReportReasonsParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -4408,6 +7129,15 @@ public class ForumClient implements Closeable {
 			return reportReasons(null);
 		}
 	
+		/**
+		 * Get Chat Message Report Reasons
+		 *
+		 * <p>Report chat message.
+		 * 
+		 * Required scopes:
+		 * + **chatbox**</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.ChatboxApiTypes.ChatboxReportReasonsResponse> reportReasonsAsync(Types.ChatboxApiTypes.ChatboxReportReasonsParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -4424,6 +7154,15 @@ public class ForumClient implements Closeable {
 			return reportReasonsAsync(null);
 		}
 	
+		/**
+		 * Report Chat Message
+		 *
+		 * <p>Report chat message.
+		 * 
+		 * Required scopes:
+		 * + **chatbox**</p>
+		 * @param body Request body.
+		 */
 		public Types.ChatboxApiTypes.ChatboxReportResponse report(Types.ChatboxApiTypes.ChatboxReportBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -4440,6 +7179,15 @@ public class ForumClient implements Closeable {
 			return report(null);
 		}
 	
+		/**
+		 * Report Chat Message
+		 *
+		 * <p>Report chat message.
+		 * 
+		 * Required scopes:
+		 * + **chatbox**</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ChatboxApiTypes.ChatboxReportResponse> reportAsync(Types.ChatboxApiTypes.ChatboxReportBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -4456,6 +7204,15 @@ public class ForumClient implements Closeable {
 			return reportAsync(null);
 		}
 	
+		/**
+		 * Get Chat Leaderboard
+		 *
+		 * <p>Get chat leaderboard.
+		 * 
+		 * Required scopes:
+		 * + **chatbox**</p>
+		 * @param params Query parameters.
+		 */
 		public Types.ChatboxApiTypes.ChatboxGetLeaderboardResponse getLeaderboard(Types.ChatboxApiTypes.ChatboxGetLeaderboardParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -4472,6 +7229,15 @@ public class ForumClient implements Closeable {
 			return getLeaderboard(null);
 		}
 	
+		/**
+		 * Get Chat Leaderboard
+		 *
+		 * <p>Get chat leaderboard.
+		 * 
+		 * Required scopes:
+		 * + **chatbox**</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.ChatboxApiTypes.ChatboxGetLeaderboardResponse> getLeaderboardAsync(Types.ChatboxApiTypes.ChatboxGetLeaderboardParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -4488,6 +7254,14 @@ public class ForumClient implements Closeable {
 			return getLeaderboardAsync(null);
 		}
 	
+		/**
+		 * Get Ignored Chat Users
+		 *
+		 * <p>Get list of ignored chat users.
+		 * 
+		 * Required scopes:
+		 * + **chatbox**</p>
+		 */
 		public Types.ChatboxApiTypes.ChatboxGetIgnoreResponse getIgnore() {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -4500,6 +7274,14 @@ public class ForumClient implements Closeable {
 			)), Types.ChatboxApiTypes.ChatboxGetIgnoreResponse.class);
 		}
 	
+		/**
+		 * Get Ignored Chat Users
+		 *
+		 * <p>Get list of ignored chat users.
+		 * 
+		 * Required scopes:
+		 * + **chatbox**</p>
+		 */
 		public CompletableFuture<Types.ChatboxApiTypes.ChatboxGetIgnoreResponse> getIgnoreAsync() {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -4512,6 +7294,15 @@ public class ForumClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ChatboxApiTypes.ChatboxGetIgnoreResponse.class));
 		}
 	
+		/**
+		 * Ignore Chat User
+		 *
+		 * <p>Ignore chat user.
+		 * 
+		 * Required scopes:
+		 * + **chatbox**</p>
+		 * @param body Request body.
+		 */
 		public Types.ChatboxApiTypes.ChatboxPostIgnoreResponse postIgnore(Types.ChatboxApiTypes.ChatboxPostIgnoreBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -4528,6 +7319,15 @@ public class ForumClient implements Closeable {
 			return postIgnore(null);
 		}
 	
+		/**
+		 * Ignore Chat User
+		 *
+		 * <p>Ignore chat user.
+		 * 
+		 * Required scopes:
+		 * + **chatbox**</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ChatboxApiTypes.ChatboxPostIgnoreResponse> postIgnoreAsync(Types.ChatboxApiTypes.ChatboxPostIgnoreBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -4544,6 +7344,15 @@ public class ForumClient implements Closeable {
 			return postIgnoreAsync(null);
 		}
 	
+		/**
+		 * Unignore Chat User
+		 *
+		 * <p>Unignore chat user.
+		 * 
+		 * Required scopes:
+		 * + **chatbox**</p>
+		 * @param body Request body.
+		 */
 		public Types.ChatboxApiTypes.ChatboxDeleteIgnoreResponse deleteIgnore(Types.ChatboxApiTypes.ChatboxDeleteIgnoreBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"DELETE",
@@ -4560,6 +7369,15 @@ public class ForumClient implements Closeable {
 			return deleteIgnore(null);
 		}
 	
+		/**
+		 * Unignore Chat User
+		 *
+		 * <p>Unignore chat user.
+		 * 
+		 * Required scopes:
+		 * + **chatbox**</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ChatboxApiTypes.ChatboxDeleteIgnoreResponse> deleteIgnoreAsync(Types.ChatboxApiTypes.ChatboxDeleteIgnoreBody body) {
 			return http.requestAsync(new RequestOptions(
 				"DELETE",
@@ -4587,6 +7405,12 @@ public class ForumClient implements Closeable {
 			this.mapper = http.objectMapper();
 		}
 	
+		/**
+		 * Get Forms List
+		 *
+		 * <p>Get Forms List</p>
+		 * @param params Query parameters.
+		 */
 		public Types.FormsApiTypes.FormsListResponse list(Types.FormsApiTypes.FormsListParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -4603,6 +7427,12 @@ public class ForumClient implements Closeable {
 			return list(null);
 		}
 	
+		/**
+		 * Get Forms List
+		 *
+		 * <p>Get Forms List</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.FormsApiTypes.FormsListResponse> listAsync(Types.FormsApiTypes.FormsListParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -4619,6 +7449,12 @@ public class ForumClient implements Closeable {
 			return listAsync(null);
 		}
 	
+		/**
+		 * Create Form
+		 *
+		 * <p>Create Form.</p>
+		 * @param body Request body.
+		 */
 		public Types.FormsApiTypes.FormsCreateResponse create(Types.FormsApiTypes.FormsCreateBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -4635,6 +7471,12 @@ public class ForumClient implements Closeable {
 			return create(null);
 		}
 	
+		/**
+		 * Create Form
+		 *
+		 * <p>Create Form.</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.FormsApiTypes.FormsCreateResponse> createAsync(Types.FormsApiTypes.FormsCreateBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",

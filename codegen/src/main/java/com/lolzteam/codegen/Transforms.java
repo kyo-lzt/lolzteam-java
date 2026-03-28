@@ -185,6 +185,10 @@ final class Transforms {
 				}
 				return "Record<string, unknown>";
 			}
+			// Objects with all-numeric property keys → treat as opaque (API may return array or mixed values)
+			if (hasAllNumericKeys(props)) {
+				return "{}";
+			}
 			return "{}";
 		}
 
@@ -202,6 +206,16 @@ final class Transforms {
 			case "null" -> "null";
 			default -> "unknown";
 		};
+	}
+
+	/** Check if all property names of a JSON object are numeric (e.g. "1", "2", "3"). */
+	static boolean hasAllNumericKeys(JsonNode props) {
+		if (!props.isObject() || props.isEmpty()) return false;
+		var fields = props.fieldNames();
+		while (fields.hasNext()) {
+			if (!fields.next().matches("^\\d+$")) return false;
+		}
+		return true;
 	}
 
 	/** Map intermediate type string to a native Java type suitable for path parameters. */
@@ -326,11 +340,16 @@ final class Transforms {
 			var required = param.has("required") && param.get("required").asBoolean(false);
 			var defaultValue = extractDefaultValue(schemaNode);
 
+			var descriptionNode = param.get("description");
+			var description = descriptionNode != null && descriptionNode.isTextual()
+				? descriptionNode.asText() : null;
+
 			var parsed = new ParsedParameter(
 				name,
 				type,
 				"path".equals(inValue) || required,
-				defaultValue
+				defaultValue,
+				description
 			);
 
 			if ("path".equals(inValue)) {
@@ -460,7 +479,9 @@ final class Transforms {
 						? propSchema.get("format").asText() : null;
 					var type = "binary".equals(format) ? "Blob" : schemaToTypeString(propSchema, spec);
 					var defaultVal = extractDefaultValue(propSchema);
-					bodyProperties.add(new BodyProperty(name, type, requiredSet.contains(name), defaultVal));
+					var descNode = propSchema.isObject() ? propSchema.get("description") : null;
+					var desc = descNode != null && descNode.isTextual() ? descNode.asText() : null;
+					bodyProperties.add(new BodyProperty(name, type, requiredSet.contains(name), defaultVal, desc));
 				}
 			}
 		}
@@ -548,7 +569,9 @@ final class Transforms {
 					? propSchema.get("format").asText() : null;
 				var type = "binary".equals(format) ? "Blob" : schemaToTypeString(propSchema, spec);
 				var defaultVal = extractDefaultValue(propSchema);
-				variantProps.add(new BodyProperty(name, type, requiredSet.contains(name), defaultVal));
+				var descNode = propSchema.isObject() ? propSchema.get("description") : null;
+				var desc = descNode != null && descNode.isTextual() ? descNode.asText() : null;
+				variantProps.add(new BodyProperty(name, type, requiredSet.contains(name), defaultVal, desc));
 			}
 
 			variants.add(new OneOfVariant(discValue, title, variantProps));
@@ -656,7 +679,7 @@ final class Transforms {
 		if (isGet) {
 			var combined = new ArrayList<>(params.queryParams());
 			for (var prop : body.properties()) {
-				combined.add(new ParsedParameter(prop.name(), prop.type(), false, prop.defaultValue()));
+				combined.add(new ParsedParameter(prop.name(), prop.type(), false, prop.defaultValue(), prop.description()));
 			}
 			effectiveQueryParams = combined;
 		} else {
@@ -680,6 +703,12 @@ final class Transforms {
 		// Detect text/html response
 		var htmlResponse = isHtmlResponse(operation, emptySpec);
 
+		// Extract summary and description
+		var summaryNode = operation.get("summary");
+		var summary = summaryNode != null && summaryNode.isTextual() ? summaryNode.asText() : null;
+		var descriptionNode = operation.get("description");
+		var description = descriptionNode != null && descriptionNode.isTextual() ? descriptionNode.asText() : null;
+
 		return new MethodDefinition(
 			operationId,
 			methodName,
@@ -695,7 +724,9 @@ final class Transforms {
 			isGet ? "form" : body.bodyEncoding(),
 			rawResponseSchema,
 			isGet ? null : body.discriminatedUnion(),
-			htmlResponse
+			htmlResponse,
+			summary,
+			description
 		);
 	}
 }

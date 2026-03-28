@@ -24,6 +24,12 @@ public class MarketClient implements Closeable {
 			this.mapper = http.objectMapper();
 		}
 	
+		/**
+		 * Get Last Accounts
+		 *
+		 * <p>Displays a list of latest accounts.</p>
+		 * @param params Query parameters.
+		 */
 		public Types.CategoryApiTypes.CategoryAllResponse all(Types.CategoryApiTypes.CategoryAllParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -40,6 +46,12 @@ public class MarketClient implements Closeable {
 			return all(null);
 		}
 	
+		/**
+		 * Get Last Accounts
+		 *
+		 * <p>Displays a list of latest accounts.</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.CategoryApiTypes.CategoryAllResponse> allAsync(Types.CategoryApiTypes.CategoryAllParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -56,6 +68,12 @@ public class MarketClient implements Closeable {
 			return allAsync(null);
 		}
 	
+		/**
+		 * Steam
+		 *
+		 * <p>Displays a list of accounts in a specific category according to your parameters.</p>
+		 * @param params Query parameters.
+		 */
 		public Types.CategoryApiTypes.CategorySteamResponse steam(Types.CategoryApiTypes.CategorySteamParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -72,6 +90,12 @@ public class MarketClient implements Closeable {
 			return steam(null);
 		}
 	
+		/**
+		 * Steam
+		 *
+		 * <p>Displays a list of accounts in a specific category according to your parameters.</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.CategoryApiTypes.CategorySteamResponse> steamAsync(Types.CategoryApiTypes.CategorySteamParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -88,6 +112,12 @@ public class MarketClient implements Closeable {
 			return steamAsync(null);
 		}
 	
+		/**
+		 * Fortnite
+		 *
+		 * <p>Displays a list of accounts in a specific category according to your parameters.</p>
+		 * @param params Query parameters.
+		 */
 		public Types.CategoryApiTypes.CategoryFortniteResponse fortnite(Types.CategoryApiTypes.CategoryFortniteParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -104,6 +134,12 @@ public class MarketClient implements Closeable {
 			return fortnite(null);
 		}
 	
+		/**
+		 * Fortnite
+		 *
+		 * <p>Displays a list of accounts in a specific category according to your parameters.</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.CategoryApiTypes.CategoryFortniteResponse> fortniteAsync(Types.CategoryApiTypes.CategoryFortniteParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -120,6 +156,12 @@ public class MarketClient implements Closeable {
 			return fortniteAsync(null);
 		}
 	
+		/**
+		 * miHoYo
+		 *
+		 * <p>Displays a list of accounts in a specific category according to your parameters.</p>
+		 * @param params Query parameters.
+		 */
 		public Types.CategoryApiTypes.CategoryMihoyoResponse mihoyo(Types.CategoryApiTypes.CategoryMihoyoParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -136,6 +178,12 @@ public class MarketClient implements Closeable {
 			return mihoyo(null);
 		}
 	
+		/**
+		 * miHoYo
+		 *
+		 * <p>Displays a list of accounts in a specific category according to your parameters.</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.CategoryApiTypes.CategoryMihoyoResponse> mihoyoAsync(Types.CategoryApiTypes.CategoryMihoyoParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -152,6 +200,12 @@ public class MarketClient implements Closeable {
 			return mihoyoAsync(null);
 		}
 	
+		/**
+		 * Riot
+		 *
+		 * <p>Displays a list of accounts in a specific category according to your parameters.</p>
+		 * @param params Query parameters.
+		 */
 		public Types.CategoryApiTypes.CategoryRiotResponse riot(Types.CategoryApiTypes.CategoryRiotParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -168,6 +222,12 @@ public class MarketClient implements Closeable {
 			return riot(null);
 		}
 	
+		/**
+		 * Riot
+		 *
+		 * <p>Displays a list of accounts in a specific category according to your parameters.</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.CategoryApiTypes.CategoryRiotResponse> riotAsync(Types.CategoryApiTypes.CategoryRiotParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -184,6 +244,12 @@ public class MarketClient implements Closeable {
 			return riotAsync(null);
 		}
 	
+		/**
+		 * Telegram
+		 *
+		 * <p>Displays a list of accounts in a specific category according to your parameters.</p>
+		 * @param params Query parameters.
+		 */
 		public Types.CategoryApiTypes.CategoryTelegramResponse telegram(Types.CategoryApiTypes.CategoryTelegramParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -200,6 +266,12 @@ public class MarketClient implements Closeable {
 			return telegram(null);
 		}
 	
+		/**
+		 * Telegram
+		 *
+		 * <p>Displays a list of accounts in a specific category according to your parameters.</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.CategoryApiTypes.CategoryTelegramResponse> telegramAsync(Types.CategoryApiTypes.CategoryTelegramParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -216,6 +288,12 @@ public class MarketClient implements Closeable {
 			return telegramAsync(null);
 		}
 	
+		/**
+		 * Supercell
+		 *
+		 * <p>Displays a list of accounts in a specific category according to your parameters.</p>
+		 * @param params Query parameters.
+		 */
 		public Types.CategoryApiTypes.CategorySupercellResponse supercell(Types.CategoryApiTypes.CategorySupercellParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -232,6 +310,12 @@ public class MarketClient implements Closeable {
 			return supercell(null);
 		}
 	
+		/**
+		 * Supercell
+		 *
+		 * <p>Displays a list of accounts in a specific category according to your parameters.</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.CategoryApiTypes.CategorySupercellResponse> supercellAsync(Types.CategoryApiTypes.CategorySupercellParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -248,6 +332,12 @@ public class MarketClient implements Closeable {
 			return supercellAsync(null);
 		}
 	
+		/**
+		 * EA (Origin)
+		 *
+		 * <p>Displays a list of accounts in a specific category according to your parameters.</p>
+		 * @param params Query parameters.
+		 */
 		public Types.CategoryApiTypes.CategoryEaResponse ea(Types.CategoryApiTypes.CategoryEaParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -264,6 +354,12 @@ public class MarketClient implements Closeable {
 			return ea(null);
 		}
 	
+		/**
+		 * EA (Origin)
+		 *
+		 * <p>Displays a list of accounts in a specific category according to your parameters.</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.CategoryApiTypes.CategoryEaResponse> eaAsync(Types.CategoryApiTypes.CategoryEaParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -280,6 +376,12 @@ public class MarketClient implements Closeable {
 			return eaAsync(null);
 		}
 	
+		/**
+		 * World of Tanks
+		 *
+		 * <p>Displays a list of accounts in a specific category according to your parameters.</p>
+		 * @param params Query parameters.
+		 */
 		public Types.CategoryApiTypes.CategoryWotResponse wot(Types.CategoryApiTypes.CategoryWotParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -296,6 +398,12 @@ public class MarketClient implements Closeable {
 			return wot(null);
 		}
 	
+		/**
+		 * World of Tanks
+		 *
+		 * <p>Displays a list of accounts in a specific category according to your parameters.</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.CategoryApiTypes.CategoryWotResponse> wotAsync(Types.CategoryApiTypes.CategoryWotParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -312,6 +420,12 @@ public class MarketClient implements Closeable {
 			return wotAsync(null);
 		}
 	
+		/**
+		 * WoT Blitz
+		 *
+		 * <p>Displays a list of accounts in a specific category according to your parameters.</p>
+		 * @param params Query parameters.
+		 */
 		public Types.CategoryApiTypes.CategoryWotBlitzResponse wotBlitz(Types.CategoryApiTypes.CategoryWotBlitzParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -328,6 +442,12 @@ public class MarketClient implements Closeable {
 			return wotBlitz(null);
 		}
 	
+		/**
+		 * WoT Blitz
+		 *
+		 * <p>Displays a list of accounts in a specific category according to your parameters.</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.CategoryApiTypes.CategoryWotBlitzResponse> wotBlitzAsync(Types.CategoryApiTypes.CategoryWotBlitzParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -344,6 +464,12 @@ public class MarketClient implements Closeable {
 			return wotBlitzAsync(null);
 		}
 	
+		/**
+		 * Gifts
+		 *
+		 * <p>Displays a list of accounts in a specific category according to your parameters.</p>
+		 * @param params Query parameters.
+		 */
 		public Types.CategoryApiTypes.CategoryGiftsResponse gifts(Types.CategoryApiTypes.CategoryGiftsParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -360,6 +486,12 @@ public class MarketClient implements Closeable {
 			return gifts(null);
 		}
 	
+		/**
+		 * Gifts
+		 *
+		 * <p>Displays a list of accounts in a specific category according to your parameters.</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.CategoryApiTypes.CategoryGiftsResponse> giftsAsync(Types.CategoryApiTypes.CategoryGiftsParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -376,6 +508,12 @@ public class MarketClient implements Closeable {
 			return giftsAsync(null);
 		}
 	
+		/**
+		 * Epic Games
+		 *
+		 * <p>Displays a list of accounts in a specific category according to your parameters.</p>
+		 * @param params Query parameters.
+		 */
 		public Types.CategoryApiTypes.CategoryEpicGamesResponse epicGames(Types.CategoryApiTypes.CategoryEpicGamesParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -392,6 +530,12 @@ public class MarketClient implements Closeable {
 			return epicGames(null);
 		}
 	
+		/**
+		 * Epic Games
+		 *
+		 * <p>Displays a list of accounts in a specific category according to your parameters.</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.CategoryApiTypes.CategoryEpicGamesResponse> epicGamesAsync(Types.CategoryApiTypes.CategoryEpicGamesParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -408,6 +552,12 @@ public class MarketClient implements Closeable {
 			return epicGamesAsync(null);
 		}
 	
+		/**
+		 * Escape from Tarkov
+		 *
+		 * <p>Displays a list of accounts in a specific category according to your parameters.</p>
+		 * @param params Query parameters.
+		 */
 		public Types.CategoryApiTypes.CategoryEscapeFromTarkovResponse escapeFromTarkov(Types.CategoryApiTypes.CategoryEscapeFromTarkovParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -424,6 +574,12 @@ public class MarketClient implements Closeable {
 			return escapeFromTarkov(null);
 		}
 	
+		/**
+		 * Escape from Tarkov
+		 *
+		 * <p>Displays a list of accounts in a specific category according to your parameters.</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.CategoryApiTypes.CategoryEscapeFromTarkovResponse> escapeFromTarkovAsync(Types.CategoryApiTypes.CategoryEscapeFromTarkovParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -440,6 +596,12 @@ public class MarketClient implements Closeable {
 			return escapeFromTarkovAsync(null);
 		}
 	
+		/**
+		 * Social Club
+		 *
+		 * <p>Displays a list of accounts in a specific category according to your parameters.</p>
+		 * @param params Query parameters.
+		 */
 		public Types.CategoryApiTypes.CategorySocialClubResponse socialClub(Types.CategoryApiTypes.CategorySocialClubParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -456,6 +618,12 @@ public class MarketClient implements Closeable {
 			return socialClub(null);
 		}
 	
+		/**
+		 * Social Club
+		 *
+		 * <p>Displays a list of accounts in a specific category according to your parameters.</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.CategoryApiTypes.CategorySocialClubResponse> socialClubAsync(Types.CategoryApiTypes.CategorySocialClubParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -472,6 +640,12 @@ public class MarketClient implements Closeable {
 			return socialClubAsync(null);
 		}
 	
+		/**
+		 * Uplay
+		 *
+		 * <p>Displays a list of accounts in a specific category according to your parameters.</p>
+		 * @param params Query parameters.
+		 */
 		public Types.CategoryApiTypes.CategoryUplayResponse uplay(Types.CategoryApiTypes.CategoryUplayParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -488,6 +662,12 @@ public class MarketClient implements Closeable {
 			return uplay(null);
 		}
 	
+		/**
+		 * Uplay
+		 *
+		 * <p>Displays a list of accounts in a specific category according to your parameters.</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.CategoryApiTypes.CategoryUplayResponse> uplayAsync(Types.CategoryApiTypes.CategoryUplayParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -504,6 +684,12 @@ public class MarketClient implements Closeable {
 			return uplayAsync(null);
 		}
 	
+		/**
+		 * Discord
+		 *
+		 * <p>Displays a list of accounts in a specific category according to your parameters.</p>
+		 * @param params Query parameters.
+		 */
 		public Types.CategoryApiTypes.CategoryDiscordResponse discord(Types.CategoryApiTypes.CategoryDiscordParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -520,6 +706,12 @@ public class MarketClient implements Closeable {
 			return discord(null);
 		}
 	
+		/**
+		 * Discord
+		 *
+		 * <p>Displays a list of accounts in a specific category according to your parameters.</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.CategoryApiTypes.CategoryDiscordResponse> discordAsync(Types.CategoryApiTypes.CategoryDiscordParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -536,6 +728,12 @@ public class MarketClient implements Closeable {
 			return discordAsync(null);
 		}
 	
+		/**
+		 * TikTok
+		 *
+		 * <p>Displays a list of accounts in a specific category according to your parameters.</p>
+		 * @param params Query parameters.
+		 */
 		public Types.CategoryApiTypes.CategoryTikTokResponse tikTok(Types.CategoryApiTypes.CategoryTikTokParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -552,6 +750,12 @@ public class MarketClient implements Closeable {
 			return tikTok(null);
 		}
 	
+		/**
+		 * TikTok
+		 *
+		 * <p>Displays a list of accounts in a specific category according to your parameters.</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.CategoryApiTypes.CategoryTikTokResponse> tikTokAsync(Types.CategoryApiTypes.CategoryTikTokParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -568,6 +772,12 @@ public class MarketClient implements Closeable {
 			return tikTokAsync(null);
 		}
 	
+		/**
+		 * Instagram
+		 *
+		 * <p>Displays a list of accounts in a specific category according to your parameters.</p>
+		 * @param params Query parameters.
+		 */
 		public Types.CategoryApiTypes.CategoryInstagramResponse instagram(Types.CategoryApiTypes.CategoryInstagramParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -584,6 +794,12 @@ public class MarketClient implements Closeable {
 			return instagram(null);
 		}
 	
+		/**
+		 * Instagram
+		 *
+		 * <p>Displays a list of accounts in a specific category according to your parameters.</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.CategoryApiTypes.CategoryInstagramResponse> instagramAsync(Types.CategoryApiTypes.CategoryInstagramParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -600,6 +816,12 @@ public class MarketClient implements Closeable {
 			return instagramAsync(null);
 		}
 	
+		/**
+		 * BattleNet
+		 *
+		 * <p>Displays a list of accounts in a specific category according to your parameters.</p>
+		 * @param params Query parameters.
+		 */
 		public Types.CategoryApiTypes.CategoryBattleNetResponse battleNet(Types.CategoryApiTypes.CategoryBattleNetParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -616,6 +838,12 @@ public class MarketClient implements Closeable {
 			return battleNet(null);
 		}
 	
+		/**
+		 * BattleNet
+		 *
+		 * <p>Displays a list of accounts in a specific category according to your parameters.</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.CategoryApiTypes.CategoryBattleNetResponse> battleNetAsync(Types.CategoryApiTypes.CategoryBattleNetParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -632,6 +860,12 @@ public class MarketClient implements Closeable {
 			return battleNetAsync(null);
 		}
 	
+		/**
+		 * ChatGPT
+		 *
+		 * <p>Displays a list of accounts in a specific category according to your parameters.</p>
+		 * @param params Query parameters.
+		 */
 		public Types.CategoryApiTypes.CategoryChatGPTResponse chatGPT(Types.CategoryApiTypes.CategoryChatGPTParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -648,6 +882,12 @@ public class MarketClient implements Closeable {
 			return chatGPT(null);
 		}
 	
+		/**
+		 * ChatGPT
+		 *
+		 * <p>Displays a list of accounts in a specific category according to your parameters.</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.CategoryApiTypes.CategoryChatGPTResponse> chatGPTAsync(Types.CategoryApiTypes.CategoryChatGPTParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -664,6 +904,12 @@ public class MarketClient implements Closeable {
 			return chatGPTAsync(null);
 		}
 	
+		/**
+		 * VPN
+		 *
+		 * <p>Displays a list of accounts in a specific category according to your parameters.</p>
+		 * @param params Query parameters.
+		 */
 		public Types.CategoryApiTypes.CategoryVpnResponse vpn(Types.CategoryApiTypes.CategoryVpnParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -680,6 +926,12 @@ public class MarketClient implements Closeable {
 			return vpn(null);
 		}
 	
+		/**
+		 * VPN
+		 *
+		 * <p>Displays a list of accounts in a specific category according to your parameters.</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.CategoryApiTypes.CategoryVpnResponse> vpnAsync(Types.CategoryApiTypes.CategoryVpnParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -696,6 +948,12 @@ public class MarketClient implements Closeable {
 			return vpnAsync(null);
 		}
 	
+		/**
+		 * Roblox
+		 *
+		 * <p>Displays a list of accounts in a specific category according to your parameters.</p>
+		 * @param params Query parameters.
+		 */
 		public Types.CategoryApiTypes.CategoryRobloxResponse roblox(Types.CategoryApiTypes.CategoryRobloxParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -712,6 +970,12 @@ public class MarketClient implements Closeable {
 			return roblox(null);
 		}
 	
+		/**
+		 * Roblox
+		 *
+		 * <p>Displays a list of accounts in a specific category according to your parameters.</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.CategoryApiTypes.CategoryRobloxResponse> robloxAsync(Types.CategoryApiTypes.CategoryRobloxParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -728,6 +992,12 @@ public class MarketClient implements Closeable {
 			return robloxAsync(null);
 		}
 	
+		/**
+		 * Warface
+		 *
+		 * <p>Displays a list of accounts in a specific category according to your parameters.</p>
+		 * @param params Query parameters.
+		 */
 		public Types.CategoryApiTypes.CategoryWarfaceResponse warface(Types.CategoryApiTypes.CategoryWarfaceParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -744,6 +1014,12 @@ public class MarketClient implements Closeable {
 			return warface(null);
 		}
 	
+		/**
+		 * Warface
+		 *
+		 * <p>Displays a list of accounts in a specific category according to your parameters.</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.CategoryApiTypes.CategoryWarfaceResponse> warfaceAsync(Types.CategoryApiTypes.CategoryWarfaceParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -760,6 +1036,12 @@ public class MarketClient implements Closeable {
 			return warfaceAsync(null);
 		}
 	
+		/**
+		 * Minecraft
+		 *
+		 * <p>Displays a list of accounts in a specific category according to your parameters.</p>
+		 * @param params Query parameters.
+		 */
 		public Types.CategoryApiTypes.CategoryMinecraftResponse minecraft(Types.CategoryApiTypes.CategoryMinecraftParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -776,6 +1058,12 @@ public class MarketClient implements Closeable {
 			return minecraft(null);
 		}
 	
+		/**
+		 * Minecraft
+		 *
+		 * <p>Displays a list of accounts in a specific category according to your parameters.</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.CategoryApiTypes.CategoryMinecraftResponse> minecraftAsync(Types.CategoryApiTypes.CategoryMinecraftParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -792,6 +1080,12 @@ public class MarketClient implements Closeable {
 			return minecraftAsync(null);
 		}
 	
+		/**
+		 * Hytale
+		 *
+		 * <p>Displays a list of accounts in a specific category according to your parameters.</p>
+		 * @param params Query parameters.
+		 */
 		public Types.CategoryApiTypes.CategoryHytaleResponse hytale(Types.CategoryApiTypes.CategoryHytaleParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -808,6 +1102,12 @@ public class MarketClient implements Closeable {
 			return hytale(null);
 		}
 	
+		/**
+		 * Hytale
+		 *
+		 * <p>Displays a list of accounts in a specific category according to your parameters.</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.CategoryApiTypes.CategoryHytaleResponse> hytaleAsync(Types.CategoryApiTypes.CategoryHytaleParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -824,6 +1124,12 @@ public class MarketClient implements Closeable {
 			return hytaleAsync(null);
 		}
 	
+		/**
+		 * Get Categories
+		 *
+		 * <p>Display category list.</p>
+		 * @param params Query parameters.
+		 */
 		public Types.CategoryApiTypes.CategoryListResponse list(Types.CategoryApiTypes.CategoryListParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -840,6 +1146,12 @@ public class MarketClient implements Closeable {
 			return list(null);
 		}
 	
+		/**
+		 * Get Categories
+		 *
+		 * <p>Display category list.</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.CategoryApiTypes.CategoryListResponse> listAsync(Types.CategoryApiTypes.CategoryListParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -856,6 +1168,12 @@ public class MarketClient implements Closeable {
 			return listAsync(null);
 		}
 	
+		/**
+		 * Get Category Search Params
+		 *
+		 * <p>Displays search parameters for a category.</p>
+		 * @param categoryName Category name.
+		 */
 		public Types.CategoryApiTypes.CategoryParamsResponse params(String categoryName) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -868,6 +1186,12 @@ public class MarketClient implements Closeable {
 			)), Types.CategoryApiTypes.CategoryParamsResponse.class);
 		}
 	
+		/**
+		 * Get Category Search Params
+		 *
+		 * <p>Displays search parameters for a category.</p>
+		 * @param categoryName Category name.
+		 */
 		public CompletableFuture<Types.CategoryApiTypes.CategoryParamsResponse> paramsAsync(String categoryName) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -880,6 +1204,12 @@ public class MarketClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.CategoryApiTypes.CategoryParamsResponse.class));
 		}
 	
+		/**
+		 * Get Category Games
+		 *
+		 * <p>Displays a list of games in the category.</p>
+		 * @param categoryName Category name.
+		 */
 		public Types.CategoryApiTypes.CategoryGamesResponse games(String categoryName) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -892,6 +1222,12 @@ public class MarketClient implements Closeable {
 			)), Types.CategoryApiTypes.CategoryGamesResponse.class);
 		}
 	
+		/**
+		 * Get Category Games
+		 *
+		 * <p>Displays a list of games in the category.</p>
+		 * @param categoryName Category name.
+		 */
 		public CompletableFuture<Types.CategoryApiTypes.CategoryGamesResponse> gamesAsync(String categoryName) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -915,6 +1251,12 @@ public class MarketClient implements Closeable {
 			this.mapper = http.objectMapper();
 		}
 	
+		/**
+		 * Get All User Accounts
+		 *
+		 * <p>Displays a list of user accounts.</p>
+		 * @param params Query parameters.
+		 */
 		public Types.ListApiTypes.ListUserResponse user(Types.ListApiTypes.ListUserParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -931,6 +1273,12 @@ public class MarketClient implements Closeable {
 			return user(null);
 		}
 	
+		/**
+		 * Get All User Accounts
+		 *
+		 * <p>Displays a list of user accounts.</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.ListApiTypes.ListUserResponse> userAsync(Types.ListApiTypes.ListUserParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -947,6 +1295,12 @@ public class MarketClient implements Closeable {
 			return userAsync(null);
 		}
 	
+		/**
+		 * Get All Purchased Accounts
+		 *
+		 * <p>Displays a list of purchased accounts.</p>
+		 * @param params Query parameters.
+		 */
 		public Types.ListApiTypes.ListOrdersResponse orders(Types.ListApiTypes.ListOrdersParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -963,6 +1317,12 @@ public class MarketClient implements Closeable {
 			return orders(null);
 		}
 	
+		/**
+		 * Get All Purchased Accounts
+		 *
+		 * <p>Displays a list of purchased accounts.</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.ListApiTypes.ListOrdersResponse> ordersAsync(Types.ListApiTypes.ListOrdersParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -979,6 +1339,12 @@ public class MarketClient implements Closeable {
 			return ordersAsync(null);
 		}
 	
+		/**
+		 * Get User Items States
+		 *
+		 * <p>Returns the states of user items.</p>
+		 * @param params Query parameters.
+		 */
 		public Types.ListApiTypes.ListStatesResponse states(Types.ListApiTypes.ListStatesParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -995,6 +1361,12 @@ public class MarketClient implements Closeable {
 			return states(null);
 		}
 	
+		/**
+		 * Get User Items States
+		 *
+		 * <p>Returns the states of user items.</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.ListApiTypes.ListStatesResponse> statesAsync(Types.ListApiTypes.ListStatesParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -1011,6 +1383,13 @@ public class MarketClient implements Closeable {
 			return statesAsync(null);
 		}
 	
+		/**
+		 * Download Accounts Data
+		 *
+		 * <p>Download accounts data in the specified format.</p>
+		 * @param type The type of account list to download.
+		 * @param params Query parameters.
+		 */
 		public String download(String type, Types.ListApiTypes.ListDownloadParams params) {
 			return http.requestRaw(new RequestOptions(
 				"GET",
@@ -1027,6 +1406,13 @@ public class MarketClient implements Closeable {
 			return download(type, null);
 		}
 	
+		/**
+		 * Download Accounts Data
+		 *
+		 * <p>Download accounts data in the specified format.</p>
+		 * @param type The type of account list to download.
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<String> downloadAsync(String type, Types.ListApiTypes.ListDownloadParams params) {
 			return http.requestRawAsync(new RequestOptions(
 				"GET",
@@ -1043,6 +1429,12 @@ public class MarketClient implements Closeable {
 			return downloadAsync(type, null);
 		}
 	
+		/**
+		 * Get All Favourites Accounts
+		 *
+		 * <p>Displays a list of favourites accounts.</p>
+		 * @param params Query parameters.
+		 */
 		public Types.ListApiTypes.ListFavoritesResponse favorites(Types.ListApiTypes.ListFavoritesParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -1059,6 +1451,12 @@ public class MarketClient implements Closeable {
 			return favorites(null);
 		}
 	
+		/**
+		 * Get All Favourites Accounts
+		 *
+		 * <p>Displays a list of favourites accounts.</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.ListApiTypes.ListFavoritesResponse> favoritesAsync(Types.ListApiTypes.ListFavoritesParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -1075,6 +1473,12 @@ public class MarketClient implements Closeable {
 			return favoritesAsync(null);
 		}
 	
+		/**
+		 * Get All Viewed Accounts
+		 *
+		 * <p>Displays a list of viewed accounts.</p>
+		 * @param params Query parameters.
+		 */
 		public Types.ListApiTypes.ListViewedResponse viewed(Types.ListApiTypes.ListViewedParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -1091,6 +1495,12 @@ public class MarketClient implements Closeable {
 			return viewed(null);
 		}
 	
+		/**
+		 * Get All Viewed Accounts
+		 *
+		 * <p>Displays a list of viewed accounts.</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.ListApiTypes.ListViewedResponse> viewedAsync(Types.ListApiTypes.ListViewedParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -1118,6 +1528,13 @@ public class MarketClient implements Closeable {
 			this.mapper = http.objectMapper();
 		}
 	
+		/**
+		 * Get Account
+		 *
+		 * <p>Displays account information.</p>
+		 * @param itemId Item id.
+		 * @param params Query parameters.
+		 */
 		public Types.ManagingApiTypes.ManagingGetResponse get(long itemId, Types.ManagingApiTypes.ManagingGetParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -1134,6 +1551,13 @@ public class MarketClient implements Closeable {
 			return get(itemId, null);
 		}
 	
+		/**
+		 * Get Account
+		 *
+		 * <p>Displays account information.</p>
+		 * @param itemId Item id.
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.ManagingApiTypes.ManagingGetResponse> getAsync(long itemId, Types.ManagingApiTypes.ManagingGetParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -1150,6 +1574,13 @@ public class MarketClient implements Closeable {
 			return getAsync(itemId, null);
 		}
 	
+		/**
+		 * Delete Account
+		 *
+		 * <p>Deletes your account from public search. Deletion type is soft. You can restore account after deletion if you want.</p>
+		 * @param itemId Item id.
+		 * @param body Request body.
+		 */
 		public Types.ManagingApiTypes.ManagingDeleteResponse delete(long itemId, Types.ManagingApiTypes.ManagingDeleteBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"DELETE",
@@ -1166,6 +1597,13 @@ public class MarketClient implements Closeable {
 			return delete(itemId, null);
 		}
 	
+		/**
+		 * Delete Account
+		 *
+		 * <p>Deletes your account from public search. Deletion type is soft. You can restore account after deletion if you want.</p>
+		 * @param itemId Item id.
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ManagingApiTypes.ManagingDeleteResponse> deleteAsync(long itemId, Types.ManagingApiTypes.ManagingDeleteBody body) {
 			return http.requestAsync(new RequestOptions(
 				"DELETE",
@@ -1182,6 +1620,12 @@ public class MarketClient implements Closeable {
 			return deleteAsync(itemId, null);
 		}
 	
+		/**
+		 * Create Claim
+		 *
+		 * <p>Create a claim.</p>
+		 * @param body Request body.
+		 */
 		public Types.ManagingApiTypes.ManagingCreateClaimResponse createClaim(Types.ManagingApiTypes.ManagingCreateClaimBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -1198,6 +1642,12 @@ public class MarketClient implements Closeable {
 			return createClaim(null);
 		}
 	
+		/**
+		 * Create Claim
+		 *
+		 * <p>Create a claim.</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ManagingApiTypes.ManagingCreateClaimResponse> createClaimAsync(Types.ManagingApiTypes.ManagingCreateClaimBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -1214,6 +1664,12 @@ public class MarketClient implements Closeable {
 			return createClaimAsync(null);
 		}
 	
+		/**
+		 * Bulk Get Accounts
+		 *
+		 * <p>Bulk get up to 250 accounts.</p>
+		 * @param body Request body.
+		 */
 		public Types.ManagingApiTypes.ManagingBulkGetResponse bulkGet(Types.ManagingApiTypes.ManagingBulkGetBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -1226,6 +1682,12 @@ public class MarketClient implements Closeable {
 			)), Types.ManagingApiTypes.ManagingBulkGetResponse.class);
 		}
 	
+		/**
+		 * Bulk Get Accounts
+		 *
+		 * <p>Bulk get up to 250 accounts.</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ManagingApiTypes.ManagingBulkGetResponse> bulkGetAsync(Types.ManagingApiTypes.ManagingBulkGetBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -1238,6 +1700,13 @@ public class MarketClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ManagingApiTypes.ManagingBulkGetResponse.class));
 		}
 	
+		/**
+		 * Get Account Steam Inventory Value
+		 *
+		 * <p>Gets Account steam inventory value.</p>
+		 * @param itemId Item id.
+		 * @param params Query parameters.
+		 */
 		public Types.ManagingApiTypes.ManagingSteamInventoryValueResponse steamInventoryValue(long itemId, Types.ManagingApiTypes.ManagingSteamInventoryValueParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -1254,6 +1723,13 @@ public class MarketClient implements Closeable {
 			return steamInventoryValue(itemId, null);
 		}
 	
+		/**
+		 * Get Account Steam Inventory Value
+		 *
+		 * <p>Gets Account steam inventory value.</p>
+		 * @param itemId Item id.
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.ManagingApiTypes.ManagingSteamInventoryValueResponse> steamInventoryValueAsync(long itemId, Types.ManagingApiTypes.ManagingSteamInventoryValueParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -1270,6 +1746,13 @@ public class MarketClient implements Closeable {
 			return steamInventoryValueAsync(itemId, null);
 		}
 	
+		/**
+		 * Get Steam Inventory Value
+		 *
+		 * <p>Gets steam inventory value.
+		 * &gt; 📘 This method is rate limited. You can send 20 requests per minute (3s delay between requests)</p>
+		 * @param params Query parameters.
+		 */
 		public Types.ManagingApiTypes.ManagingSteamValueResponse steamValue(Types.ManagingApiTypes.ManagingSteamValueParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -1286,6 +1769,13 @@ public class MarketClient implements Closeable {
 			return steamValue(null);
 		}
 	
+		/**
+		 * Get Steam Inventory Value
+		 *
+		 * <p>Gets steam inventory value.
+		 * &gt; 📘 This method is rate limited. You can send 20 requests per minute (3s delay between requests)</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.ManagingApiTypes.ManagingSteamValueResponse> steamValueAsync(Types.ManagingApiTypes.ManagingSteamValueParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -1302,6 +1792,13 @@ public class MarketClient implements Closeable {
 			return steamValueAsync(null);
 		}
 	
+		/**
+		 * Get Steam HTML
+		 *
+		 * <p>Returns Steam account profile/games preview.</p>
+		 * @param itemId Item id.
+		 * @param params Query parameters.
+		 */
 		public String steamPreview(long itemId, Types.ManagingApiTypes.ManagingSteamPreviewParams params) {
 			return http.requestRaw(new RequestOptions(
 				"GET",
@@ -1318,6 +1815,13 @@ public class MarketClient implements Closeable {
 			return steamPreview(itemId, null);
 		}
 	
+		/**
+		 * Get Steam HTML
+		 *
+		 * <p>Returns Steam account profile/games preview.</p>
+		 * @param itemId Item id.
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<String> steamPreviewAsync(long itemId, Types.ManagingApiTypes.ManagingSteamPreviewParams params) {
 			return http.requestRawAsync(new RequestOptions(
 				"GET",
@@ -1334,6 +1838,13 @@ public class MarketClient implements Closeable {
 			return steamPreviewAsync(itemId, null);
 		}
 	
+		/**
+		 * Edit Account
+		 *
+		 * <p>Edits any details of account.</p>
+		 * @param itemId Item id.
+		 * @param body Request body.
+		 */
 		public Types.ManagingApiTypes.ManagingEditResponse edit(long itemId, Types.ManagingApiTypes.ManagingEditBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"PUT",
@@ -1350,6 +1861,13 @@ public class MarketClient implements Closeable {
 			return edit(itemId, null);
 		}
 	
+		/**
+		 * Edit Account
+		 *
+		 * <p>Edits any details of account.</p>
+		 * @param itemId Item id.
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ManagingApiTypes.ManagingEditResponse> editAsync(long itemId, Types.ManagingApiTypes.ManagingEditBody body) {
 			return http.requestAsync(new RequestOptions(
 				"PUT",
@@ -1366,6 +1884,12 @@ public class MarketClient implements Closeable {
 			return editAsync(itemId, null);
 		}
 	
+		/**
+		 * Get AI Price
+		 *
+		 * <p>Get AI-suggested price for the account.</p>
+		 * @param itemId Item id.
+		 */
 		public Types.ManagingApiTypes.ManagingAIPriceResponse aIPrice(long itemId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -1378,6 +1902,12 @@ public class MarketClient implements Closeable {
 			)), Types.ManagingApiTypes.ManagingAIPriceResponse.class);
 		}
 	
+		/**
+		 * Get AI Price
+		 *
+		 * <p>Get AI-suggested price for the account.</p>
+		 * @param itemId Item id.
+		 */
 		public CompletableFuture<Types.ManagingApiTypes.ManagingAIPriceResponse> aIPriceAsync(long itemId) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -1390,6 +1920,12 @@ public class MarketClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ManagingApiTypes.ManagingAIPriceResponse.class));
 		}
 	
+		/**
+		 * Get Auto Buy Price
+		 *
+		 * <p>Get auto buy price for the account.</p>
+		 * @param itemId Item id.
+		 */
 		public Types.ManagingApiTypes.ManagingAutoBuyPriceResponse autoBuyPrice(long itemId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -1402,6 +1938,12 @@ public class MarketClient implements Closeable {
 			)), Types.ManagingApiTypes.ManagingAutoBuyPriceResponse.class);
 		}
 	
+		/**
+		 * Get Auto Buy Price
+		 *
+		 * <p>Get auto buy price for the account.</p>
+		 * @param itemId Item id.
+		 */
 		public CompletableFuture<Types.ManagingApiTypes.ManagingAutoBuyPriceResponse> autoBuyPriceAsync(long itemId) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -1414,6 +1956,13 @@ public class MarketClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ManagingApiTypes.ManagingAutoBuyPriceResponse.class));
 		}
 	
+		/**
+		 * Edit Note
+		 *
+		 * <p>Edits a note for the account.</p>
+		 * @param itemId Item id.
+		 * @param body Request body.
+		 */
 		public Types.ManagingApiTypes.ManagingNoteResponse note(long itemId, Types.ManagingApiTypes.ManagingNoteBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -1430,6 +1979,13 @@ public class MarketClient implements Closeable {
 			return note(itemId, null);
 		}
 	
+		/**
+		 * Edit Note
+		 *
+		 * <p>Edits a note for the account.</p>
+		 * @param itemId Item id.
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ManagingApiTypes.ManagingNoteResponse> noteAsync(long itemId, Types.ManagingApiTypes.ManagingNoteBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -1446,6 +2002,13 @@ public class MarketClient implements Closeable {
 			return noteAsync(itemId, null);
 		}
 	
+		/**
+		 * Update Inventory Value
+		 *
+		 * <p>Update inventory value.</p>
+		 * @param itemId Item id.
+		 * @param body Request body.
+		 */
 		public Types.ManagingApiTypes.ManagingSteamUpdateValueResponse steamUpdateValue(long itemId, Types.ManagingApiTypes.ManagingSteamUpdateValueBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -1462,6 +2025,13 @@ public class MarketClient implements Closeable {
 			return steamUpdateValue(itemId, null);
 		}
 	
+		/**
+		 * Update Inventory Value
+		 *
+		 * <p>Update inventory value.</p>
+		 * @param itemId Item id.
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ManagingApiTypes.ManagingSteamUpdateValueResponse> steamUpdateValueAsync(long itemId, Types.ManagingApiTypes.ManagingSteamUpdateValueBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -1478,6 +2048,12 @@ public class MarketClient implements Closeable {
 			return steamUpdateValueAsync(itemId, null);
 		}
 	
+		/**
+		 * Bump Account
+		 *
+		 * <p>Bumps account in the search.</p>
+		 * @param itemId Item id.
+		 */
 		public Types.ManagingApiTypes.ManagingBumpResponse bump(long itemId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -1490,6 +2066,12 @@ public class MarketClient implements Closeable {
 			)), Types.ManagingApiTypes.ManagingBumpResponse.class);
 		}
 	
+		/**
+		 * Bump Account
+		 *
+		 * <p>Bumps account in the search.</p>
+		 * @param itemId Item id.
+		 */
 		public CompletableFuture<Types.ManagingApiTypes.ManagingBumpResponse> bumpAsync(long itemId) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -1502,6 +2084,13 @@ public class MarketClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ManagingApiTypes.ManagingBumpResponse.class));
 		}
 	
+		/**
+		 * Auto Bump
+		 *
+		 * <p>Enables/edits automatic bumping for the specified account.</p>
+		 * @param itemId Item id.
+		 * @param body Request body.
+		 */
 		public Types.ManagingApiTypes.ManagingAutoBumpResponse autoBump(long itemId, Types.ManagingApiTypes.ManagingAutoBumpBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -1518,6 +2107,13 @@ public class MarketClient implements Closeable {
 			return autoBump(itemId, null);
 		}
 	
+		/**
+		 * Auto Bump
+		 *
+		 * <p>Enables/edits automatic bumping for the specified account.</p>
+		 * @param itemId Item id.
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ManagingApiTypes.ManagingAutoBumpResponse> autoBumpAsync(long itemId, Types.ManagingApiTypes.ManagingAutoBumpBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -1534,6 +2130,12 @@ public class MarketClient implements Closeable {
 			return autoBumpAsync(itemId, null);
 		}
 	
+		/**
+		 * Disable Auto Bump
+		 *
+		 * <p>Disables automatic bumping for the specified account.</p>
+		 * @param itemId Item id.
+		 */
 		public Types.ManagingApiTypes.ManagingAutoBumpDisableResponse autoBumpDisable(long itemId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"DELETE",
@@ -1546,6 +2148,12 @@ public class MarketClient implements Closeable {
 			)), Types.ManagingApiTypes.ManagingAutoBumpDisableResponse.class);
 		}
 	
+		/**
+		 * Disable Auto Bump
+		 *
+		 * <p>Disables automatic bumping for the specified account.</p>
+		 * @param itemId Item id.
+		 */
 		public CompletableFuture<Types.ManagingApiTypes.ManagingAutoBumpDisableResponse> autoBumpDisableAsync(long itemId) {
 			return http.requestAsync(new RequestOptions(
 				"DELETE",
@@ -1558,6 +2166,12 @@ public class MarketClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ManagingApiTypes.ManagingAutoBumpDisableResponse.class));
 		}
 	
+		/**
+		 * Open Account
+		 *
+		 * <p>Opens account.</p>
+		 * @param itemId Item id.
+		 */
 		public Types.ManagingApiTypes.ManagingOpenResponse open(long itemId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -1570,6 +2184,12 @@ public class MarketClient implements Closeable {
 			)), Types.ManagingApiTypes.ManagingOpenResponse.class);
 		}
 	
+		/**
+		 * Open Account
+		 *
+		 * <p>Opens account.</p>
+		 * @param itemId Item id.
+		 */
 		public CompletableFuture<Types.ManagingApiTypes.ManagingOpenResponse> openAsync(long itemId) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -1582,6 +2202,12 @@ public class MarketClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ManagingApiTypes.ManagingOpenResponse.class));
 		}
 	
+		/**
+		 * Close Account
+		 *
+		 * <p>Closes account.</p>
+		 * @param itemId Item id.
+		 */
 		public Types.ManagingApiTypes.ManagingCloseResponse close(long itemId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -1594,6 +2220,12 @@ public class MarketClient implements Closeable {
 			)), Types.ManagingApiTypes.ManagingCloseResponse.class);
 		}
 	
+		/**
+		 * Close Account
+		 *
+		 * <p>Closes account.</p>
+		 * @param itemId Item id.
+		 */
 		public CompletableFuture<Types.ManagingApiTypes.ManagingCloseResponse> closeAsync(long itemId) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -1606,6 +2238,13 @@ public class MarketClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ManagingApiTypes.ManagingCloseResponse.class));
 		}
 	
+		/**
+		 * Get Account Image
+		 *
+		 * <p>Get account image.</p>
+		 * @param itemId Item id.
+		 * @param params Query parameters.
+		 */
 		public Types.ManagingApiTypes.ManagingImageResponse image(long itemId, Types.ManagingApiTypes.ManagingImageParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -1622,6 +2261,13 @@ public class MarketClient implements Closeable {
 			return image(itemId, null);
 		}
 	
+		/**
+		 * Get Account Image
+		 *
+		 * <p>Get account image.</p>
+		 * @param itemId Item id.
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.ManagingApiTypes.ManagingImageResponse> imageAsync(long itemId, Types.ManagingApiTypes.ManagingImageParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -1638,6 +2284,14 @@ public class MarketClient implements Closeable {
 			return imageAsync(itemId, null);
 		}
 	
+		/**
+		 * Get Email Confirmation Code
+		 *
+		 * <p>Gets confirmation code or link.
+		 * 
+		 * &gt; ❗️ If you receive a "retry_request" error, you should repeat the same request (up to a maximum of 100 times)</p>
+		 * @param itemId Item id.
+		 */
 		public Types.ManagingApiTypes.ManagingEmailCodeResponse emailCode(long itemId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -1650,6 +2304,14 @@ public class MarketClient implements Closeable {
 			)), Types.ManagingApiTypes.ManagingEmailCodeResponse.class);
 		}
 	
+		/**
+		 * Get Email Confirmation Code
+		 *
+		 * <p>Gets confirmation code or link.
+		 * 
+		 * &gt; ❗️ If you receive a "retry_request" error, you should repeat the same request (up to a maximum of 100 times)</p>
+		 * @param itemId Item id.
+		 */
 		public CompletableFuture<Types.ManagingApiTypes.ManagingEmailCodeResponse> emailCodeAsync(long itemId) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -1662,6 +2324,14 @@ public class MarketClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ManagingApiTypes.ManagingEmailCodeResponse.class));
 		}
 	
+		/**
+		 * Get Email Letters
+		 *
+		 * <p>Returns account letters.
+		 * 
+		 * &gt; ❗️ If you receive a "retry_request" error, you should repeat the same request (up to a maximum of 100 times)</p>
+		 * @param params Query parameters.
+		 */
 		public Types.ManagingApiTypes.ManagingGetLetters2Response getLetters2(Types.ManagingApiTypes.ManagingGetLetters2Params params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -1678,6 +2348,14 @@ public class MarketClient implements Closeable {
 			return getLetters2(null);
 		}
 	
+		/**
+		 * Get Email Letters
+		 *
+		 * <p>Returns account letters.
+		 * 
+		 * &gt; ❗️ If you receive a "retry_request" error, you should repeat the same request (up to a maximum of 100 times)</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.ManagingApiTypes.ManagingGetLetters2Response> getLetters2Async(Types.ManagingApiTypes.ManagingGetLetters2Params params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -1694,6 +2372,13 @@ public class MarketClient implements Closeable {
 			return getLetters2Async(null);
 		}
 	
+		/**
+		 * Get Mafile
+		 *
+		 * <p>Returns steam mafile.
+		 * &gt; ❗️ This action is cancelling active account guarantee</p>
+		 * @param itemId Item id.
+		 */
 		public Types.ManagingApiTypes.ManagingSteamGetMafileResponse steamGetMafile(long itemId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -1706,6 +2391,13 @@ public class MarketClient implements Closeable {
 			)), Types.ManagingApiTypes.ManagingSteamGetMafileResponse.class);
 		}
 	
+		/**
+		 * Get Mafile
+		 *
+		 * <p>Returns steam mafile.
+		 * &gt; ❗️ This action is cancelling active account guarantee</p>
+		 * @param itemId Item id.
+		 */
 		public CompletableFuture<Types.ManagingApiTypes.ManagingSteamGetMafileResponse> steamGetMafileAsync(long itemId) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -1718,6 +2410,12 @@ public class MarketClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ManagingApiTypes.ManagingSteamGetMafileResponse.class));
 		}
 	
+		/**
+		 * Add Mafile
+		 *
+		 * <p>Add a new Steam mafile to the account.</p>
+		 * @param itemId Item id.
+		 */
 		public Types.ManagingApiTypes.ManagingSteamAddMafileResponse steamAddMafile(long itemId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -1730,6 +2428,12 @@ public class MarketClient implements Closeable {
 			)), Types.ManagingApiTypes.ManagingSteamAddMafileResponse.class);
 		}
 	
+		/**
+		 * Add Mafile
+		 *
+		 * <p>Add a new Steam mafile to the account.</p>
+		 * @param itemId Item id.
+		 */
 		public CompletableFuture<Types.ManagingApiTypes.ManagingSteamAddMafileResponse> steamAddMafileAsync(long itemId) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -1742,6 +2446,13 @@ public class MarketClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ManagingApiTypes.ManagingSteamAddMafileResponse.class));
 		}
 	
+		/**
+		 * Remove Mafile
+		 *
+		 * <p>Remove steam mafile.
+		 * &gt; ❗️ This will unlink the authenticator from the account and remove mafile from the item</p>
+		 * @param itemId Item id.
+		 */
 		public Types.ManagingApiTypes.ManagingSteamRemoveMafileResponse steamRemoveMafile(long itemId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"DELETE",
@@ -1754,6 +2465,13 @@ public class MarketClient implements Closeable {
 			)), Types.ManagingApiTypes.ManagingSteamRemoveMafileResponse.class);
 		}
 	
+		/**
+		 * Remove Mafile
+		 *
+		 * <p>Remove steam mafile.
+		 * &gt; ❗️ This will unlink the authenticator from the account and remove mafile from the item</p>
+		 * @param itemId Item id.
+		 */
 		public CompletableFuture<Types.ManagingApiTypes.ManagingSteamRemoveMafileResponse> steamRemoveMafileAsync(long itemId) {
 			return http.requestAsync(new RequestOptions(
 				"DELETE",
@@ -1766,6 +2484,12 @@ public class MarketClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ManagingApiTypes.ManagingSteamRemoveMafileResponse.class));
 		}
 	
+		/**
+		 * Get Mafile Confirmation Code
+		 *
+		 * <p>Gets confirmation code from MaFile (Only for Steam accounts).</p>
+		 * @param itemId Item id.
+		 */
 		public Types.ManagingApiTypes.ManagingSteamMafileCodeResponse steamMafileCode(long itemId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -1778,6 +2502,12 @@ public class MarketClient implements Closeable {
 			)), Types.ManagingApiTypes.ManagingSteamMafileCodeResponse.class);
 		}
 	
+		/**
+		 * Get Mafile Confirmation Code
+		 *
+		 * <p>Gets confirmation code from MaFile (Only for Steam accounts).</p>
+		 * @param itemId Item id.
+		 */
 		public CompletableFuture<Types.ManagingApiTypes.ManagingSteamMafileCodeResponse> steamMafileCodeAsync(long itemId) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -1790,6 +2520,17 @@ public class MarketClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ManagingApiTypes.ManagingSteamMafileCodeResponse.class));
 		}
 	
+		/**
+		 * Confirm SDA
+		 *
+		 * <p>Confirm steam action. 
+		 * 
+		 *  Don't set **id** and **nonce** parameters to get list of available confirmation requests. 
+		 * 
+		 * &gt; ❗️ This action is cancelling active account guarantee</p>
+		 * @param itemId Item id.
+		 * @param body Request body.
+		 */
 		public Types.ManagingApiTypes.ManagingSteamSDAResponse steamSDA(long itemId, Types.ManagingApiTypes.ManagingSteamSDABody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -1806,6 +2547,17 @@ public class MarketClient implements Closeable {
 			return steamSDA(itemId, null);
 		}
 	
+		/**
+		 * Confirm SDA
+		 *
+		 * <p>Confirm steam action. 
+		 * 
+		 *  Don't set **id** and **nonce** parameters to get list of available confirmation requests. 
+		 * 
+		 * &gt; ❗️ This action is cancelling active account guarantee</p>
+		 * @param itemId Item id.
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ManagingApiTypes.ManagingSteamSDAResponse> steamSDAAsync(long itemId, Types.ManagingApiTypes.ManagingSteamSDABody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -1822,6 +2574,12 @@ public class MarketClient implements Closeable {
 			return steamSDAAsync(itemId, null);
 		}
 	
+		/**
+		 * Get Telegram Confirmation Code
+		 *
+		 * <p>Gets confirmation code from Telegram.</p>
+		 * @param itemId Item id.
+		 */
 		public Types.ManagingApiTypes.ManagingTelegramCodeResponse telegramCode(long itemId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -1834,6 +2592,12 @@ public class MarketClient implements Closeable {
 			)), Types.ManagingApiTypes.ManagingTelegramCodeResponse.class);
 		}
 	
+		/**
+		 * Get Telegram Confirmation Code
+		 *
+		 * <p>Gets confirmation code from Telegram.</p>
+		 * @param itemId Item id.
+		 */
 		public CompletableFuture<Types.ManagingApiTypes.ManagingTelegramCodeResponse> telegramCodeAsync(long itemId) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -1846,6 +2610,12 @@ public class MarketClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ManagingApiTypes.ManagingTelegramCodeResponse.class));
 		}
 	
+		/**
+		 * Telegram Reset Auth
+		 *
+		 * <p>Resets Telegram authorizations.</p>
+		 * @param itemId Item id.
+		 */
 		public Types.ManagingApiTypes.ManagingTelegramResetAuthResponse telegramResetAuth(long itemId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -1858,6 +2628,12 @@ public class MarketClient implements Closeable {
 			)), Types.ManagingApiTypes.ManagingTelegramResetAuthResponse.class);
 		}
 	
+		/**
+		 * Telegram Reset Auth
+		 *
+		 * <p>Resets Telegram authorizations.</p>
+		 * @param itemId Item id.
+		 */
 		public CompletableFuture<Types.ManagingApiTypes.ManagingTelegramResetAuthResponse> telegramResetAuthAsync(long itemId) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -1870,6 +2646,12 @@ public class MarketClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ManagingApiTypes.ManagingTelegramResetAuthResponse.class));
 		}
 	
+		/**
+		 * Cancel Guarantee
+		 *
+		 * <p>Cancel guarantee of account. It can be useful for account reselling.</p>
+		 * @param itemId Item id.
+		 */
 		public Types.ManagingApiTypes.ManagingRefuseGuaranteeResponse refuseGuarantee(long itemId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -1882,6 +2664,12 @@ public class MarketClient implements Closeable {
 			)), Types.ManagingApiTypes.ManagingRefuseGuaranteeResponse.class);
 		}
 	
+		/**
+		 * Cancel Guarantee
+		 *
+		 * <p>Cancel guarantee of account. It can be useful for account reselling.</p>
+		 * @param itemId Item id.
+		 */
 		public CompletableFuture<Types.ManagingApiTypes.ManagingRefuseGuaranteeResponse> refuseGuaranteeAsync(long itemId) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -1894,6 +2682,13 @@ public class MarketClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ManagingApiTypes.ManagingRefuseGuaranteeResponse.class));
 		}
 	
+		/**
+		 * Decline Video Recording Request
+		 *
+		 * <p>Waiver of the requirement to record a video and any claims regarding this account.</p>
+		 * @param itemId Item id.
+		 * @param body Request body.
+		 */
 		public Types.ManagingApiTypes.ManagingDeclineVideoRecordingResponse declineVideoRecording(long itemId, Types.ManagingApiTypes.ManagingDeclineVideoRecordingBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -1910,6 +2705,13 @@ public class MarketClient implements Closeable {
 			return declineVideoRecording(itemId, null);
 		}
 	
+		/**
+		 * Decline Video Recording Request
+		 *
+		 * <p>Waiver of the requirement to record a video and any claims regarding this account.</p>
+		 * @param itemId Item id.
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ManagingApiTypes.ManagingDeclineVideoRecordingResponse> declineVideoRecordingAsync(long itemId, Types.ManagingApiTypes.ManagingDeclineVideoRecordingBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -1926,6 +2728,12 @@ public class MarketClient implements Closeable {
 			return declineVideoRecordingAsync(itemId, null);
 		}
 	
+		/**
+		 * Check Guarantee
+		 *
+		 * <p>Checks the guarantee and cancels it if there are reasons to cancel it.</p>
+		 * @param itemId Item id.
+		 */
 		public Types.ManagingApiTypes.ManagingCheckGuaranteeResponse checkGuarantee(long itemId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -1938,6 +2746,12 @@ public class MarketClient implements Closeable {
 			)), Types.ManagingApiTypes.ManagingCheckGuaranteeResponse.class);
 		}
 	
+		/**
+		 * Check Guarantee
+		 *
+		 * <p>Checks the guarantee and cancels it if there are reasons to cancel it.</p>
+		 * @param itemId Item id.
+		 */
 		public CompletableFuture<Types.ManagingApiTypes.ManagingCheckGuaranteeResponse> checkGuaranteeAsync(long itemId) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -1950,6 +2764,13 @@ public class MarketClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ManagingApiTypes.ManagingCheckGuaranteeResponse.class));
 		}
 	
+		/**
+		 * Change Password
+		 *
+		 * <p>Changes password of account.</p>
+		 * @param itemId Item id.
+		 * @param body Request body.
+		 */
 		public Types.ManagingApiTypes.ManagingChangePasswordResponse changePassword(long itemId, Types.ManagingApiTypes.ManagingChangePasswordBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -1966,6 +2787,13 @@ public class MarketClient implements Closeable {
 			return changePassword(itemId, null);
 		}
 	
+		/**
+		 * Change Password
+		 *
+		 * <p>Changes password of account.</p>
+		 * @param itemId Item id.
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ManagingApiTypes.ManagingChangePasswordResponse> changePasswordAsync(long itemId, Types.ManagingApiTypes.ManagingChangePasswordBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -1982,6 +2810,13 @@ public class MarketClient implements Closeable {
 			return changePasswordAsync(itemId, null);
 		}
 	
+		/**
+		 * Get Temp Email Password
+		 *
+		 * <p>Gets password from temp email of account. After calling of this method, the guarantee will be cancelled and you cannot automatically resell account.
+		 * &gt; ❗️ This action is cancelling active account guarantee</p>
+		 * @param itemId Item id.
+		 */
 		public Types.ManagingApiTypes.ManagingTempEmailPasswordResponse tempEmailPassword(long itemId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -1994,6 +2829,13 @@ public class MarketClient implements Closeable {
 			)), Types.ManagingApiTypes.ManagingTempEmailPasswordResponse.class);
 		}
 	
+		/**
+		 * Get Temp Email Password
+		 *
+		 * <p>Gets password from temp email of account. After calling of this method, the guarantee will be cancelled and you cannot automatically resell account.
+		 * &gt; ❗️ This action is cancelling active account guarantee</p>
+		 * @param itemId Item id.
+		 */
 		public CompletableFuture<Types.ManagingApiTypes.ManagingTempEmailPasswordResponse> tempEmailPasswordAsync(long itemId) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -2006,6 +2848,13 @@ public class MarketClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ManagingApiTypes.ManagingTempEmailPasswordResponse.class));
 		}
 	
+		/**
+		 * Add a Tag
+		 *
+		 * <p>Adds a tag to the specified account.</p>
+		 * @param itemId Item id.
+		 * @param body Request body.
+		 */
 		public Types.ManagingApiTypes.ManagingTagResponse tag(long itemId, Types.ManagingApiTypes.ManagingTagBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -2022,6 +2871,13 @@ public class MarketClient implements Closeable {
 			return tag(itemId, null);
 		}
 	
+		/**
+		 * Add a Tag
+		 *
+		 * <p>Adds a tag to the specified account.</p>
+		 * @param itemId Item id.
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ManagingApiTypes.ManagingTagResponse> tagAsync(long itemId, Types.ManagingApiTypes.ManagingTagBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -2038,6 +2894,13 @@ public class MarketClient implements Closeable {
 			return tagAsync(itemId, null);
 		}
 	
+		/**
+		 * Remove a Tag
+		 *
+		 * <p>Removes a tag from from the specified account.</p>
+		 * @param itemId Item id.
+		 * @param body Request body.
+		 */
 		public Types.ManagingApiTypes.ManagingUntagResponse untag(long itemId, Types.ManagingApiTypes.ManagingUntagBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"DELETE",
@@ -2054,6 +2917,13 @@ public class MarketClient implements Closeable {
 			return untag(itemId, null);
 		}
 	
+		/**
+		 * Remove a Tag
+		 *
+		 * <p>Removes a tag from from the specified account.</p>
+		 * @param itemId Item id.
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ManagingApiTypes.ManagingUntagResponse> untagAsync(long itemId, Types.ManagingApiTypes.ManagingUntagBody body) {
 			return http.requestAsync(new RequestOptions(
 				"DELETE",
@@ -2070,6 +2940,13 @@ public class MarketClient implements Closeable {
 			return untagAsync(itemId, null);
 		}
 	
+		/**
+		 * Add a Public Tag
+		 *
+		 * <p>Adds a public tag to the specified account.</p>
+		 * @param itemId Item id.
+		 * @param body Request body.
+		 */
 		public Types.ManagingApiTypes.ManagingPublicTagResponse publicTag(long itemId, Types.ManagingApiTypes.ManagingPublicTagBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -2086,6 +2963,13 @@ public class MarketClient implements Closeable {
 			return publicTag(itemId, null);
 		}
 	
+		/**
+		 * Add a Public Tag
+		 *
+		 * <p>Adds a public tag to the specified account.</p>
+		 * @param itemId Item id.
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ManagingApiTypes.ManagingPublicTagResponse> publicTagAsync(long itemId, Types.ManagingApiTypes.ManagingPublicTagBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -2102,6 +2986,13 @@ public class MarketClient implements Closeable {
 			return publicTagAsync(itemId, null);
 		}
 	
+		/**
+		 * Remove a Public Tag
+		 *
+		 * <p>Removes a public tag from the specified account.</p>
+		 * @param itemId Item id.
+		 * @param body Request body.
+		 */
 		public Types.ManagingApiTypes.ManagingPublicUntagResponse publicUntag(long itemId, Types.ManagingApiTypes.ManagingPublicUntagBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"DELETE",
@@ -2118,6 +3009,13 @@ public class MarketClient implements Closeable {
 			return publicUntag(itemId, null);
 		}
 	
+		/**
+		 * Remove a Public Tag
+		 *
+		 * <p>Removes a public tag from the specified account.</p>
+		 * @param itemId Item id.
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ManagingApiTypes.ManagingPublicUntagResponse> publicUntagAsync(long itemId, Types.ManagingApiTypes.ManagingPublicUntagBody body) {
 			return http.requestAsync(new RequestOptions(
 				"DELETE",
@@ -2134,6 +3032,12 @@ public class MarketClient implements Closeable {
 			return publicUntagAsync(itemId, null);
 		}
 	
+		/**
+		 * Favorite
+		 *
+		 * <p>Adds account to favorites.</p>
+		 * @param itemId Item id.
+		 */
 		public Types.ManagingApiTypes.ManagingFavoriteResponse favorite(long itemId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -2146,6 +3050,12 @@ public class MarketClient implements Closeable {
 			)), Types.ManagingApiTypes.ManagingFavoriteResponse.class);
 		}
 	
+		/**
+		 * Favorite
+		 *
+		 * <p>Adds account to favorites.</p>
+		 * @param itemId Item id.
+		 */
 		public CompletableFuture<Types.ManagingApiTypes.ManagingFavoriteResponse> favoriteAsync(long itemId) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -2158,6 +3068,12 @@ public class MarketClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ManagingApiTypes.ManagingFavoriteResponse.class));
 		}
 	
+		/**
+		 * Unfavorite
+		 *
+		 * <p>Delete account from favorites.</p>
+		 * @param itemId Item id.
+		 */
 		public Types.ManagingApiTypes.ManagingUnfavoriteResponse unfavorite(long itemId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"DELETE",
@@ -2170,6 +3086,12 @@ public class MarketClient implements Closeable {
 			)), Types.ManagingApiTypes.ManagingUnfavoriteResponse.class);
 		}
 	
+		/**
+		 * Unfavorite
+		 *
+		 * <p>Delete account from favorites.</p>
+		 * @param itemId Item id.
+		 */
 		public CompletableFuture<Types.ManagingApiTypes.ManagingUnfavoriteResponse> unfavoriteAsync(long itemId) {
 			return http.requestAsync(new RequestOptions(
 				"DELETE",
@@ -2182,6 +3104,12 @@ public class MarketClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ManagingApiTypes.ManagingUnfavoriteResponse.class));
 		}
 	
+		/**
+		 * Stick Account
+		 *
+		 * <p>Stick account in the top of search.</p>
+		 * @param itemId Item id.
+		 */
 		public Types.ManagingApiTypes.ManagingStickResponse stick(long itemId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -2194,6 +3122,12 @@ public class MarketClient implements Closeable {
 			)), Types.ManagingApiTypes.ManagingStickResponse.class);
 		}
 	
+		/**
+		 * Stick Account
+		 *
+		 * <p>Stick account in the top of search.</p>
+		 * @param itemId Item id.
+		 */
 		public CompletableFuture<Types.ManagingApiTypes.ManagingStickResponse> stickAsync(long itemId) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -2206,6 +3140,12 @@ public class MarketClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ManagingApiTypes.ManagingStickResponse.class));
 		}
 	
+		/**
+		 * Unstick Account
+		 *
+		 * <p>Unstick account from the top of search.</p>
+		 * @param itemId Item id.
+		 */
 		public Types.ManagingApiTypes.ManagingUnstickResponse unstick(long itemId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"DELETE",
@@ -2218,6 +3158,12 @@ public class MarketClient implements Closeable {
 			)), Types.ManagingApiTypes.ManagingUnstickResponse.class);
 		}
 	
+		/**
+		 * Unstick Account
+		 *
+		 * <p>Unstick account from the top of search.</p>
+		 * @param itemId Item id.
+		 */
 		public CompletableFuture<Types.ManagingApiTypes.ManagingUnstickResponse> unstickAsync(long itemId) {
 			return http.requestAsync(new RequestOptions(
 				"DELETE",
@@ -2230,6 +3176,13 @@ public class MarketClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ManagingApiTypes.ManagingUnstickResponse.class));
 		}
 	
+		/**
+		 * Change Account Owner
+		 *
+		 * <p>Transfer account to another user.</p>
+		 * @param itemId Item id.
+		 * @param body Request body.
+		 */
 		public Types.ManagingApiTypes.ManagingTransferResponse transfer(long itemId, Types.ManagingApiTypes.ManagingTransferBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -2246,6 +3199,13 @@ public class MarketClient implements Closeable {
 			return transfer(itemId, null);
 		}
 	
+		/**
+		 * Change Account Owner
+		 *
+		 * <p>Transfer account to another user.</p>
+		 * @param itemId Item id.
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ManagingApiTypes.ManagingTransferResponse> transferAsync(long itemId, Types.ManagingApiTypes.ManagingTransferBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -2273,6 +3233,12 @@ public class MarketClient implements Closeable {
 			this.mapper = http.objectMapper();
 		}
 	
+		/**
+		 * Get Claims
+		 *
+		 * <p>Returns a list of claims filed against you.</p>
+		 * @param params Query parameters.
+		 */
 		public Types.ProfileApiTypes.ProfileClaimsResponse claims(Types.ProfileApiTypes.ProfileClaimsParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -2289,6 +3255,12 @@ public class MarketClient implements Closeable {
 			return claims(null);
 		}
 	
+		/**
+		 * Get Claims
+		 *
+		 * <p>Returns a list of claims filed against you.</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.ProfileApiTypes.ProfileClaimsResponse> claimsAsync(Types.ProfileApiTypes.ProfileClaimsParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -2305,6 +3277,12 @@ public class MarketClient implements Closeable {
 			return claimsAsync(null);
 		}
 	
+		/**
+		 * Get Profile
+		 *
+		 * <p>Displays info about your profile.</p>
+		 * @param params Query parameters.
+		 */
 		public Types.ProfileApiTypes.ProfileGetResponse get(Types.ProfileApiTypes.ProfileGetParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -2321,6 +3299,12 @@ public class MarketClient implements Closeable {
 			return get(null);
 		}
 	
+		/**
+		 * Get Profile
+		 *
+		 * <p>Displays info about your profile.</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.ProfileApiTypes.ProfileGetResponse> getAsync(Types.ProfileApiTypes.ProfileGetParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -2337,6 +3321,12 @@ public class MarketClient implements Closeable {
 			return getAsync(null);
 		}
 	
+		/**
+		 * Edit Market Settings
+		 *
+		 * <p>Change settings about your profile on the market.</p>
+		 * @param body Request body.
+		 */
 		public Types.ProfileApiTypes.ProfileEditResponse edit(Types.ProfileApiTypes.ProfileEditBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"PUT",
@@ -2353,6 +3343,12 @@ public class MarketClient implements Closeable {
 			return edit(null);
 		}
 	
+		/**
+		 * Edit Market Settings
+		 *
+		 * <p>Change settings about your profile on the market.</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ProfileApiTypes.ProfileEditResponse> editAsync(Types.ProfileApiTypes.ProfileEditBody body) {
 			return http.requestAsync(new RequestOptions(
 				"PUT",
@@ -2380,6 +3376,12 @@ public class MarketClient implements Closeable {
 			this.mapper = http.objectMapper();
 		}
 	
+		/**
+		 * Get Cart Items
+		 *
+		 * <p>Returns the list of items currently in your cart.</p>
+		 * @param params Query parameters.
+		 */
 		public Types.CartApiTypes.CartGetResponse get(Types.CartApiTypes.CartGetParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -2396,6 +3398,12 @@ public class MarketClient implements Closeable {
 			return get(null);
 		}
 	
+		/**
+		 * Get Cart Items
+		 *
+		 * <p>Returns the list of items currently in your cart.</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.CartApiTypes.CartGetResponse> getAsync(Types.CartApiTypes.CartGetParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -2412,6 +3420,12 @@ public class MarketClient implements Closeable {
 			return getAsync(null);
 		}
 	
+		/**
+		 * Add Item to Cart
+		 *
+		 * <p>Adds item to your cart.</p>
+		 * @param body Request body.
+		 */
 		public Types.CartApiTypes.CartAddResponse add(Types.CartApiTypes.CartAddBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -2424,6 +3438,12 @@ public class MarketClient implements Closeable {
 			)), Types.CartApiTypes.CartAddResponse.class);
 		}
 	
+		/**
+		 * Add Item to Cart
+		 *
+		 * <p>Adds item to your cart.</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.CartApiTypes.CartAddResponse> addAsync(Types.CartApiTypes.CartAddBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -2436,6 +3456,12 @@ public class MarketClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.CartApiTypes.CartAddResponse.class));
 		}
 	
+		/**
+		 * Delete Item From Cart
+		 *
+		 * <p>Deletes an item from the cart.</p>
+		 * @param body Request body.
+		 */
 		public Types.CartApiTypes.CartDeleteResponse delete(Types.CartApiTypes.CartDeleteBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"DELETE",
@@ -2452,6 +3478,12 @@ public class MarketClient implements Closeable {
 			return delete(null);
 		}
 	
+		/**
+		 * Delete Item From Cart
+		 *
+		 * <p>Deletes an item from the cart.</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.CartApiTypes.CartDeleteResponse> deleteAsync(Types.CartApiTypes.CartDeleteBody body) {
 			return http.requestAsync(new RequestOptions(
 				"DELETE",
@@ -2479,6 +3511,15 @@ public class MarketClient implements Closeable {
 			this.mapper = http.objectMapper();
 		}
 	
+		/**
+		 * Fast Buy Account
+		 *
+		 * <p>Check and buy account.
+		 * 
+		 * &gt; ❗️ If you receive a "retry_request" error, you should repeat the same request (up to a maximum of 100 times).</p>
+		 * @param itemId Item id.
+		 * @param body Request body.
+		 */
 		public Types.PurchasingApiTypes.PurchasingFastBuyResponse fastBuy(long itemId, Types.PurchasingApiTypes.PurchasingFastBuyBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -2495,6 +3536,15 @@ public class MarketClient implements Closeable {
 			return fastBuy(itemId, null);
 		}
 	
+		/**
+		 * Fast Buy Account
+		 *
+		 * <p>Check and buy account.
+		 * 
+		 * &gt; ❗️ If you receive a "retry_request" error, you should repeat the same request (up to a maximum of 100 times).</p>
+		 * @param itemId Item id.
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.PurchasingApiTypes.PurchasingFastBuyResponse> fastBuyAsync(long itemId, Types.PurchasingApiTypes.PurchasingFastBuyBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -2511,6 +3561,14 @@ public class MarketClient implements Closeable {
 			return fastBuyAsync(itemId, null);
 		}
 	
+		/**
+		 * Check Account
+		 *
+		 * <p>Checking account for validity.
+		 * 
+		 * &gt; ❗️ If you receive a "retry_request" error, you should repeat the same request (up to a maximum of 100 times).</p>
+		 * @param itemId Item id.
+		 */
 		public Types.PurchasingApiTypes.PurchasingCheckResponse check(long itemId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -2523,6 +3581,14 @@ public class MarketClient implements Closeable {
 			)), Types.PurchasingApiTypes.PurchasingCheckResponse.class);
 		}
 	
+		/**
+		 * Check Account
+		 *
+		 * <p>Checking account for validity.
+		 * 
+		 * &gt; ❗️ If you receive a "retry_request" error, you should repeat the same request (up to a maximum of 100 times).</p>
+		 * @param itemId Item id.
+		 */
 		public CompletableFuture<Types.PurchasingApiTypes.PurchasingCheckResponse> checkAsync(long itemId) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -2535,6 +3601,15 @@ public class MarketClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.PurchasingApiTypes.PurchasingCheckResponse.class));
 		}
 	
+		/**
+		 * Confirm Buy
+		 *
+		 * <p>Confirm buy.
+		 * 
+		 * &gt; ❗️ This method doesn't check account for validity. If you want to confirm validity before buying, you should use [FastBuy](https://lzt-market.readme.io/reference/purchasingfastbuy) method</p>
+		 * @param itemId Item id.
+		 * @param body Request body.
+		 */
 		public Types.PurchasingApiTypes.PurchasingConfirmResponse confirm(long itemId, Types.PurchasingApiTypes.PurchasingConfirmBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -2551,6 +3626,15 @@ public class MarketClient implements Closeable {
 			return confirm(itemId, null);
 		}
 	
+		/**
+		 * Confirm Buy
+		 *
+		 * <p>Confirm buy.
+		 * 
+		 * &gt; ❗️ This method doesn't check account for validity. If you want to confirm validity before buying, you should use [FastBuy](https://lzt-market.readme.io/reference/purchasingfastbuy) method</p>
+		 * @param itemId Item id.
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.PurchasingApiTypes.PurchasingConfirmResponse> confirmAsync(long itemId, Types.PurchasingApiTypes.PurchasingConfirmBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -2567,6 +3651,13 @@ public class MarketClient implements Closeable {
 			return confirmAsync(itemId, null);
 		}
 	
+		/**
+		 * Discount Request
+		 *
+		 * <p>Request a discount for the specified item.</p>
+		 * @param itemId Item id.
+		 * @param body Request body.
+		 */
 		public Types.PurchasingApiTypes.PurchasingDiscountRequestResponse discountRequest(long itemId, Types.PurchasingApiTypes.PurchasingDiscountRequestBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -2583,6 +3674,13 @@ public class MarketClient implements Closeable {
 			return discountRequest(itemId, null);
 		}
 	
+		/**
+		 * Discount Request
+		 *
+		 * <p>Request a discount for the specified item.</p>
+		 * @param itemId Item id.
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.PurchasingApiTypes.PurchasingDiscountRequestResponse> discountRequestAsync(long itemId, Types.PurchasingApiTypes.PurchasingDiscountRequestBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -2599,6 +3697,12 @@ public class MarketClient implements Closeable {
 			return discountRequestAsync(itemId, null);
 		}
 	
+		/**
+		 * Cancel Discount Request
+		 *
+		 * <p>Cancel a requested discount for the specified item.</p>
+		 * @param itemId Item id.
+		 */
 		public Types.PurchasingApiTypes.PurchasingDiscountCancelResponse discountCancel(long itemId) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"DELETE",
@@ -2611,6 +3715,12 @@ public class MarketClient implements Closeable {
 			)), Types.PurchasingApiTypes.PurchasingDiscountCancelResponse.class);
 		}
 	
+		/**
+		 * Cancel Discount Request
+		 *
+		 * <p>Cancel a requested discount for the specified item.</p>
+		 * @param itemId Item id.
+		 */
 		public CompletableFuture<Types.PurchasingApiTypes.PurchasingDiscountCancelResponse> discountCancelAsync(long itemId) {
 			return http.requestAsync(new RequestOptions(
 				"DELETE",
@@ -2634,6 +3744,11 @@ public class MarketClient implements Closeable {
 			this.mapper = http.objectMapper();
 		}
 	
+		/**
+		 * Get Custom Discounts
+		 *
+		 * <p>Get a list of custom discounts.</p>
+		 */
 		public Types.CustomDiscountsApiTypes.CustomDiscountsGetResponse get() {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -2646,6 +3761,11 @@ public class MarketClient implements Closeable {
 			)), Types.CustomDiscountsApiTypes.CustomDiscountsGetResponse.class);
 		}
 	
+		/**
+		 * Get Custom Discounts
+		 *
+		 * <p>Get a list of custom discounts.</p>
+		 */
 		public CompletableFuture<Types.CustomDiscountsApiTypes.CustomDiscountsGetResponse> getAsync() {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -2658,6 +3778,12 @@ public class MarketClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.CustomDiscountsApiTypes.CustomDiscountsGetResponse.class));
 		}
 	
+		/**
+		 * Create Custom Discount
+		 *
+		 * <p>Creates a new custom discount.</p>
+		 * @param body Request body.
+		 */
 		public Types.CustomDiscountsApiTypes.CustomDiscountsCreateResponse create(Types.CustomDiscountsApiTypes.CustomDiscountsCreateBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -2674,6 +3800,12 @@ public class MarketClient implements Closeable {
 			return create(null);
 		}
 	
+		/**
+		 * Create Custom Discount
+		 *
+		 * <p>Creates a new custom discount.</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.CustomDiscountsApiTypes.CustomDiscountsCreateResponse> createAsync(Types.CustomDiscountsApiTypes.CustomDiscountsCreateBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -2690,6 +3822,12 @@ public class MarketClient implements Closeable {
 			return createAsync(null);
 		}
 	
+		/**
+		 * Edit Custom Discount
+		 *
+		 * <p>Edit an existing custom discount.</p>
+		 * @param body Request body.
+		 */
 		public Types.CustomDiscountsApiTypes.CustomDiscountsEditResponse edit(Types.CustomDiscountsApiTypes.CustomDiscountsEditBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"PUT",
@@ -2706,6 +3844,12 @@ public class MarketClient implements Closeable {
 			return edit(null);
 		}
 	
+		/**
+		 * Edit Custom Discount
+		 *
+		 * <p>Edit an existing custom discount.</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.CustomDiscountsApiTypes.CustomDiscountsEditResponse> editAsync(Types.CustomDiscountsApiTypes.CustomDiscountsEditBody body) {
 			return http.requestAsync(new RequestOptions(
 				"PUT",
@@ -2722,6 +3866,12 @@ public class MarketClient implements Closeable {
 			return editAsync(null);
 		}
 	
+		/**
+		 * Delete Custom Discount
+		 *
+		 * <p>Delete an existing custom discount.</p>
+		 * @param body Request body.
+		 */
 		public Types.CustomDiscountsApiTypes.CustomDiscountsDeleteResponse delete(Types.CustomDiscountsApiTypes.CustomDiscountsDeleteBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"DELETE",
@@ -2738,6 +3888,12 @@ public class MarketClient implements Closeable {
 			return delete(null);
 		}
 	
+		/**
+		 * Delete Custom Discount
+		 *
+		 * <p>Delete an existing custom discount.</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.CustomDiscountsApiTypes.CustomDiscountsDeleteResponse> deleteAsync(Types.CustomDiscountsApiTypes.CustomDiscountsDeleteBody body) {
 			return http.requestAsync(new RequestOptions(
 				"DELETE",
@@ -2765,6 +3921,14 @@ public class MarketClient implements Closeable {
 			this.mapper = http.objectMapper();
 		}
 	
+		/**
+		 * Fast Account Upload
+		 *
+		 * <p>Adds and checks the account for validity.
+		 * 
+		 * &gt; ❗️ If you receive a "retry_request" error, you should repeat the same request (up to a maximum of 100 times).</p>
+		 * @param body Request body.
+		 */
 		public Types.PublishingApiTypes.PublishingFastSellResponse fastSell(Types.PublishingApiTypes.PublishingFastSellBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -2781,6 +3945,14 @@ public class MarketClient implements Closeable {
 			return fastSell(null);
 		}
 	
+		/**
+		 * Fast Account Upload
+		 *
+		 * <p>Adds and checks the account for validity.
+		 * 
+		 * &gt; ❗️ If you receive a "retry_request" error, you should repeat the same request (up to a maximum of 100 times).</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.PublishingApiTypes.PublishingFastSellResponse> fastSellAsync(Types.PublishingApiTypes.PublishingFastSellBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -2797,6 +3969,17 @@ public class MarketClient implements Closeable {
 			return fastSellAsync(null);
 		}
 	
+		/**
+		 * Add Account
+		 *
+		 * <p>Adds account on the market.
+		 * 
+		 * Required email login data categories:
+		 * + 9 - Fortnite
+		 * + 12 - Epic games
+		 * + 18 - Escape from Tarkov</p>
+		 * @param body Request body.
+		 */
 		public Types.PublishingApiTypes.PublishingAddResponse add(Types.PublishingApiTypes.PublishingAddBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -2813,6 +3996,17 @@ public class MarketClient implements Closeable {
 			return add(null);
 		}
 	
+		/**
+		 * Add Account
+		 *
+		 * <p>Adds account on the market.
+		 * 
+		 * Required email login data categories:
+		 * + 9 - Fortnite
+		 * + 12 - Epic games
+		 * + 18 - Escape from Tarkov</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.PublishingApiTypes.PublishingAddResponse> addAsync(Types.PublishingApiTypes.PublishingAddBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -2829,6 +4023,15 @@ public class MarketClient implements Closeable {
 			return addAsync(null);
 		}
 	
+		/**
+		 * Check Account Details
+		 *
+		 * <p>Check and put up to sale not published account OR update account information existing account.
+		 * 
+		 * &gt; ❗️ If you receive a "retry_request" error, you should repeat the same request (up to a maximum of 100 times).</p>
+		 * @param itemId Item id.
+		 * @param body Request body.
+		 */
 		public Types.PublishingApiTypes.PublishingCheckResponse check(long itemId, Types.PublishingApiTypes.PublishingCheckBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -2845,6 +4048,15 @@ public class MarketClient implements Closeable {
 			return check(itemId, null);
 		}
 	
+		/**
+		 * Check Account Details
+		 *
+		 * <p>Check and put up to sale not published account OR update account information existing account.
+		 * 
+		 * &gt; ❗️ If you receive a "retry_request" error, you should repeat the same request (up to a maximum of 100 times).</p>
+		 * @param itemId Item id.
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.PublishingApiTypes.PublishingCheckResponse> checkAsync(long itemId, Types.PublishingApiTypes.PublishingCheckBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -2861,6 +4073,15 @@ public class MarketClient implements Closeable {
 			return checkAsync(itemId, null);
 		}
 	
+		/**
+		 * Add an External Account
+		 *
+		 * <p>Check and add an external account to your item.
+		 * 
+		 * &gt; ❗️ Please note that if you're linking a Social Club account to Steam, it will update the last activity on your account (This is a limitation of Steam). If Social Club Games does not have a linked account, do not enter any data.</p>
+		 * @param itemId Item id.
+		 * @param body Request body.
+		 */
 		public Types.PublishingApiTypes.PublishingExternalResponse external(long itemId, Types.PublishingApiTypes.PublishingExternalBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -2877,6 +4098,15 @@ public class MarketClient implements Closeable {
 			return external(itemId, null);
 		}
 	
+		/**
+		 * Add an External Account
+		 *
+		 * <p>Check and add an external account to your item.
+		 * 
+		 * &gt; ❗️ Please note that if you're linking a Social Club account to Steam, it will update the last activity on your account (This is a limitation of Steam). If Social Club Games does not have a linked account, do not enter any data.</p>
+		 * @param itemId Item id.
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.PublishingApiTypes.PublishingExternalResponse> externalAsync(long itemId, Types.PublishingApiTypes.PublishingExternalBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -2904,6 +4134,15 @@ public class MarketClient implements Closeable {
 			this.mapper = http.objectMapper();
 		}
 	
+		/**
+		 * Get Invoice
+		 *
+		 * <p>Get invoice.
+		 * 
+		 * Required scopes:
+		 * + **invoice**</p>
+		 * @param params Query parameters.
+		 */
 		public Types.PaymentsApiTypes.PaymentsInvoiceGetResponse invoiceGet(Types.PaymentsApiTypes.PaymentsInvoiceGetParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -2920,6 +4159,15 @@ public class MarketClient implements Closeable {
 			return invoiceGet(null);
 		}
 	
+		/**
+		 * Get Invoice
+		 *
+		 * <p>Get invoice.
+		 * 
+		 * Required scopes:
+		 * + **invoice**</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.PaymentsApiTypes.PaymentsInvoiceGetResponse> invoiceGetAsync(Types.PaymentsApiTypes.PaymentsInvoiceGetParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -2936,6 +4184,15 @@ public class MarketClient implements Closeable {
 			return invoiceGetAsync(null);
 		}
 	
+		/**
+		 * Create Invoice
+		 *
+		 * <p>Create invoice.
+		 * 
+		 * Required scopes:
+		 * + **invoice**</p>
+		 * @param body Request body.
+		 */
 		public Types.PaymentsApiTypes.PaymentsInvoiceCreateResponse invoiceCreate(Types.PaymentsApiTypes.PaymentsInvoiceCreateBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -2952,6 +4209,15 @@ public class MarketClient implements Closeable {
 			return invoiceCreate(null);
 		}
 	
+		/**
+		 * Create Invoice
+		 *
+		 * <p>Create invoice.
+		 * 
+		 * Required scopes:
+		 * + **invoice**</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.PaymentsApiTypes.PaymentsInvoiceCreateResponse> invoiceCreateAsync(Types.PaymentsApiTypes.PaymentsInvoiceCreateBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -2968,6 +4234,15 @@ public class MarketClient implements Closeable {
 			return invoiceCreateAsync(null);
 		}
 	
+		/**
+		 * Get Invoice List
+		 *
+		 * <p>Get invoice list.
+		 * 
+		 * Required scopes:
+		 * + **invoice**</p>
+		 * @param params Query parameters.
+		 */
 		public Types.PaymentsApiTypes.PaymentsInvoiceListResponse invoiceList(Types.PaymentsApiTypes.PaymentsInvoiceListParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -2984,6 +4259,15 @@ public class MarketClient implements Closeable {
 			return invoiceList(null);
 		}
 	
+		/**
+		 * Get Invoice List
+		 *
+		 * <p>Get invoice list.
+		 * 
+		 * Required scopes:
+		 * + **invoice**</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.PaymentsApiTypes.PaymentsInvoiceListResponse> invoiceListAsync(Types.PaymentsApiTypes.PaymentsInvoiceListParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -3000,6 +4284,11 @@ public class MarketClient implements Closeable {
 			return invoiceListAsync(null);
 		}
 	
+		/**
+		 * Get Currency
+		 *
+		 * <p>Get currency list.</p>
+		 */
 		public Types.PaymentsApiTypes.PaymentsCurrencyResponse currency() {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -3012,6 +4301,11 @@ public class MarketClient implements Closeable {
 			)), Types.PaymentsApiTypes.PaymentsCurrencyResponse.class);
 		}
 	
+		/**
+		 * Get Currency
+		 *
+		 * <p>Get currency list.</p>
+		 */
 		public CompletableFuture<Types.PaymentsApiTypes.PaymentsCurrencyResponse> currencyAsync() {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -3024,6 +4318,11 @@ public class MarketClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.PaymentsApiTypes.PaymentsCurrencyResponse.class));
 		}
 	
+		/**
+		 * Get List Of Balances
+		 *
+		 * <p>Returns list of balances.</p>
+		 */
 		public Types.PaymentsApiTypes.PaymentsBalanceListResponse balanceList() {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -3036,6 +4335,11 @@ public class MarketClient implements Closeable {
 			)), Types.PaymentsApiTypes.PaymentsBalanceListResponse.class);
 		}
 	
+		/**
+		 * Get List Of Balances
+		 *
+		 * <p>Returns list of balances.</p>
+		 */
 		public CompletableFuture<Types.PaymentsApiTypes.PaymentsBalanceListResponse> balanceListAsync() {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -3048,6 +4352,12 @@ public class MarketClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.PaymentsApiTypes.PaymentsBalanceListResponse.class));
 		}
 	
+		/**
+		 * Exchange Balance
+		 *
+		 * <p>Transfer funds from one balance to another.</p>
+		 * @param body Request body.
+		 */
 		public Types.PaymentsApiTypes.PaymentsBalanceExchangeResponse balanceExchange(Types.PaymentsApiTypes.PaymentsBalanceExchangeBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -3064,6 +4374,12 @@ public class MarketClient implements Closeable {
 			return balanceExchange(null);
 		}
 	
+		/**
+		 * Exchange Balance
+		 *
+		 * <p>Transfer funds from one balance to another.</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.PaymentsApiTypes.PaymentsBalanceExchangeResponse> balanceExchangeAsync(Types.PaymentsApiTypes.PaymentsBalanceExchangeBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -3080,6 +4396,15 @@ public class MarketClient implements Closeable {
 			return balanceExchangeAsync(null);
 		}
 	
+		/**
+		 * Transfer Money
+		 *
+		 * <p>Transfer money to any user.
+		 * 
+		 * Required scopes:
+		 * + **payment**</p>
+		 * @param body Request body.
+		 */
 		public Types.PaymentsApiTypes.PaymentsTransferResponse transfer(Types.PaymentsApiTypes.PaymentsTransferBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -3096,6 +4421,15 @@ public class MarketClient implements Closeable {
 			return transfer(null);
 		}
 	
+		/**
+		 * Transfer Money
+		 *
+		 * <p>Transfer money to any user.
+		 * 
+		 * Required scopes:
+		 * + **payment**</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.PaymentsApiTypes.PaymentsTransferResponse> transferAsync(Types.PaymentsApiTypes.PaymentsTransferBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -3112,6 +4446,15 @@ public class MarketClient implements Closeable {
 			return transferAsync(null);
 		}
 	
+		/**
+		 * Check Transfer Fee
+		 *
+		 * <p>Get transfer limits and get fee amount for transfer.
+		 * 
+		 * Required scopes:
+		 * + **payment**</p>
+		 * @param params Query parameters.
+		 */
 		public Types.PaymentsApiTypes.PaymentsFeeResponse fee(Types.PaymentsApiTypes.PaymentsFeeParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -3128,6 +4471,15 @@ public class MarketClient implements Closeable {
 			return fee(null);
 		}
 	
+		/**
+		 * Check Transfer Fee
+		 *
+		 * <p>Get transfer limits and get fee amount for transfer.
+		 * 
+		 * Required scopes:
+		 * + **payment**</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.PaymentsApiTypes.PaymentsFeeResponse> feeAsync(Types.PaymentsApiTypes.PaymentsFeeParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -3144,6 +4496,15 @@ public class MarketClient implements Closeable {
 			return feeAsync(null);
 		}
 	
+		/**
+		 * Cancel Transfer
+		 *
+		 * <p>Cancels a transfer with a hold that was sent to your account.
+		 * 
+		 * Required scopes:
+		 * + **payment**</p>
+		 * @param body Request body.
+		 */
 		public Types.PaymentsApiTypes.PaymentsCancelResponse cancel(Types.PaymentsApiTypes.PaymentsCancelBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -3160,6 +4521,15 @@ public class MarketClient implements Closeable {
 			return cancel(null);
 		}
 	
+		/**
+		 * Cancel Transfer
+		 *
+		 * <p>Cancels a transfer with a hold that was sent to your account.
+		 * 
+		 * Required scopes:
+		 * + **payment**</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.PaymentsApiTypes.PaymentsCancelResponse> cancelAsync(Types.PaymentsApiTypes.PaymentsCancelBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -3176,6 +4546,15 @@ public class MarketClient implements Closeable {
 			return cancelAsync(null);
 		}
 	
+		/**
+		 * Payments History
+		 *
+		 * <p>Displays list of your payments.
+		 * 
+		 * Required scopes:
+		 * + **payment**</p>
+		 * @param params Query parameters.
+		 */
 		public Types.PaymentsApiTypes.PaymentsHistoryResponse history(Types.PaymentsApiTypes.PaymentsHistoryParams params) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -3192,6 +4571,15 @@ public class MarketClient implements Closeable {
 			return history(null);
 		}
 	
+		/**
+		 * Payments History
+		 *
+		 * <p>Displays list of your payments.
+		 * 
+		 * Required scopes:
+		 * + **payment**</p>
+		 * @param params Query parameters.
+		 */
 		public CompletableFuture<Types.PaymentsApiTypes.PaymentsHistoryResponse> historyAsync(Types.PaymentsApiTypes.PaymentsHistoryParams params) {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -3208,6 +4596,11 @@ public class MarketClient implements Closeable {
 			return historyAsync(null);
 		}
 	
+		/**
+		 * Get Payout Services
+		 *
+		 * <p>Get a list of available payout services.</p>
+		 */
 		public Types.PaymentsApiTypes.PaymentsPayoutServicesResponse payoutServices() {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -3220,6 +4613,11 @@ public class MarketClient implements Closeable {
 			)), Types.PaymentsApiTypes.PaymentsPayoutServicesResponse.class);
 		}
 	
+		/**
+		 * Get Payout Services
+		 *
+		 * <p>Get a list of available payout services.</p>
+		 */
 		public CompletableFuture<Types.PaymentsApiTypes.PaymentsPayoutServicesResponse> payoutServicesAsync() {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -3232,6 +4630,12 @@ public class MarketClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.PaymentsApiTypes.PaymentsPayoutServicesResponse.class));
 		}
 	
+		/**
+		 * Create Payout
+		 *
+		 * <p>Creates a payout request.</p>
+		 * @param body Request body.
+		 */
 		public Types.PaymentsApiTypes.PaymentsPayoutResponse payout(Types.PaymentsApiTypes.PaymentsPayoutBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -3248,6 +4652,12 @@ public class MarketClient implements Closeable {
 			return payout(null);
 		}
 	
+		/**
+		 * Create Payout
+		 *
+		 * <p>Creates a payout request.</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.PaymentsApiTypes.PaymentsPayoutResponse> payoutAsync(Types.PaymentsApiTypes.PaymentsPayoutBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -3275,6 +4685,14 @@ public class MarketClient implements Closeable {
 			this.mapper = http.objectMapper();
 		}
 	
+		/**
+		 * Get Auto Payments
+		 *
+		 * <p>Get auto payments list.
+		 * 
+		 * Required scopes:
+		 * + **payment**</p>
+		 */
 		public Types.AutoPaymentsApiTypes.AutoPaymentsListResponse list() {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -3287,6 +4705,14 @@ public class MarketClient implements Closeable {
 			)), Types.AutoPaymentsApiTypes.AutoPaymentsListResponse.class);
 		}
 	
+		/**
+		 * Get Auto Payments
+		 *
+		 * <p>Get auto payments list.
+		 * 
+		 * Required scopes:
+		 * + **payment**</p>
+		 */
 		public CompletableFuture<Types.AutoPaymentsApiTypes.AutoPaymentsListResponse> listAsync() {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -3299,6 +4725,15 @@ public class MarketClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.AutoPaymentsApiTypes.AutoPaymentsListResponse.class));
 		}
 	
+		/**
+		 * Create Auto Payment
+		 *
+		 * <p>Creates auto payment.
+		 * 
+		 * Required scopes:
+		 * + **payment**</p>
+		 * @param body Request body.
+		 */
 		public Types.AutoPaymentsApiTypes.AutoPaymentsCreateResponse create(Types.AutoPaymentsApiTypes.AutoPaymentsCreateBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -3315,6 +4750,15 @@ public class MarketClient implements Closeable {
 			return create(null);
 		}
 	
+		/**
+		 * Create Auto Payment
+		 *
+		 * <p>Creates auto payment.
+		 * 
+		 * Required scopes:
+		 * + **payment**</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.AutoPaymentsApiTypes.AutoPaymentsCreateResponse> createAsync(Types.AutoPaymentsApiTypes.AutoPaymentsCreateBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -3331,6 +4775,15 @@ public class MarketClient implements Closeable {
 			return createAsync(null);
 		}
 	
+		/**
+		 * Delete Auto Payment
+		 *
+		 * <p>Deletes an auto payment.
+		 * 
+		 * Required scopes:
+		 * + **payment**</p>
+		 * @param body Request body.
+		 */
 		public Types.AutoPaymentsApiTypes.AutoPaymentsDeleteResponse delete(Types.AutoPaymentsApiTypes.AutoPaymentsDeleteBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"DELETE",
@@ -3347,6 +4800,15 @@ public class MarketClient implements Closeable {
 			return delete(null);
 		}
 	
+		/**
+		 * Delete Auto Payment
+		 *
+		 * <p>Deletes an auto payment.
+		 * 
+		 * Required scopes:
+		 * + **payment**</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.AutoPaymentsApiTypes.AutoPaymentsDeleteResponse> deleteAsync(Types.AutoPaymentsApiTypes.AutoPaymentsDeleteBody body) {
 			return http.requestAsync(new RequestOptions(
 				"DELETE",
@@ -3374,6 +4836,11 @@ public class MarketClient implements Closeable {
 			this.mapper = http.objectMapper();
 		}
 	
+		/**
+		 * Get Proxy
+		 *
+		 * <p>Gets your proxy list.</p>
+		 */
 		public Types.ProxyApiTypes.ProxyGetResponse get() {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"GET",
@@ -3386,6 +4853,11 @@ public class MarketClient implements Closeable {
 			)), Types.ProxyApiTypes.ProxyGetResponse.class);
 		}
 	
+		/**
+		 * Get Proxy
+		 *
+		 * <p>Gets your proxy list.</p>
+		 */
 		public CompletableFuture<Types.ProxyApiTypes.ProxyGetResponse> getAsync() {
 			return http.requestAsync(new RequestOptions(
 				"GET",
@@ -3398,6 +4870,26 @@ public class MarketClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ProxyApiTypes.ProxyGetResponse.class));
 		}
 	
+		/**
+		 * Add Proxy
+		 *
+		 * <p>Add single proxy or proxy list.
+		 * 
+		 * 
+		 * To add single proxy use this parameters:
+		 * 
+		 * 
+		 * + **proxy_ip** (required) - proxy ip or host
+		 * + **proxy_port** (required) - proxy port
+		 * + **proxy_user** (optional) - proxy username
+		 * + **proxy_pass** (optional) - proxy password
+		 * 
+		 * To add proxy list use this parameters:
+		 * 
+		 * 
+		 * + **proxy_row** (required) - proxy list in String format ip:port:user:pass. Each proxy must be start with new line (use \n separator)</p>
+		 * @param body Request body.
+		 */
 		public Types.ProxyApiTypes.ProxyAddResponse add(Types.ProxyApiTypes.ProxyAddBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -3410,6 +4902,26 @@ public class MarketClient implements Closeable {
 			)), Types.ProxyApiTypes.ProxyAddResponse.class);
 		}
 	
+		/**
+		 * Add Proxy
+		 *
+		 * <p>Add single proxy or proxy list.
+		 * 
+		 * 
+		 * To add single proxy use this parameters:
+		 * 
+		 * 
+		 * + **proxy_ip** (required) - proxy ip or host
+		 * + **proxy_port** (required) - proxy port
+		 * + **proxy_user** (optional) - proxy username
+		 * + **proxy_pass** (optional) - proxy password
+		 * 
+		 * To add proxy list use this parameters:
+		 * 
+		 * 
+		 * + **proxy_row** (required) - proxy list in String format ip:port:user:pass. Each proxy must be start with new line (use \n separator)</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ProxyApiTypes.ProxyAddResponse> addAsync(Types.ProxyApiTypes.ProxyAddBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -3422,6 +4934,12 @@ public class MarketClient implements Closeable {
 			)).thenApply(node -> mapper.convertValue(node, Types.ProxyApiTypes.ProxyAddResponse.class));
 		}
 	
+		/**
+		 * Delete Proxy
+		 *
+		 * <p>Delete single or all proxies.</p>
+		 * @param body Request body.
+		 */
 		public Types.ProxyApiTypes.ProxyDeleteResponse delete(Types.ProxyApiTypes.ProxyDeleteBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"DELETE",
@@ -3438,6 +4956,12 @@ public class MarketClient implements Closeable {
 			return delete(null);
 		}
 	
+		/**
+		 * Delete Proxy
+		 *
+		 * <p>Delete single or all proxies.</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ProxyApiTypes.ProxyDeleteResponse> deleteAsync(Types.ProxyApiTypes.ProxyDeleteBody body) {
 			return http.requestAsync(new RequestOptions(
 				"DELETE",
@@ -3465,6 +4989,12 @@ public class MarketClient implements Closeable {
 			this.mapper = http.objectMapper();
 		}
 	
+		/**
+		 * Create IMAP Configuration
+		 *
+		 * <p>Create an IMAP configuration for a domain.</p>
+		 * @param body Request body.
+		 */
 		public Types.ImapApiTypes.ImapCreateResponse create(Types.ImapApiTypes.ImapCreateBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -3481,6 +5011,12 @@ public class MarketClient implements Closeable {
 			return create(null);
 		}
 	
+		/**
+		 * Create IMAP Configuration
+		 *
+		 * <p>Create an IMAP configuration for a domain.</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ImapApiTypes.ImapCreateResponse> createAsync(Types.ImapApiTypes.ImapCreateBody body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
@@ -3497,6 +5033,12 @@ public class MarketClient implements Closeable {
 			return createAsync(null);
 		}
 	
+		/**
+		 * Delete IMAP Configuration
+		 *
+		 * <p>Delete an IMAP configuration for a domain.</p>
+		 * @param body Request body.
+		 */
 		public Types.ImapApiTypes.ImapDeleteResponse delete(Types.ImapApiTypes.ImapDeleteBody body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"DELETE",
@@ -3513,6 +5055,12 @@ public class MarketClient implements Closeable {
 			return delete(null);
 		}
 	
+		/**
+		 * Delete IMAP Configuration
+		 *
+		 * <p>Delete an IMAP configuration for a domain.</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.ImapApiTypes.ImapDeleteResponse> deleteAsync(Types.ImapApiTypes.ImapDeleteBody body) {
 			return http.requestAsync(new RequestOptions(
 				"DELETE",
@@ -3540,6 +5088,15 @@ public class MarketClient implements Closeable {
 			this.mapper = http.objectMapper();
 		}
 	
+		/**
+		 * Batch
+		 *
+		 * <p>Execute multiple API requests at once (separated by comma). Maximum batch jobs is 10.
+		 * Following methods are unavailable in Batch:
+		 * - GET /{item_id}/image
+		 * - /item/fast-sell</p>
+		 * @param body Request body.
+		 */
 		public Types.BatchApiTypes.BatchBatchResponse batch(List<JsonNode> body) {
 			return mapper.convertValue(http.request(new RequestOptions(
 				"POST",
@@ -3552,6 +5109,15 @@ public class MarketClient implements Closeable {
 			)), Types.BatchApiTypes.BatchBatchResponse.class);
 		}
 	
+		/**
+		 * Batch
+		 *
+		 * <p>Execute multiple API requests at once (separated by comma). Maximum batch jobs is 10.
+		 * Following methods are unavailable in Batch:
+		 * - GET /{item_id}/image
+		 * - /item/fast-sell</p>
+		 * @param body Request body.
+		 */
 		public CompletableFuture<Types.BatchApiTypes.BatchBatchResponse> batchAsync(List<JsonNode> body) {
 			return http.requestAsync(new RequestOptions(
 				"POST",
