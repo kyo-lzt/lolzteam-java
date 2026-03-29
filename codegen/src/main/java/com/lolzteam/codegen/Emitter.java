@@ -455,10 +455,14 @@ final class Emitter {
 	) {
 		if (propSchema == null) return "JsonNode";
 
-		// Direct $ref to component schema → JsonNode (API may return [] where object expected)
+		// Direct $ref to component schema → resolve to the Java type name
 		if (propSchema.isObject() && propSchema.has("$ref")) {
 			var ref = propSchema.get("$ref").asText();
 			if (ref.startsWith("#/components/schemas/")) {
+				var schemaName = ref.substring("#/components/schemas/".length());
+				if (componentSchemaNames.contains(schemaName)) {
+					return schemaName;
+				}
 				return "JsonNode";
 			}
 		}
@@ -537,8 +541,7 @@ final class Emitter {
 				case "string" -> "String";
 				case "integer" -> "double";
 				case "number" -> "double";
-				// boolean → JsonNode (API may return object where boolean expected, e.g. guarantee)
-				case "boolean" -> "JsonNode";
+				case "boolean" -> "boolean";
 				default -> "JsonNode";
 			};
 		}
@@ -582,13 +585,15 @@ final class Emitter {
 				propSchema, componentSchemaNames, rawSpec,
 				recordName, jsonName, nestedRecords
 			);
-			// Always box primitives to tolerate null/missing values from the API
-			javaType = boxType(javaType);
+			// Box primitives only for optional fields
+			if (!required) {
+				javaType = boxType(javaType);
+			}
 
 			var annotation = Naming.needsJsonProperty(jsonName)
 				? "\t\t@JsonProperty(\"" + jsonName + "\") "
 				: "\t\t";
-			if (needsNullableAnnotation(javaType)) {
+			if (!required && needsNullableAnnotation(javaType)) {
 				annotation = annotation + "@Nullable ";
 			}
 			props.add(annotation + javaType + " " + javaName);
@@ -684,10 +689,12 @@ final class Emitter {
 				parentTypeName, jsonName, nestedRecords
 			);
 
-			// Always box primitives to tolerate null/missing values from the API
-			javaType = boxType(javaType);
+			// Box primitives only for optional fields (required fields keep primitive types)
+			if (!required) {
+				javaType = boxType(javaType);
+			}
 
-			fields.add(new ResponseField(jsonName, javaName, javaType, false));
+			fields.add(new ResponseField(jsonName, javaName, javaType, required));
 		}
 
 		return new ExtractedResponseFields(fields, nestedRecords);
@@ -789,13 +796,15 @@ final class Emitter {
 				propSchema, componentSchemaNames, rawSpec,
 				schemaName, jsonName, nestedRecords
 			);
-			// Always box primitives to tolerate null/missing values from the API
-			javaType = boxType(javaType);
+			// Box primitives only for optional fields
+			if (!required) {
+				javaType = boxType(javaType);
+			}
 
 			var annotation = Naming.needsJsonProperty(jsonName)
 				? "\t\t@JsonProperty(\"" + jsonName + "\") "
 				: "\t\t";
-			if (needsNullableAnnotation(javaType)) {
+			if (!required && needsNullableAnnotation(javaType)) {
 				annotation = annotation + "@Nullable ";
 			}
 			props.add(annotation + javaType + " " + javaName);

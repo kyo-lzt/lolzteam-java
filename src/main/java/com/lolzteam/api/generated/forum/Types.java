@@ -723,763 +723,763 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_NotificationModel(
-			@JsonProperty("notification_id") Double notificationId,
-			@JsonProperty("notification_create_date") Double notificationCreateDate,
-			@JsonProperty("content_type") @Nullable String contentType,
-			@JsonProperty("content_id") Double contentId,
-			@JsonProperty("content_action") @Nullable String contentAction,
-			@JsonProperty("notification_is_unread") @Nullable JsonNode notificationIsUnread,
-			@JsonProperty("creator_user_id") Double creatorUserId,
-			@JsonProperty("creator_username") @Nullable String creatorUsername,
-			@JsonProperty("creator_username_html") @Nullable String creatorUsernameHtml,
-			@JsonProperty("notification_type") @Nullable String notificationType,
-			@Nullable Resp_NotificationModelLinks links,
-			@JsonProperty("notification_html") @Nullable String notificationHtml
+			@JsonProperty("notification_id") double notificationId,
+			@JsonProperty("notification_create_date") double notificationCreateDate,
+			@JsonProperty("content_type") String contentType,
+			@JsonProperty("content_id") double contentId,
+			@JsonProperty("content_action") String contentAction,
+			@JsonProperty("notification_is_unread") boolean notificationIsUnread,
+			@JsonProperty("creator_user_id") double creatorUserId,
+			@JsonProperty("creator_username") String creatorUsername,
+			@JsonProperty("creator_username_html") String creatorUsernameHtml,
+			@JsonProperty("notification_type") String notificationType,
+			Resp_NotificationModelLinks links,
+			@JsonProperty("notification_html") String notificationHtml
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_NotificationModelLinks(
-			@Nullable String content,
-			@JsonProperty("creator_avatar") @Nullable String creatorAvatar
+			String content,
+			@JsonProperty("creator_avatar") String creatorAvatar
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_LinkModel(
-			@JsonProperty("link_id") Double linkId,
-			@JsonProperty("link_title") @Nullable String linkTitle,
-			@JsonProperty("link_description") @Nullable String linkDescription,
-			@Nullable Resp_LinkModelLinks links,
-			@Nullable Resp_LinkModelPermissions permissions
+			@JsonProperty("link_id") double linkId,
+			@JsonProperty("link_title") String linkTitle,
+			@JsonProperty("link_description") String linkDescription,
+			Resp_LinkModelLinks links,
+			Resp_LinkModelPermissions permissions
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_LinkModelLinks(
-			@Nullable String target,
-			@Nullable String detail
+			String target,
+			String detail
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_LinkModelPermissions(
-			@Nullable JsonNode view
+			boolean view
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_ChatboxMessageModel(
-			@JsonProperty("can_report") @Nullable JsonNode canReport,
-			Double date,
-			@JsonProperty("is_deleted") @Nullable JsonNode isDeleted,
-			@Nullable String message,
-			@JsonProperty("message_id") Double messageId,
-			@Nullable String messageJson,
-			@Nullable String messageRaw,
-			@Nullable Resp_ChatboxMessageModelRoom room,
-			@Nullable Resp_ChatboxMessageModelUser user
+			@JsonProperty("can_report") boolean canReport,
+			double date,
+			@JsonProperty("is_deleted") boolean isDeleted,
+			String message,
+			@JsonProperty("message_id") double messageId,
+			String messageJson,
+			String messageRaw,
+			Resp_ChatboxMessageModelRoom room,
+			Resp_ChatboxMessageModelUser user
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_ChatboxMessageModelRoom(
-			@JsonProperty("can_report") @Nullable JsonNode canReport,
-			@Nullable JsonNode eng,
-			@Nullable JsonNode market,
-			@JsonProperty("room_id") Double roomId,
-			@Nullable String title
+			@JsonProperty("can_report") boolean canReport,
+			boolean eng,
+			boolean market,
+			@JsonProperty("room_id") double roomId,
+			String title
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_ChatboxMessageModelUserRenderedAvatars(
-			@Nullable String l,
-			@Nullable String m,
-			@Nullable String s
+			String l,
+			String m,
+			String s
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_ChatboxMessageModelUserRendered(
-			@Nullable String username,
-			@Nullable Resp_ChatboxMessageModelUserRenderedAvatars avatars,
-			@Nullable String link
+			String username,
+			Resp_ChatboxMessageModelUserRenderedAvatars avatars,
+			String link
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_ChatboxMessageModelUserUniqBanner(
-			@JsonProperty("banner_css") @Nullable String bannerCss,
-			@JsonProperty("banner_text") @Nullable String bannerText,
-			@JsonProperty("banner_icon") @Nullable String bannerIcon,
-			@JsonProperty("username_icon") @Nullable String usernameIcon
+			@JsonProperty("banner_css") String bannerCss,
+			@JsonProperty("banner_text") String bannerText,
+			@JsonProperty("banner_icon") String bannerIcon,
+			@JsonProperty("username_icon") String usernameIcon
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_ChatboxMessageModelUser(
-			@JsonProperty("avatar_date") Double avatarDate,
-			@JsonProperty("background_date") Double backgroundDate,
-			@JsonProperty("contest_count") Double contestCount,
-			@JsonProperty("custom_title") @Nullable String customTitle,
-			@JsonProperty("display_banner_id") Double displayBannerId,
-			@JsonProperty("display_icon_group_id") Double displayIconGroupId,
-			@JsonProperty("display_style_group_id") Double displayStyleGroupId,
-			@JsonProperty("is_admin") @Nullable JsonNode isAdmin,
-			@JsonProperty("is_banned") @Nullable JsonNode isBanned,
-			@JsonProperty("is_moderator") @Nullable JsonNode isModerator,
-			@JsonProperty("is_staff") @Nullable JsonNode isStaff,
-			@JsonProperty("last_activity") Double lastActivity,
-			@JsonProperty("like2_count") Double like2Count,
-			@JsonProperty("like_count") Double likeCount,
-			@JsonProperty("message_count") Double messageCount,
-			@JsonProperty("register_date") Double registerDate,
-			@Nullable Resp_ChatboxMessageModelUserRendered rendered,
-			@JsonProperty("short_link") @Nullable String shortLink,
-			@JsonProperty("trophy_points") Double trophyPoints,
-			@JsonProperty("uniq_banner") @Nullable Resp_ChatboxMessageModelUserUniqBanner uniqBanner,
-			@JsonProperty("uniq_username_css") @Nullable String uniqUsernameCss,
-			@JsonProperty("user_id") Double userId,
-			@Nullable String username
+			@JsonProperty("avatar_date") double avatarDate,
+			@JsonProperty("background_date") double backgroundDate,
+			@JsonProperty("contest_count") double contestCount,
+			@JsonProperty("custom_title") String customTitle,
+			@JsonProperty("display_banner_id") double displayBannerId,
+			@JsonProperty("display_icon_group_id") double displayIconGroupId,
+			@JsonProperty("display_style_group_id") double displayStyleGroupId,
+			@JsonProperty("is_admin") boolean isAdmin,
+			@JsonProperty("is_banned") boolean isBanned,
+			@JsonProperty("is_moderator") boolean isModerator,
+			@JsonProperty("is_staff") boolean isStaff,
+			@JsonProperty("last_activity") double lastActivity,
+			@JsonProperty("like2_count") double like2Count,
+			@JsonProperty("like_count") double likeCount,
+			@JsonProperty("message_count") double messageCount,
+			@JsonProperty("register_date") double registerDate,
+			Resp_ChatboxMessageModelUserRendered rendered,
+			@JsonProperty("short_link") String shortLink,
+			@JsonProperty("trophy_points") double trophyPoints,
+			@JsonProperty("uniq_banner") Resp_ChatboxMessageModelUserUniqBanner uniqBanner,
+			@JsonProperty("uniq_username_css") String uniqUsernameCss,
+			@JsonProperty("user_id") double userId,
+			String username
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_UserModel(
-			@JsonProperty("user_id") Double userId,
-			@Nullable String username,
-			@JsonProperty("username_html") @Nullable String usernameHtml,
-			@JsonProperty("user_message_count") Double userMessageCount,
-			@JsonProperty("user_register_date") Double userRegisterDate,
-			@JsonProperty("user_like_count") Double userLikeCount,
-			@JsonProperty("user_like2_count") Double userLike2Count,
-			@JsonProperty("contest_count") Double contestCount,
-			@JsonProperty("trophy_count") Double trophyCount,
-			@JsonProperty("short_link") @Nullable String shortLink,
-			@JsonProperty("custom_title") @Nullable String customTitle,
-			@JsonProperty("is_banned") Double isBanned,
-			@JsonProperty("display_banner_id") Double displayBannerId,
-			@JsonProperty("display_icon_group_id") Double displayIconGroupId,
-			@Nullable String balance,
-			@Nullable String hold,
-			@Nullable String currency,
-			@JsonProperty("user_email") @Nullable String userEmail,
-			@JsonProperty("user_unread_notification_count") Double userUnreadNotificationCount,
-			@JsonProperty("user_unread_conversation_count") Double userUnreadConversationCount,
-			@JsonProperty("conv_welcome_message") @Nullable String convWelcomeMessage,
-			@JsonProperty("user_title") @Nullable String userTitle,
-			@JsonProperty("user_deposit") Double userDeposit,
-			@JsonProperty("user_is_valid") @Nullable JsonNode userIsValid,
-			@JsonProperty("user_is_verified") @Nullable JsonNode userIsVerified,
-			@JsonProperty("user_is_followed") @Nullable JsonNode userIsFollowed,
-			@JsonProperty("user_last_seen_date") Double userLastSeenDate,
-			@Nullable Resp_UserModelLinks links,
-			@Nullable Resp_UserModelPermissions permissions,
-			@JsonProperty("user_is_ignored") @Nullable JsonNode userIsIgnored,
-			@JsonProperty("user_is_visitor") @Nullable JsonNode userIsVisitor,
-			@JsonProperty("user_group_id") Double userGroupId,
-			@JsonProperty("curator_titles") @Nullable List<String> curatorTitles,
-			@JsonProperty("user_groups") @Nullable List<Resp_UserModelUserGroups> userGroups,
-			@Nullable List<Resp_UserModelFields> fields,
-			@JsonProperty("user_timezone_offset") Double userTimezoneOffset,
-			@JsonProperty("user_external_authentications") @Nullable List<Resp_UserModelUserExternalAuthentications> userExternalAuthentications,
-			@JsonProperty("self_permissions") @Nullable Resp_UserModelSelfPermissions selfPermissions,
-			@JsonProperty("edit_permissions") @Nullable Resp_UserModelEditPermissions editPermissions,
-			@Nullable Resp_UserModelBirthday birthday,
-			@JsonProperty("secret_answer_rendered") @Nullable String secretAnswerRendered,
-			@JsonProperty("secret_answer_first_letter") @Nullable String secretAnswerFirstLetter,
-			@JsonProperty("user_following") @Nullable Resp_UserModelUserFollowing userFollowing,
-			@JsonProperty("user_followers") @Nullable Resp_UserModelUserFollowers userFollowers,
-			@Nullable String banner
+			@JsonProperty("user_id") double userId,
+			String username,
+			@JsonProperty("username_html") String usernameHtml,
+			@JsonProperty("user_message_count") double userMessageCount,
+			@JsonProperty("user_register_date") double userRegisterDate,
+			@JsonProperty("user_like_count") double userLikeCount,
+			@JsonProperty("user_like2_count") double userLike2Count,
+			@JsonProperty("contest_count") double contestCount,
+			@JsonProperty("trophy_count") double trophyCount,
+			@JsonProperty("short_link") String shortLink,
+			@JsonProperty("custom_title") String customTitle,
+			@JsonProperty("is_banned") double isBanned,
+			@JsonProperty("display_banner_id") double displayBannerId,
+			@JsonProperty("display_icon_group_id") double displayIconGroupId,
+			String balance,
+			String hold,
+			String currency,
+			@JsonProperty("user_email") String userEmail,
+			@JsonProperty("user_unread_notification_count") double userUnreadNotificationCount,
+			@JsonProperty("user_unread_conversation_count") double userUnreadConversationCount,
+			@JsonProperty("conv_welcome_message") String convWelcomeMessage,
+			@JsonProperty("user_title") String userTitle,
+			@JsonProperty("user_deposit") double userDeposit,
+			@JsonProperty("user_is_valid") boolean userIsValid,
+			@JsonProperty("user_is_verified") boolean userIsVerified,
+			@JsonProperty("user_is_followed") boolean userIsFollowed,
+			@JsonProperty("user_last_seen_date") double userLastSeenDate,
+			Resp_UserModelLinks links,
+			Resp_UserModelPermissions permissions,
+			@JsonProperty("user_is_ignored") boolean userIsIgnored,
+			@JsonProperty("user_is_visitor") boolean userIsVisitor,
+			@JsonProperty("user_group_id") double userGroupId,
+			@JsonProperty("curator_titles") List<String> curatorTitles,
+			@JsonProperty("user_groups") List<Resp_UserModelUserGroups> userGroups,
+			List<Resp_UserModelFields> fields,
+			@JsonProperty("user_timezone_offset") double userTimezoneOffset,
+			@JsonProperty("user_external_authentications") List<Resp_UserModelUserExternalAuthentications> userExternalAuthentications,
+			@JsonProperty("self_permissions") Resp_UserModelSelfPermissions selfPermissions,
+			@JsonProperty("edit_permissions") Resp_UserModelEditPermissions editPermissions,
+			Resp_UserModelBirthday birthday,
+			@JsonProperty("secret_answer_rendered") String secretAnswerRendered,
+			@JsonProperty("secret_answer_first_letter") String secretAnswerFirstLetter,
+			@JsonProperty("user_following") Resp_UserModelUserFollowing userFollowing,
+			@JsonProperty("user_followers") Resp_UserModelUserFollowers userFollowers,
+			String banner
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_UserModelLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@Nullable String avatar,
-			@JsonProperty("avatar_big") @Nullable String avatarBig,
-			@JsonProperty("avatar_small") @Nullable String avatarSmall,
-			@Nullable String followers,
-			@Nullable String followings,
-			@Nullable String ignore,
-			@JsonProperty("background_l") @Nullable String backgroundL,
-			@JsonProperty("background_m") @Nullable String backgroundM,
-			@Nullable String status,
-			@Nullable String timeline
+			String permalink,
+			String detail,
+			String avatar,
+			@JsonProperty("avatar_big") String avatarBig,
+			@JsonProperty("avatar_small") String avatarSmall,
+			String followers,
+			String followings,
+			String ignore,
+			@JsonProperty("background_l") String backgroundL,
+			@JsonProperty("background_m") String backgroundM,
+			String status,
+			String timeline
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_UserModelPermissions(
-			@Nullable JsonNode edit,
-			@Nullable JsonNode follow,
-			@Nullable JsonNode ignore,
-			@JsonProperty("profile_post") @Nullable JsonNode profilePost
+			boolean edit,
+			boolean follow,
+			boolean ignore,
+			@JsonProperty("profile_post") boolean profilePost
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_UserModelUserGroups(
-			@JsonProperty("user_group_id") Double userGroupId,
-			@JsonProperty("user_group_title") @Nullable String userGroupTitle,
-			@JsonProperty("user_group_title_en") @Nullable String userGroupTitleEn,
-			@JsonProperty("user_group_banner_css_class") @Nullable String userGroupBannerCssClass,
-			@JsonProperty("user_group_banner_text") @Nullable String userGroupBannerText,
-			@JsonProperty("user_group_banner_text_en") @Nullable String userGroupBannerTextEn,
-			@JsonProperty("display_group_selectable") @Nullable JsonNode displayGroupSelectable,
-			@JsonProperty("display_banner_selectable") @Nullable JsonNode displayBannerSelectable,
-			@JsonProperty("display_icon_selectable") @Nullable JsonNode displayIconSelectable,
-			@JsonProperty("is_primary_group") @Nullable JsonNode isPrimaryGroup,
-			@JsonProperty("user_group_icon_class") @Nullable String userGroupIconClass
+			@JsonProperty("user_group_id") double userGroupId,
+			@JsonProperty("user_group_title") String userGroupTitle,
+			@JsonProperty("user_group_title_en") String userGroupTitleEn,
+			@JsonProperty("user_group_banner_css_class") String userGroupBannerCssClass,
+			@JsonProperty("user_group_banner_text") String userGroupBannerText,
+			@JsonProperty("user_group_banner_text_en") String userGroupBannerTextEn,
+			@JsonProperty("display_group_selectable") boolean displayGroupSelectable,
+			@JsonProperty("display_banner_selectable") boolean displayBannerSelectable,
+			@JsonProperty("display_icon_selectable") boolean displayIconSelectable,
+			@JsonProperty("is_primary_group") boolean isPrimaryGroup,
+			@JsonProperty("user_group_icon_class") String userGroupIconClass
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_UserModelFieldsChoices(
-			@Nullable String key,
-			@Nullable String value
+			String key,
+			String value
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_UserModelFields(
-			@Nullable String id,
-			@Nullable String title,
-			@Nullable String description,
-			@Nullable String position,
-			@JsonProperty("is_required") @Nullable JsonNode isRequired,
+			String id,
+			String title,
+			String description,
+			String position,
+			@JsonProperty("is_required") boolean isRequired,
 			@Nullable String value,
-			@JsonProperty("is_multi_choice") @Nullable JsonNode isMultiChoice,
-			@Nullable List<Resp_UserModelFieldsChoices> choices,
-			@Nullable List<JsonNode> values
+			@JsonProperty("is_multi_choice") boolean isMultiChoice,
+			List<Resp_UserModelFieldsChoices> choices,
+			List<JsonNode> values
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_UserModelUserExternalAuthentications(
-			@Nullable String provider,
-			@JsonProperty("provider_key") @Nullable String providerKey
+			String provider,
+			@JsonProperty("provider_key") String providerKey
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_UserModelSelfPermissions(
-			@JsonProperty("create_conversation") @Nullable JsonNode createConversation
+			@JsonProperty("create_conversation") boolean createConversation
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_UserModelEditPermissions(
-			@Nullable JsonNode password,
-			@JsonProperty("user_email") @Nullable JsonNode userEmail,
-			@Nullable JsonNode username,
-			@JsonProperty("user_title") @Nullable JsonNode userTitle,
-			@JsonProperty("short_link") @Nullable JsonNode shortLink,
-			@JsonProperty("hide_username_logs") @Nullable JsonNode hideUsernameLogs,
-			@JsonProperty("primary_group_id") @Nullable JsonNode primaryGroupId,
-			@JsonProperty("secondary_group_ids") @Nullable JsonNode secondaryGroupIds,
-			@JsonProperty("user_dob_day") @Nullable JsonNode userDobDay,
-			@JsonProperty("user_dob_month") @Nullable JsonNode userDobMonth,
-			@JsonProperty("user_dob_year") @Nullable JsonNode userDobYear,
-			@Nullable JsonNode fields
+			boolean password,
+			@JsonProperty("user_email") boolean userEmail,
+			boolean username,
+			@JsonProperty("user_title") boolean userTitle,
+			@JsonProperty("short_link") boolean shortLink,
+			@JsonProperty("hide_username_logs") boolean hideUsernameLogs,
+			@JsonProperty("primary_group_id") boolean primaryGroupId,
+			@JsonProperty("secondary_group_ids") boolean secondaryGroupIds,
+			@JsonProperty("user_dob_day") boolean userDobDay,
+			@JsonProperty("user_dob_month") boolean userDobMonth,
+			@JsonProperty("user_dob_year") boolean userDobYear,
+			boolean fields
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_UserModelBirthdayTimeStamp(
-			@Nullable String date,
-			@JsonProperty("timezone_type") Double timezoneType,
-			@Nullable String timezone
+			String date,
+			@JsonProperty("timezone_type") double timezoneType,
+			String timezone
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_UserModelBirthday(
-			Double age,
-			@Nullable Resp_UserModelBirthdayTimeStamp timeStamp,
-			@Nullable String format
+			double age,
+			Resp_UserModelBirthdayTimeStamp timeStamp,
+			String format
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_UserModelUserFollowingUsers(
-			@JsonProperty("user_id") Double userId,
-			@Nullable String username,
-			@JsonProperty("username_html") @Nullable String usernameHtml,
-			@Nullable String avatar
+			@JsonProperty("user_id") double userId,
+			String username,
+			@JsonProperty("username_html") String usernameHtml,
+			String avatar
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_UserModelUserFollowing(
-			@Nullable List<Resp_UserModelUserFollowingUsers> users,
-			Double count
+			List<Resp_UserModelUserFollowingUsers> users,
+			double count
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_UserModelUserFollowersUsers(
-			@JsonProperty("user_id") Double userId,
-			@Nullable String username,
-			@JsonProperty("username_html") @Nullable String usernameHtml,
-			@Nullable String avatar
+			@JsonProperty("user_id") double userId,
+			String username,
+			@JsonProperty("username_html") String usernameHtml,
+			String avatar
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_UserModelUserFollowers(
-			@Nullable List<Resp_UserModelUserFollowersUsers> users,
-			Double count
+			List<Resp_UserModelUserFollowersUsers> users,
+			double count
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_ThreadModel(
-			@JsonProperty("thread_id") Double threadId,
-			@JsonProperty("forum_id") Double forumId,
-			@JsonProperty("thread_title") @Nullable String threadTitle,
-			@JsonProperty("thread_view_count") Double threadViewCount,
-			@JsonProperty("creator_user_id") Double creatorUserId,
-			@JsonProperty("creator_username") @Nullable String creatorUsername,
-			@JsonProperty("creator_username_html") @Nullable String creatorUsernameHtml,
-			@JsonProperty("thread_create_date") Double threadCreateDate,
-			@JsonProperty("thread_update_date") Double threadUpdateDate,
-			@JsonProperty("user_is_ignored") @Nullable JsonNode userIsIgnored,
-			@JsonProperty("thread_post_count") Double threadPostCount,
-			@JsonProperty("thread_is_published") @Nullable JsonNode threadIsPublished,
-			@JsonProperty("thread_is_deleted") @Nullable JsonNode threadIsDeleted,
-			@JsonProperty("thread_is_sticky") @Nullable JsonNode threadIsSticky,
-			@JsonProperty("thread_is_closed") @Nullable JsonNode threadIsClosed,
-			@JsonProperty("thread_is_followed") @Nullable JsonNode threadIsFollowed,
-			@JsonProperty("thread_is_starred") @Nullable JsonNode threadIsStarred,
-			@JsonProperty("first_post") @Nullable Resp_ThreadModelFirstPost firstPost,
-			@JsonProperty("thread_prefixes") @Nullable List<JsonNode> threadPrefixes,
-			@JsonProperty("thread_tags") @Nullable JsonNode threadTags,
-			@Nullable Resp_ThreadModelLinks links,
-			@Nullable Resp_ThreadModelPermissions permissions,
-			@JsonProperty("node_title") @Nullable String nodeTitle,
-			@Nullable Resp_ThreadModelRestrictions restrictions,
-			@JsonProperty("last_post") @Nullable Resp_ThreadModelLastPost lastPost,
-			@Nullable Resp_ThreadModelContest contest
+			@JsonProperty("thread_id") double threadId,
+			@JsonProperty("forum_id") double forumId,
+			@JsonProperty("thread_title") String threadTitle,
+			@JsonProperty("thread_view_count") double threadViewCount,
+			@JsonProperty("creator_user_id") double creatorUserId,
+			@JsonProperty("creator_username") String creatorUsername,
+			@JsonProperty("creator_username_html") String creatorUsernameHtml,
+			@JsonProperty("thread_create_date") double threadCreateDate,
+			@JsonProperty("thread_update_date") double threadUpdateDate,
+			@JsonProperty("user_is_ignored") boolean userIsIgnored,
+			@JsonProperty("thread_post_count") double threadPostCount,
+			@JsonProperty("thread_is_published") boolean threadIsPublished,
+			@JsonProperty("thread_is_deleted") boolean threadIsDeleted,
+			@JsonProperty("thread_is_sticky") boolean threadIsSticky,
+			@JsonProperty("thread_is_closed") boolean threadIsClosed,
+			@JsonProperty("thread_is_followed") boolean threadIsFollowed,
+			@JsonProperty("thread_is_starred") boolean threadIsStarred,
+			@JsonProperty("first_post") Resp_ThreadModelFirstPost firstPost,
+			@JsonProperty("thread_prefixes") List<JsonNode> threadPrefixes,
+			@JsonProperty("thread_tags") JsonNode threadTags,
+			Resp_ThreadModelLinks links,
+			Resp_ThreadModelPermissions permissions,
+			@JsonProperty("node_title") String nodeTitle,
+			Resp_ThreadModelRestrictions restrictions,
+			@JsonProperty("last_post") Resp_ThreadModelLastPost lastPost,
+			Resp_ThreadModelContest contest
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_ThreadModelFirstPostLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@Nullable String thread,
-			@Nullable String poster,
-			@Nullable String likes,
-			@Nullable String report,
-			@JsonProperty("poster_avatar") @Nullable String posterAvatar
+			String permalink,
+			String detail,
+			String thread,
+			String poster,
+			String likes,
+			String report,
+			@JsonProperty("poster_avatar") String posterAvatar
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_ThreadModelFirstPostPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode edit,
-			@Nullable JsonNode delete,
-			@Nullable JsonNode reply,
-			@Nullable JsonNode like,
-			@Nullable JsonNode report
+			boolean view,
+			boolean edit,
+			boolean delete,
+			boolean reply,
+			boolean like,
+			boolean report
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_ThreadModelFirstPost(
-			@JsonProperty("post_id") Double postId,
-			@JsonProperty("thread_id") Double threadId,
-			@JsonProperty("poster_user_id") Double posterUserId,
-			@JsonProperty("poster_username") @Nullable String posterUsername,
-			@JsonProperty("poster_username_html") @Nullable String posterUsernameHtml,
-			@JsonProperty("post_create_date") Double postCreateDate,
-			@JsonProperty("post_body") @Nullable String postBody,
-			@JsonProperty("post_body_html") @Nullable String postBodyHtml,
-			@JsonProperty("post_body_plain_text") @Nullable String postBodyPlainText,
-			@Nullable String signature,
-			@JsonProperty("signature_html") @Nullable String signatureHtml,
-			@JsonProperty("signature_plain_text") @Nullable String signaturePlainText,
-			@JsonProperty("post_like_count") Double postLikeCount,
-			@JsonProperty("user_is_ignored") @Nullable JsonNode userIsIgnored,
-			@JsonProperty("post_is_published") @Nullable JsonNode postIsPublished,
-			@JsonProperty("post_is_deleted") @Nullable JsonNode postIsDeleted,
-			@JsonProperty("post_update_date") Double postUpdateDate,
-			@JsonProperty("post_is_first_post") @Nullable JsonNode postIsFirstPost,
-			@JsonProperty("post_is_liked") @Nullable JsonNode postIsLiked,
-			@Nullable Resp_ThreadModelFirstPostLinks links,
-			@Nullable Resp_ThreadModelFirstPostPermissions permissions,
-			@JsonProperty("thread_is_deleted") @Nullable JsonNode threadIsDeleted
+			@JsonProperty("post_id") double postId,
+			@JsonProperty("thread_id") double threadId,
+			@JsonProperty("poster_user_id") double posterUserId,
+			@JsonProperty("poster_username") String posterUsername,
+			@JsonProperty("poster_username_html") String posterUsernameHtml,
+			@JsonProperty("post_create_date") double postCreateDate,
+			@JsonProperty("post_body") String postBody,
+			@JsonProperty("post_body_html") String postBodyHtml,
+			@JsonProperty("post_body_plain_text") String postBodyPlainText,
+			String signature,
+			@JsonProperty("signature_html") String signatureHtml,
+			@JsonProperty("signature_plain_text") String signaturePlainText,
+			@JsonProperty("post_like_count") double postLikeCount,
+			@JsonProperty("user_is_ignored") boolean userIsIgnored,
+			@JsonProperty("post_is_published") boolean postIsPublished,
+			@JsonProperty("post_is_deleted") boolean postIsDeleted,
+			@JsonProperty("post_update_date") double postUpdateDate,
+			@JsonProperty("post_is_first_post") boolean postIsFirstPost,
+			@JsonProperty("post_is_liked") boolean postIsLiked,
+			Resp_ThreadModelFirstPostLinks links,
+			Resp_ThreadModelFirstPostPermissions permissions,
+			@JsonProperty("thread_is_deleted") boolean threadIsDeleted
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_ThreadModelLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@Nullable String followers,
-			@Nullable String forum,
-			@Nullable String posts,
-			@JsonProperty("first_poster") @Nullable String firstPoster,
-			@JsonProperty("first_poster_avatar") @Nullable String firstPosterAvatar,
-			@JsonProperty("first_post") @Nullable String firstPost,
-			@JsonProperty("last_post") @Nullable String lastPost
+			String permalink,
+			String detail,
+			String followers,
+			String forum,
+			String posts,
+			@JsonProperty("first_poster") String firstPoster,
+			@JsonProperty("first_poster_avatar") String firstPosterAvatar,
+			@JsonProperty("first_post") String firstPost,
+			@JsonProperty("last_post") String lastPost
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_ThreadModelPermissionsBump(
-			@Nullable JsonNode can,
-			@JsonProperty("available_count") Double availableCount,
-			@Nullable JsonNode error,
-			@JsonProperty("next_available_time") @Nullable JsonNode nextAvailableTime
+			boolean can,
+			@JsonProperty("available_count") double availableCount,
+			JsonNode error,
+			@JsonProperty("next_available_time") JsonNode nextAvailableTime
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_ThreadModelPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode delete,
-			@Nullable JsonNode follow,
-			@Nullable JsonNode post,
-			@Nullable JsonNode edit,
-			@JsonProperty("edit_title") @Nullable JsonNode editTitle,
-			@JsonProperty("edit_tags") @Nullable JsonNode editTags,
-			@Nullable Resp_ThreadModelPermissionsBump bump
+			boolean view,
+			boolean delete,
+			boolean follow,
+			boolean post,
+			boolean edit,
+			@JsonProperty("edit_title") boolean editTitle,
+			@JsonProperty("edit_tags") boolean editTags,
+			Resp_ThreadModelPermissionsBump bump
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_ThreadModelRestrictions(
-			@JsonProperty("reply_delay") Double replyDelay,
-			@JsonProperty("max_reply_count") Double maxReplyCount
+			@JsonProperty("reply_delay") double replyDelay,
+			@JsonProperty("max_reply_count") double maxReplyCount
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_ThreadModelLastPostLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@Nullable String thread,
-			@Nullable String poster,
-			@Nullable String likes,
-			@Nullable String report,
-			@JsonProperty("poster_avatar") @Nullable String posterAvatar
+			String permalink,
+			String detail,
+			String thread,
+			String poster,
+			String likes,
+			String report,
+			@JsonProperty("poster_avatar") String posterAvatar
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_ThreadModelLastPostPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode edit,
-			@Nullable JsonNode delete,
-			@Nullable JsonNode reply,
-			@Nullable JsonNode like,
-			@Nullable JsonNode report
+			boolean view,
+			boolean edit,
+			boolean delete,
+			boolean reply,
+			boolean like,
+			boolean report
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_ThreadModelLastPost(
-			@JsonProperty("post_id") Double postId,
-			@JsonProperty("thread_id") Double threadId,
-			@JsonProperty("poster_user_id") Double posterUserId,
-			@JsonProperty("poster_username") @Nullable String posterUsername,
-			@JsonProperty("poster_username_html") @Nullable String posterUsernameHtml,
-			@JsonProperty("post_create_date") Double postCreateDate,
-			@JsonProperty("post_body") @Nullable String postBody,
-			@JsonProperty("post_body_html") @Nullable String postBodyHtml,
-			@JsonProperty("post_body_plain_text") @Nullable String postBodyPlainText,
-			@Nullable String signature,
-			@JsonProperty("signature_html") @Nullable String signatureHtml,
-			@JsonProperty("signature_plain_text") @Nullable String signaturePlainText,
-			@JsonProperty("post_like_count") Double postLikeCount,
-			@JsonProperty("user_is_ignored") @Nullable JsonNode userIsIgnored,
-			@JsonProperty("post_is_published") @Nullable JsonNode postIsPublished,
-			@JsonProperty("post_is_deleted") @Nullable JsonNode postIsDeleted,
-			@JsonProperty("post_update_date") Double postUpdateDate,
-			@JsonProperty("post_is_first_post") @Nullable JsonNode postIsFirstPost,
-			@JsonProperty("post_is_liked") @Nullable JsonNode postIsLiked,
-			@Nullable Resp_ThreadModelLastPostLinks links,
-			@Nullable Resp_ThreadModelLastPostPermissions permissions,
-			@JsonProperty("thread_is_deleted") @Nullable JsonNode threadIsDeleted
+			@JsonProperty("post_id") double postId,
+			@JsonProperty("thread_id") double threadId,
+			@JsonProperty("poster_user_id") double posterUserId,
+			@JsonProperty("poster_username") String posterUsername,
+			@JsonProperty("poster_username_html") String posterUsernameHtml,
+			@JsonProperty("post_create_date") double postCreateDate,
+			@JsonProperty("post_body") String postBody,
+			@JsonProperty("post_body_html") String postBodyHtml,
+			@JsonProperty("post_body_plain_text") String postBodyPlainText,
+			String signature,
+			@JsonProperty("signature_html") String signatureHtml,
+			@JsonProperty("signature_plain_text") String signaturePlainText,
+			@JsonProperty("post_like_count") double postLikeCount,
+			@JsonProperty("user_is_ignored") boolean userIsIgnored,
+			@JsonProperty("post_is_published") boolean postIsPublished,
+			@JsonProperty("post_is_deleted") boolean postIsDeleted,
+			@JsonProperty("post_update_date") double postUpdateDate,
+			@JsonProperty("post_is_first_post") boolean postIsFirstPost,
+			@JsonProperty("post_is_liked") boolean postIsLiked,
+			Resp_ThreadModelLastPostLinks links,
+			Resp_ThreadModelLastPostPermissions permissions,
+			@JsonProperty("thread_is_deleted") boolean threadIsDeleted
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_ThreadModelContestPermissions(
-			@JsonProperty("can_finish") @Nullable JsonNode canFinish,
-			@JsonProperty("can_participate") @Nullable JsonNode canParticipate,
-			@JsonProperty("can_participate_error") @Nullable String canParticipateError,
-			@JsonProperty("can_view_user_list") @Nullable JsonNode canViewUserList
+			@JsonProperty("can_finish") boolean canFinish,
+			@JsonProperty("can_participate") boolean canParticipate,
+			@JsonProperty("can_participate_error") String canParticipateError,
+			@JsonProperty("can_view_user_list") boolean canViewUserList
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_ThreadModelContest(
-			@Nullable String type,
-			@JsonProperty("finish_date") Double finishDate,
-			@JsonProperty("now_count_members") Double nowCountMembers,
-			@JsonProperty("needed_members") Double neededMembers,
-			@JsonProperty("is_finished") Double isFinished,
-			@JsonProperty("count_winners") Double countWinners,
-			@JsonProperty("require_like_count") Double requireLikeCount,
-			@JsonProperty("require_total_like_count") Double requireTotalLikeCount,
-			@JsonProperty("prize_type") @Nullable String prizeType,
-			@JsonProperty("prize_type_phrase") @Nullable String prizeTypePhrase,
-			@JsonProperty("prize_data") Double prizeData,
-			@JsonProperty("is_money_places") Double isMoneyPlaces,
-			@JsonProperty("chance_to_win") Double chanceToWin,
-			@Nullable List<Double> winners,
-			@JsonProperty("already_participate") @Nullable JsonNode alreadyParticipate,
-			@Nullable Resp_ThreadModelContestPermissions permissions
+			String type,
+			@JsonProperty("finish_date") double finishDate,
+			@JsonProperty("now_count_members") double nowCountMembers,
+			@JsonProperty("needed_members") double neededMembers,
+			@JsonProperty("is_finished") double isFinished,
+			@JsonProperty("count_winners") double countWinners,
+			@JsonProperty("require_like_count") double requireLikeCount,
+			@JsonProperty("require_total_like_count") double requireTotalLikeCount,
+			@JsonProperty("prize_type") String prizeType,
+			@JsonProperty("prize_type_phrase") String prizeTypePhrase,
+			@JsonProperty("prize_data") double prizeData,
+			@JsonProperty("is_money_places") double isMoneyPlaces,
+			@JsonProperty("chance_to_win") double chanceToWin,
+			List<Double> winners,
+			@JsonProperty("already_participate") boolean alreadyParticipate,
+			Resp_ThreadModelContestPermissions permissions
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_PostModel(
-			@JsonProperty("post_id") Double postId,
-			@JsonProperty("thread_id") Double threadId,
-			@JsonProperty("poster_user_id") Double posterUserId,
-			@JsonProperty("poster_username") @Nullable String posterUsername,
-			@JsonProperty("poster_username_html") @Nullable String posterUsernameHtml,
-			@JsonProperty("post_create_date") Double postCreateDate,
-			@JsonProperty("post_body") @Nullable String postBody,
-			@JsonProperty("post_body_html") @Nullable String postBodyHtml,
-			@JsonProperty("post_body_plain_text") @Nullable String postBodyPlainText,
-			@Nullable String signature,
-			@JsonProperty("signature_html") @Nullable String signatureHtml,
-			@JsonProperty("signature_plain_text") @Nullable String signaturePlainText,
-			@JsonProperty("post_like_count") Double postLikeCount,
-			@JsonProperty("user_is_ignored") @Nullable JsonNode userIsIgnored,
-			@JsonProperty("post_is_published") @Nullable JsonNode postIsPublished,
-			@JsonProperty("post_is_deleted") @Nullable JsonNode postIsDeleted,
-			@JsonProperty("post_update_date") Double postUpdateDate,
-			@JsonProperty("post_is_first_post") @Nullable JsonNode postIsFirstPost,
-			@Nullable Resp_PostModelLinks links,
-			@Nullable Resp_PostModelPermissions permissions,
-			@JsonProperty("thread_is_deleted") @Nullable JsonNode threadIsDeleted
+			@JsonProperty("post_id") double postId,
+			@JsonProperty("thread_id") double threadId,
+			@JsonProperty("poster_user_id") double posterUserId,
+			@JsonProperty("poster_username") String posterUsername,
+			@JsonProperty("poster_username_html") String posterUsernameHtml,
+			@JsonProperty("post_create_date") double postCreateDate,
+			@JsonProperty("post_body") String postBody,
+			@JsonProperty("post_body_html") String postBodyHtml,
+			@JsonProperty("post_body_plain_text") String postBodyPlainText,
+			String signature,
+			@JsonProperty("signature_html") String signatureHtml,
+			@JsonProperty("signature_plain_text") String signaturePlainText,
+			@JsonProperty("post_like_count") double postLikeCount,
+			@JsonProperty("user_is_ignored") boolean userIsIgnored,
+			@JsonProperty("post_is_published") boolean postIsPublished,
+			@JsonProperty("post_is_deleted") boolean postIsDeleted,
+			@JsonProperty("post_update_date") double postUpdateDate,
+			@JsonProperty("post_is_first_post") boolean postIsFirstPost,
+			Resp_PostModelLinks links,
+			Resp_PostModelPermissions permissions,
+			@JsonProperty("thread_is_deleted") boolean threadIsDeleted
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_PostModelLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@Nullable String thread,
-			@Nullable String poster,
-			@Nullable String likes,
-			@Nullable String report,
-			@JsonProperty("poster_avatar") @Nullable String posterAvatar
+			String permalink,
+			String detail,
+			String thread,
+			String poster,
+			String likes,
+			String report,
+			@JsonProperty("poster_avatar") String posterAvatar
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_PostModelPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode edit,
-			@Nullable JsonNode delete,
-			@Nullable JsonNode reply,
-			@Nullable JsonNode like,
-			@Nullable JsonNode report
+			boolean view,
+			boolean edit,
+			boolean delete,
+			boolean reply,
+			boolean like,
+			boolean report
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_PostCommentModel(
-			@JsonProperty("post_comment_id") Double postCommentId,
-			@JsonProperty("post_id") Double postId,
-			@JsonProperty("thread_id") Double threadId,
-			@JsonProperty("poster_user_id") Double posterUserId,
-			@JsonProperty("poster_username") @Nullable String posterUsername,
-			@JsonProperty("poster_username_html") @Nullable String posterUsernameHtml,
-			@JsonProperty("post_comment_create_date") Double postCommentCreateDate,
-			@JsonProperty("post_comment_body") @Nullable String postCommentBody,
-			@JsonProperty("post_comment_body_html") @Nullable String postCommentBodyHtml,
-			@JsonProperty("post_comment_body_plain_text") @Nullable String postCommentBodyPlainText,
-			@JsonProperty("post_comment_like_count") Double postCommentLikeCount,
-			@JsonProperty("user_is_ignored") @Nullable JsonNode userIsIgnored,
-			@JsonProperty("post_comment_is_published") @Nullable JsonNode postCommentIsPublished,
-			@JsonProperty("post_comment_is_deleted") @Nullable JsonNode postCommentIsDeleted,
-			@JsonProperty("post_comment_update_date") Double postCommentUpdateDate,
-			@Nullable Resp_PostCommentModelLinks links,
-			@Nullable Resp_PostCommentModelPermissions permissions
+			@JsonProperty("post_comment_id") double postCommentId,
+			@JsonProperty("post_id") double postId,
+			@JsonProperty("thread_id") double threadId,
+			@JsonProperty("poster_user_id") double posterUserId,
+			@JsonProperty("poster_username") String posterUsername,
+			@JsonProperty("poster_username_html") String posterUsernameHtml,
+			@JsonProperty("post_comment_create_date") double postCommentCreateDate,
+			@JsonProperty("post_comment_body") String postCommentBody,
+			@JsonProperty("post_comment_body_html") String postCommentBodyHtml,
+			@JsonProperty("post_comment_body_plain_text") String postCommentBodyPlainText,
+			@JsonProperty("post_comment_like_count") double postCommentLikeCount,
+			@JsonProperty("user_is_ignored") boolean userIsIgnored,
+			@JsonProperty("post_comment_is_published") boolean postCommentIsPublished,
+			@JsonProperty("post_comment_is_deleted") boolean postCommentIsDeleted,
+			@JsonProperty("post_comment_update_date") double postCommentUpdateDate,
+			Resp_PostCommentModelLinks links,
+			Resp_PostCommentModelPermissions permissions
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_PostCommentModelLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@Nullable String post,
-			@Nullable String thread,
-			@Nullable String poster,
-			@Nullable String likes,
-			@Nullable String report,
-			@JsonProperty("poster_avatar") @Nullable String posterAvatar
+			String permalink,
+			String detail,
+			String post,
+			String thread,
+			String poster,
+			String likes,
+			String report,
+			@JsonProperty("poster_avatar") String posterAvatar
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_PostCommentModelPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode edit,
-			@Nullable JsonNode delete,
-			@Nullable JsonNode reply,
-			@Nullable JsonNode like,
-			@Nullable JsonNode report
+			boolean view,
+			boolean edit,
+			boolean delete,
+			boolean reply,
+			boolean like,
+			boolean report
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_ProfilePostModel(
-			@JsonProperty("profile_post_id") Double profilePostId,
-			@JsonProperty("timeline_user_id") Double timelineUserId,
-			@JsonProperty("poster_user_id") Double posterUserId,
-			@JsonProperty("poster_username") @Nullable String posterUsername,
-			@JsonProperty("poster_username_html") @Nullable String posterUsernameHtml,
-			@JsonProperty("post_create_date") Double postCreateDate,
-			@JsonProperty("post_body") @Nullable String postBody,
-			@JsonProperty("post_body_html") @Nullable String postBodyHtml,
-			@JsonProperty("post_body_plain_text") @Nullable String postBodyPlainText,
-			@JsonProperty("post_like_count") Double postLikeCount,
-			@JsonProperty("post_comment_count") Double postCommentCount,
-			@JsonProperty("post_comments_is_disabled") Double postCommentsIsDisabled,
-			@JsonProperty("timeline_username") @Nullable String timelineUsername,
-			@JsonProperty("user_is_ignored") @Nullable JsonNode userIsIgnored,
-			@JsonProperty("post_is_published") @Nullable JsonNode postIsPublished,
-			@JsonProperty("post_is_deleted") @Nullable JsonNode postIsDeleted,
-			@JsonProperty("post_is_liked") @Nullable JsonNode postIsLiked,
-			@JsonProperty("post_is_sticked") @Nullable JsonNode postIsSticked,
-			@Nullable Resp_ProfilePostModelLinks links,
-			@Nullable Resp_ProfilePostModelPermissions permissions,
-			@JsonProperty("timeline_user") @Nullable JsonNode timelineUser
+			@JsonProperty("profile_post_id") double profilePostId,
+			@JsonProperty("timeline_user_id") double timelineUserId,
+			@JsonProperty("poster_user_id") double posterUserId,
+			@JsonProperty("poster_username") String posterUsername,
+			@JsonProperty("poster_username_html") String posterUsernameHtml,
+			@JsonProperty("post_create_date") double postCreateDate,
+			@JsonProperty("post_body") String postBody,
+			@JsonProperty("post_body_html") String postBodyHtml,
+			@JsonProperty("post_body_plain_text") String postBodyPlainText,
+			@JsonProperty("post_like_count") double postLikeCount,
+			@JsonProperty("post_comment_count") double postCommentCount,
+			@JsonProperty("post_comments_is_disabled") double postCommentsIsDisabled,
+			@JsonProperty("timeline_username") String timelineUsername,
+			@JsonProperty("user_is_ignored") boolean userIsIgnored,
+			@JsonProperty("post_is_published") boolean postIsPublished,
+			@JsonProperty("post_is_deleted") boolean postIsDeleted,
+			@JsonProperty("post_is_liked") boolean postIsLiked,
+			@JsonProperty("post_is_sticked") boolean postIsSticked,
+			Resp_ProfilePostModelLinks links,
+			Resp_ProfilePostModelPermissions permissions,
+			@JsonProperty("timeline_user") Resp_UserModel timelineUser
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_ProfilePostModelLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@Nullable String timeline,
-			@JsonProperty("timeline_user") @Nullable String timelineUser,
-			@Nullable String poster,
-			@Nullable String likes,
-			@Nullable String comments,
-			@Nullable String report,
-			@JsonProperty("poster_avatar") @Nullable String posterAvatar
+			String permalink,
+			String detail,
+			String timeline,
+			@JsonProperty("timeline_user") String timelineUser,
+			String poster,
+			String likes,
+			String comments,
+			String report,
+			@JsonProperty("poster_avatar") String posterAvatar
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_ProfilePostModelPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode edit,
-			@Nullable JsonNode delete,
-			@Nullable JsonNode like,
-			@Nullable JsonNode comment,
-			@Nullable JsonNode report,
-			@Nullable JsonNode stick
+			boolean view,
+			boolean edit,
+			boolean delete,
+			boolean like,
+			boolean comment,
+			boolean report,
+			boolean stick
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_ProfilePostCommentModel(
-			@JsonProperty("comment_id") Double commentId,
-			@JsonProperty("profile_post_id") Double profilePostId,
-			@JsonProperty("comment_user_id") Double commentUserId,
-			@JsonProperty("comment_username") @Nullable String commentUsername,
-			@JsonProperty("comment_username_html") @Nullable String commentUsernameHtml,
-			@JsonProperty("comment_create_date") Double commentCreateDate,
-			@JsonProperty("comment_body") @Nullable String commentBody,
-			@JsonProperty("comment_body_html") @Nullable String commentBodyHtml,
-			@JsonProperty("comment_body_plain_text") @Nullable String commentBodyPlainText,
-			@JsonProperty("user_is_ignored") @Nullable JsonNode userIsIgnored,
-			@JsonProperty("timeline_user_id") Double timelineUserId,
-			@Nullable Resp_ProfilePostCommentModelLinks links,
-			@Nullable Resp_ProfilePostCommentModelPermissions permissions
+			@JsonProperty("comment_id") double commentId,
+			@JsonProperty("profile_post_id") double profilePostId,
+			@JsonProperty("comment_user_id") double commentUserId,
+			@JsonProperty("comment_username") String commentUsername,
+			@JsonProperty("comment_username_html") String commentUsernameHtml,
+			@JsonProperty("comment_create_date") double commentCreateDate,
+			@JsonProperty("comment_body") String commentBody,
+			@JsonProperty("comment_body_html") String commentBodyHtml,
+			@JsonProperty("comment_body_plain_text") String commentBodyPlainText,
+			@JsonProperty("user_is_ignored") boolean userIsIgnored,
+			@JsonProperty("timeline_user_id") double timelineUserId,
+			Resp_ProfilePostCommentModelLinks links,
+			Resp_ProfilePostCommentModelPermissions permissions
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_ProfilePostCommentModelLinks(
-			@Nullable String detail,
-			@JsonProperty("profile_post") @Nullable String profilePost,
-			@Nullable String timeline,
-			@JsonProperty("timeline_user") @Nullable String timelineUser,
-			@Nullable String poster,
-			@JsonProperty("poster_avatar") @Nullable String posterAvatar
+			String detail,
+			@JsonProperty("profile_post") String profilePost,
+			String timeline,
+			@JsonProperty("timeline_user") String timelineUser,
+			String poster,
+			@JsonProperty("poster_avatar") String posterAvatar
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_ProfilePostCommentModelPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode delete
+			boolean view,
+			boolean delete
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_ConversationModel(
-			@JsonProperty("conversation_id") Double conversationId,
-			@JsonProperty("conversation_title") @Nullable String conversationTitle,
-			@JsonProperty("creator_user_id") Double creatorUserId,
-			@JsonProperty("creator_username") @Nullable String creatorUsername,
-			@JsonProperty("creator_username_html") @Nullable String creatorUsernameHtml,
-			@JsonProperty("conversation_create_date") Double conversationCreateDate,
-			@JsonProperty("conversation_update_date") Double conversationUpdateDate,
-			@JsonProperty("conversation_last_read_date") Double conversationLastReadDate,
-			@JsonProperty("conversation_online_count") Double conversationOnlineCount,
-			@JsonProperty("is_starred") Double isStarred,
-			@JsonProperty("is_group") Double isGroup,
-			@JsonProperty("is_unread") Double isUnread,
-			Double alerts,
-			@Nullable Resp_ConversationModelPermissions permissions,
-			@JsonProperty("conversation_message_count") Double conversationMessageCount,
-			@JsonProperty("conversation_is_new") @Nullable JsonNode conversationIsNew,
-			@JsonProperty("creator_is_ignored") @Nullable JsonNode creatorIsIgnored,
-			@JsonProperty("conversation_is_open") @Nullable JsonNode conversationIsOpen,
-			@JsonProperty("conversation_is_deleted") @Nullable JsonNode conversationIsDeleted,
-			@Nullable Resp_ConversationModelRecipient recipient,
-			@Nullable List<Resp_ConversationModelRecipients> recipients,
-			@Nullable Resp_ConversationModelLinks links
+			@JsonProperty("conversation_id") double conversationId,
+			@JsonProperty("conversation_title") String conversationTitle,
+			@JsonProperty("creator_user_id") double creatorUserId,
+			@JsonProperty("creator_username") String creatorUsername,
+			@JsonProperty("creator_username_html") String creatorUsernameHtml,
+			@JsonProperty("conversation_create_date") double conversationCreateDate,
+			@JsonProperty("conversation_update_date") double conversationUpdateDate,
+			@JsonProperty("conversation_last_read_date") double conversationLastReadDate,
+			@JsonProperty("conversation_online_count") double conversationOnlineCount,
+			@JsonProperty("is_starred") double isStarred,
+			@JsonProperty("is_group") double isGroup,
+			@JsonProperty("is_unread") double isUnread,
+			double alerts,
+			Resp_ConversationModelPermissions permissions,
+			@JsonProperty("conversation_message_count") double conversationMessageCount,
+			@JsonProperty("conversation_is_new") boolean conversationIsNew,
+			@JsonProperty("creator_is_ignored") boolean creatorIsIgnored,
+			@JsonProperty("conversation_is_open") boolean conversationIsOpen,
+			@JsonProperty("conversation_is_deleted") boolean conversationIsDeleted,
+			Resp_ConversationModelRecipient recipient,
+			List<Resp_ConversationModelRecipients> recipients,
+			Resp_ConversationModelLinks links
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_ConversationModelPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode reply,
-			@Nullable JsonNode invite,
-			@JsonProperty("manage_invite_links") @Nullable JsonNode manageInviteLinks,
-			@Nullable JsonNode kick,
-			@JsonProperty("upload_avatar") @Nullable JsonNode uploadAvatar,
-			@Nullable JsonNode editOwnPost,
-			@Nullable JsonNode stickyMessages
+			boolean view,
+			boolean reply,
+			boolean invite,
+			@JsonProperty("manage_invite_links") boolean manageInviteLinks,
+			boolean kick,
+			@JsonProperty("upload_avatar") boolean uploadAvatar,
+			boolean editOwnPost,
+			boolean stickyMessages
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_ConversationModelRecipient(
-			@JsonProperty("user_id") Double userId,
-			@Nullable String username,
-			@JsonProperty("username_html") @Nullable String usernameHtml,
-			@JsonProperty("last_activity") Double lastActivity,
-			@JsonProperty("is_online") @Nullable JsonNode isOnline,
-			@JsonProperty("contacts_changed") @Nullable JsonNode contactsChanged,
-			@Nullable String avatar
+			@JsonProperty("user_id") double userId,
+			String username,
+			@JsonProperty("username_html") String usernameHtml,
+			@JsonProperty("last_activity") double lastActivity,
+			@JsonProperty("is_online") boolean isOnline,
+			@JsonProperty("contacts_changed") boolean contactsChanged,
+			String avatar
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_ConversationModelRecipients(
-			@JsonProperty("user_id") Double userId,
-			@Nullable String username,
-			@JsonProperty("username_html") @Nullable String usernameHtml,
-			@JsonProperty("last_activity") Double lastActivity,
-			@JsonProperty("is_online") @Nullable JsonNode isOnline,
-			@JsonProperty("contacts_changed") @Nullable JsonNode contactsChanged,
-			@Nullable String avatar
+			@JsonProperty("user_id") double userId,
+			String username,
+			@JsonProperty("username_html") String usernameHtml,
+			@JsonProperty("last_activity") double lastActivity,
+			@JsonProperty("is_online") boolean isOnline,
+			@JsonProperty("contacts_changed") boolean contactsChanged,
+			String avatar
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_ConversationModelLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@Nullable String messages,
-			@Nullable String avatar
+			String permalink,
+			String detail,
+			String messages,
+			String avatar
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_ConversationMessageModel(
-			@JsonProperty("message_id") Double messageId,
-			@JsonProperty("conversation_id") Double conversationId,
-			@JsonProperty("creator_user_id") Double creatorUserId,
-			@JsonProperty("creator_username") @Nullable String creatorUsername,
-			@JsonProperty("creator_username_html") @Nullable String creatorUsernameHtml,
-			@JsonProperty("message_create_date") Double messageCreateDate,
-			@JsonProperty("message_is_unread") Double messageIsUnread,
-			@JsonProperty("message_need_translate") @Nullable JsonNode messageNeedTranslate,
-			@JsonProperty("message_is_system") @Nullable JsonNode messageIsSystem,
-			@JsonProperty("message_edit_date") Double messageEditDate,
-			@JsonProperty("message_body") @Nullable String messageBody,
-			@JsonProperty("message_body_html") @Nullable String messageBodyHtml,
-			@JsonProperty("message_body_plain_text") @Nullable String messageBodyPlainText,
-			@JsonProperty("user_is_ignored") @Nullable JsonNode userIsIgnored,
-			@Nullable Resp_ConversationMessageModelLinks links,
-			@Nullable Resp_ConversationMessageModelPermissions permissions
+			@JsonProperty("message_id") double messageId,
+			@JsonProperty("conversation_id") double conversationId,
+			@JsonProperty("creator_user_id") double creatorUserId,
+			@JsonProperty("creator_username") String creatorUsername,
+			@JsonProperty("creator_username_html") String creatorUsernameHtml,
+			@JsonProperty("message_create_date") double messageCreateDate,
+			@JsonProperty("message_is_unread") double messageIsUnread,
+			@JsonProperty("message_need_translate") boolean messageNeedTranslate,
+			@JsonProperty("message_is_system") boolean messageIsSystem,
+			@JsonProperty("message_edit_date") double messageEditDate,
+			@JsonProperty("message_body") String messageBody,
+			@JsonProperty("message_body_html") String messageBodyHtml,
+			@JsonProperty("message_body_plain_text") String messageBodyPlainText,
+			@JsonProperty("user_is_ignored") boolean userIsIgnored,
+			Resp_ConversationMessageModelLinks links,
+			Resp_ConversationMessageModelPermissions permissions
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_ConversationMessageModelLinks(
-			@Nullable String detail,
-			@Nullable String conversation,
-			@Nullable String creator,
-			@JsonProperty("creator_avatar") @Nullable String creatorAvatar
+			String detail,
+			String conversation,
+			String creator,
+			@JsonProperty("creator_avatar") String creatorAvatar
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_ConversationMessageModelPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode edit,
-			@Nullable JsonNode delete,
-			@JsonProperty("stick-unstick") @Nullable JsonNode stickUnstick
+			boolean view,
+			boolean edit,
+			boolean delete,
+			@JsonProperty("stick-unstick") boolean stickUnstick
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_SystemInfo(
-			@JsonProperty("visitor_id") Double visitorId,
-			Double time
+			@JsonProperty("visitor_id") double visitorId,
+			double time
 		) {}
 
 	// ─── OAuthApi Types ────────────────────────────────────────
@@ -1551,9 +1551,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record OAuthTokenResponse(
-			@JsonProperty("access_token") @Nullable String accessToken,
-			@JsonProperty("token_type") @Nullable String tokenType,
-			@JsonProperty("expires_in") Double expiresIn,
+			@JsonProperty("access_token") String accessToken,
+			@JsonProperty("token_type") String tokenType,
+			@JsonProperty("expires_in") double expiresIn,
 			@JsonProperty("refresh_token") @Nullable String refreshToken,
 			@Nullable String scope
 		) {}
@@ -1578,8 +1578,8 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record AssetsCssResponse(
-			@Nullable String contents,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			String contents,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 	}
@@ -1606,63 +1606,63 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoriesListResponse(
-			@Nullable List<CategoriesListResponseCategories> categories,
-			@JsonProperty("categories_total") Double categoriesTotal,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<CategoriesListResponseCategories> categories,
+			@JsonProperty("categories_total") double categoriesTotal,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoriesListResponseCategoriesLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@JsonProperty("sub-categories") @Nullable String subCategories,
-			@JsonProperty("sub-forums") @Nullable String subForums
+			String permalink,
+			String detail,
+			@JsonProperty("sub-categories") String subCategories,
+			@JsonProperty("sub-forums") String subForums
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoriesListResponseCategoriesPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode edit,
-			@Nullable JsonNode delete
+			boolean view,
+			boolean edit,
+			boolean delete
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoriesListResponseCategories(
-			@JsonProperty("category_id") Double categoryId,
-			@JsonProperty("category_title") @Nullable String categoryTitle,
-			@JsonProperty("category_description") @Nullable String categoryDescription,
-			@Nullable CategoriesListResponseCategoriesLinks links,
-			@Nullable CategoriesListResponseCategoriesPermissions permissions
+			@JsonProperty("category_id") double categoryId,
+			@JsonProperty("category_title") String categoryTitle,
+			@JsonProperty("category_description") String categoryDescription,
+			CategoriesListResponseCategoriesLinks links,
+			CategoriesListResponseCategoriesPermissions permissions
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoriesGetResponse(
-			@Nullable CategoriesGetResponseCategory category,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			CategoriesGetResponseCategory category,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoriesGetResponseCategoryLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@JsonProperty("sub-categories") @Nullable String subCategories,
-			@JsonProperty("sub-forums") @Nullable String subForums
+			String permalink,
+			String detail,
+			@JsonProperty("sub-categories") String subCategories,
+			@JsonProperty("sub-forums") String subForums
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoriesGetResponseCategoryPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode edit,
-			@Nullable JsonNode delete
+			boolean view,
+			boolean edit,
+			boolean delete
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoriesGetResponseCategory(
-			@JsonProperty("category_id") Double categoryId,
-			@JsonProperty("category_title") @Nullable String categoryTitle,
-			@JsonProperty("category_description") @Nullable String categoryDescription,
-			@Nullable CategoriesGetResponseCategoryLinks links,
-			@Nullable CategoriesGetResponseCategoryPermissions permissions
+			@JsonProperty("category_id") double categoryId,
+			@JsonProperty("category_title") String categoryTitle,
+			@JsonProperty("category_description") String categoryDescription,
+			CategoriesGetResponseCategoryLinks links,
+			CategoriesGetResponseCategoryPermissions permissions
 		) {}
 
 	}
@@ -1689,154 +1689,154 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ForumsListResponse(
-			@Nullable List<ForumsListResponseForums> forums,
-			@JsonProperty("forums_total") Double forumsTotal,
-			@Nullable List<ForumsListResponseTabs> tabs,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<ForumsListResponseForums> forums,
+			@JsonProperty("forums_total") double forumsTotal,
+			List<ForumsListResponseTabs> tabs,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ForumsListResponseForumsForumPrefixesGroupPrefixes(
-			@JsonProperty("prefix_id") Double prefixId,
-			@JsonProperty("prefix_title") @Nullable String prefixTitle
+			@JsonProperty("prefix_id") double prefixId,
+			@JsonProperty("prefix_title") String prefixTitle
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ForumsListResponseForumsForumPrefixes(
-			@JsonProperty("group_title") @Nullable String groupTitle,
-			@JsonProperty("group_prefixes") @Nullable List<ForumsListResponseForumsForumPrefixesGroupPrefixes> groupPrefixes
+			@JsonProperty("group_title") String groupTitle,
+			@JsonProperty("group_prefixes") List<ForumsListResponseForumsForumPrefixesGroupPrefixes> groupPrefixes
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ForumsListResponseForumsLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@JsonProperty("sub-categories") @Nullable String subCategories,
-			@JsonProperty("sub-forums") @Nullable String subForums,
-			@Nullable String threads,
-			@Nullable String followers
+			String permalink,
+			String detail,
+			@JsonProperty("sub-categories") String subCategories,
+			@JsonProperty("sub-forums") String subForums,
+			String threads,
+			String followers
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ForumsListResponseForumsPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode edit,
-			@Nullable JsonNode delete,
-			@JsonProperty("create_thread") @Nullable JsonNode createThread,
-			@JsonProperty("tag_thread") @Nullable JsonNode tagThread,
-			@Nullable JsonNode follow
+			boolean view,
+			boolean edit,
+			boolean delete,
+			@JsonProperty("create_thread") boolean createThread,
+			@JsonProperty("tag_thread") boolean tagThread,
+			boolean follow
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ForumsListResponseForums(
-			@JsonProperty("forum_id") Double forumId,
-			@JsonProperty("forum_title") @Nullable String forumTitle,
-			@JsonProperty("forum_description") @Nullable String forumDescription,
-			@JsonProperty("forum_thread_count") Double forumThreadCount,
-			@JsonProperty("forum_post_count") Double forumPostCount,
-			@JsonProperty("forum_prefixes") @Nullable List<ForumsListResponseForumsForumPrefixes> forumPrefixes,
-			@JsonProperty("thread_default_prefix_id") Double threadDefaultPrefixId,
-			@JsonProperty("thread_prefix_is_required") @Nullable JsonNode threadPrefixIsRequired,
-			@Nullable ForumsListResponseForumsLinks links,
-			@Nullable ForumsListResponseForumsPermissions permissions,
-			@JsonProperty("forum_is_followed") @Nullable JsonNode forumIsFollowed
+			@JsonProperty("forum_id") double forumId,
+			@JsonProperty("forum_title") String forumTitle,
+			@JsonProperty("forum_description") String forumDescription,
+			@JsonProperty("forum_thread_count") double forumThreadCount,
+			@JsonProperty("forum_post_count") double forumPostCount,
+			@JsonProperty("forum_prefixes") List<ForumsListResponseForumsForumPrefixes> forumPrefixes,
+			@JsonProperty("thread_default_prefix_id") double threadDefaultPrefixId,
+			@JsonProperty("thread_prefix_is_required") boolean threadPrefixIsRequired,
+			ForumsListResponseForumsLinks links,
+			ForumsListResponseForumsPermissions permissions,
+			@JsonProperty("forum_is_followed") boolean forumIsFollowed
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ForumsListResponseTabs(
-			@JsonProperty("link_title") @Nullable String linkTitle,
-			@Nullable JsonNode isDefault,
-			@Nullable String title,
-			@Nullable JsonNode isHidden
+			@JsonProperty("link_title") String linkTitle,
+			boolean isDefault,
+			String title,
+			boolean isHidden
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ForumsGroupedResponse(
-			@Nullable JsonNode data,
-			@Nullable List<ForumsGroupedResponseTabs> tabs,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			JsonNode data,
+			List<ForumsGroupedResponseTabs> tabs,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ForumsGroupedResponseTabs(
-			@JsonProperty("link_title") @Nullable String linkTitle,
-			@Nullable JsonNode isDefault,
-			@Nullable String title,
-			@Nullable JsonNode isHidden
+			@JsonProperty("link_title") String linkTitle,
+			boolean isDefault,
+			String title,
+			boolean isHidden
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ForumsGetResponse(
-			@Nullable ForumsGetResponseForum forum,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			ForumsGetResponseForum forum,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ForumsGetResponseForumForumPrefixesGroupPrefixes(
-			@JsonProperty("prefix_id") Double prefixId,
-			@JsonProperty("prefix_title") @Nullable String prefixTitle
+			@JsonProperty("prefix_id") double prefixId,
+			@JsonProperty("prefix_title") String prefixTitle
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ForumsGetResponseForumForumPrefixes(
-			@JsonProperty("group_title") @Nullable String groupTitle,
-			@JsonProperty("group_prefixes") @Nullable List<ForumsGetResponseForumForumPrefixesGroupPrefixes> groupPrefixes
+			@JsonProperty("group_title") String groupTitle,
+			@JsonProperty("group_prefixes") List<ForumsGetResponseForumForumPrefixesGroupPrefixes> groupPrefixes
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ForumsGetResponseForumLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@JsonProperty("sub-categories") @Nullable String subCategories,
-			@JsonProperty("sub-forums") @Nullable String subForums,
-			@Nullable String threads,
-			@Nullable String followers
+			String permalink,
+			String detail,
+			@JsonProperty("sub-categories") String subCategories,
+			@JsonProperty("sub-forums") String subForums,
+			String threads,
+			String followers
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ForumsGetResponseForumPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode edit,
-			@Nullable JsonNode delete,
-			@JsonProperty("create_thread") @Nullable JsonNode createThread,
-			@JsonProperty("upload_attachment") @Nullable JsonNode uploadAttachment,
-			@JsonProperty("tag_thread") @Nullable JsonNode tagThread,
-			@Nullable JsonNode follow
+			boolean view,
+			boolean edit,
+			boolean delete,
+			@JsonProperty("create_thread") boolean createThread,
+			@JsonProperty("upload_attachment") boolean uploadAttachment,
+			@JsonProperty("tag_thread") boolean tagThread,
+			boolean follow
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ForumsGetResponseForum(
-			@JsonProperty("forum_id") Double forumId,
-			@JsonProperty("forum_title") @Nullable String forumTitle,
-			@JsonProperty("forum_description") @Nullable String forumDescription,
-			@JsonProperty("forum_thread_count") Double forumThreadCount,
-			@JsonProperty("forum_post_count") Double forumPostCount,
-			@JsonProperty("forum_prefixes") @Nullable List<ForumsGetResponseForumForumPrefixes> forumPrefixes,
-			@JsonProperty("thread_default_prefix_id") Double threadDefaultPrefixId,
-			@JsonProperty("thread_prefix_is_required") @Nullable JsonNode threadPrefixIsRequired,
-			@Nullable ForumsGetResponseForumLinks links,
-			@Nullable ForumsGetResponseForumPermissions permissions,
-			@JsonProperty("forum_is_followed") @Nullable JsonNode forumIsFollowed
+			@JsonProperty("forum_id") double forumId,
+			@JsonProperty("forum_title") String forumTitle,
+			@JsonProperty("forum_description") String forumDescription,
+			@JsonProperty("forum_thread_count") double forumThreadCount,
+			@JsonProperty("forum_post_count") double forumPostCount,
+			@JsonProperty("forum_prefixes") List<ForumsGetResponseForumForumPrefixes> forumPrefixes,
+			@JsonProperty("thread_default_prefix_id") double threadDefaultPrefixId,
+			@JsonProperty("thread_prefix_is_required") boolean threadPrefixIsRequired,
+			ForumsGetResponseForumLinks links,
+			ForumsGetResponseForumPermissions permissions,
+			@JsonProperty("forum_is_followed") boolean forumIsFollowed
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ForumsFollowersResponse(
-			@Nullable List<ForumsFollowersResponseUsers> users,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<ForumsFollowersResponseUsers> users,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ForumsFollowersResponseUsersFollow(
-			@Nullable JsonNode post,
-			@Nullable JsonNode alert,
-			@Nullable JsonNode email
+			boolean post,
+			boolean alert,
+			boolean email
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ForumsFollowersResponseUsers(
-			@JsonProperty("user_id") Double userId,
-			@Nullable String username,
-			@Nullable ForumsFollowersResponseUsersFollow follow
+			@JsonProperty("user_id") double userId,
+			String username,
+			ForumsFollowersResponseUsersFollow follow
 		) {}
 
 		public record ForumsFollowBody(
@@ -1860,14 +1860,14 @@ public final class Types {
 		public record ForumsFollowResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ForumsUnfollowResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record ForumsFollowedParams(
@@ -1881,105 +1881,105 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ForumsFollowedResponse(
-			@Nullable List<ForumsFollowedResponseForums> forums,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<ForumsFollowedResponseForums> forums,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ForumsFollowedResponseForumsForumPrefixesGroupPrefixes(
-			@JsonProperty("prefix_id") Double prefixId,
-			@JsonProperty("prefix_title") @Nullable String prefixTitle
+			@JsonProperty("prefix_id") double prefixId,
+			@JsonProperty("prefix_title") String prefixTitle
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ForumsFollowedResponseForumsForumPrefixes(
-			@JsonProperty("group_title") @Nullable String groupTitle,
-			@JsonProperty("group_prefixes") @Nullable List<ForumsFollowedResponseForumsForumPrefixesGroupPrefixes> groupPrefixes
+			@JsonProperty("group_title") String groupTitle,
+			@JsonProperty("group_prefixes") List<ForumsFollowedResponseForumsForumPrefixesGroupPrefixes> groupPrefixes
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ForumsFollowedResponseForumsLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@JsonProperty("sub-categories") @Nullable String subCategories,
-			@JsonProperty("sub-forums") @Nullable String subForums,
-			@Nullable String threads,
-			@Nullable String followers
+			String permalink,
+			String detail,
+			@JsonProperty("sub-categories") String subCategories,
+			@JsonProperty("sub-forums") String subForums,
+			String threads,
+			String followers
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ForumsFollowedResponseForumsPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode edit,
-			@Nullable JsonNode delete,
-			@JsonProperty("create_thread") @Nullable JsonNode createThread,
-			@JsonProperty("upload_attachment") @Nullable JsonNode uploadAttachment,
-			@JsonProperty("tag_thread") @Nullable JsonNode tagThread,
-			@Nullable JsonNode follow
+			boolean view,
+			boolean edit,
+			boolean delete,
+			@JsonProperty("create_thread") boolean createThread,
+			@JsonProperty("upload_attachment") boolean uploadAttachment,
+			@JsonProperty("tag_thread") boolean tagThread,
+			boolean follow
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ForumsFollowedResponseForumsFollow(
-			@Nullable JsonNode post,
-			@Nullable JsonNode alert,
-			@Nullable JsonNode email
+			boolean post,
+			boolean alert,
+			boolean email
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ForumsFollowedResponseForums(
-			@JsonProperty("forum_id") Double forumId,
-			@JsonProperty("forum_title") @Nullable String forumTitle,
-			@JsonProperty("forum_description") @Nullable String forumDescription,
-			@JsonProperty("forum_thread_count") Double forumThreadCount,
-			@JsonProperty("forum_post_count") Double forumPostCount,
-			@JsonProperty("forum_prefixes") @Nullable List<ForumsFollowedResponseForumsForumPrefixes> forumPrefixes,
-			@JsonProperty("thread_default_prefix_id") Double threadDefaultPrefixId,
-			@JsonProperty("thread_prefix_is_required") @Nullable JsonNode threadPrefixIsRequired,
-			@Nullable ForumsFollowedResponseForumsLinks links,
-			@Nullable ForumsFollowedResponseForumsPermissions permissions,
-			@JsonProperty("forum_is_followed") @Nullable JsonNode forumIsFollowed,
-			@Nullable ForumsFollowedResponseForumsFollow follow
+			@JsonProperty("forum_id") double forumId,
+			@JsonProperty("forum_title") String forumTitle,
+			@JsonProperty("forum_description") String forumDescription,
+			@JsonProperty("forum_thread_count") double forumThreadCount,
+			@JsonProperty("forum_post_count") double forumPostCount,
+			@JsonProperty("forum_prefixes") List<ForumsFollowedResponseForumsForumPrefixes> forumPrefixes,
+			@JsonProperty("thread_default_prefix_id") double threadDefaultPrefixId,
+			@JsonProperty("thread_prefix_is_required") boolean threadPrefixIsRequired,
+			ForumsFollowedResponseForumsLinks links,
+			ForumsFollowedResponseForumsPermissions permissions,
+			@JsonProperty("forum_is_followed") boolean forumIsFollowed,
+			ForumsFollowedResponseForumsFollow follow
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ForumsGetFeedOptionsResponse(
-			@Nullable List<ForumsGetFeedOptionsResponseForums> forums,
-			@JsonProperty("excluded_forums_ids") @Nullable List<Double> excludedForumsIds,
-			@JsonProperty("default_excluded_forums_ids") @Nullable List<Double> defaultExcludedForumsIds,
-			@Nullable String keywords,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<ForumsGetFeedOptionsResponseForums> forums,
+			@JsonProperty("excluded_forums_ids") List<Double> excludedForumsIds,
+			@JsonProperty("default_excluded_forums_ids") List<Double> defaultExcludedForumsIds,
+			String keywords,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ForumsGetFeedOptionsResponseForumsLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@JsonProperty("sub-categories") @Nullable String subCategories,
-			@JsonProperty("sub-forums") @Nullable String subForums,
-			@Nullable String threads,
-			@Nullable String followers
+			String permalink,
+			String detail,
+			@JsonProperty("sub-categories") String subCategories,
+			@JsonProperty("sub-forums") String subForums,
+			String threads,
+			String followers
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ForumsGetFeedOptionsResponseForumsPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode edit,
-			@Nullable JsonNode delete,
-			@JsonProperty("create_thread") @Nullable JsonNode createThread,
-			@JsonProperty("tag_thread") @Nullable JsonNode tagThread,
-			@Nullable JsonNode follow
+			boolean view,
+			boolean edit,
+			boolean delete,
+			@JsonProperty("create_thread") boolean createThread,
+			@JsonProperty("tag_thread") boolean tagThread,
+			boolean follow
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ForumsGetFeedOptionsResponseForums(
-			@JsonProperty("forum_id") Double forumId,
-			@JsonProperty("forum_title") @Nullable String forumTitle,
-			@JsonProperty("forum_description") @Nullable String forumDescription,
-			@JsonProperty("parent_node_id") Double parentNodeId,
-			@Nullable ForumsGetFeedOptionsResponseForumsLinks links,
-			@Nullable ForumsGetFeedOptionsResponseForumsPermissions permissions,
-			@JsonProperty("forum_is_followed") @Nullable JsonNode forumIsFollowed,
-			@JsonProperty("has_children") @Nullable JsonNode hasChildren
+			@JsonProperty("forum_id") double forumId,
+			@JsonProperty("forum_title") String forumTitle,
+			@JsonProperty("forum_description") String forumDescription,
+			@JsonProperty("parent_node_id") double parentNodeId,
+			ForumsGetFeedOptionsResponseForumsLinks links,
+			ForumsGetFeedOptionsResponseForumsPermissions permissions,
+			@JsonProperty("forum_is_followed") boolean forumIsFollowed,
+			@JsonProperty("has_children") boolean hasChildren
 		) {}
 
 		public record ForumsEditFeedOptionsBody(
@@ -1997,7 +1997,7 @@ public final class Types {
 		public record ForumsEditFeedOptionsResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 	}
@@ -2011,15 +2011,15 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record LinksListResponse(
-			@JsonProperty("link-forums") @Nullable List<JsonNode> linkForums,
-			@JsonProperty("link-forums_total") Double linkForumsTotal,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("link-forums") List<Resp_LinkModel> linkForums,
+			@JsonProperty("link-forums_total") double linkForumsTotal,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record LinksGetResponse(
-			@JsonProperty("link-forum") @Nullable JsonNode linkForum,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("link-forum") Resp_LinkModel linkForum,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 	}
@@ -2044,63 +2044,63 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PagesListResponse(
-			@Nullable List<PagesListResponsePages> pages,
-			@JsonProperty("pages_total") Double pagesTotal,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<PagesListResponsePages> pages,
+			@JsonProperty("pages_total") double pagesTotal,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PagesListResponsePagesLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@JsonProperty("sub-pages") @Nullable String subPages
+			String permalink,
+			String detail,
+			@JsonProperty("sub-pages") String subPages
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PagesListResponsePagesPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode edit,
-			@Nullable JsonNode delete
+			boolean view,
+			boolean edit,
+			boolean delete
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PagesListResponsePages(
-			@JsonProperty("page_id") Double pageId,
-			@JsonProperty("page_title") @Nullable String pageTitle,
-			@JsonProperty("page_description") @Nullable String pageDescription,
-			@Nullable PagesListResponsePagesLinks links,
-			@Nullable PagesListResponsePagesPermissions permissions
+			@JsonProperty("page_id") double pageId,
+			@JsonProperty("page_title") String pageTitle,
+			@JsonProperty("page_description") String pageDescription,
+			PagesListResponsePagesLinks links,
+			PagesListResponsePagesPermissions permissions
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PagesGetResponse(
-			@Nullable PagesGetResponsePage page,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			PagesGetResponsePage page,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PagesGetResponsePageLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@JsonProperty("sub-pages") @Nullable String subPages
+			String permalink,
+			String detail,
+			@JsonProperty("sub-pages") String subPages
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PagesGetResponsePagePermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode edit,
-			@Nullable JsonNode delete
+			boolean view,
+			boolean edit,
+			boolean delete
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PagesGetResponsePage(
-			@JsonProperty("page_id") Double pageId,
-			@JsonProperty("page_title") @Nullable String pageTitle,
-			@JsonProperty("page_description") @Nullable String pageDescription,
-			@JsonProperty("page_view_count") Double pageViewCount,
-			@Nullable PagesGetResponsePageLinks links,
-			@Nullable PagesGetResponsePagePermissions permissions,
-			@JsonProperty("page_html") @Nullable String pageHtml
+			@JsonProperty("page_id") double pageId,
+			@JsonProperty("page_title") String pageTitle,
+			@JsonProperty("page_description") String pageDescription,
+			@JsonProperty("page_view_count") double pageViewCount,
+			PagesGetResponsePageLinks links,
+			PagesGetResponsePagePermissions permissions,
+			@JsonProperty("page_html") String pageHtml
 		) {}
 
 	}
@@ -2123,38 +2123,38 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record NavigationListResponse(
-			@Nullable List<NavigationListResponseElements> elements,
-			@JsonProperty("elements_count") Double elementsCount,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<NavigationListResponseElements> elements,
+			@JsonProperty("elements_count") double elementsCount,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record NavigationListResponseElementsLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@JsonProperty("sub-categories") @Nullable String subCategories,
-			@JsonProperty("sub-forums") @Nullable String subForums,
-			@JsonProperty("sub-elements") @Nullable String subElements
+			String permalink,
+			String detail,
+			@JsonProperty("sub-categories") String subCategories,
+			@JsonProperty("sub-forums") String subForums,
+			@JsonProperty("sub-elements") String subElements
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record NavigationListResponseElementsPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode edit,
-			@Nullable JsonNode delete
+			boolean view,
+			boolean edit,
+			boolean delete
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record NavigationListResponseElements(
-			@JsonProperty("category_id") Double categoryId,
-			@JsonProperty("category_title") @Nullable String categoryTitle,
-			@JsonProperty("category_description") @Nullable String categoryDescription,
-			@Nullable NavigationListResponseElementsLinks links,
-			@Nullable NavigationListResponseElementsPermissions permissions,
-			@JsonProperty("navigation_type") @Nullable String navigationType,
-			@JsonProperty("navigation_id") Double navigationId,
-			@JsonProperty("navigation_parent_id") Double navigationParentId,
-			@JsonProperty("has_sub_elements") @Nullable JsonNode hasSubElements
+			@JsonProperty("category_id") double categoryId,
+			@JsonProperty("category_title") String categoryTitle,
+			@JsonProperty("category_description") String categoryDescription,
+			NavigationListResponseElementsLinks links,
+			NavigationListResponseElementsPermissions permissions,
+			@JsonProperty("navigation_type") String navigationType,
+			@JsonProperty("navigation_id") double navigationId,
+			@JsonProperty("navigation_parent_id") double navigationParentId,
+			@JsonProperty("has_sub_elements") boolean hasSubElements
 		) {}
 
 	}
@@ -2211,54 +2211,54 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsListResponse(
-			@Nullable List<JsonNode> threads,
-			@Nullable ThreadsListResponseForum forum,
-			@JsonProperty("threads_total") Double threadsTotal,
-			@Nullable ThreadsListResponseLinks links,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<Resp_ThreadModel> threads,
+			ThreadsListResponseForum forum,
+			@JsonProperty("threads_total") double threadsTotal,
+			ThreadsListResponseLinks links,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsListResponseForumLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@JsonProperty("sub-categories") @Nullable String subCategories,
-			@JsonProperty("sub-forums") @Nullable String subForums,
-			@Nullable String threads,
-			@Nullable String followers
+			String permalink,
+			String detail,
+			@JsonProperty("sub-categories") String subCategories,
+			@JsonProperty("sub-forums") String subForums,
+			String threads,
+			String followers
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsListResponseForumPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode edit,
-			@Nullable JsonNode delete,
-			@JsonProperty("create_thread") @Nullable JsonNode createThread,
-			@JsonProperty("upload_attachment") @Nullable JsonNode uploadAttachment,
-			@JsonProperty("tag_thread") @Nullable JsonNode tagThread,
-			@Nullable JsonNode follow
+			boolean view,
+			boolean edit,
+			boolean delete,
+			@JsonProperty("create_thread") boolean createThread,
+			@JsonProperty("upload_attachment") boolean uploadAttachment,
+			@JsonProperty("tag_thread") boolean tagThread,
+			boolean follow
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsListResponseForum(
-			@JsonProperty("forum_id") Double forumId,
-			@JsonProperty("forum_title") @Nullable String forumTitle,
-			@JsonProperty("forum_description") @Nullable String forumDescription,
-			@JsonProperty("forum_thread_count") Double forumThreadCount,
-			@JsonProperty("forum_post_count") Double forumPostCount,
-			@JsonProperty("forum_prefixes") @Nullable List<JsonNode> forumPrefixes,
-			@JsonProperty("thread_default_prefix_id") Double threadDefaultPrefixId,
-			@JsonProperty("thread_prefix_is_required") @Nullable JsonNode threadPrefixIsRequired,
-			@Nullable ThreadsListResponseForumLinks links,
-			@Nullable ThreadsListResponseForumPermissions permissions,
-			@JsonProperty("forum_is_followed") @Nullable JsonNode forumIsFollowed
+			@JsonProperty("forum_id") double forumId,
+			@JsonProperty("forum_title") String forumTitle,
+			@JsonProperty("forum_description") String forumDescription,
+			@JsonProperty("forum_thread_count") double forumThreadCount,
+			@JsonProperty("forum_post_count") double forumPostCount,
+			@JsonProperty("forum_prefixes") List<JsonNode> forumPrefixes,
+			@JsonProperty("thread_default_prefix_id") double threadDefaultPrefixId,
+			@JsonProperty("thread_prefix_is_required") boolean threadPrefixIsRequired,
+			ThreadsListResponseForumLinks links,
+			ThreadsListResponseForumPermissions permissions,
+			@JsonProperty("forum_is_followed") boolean forumIsFollowed
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsListResponseLinks(
-			Double pages,
-			Double page,
-			@Nullable String next
+			double pages,
+			double page,
+			String next
 		) {}
 
 		public record ThreadsCreateBody(
@@ -2302,8 +2302,8 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsCreateResponse(
-			@Nullable JsonNode thread,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			Resp_ThreadModel thread,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record ThreadsCreateContestBody(
@@ -2367,8 +2367,8 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsCreateContestResponse(
-			@Nullable JsonNode thread,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			Resp_ThreadModel thread,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record ThreadsClaimBody(
@@ -2424,8 +2424,8 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsClaimResponse(
-			@Nullable JsonNode thread,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			Resp_ThreadModel thread,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record ThreadsGetParams(
@@ -2439,8 +2439,8 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsGetResponse(
-			@Nullable JsonNode thread,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			Resp_ThreadModel thread,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record ThreadsEditBody(
@@ -2470,8 +2470,8 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsEditResponse(
-			@Nullable JsonNode thread,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			Resp_ThreadModel thread,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record ThreadsDeleteBody(
@@ -2487,7 +2487,7 @@ public final class Types {
 		public record ThreadsDeleteResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record ThreadsMoveBody(
@@ -2513,54 +2513,54 @@ public final class Types {
 		public record ThreadsMoveResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsBumpResponse(
-			@Nullable String status,
-			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsHideResponse(
-			@Nullable String status,
-			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsStarResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsUnstarResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsFollowersResponse(
-			@Nullable List<ThreadsFollowersResponseUsers> users,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<ThreadsFollowersResponseUsers> users,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsFollowersResponseUsersFollow(
-			@Nullable JsonNode alert,
-			@Nullable JsonNode email
+			boolean alert,
+			boolean email
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsFollowersResponseUsers(
-			@JsonProperty("user_id") Double userId,
-			@Nullable String username,
-			@Nullable ThreadsFollowersResponseUsersFollow follow
+			@JsonProperty("user_id") double userId,
+			String username,
+			ThreadsFollowersResponseUsersFollow follow
 		) {}
 
 		public record ThreadsFollowBody(
@@ -2576,14 +2576,14 @@ public final class Types {
 		public record ThreadsFollowResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsUnfollowResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record ThreadsFollowedParams(
@@ -2599,234 +2599,234 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsFollowedResponse(
-			@Nullable List<ThreadsFollowedResponseThreads> threads,
-			@JsonProperty("threads_total") Double threadsTotal,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<ThreadsFollowedResponseThreads> threads,
+			@JsonProperty("threads_total") double threadsTotal,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsFollowedResponseThreadsFirstPostLikeUsers(
-			@JsonProperty("user_id") Double userId,
-			@Nullable String username,
-			@JsonProperty("display_style_group_id") Double displayStyleGroupId,
-			@JsonProperty("is_banned") Double isBanned,
-			@JsonProperty("uniq_username_css") @Nullable String uniqUsernameCss
+			@JsonProperty("user_id") double userId,
+			String username,
+			@JsonProperty("display_style_group_id") double displayStyleGroupId,
+			@JsonProperty("is_banned") double isBanned,
+			@JsonProperty("uniq_username_css") String uniqUsernameCss
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsFollowedResponseThreadsFirstPostLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@Nullable String thread,
-			@Nullable String poster,
-			@Nullable String likes,
-			@Nullable String report,
-			@Nullable String attachments,
-			@JsonProperty("poster_avatar") @Nullable String posterAvatar
+			String permalink,
+			String detail,
+			String thread,
+			String poster,
+			String likes,
+			String report,
+			String attachments,
+			@JsonProperty("poster_avatar") String posterAvatar
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsFollowedResponseThreadsFirstPostPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode edit,
-			@Nullable JsonNode delete,
-			@Nullable JsonNode reply,
-			@Nullable JsonNode like,
-			@Nullable JsonNode report,
-			@JsonProperty("upload_attachment") @Nullable JsonNode uploadAttachment
+			boolean view,
+			boolean edit,
+			boolean delete,
+			boolean reply,
+			boolean like,
+			boolean report,
+			@JsonProperty("upload_attachment") boolean uploadAttachment
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsFollowedResponseThreadsFirstPost(
-			@JsonProperty("post_id") Double postId,
-			@JsonProperty("thread_id") Double threadId,
-			@JsonProperty("poster_user_id") Double posterUserId,
-			@JsonProperty("poster_username") @Nullable String posterUsername,
-			@JsonProperty("poster_username_html") @Nullable String posterUsernameHtml,
-			@JsonProperty("post_create_date") Double postCreateDate,
-			@JsonProperty("post_body") @Nullable String postBody,
-			@JsonProperty("post_body_html") @Nullable String postBodyHtml,
-			@JsonProperty("post_body_plain_text") @Nullable String postBodyPlainText,
-			@Nullable String signature,
-			@JsonProperty("signature_html") @Nullable String signatureHtml,
-			@JsonProperty("signature_plain_text") @Nullable String signaturePlainText,
-			@JsonProperty("post_like_count") Double postLikeCount,
-			@JsonProperty("post_attachment_count") Double postAttachmentCount,
-			@JsonProperty("like_users") @Nullable List<ThreadsFollowedResponseThreadsFirstPostLikeUsers> likeUsers,
-			@JsonProperty("user_is_ignored") @Nullable JsonNode userIsIgnored,
-			@JsonProperty("post_is_published") @Nullable JsonNode postIsPublished,
-			@JsonProperty("post_is_deleted") @Nullable JsonNode postIsDeleted,
-			@JsonProperty("post_update_date") Double postUpdateDate,
-			@JsonProperty("post_is_first_post") @Nullable JsonNode postIsFirstPost,
-			@Nullable ThreadsFollowedResponseThreadsFirstPostLinks links,
-			@Nullable ThreadsFollowedResponseThreadsFirstPostPermissions permissions
+			@JsonProperty("post_id") double postId,
+			@JsonProperty("thread_id") double threadId,
+			@JsonProperty("poster_user_id") double posterUserId,
+			@JsonProperty("poster_username") String posterUsername,
+			@JsonProperty("poster_username_html") String posterUsernameHtml,
+			@JsonProperty("post_create_date") double postCreateDate,
+			@JsonProperty("post_body") String postBody,
+			@JsonProperty("post_body_html") String postBodyHtml,
+			@JsonProperty("post_body_plain_text") String postBodyPlainText,
+			String signature,
+			@JsonProperty("signature_html") String signatureHtml,
+			@JsonProperty("signature_plain_text") String signaturePlainText,
+			@JsonProperty("post_like_count") double postLikeCount,
+			@JsonProperty("post_attachment_count") double postAttachmentCount,
+			@JsonProperty("like_users") List<ThreadsFollowedResponseThreadsFirstPostLikeUsers> likeUsers,
+			@JsonProperty("user_is_ignored") boolean userIsIgnored,
+			@JsonProperty("post_is_published") boolean postIsPublished,
+			@JsonProperty("post_is_deleted") boolean postIsDeleted,
+			@JsonProperty("post_update_date") double postUpdateDate,
+			@JsonProperty("post_is_first_post") boolean postIsFirstPost,
+			ThreadsFollowedResponseThreadsFirstPostLinks links,
+			ThreadsFollowedResponseThreadsFirstPostPermissions permissions
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsFollowedResponseThreadsLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@Nullable String followers,
-			@Nullable String forum,
-			@Nullable String posts,
-			@JsonProperty("first_poster") @Nullable String firstPoster,
-			@JsonProperty("first_poster_avatar") @Nullable String firstPosterAvatar,
-			@JsonProperty("first_post") @Nullable String firstPost,
-			@JsonProperty("last_post") @Nullable String lastPost
+			String permalink,
+			String detail,
+			String followers,
+			String forum,
+			String posts,
+			@JsonProperty("first_poster") String firstPoster,
+			@JsonProperty("first_poster_avatar") String firstPosterAvatar,
+			@JsonProperty("first_post") String firstPost,
+			@JsonProperty("last_post") String lastPost
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsFollowedResponseThreadsPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode delete,
-			@Nullable JsonNode follow,
-			@Nullable JsonNode post,
-			@JsonProperty("upload_attachment") @Nullable JsonNode uploadAttachment,
-			@Nullable JsonNode edit,
-			@JsonProperty("edit_title") @Nullable JsonNode editTitle,
-			@JsonProperty("edit_tags") @Nullable JsonNode editTags
+			boolean view,
+			boolean delete,
+			boolean follow,
+			boolean post,
+			@JsonProperty("upload_attachment") boolean uploadAttachment,
+			boolean edit,
+			@JsonProperty("edit_title") boolean editTitle,
+			@JsonProperty("edit_tags") boolean editTags
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsFollowedResponseThreadsForumLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@JsonProperty("sub-categories") @Nullable String subCategories,
-			@JsonProperty("sub-forums") @Nullable String subForums,
-			@Nullable String threads,
-			@Nullable String followers
+			String permalink,
+			String detail,
+			@JsonProperty("sub-categories") String subCategories,
+			@JsonProperty("sub-forums") String subForums,
+			String threads,
+			String followers
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsFollowedResponseThreadsForumPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode edit,
-			@Nullable JsonNode delete,
-			@JsonProperty("create_thread") @Nullable JsonNode createThread,
-			@JsonProperty("upload_attachment") @Nullable JsonNode uploadAttachment,
-			@JsonProperty("tag_thread") @Nullable JsonNode tagThread,
-			@Nullable JsonNode follow
+			boolean view,
+			boolean edit,
+			boolean delete,
+			@JsonProperty("create_thread") boolean createThread,
+			@JsonProperty("upload_attachment") boolean uploadAttachment,
+			@JsonProperty("tag_thread") boolean tagThread,
+			boolean follow
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsFollowedResponseThreadsForum(
-			@JsonProperty("forum_id") Double forumId,
-			@JsonProperty("forum_title") @Nullable String forumTitle,
-			@JsonProperty("forum_description") @Nullable String forumDescription,
-			@JsonProperty("forum_thread_count") Double forumThreadCount,
-			@JsonProperty("forum_post_count") Double forumPostCount,
-			@JsonProperty("forum_prefixes") @Nullable List<JsonNode> forumPrefixes,
-			@JsonProperty("thread_default_prefix_id") Double threadDefaultPrefixId,
-			@JsonProperty("thread_prefix_is_required") @Nullable JsonNode threadPrefixIsRequired,
-			@Nullable ThreadsFollowedResponseThreadsForumLinks links,
-			@Nullable ThreadsFollowedResponseThreadsForumPermissions permissions,
-			@JsonProperty("forum_is_followed") @Nullable JsonNode forumIsFollowed
+			@JsonProperty("forum_id") double forumId,
+			@JsonProperty("forum_title") String forumTitle,
+			@JsonProperty("forum_description") String forumDescription,
+			@JsonProperty("forum_thread_count") double forumThreadCount,
+			@JsonProperty("forum_post_count") double forumPostCount,
+			@JsonProperty("forum_prefixes") List<JsonNode> forumPrefixes,
+			@JsonProperty("thread_default_prefix_id") double threadDefaultPrefixId,
+			@JsonProperty("thread_prefix_is_required") boolean threadPrefixIsRequired,
+			ThreadsFollowedResponseThreadsForumLinks links,
+			ThreadsFollowedResponseThreadsForumPermissions permissions,
+			@JsonProperty("forum_is_followed") boolean forumIsFollowed
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsFollowedResponseThreadsFollow(
-			@Nullable JsonNode alert,
-			@Nullable JsonNode email
+			boolean alert,
+			boolean email
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsFollowedResponseThreads(
-			@JsonProperty("thread_id") Double threadId,
-			@JsonProperty("forum_id") Double forumId,
-			@JsonProperty("thread_title") @Nullable String threadTitle,
-			@JsonProperty("thread_view_count") Double threadViewCount,
-			@JsonProperty("creator_user_id") Double creatorUserId,
-			@JsonProperty("creator_username") @Nullable String creatorUsername,
-			@JsonProperty("creator_username_html") @Nullable String creatorUsernameHtml,
-			@JsonProperty("thread_create_date") Double threadCreateDate,
-			@JsonProperty("thread_update_date") Double threadUpdateDate,
-			@JsonProperty("user_is_ignored") @Nullable JsonNode userIsIgnored,
-			@JsonProperty("thread_post_count") Double threadPostCount,
-			@JsonProperty("thread_is_published") @Nullable JsonNode threadIsPublished,
-			@JsonProperty("thread_is_deleted") @Nullable JsonNode threadIsDeleted,
-			@JsonProperty("thread_is_sticky") @Nullable JsonNode threadIsSticky,
-			@JsonProperty("thread_is_followed") @Nullable JsonNode threadIsFollowed,
-			@JsonProperty("first_post") @Nullable ThreadsFollowedResponseThreadsFirstPost firstPost,
-			@JsonProperty("thread_prefixes") @Nullable List<JsonNode> threadPrefixes,
-			@JsonProperty("thread_tags") @Nullable JsonNode threadTags,
-			@Nullable ThreadsFollowedResponseThreadsLinks links,
-			@Nullable ThreadsFollowedResponseThreadsPermissions permissions,
-			@Nullable ThreadsFollowedResponseThreadsForum forum,
-			@Nullable ThreadsFollowedResponseThreadsFollow follow
+			@JsonProperty("thread_id") double threadId,
+			@JsonProperty("forum_id") double forumId,
+			@JsonProperty("thread_title") String threadTitle,
+			@JsonProperty("thread_view_count") double threadViewCount,
+			@JsonProperty("creator_user_id") double creatorUserId,
+			@JsonProperty("creator_username") String creatorUsername,
+			@JsonProperty("creator_username_html") String creatorUsernameHtml,
+			@JsonProperty("thread_create_date") double threadCreateDate,
+			@JsonProperty("thread_update_date") double threadUpdateDate,
+			@JsonProperty("user_is_ignored") boolean userIsIgnored,
+			@JsonProperty("thread_post_count") double threadPostCount,
+			@JsonProperty("thread_is_published") boolean threadIsPublished,
+			@JsonProperty("thread_is_deleted") boolean threadIsDeleted,
+			@JsonProperty("thread_is_sticky") boolean threadIsSticky,
+			@JsonProperty("thread_is_followed") boolean threadIsFollowed,
+			@JsonProperty("first_post") ThreadsFollowedResponseThreadsFirstPost firstPost,
+			@JsonProperty("thread_prefixes") List<JsonNode> threadPrefixes,
+			@JsonProperty("thread_tags") JsonNode threadTags,
+			ThreadsFollowedResponseThreadsLinks links,
+			ThreadsFollowedResponseThreadsPermissions permissions,
+			ThreadsFollowedResponseThreadsForum forum,
+			ThreadsFollowedResponseThreadsFollow follow
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsNavigationResponse(
-			@Nullable List<ThreadsNavigationResponseElements> elements,
-			@JsonProperty("elements_count") Double elementsCount,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<ThreadsNavigationResponseElements> elements,
+			@JsonProperty("elements_count") double elementsCount,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsNavigationResponseElementsLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@JsonProperty("sub-categories") @Nullable String subCategories,
-			@JsonProperty("sub-forums") @Nullable String subForums,
-			@JsonProperty("sub-elements") @Nullable String subElements
+			String permalink,
+			String detail,
+			@JsonProperty("sub-categories") String subCategories,
+			@JsonProperty("sub-forums") String subForums,
+			@JsonProperty("sub-elements") String subElements
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsNavigationResponseElementsPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode edit,
-			@Nullable JsonNode delete
+			boolean view,
+			boolean edit,
+			boolean delete
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsNavigationResponseElements(
-			@JsonProperty("category_id") Double categoryId,
-			@JsonProperty("category_title") @Nullable String categoryTitle,
-			@JsonProperty("category_description") @Nullable String categoryDescription,
-			@Nullable ThreadsNavigationResponseElementsLinks links,
-			@Nullable ThreadsNavigationResponseElementsPermissions permissions,
-			@JsonProperty("navigation_type") @Nullable String navigationType,
-			@JsonProperty("navigation_id") Double navigationId,
-			@JsonProperty("navigation_depth") Double navigationDepth,
-			@JsonProperty("navigation_parent_id") Double navigationParentId,
-			@JsonProperty("has_sub_elements") @Nullable JsonNode hasSubElements
+			@JsonProperty("category_id") double categoryId,
+			@JsonProperty("category_title") String categoryTitle,
+			@JsonProperty("category_description") String categoryDescription,
+			ThreadsNavigationResponseElementsLinks links,
+			ThreadsNavigationResponseElementsPermissions permissions,
+			@JsonProperty("navigation_type") String navigationType,
+			@JsonProperty("navigation_id") double navigationId,
+			@JsonProperty("navigation_depth") double navigationDepth,
+			@JsonProperty("navigation_parent_id") double navigationParentId,
+			@JsonProperty("has_sub_elements") boolean hasSubElements
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsPollGetResponse(
-			@Nullable ThreadsPollGetResponsePoll poll,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			ThreadsPollGetResponsePoll poll,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsPollGetResponsePollResponses(
-			@JsonProperty("response_id") Double responseId,
-			@JsonProperty("response_answer") @Nullable String responseAnswer,
-			@JsonProperty("response_vote_count") Double responseVoteCount
+			@JsonProperty("response_id") double responseId,
+			@JsonProperty("response_answer") String responseAnswer,
+			@JsonProperty("response_vote_count") double responseVoteCount
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsPollGetResponsePollPermissions(
-			@Nullable JsonNode vote,
-			@Nullable JsonNode result
+			boolean vote,
+			boolean result
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsPollGetResponsePollLinks(
-			@Nullable String vote
+			String vote
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsPollGetResponsePoll(
-			@JsonProperty("poll_id") Double pollId,
-			@JsonProperty("poll_question") @Nullable String pollQuestion,
-			@JsonProperty("poll_vote_count") Double pollVoteCount,
-			@JsonProperty("poll_max_votes") Double pollMaxVotes,
-			@JsonProperty("poll_is_open") @Nullable JsonNode pollIsOpen,
-			@JsonProperty("poll_is_voted") @Nullable JsonNode pollIsVoted,
-			@Nullable List<ThreadsPollGetResponsePollResponses> responses,
-			@Nullable ThreadsPollGetResponsePollPermissions permissions,
-			@Nullable ThreadsPollGetResponsePollLinks links
+			@JsonProperty("poll_id") double pollId,
+			@JsonProperty("poll_question") String pollQuestion,
+			@JsonProperty("poll_vote_count") double pollVoteCount,
+			@JsonProperty("poll_max_votes") double pollMaxVotes,
+			@JsonProperty("poll_is_open") boolean pollIsOpen,
+			@JsonProperty("poll_is_voted") boolean pollIsVoted,
+			List<ThreadsPollGetResponsePollResponses> responses,
+			ThreadsPollGetResponsePollPermissions permissions,
+			ThreadsPollGetResponsePollLinks links
 		) {}
 
 		public record ThreadsPollVoteBody(
@@ -2844,7 +2844,7 @@ public final class Types {
 		public record ThreadsPollVoteResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record ThreadsUnreadParams(
@@ -2862,154 +2862,154 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsUnreadResponse(
-			@Nullable List<JsonNode> threads,
-			@Nullable List<ThreadsUnreadResponseData> data,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<Resp_ThreadModel> threads,
+			List<ThreadsUnreadResponseData> data,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsUnreadResponseDataFirstPostLikeUsers(
-			@JsonProperty("user_id") Double userId,
-			@Nullable String username,
-			@JsonProperty("display_style_group_id") Double displayStyleGroupId,
-			@JsonProperty("is_banned") Double isBanned,
-			@JsonProperty("uniq_username_css") @Nullable String uniqUsernameCss
+			@JsonProperty("user_id") double userId,
+			String username,
+			@JsonProperty("display_style_group_id") double displayStyleGroupId,
+			@JsonProperty("is_banned") double isBanned,
+			@JsonProperty("uniq_username_css") String uniqUsernameCss
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsUnreadResponseDataFirstPostLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@Nullable String thread,
-			@Nullable String poster,
-			@Nullable String likes,
-			@Nullable String report,
-			@Nullable String attachments,
-			@JsonProperty("poster_avatar") @Nullable String posterAvatar
+			String permalink,
+			String detail,
+			String thread,
+			String poster,
+			String likes,
+			String report,
+			String attachments,
+			@JsonProperty("poster_avatar") String posterAvatar
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsUnreadResponseDataFirstPostPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode edit,
-			@Nullable JsonNode delete,
-			@Nullable JsonNode reply,
-			@Nullable JsonNode like,
-			@Nullable JsonNode report,
-			@JsonProperty("upload_attachment") @Nullable JsonNode uploadAttachment
+			boolean view,
+			boolean edit,
+			boolean delete,
+			boolean reply,
+			boolean like,
+			boolean report,
+			@JsonProperty("upload_attachment") boolean uploadAttachment
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsUnreadResponseDataFirstPost(
-			@JsonProperty("post_id") Double postId,
-			@JsonProperty("thread_id") Double threadId,
-			@JsonProperty("poster_user_id") Double posterUserId,
-			@JsonProperty("poster_username") @Nullable String posterUsername,
-			@JsonProperty("poster_username_html") @Nullable String posterUsernameHtml,
-			@JsonProperty("post_create_date") Double postCreateDate,
-			@JsonProperty("post_body") @Nullable String postBody,
-			@JsonProperty("post_body_html") @Nullable String postBodyHtml,
-			@JsonProperty("post_body_plain_text") @Nullable String postBodyPlainText,
-			@Nullable String signature,
-			@JsonProperty("signature_html") @Nullable String signatureHtml,
-			@JsonProperty("signature_plain_text") @Nullable String signaturePlainText,
-			@JsonProperty("post_like_count") Double postLikeCount,
-			@JsonProperty("post_attachment_count") Double postAttachmentCount,
-			@JsonProperty("like_users") @Nullable List<ThreadsUnreadResponseDataFirstPostLikeUsers> likeUsers,
-			@JsonProperty("user_is_ignored") @Nullable JsonNode userIsIgnored,
-			@JsonProperty("post_is_published") @Nullable JsonNode postIsPublished,
-			@JsonProperty("post_is_deleted") @Nullable JsonNode postIsDeleted,
-			@JsonProperty("post_update_date") Double postUpdateDate,
-			@JsonProperty("post_is_first_post") @Nullable JsonNode postIsFirstPost,
-			@Nullable ThreadsUnreadResponseDataFirstPostLinks links,
-			@Nullable ThreadsUnreadResponseDataFirstPostPermissions permissions
+			@JsonProperty("post_id") double postId,
+			@JsonProperty("thread_id") double threadId,
+			@JsonProperty("poster_user_id") double posterUserId,
+			@JsonProperty("poster_username") String posterUsername,
+			@JsonProperty("poster_username_html") String posterUsernameHtml,
+			@JsonProperty("post_create_date") double postCreateDate,
+			@JsonProperty("post_body") String postBody,
+			@JsonProperty("post_body_html") String postBodyHtml,
+			@JsonProperty("post_body_plain_text") String postBodyPlainText,
+			String signature,
+			@JsonProperty("signature_html") String signatureHtml,
+			@JsonProperty("signature_plain_text") String signaturePlainText,
+			@JsonProperty("post_like_count") double postLikeCount,
+			@JsonProperty("post_attachment_count") double postAttachmentCount,
+			@JsonProperty("like_users") List<ThreadsUnreadResponseDataFirstPostLikeUsers> likeUsers,
+			@JsonProperty("user_is_ignored") boolean userIsIgnored,
+			@JsonProperty("post_is_published") boolean postIsPublished,
+			@JsonProperty("post_is_deleted") boolean postIsDeleted,
+			@JsonProperty("post_update_date") double postUpdateDate,
+			@JsonProperty("post_is_first_post") boolean postIsFirstPost,
+			ThreadsUnreadResponseDataFirstPostLinks links,
+			ThreadsUnreadResponseDataFirstPostPermissions permissions
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsUnreadResponseDataLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@Nullable String followers,
-			@Nullable String forum,
-			@Nullable String posts,
-			@JsonProperty("first_poster") @Nullable String firstPoster,
-			@JsonProperty("first_poster_avatar") @Nullable String firstPosterAvatar,
-			@JsonProperty("first_post") @Nullable String firstPost,
-			@JsonProperty("last_poster") @Nullable String lastPoster,
-			@JsonProperty("last_post") @Nullable String lastPost
+			String permalink,
+			String detail,
+			String followers,
+			String forum,
+			String posts,
+			@JsonProperty("first_poster") String firstPoster,
+			@JsonProperty("first_poster_avatar") String firstPosterAvatar,
+			@JsonProperty("first_post") String firstPost,
+			@JsonProperty("last_poster") String lastPoster,
+			@JsonProperty("last_post") String lastPost
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsUnreadResponseDataPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode delete,
-			@Nullable JsonNode follow,
-			@Nullable JsonNode post,
-			@JsonProperty("upload_attachment") @Nullable JsonNode uploadAttachment,
-			@Nullable JsonNode edit
+			boolean view,
+			boolean delete,
+			boolean follow,
+			boolean post,
+			@JsonProperty("upload_attachment") boolean uploadAttachment,
+			boolean edit
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsUnreadResponseDataForumLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@JsonProperty("sub-categories") @Nullable String subCategories,
-			@JsonProperty("sub-forums") @Nullable String subForums,
-			@Nullable String threads,
-			@Nullable String followers
+			String permalink,
+			String detail,
+			@JsonProperty("sub-categories") String subCategories,
+			@JsonProperty("sub-forums") String subForums,
+			String threads,
+			String followers
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsUnreadResponseDataForumPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode edit,
-			@Nullable JsonNode delete,
-			@JsonProperty("create_thread") @Nullable JsonNode createThread,
-			@JsonProperty("upload_attachment") @Nullable JsonNode uploadAttachment,
-			@JsonProperty("tag_thread") @Nullable JsonNode tagThread,
-			@Nullable JsonNode follow
+			boolean view,
+			boolean edit,
+			boolean delete,
+			@JsonProperty("create_thread") boolean createThread,
+			@JsonProperty("upload_attachment") boolean uploadAttachment,
+			@JsonProperty("tag_thread") boolean tagThread,
+			boolean follow
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsUnreadResponseDataForum(
-			@JsonProperty("forum_id") Double forumId,
-			@JsonProperty("forum_title") @Nullable String forumTitle,
-			@JsonProperty("forum_description") @Nullable String forumDescription,
-			@JsonProperty("forum_thread_count") Double forumThreadCount,
-			@JsonProperty("forum_post_count") Double forumPostCount,
-			@JsonProperty("forum_prefixes") @Nullable List<JsonNode> forumPrefixes,
-			@JsonProperty("thread_default_prefix_id") Double threadDefaultPrefixId,
-			@JsonProperty("thread_prefix_is_required") @Nullable JsonNode threadPrefixIsRequired,
-			@Nullable ThreadsUnreadResponseDataForumLinks links,
-			@Nullable ThreadsUnreadResponseDataForumPermissions permissions,
-			@JsonProperty("forum_is_followed") @Nullable JsonNode forumIsFollowed
+			@JsonProperty("forum_id") double forumId,
+			@JsonProperty("forum_title") String forumTitle,
+			@JsonProperty("forum_description") String forumDescription,
+			@JsonProperty("forum_thread_count") double forumThreadCount,
+			@JsonProperty("forum_post_count") double forumPostCount,
+			@JsonProperty("forum_prefixes") List<JsonNode> forumPrefixes,
+			@JsonProperty("thread_default_prefix_id") double threadDefaultPrefixId,
+			@JsonProperty("thread_prefix_is_required") boolean threadPrefixIsRequired,
+			ThreadsUnreadResponseDataForumLinks links,
+			ThreadsUnreadResponseDataForumPermissions permissions,
+			@JsonProperty("forum_is_followed") boolean forumIsFollowed
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsUnreadResponseData(
-			@JsonProperty("content_type") @Nullable String contentType,
-			@JsonProperty("content_id") Double contentId,
-			@JsonProperty("thread_id") Double threadId,
-			@JsonProperty("forum_id") Double forumId,
-			@JsonProperty("thread_title") @Nullable String threadTitle,
-			@JsonProperty("thread_view_count") Double threadViewCount,
-			@JsonProperty("creator_user_id") Double creatorUserId,
-			@JsonProperty("creator_username") @Nullable String creatorUsername,
-			@JsonProperty("creator_username_html") @Nullable String creatorUsernameHtml,
-			@JsonProperty("thread_create_date") Double threadCreateDate,
-			@JsonProperty("thread_update_date") Double threadUpdateDate,
-			@JsonProperty("user_is_ignored") @Nullable JsonNode userIsIgnored,
-			@JsonProperty("thread_post_count") Double threadPostCount,
-			@JsonProperty("thread_is_published") @Nullable JsonNode threadIsPublished,
-			@JsonProperty("thread_is_deleted") @Nullable JsonNode threadIsDeleted,
-			@JsonProperty("thread_is_sticky") @Nullable JsonNode threadIsSticky,
-			@JsonProperty("thread_is_followed") @Nullable JsonNode threadIsFollowed,
-			@JsonProperty("first_post") @Nullable ThreadsUnreadResponseDataFirstPost firstPost,
-			@JsonProperty("thread_prefixes") @Nullable List<JsonNode> threadPrefixes,
-			@JsonProperty("thread_tags") @Nullable List<JsonNode> threadTags,
-			@Nullable ThreadsUnreadResponseDataLinks links,
-			@Nullable ThreadsUnreadResponseDataPermissions permissions,
-			@Nullable ThreadsUnreadResponseDataForum forum
+			@JsonProperty("content_type") String contentType,
+			@JsonProperty("content_id") double contentId,
+			@JsonProperty("thread_id") double threadId,
+			@JsonProperty("forum_id") double forumId,
+			@JsonProperty("thread_title") String threadTitle,
+			@JsonProperty("thread_view_count") double threadViewCount,
+			@JsonProperty("creator_user_id") double creatorUserId,
+			@JsonProperty("creator_username") String creatorUsername,
+			@JsonProperty("creator_username_html") String creatorUsernameHtml,
+			@JsonProperty("thread_create_date") double threadCreateDate,
+			@JsonProperty("thread_update_date") double threadUpdateDate,
+			@JsonProperty("user_is_ignored") boolean userIsIgnored,
+			@JsonProperty("thread_post_count") double threadPostCount,
+			@JsonProperty("thread_is_published") boolean threadIsPublished,
+			@JsonProperty("thread_is_deleted") boolean threadIsDeleted,
+			@JsonProperty("thread_is_sticky") boolean threadIsSticky,
+			@JsonProperty("thread_is_followed") boolean threadIsFollowed,
+			@JsonProperty("first_post") ThreadsUnreadResponseDataFirstPost firstPost,
+			@JsonProperty("thread_prefixes") List<JsonNode> threadPrefixes,
+			@JsonProperty("thread_tags") List<JsonNode> threadTags,
+			ThreadsUnreadResponseDataLinks links,
+			ThreadsUnreadResponseDataPermissions permissions,
+			ThreadsUnreadResponseDataForum forum
 		) {}
 
 		public record ThreadsRecentParams(
@@ -3029,151 +3029,151 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsRecentResponse(
-			@Nullable List<JsonNode> threads,
-			@Nullable List<ThreadsRecentResponseData> data,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<Resp_ThreadModel> threads,
+			List<ThreadsRecentResponseData> data,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsRecentResponseDataFirstPostLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@Nullable String thread,
-			@Nullable String poster,
-			@Nullable String likes,
-			@Nullable String report,
-			@Nullable String attachments,
-			@JsonProperty("poster_avatar") @Nullable String posterAvatar
+			String permalink,
+			String detail,
+			String thread,
+			String poster,
+			String likes,
+			String report,
+			String attachments,
+			@JsonProperty("poster_avatar") String posterAvatar
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsRecentResponseDataFirstPostPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode edit,
-			@Nullable JsonNode delete,
-			@Nullable JsonNode reply,
-			@Nullable JsonNode like,
-			@Nullable JsonNode report,
-			@JsonProperty("upload_attachment") @Nullable JsonNode uploadAttachment
+			boolean view,
+			boolean edit,
+			boolean delete,
+			boolean reply,
+			boolean like,
+			boolean report,
+			@JsonProperty("upload_attachment") boolean uploadAttachment
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsRecentResponseDataFirstPost(
-			@JsonProperty("post_id") Double postId,
-			@JsonProperty("thread_id") Double threadId,
-			@JsonProperty("poster_user_id") Double posterUserId,
-			@JsonProperty("poster_username") @Nullable String posterUsername,
-			@JsonProperty("poster_username_html") @Nullable String posterUsernameHtml,
-			@JsonProperty("post_create_date") Double postCreateDate,
-			@JsonProperty("post_body") @Nullable String postBody,
-			@JsonProperty("post_body_html") @Nullable String postBodyHtml,
-			@JsonProperty("post_body_plain_text") @Nullable String postBodyPlainText,
-			@Nullable String signature,
-			@JsonProperty("signature_html") @Nullable String signatureHtml,
-			@JsonProperty("signature_plain_text") @Nullable String signaturePlainText,
-			@JsonProperty("post_like_count") Double postLikeCount,
-			@JsonProperty("post_attachment_count") Double postAttachmentCount,
-			@JsonProperty("user_is_ignored") @Nullable JsonNode userIsIgnored,
-			@JsonProperty("post_is_published") @Nullable JsonNode postIsPublished,
-			@JsonProperty("post_is_deleted") @Nullable JsonNode postIsDeleted,
-			@JsonProperty("post_update_date") Double postUpdateDate,
-			@JsonProperty("post_is_first_post") @Nullable JsonNode postIsFirstPost,
-			@Nullable ThreadsRecentResponseDataFirstPostLinks links,
-			@Nullable ThreadsRecentResponseDataFirstPostPermissions permissions
+			@JsonProperty("post_id") double postId,
+			@JsonProperty("thread_id") double threadId,
+			@JsonProperty("poster_user_id") double posterUserId,
+			@JsonProperty("poster_username") String posterUsername,
+			@JsonProperty("poster_username_html") String posterUsernameHtml,
+			@JsonProperty("post_create_date") double postCreateDate,
+			@JsonProperty("post_body") String postBody,
+			@JsonProperty("post_body_html") String postBodyHtml,
+			@JsonProperty("post_body_plain_text") String postBodyPlainText,
+			String signature,
+			@JsonProperty("signature_html") String signatureHtml,
+			@JsonProperty("signature_plain_text") String signaturePlainText,
+			@JsonProperty("post_like_count") double postLikeCount,
+			@JsonProperty("post_attachment_count") double postAttachmentCount,
+			@JsonProperty("user_is_ignored") boolean userIsIgnored,
+			@JsonProperty("post_is_published") boolean postIsPublished,
+			@JsonProperty("post_is_deleted") boolean postIsDeleted,
+			@JsonProperty("post_update_date") double postUpdateDate,
+			@JsonProperty("post_is_first_post") boolean postIsFirstPost,
+			ThreadsRecentResponseDataFirstPostLinks links,
+			ThreadsRecentResponseDataFirstPostPermissions permissions
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsRecentResponseDataLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@Nullable String followers,
-			@Nullable String forum,
-			@Nullable String posts,
-			@JsonProperty("first_poster") @Nullable String firstPoster,
-			@JsonProperty("first_poster_avatar") @Nullable String firstPosterAvatar,
-			@JsonProperty("first_post") @Nullable String firstPost,
-			@JsonProperty("last_poster") @Nullable String lastPoster,
-			@JsonProperty("last_post") @Nullable String lastPost
+			String permalink,
+			String detail,
+			String followers,
+			String forum,
+			String posts,
+			@JsonProperty("first_poster") String firstPoster,
+			@JsonProperty("first_poster_avatar") String firstPosterAvatar,
+			@JsonProperty("first_post") String firstPost,
+			@JsonProperty("last_poster") String lastPoster,
+			@JsonProperty("last_post") String lastPost
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsRecentResponseDataPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode delete,
-			@Nullable JsonNode follow,
-			@Nullable JsonNode post,
-			@JsonProperty("upload_attachment") @Nullable JsonNode uploadAttachment,
-			@Nullable JsonNode edit
+			boolean view,
+			boolean delete,
+			boolean follow,
+			boolean post,
+			@JsonProperty("upload_attachment") boolean uploadAttachment,
+			boolean edit
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsRecentResponseDataForumLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@JsonProperty("sub-categories") @Nullable String subCategories,
-			@JsonProperty("sub-forums") @Nullable String subForums,
-			@Nullable String threads,
-			@Nullable String followers
+			String permalink,
+			String detail,
+			@JsonProperty("sub-categories") String subCategories,
+			@JsonProperty("sub-forums") String subForums,
+			String threads,
+			String followers
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsRecentResponseDataForumPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode edit,
-			@Nullable JsonNode delete,
-			@JsonProperty("create_thread") @Nullable JsonNode createThread,
-			@JsonProperty("upload_attachment") @Nullable JsonNode uploadAttachment,
-			@JsonProperty("tag_thread") @Nullable JsonNode tagThread,
-			@Nullable JsonNode follow
+			boolean view,
+			boolean edit,
+			boolean delete,
+			@JsonProperty("create_thread") boolean createThread,
+			@JsonProperty("upload_attachment") boolean uploadAttachment,
+			@JsonProperty("tag_thread") boolean tagThread,
+			boolean follow
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsRecentResponseDataForum(
-			@JsonProperty("forum_id") Double forumId,
-			@JsonProperty("forum_title") @Nullable String forumTitle,
-			@JsonProperty("forum_description") @Nullable String forumDescription,
-			@JsonProperty("forum_thread_count") Double forumThreadCount,
-			@JsonProperty("forum_post_count") Double forumPostCount,
-			@JsonProperty("forum_prefixes") @Nullable List<JsonNode> forumPrefixes,
-			@JsonProperty("thread_default_prefix_id") Double threadDefaultPrefixId,
-			@JsonProperty("thread_prefix_is_required") @Nullable JsonNode threadPrefixIsRequired,
-			@Nullable ThreadsRecentResponseDataForumLinks links,
-			@Nullable ThreadsRecentResponseDataForumPermissions permissions,
-			@JsonProperty("forum_is_followed") @Nullable JsonNode forumIsFollowed
+			@JsonProperty("forum_id") double forumId,
+			@JsonProperty("forum_title") String forumTitle,
+			@JsonProperty("forum_description") String forumDescription,
+			@JsonProperty("forum_thread_count") double forumThreadCount,
+			@JsonProperty("forum_post_count") double forumPostCount,
+			@JsonProperty("forum_prefixes") List<JsonNode> forumPrefixes,
+			@JsonProperty("thread_default_prefix_id") double threadDefaultPrefixId,
+			@JsonProperty("thread_prefix_is_required") boolean threadPrefixIsRequired,
+			ThreadsRecentResponseDataForumLinks links,
+			ThreadsRecentResponseDataForumPermissions permissions,
+			@JsonProperty("forum_is_followed") boolean forumIsFollowed
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsRecentResponseData(
-			@JsonProperty("content_type") @Nullable String contentType,
-			@JsonProperty("content_id") Double contentId,
-			@JsonProperty("thread_id") Double threadId,
-			@JsonProperty("forum_id") Double forumId,
-			@JsonProperty("thread_title") @Nullable String threadTitle,
-			@JsonProperty("thread_view_count") Double threadViewCount,
-			@JsonProperty("creator_user_id") Double creatorUserId,
-			@JsonProperty("creator_username") @Nullable String creatorUsername,
-			@JsonProperty("creator_username_html") @Nullable String creatorUsernameHtml,
-			@JsonProperty("thread_create_date") Double threadCreateDate,
-			@JsonProperty("thread_update_date") Double threadUpdateDate,
-			@JsonProperty("user_is_ignored") @Nullable JsonNode userIsIgnored,
-			@JsonProperty("thread_post_count") Double threadPostCount,
-			@JsonProperty("thread_is_published") @Nullable JsonNode threadIsPublished,
-			@JsonProperty("thread_is_deleted") @Nullable JsonNode threadIsDeleted,
-			@JsonProperty("thread_is_sticky") @Nullable JsonNode threadIsSticky,
-			@JsonProperty("thread_is_followed") @Nullable JsonNode threadIsFollowed,
-			@JsonProperty("first_post") @Nullable ThreadsRecentResponseDataFirstPost firstPost,
-			@JsonProperty("thread_prefixes") @Nullable List<JsonNode> threadPrefixes,
-			@JsonProperty("thread_tags") @Nullable List<JsonNode> threadTags,
-			@Nullable ThreadsRecentResponseDataLinks links,
-			@Nullable ThreadsRecentResponseDataPermissions permissions,
-			@Nullable ThreadsRecentResponseDataForum forum
+			@JsonProperty("content_type") String contentType,
+			@JsonProperty("content_id") double contentId,
+			@JsonProperty("thread_id") double threadId,
+			@JsonProperty("forum_id") double forumId,
+			@JsonProperty("thread_title") String threadTitle,
+			@JsonProperty("thread_view_count") double threadViewCount,
+			@JsonProperty("creator_user_id") double creatorUserId,
+			@JsonProperty("creator_username") String creatorUsername,
+			@JsonProperty("creator_username_html") String creatorUsernameHtml,
+			@JsonProperty("thread_create_date") double threadCreateDate,
+			@JsonProperty("thread_update_date") double threadUpdateDate,
+			@JsonProperty("user_is_ignored") boolean userIsIgnored,
+			@JsonProperty("thread_post_count") double threadPostCount,
+			@JsonProperty("thread_is_published") boolean threadIsPublished,
+			@JsonProperty("thread_is_deleted") boolean threadIsDeleted,
+			@JsonProperty("thread_is_sticky") boolean threadIsSticky,
+			@JsonProperty("thread_is_followed") boolean threadIsFollowed,
+			@JsonProperty("first_post") ThreadsRecentResponseDataFirstPost firstPost,
+			@JsonProperty("thread_prefixes") List<JsonNode> threadPrefixes,
+			@JsonProperty("thread_tags") List<JsonNode> threadTags,
+			ThreadsRecentResponseDataLinks links,
+			ThreadsRecentResponseDataPermissions permissions,
+			ThreadsRecentResponseDataForum forum
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ThreadsFinishResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 	}
@@ -3204,10 +3204,10 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PostsListResponse(
-			@Nullable List<JsonNode> posts,
-			@Nullable JsonNode thread,
-			@JsonProperty("posts_total") Double postsTotal,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<Resp_ThreadModel> posts,
+			Resp_ThreadModel thread,
+			@JsonProperty("posts_total") double postsTotal,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record PostsCreateBody(
@@ -3225,14 +3225,14 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PostsCreateResponse(
-			@Nullable JsonNode post,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			Resp_PostModel post,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PostsGetResponse(
-			@Nullable JsonNode post,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			Resp_PostModel post,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record PostsEditBody(
@@ -3246,8 +3246,8 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PostsEditResponse(
-			@Nullable JsonNode post,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			Resp_PostModel post,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record PostsDeleteBody(
@@ -3263,7 +3263,7 @@ public final class Types {
 		public record PostsDeleteResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record PostsLikesParams(
@@ -3279,34 +3279,34 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PostsLikesResponse(
-			@Nullable List<PostsLikesResponseUsers> users,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<PostsLikesResponseUsers> users,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PostsLikesResponseUsers(
-			@JsonProperty("user_id") Double userId,
-			@Nullable String username
+			@JsonProperty("user_id") double userId,
+			String username
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PostsLikeResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PostsUnlikeResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PostsReportReasonsResponse(
-			@Nullable List<String> reasons,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<String> reasons,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record PostsReportBody(
@@ -3319,7 +3319,7 @@ public final class Types {
 		public record PostsReportResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record PostsCommentsGetParams(
@@ -3337,8 +3337,8 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PostsCommentsGetResponse(
-			@Nullable List<JsonNode> comments,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<Resp_PostCommentModel> comments,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record PostsCommentsCreateBody(
@@ -3351,50 +3351,50 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PostsCommentsCreateResponse(
-			@Nullable PostsCommentsCreateResponseComment comment,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			PostsCommentsCreateResponseComment comment,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PostsCommentsCreateResponseCommentLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@Nullable String post,
-			@Nullable String thread,
-			@Nullable String poster,
-			@Nullable String likes,
-			@Nullable String report,
-			@JsonProperty("poster_avatar") @Nullable String posterAvatar
+			String permalink,
+			String detail,
+			String post,
+			String thread,
+			String poster,
+			String likes,
+			String report,
+			@JsonProperty("poster_avatar") String posterAvatar
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PostsCommentsCreateResponseCommentPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode edit,
-			@Nullable JsonNode delete,
-			@Nullable JsonNode reply,
-			@Nullable JsonNode like,
-			@Nullable JsonNode report
+			boolean view,
+			boolean edit,
+			boolean delete,
+			boolean reply,
+			boolean like,
+			boolean report
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PostsCommentsCreateResponseComment(
-			@JsonProperty("post_comment_id") Double postCommentId,
-			@JsonProperty("post_id") Double postId,
-			@JsonProperty("thread_id") Double threadId,
-			@JsonProperty("poster_user_id") Double posterUserId,
-			@JsonProperty("poster_username") @Nullable String posterUsername,
-			@JsonProperty("poster_username_html") @Nullable String posterUsernameHtml,
-			@JsonProperty("post_comment_body") @Nullable String postCommentBody,
-			@JsonProperty("post_comment_body_html") @Nullable String postCommentBodyHtml,
-			@JsonProperty("post_comment_body_plain_text") @Nullable String postCommentBodyPlainText,
-			@JsonProperty("post_comment_like_count") Double postCommentLikeCount,
-			@JsonProperty("user_is_ignored") @Nullable JsonNode userIsIgnored,
-			@JsonProperty("post_comment_is_published") @Nullable JsonNode postCommentIsPublished,
-			@JsonProperty("post_comment_is_deleted") @Nullable JsonNode postCommentIsDeleted,
-			@JsonProperty("post_comment_update_date") Double postCommentUpdateDate,
-			@Nullable PostsCommentsCreateResponseCommentLinks links,
-			@Nullable PostsCommentsCreateResponseCommentPermissions permissions
+			@JsonProperty("post_comment_id") double postCommentId,
+			@JsonProperty("post_id") double postId,
+			@JsonProperty("thread_id") double threadId,
+			@JsonProperty("poster_user_id") double posterUserId,
+			@JsonProperty("poster_username") String posterUsername,
+			@JsonProperty("poster_username_html") String posterUsernameHtml,
+			@JsonProperty("post_comment_body") String postCommentBody,
+			@JsonProperty("post_comment_body_html") String postCommentBodyHtml,
+			@JsonProperty("post_comment_body_plain_text") String postCommentBodyPlainText,
+			@JsonProperty("post_comment_like_count") double postCommentLikeCount,
+			@JsonProperty("user_is_ignored") boolean userIsIgnored,
+			@JsonProperty("post_comment_is_published") boolean postCommentIsPublished,
+			@JsonProperty("post_comment_is_deleted") boolean postCommentIsDeleted,
+			@JsonProperty("post_comment_update_date") double postCommentUpdateDate,
+			PostsCommentsCreateResponseCommentLinks links,
+			PostsCommentsCreateResponseCommentPermissions permissions
 		) {}
 
 		public record PostsCommentsEditBody(
@@ -3407,50 +3407,50 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PostsCommentsEditResponse(
-			@Nullable PostsCommentsEditResponseComment comment,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			PostsCommentsEditResponseComment comment,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PostsCommentsEditResponseCommentLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@Nullable String post,
-			@Nullable String thread,
-			@Nullable String poster,
-			@Nullable String likes,
-			@Nullable String report,
-			@JsonProperty("poster_avatar") @Nullable String posterAvatar
+			String permalink,
+			String detail,
+			String post,
+			String thread,
+			String poster,
+			String likes,
+			String report,
+			@JsonProperty("poster_avatar") String posterAvatar
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PostsCommentsEditResponseCommentPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode edit,
-			@Nullable JsonNode delete,
-			@Nullable JsonNode reply,
-			@Nullable JsonNode like,
-			@Nullable JsonNode report
+			boolean view,
+			boolean edit,
+			boolean delete,
+			boolean reply,
+			boolean like,
+			boolean report
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PostsCommentsEditResponseComment(
-			@JsonProperty("post_comment_id") Double postCommentId,
-			@JsonProperty("post_id") Double postId,
-			@JsonProperty("thread_id") Double threadId,
-			@JsonProperty("poster_user_id") Double posterUserId,
-			@JsonProperty("poster_username") @Nullable String posterUsername,
-			@JsonProperty("poster_username_html") @Nullable String posterUsernameHtml,
-			@JsonProperty("post_comment_body") @Nullable String postCommentBody,
-			@JsonProperty("post_comment_body_html") @Nullable String postCommentBodyHtml,
-			@JsonProperty("post_comment_body_plain_text") @Nullable String postCommentBodyPlainText,
-			@JsonProperty("post_comment_like_count") Double postCommentLikeCount,
-			@JsonProperty("user_is_ignored") @Nullable JsonNode userIsIgnored,
-			@JsonProperty("post_comment_is_published") @Nullable JsonNode postCommentIsPublished,
-			@JsonProperty("post_comment_is_deleted") @Nullable JsonNode postCommentIsDeleted,
-			@JsonProperty("post_comment_update_date") Double postCommentUpdateDate,
-			@Nullable PostsCommentsEditResponseCommentLinks links,
-			@Nullable PostsCommentsEditResponseCommentPermissions permissions
+			@JsonProperty("post_comment_id") double postCommentId,
+			@JsonProperty("post_id") double postId,
+			@JsonProperty("thread_id") double threadId,
+			@JsonProperty("poster_user_id") double posterUserId,
+			@JsonProperty("poster_username") String posterUsername,
+			@JsonProperty("poster_username_html") String posterUsernameHtml,
+			@JsonProperty("post_comment_body") String postCommentBody,
+			@JsonProperty("post_comment_body_html") String postCommentBodyHtml,
+			@JsonProperty("post_comment_body_plain_text") String postCommentBodyPlainText,
+			@JsonProperty("post_comment_like_count") double postCommentLikeCount,
+			@JsonProperty("user_is_ignored") boolean userIsIgnored,
+			@JsonProperty("post_comment_is_published") boolean postCommentIsPublished,
+			@JsonProperty("post_comment_is_deleted") boolean postCommentIsDeleted,
+			@JsonProperty("post_comment_update_date") double postCommentUpdateDate,
+			PostsCommentsEditResponseCommentLinks links,
+			PostsCommentsEditResponseCommentPermissions permissions
 		) {}
 
 		public record PostsCommentsDeleteBody(
@@ -3468,7 +3468,7 @@ public final class Types {
 		public record PostsCommentsDeleteResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record PostsCommentsReportBody(
@@ -3483,7 +3483,7 @@ public final class Types {
 		public record PostsCommentsReportResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 	}
@@ -3510,32 +3510,32 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersListResponse(
-			@Nullable List<JsonNode> users,
-			@JsonProperty("users_total") Double usersTotal,
-			@Nullable UsersListResponseLinks links,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<Resp_UserModel> users,
+			@JsonProperty("users_total") double usersTotal,
+			UsersListResponseLinks links,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersListResponseLinks(
-			Double pages,
-			Double page,
-			@Nullable String next
+			double pages,
+			double page,
+			String next
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersFieldsResponse(
-			@Nullable List<UsersFieldsResponseFields> fields,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<UsersFieldsResponseFields> fields,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersFieldsResponseFields(
-			@Nullable String id,
-			@Nullable String title,
-			@Nullable String description,
-			@Nullable String position,
-			@JsonProperty("is_required") @Nullable JsonNode isRequired
+			String id,
+			String title,
+			String description,
+			String position,
+			@JsonProperty("is_required") boolean isRequired
 		) {}
 
 		public record UsersFindParams(
@@ -3553,8 +3553,8 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersFindResponse(
-			@Nullable List<JsonNode> users,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<Resp_UserModel> users,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record UsersGetParams(
@@ -3568,8 +3568,8 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersGetResponse(
-			@Nullable JsonNode user,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			Resp_UserModel user,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record UsersEditBody(
@@ -3637,7 +3637,7 @@ public final class Types {
 		public record UsersEditResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record UsersClaimsParams(
@@ -3653,44 +3653,44 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersClaimsResponse(
-			@Nullable List<UsersClaimsResponseClaims> claims,
-			@Nullable UsersClaimsResponseStats stats,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<UsersClaimsResponseClaims> claims,
+			UsersClaimsResponseStats stats,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersClaimsResponseClaims(
-			@JsonProperty("thread_id") Double threadId,
-			@JsonProperty("claim_date") Double claimDate,
-			@JsonProperty("claim_state") @Nullable String claimState,
-			@JsonProperty("message_body") @Nullable String messageBody,
-			@JsonProperty("message_body_html") @Nullable String messageBodyHtml,
-			@JsonProperty("message_body_plain_text") @Nullable String messageBodyPlainText,
-			Double amount,
-			@JsonProperty("amount_formatted") @Nullable String amountFormatted,
-			@Nullable JsonNode author
+			@JsonProperty("thread_id") double threadId,
+			@JsonProperty("claim_date") double claimDate,
+			@JsonProperty("claim_state") String claimState,
+			@JsonProperty("message_body") String messageBody,
+			@JsonProperty("message_body_html") String messageBodyHtml,
+			@JsonProperty("message_body_plain_text") String messageBodyPlainText,
+			double amount,
+			@JsonProperty("amount_formatted") String amountFormatted,
+			Resp_UserModel author
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersClaimsResponseStatsMarket(
-			Double total,
-			Double solved,
-			Double settled,
-			Double rejected
+			double total,
+			double solved,
+			double settled,
+			double rejected
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersClaimsResponseStatsNoMarket(
-			Double total,
-			Double solved,
-			Double settled,
-			Double rejected
+			double total,
+			double solved,
+			double settled,
+			double rejected
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersClaimsResponseStats(
-			@Nullable UsersClaimsResponseStatsMarket market,
-			@Nullable UsersClaimsResponseStatsNoMarket noMarket
+			UsersClaimsResponseStatsMarket market,
+			UsersClaimsResponseStatsNoMarket noMarket
 		) {}
 
 		public record UsersAvatarUploadBody(
@@ -3710,16 +3710,16 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersAvatarUploadResponse(
-			@Nullable String status,
-			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersAvatarDeleteResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record UsersAvatarCropBody(
@@ -3737,9 +3737,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersAvatarCropResponse(
-			@Nullable String status,
-			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record UsersBackgroundUploadBody(
@@ -3759,16 +3759,16 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersBackgroundUploadResponse(
-			@Nullable String status,
-			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersBackgroundDeleteResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record UsersBackgroundCropBody(
@@ -3786,9 +3786,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersBackgroundCropResponse(
-			@Nullable String status,
-			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record UsersFollowersParams(
@@ -3806,91 +3806,91 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersFollowersResponse(
-			@Nullable List<UsersFollowersResponseUsers> users,
-			@JsonProperty("users_total") Double usersTotal,
-			@Nullable UsersFollowersResponseLinks links,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<UsersFollowersResponseUsers> users,
+			@JsonProperty("users_total") double usersTotal,
+			UsersFollowersResponseLinks links,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersFollowersResponseUsersLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@Nullable String avatar,
-			@JsonProperty("avatar_big") @Nullable String avatarBig,
-			@JsonProperty("avatar_small") @Nullable String avatarSmall,
-			@Nullable String followers,
-			@Nullable String followings,
-			@Nullable String ignore,
-			@Nullable String timeline
+			String permalink,
+			String detail,
+			String avatar,
+			@JsonProperty("avatar_big") String avatarBig,
+			@JsonProperty("avatar_small") String avatarSmall,
+			String followers,
+			String followings,
+			String ignore,
+			String timeline
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersFollowersResponseUsersPermissions(
-			@Nullable JsonNode edit,
-			@Nullable JsonNode follow,
-			@Nullable JsonNode ignore,
-			@JsonProperty("profile_post") @Nullable JsonNode profilePost
+			boolean edit,
+			boolean follow,
+			boolean ignore,
+			@JsonProperty("profile_post") boolean profilePost
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersFollowersResponseUsersCustomFields(
-			@Nullable String _4,
-			@Nullable String lztInnovation20Link,
-			@Nullable String lztInnovation30Link,
-			@Nullable String lztInnovationLink
+			String _4,
+			String lztInnovation20Link,
+			String lztInnovation30Link,
+			String lztInnovationLink
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersFollowersResponseUsers(
-			@JsonProperty("content_type") @Nullable String contentType,
-			@JsonProperty("content_id") Double contentId,
-			@JsonProperty("follow_date") Double followDate,
-			@JsonProperty("user_id") Double userId,
-			@Nullable String username,
-			@JsonProperty("username_html") @Nullable String usernameHtml,
-			@JsonProperty("user_message_count") Double userMessageCount,
-			@JsonProperty("user_register_date") Double userRegisterDate,
-			@JsonProperty("user_like_count") Double userLikeCount,
-			@JsonProperty("user_like2_count") Double userLike2Count,
-			@JsonProperty("contest_count") Double contestCount,
-			@JsonProperty("trophy_count") Double trophyCount,
-			@JsonProperty("custom_title") @Nullable String customTitle,
-			@JsonProperty("is_banned") Double isBanned,
-			@JsonProperty("user_title") @Nullable String userTitle,
-			@JsonProperty("user_is_valid") @Nullable JsonNode userIsValid,
-			@JsonProperty("user_is_verified") @Nullable JsonNode userIsVerified,
-			@JsonProperty("user_is_followed") @Nullable JsonNode userIsFollowed,
-			@JsonProperty("user_last_seen_date") Double userLastSeenDate,
-			@JsonProperty("user_following_count") Double userFollowingCount,
-			@JsonProperty("user_followers_count") Double userFollowersCount,
-			@Nullable UsersFollowersResponseUsersLinks links,
-			@Nullable UsersFollowersResponseUsersPermissions permissions,
-			@JsonProperty("user_is_ignored") @Nullable JsonNode userIsIgnored,
-			@JsonProperty("user_is_visitor") @Nullable JsonNode userIsVisitor,
-			@JsonProperty("user_group_id") Double userGroupId,
-			@JsonProperty("custom_fields") @Nullable UsersFollowersResponseUsersCustomFields customFields
+			@JsonProperty("content_type") String contentType,
+			@JsonProperty("content_id") double contentId,
+			@JsonProperty("follow_date") double followDate,
+			@JsonProperty("user_id") double userId,
+			String username,
+			@JsonProperty("username_html") String usernameHtml,
+			@JsonProperty("user_message_count") double userMessageCount,
+			@JsonProperty("user_register_date") double userRegisterDate,
+			@JsonProperty("user_like_count") double userLikeCount,
+			@JsonProperty("user_like2_count") double userLike2Count,
+			@JsonProperty("contest_count") double contestCount,
+			@JsonProperty("trophy_count") double trophyCount,
+			@JsonProperty("custom_title") String customTitle,
+			@JsonProperty("is_banned") double isBanned,
+			@JsonProperty("user_title") String userTitle,
+			@JsonProperty("user_is_valid") boolean userIsValid,
+			@JsonProperty("user_is_verified") boolean userIsVerified,
+			@JsonProperty("user_is_followed") boolean userIsFollowed,
+			@JsonProperty("user_last_seen_date") double userLastSeenDate,
+			@JsonProperty("user_following_count") double userFollowingCount,
+			@JsonProperty("user_followers_count") double userFollowersCount,
+			UsersFollowersResponseUsersLinks links,
+			UsersFollowersResponseUsersPermissions permissions,
+			@JsonProperty("user_is_ignored") boolean userIsIgnored,
+			@JsonProperty("user_is_visitor") boolean userIsVisitor,
+			@JsonProperty("user_group_id") double userGroupId,
+			@JsonProperty("custom_fields") UsersFollowersResponseUsersCustomFields customFields
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersFollowersResponseLinks(
-			Double pages,
-			Double page,
-			@Nullable String next
+			double pages,
+			double page,
+			String next
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersFollowResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersUnfollowResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record UsersFollowingsParams(
@@ -3908,87 +3908,87 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersFollowingsResponse(
-			@Nullable List<UsersFollowingsResponseUsers> users,
-			@JsonProperty("users_total") Double usersTotal,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<UsersFollowingsResponseUsers> users,
+			@JsonProperty("users_total") double usersTotal,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersFollowingsResponseUsersLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@Nullable String avatar,
-			@JsonProperty("avatar_big") @Nullable String avatarBig,
-			@JsonProperty("avatar_small") @Nullable String avatarSmall,
-			@Nullable String followers,
-			@Nullable String followings,
-			@Nullable String ignore,
-			@Nullable String timeline
+			String permalink,
+			String detail,
+			String avatar,
+			@JsonProperty("avatar_big") String avatarBig,
+			@JsonProperty("avatar_small") String avatarSmall,
+			String followers,
+			String followings,
+			String ignore,
+			String timeline
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersFollowingsResponseUsersPermissions(
-			@Nullable JsonNode edit,
-			@Nullable JsonNode follow,
-			@Nullable JsonNode ignore,
-			@JsonProperty("profile_post") @Nullable JsonNode profilePost
+			boolean edit,
+			boolean follow,
+			boolean ignore,
+			@JsonProperty("profile_post") boolean profilePost
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersFollowingsResponseUsersCustomFields(
-			@Nullable String _4,
-			@Nullable List<JsonNode> allowSelfUnban,
-			@Nullable String discord,
-			@Nullable String github,
-			@Nullable String jabber,
-			@Nullable String lztAwardUserTrophy,
-			@Nullable String lztCuratorNodeTitle,
-			@Nullable String lztCuratorNodeTitleEn,
-			@Nullable String lztDeposit,
-			@Nullable String lztInnovation20Link,
-			@Nullable String lztInnovation30Link,
-			@Nullable String lztInnovationLink,
-			@Nullable String lztLikesIncreasing,
-			@Nullable String lztLikesZeroing,
-			@Nullable String lztSympathyIncreasing,
-			@Nullable String lztSympathyZeroing,
-			@Nullable String maecenasValue,
-			@Nullable String scamURL,
-			@Nullable String steam,
-			@Nullable String telegram,
-			@Nullable String vk
+			String _4,
+			List<JsonNode> allowSelfUnban,
+			String discord,
+			String github,
+			String jabber,
+			String lztAwardUserTrophy,
+			String lztCuratorNodeTitle,
+			String lztCuratorNodeTitleEn,
+			String lztDeposit,
+			String lztInnovation20Link,
+			String lztInnovation30Link,
+			String lztInnovationLink,
+			String lztLikesIncreasing,
+			String lztLikesZeroing,
+			String lztSympathyIncreasing,
+			String lztSympathyZeroing,
+			String maecenasValue,
+			String scamURL,
+			String steam,
+			String telegram,
+			String vk
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersFollowingsResponseUsers(
-			@JsonProperty("content_type") @Nullable String contentType,
-			@JsonProperty("content_id") Double contentId,
-			@JsonProperty("follow_date") Double followDate,
-			@JsonProperty("user_id") Double userId,
-			@Nullable String username,
-			@JsonProperty("username_html") @Nullable String usernameHtml,
-			@JsonProperty("user_message_count") Double userMessageCount,
-			@JsonProperty("user_register_date") Double userRegisterDate,
-			@JsonProperty("user_like_count") Double userLikeCount,
-			@JsonProperty("user_like2_count") Double userLike2Count,
-			@JsonProperty("contest_count") Double contestCount,
-			@JsonProperty("trophy_count") Double trophyCount,
-			@JsonProperty("short_link") @Nullable String shortLink,
-			@JsonProperty("custom_title") @Nullable String customTitle,
-			@JsonProperty("is_banned") Double isBanned,
-			@JsonProperty("user_title") @Nullable String userTitle,
-			@JsonProperty("user_is_valid") @Nullable JsonNode userIsValid,
-			@JsonProperty("user_is_verified") @Nullable JsonNode userIsVerified,
-			@JsonProperty("user_is_followed") @Nullable JsonNode userIsFollowed,
-			@JsonProperty("user_last_seen_date") Double userLastSeenDate,
-			@JsonProperty("user_following_count") Double userFollowingCount,
-			@JsonProperty("user_followers_count") Double userFollowersCount,
-			@Nullable UsersFollowingsResponseUsersLinks links,
-			@Nullable UsersFollowingsResponseUsersPermissions permissions,
-			@JsonProperty("user_is_ignored") @Nullable JsonNode userIsIgnored,
-			@JsonProperty("user_is_visitor") @Nullable JsonNode userIsVisitor,
-			@JsonProperty("user_group_id") Double userGroupId,
-			@JsonProperty("custom_fields") @Nullable UsersFollowingsResponseUsersCustomFields customFields
+			@JsonProperty("content_type") String contentType,
+			@JsonProperty("content_id") double contentId,
+			@JsonProperty("follow_date") double followDate,
+			@JsonProperty("user_id") double userId,
+			String username,
+			@JsonProperty("username_html") String usernameHtml,
+			@JsonProperty("user_message_count") double userMessageCount,
+			@JsonProperty("user_register_date") double userRegisterDate,
+			@JsonProperty("user_like_count") double userLikeCount,
+			@JsonProperty("user_like2_count") double userLike2Count,
+			@JsonProperty("contest_count") double contestCount,
+			@JsonProperty("trophy_count") double trophyCount,
+			@JsonProperty("short_link") String shortLink,
+			@JsonProperty("custom_title") String customTitle,
+			@JsonProperty("is_banned") double isBanned,
+			@JsonProperty("user_title") String userTitle,
+			@JsonProperty("user_is_valid") boolean userIsValid,
+			@JsonProperty("user_is_verified") boolean userIsVerified,
+			@JsonProperty("user_is_followed") boolean userIsFollowed,
+			@JsonProperty("user_last_seen_date") double userLastSeenDate,
+			@JsonProperty("user_following_count") double userFollowingCount,
+			@JsonProperty("user_followers_count") double userFollowersCount,
+			UsersFollowingsResponseUsersLinks links,
+			UsersFollowingsResponseUsersPermissions permissions,
+			@JsonProperty("user_is_ignored") boolean userIsIgnored,
+			@JsonProperty("user_is_visitor") boolean userIsVisitor,
+			@JsonProperty("user_group_id") double userGroupId,
+			@JsonProperty("custom_fields") UsersFollowingsResponseUsersCustomFields customFields
 		) {}
 
 		public record UsersLikesParams(
@@ -4014,12 +4014,12 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersLikesResponse(
-			Double page,
-			Double perPage,
-			@Nullable String contentType,
-			Double totalLikes,
-			@Nullable JsonNode likes,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			double page,
+			double perPage,
+			String contentType,
+			double totalLikes,
+			JsonNode likes,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record UsersIgnoredParams(
@@ -4033,92 +4033,92 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersIgnoredResponse(
-			@Nullable List<UsersIgnoredResponseUsers> users,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<UsersIgnoredResponseUsers> users,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersIgnoredResponseUsersCustomFields(
-			@Nullable String _4,
-			@Nullable JsonNode scamURL,
-			@Nullable JsonNode lztLikesZeroing,
-			@Nullable JsonNode lztLikesIncreasing,
-			@Nullable JsonNode lztSympathyZeroing,
-			@Nullable JsonNode lztSympathyIncreasing,
-			@Nullable JsonNode telegram,
-			@Nullable String vk,
-			@Nullable String discord,
-			@Nullable String steam,
-			@Nullable JsonNode matrix,
-			@Nullable String jabber,
-			@Nullable String github
+			String _4,
+			JsonNode scamURL,
+			JsonNode lztLikesZeroing,
+			JsonNode lztLikesIncreasing,
+			JsonNode lztSympathyZeroing,
+			JsonNode lztSympathyIncreasing,
+			JsonNode telegram,
+			String vk,
+			String discord,
+			String steam,
+			JsonNode matrix,
+			String jabber,
+			String github
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersIgnoredResponseUsersIgnoredInfo(
-			@JsonProperty("ignore_content") Double ignoreContent,
-			@JsonProperty("ignore_conversations") Double ignoreConversations,
-			@JsonProperty("restrict_view_profile") Double restrictViewProfile
+			@JsonProperty("ignore_content") double ignoreContent,
+			@JsonProperty("ignore_conversations") double ignoreConversations,
+			@JsonProperty("restrict_view_profile") double restrictViewProfile
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersIgnoredResponseUsersRenderedAvatars(
-			@Nullable String l,
-			@Nullable String m,
-			@Nullable String s
+			String l,
+			String m,
+			String s
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersIgnoredResponseUsersRendered(
-			@Nullable String username,
-			@Nullable UsersIgnoredResponseUsersRenderedAvatars avatars,
-			@Nullable List<JsonNode> backgrounds,
-			@Nullable String link
+			String username,
+			UsersIgnoredResponseUsersRenderedAvatars avatars,
+			List<JsonNode> backgrounds,
+			String link
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersIgnoredResponseUsers(
-			@JsonProperty("can_edit") @Nullable JsonNode canEdit,
-			@JsonProperty("can_follow") @Nullable JsonNode canFollow,
-			@JsonProperty("can_ignore") @Nullable JsonNode canIgnore,
-			@JsonProperty("can_post_profile") @Nullable JsonNode canPostProfile,
-			@JsonProperty("can_view_profile") @Nullable JsonNode canViewProfile,
-			@JsonProperty("can_view_profile_posts") @Nullable JsonNode canViewProfilePosts,
-			@JsonProperty("can_warn") @Nullable JsonNode canWarn,
-			@JsonProperty("contest_count") Double contestCount,
-			@JsonProperty("conv_welcome_message") @Nullable String convWelcomeMessage,
-			Double convertedDeposit,
-			@JsonProperty("custom_fields") @Nullable UsersIgnoredResponseUsersCustomFields customFields,
-			Double deposit,
-			@Nullable String homepage,
-			@JsonProperty("ignored_info") @Nullable UsersIgnoredResponseUsersIgnoredInfo ignoredInfo,
-			@JsonProperty("is_admin") @Nullable JsonNode isAdmin,
-			@JsonProperty("is_banned") @Nullable JsonNode isBanned,
-			@JsonProperty("is_followed") @Nullable JsonNode isFollowed,
-			@JsonProperty("is_ignored") @Nullable JsonNode isIgnored,
-			@JsonProperty("is_moderator") @Nullable JsonNode isModerator,
-			@JsonProperty("is_staff") @Nullable JsonNode isStaff,
-			@JsonProperty("last_activity") Double lastActivity,
-			@JsonProperty("like2_count") Double like2Count,
-			@JsonProperty("like_count") Double likeCount,
-			@Nullable String location,
-			@JsonProperty("message_count") Double messageCount,
-			@JsonProperty("register_date") Double registerDate,
-			@Nullable UsersIgnoredResponseUsersRendered rendered,
-			@JsonProperty("short_link") @Nullable String shortLink,
-			@JsonProperty("trophy_points") Double trophyPoints,
-			@JsonProperty("user_id") Double userId,
-			@JsonProperty("user_title") @Nullable String userTitle,
-			@Nullable String username,
-			@JsonProperty("view_url") @Nullable String viewUrl,
-			@JsonProperty("warning_points") Double warningPoints
+			@JsonProperty("can_edit") boolean canEdit,
+			@JsonProperty("can_follow") boolean canFollow,
+			@JsonProperty("can_ignore") boolean canIgnore,
+			@JsonProperty("can_post_profile") boolean canPostProfile,
+			@JsonProperty("can_view_profile") boolean canViewProfile,
+			@JsonProperty("can_view_profile_posts") boolean canViewProfilePosts,
+			@JsonProperty("can_warn") boolean canWarn,
+			@JsonProperty("contest_count") double contestCount,
+			@JsonProperty("conv_welcome_message") String convWelcomeMessage,
+			double convertedDeposit,
+			@JsonProperty("custom_fields") UsersIgnoredResponseUsersCustomFields customFields,
+			double deposit,
+			String homepage,
+			@JsonProperty("ignored_info") UsersIgnoredResponseUsersIgnoredInfo ignoredInfo,
+			@JsonProperty("is_admin") boolean isAdmin,
+			@JsonProperty("is_banned") boolean isBanned,
+			@JsonProperty("is_followed") boolean isFollowed,
+			@JsonProperty("is_ignored") boolean isIgnored,
+			@JsonProperty("is_moderator") boolean isModerator,
+			@JsonProperty("is_staff") boolean isStaff,
+			@JsonProperty("last_activity") double lastActivity,
+			@JsonProperty("like2_count") double like2Count,
+			@JsonProperty("like_count") double likeCount,
+			String location,
+			@JsonProperty("message_count") double messageCount,
+			@JsonProperty("register_date") double registerDate,
+			UsersIgnoredResponseUsersRendered rendered,
+			@JsonProperty("short_link") String shortLink,
+			@JsonProperty("trophy_points") double trophyPoints,
+			@JsonProperty("user_id") double userId,
+			@JsonProperty("user_title") String userTitle,
+			String username,
+			@JsonProperty("view_url") String viewUrl,
+			@JsonProperty("warning_points") double warningPoints
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersIgnoreResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record UsersIgnoreEditParams(
@@ -4138,14 +4138,14 @@ public final class Types {
 		public record UsersIgnoreEditResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersUnignoreResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record UsersContentsParams(
@@ -4161,165 +4161,165 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersContentsResponse(
-			@Nullable List<UsersContentsResponseData> data,
-			@JsonProperty("data_total") Double dataTotal,
-			@Nullable JsonNode user,
-			@Nullable UsersContentsResponseLinks links,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<UsersContentsResponseData> data,
+			@JsonProperty("data_total") double dataTotal,
+			Resp_UserModel user,
+			UsersContentsResponseLinks links,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersContentsResponseDataLikeUsers(
-			@JsonProperty("user_id") Double userId,
-			@Nullable String username,
-			@JsonProperty("display_style_group_id") Double displayStyleGroupId,
-			@JsonProperty("is_banned") Double isBanned,
-			@JsonProperty("uniq_username_css") @Nullable String uniqUsernameCss
+			@JsonProperty("user_id") double userId,
+			String username,
+			@JsonProperty("display_style_group_id") double displayStyleGroupId,
+			@JsonProperty("is_banned") double isBanned,
+			@JsonProperty("uniq_username_css") String uniqUsernameCss
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersContentsResponseDataLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@Nullable String thread,
-			@Nullable String poster,
-			@Nullable String likes,
-			@Nullable String report,
-			@Nullable String attachments,
-			@JsonProperty("poster_avatar") @Nullable String posterAvatar
+			String permalink,
+			String detail,
+			String thread,
+			String poster,
+			String likes,
+			String report,
+			String attachments,
+			@JsonProperty("poster_avatar") String posterAvatar
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersContentsResponseDataPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode edit,
-			@Nullable JsonNode delete,
-			@Nullable JsonNode reply,
-			@Nullable JsonNode like,
-			@Nullable JsonNode report,
-			@JsonProperty("upload_attachment") @Nullable JsonNode uploadAttachment
+			boolean view,
+			boolean edit,
+			boolean delete,
+			boolean reply,
+			boolean like,
+			boolean report,
+			@JsonProperty("upload_attachment") boolean uploadAttachment
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersContentsResponseDataThreadLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@Nullable String followers,
-			@Nullable String forum,
-			@Nullable String posts,
-			@JsonProperty("first_poster") @Nullable String firstPoster,
-			@JsonProperty("first_poster_avatar") @Nullable String firstPosterAvatar,
-			@JsonProperty("first_post") @Nullable String firstPost,
-			@JsonProperty("last_poster") @Nullable String lastPoster,
-			@JsonProperty("last_post") @Nullable String lastPost
+			String permalink,
+			String detail,
+			String followers,
+			String forum,
+			String posts,
+			@JsonProperty("first_poster") String firstPoster,
+			@JsonProperty("first_poster_avatar") String firstPosterAvatar,
+			@JsonProperty("first_post") String firstPost,
+			@JsonProperty("last_poster") String lastPoster,
+			@JsonProperty("last_post") String lastPost
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersContentsResponseDataThreadPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode delete,
-			@Nullable JsonNode follow,
-			@Nullable JsonNode post,
-			@JsonProperty("upload_attachment") @Nullable JsonNode uploadAttachment
+			boolean view,
+			boolean delete,
+			boolean follow,
+			boolean post,
+			@JsonProperty("upload_attachment") boolean uploadAttachment
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersContentsResponseDataThread(
-			@JsonProperty("thread_id") Double threadId,
-			@JsonProperty("forum_id") Double forumId,
-			@JsonProperty("thread_title") @Nullable String threadTitle,
-			@JsonProperty("thread_view_count") Double threadViewCount,
-			@JsonProperty("creator_user_id") Double creatorUserId,
-			@JsonProperty("creator_username") @Nullable String creatorUsername,
-			@JsonProperty("creator_username_html") @Nullable String creatorUsernameHtml,
-			@JsonProperty("thread_create_date") Double threadCreateDate,
-			@JsonProperty("thread_update_date") Double threadUpdateDate,
-			@JsonProperty("user_is_ignored") @Nullable JsonNode userIsIgnored,
-			@JsonProperty("thread_post_count") Double threadPostCount,
-			@JsonProperty("thread_is_published") @Nullable JsonNode threadIsPublished,
-			@JsonProperty("thread_is_deleted") @Nullable JsonNode threadIsDeleted,
-			@JsonProperty("thread_is_sticky") @Nullable JsonNode threadIsSticky,
-			@JsonProperty("thread_is_followed") @Nullable JsonNode threadIsFollowed,
-			@JsonProperty("thread_prefixes") @Nullable List<JsonNode> threadPrefixes,
-			@JsonProperty("thread_tags") @Nullable List<JsonNode> threadTags,
-			@Nullable UsersContentsResponseDataThreadLinks links,
-			@Nullable UsersContentsResponseDataThreadPermissions permissions
+			@JsonProperty("thread_id") double threadId,
+			@JsonProperty("forum_id") double forumId,
+			@JsonProperty("thread_title") String threadTitle,
+			@JsonProperty("thread_view_count") double threadViewCount,
+			@JsonProperty("creator_user_id") double creatorUserId,
+			@JsonProperty("creator_username") String creatorUsername,
+			@JsonProperty("creator_username_html") String creatorUsernameHtml,
+			@JsonProperty("thread_create_date") double threadCreateDate,
+			@JsonProperty("thread_update_date") double threadUpdateDate,
+			@JsonProperty("user_is_ignored") boolean userIsIgnored,
+			@JsonProperty("thread_post_count") double threadPostCount,
+			@JsonProperty("thread_is_published") boolean threadIsPublished,
+			@JsonProperty("thread_is_deleted") boolean threadIsDeleted,
+			@JsonProperty("thread_is_sticky") boolean threadIsSticky,
+			@JsonProperty("thread_is_followed") boolean threadIsFollowed,
+			@JsonProperty("thread_prefixes") List<JsonNode> threadPrefixes,
+			@JsonProperty("thread_tags") List<JsonNode> threadTags,
+			UsersContentsResponseDataThreadLinks links,
+			UsersContentsResponseDataThreadPermissions permissions
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersContentsResponseData(
-			@JsonProperty("content_type") @Nullable String contentType,
-			@JsonProperty("content_id") Double contentId,
-			@JsonProperty("post_id") Double postId,
-			@JsonProperty("thread_id") Double threadId,
-			@JsonProperty("poster_user_id") Double posterUserId,
-			@JsonProperty("poster_username") @Nullable String posterUsername,
-			@JsonProperty("poster_username_html") @Nullable String posterUsernameHtml,
-			@JsonProperty("post_create_date") Double postCreateDate,
-			@JsonProperty("post_body") @Nullable String postBody,
-			@JsonProperty("post_body_html") @Nullable String postBodyHtml,
-			@JsonProperty("post_body_plain_text") @Nullable String postBodyPlainText,
-			@Nullable String signature,
-			@JsonProperty("signature_html") @Nullable String signatureHtml,
-			@JsonProperty("signature_plain_text") @Nullable String signaturePlainText,
-			@JsonProperty("post_like_count") Double postLikeCount,
-			@JsonProperty("post_attachment_count") Double postAttachmentCount,
-			@JsonProperty("like_users") @Nullable List<UsersContentsResponseDataLikeUsers> likeUsers,
-			@JsonProperty("user_is_ignored") @Nullable JsonNode userIsIgnored,
-			@JsonProperty("post_is_published") @Nullable JsonNode postIsPublished,
-			@JsonProperty("post_is_deleted") @Nullable JsonNode postIsDeleted,
-			@JsonProperty("post_update_date") Double postUpdateDate,
-			@JsonProperty("post_is_first_post") @Nullable JsonNode postIsFirstPost,
-			@Nullable UsersContentsResponseDataLinks links,
-			@Nullable UsersContentsResponseDataPermissions permissions,
-			@Nullable UsersContentsResponseDataThread thread
+			@JsonProperty("content_type") String contentType,
+			@JsonProperty("content_id") double contentId,
+			@JsonProperty("post_id") double postId,
+			@JsonProperty("thread_id") double threadId,
+			@JsonProperty("poster_user_id") double posterUserId,
+			@JsonProperty("poster_username") String posterUsername,
+			@JsonProperty("poster_username_html") String posterUsernameHtml,
+			@JsonProperty("post_create_date") double postCreateDate,
+			@JsonProperty("post_body") String postBody,
+			@JsonProperty("post_body_html") String postBodyHtml,
+			@JsonProperty("post_body_plain_text") String postBodyPlainText,
+			String signature,
+			@JsonProperty("signature_html") String signatureHtml,
+			@JsonProperty("signature_plain_text") String signaturePlainText,
+			@JsonProperty("post_like_count") double postLikeCount,
+			@JsonProperty("post_attachment_count") double postAttachmentCount,
+			@JsonProperty("like_users") List<UsersContentsResponseDataLikeUsers> likeUsers,
+			@JsonProperty("user_is_ignored") boolean userIsIgnored,
+			@JsonProperty("post_is_published") boolean postIsPublished,
+			@JsonProperty("post_is_deleted") boolean postIsDeleted,
+			@JsonProperty("post_update_date") double postUpdateDate,
+			@JsonProperty("post_is_first_post") boolean postIsFirstPost,
+			UsersContentsResponseDataLinks links,
+			UsersContentsResponseDataPermissions permissions,
+			UsersContentsResponseDataThread thread
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersContentsResponseLinks(
-			Double pages,
-			Double page,
-			@Nullable String next
+			double pages,
+			double page,
+			String next
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersTrophiesResponse(
-			@Nullable List<UsersTrophiesResponseTrophies> trophies,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<UsersTrophiesResponseTrophies> trophies,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersTrophiesResponseTrophies(
-			@JsonProperty("trophy_id") Double trophyId,
-			@Nullable String title,
-			@Nullable String description,
-			@JsonProperty("trophy_url") @Nullable String trophyUrl
+			@JsonProperty("trophy_id") double trophyId,
+			String title,
+			String description,
+			@JsonProperty("trophy_url") String trophyUrl
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersSecretAnswerTypesResponse(
-			@Nullable List<UsersSecretAnswerTypesResponseData> data,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<UsersSecretAnswerTypesResponseData> data,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersSecretAnswerTypesResponseData(
-			@JsonProperty("sa_id") Double saId,
-			@Nullable String renderedPhrase
+			@JsonProperty("sa_id") double saId,
+			String renderedPhrase
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersSaResetResponse(
-			@Nullable JsonNode success,
-			@JsonProperty("waiting_time") @Nullable String waitingTime,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			boolean success,
+			@JsonProperty("waiting_time") String waitingTime,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UsersSaCancelResetResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 	}
@@ -4348,24 +4348,24 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfilePostsListResponse(
-			@JsonProperty("profile_posts") @Nullable List<JsonNode> profilePosts,
-			Double totalProfilePosts,
-			@Nullable JsonNode canPostOnProfile,
-			@Nullable ProfilePostsListResponseLinks links,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("profile_posts") List<Resp_ProfilePostModel> profilePosts,
+			double totalProfilePosts,
+			boolean canPostOnProfile,
+			ProfilePostsListResponseLinks links,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfilePostsListResponseLinks(
-			Double pages,
-			Double page,
-			@Nullable String next
+			double pages,
+			double page,
+			String next
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfilePostsGetResponse(
-			@JsonProperty("profile_post") @Nullable JsonNode profilePost,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("profile_post") Resp_ProfilePostModel profilePost,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record ProfilePostsEditBody(
@@ -4381,50 +4381,50 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfilePostsEditResponse(
-			@JsonProperty("profile_post") @Nullable ProfilePostsEditResponseProfilePost profilePost,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("profile_post") ProfilePostsEditResponseProfilePost profilePost,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfilePostsEditResponseProfilePostLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@Nullable String timeline,
-			@JsonProperty("timeline_user") @Nullable String timelineUser,
-			@Nullable String poster,
-			@Nullable String likes,
-			@Nullable String comments,
-			@Nullable String report,
-			@JsonProperty("poster_avatar") @Nullable String posterAvatar
+			String permalink,
+			String detail,
+			String timeline,
+			@JsonProperty("timeline_user") String timelineUser,
+			String poster,
+			String likes,
+			String comments,
+			String report,
+			@JsonProperty("poster_avatar") String posterAvatar
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfilePostsEditResponseProfilePostPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode edit,
-			@Nullable JsonNode delete,
-			@Nullable JsonNode like,
-			@Nullable JsonNode comment,
-			@Nullable JsonNode report
+			boolean view,
+			boolean edit,
+			boolean delete,
+			boolean like,
+			boolean comment,
+			boolean report
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfilePostsEditResponseProfilePost(
-			@JsonProperty("profile_post_id") Double profilePostId,
-			@JsonProperty("timeline_user_id") Double timelineUserId,
-			@JsonProperty("poster_user_id") Double posterUserId,
-			@JsonProperty("poster_username") @Nullable String posterUsername,
-			@JsonProperty("poster_username_html") @Nullable String posterUsernameHtml,
-			@JsonProperty("post_create_date") Double postCreateDate,
-			@JsonProperty("post_body") @Nullable String postBody,
-			@JsonProperty("post_like_count") Double postLikeCount,
-			@JsonProperty("post_comment_count") Double postCommentCount,
-			@JsonProperty("timeline_username") @Nullable String timelineUsername,
-			@JsonProperty("user_is_ignored") @Nullable JsonNode userIsIgnored,
-			@JsonProperty("post_is_published") @Nullable JsonNode postIsPublished,
-			@JsonProperty("post_is_deleted") @Nullable JsonNode postIsDeleted,
-			@Nullable ProfilePostsEditResponseProfilePostLinks links,
-			@Nullable ProfilePostsEditResponseProfilePostPermissions permissions
+			@JsonProperty("profile_post_id") double profilePostId,
+			@JsonProperty("timeline_user_id") double timelineUserId,
+			@JsonProperty("poster_user_id") double posterUserId,
+			@JsonProperty("poster_username") String posterUsername,
+			@JsonProperty("poster_username_html") String posterUsernameHtml,
+			@JsonProperty("post_create_date") double postCreateDate,
+			@JsonProperty("post_body") String postBody,
+			@JsonProperty("post_like_count") double postLikeCount,
+			@JsonProperty("post_comment_count") double postCommentCount,
+			@JsonProperty("timeline_username") String timelineUsername,
+			@JsonProperty("user_is_ignored") boolean userIsIgnored,
+			@JsonProperty("post_is_published") boolean postIsPublished,
+			@JsonProperty("post_is_deleted") boolean postIsDeleted,
+			ProfilePostsEditResponseProfilePostLinks links,
+			ProfilePostsEditResponseProfilePostPermissions permissions
 		) {}
 
 		public record ProfilePostsDeleteParams(
@@ -4440,13 +4440,13 @@ public final class Types {
 		public record ProfilePostsDeleteResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfilePostsReportReasonsResponse(
-			@Nullable List<String> reasons,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<String> reasons,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record ProfilePostsReportBody(
@@ -4459,7 +4459,7 @@ public final class Types {
 		public record ProfilePostsReportResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record ProfilePostsCreateBody(
@@ -4471,90 +4471,90 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfilePostsCreateResponse(
-			@JsonProperty("profile_post") @Nullable ProfilePostsCreateResponseProfilePost profilePost,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("profile_post") ProfilePostsCreateResponseProfilePost profilePost,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfilePostsCreateResponseProfilePostLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@Nullable String timeline,
-			@JsonProperty("timeline_user") @Nullable String timelineUser,
-			@Nullable String poster,
-			@Nullable String likes,
-			@Nullable String comments,
-			@Nullable String report,
-			@JsonProperty("poster_avatar") @Nullable String posterAvatar
+			String permalink,
+			String detail,
+			String timeline,
+			@JsonProperty("timeline_user") String timelineUser,
+			String poster,
+			String likes,
+			String comments,
+			String report,
+			@JsonProperty("poster_avatar") String posterAvatar
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfilePostsCreateResponseProfilePostPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode edit,
-			@Nullable JsonNode delete,
-			@Nullable JsonNode like,
-			@Nullable JsonNode comment,
-			@Nullable JsonNode report
+			boolean view,
+			boolean edit,
+			boolean delete,
+			boolean like,
+			boolean comment,
+			boolean report
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfilePostsCreateResponseProfilePost(
-			@JsonProperty("profile_post_id") Double profilePostId,
-			@JsonProperty("timeline_user_id") Double timelineUserId,
-			@JsonProperty("poster_user_id") Double posterUserId,
-			@JsonProperty("poster_username") @Nullable String posterUsername,
-			@JsonProperty("poster_username_html") @Nullable String posterUsernameHtml,
-			@JsonProperty("post_create_date") Double postCreateDate,
-			@JsonProperty("post_body") @Nullable String postBody,
-			@JsonProperty("post_like_count") Double postLikeCount,
-			@JsonProperty("post_comment_count") Double postCommentCount,
-			@JsonProperty("timeline_username") @Nullable String timelineUsername,
-			@JsonProperty("user_is_ignored") @Nullable JsonNode userIsIgnored,
-			@JsonProperty("post_is_published") @Nullable JsonNode postIsPublished,
-			@JsonProperty("post_is_deleted") @Nullable JsonNode postIsDeleted,
-			@Nullable ProfilePostsCreateResponseProfilePostLinks links,
-			@Nullable ProfilePostsCreateResponseProfilePostPermissions permissions
+			@JsonProperty("profile_post_id") double profilePostId,
+			@JsonProperty("timeline_user_id") double timelineUserId,
+			@JsonProperty("poster_user_id") double posterUserId,
+			@JsonProperty("poster_username") String posterUsername,
+			@JsonProperty("poster_username_html") String posterUsernameHtml,
+			@JsonProperty("post_create_date") double postCreateDate,
+			@JsonProperty("post_body") String postBody,
+			@JsonProperty("post_like_count") double postLikeCount,
+			@JsonProperty("post_comment_count") double postCommentCount,
+			@JsonProperty("timeline_username") String timelineUsername,
+			@JsonProperty("user_is_ignored") boolean userIsIgnored,
+			@JsonProperty("post_is_published") boolean postIsPublished,
+			@JsonProperty("post_is_deleted") boolean postIsDeleted,
+			ProfilePostsCreateResponseProfilePostLinks links,
+			ProfilePostsCreateResponseProfilePostPermissions permissions
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfilePostsStickResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfilePostsUnstickResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfilePostsLikesResponse(
-			@Nullable List<ProfilePostsLikesResponseUsers> users,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<ProfilePostsLikesResponseUsers> users,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfilePostsLikesResponseUsers(
-			@JsonProperty("user_id") Double userId,
-			@Nullable String username
+			@JsonProperty("user_id") double userId,
+			String username
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfilePostsLikeResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfilePostsUnlikeResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record ProfilePostsCommentsListParams(
@@ -4572,53 +4572,53 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfilePostsCommentsListResponse(
-			@Nullable List<JsonNode> comments,
-			@JsonProperty("comments_total") Double commentsTotal,
-			@JsonProperty("profile_post") @Nullable ProfilePostsCommentsListResponseProfilePost profilePost,
-			@JsonProperty("timeline_user") @Nullable JsonNode timelineUser,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<Resp_ProfilePostCommentModel> comments,
+			@JsonProperty("comments_total") double commentsTotal,
+			@JsonProperty("profile_post") ProfilePostsCommentsListResponseProfilePost profilePost,
+			@JsonProperty("timeline_user") Resp_UserModel timelineUser,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfilePostsCommentsListResponseProfilePostLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@Nullable String timeline,
-			@JsonProperty("timeline_user") @Nullable String timelineUser,
-			@Nullable String poster,
-			@Nullable String likes,
-			@Nullable String comments,
-			@Nullable String report,
-			@JsonProperty("poster_avatar") @Nullable String posterAvatar
+			String permalink,
+			String detail,
+			String timeline,
+			@JsonProperty("timeline_user") String timelineUser,
+			String poster,
+			String likes,
+			String comments,
+			String report,
+			@JsonProperty("poster_avatar") String posterAvatar
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfilePostsCommentsListResponseProfilePostPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode edit,
-			@Nullable JsonNode delete,
-			@Nullable JsonNode like,
-			@Nullable JsonNode comment,
-			@Nullable JsonNode report
+			boolean view,
+			boolean edit,
+			boolean delete,
+			boolean like,
+			boolean comment,
+			boolean report
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfilePostsCommentsListResponseProfilePost(
-			@JsonProperty("profile_post_id") Double profilePostId,
-			@JsonProperty("timeline_user_id") Double timelineUserId,
-			@JsonProperty("poster_user_id") Double posterUserId,
-			@JsonProperty("poster_username") @Nullable String posterUsername,
-			@JsonProperty("poster_username_html") @Nullable String posterUsernameHtml,
-			@JsonProperty("post_create_date") Double postCreateDate,
-			@JsonProperty("post_body") @Nullable String postBody,
-			@JsonProperty("post_like_count") Double postLikeCount,
-			@JsonProperty("post_comment_count") Double postCommentCount,
-			@JsonProperty("timeline_username") @Nullable String timelineUsername,
-			@JsonProperty("user_is_ignored") @Nullable JsonNode userIsIgnored,
-			@JsonProperty("post_is_published") @Nullable JsonNode postIsPublished,
-			@JsonProperty("post_is_deleted") @Nullable JsonNode postIsDeleted,
-			@Nullable ProfilePostsCommentsListResponseProfilePostLinks links,
-			@Nullable ProfilePostsCommentsListResponseProfilePostPermissions permissions
+			@JsonProperty("profile_post_id") double profilePostId,
+			@JsonProperty("timeline_user_id") double timelineUserId,
+			@JsonProperty("poster_user_id") double posterUserId,
+			@JsonProperty("poster_username") String posterUsername,
+			@JsonProperty("poster_username_html") String posterUsernameHtml,
+			@JsonProperty("post_create_date") double postCreateDate,
+			@JsonProperty("post_body") String postBody,
+			@JsonProperty("post_like_count") double postLikeCount,
+			@JsonProperty("post_comment_count") double postCommentCount,
+			@JsonProperty("timeline_username") String timelineUsername,
+			@JsonProperty("user_is_ignored") boolean userIsIgnored,
+			@JsonProperty("post_is_published") boolean postIsPublished,
+			@JsonProperty("post_is_deleted") boolean postIsDeleted,
+			ProfilePostsCommentsListResponseProfilePostLinks links,
+			ProfilePostsCommentsListResponseProfilePostPermissions permissions
 		) {}
 
 		public record ProfilePostsCommentsCreateBody(
@@ -4631,39 +4631,39 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfilePostsCommentsCreateResponse(
-			@Nullable ProfilePostsCommentsCreateResponseComment comment,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			ProfilePostsCommentsCreateResponseComment comment,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfilePostsCommentsCreateResponseCommentLinks(
-			@Nullable String detail,
-			@JsonProperty("profile_post") @Nullable String profilePost,
-			@Nullable String timeline,
-			@JsonProperty("timeline_user") @Nullable String timelineUser,
-			@Nullable String poster,
-			@JsonProperty("poster_avatar") @Nullable String posterAvatar
+			String detail,
+			@JsonProperty("profile_post") String profilePost,
+			String timeline,
+			@JsonProperty("timeline_user") String timelineUser,
+			String poster,
+			@JsonProperty("poster_avatar") String posterAvatar
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfilePostsCommentsCreateResponseCommentPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode delete
+			boolean view,
+			boolean delete
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfilePostsCommentsCreateResponseComment(
-			@JsonProperty("comment_id") Double commentId,
-			@JsonProperty("profile_post_id") Double profilePostId,
-			@JsonProperty("comment_user_id") Double commentUserId,
-			@JsonProperty("comment_username") @Nullable String commentUsername,
-			@JsonProperty("comment_username_html") @Nullable String commentUsernameHtml,
-			@JsonProperty("comment_create_date") Double commentCreateDate,
-			@JsonProperty("comment_body") @Nullable String commentBody,
-			@JsonProperty("user_is_ignored") @Nullable JsonNode userIsIgnored,
-			@JsonProperty("timeline_user_id") Double timelineUserId,
-			@Nullable ProfilePostsCommentsCreateResponseCommentLinks links,
-			@Nullable ProfilePostsCommentsCreateResponseCommentPermissions permissions
+			@JsonProperty("comment_id") double commentId,
+			@JsonProperty("profile_post_id") double profilePostId,
+			@JsonProperty("comment_user_id") double commentUserId,
+			@JsonProperty("comment_username") String commentUsername,
+			@JsonProperty("comment_username_html") String commentUsernameHtml,
+			@JsonProperty("comment_create_date") double commentCreateDate,
+			@JsonProperty("comment_body") String commentBody,
+			@JsonProperty("user_is_ignored") boolean userIsIgnored,
+			@JsonProperty("timeline_user_id") double timelineUserId,
+			ProfilePostsCommentsCreateResponseCommentLinks links,
+			ProfilePostsCommentsCreateResponseCommentPermissions permissions
 		) {}
 
 		public record ProfilePostsCommentsEditBody(
@@ -4676,39 +4676,39 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfilePostsCommentsEditResponse(
-			@Nullable ProfilePostsCommentsEditResponseComment comment,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			ProfilePostsCommentsEditResponseComment comment,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfilePostsCommentsEditResponseCommentLinks(
-			@Nullable String detail,
-			@JsonProperty("profile_post") @Nullable String profilePost,
-			@Nullable String timeline,
-			@JsonProperty("timeline_user") @Nullable String timelineUser,
-			@Nullable String poster,
-			@JsonProperty("poster_avatar") @Nullable String posterAvatar
+			String detail,
+			@JsonProperty("profile_post") String profilePost,
+			String timeline,
+			@JsonProperty("timeline_user") String timelineUser,
+			String poster,
+			@JsonProperty("poster_avatar") String posterAvatar
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfilePostsCommentsEditResponseCommentPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode delete
+			boolean view,
+			boolean delete
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfilePostsCommentsEditResponseComment(
-			@JsonProperty("comment_id") Double commentId,
-			@JsonProperty("profile_post_id") Double profilePostId,
-			@JsonProperty("comment_user_id") Double commentUserId,
-			@JsonProperty("comment_username") @Nullable String commentUsername,
-			@JsonProperty("comment_username_html") @Nullable String commentUsernameHtml,
-			@JsonProperty("comment_create_date") Double commentCreateDate,
-			@JsonProperty("comment_body") @Nullable String commentBody,
-			@JsonProperty("user_is_ignored") @Nullable JsonNode userIsIgnored,
-			@JsonProperty("timeline_user_id") Double timelineUserId,
-			@Nullable ProfilePostsCommentsEditResponseCommentLinks links,
-			@Nullable ProfilePostsCommentsEditResponseCommentPermissions permissions
+			@JsonProperty("comment_id") double commentId,
+			@JsonProperty("profile_post_id") double profilePostId,
+			@JsonProperty("comment_user_id") double commentUserId,
+			@JsonProperty("comment_username") String commentUsername,
+			@JsonProperty("comment_username_html") String commentUsernameHtml,
+			@JsonProperty("comment_create_date") double commentCreateDate,
+			@JsonProperty("comment_body") String commentBody,
+			@JsonProperty("user_is_ignored") boolean userIsIgnored,
+			@JsonProperty("timeline_user_id") double timelineUserId,
+			ProfilePostsCommentsEditResponseCommentLinks links,
+			ProfilePostsCommentsEditResponseCommentPermissions permissions
 		) {}
 
 		public record ProfilePostsCommentsDeleteBody(
@@ -4721,13 +4721,13 @@ public final class Types {
 		public record ProfilePostsCommentsDeleteResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfilePostsCommentsGetResponse(
-			@Nullable JsonNode comment,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			Resp_ProfilePostCommentModel comment,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record ProfilePostsCommentsReportBody(
@@ -4740,7 +4740,7 @@ public final class Types {
 		public record ProfilePostsCommentsReportResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 	}
@@ -4767,25 +4767,25 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ConversationsListResponse(
-			@Nullable List<JsonNode> conversations,
-			@JsonProperty("can_start") @Nullable JsonNode canStart,
-			@Nullable List<ConversationsListResponseFolders> folders,
-			@Nullable ConversationsListResponseLinks links,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<Resp_ConversationModel> conversations,
+			@JsonProperty("can_start") boolean canStart,
+			List<ConversationsListResponseFolders> folders,
+			ConversationsListResponseLinks links,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ConversationsListResponseFolders(
-			@Nullable String id,
-			@Nullable String title,
-			@Nullable String name
+			String id,
+			String title,
+			String name
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ConversationsListResponseLinks(
-			Double pages,
-			Double page,
-			@Nullable String next
+			double pages,
+			double page,
+			String next
 		) {}
 
 		public record ConversationsCreateBody(
@@ -4815,8 +4815,8 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ConversationsCreateResponse(
-			@Nullable JsonNode conversation,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			Resp_ConversationModel conversation,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record ConversationsUpdateBody(
@@ -4842,8 +4842,8 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ConversationsUpdateResponse(
-			@Nullable JsonNode conversation,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			Resp_ConversationModel conversation,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record ConversationsDeleteBody(
@@ -4858,7 +4858,7 @@ public final class Types {
 		public record ConversationsDeleteResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record ConversationsStartBody(
@@ -4868,8 +4868,8 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ConversationsStartResponse(
-			@Nullable JsonNode conversation,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			Resp_ConversationModel conversation,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record ConversationsSaveBody(
@@ -4882,13 +4882,13 @@ public final class Types {
 		public record ConversationsSaveResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ConversationsGetResponse(
-			@Nullable JsonNode conversation,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			Resp_ConversationModel conversation,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record ConversationsMessagesListParams(
@@ -4910,17 +4910,17 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ConversationsMessagesListResponse(
-			@Nullable List<JsonNode> messages,
-			@JsonProperty("messages_total") Double messagesTotal,
-			@Nullable ConversationsMessagesListResponseLinks links,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<Resp_ConversationMessageModel> messages,
+			@JsonProperty("messages_total") double messagesTotal,
+			ConversationsMessagesListResponseLinks links,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ConversationsMessagesListResponseLinks(
-			Double pages,
-			Double page,
-			@Nullable String next
+			double pages,
+			double page,
+			String next
 		) {}
 
 		public record ConversationsMessagesCreateBody(
@@ -4936,8 +4936,8 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ConversationsMessagesCreateResponse(
-			@Nullable JsonNode message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			Resp_ConversationMessageModel message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record ConversationsSearchBody(
@@ -4955,15 +4955,15 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ConversationsSearchResponse(
-			@Nullable List<JsonNode> conversations,
-			@Nullable JsonNode recipients,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<Resp_ConversationModel> conversations,
+			boolean recipients,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ConversationsMessagesGetResponse(
-			@Nullable JsonNode message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			Resp_ConversationModel message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record ConversationsMessagesEditBody(
@@ -4974,15 +4974,15 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ConversationsMessagesEditResponse(
-			@Nullable JsonNode message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			Resp_ConversationModel message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ConversationsMessagesDeleteResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record ConversationsInviteBody(
@@ -4995,7 +4995,7 @@ public final class Types {
 		public record ConversationsInviteResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record ConversationsKickBody(
@@ -5008,63 +5008,63 @@ public final class Types {
 		public record ConversationsKickResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ConversationsReadResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ConversationsReadAllResponse(
-			@Nullable String status,
-			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ConversationsMessagesStickResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ConversationsMessagesUnstickResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ConversationsStarResponse(
-			@Nullable String status,
-			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ConversationsUnstarResponse(
-			@Nullable String status,
-			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ConversationsAlertsEnableResponse(
-			@Nullable String status,
-			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ConversationsAlertsDisableResponse(
-			@Nullable String status,
-			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 	}
@@ -5091,25 +5091,25 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record NotificationsListResponse(
-			@Nullable List<JsonNode> notifications,
-			@JsonProperty("notifications_total") Double notificationsTotal,
-			@Nullable NotificationsListResponseLinks links,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<Resp_NotificationModel> notifications,
+			@JsonProperty("notifications_total") double notificationsTotal,
+			NotificationsListResponseLinks links,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record NotificationsListResponseLinks(
-			@Nullable String read,
-			Double pages,
-			Double page,
-			@Nullable String next
+			String read,
+			double pages,
+			double page,
+			String next
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record NotificationsGetResponse(
-			@JsonProperty("notification_id") Double notificationId,
-			@Nullable JsonNode notification,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("notification_id") double notificationId,
+			Resp_NotificationModel notification,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record NotificationsReadBody(
@@ -5125,7 +5125,7 @@ public final class Types {
 		public record NotificationsReadResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 	}
@@ -5139,8 +5139,8 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record TagsPopularResponse(
-			@Nullable JsonNode tags,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			JsonNode tags,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record TagsListParams(
@@ -5156,17 +5156,17 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record TagsListResponse(
-			@Nullable JsonNode tags,
-			@JsonProperty("tags_total") Double tagsTotal,
-			@Nullable TagsListResponseLinks links,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			JsonNode tags,
+			@JsonProperty("tags_total") double tagsTotal,
+			TagsListResponseLinks links,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record TagsListResponseLinks(
-			Double pages,
-			Double page,
-			@Nullable String next
+			double pages,
+			double page,
+			String next
 		) {}
 
 		public record TagsGetParams(
@@ -5182,185 +5182,185 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record TagsGetResponse(
-			@Nullable TagsGetResponseTag tag,
-			@Nullable List<TagsGetResponseTagged> tagged,
-			@JsonProperty("tagged_total") Double taggedTotal,
-			@Nullable TagsGetResponseLinks links,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			TagsGetResponseTag tag,
+			List<TagsGetResponseTagged> tagged,
+			@JsonProperty("tagged_total") double taggedTotal,
+			TagsGetResponseLinks links,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record TagsGetResponseTagLinks(
-			@Nullable String permalink,
-			@Nullable String detail
+			String permalink,
+			String detail
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record TagsGetResponseTag(
-			@JsonProperty("tag_id") Double tagId,
-			@JsonProperty("tag_text") @Nullable String tagText,
-			@JsonProperty("tag_use_count") Double tagUseCount,
-			@Nullable TagsGetResponseTagLinks links
+			@JsonProperty("tag_id") double tagId,
+			@JsonProperty("tag_text") String tagText,
+			@JsonProperty("tag_use_count") double tagUseCount,
+			TagsGetResponseTagLinks links
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record TagsGetResponseTaggedFirstPostLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@Nullable String thread,
-			@Nullable String poster,
-			@Nullable String likes,
-			@Nullable String report,
-			@Nullable String attachments,
-			@JsonProperty("poster_avatar") @Nullable String posterAvatar
+			String permalink,
+			String detail,
+			String thread,
+			String poster,
+			String likes,
+			String report,
+			String attachments,
+			@JsonProperty("poster_avatar") String posterAvatar
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record TagsGetResponseTaggedFirstPostPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode edit,
-			@Nullable JsonNode delete,
-			@Nullable JsonNode reply,
-			@Nullable JsonNode like,
-			@Nullable JsonNode report,
-			@JsonProperty("upload_attachment") @Nullable JsonNode uploadAttachment
+			boolean view,
+			boolean edit,
+			boolean delete,
+			boolean reply,
+			boolean like,
+			boolean report,
+			@JsonProperty("upload_attachment") boolean uploadAttachment
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record TagsGetResponseTaggedFirstPost(
-			@JsonProperty("post_id") Double postId,
-			@JsonProperty("thread_id") Double threadId,
-			@JsonProperty("poster_user_id") Double posterUserId,
-			@JsonProperty("poster_username") @Nullable String posterUsername,
-			@JsonProperty("poster_username_html") @Nullable String posterUsernameHtml,
-			@JsonProperty("post_create_date") Double postCreateDate,
-			@JsonProperty("post_body") @Nullable String postBody,
-			@JsonProperty("post_body_html") @Nullable String postBodyHtml,
-			@JsonProperty("post_body_plain_text") @Nullable String postBodyPlainText,
-			@Nullable String signature,
-			@JsonProperty("signature_html") @Nullable String signatureHtml,
-			@JsonProperty("signature_plain_text") @Nullable String signaturePlainText,
-			@JsonProperty("post_like_count") Double postLikeCount,
-			@JsonProperty("post_attachment_count") Double postAttachmentCount,
-			@JsonProperty("user_is_ignored") @Nullable JsonNode userIsIgnored,
-			@JsonProperty("post_is_published") @Nullable JsonNode postIsPublished,
-			@JsonProperty("post_is_deleted") @Nullable JsonNode postIsDeleted,
-			@JsonProperty("post_update_date") Double postUpdateDate,
-			@JsonProperty("post_is_first_post") @Nullable JsonNode postIsFirstPost,
-			@Nullable TagsGetResponseTaggedFirstPostLinks links,
-			@Nullable TagsGetResponseTaggedFirstPostPermissions permissions
+			@JsonProperty("post_id") double postId,
+			@JsonProperty("thread_id") double threadId,
+			@JsonProperty("poster_user_id") double posterUserId,
+			@JsonProperty("poster_username") String posterUsername,
+			@JsonProperty("poster_username_html") String posterUsernameHtml,
+			@JsonProperty("post_create_date") double postCreateDate,
+			@JsonProperty("post_body") String postBody,
+			@JsonProperty("post_body_html") String postBodyHtml,
+			@JsonProperty("post_body_plain_text") String postBodyPlainText,
+			String signature,
+			@JsonProperty("signature_html") String signatureHtml,
+			@JsonProperty("signature_plain_text") String signaturePlainText,
+			@JsonProperty("post_like_count") double postLikeCount,
+			@JsonProperty("post_attachment_count") double postAttachmentCount,
+			@JsonProperty("user_is_ignored") boolean userIsIgnored,
+			@JsonProperty("post_is_published") boolean postIsPublished,
+			@JsonProperty("post_is_deleted") boolean postIsDeleted,
+			@JsonProperty("post_update_date") double postUpdateDate,
+			@JsonProperty("post_is_first_post") boolean postIsFirstPost,
+			TagsGetResponseTaggedFirstPostLinks links,
+			TagsGetResponseTaggedFirstPostPermissions permissions
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record TagsGetResponseTaggedThreadPrefixes(
-			@JsonProperty("prefix_id") Double prefixId,
-			@JsonProperty("prefix_title") @Nullable String prefixTitle
+			@JsonProperty("prefix_id") double prefixId,
+			@JsonProperty("prefix_title") String prefixTitle
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record TagsGetResponseTaggedLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@Nullable String followers,
-			@Nullable String forum,
-			@Nullable String posts,
-			@JsonProperty("first_poster") @Nullable String firstPoster,
-			@JsonProperty("first_poster_avatar") @Nullable String firstPosterAvatar,
-			@JsonProperty("first_post") @Nullable String firstPost,
-			@JsonProperty("last_poster") @Nullable String lastPoster,
-			@JsonProperty("last_post") @Nullable String lastPost
+			String permalink,
+			String detail,
+			String followers,
+			String forum,
+			String posts,
+			@JsonProperty("first_poster") String firstPoster,
+			@JsonProperty("first_poster_avatar") String firstPosterAvatar,
+			@JsonProperty("first_post") String firstPost,
+			@JsonProperty("last_poster") String lastPoster,
+			@JsonProperty("last_post") String lastPost
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record TagsGetResponseTaggedPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode delete,
-			@Nullable JsonNode follow,
-			@Nullable JsonNode post,
-			@JsonProperty("upload_attachment") @Nullable JsonNode uploadAttachment,
-			@Nullable JsonNode edit
+			boolean view,
+			boolean delete,
+			boolean follow,
+			boolean post,
+			@JsonProperty("upload_attachment") boolean uploadAttachment,
+			boolean edit
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record TagsGetResponseTaggedForumForumPrefixesGroupPrefixes(
-			@JsonProperty("prefix_id") Double prefixId,
-			@JsonProperty("prefix_title") @Nullable String prefixTitle
+			@JsonProperty("prefix_id") double prefixId,
+			@JsonProperty("prefix_title") String prefixTitle
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record TagsGetResponseTaggedForumForumPrefixes(
-			@JsonProperty("group_title") @Nullable String groupTitle,
-			@JsonProperty("group_prefixes") @Nullable List<TagsGetResponseTaggedForumForumPrefixesGroupPrefixes> groupPrefixes
+			@JsonProperty("group_title") String groupTitle,
+			@JsonProperty("group_prefixes") List<TagsGetResponseTaggedForumForumPrefixesGroupPrefixes> groupPrefixes
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record TagsGetResponseTaggedForumLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@JsonProperty("sub-categories") @Nullable String subCategories,
-			@JsonProperty("sub-forums") @Nullable String subForums,
-			@Nullable String threads,
-			@Nullable String followers
+			String permalink,
+			String detail,
+			@JsonProperty("sub-categories") String subCategories,
+			@JsonProperty("sub-forums") String subForums,
+			String threads,
+			String followers
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record TagsGetResponseTaggedForumPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode edit,
-			@Nullable JsonNode delete,
-			@JsonProperty("create_thread") @Nullable JsonNode createThread,
-			@JsonProperty("upload_attachment") @Nullable JsonNode uploadAttachment,
-			@JsonProperty("tag_thread") @Nullable JsonNode tagThread,
-			@Nullable JsonNode follow
+			boolean view,
+			boolean edit,
+			boolean delete,
+			@JsonProperty("create_thread") boolean createThread,
+			@JsonProperty("upload_attachment") boolean uploadAttachment,
+			@JsonProperty("tag_thread") boolean tagThread,
+			boolean follow
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record TagsGetResponseTaggedForum(
-			@JsonProperty("forum_id") Double forumId,
-			@JsonProperty("forum_title") @Nullable String forumTitle,
-			@JsonProperty("forum_description") @Nullable String forumDescription,
-			@JsonProperty("forum_thread_count") Double forumThreadCount,
-			@JsonProperty("forum_post_count") Double forumPostCount,
-			@JsonProperty("forum_prefixes") @Nullable List<TagsGetResponseTaggedForumForumPrefixes> forumPrefixes,
-			@JsonProperty("thread_default_prefix_id") Double threadDefaultPrefixId,
-			@JsonProperty("thread_prefix_is_required") @Nullable JsonNode threadPrefixIsRequired,
-			@Nullable TagsGetResponseTaggedForumLinks links,
-			@Nullable TagsGetResponseTaggedForumPermissions permissions,
-			@JsonProperty("forum_is_followed") @Nullable JsonNode forumIsFollowed
+			@JsonProperty("forum_id") double forumId,
+			@JsonProperty("forum_title") String forumTitle,
+			@JsonProperty("forum_description") String forumDescription,
+			@JsonProperty("forum_thread_count") double forumThreadCount,
+			@JsonProperty("forum_post_count") double forumPostCount,
+			@JsonProperty("forum_prefixes") List<TagsGetResponseTaggedForumForumPrefixes> forumPrefixes,
+			@JsonProperty("thread_default_prefix_id") double threadDefaultPrefixId,
+			@JsonProperty("thread_prefix_is_required") boolean threadPrefixIsRequired,
+			TagsGetResponseTaggedForumLinks links,
+			TagsGetResponseTaggedForumPermissions permissions,
+			@JsonProperty("forum_is_followed") boolean forumIsFollowed
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record TagsGetResponseTagged(
-			@JsonProperty("content_type") @Nullable String contentType,
-			@JsonProperty("content_id") Double contentId,
-			@JsonProperty("thread_id") Double threadId,
-			@JsonProperty("forum_id") Double forumId,
-			@JsonProperty("thread_title") @Nullable String threadTitle,
-			@JsonProperty("thread_view_count") Double threadViewCount,
-			@JsonProperty("creator_user_id") Double creatorUserId,
-			@JsonProperty("creator_username") @Nullable String creatorUsername,
-			@JsonProperty("creator_username_html") @Nullable String creatorUsernameHtml,
-			@JsonProperty("thread_create_date") Double threadCreateDate,
-			@JsonProperty("thread_update_date") Double threadUpdateDate,
-			@JsonProperty("user_is_ignored") @Nullable JsonNode userIsIgnored,
-			@JsonProperty("thread_post_count") Double threadPostCount,
-			@JsonProperty("thread_is_published") @Nullable JsonNode threadIsPublished,
-			@JsonProperty("thread_is_deleted") @Nullable JsonNode threadIsDeleted,
-			@JsonProperty("thread_is_sticky") @Nullable JsonNode threadIsSticky,
-			@JsonProperty("thread_is_followed") @Nullable JsonNode threadIsFollowed,
-			@JsonProperty("first_post") @Nullable TagsGetResponseTaggedFirstPost firstPost,
-			@JsonProperty("thread_prefixes") @Nullable List<TagsGetResponseTaggedThreadPrefixes> threadPrefixes,
-			@JsonProperty("thread_tags") @Nullable JsonNode threadTags,
-			@Nullable TagsGetResponseTaggedLinks links,
-			@Nullable TagsGetResponseTaggedPermissions permissions,
-			@Nullable TagsGetResponseTaggedForum forum
+			@JsonProperty("content_type") String contentType,
+			@JsonProperty("content_id") double contentId,
+			@JsonProperty("thread_id") double threadId,
+			@JsonProperty("forum_id") double forumId,
+			@JsonProperty("thread_title") String threadTitle,
+			@JsonProperty("thread_view_count") double threadViewCount,
+			@JsonProperty("creator_user_id") double creatorUserId,
+			@JsonProperty("creator_username") String creatorUsername,
+			@JsonProperty("creator_username_html") String creatorUsernameHtml,
+			@JsonProperty("thread_create_date") double threadCreateDate,
+			@JsonProperty("thread_update_date") double threadUpdateDate,
+			@JsonProperty("user_is_ignored") boolean userIsIgnored,
+			@JsonProperty("thread_post_count") double threadPostCount,
+			@JsonProperty("thread_is_published") boolean threadIsPublished,
+			@JsonProperty("thread_is_deleted") boolean threadIsDeleted,
+			@JsonProperty("thread_is_sticky") boolean threadIsSticky,
+			@JsonProperty("thread_is_followed") boolean threadIsFollowed,
+			@JsonProperty("first_post") TagsGetResponseTaggedFirstPost firstPost,
+			@JsonProperty("thread_prefixes") List<TagsGetResponseTaggedThreadPrefixes> threadPrefixes,
+			@JsonProperty("thread_tags") JsonNode threadTags,
+			TagsGetResponseTaggedLinks links,
+			TagsGetResponseTaggedPermissions permissions,
+			TagsGetResponseTaggedForum forum
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record TagsGetResponseLinks(
-			Double pages,
-			Double page,
-			@Nullable String next
+			double pages,
+			double page,
+			String next
 		) {}
 
 		public record TagsFindParams(
@@ -5371,9 +5371,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record TagsFindResponse(
-			@Nullable List<String> tags,
-			@Nullable List<Double> ids,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<String> tags,
+			List<Double> ids,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 	}
@@ -5396,220 +5396,222 @@ public final class Types {
 			/** Page number of results. */
 			Long page,
 			/** Number of results in a page. */
-			Long limit
+			Long limit,
+			/** The time in milliseconds (e.g. 1767214800) before last content date. */
+			Long before
 		) {
 			public SearchAllBody() {
-				this(null, null, null, null, null, null);
+				this(null, null, null, null, null, null, null);
 			}
 		}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchAllResponse(
-			@Nullable List<SearchAllResponseData> data,
-			@JsonProperty("data_total") Double dataTotal,
-			@Nullable List<JsonNode> users,
-			@Nullable SearchAllResponseLinks links,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<SearchAllResponseData> data,
+			@JsonProperty("data_total") double dataTotal,
+			List<Resp_UserModel> users,
+			SearchAllResponseLinks links,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchAllResponseDataFirstPostLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@Nullable String thread,
-			@Nullable String poster,
-			@Nullable String likes,
-			@Nullable String report,
-			@JsonProperty("poster_avatar") @Nullable String posterAvatar
+			String permalink,
+			String detail,
+			String thread,
+			String poster,
+			String likes,
+			String report,
+			@JsonProperty("poster_avatar") String posterAvatar
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchAllResponseDataFirstPostPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode edit,
-			@Nullable JsonNode delete,
-			@Nullable JsonNode reply,
-			@Nullable JsonNode like,
-			@Nullable JsonNode report
+			boolean view,
+			boolean edit,
+			boolean delete,
+			boolean reply,
+			boolean like,
+			boolean report
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchAllResponseDataFirstPost(
-			@JsonProperty("post_id") Double postId,
-			@JsonProperty("thread_id") Double threadId,
-			@JsonProperty("poster_user_id") Double posterUserId,
-			@JsonProperty("poster_username") @Nullable String posterUsername,
-			@JsonProperty("poster_username_html") @Nullable String posterUsernameHtml,
-			@JsonProperty("post_create_date") Double postCreateDate,
-			@JsonProperty("post_body") @Nullable String postBody,
-			@JsonProperty("post_body_html") @Nullable String postBodyHtml,
-			@JsonProperty("post_body_plain_text") @Nullable String postBodyPlainText,
-			@Nullable String signature,
-			@JsonProperty("signature_html") @Nullable String signatureHtml,
-			@JsonProperty("signature_plain_text") @Nullable String signaturePlainText,
-			@JsonProperty("post_like_count") Double postLikeCount,
-			@JsonProperty("user_is_ignored") @Nullable JsonNode userIsIgnored,
-			@JsonProperty("post_is_published") @Nullable JsonNode postIsPublished,
-			@JsonProperty("post_is_deleted") @Nullable JsonNode postIsDeleted,
-			@JsonProperty("post_update_date") Double postUpdateDate,
-			@JsonProperty("post_is_first_post") @Nullable JsonNode postIsFirstPost,
-			@JsonProperty("post_is_liked") @Nullable JsonNode postIsLiked,
-			@Nullable SearchAllResponseDataFirstPostLinks links,
-			@Nullable SearchAllResponseDataFirstPostPermissions permissions,
-			@JsonProperty("thread_is_deleted") @Nullable JsonNode threadIsDeleted
+			@JsonProperty("post_id") double postId,
+			@JsonProperty("thread_id") double threadId,
+			@JsonProperty("poster_user_id") double posterUserId,
+			@JsonProperty("poster_username") String posterUsername,
+			@JsonProperty("poster_username_html") String posterUsernameHtml,
+			@JsonProperty("post_create_date") double postCreateDate,
+			@JsonProperty("post_body") String postBody,
+			@JsonProperty("post_body_html") String postBodyHtml,
+			@JsonProperty("post_body_plain_text") String postBodyPlainText,
+			String signature,
+			@JsonProperty("signature_html") String signatureHtml,
+			@JsonProperty("signature_plain_text") String signaturePlainText,
+			@JsonProperty("post_like_count") double postLikeCount,
+			@JsonProperty("user_is_ignored") boolean userIsIgnored,
+			@JsonProperty("post_is_published") boolean postIsPublished,
+			@JsonProperty("post_is_deleted") boolean postIsDeleted,
+			@JsonProperty("post_update_date") double postUpdateDate,
+			@JsonProperty("post_is_first_post") boolean postIsFirstPost,
+			@JsonProperty("post_is_liked") boolean postIsLiked,
+			SearchAllResponseDataFirstPostLinks links,
+			SearchAllResponseDataFirstPostPermissions permissions,
+			@JsonProperty("thread_is_deleted") boolean threadIsDeleted
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchAllResponseDataLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@Nullable String followers,
-			@Nullable String forum,
-			@Nullable String posts,
-			@JsonProperty("first_poster") @Nullable String firstPoster,
-			@JsonProperty("first_poster_avatar") @Nullable String firstPosterAvatar,
-			@JsonProperty("first_post") @Nullable String firstPost,
-			@JsonProperty("last_poster") @Nullable String lastPoster,
-			@JsonProperty("last_post") @Nullable String lastPost
+			String permalink,
+			String detail,
+			String followers,
+			String forum,
+			String posts,
+			@JsonProperty("first_poster") String firstPoster,
+			@JsonProperty("first_poster_avatar") String firstPosterAvatar,
+			@JsonProperty("first_post") String firstPost,
+			@JsonProperty("last_poster") String lastPoster,
+			@JsonProperty("last_post") String lastPost
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchAllResponseDataPermissionsBump(
-			@Nullable JsonNode can,
-			@JsonProperty("available_count") Double availableCount,
-			@Nullable JsonNode error,
-			@JsonProperty("next_available_time") @Nullable JsonNode nextAvailableTime
+			boolean can,
+			@JsonProperty("available_count") double availableCount,
+			JsonNode error,
+			@JsonProperty("next_available_time") JsonNode nextAvailableTime
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchAllResponseDataPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode delete,
-			@Nullable JsonNode follow,
-			@Nullable JsonNode post,
-			@Nullable JsonNode edit,
-			@Nullable SearchAllResponseDataPermissionsBump bump
+			boolean view,
+			boolean delete,
+			boolean follow,
+			boolean post,
+			boolean edit,
+			SearchAllResponseDataPermissionsBump bump
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchAllResponseDataForumLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@JsonProperty("sub-categories") @Nullable String subCategories,
-			@JsonProperty("sub-forums") @Nullable String subForums,
-			@Nullable String threads,
-			@Nullable String followers
+			String permalink,
+			String detail,
+			@JsonProperty("sub-categories") String subCategories,
+			@JsonProperty("sub-forums") String subForums,
+			String threads,
+			String followers
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchAllResponseDataForumPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode edit,
-			@Nullable JsonNode delete,
-			@JsonProperty("create_thread") @Nullable JsonNode createThread,
-			@JsonProperty("tag_thread") @Nullable JsonNode tagThread,
-			@Nullable JsonNode follow
+			boolean view,
+			boolean edit,
+			boolean delete,
+			@JsonProperty("create_thread") boolean createThread,
+			@JsonProperty("tag_thread") boolean tagThread,
+			boolean follow
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchAllResponseDataForum(
-			@JsonProperty("forum_id") Double forumId,
-			@JsonProperty("forum_title") @Nullable String forumTitle,
-			@JsonProperty("forum_description") @Nullable String forumDescription,
-			@JsonProperty("forum_thread_count") Double forumThreadCount,
-			@JsonProperty("forum_post_count") Double forumPostCount,
-			@JsonProperty("parent_node_id") Double parentNodeId,
-			@JsonProperty("forum_prefixes") @Nullable List<JsonNode> forumPrefixes,
-			@JsonProperty("thread_default_prefix_id") Double threadDefaultPrefixId,
-			@JsonProperty("thread_prefix_is_required") @Nullable JsonNode threadPrefixIsRequired,
-			@Nullable SearchAllResponseDataForumLinks links,
-			@Nullable SearchAllResponseDataForumPermissions permissions,
-			@JsonProperty("forum_is_followed") @Nullable JsonNode forumIsFollowed
+			@JsonProperty("forum_id") double forumId,
+			@JsonProperty("forum_title") String forumTitle,
+			@JsonProperty("forum_description") String forumDescription,
+			@JsonProperty("forum_thread_count") double forumThreadCount,
+			@JsonProperty("forum_post_count") double forumPostCount,
+			@JsonProperty("parent_node_id") double parentNodeId,
+			@JsonProperty("forum_prefixes") List<JsonNode> forumPrefixes,
+			@JsonProperty("thread_default_prefix_id") double threadDefaultPrefixId,
+			@JsonProperty("thread_prefix_is_required") boolean threadPrefixIsRequired,
+			SearchAllResponseDataForumLinks links,
+			SearchAllResponseDataForumPermissions permissions,
+			@JsonProperty("forum_is_followed") boolean forumIsFollowed
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchAllResponseDataLastPostLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@Nullable String thread,
-			@Nullable String poster,
-			@Nullable String likes,
-			@Nullable String report,
-			@JsonProperty("poster_avatar") @Nullable String posterAvatar
+			String permalink,
+			String detail,
+			String thread,
+			String poster,
+			String likes,
+			String report,
+			@JsonProperty("poster_avatar") String posterAvatar
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchAllResponseDataLastPostPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode edit,
-			@Nullable JsonNode delete,
-			@Nullable JsonNode reply,
-			@Nullable JsonNode like,
-			@Nullable JsonNode report
+			boolean view,
+			boolean edit,
+			boolean delete,
+			boolean reply,
+			boolean like,
+			boolean report
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchAllResponseDataLastPost(
-			@JsonProperty("post_id") Double postId,
-			@JsonProperty("thread_id") Double threadId,
-			@JsonProperty("poster_user_id") Double posterUserId,
-			@JsonProperty("poster_username") @Nullable String posterUsername,
-			@JsonProperty("poster_username_html") @Nullable String posterUsernameHtml,
-			@JsonProperty("post_create_date") Double postCreateDate,
-			@JsonProperty("post_body") @Nullable String postBody,
-			@JsonProperty("post_body_html") @Nullable String postBodyHtml,
-			@JsonProperty("post_body_plain_text") @Nullable String postBodyPlainText,
-			@Nullable String signature,
-			@JsonProperty("signature_html") @Nullable String signatureHtml,
-			@JsonProperty("signature_plain_text") @Nullable String signaturePlainText,
-			@JsonProperty("post_like_count") Double postLikeCount,
-			@JsonProperty("user_is_ignored") @Nullable JsonNode userIsIgnored,
-			@JsonProperty("post_is_published") @Nullable JsonNode postIsPublished,
-			@JsonProperty("post_is_deleted") @Nullable JsonNode postIsDeleted,
-			@JsonProperty("post_update_date") Double postUpdateDate,
-			@JsonProperty("post_is_first_post") @Nullable JsonNode postIsFirstPost,
-			@JsonProperty("post_is_liked") @Nullable JsonNode postIsLiked,
-			@Nullable SearchAllResponseDataLastPostLinks links,
-			@Nullable SearchAllResponseDataLastPostPermissions permissions,
-			@JsonProperty("thread_is_deleted") @Nullable JsonNode threadIsDeleted
+			@JsonProperty("post_id") double postId,
+			@JsonProperty("thread_id") double threadId,
+			@JsonProperty("poster_user_id") double posterUserId,
+			@JsonProperty("poster_username") String posterUsername,
+			@JsonProperty("poster_username_html") String posterUsernameHtml,
+			@JsonProperty("post_create_date") double postCreateDate,
+			@JsonProperty("post_body") String postBody,
+			@JsonProperty("post_body_html") String postBodyHtml,
+			@JsonProperty("post_body_plain_text") String postBodyPlainText,
+			String signature,
+			@JsonProperty("signature_html") String signatureHtml,
+			@JsonProperty("signature_plain_text") String signaturePlainText,
+			@JsonProperty("post_like_count") double postLikeCount,
+			@JsonProperty("user_is_ignored") boolean userIsIgnored,
+			@JsonProperty("post_is_published") boolean postIsPublished,
+			@JsonProperty("post_is_deleted") boolean postIsDeleted,
+			@JsonProperty("post_update_date") double postUpdateDate,
+			@JsonProperty("post_is_first_post") boolean postIsFirstPost,
+			@JsonProperty("post_is_liked") boolean postIsLiked,
+			SearchAllResponseDataLastPostLinks links,
+			SearchAllResponseDataLastPostPermissions permissions,
+			@JsonProperty("thread_is_deleted") boolean threadIsDeleted
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchAllResponseData(
-			@JsonProperty("content_type") @Nullable String contentType,
-			@JsonProperty("content_id") @Nullable String contentId,
-			@JsonProperty("thread_id") Double threadId,
-			@JsonProperty("forum_id") Double forumId,
-			@JsonProperty("thread_title") @Nullable String threadTitle,
-			@JsonProperty("thread_view_count") Double threadViewCount,
-			@JsonProperty("creator_user_id") Double creatorUserId,
-			@JsonProperty("creator_username") @Nullable String creatorUsername,
-			@JsonProperty("creator_username_html") @Nullable String creatorUsernameHtml,
-			@JsonProperty("thread_create_date") Double threadCreateDate,
-			@JsonProperty("thread_update_date") Double threadUpdateDate,
-			@JsonProperty("user_is_ignored") @Nullable JsonNode userIsIgnored,
-			@JsonProperty("thread_post_count") Double threadPostCount,
-			@JsonProperty("thread_is_published") @Nullable JsonNode threadIsPublished,
-			@JsonProperty("thread_is_deleted") @Nullable JsonNode threadIsDeleted,
-			@JsonProperty("thread_is_sticky") @Nullable JsonNode threadIsSticky,
-			@JsonProperty("thread_is_closed") @Nullable JsonNode threadIsClosed,
-			@JsonProperty("thread_is_followed") @Nullable JsonNode threadIsFollowed,
-			@JsonProperty("thread_is_starred") @Nullable JsonNode threadIsStarred,
-			@JsonProperty("first_post") @Nullable SearchAllResponseDataFirstPost firstPost,
-			@JsonProperty("thread_prefixes") @Nullable List<JsonNode> threadPrefixes,
-			@JsonProperty("thread_tags") @Nullable List<JsonNode> threadTags,
-			@Nullable SearchAllResponseDataLinks links,
-			@Nullable SearchAllResponseDataPermissions permissions,
-			@JsonProperty("node_title") @Nullable String nodeTitle,
-			@Nullable SearchAllResponseDataForum forum,
-			@JsonProperty("last_post") @Nullable SearchAllResponseDataLastPost lastPost
+			@JsonProperty("content_type") String contentType,
+			@JsonProperty("content_id") String contentId,
+			@JsonProperty("thread_id") double threadId,
+			@JsonProperty("forum_id") double forumId,
+			@JsonProperty("thread_title") String threadTitle,
+			@JsonProperty("thread_view_count") double threadViewCount,
+			@JsonProperty("creator_user_id") double creatorUserId,
+			@JsonProperty("creator_username") String creatorUsername,
+			@JsonProperty("creator_username_html") String creatorUsernameHtml,
+			@JsonProperty("thread_create_date") double threadCreateDate,
+			@JsonProperty("thread_update_date") double threadUpdateDate,
+			@JsonProperty("user_is_ignored") boolean userIsIgnored,
+			@JsonProperty("thread_post_count") double threadPostCount,
+			@JsonProperty("thread_is_published") boolean threadIsPublished,
+			@JsonProperty("thread_is_deleted") boolean threadIsDeleted,
+			@JsonProperty("thread_is_sticky") boolean threadIsSticky,
+			@JsonProperty("thread_is_closed") boolean threadIsClosed,
+			@JsonProperty("thread_is_followed") boolean threadIsFollowed,
+			@JsonProperty("thread_is_starred") boolean threadIsStarred,
+			@JsonProperty("first_post") SearchAllResponseDataFirstPost firstPost,
+			@JsonProperty("thread_prefixes") List<JsonNode> threadPrefixes,
+			@JsonProperty("thread_tags") List<JsonNode> threadTags,
+			SearchAllResponseDataLinks links,
+			SearchAllResponseDataPermissions permissions,
+			@JsonProperty("node_title") String nodeTitle,
+			SearchAllResponseDataForum forum,
+			@JsonProperty("last_post") SearchAllResponseDataLastPost lastPost
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchAllResponseLinks(
-			Double pages,
-			Double page,
-			@Nullable String next
+			double pages,
+			double page,
+			String next
 		) {}
 
 		public record SearchThreadsBody(
@@ -5625,160 +5627,162 @@ public final class Types {
 			/** Number of results in a page. */
 			Long limit,
 			/** Number of thread data to be returned. */
-			@JsonProperty("data_limit") Long dataLimit
+			@JsonProperty("data_limit") Long dataLimit,
+			/** The time in milliseconds (e.g. 1767214800) before last content date. */
+			Long before
 		) {
 			public SearchThreadsBody() {
-				this(null, null, null, null, null, null, null);
+				this(null, null, null, null, null, null, null, null);
 			}
 		}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchThreadsResponse(
-			@Nullable List<SearchThreadsResponseData> data,
-			@JsonProperty("data_total") Double dataTotal,
-			@Nullable SearchThreadsResponseLinks links,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<SearchThreadsResponseData> data,
+			@JsonProperty("data_total") double dataTotal,
+			SearchThreadsResponseLinks links,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchThreadsResponseDataFirstPostLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@Nullable String thread,
-			@Nullable String poster,
-			@Nullable String likes,
-			@Nullable String report,
-			@Nullable String attachments,
-			@JsonProperty("poster_avatar") @Nullable String posterAvatar
+			String permalink,
+			String detail,
+			String thread,
+			String poster,
+			String likes,
+			String report,
+			String attachments,
+			@JsonProperty("poster_avatar") String posterAvatar
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchThreadsResponseDataFirstPostPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode edit,
-			@Nullable JsonNode delete,
-			@Nullable JsonNode reply,
-			@Nullable JsonNode like,
-			@Nullable JsonNode report,
-			@JsonProperty("upload_attachment") @Nullable JsonNode uploadAttachment
+			boolean view,
+			boolean edit,
+			boolean delete,
+			boolean reply,
+			boolean like,
+			boolean report,
+			@JsonProperty("upload_attachment") boolean uploadAttachment
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchThreadsResponseDataFirstPost(
-			@JsonProperty("post_id") Double postId,
-			@JsonProperty("thread_id") Double threadId,
-			@JsonProperty("poster_user_id") Double posterUserId,
-			@JsonProperty("poster_username") @Nullable String posterUsername,
-			@JsonProperty("poster_username_html") @Nullable String posterUsernameHtml,
-			@JsonProperty("post_create_date") Double postCreateDate,
-			@JsonProperty("post_body") @Nullable String postBody,
-			@JsonProperty("post_body_html") @Nullable String postBodyHtml,
-			@JsonProperty("post_body_plain_text") @Nullable String postBodyPlainText,
-			@Nullable String signature,
-			@JsonProperty("signature_html") @Nullable String signatureHtml,
-			@JsonProperty("signature_plain_text") @Nullable String signaturePlainText,
-			@JsonProperty("post_like_count") Double postLikeCount,
-			@JsonProperty("post_attachment_count") Double postAttachmentCount,
-			@JsonProperty("user_is_ignored") @Nullable JsonNode userIsIgnored,
-			@JsonProperty("post_is_published") @Nullable JsonNode postIsPublished,
-			@JsonProperty("post_is_deleted") @Nullable JsonNode postIsDeleted,
-			@JsonProperty("post_update_date") Double postUpdateDate,
-			@JsonProperty("post_is_first_post") @Nullable JsonNode postIsFirstPost,
-			@Nullable SearchThreadsResponseDataFirstPostLinks links,
-			@Nullable SearchThreadsResponseDataFirstPostPermissions permissions
+			@JsonProperty("post_id") double postId,
+			@JsonProperty("thread_id") double threadId,
+			@JsonProperty("poster_user_id") double posterUserId,
+			@JsonProperty("poster_username") String posterUsername,
+			@JsonProperty("poster_username_html") String posterUsernameHtml,
+			@JsonProperty("post_create_date") double postCreateDate,
+			@JsonProperty("post_body") String postBody,
+			@JsonProperty("post_body_html") String postBodyHtml,
+			@JsonProperty("post_body_plain_text") String postBodyPlainText,
+			String signature,
+			@JsonProperty("signature_html") String signatureHtml,
+			@JsonProperty("signature_plain_text") String signaturePlainText,
+			@JsonProperty("post_like_count") double postLikeCount,
+			@JsonProperty("post_attachment_count") double postAttachmentCount,
+			@JsonProperty("user_is_ignored") boolean userIsIgnored,
+			@JsonProperty("post_is_published") boolean postIsPublished,
+			@JsonProperty("post_is_deleted") boolean postIsDeleted,
+			@JsonProperty("post_update_date") double postUpdateDate,
+			@JsonProperty("post_is_first_post") boolean postIsFirstPost,
+			SearchThreadsResponseDataFirstPostLinks links,
+			SearchThreadsResponseDataFirstPostPermissions permissions
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchThreadsResponseDataLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@Nullable String followers,
-			@Nullable String forum,
-			@Nullable String posts,
-			@JsonProperty("first_poster") @Nullable String firstPoster,
-			@JsonProperty("first_poster_avatar") @Nullable String firstPosterAvatar,
-			@JsonProperty("first_post") @Nullable String firstPost,
-			@JsonProperty("last_post") @Nullable String lastPost
+			String permalink,
+			String detail,
+			String followers,
+			String forum,
+			String posts,
+			@JsonProperty("first_poster") String firstPoster,
+			@JsonProperty("first_poster_avatar") String firstPosterAvatar,
+			@JsonProperty("first_post") String firstPost,
+			@JsonProperty("last_post") String lastPost
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchThreadsResponseDataPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode delete,
-			@Nullable JsonNode follow,
-			@Nullable JsonNode post,
-			@JsonProperty("upload_attachment") @Nullable JsonNode uploadAttachment,
-			@Nullable JsonNode edit
+			boolean view,
+			boolean delete,
+			boolean follow,
+			boolean post,
+			@JsonProperty("upload_attachment") boolean uploadAttachment,
+			boolean edit
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchThreadsResponseDataForumLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@JsonProperty("sub-categories") @Nullable String subCategories,
-			@JsonProperty("sub-forums") @Nullable String subForums,
-			@Nullable String threads,
-			@Nullable String followers
+			String permalink,
+			String detail,
+			@JsonProperty("sub-categories") String subCategories,
+			@JsonProperty("sub-forums") String subForums,
+			String threads,
+			String followers
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchThreadsResponseDataForumPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode edit,
-			@Nullable JsonNode delete,
-			@JsonProperty("create_thread") @Nullable JsonNode createThread,
-			@JsonProperty("upload_attachment") @Nullable JsonNode uploadAttachment,
-			@JsonProperty("tag_thread") @Nullable JsonNode tagThread,
-			@Nullable JsonNode follow
+			boolean view,
+			boolean edit,
+			boolean delete,
+			@JsonProperty("create_thread") boolean createThread,
+			@JsonProperty("upload_attachment") boolean uploadAttachment,
+			@JsonProperty("tag_thread") boolean tagThread,
+			boolean follow
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchThreadsResponseDataForum(
-			@JsonProperty("forum_id") Double forumId,
-			@JsonProperty("forum_title") @Nullable String forumTitle,
-			@JsonProperty("forum_description") @Nullable String forumDescription,
-			@JsonProperty("forum_thread_count") Double forumThreadCount,
-			@JsonProperty("forum_post_count") Double forumPostCount,
-			@JsonProperty("forum_prefixes") @Nullable List<JsonNode> forumPrefixes,
-			@JsonProperty("thread_default_prefix_id") Double threadDefaultPrefixId,
-			@JsonProperty("thread_prefix_is_required") @Nullable JsonNode threadPrefixIsRequired,
-			@Nullable SearchThreadsResponseDataForumLinks links,
-			@Nullable SearchThreadsResponseDataForumPermissions permissions,
-			@JsonProperty("forum_is_followed") @Nullable JsonNode forumIsFollowed
+			@JsonProperty("forum_id") double forumId,
+			@JsonProperty("forum_title") String forumTitle,
+			@JsonProperty("forum_description") String forumDescription,
+			@JsonProperty("forum_thread_count") double forumThreadCount,
+			@JsonProperty("forum_post_count") double forumPostCount,
+			@JsonProperty("forum_prefixes") List<JsonNode> forumPrefixes,
+			@JsonProperty("thread_default_prefix_id") double threadDefaultPrefixId,
+			@JsonProperty("thread_prefix_is_required") boolean threadPrefixIsRequired,
+			SearchThreadsResponseDataForumLinks links,
+			SearchThreadsResponseDataForumPermissions permissions,
+			@JsonProperty("forum_is_followed") boolean forumIsFollowed
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchThreadsResponseData(
-			@JsonProperty("content_type") @Nullable String contentType,
-			@JsonProperty("content_id") Double contentId,
-			@JsonProperty("thread_id") Double threadId,
-			@JsonProperty("forum_id") Double forumId,
-			@JsonProperty("thread_title") @Nullable String threadTitle,
-			@JsonProperty("thread_view_count") Double threadViewCount,
-			@JsonProperty("creator_user_id") Double creatorUserId,
-			@JsonProperty("creator_username") @Nullable String creatorUsername,
-			@JsonProperty("creator_username_html") @Nullable String creatorUsernameHtml,
-			@JsonProperty("thread_create_date") Double threadCreateDate,
-			@JsonProperty("thread_update_date") Double threadUpdateDate,
-			@JsonProperty("user_is_ignored") @Nullable JsonNode userIsIgnored,
-			@JsonProperty("thread_post_count") Double threadPostCount,
-			@JsonProperty("thread_is_published") @Nullable JsonNode threadIsPublished,
-			@JsonProperty("thread_is_deleted") @Nullable JsonNode threadIsDeleted,
-			@JsonProperty("thread_is_sticky") @Nullable JsonNode threadIsSticky,
-			@JsonProperty("thread_is_followed") @Nullable JsonNode threadIsFollowed,
-			@JsonProperty("first_post") @Nullable SearchThreadsResponseDataFirstPost firstPost,
-			@JsonProperty("thread_prefixes") @Nullable List<JsonNode> threadPrefixes,
-			@JsonProperty("thread_tags") @Nullable List<JsonNode> threadTags,
-			@Nullable SearchThreadsResponseDataLinks links,
-			@Nullable SearchThreadsResponseDataPermissions permissions,
-			@Nullable SearchThreadsResponseDataForum forum
+			@JsonProperty("content_type") String contentType,
+			@JsonProperty("content_id") double contentId,
+			@JsonProperty("thread_id") double threadId,
+			@JsonProperty("forum_id") double forumId,
+			@JsonProperty("thread_title") String threadTitle,
+			@JsonProperty("thread_view_count") double threadViewCount,
+			@JsonProperty("creator_user_id") double creatorUserId,
+			@JsonProperty("creator_username") String creatorUsername,
+			@JsonProperty("creator_username_html") String creatorUsernameHtml,
+			@JsonProperty("thread_create_date") double threadCreateDate,
+			@JsonProperty("thread_update_date") double threadUpdateDate,
+			@JsonProperty("user_is_ignored") boolean userIsIgnored,
+			@JsonProperty("thread_post_count") double threadPostCount,
+			@JsonProperty("thread_is_published") boolean threadIsPublished,
+			@JsonProperty("thread_is_deleted") boolean threadIsDeleted,
+			@JsonProperty("thread_is_sticky") boolean threadIsSticky,
+			@JsonProperty("thread_is_followed") boolean threadIsFollowed,
+			@JsonProperty("first_post") SearchThreadsResponseDataFirstPost firstPost,
+			@JsonProperty("thread_prefixes") List<JsonNode> threadPrefixes,
+			@JsonProperty("thread_tags") List<JsonNode> threadTags,
+			SearchThreadsResponseDataLinks links,
+			SearchThreadsResponseDataPermissions permissions,
+			SearchThreadsResponseDataForum forum
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchThreadsResponseLinks(
-			Double pages,
-			Double page,
-			@Nullable String next
+			double pages,
+			double page,
+			String next
 		) {}
 
 		public record SearchPostsBody(
@@ -5794,160 +5798,162 @@ public final class Types {
 			/** Number of results in a page. */
 			Long limit,
 			/** Number of post data to be returned. */
-			@JsonProperty("data_limit") Long dataLimit
+			@JsonProperty("data_limit") Long dataLimit,
+			/** The time in milliseconds (e.g. 1767214800) before last content date. */
+			Long before
 		) {
 			public SearchPostsBody() {
-				this(null, null, null, null, null, null, null);
+				this(null, null, null, null, null, null, null, null);
 			}
 		}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchPostsResponse(
-			@Nullable List<SearchPostsResponseData> data,
-			@JsonProperty("data_total") Double dataTotal,
-			@Nullable SearchPostsResponseLinks links,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<SearchPostsResponseData> data,
+			@JsonProperty("data_total") double dataTotal,
+			SearchPostsResponseLinks links,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchPostsResponseDataFirstPostLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@Nullable String thread,
-			@Nullable String poster,
-			@Nullable String likes,
-			@Nullable String report,
-			@Nullable String attachments,
-			@JsonProperty("poster_avatar") @Nullable String posterAvatar
+			String permalink,
+			String detail,
+			String thread,
+			String poster,
+			String likes,
+			String report,
+			String attachments,
+			@JsonProperty("poster_avatar") String posterAvatar
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchPostsResponseDataFirstPostPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode edit,
-			@Nullable JsonNode delete,
-			@Nullable JsonNode reply,
-			@Nullable JsonNode like,
-			@Nullable JsonNode report,
-			@JsonProperty("upload_attachment") @Nullable JsonNode uploadAttachment
+			boolean view,
+			boolean edit,
+			boolean delete,
+			boolean reply,
+			boolean like,
+			boolean report,
+			@JsonProperty("upload_attachment") boolean uploadAttachment
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchPostsResponseDataFirstPost(
-			@JsonProperty("post_id") Double postId,
-			@JsonProperty("thread_id") Double threadId,
-			@JsonProperty("poster_user_id") Double posterUserId,
-			@JsonProperty("poster_username") @Nullable String posterUsername,
-			@JsonProperty("poster_username_html") @Nullable String posterUsernameHtml,
-			@JsonProperty("post_create_date") Double postCreateDate,
-			@JsonProperty("post_body") @Nullable String postBody,
-			@JsonProperty("post_body_html") @Nullable String postBodyHtml,
-			@JsonProperty("post_body_plain_text") @Nullable String postBodyPlainText,
-			@Nullable String signature,
-			@JsonProperty("signature_html") @Nullable String signatureHtml,
-			@JsonProperty("signature_plain_text") @Nullable String signaturePlainText,
-			@JsonProperty("post_like_count") Double postLikeCount,
-			@JsonProperty("post_attachment_count") Double postAttachmentCount,
-			@JsonProperty("user_is_ignored") @Nullable JsonNode userIsIgnored,
-			@JsonProperty("post_is_published") @Nullable JsonNode postIsPublished,
-			@JsonProperty("post_is_deleted") @Nullable JsonNode postIsDeleted,
-			@JsonProperty("post_update_date") Double postUpdateDate,
-			@JsonProperty("post_is_first_post") @Nullable JsonNode postIsFirstPost,
-			@Nullable SearchPostsResponseDataFirstPostLinks links,
-			@Nullable SearchPostsResponseDataFirstPostPermissions permissions
+			@JsonProperty("post_id") double postId,
+			@JsonProperty("thread_id") double threadId,
+			@JsonProperty("poster_user_id") double posterUserId,
+			@JsonProperty("poster_username") String posterUsername,
+			@JsonProperty("poster_username_html") String posterUsernameHtml,
+			@JsonProperty("post_create_date") double postCreateDate,
+			@JsonProperty("post_body") String postBody,
+			@JsonProperty("post_body_html") String postBodyHtml,
+			@JsonProperty("post_body_plain_text") String postBodyPlainText,
+			String signature,
+			@JsonProperty("signature_html") String signatureHtml,
+			@JsonProperty("signature_plain_text") String signaturePlainText,
+			@JsonProperty("post_like_count") double postLikeCount,
+			@JsonProperty("post_attachment_count") double postAttachmentCount,
+			@JsonProperty("user_is_ignored") boolean userIsIgnored,
+			@JsonProperty("post_is_published") boolean postIsPublished,
+			@JsonProperty("post_is_deleted") boolean postIsDeleted,
+			@JsonProperty("post_update_date") double postUpdateDate,
+			@JsonProperty("post_is_first_post") boolean postIsFirstPost,
+			SearchPostsResponseDataFirstPostLinks links,
+			SearchPostsResponseDataFirstPostPermissions permissions
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchPostsResponseDataLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@Nullable String followers,
-			@Nullable String forum,
-			@Nullable String posts,
-			@JsonProperty("first_poster") @Nullable String firstPoster,
-			@JsonProperty("first_poster_avatar") @Nullable String firstPosterAvatar,
-			@JsonProperty("first_post") @Nullable String firstPost,
-			@JsonProperty("last_post") @Nullable String lastPost
+			String permalink,
+			String detail,
+			String followers,
+			String forum,
+			String posts,
+			@JsonProperty("first_poster") String firstPoster,
+			@JsonProperty("first_poster_avatar") String firstPosterAvatar,
+			@JsonProperty("first_post") String firstPost,
+			@JsonProperty("last_post") String lastPost
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchPostsResponseDataPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode delete,
-			@Nullable JsonNode follow,
-			@Nullable JsonNode post,
-			@JsonProperty("upload_attachment") @Nullable JsonNode uploadAttachment,
-			@Nullable JsonNode edit
+			boolean view,
+			boolean delete,
+			boolean follow,
+			boolean post,
+			@JsonProperty("upload_attachment") boolean uploadAttachment,
+			boolean edit
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchPostsResponseDataForumLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@JsonProperty("sub-categories") @Nullable String subCategories,
-			@JsonProperty("sub-forums") @Nullable String subForums,
-			@Nullable String threads,
-			@Nullable String followers
+			String permalink,
+			String detail,
+			@JsonProperty("sub-categories") String subCategories,
+			@JsonProperty("sub-forums") String subForums,
+			String threads,
+			String followers
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchPostsResponseDataForumPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode edit,
-			@Nullable JsonNode delete,
-			@JsonProperty("create_thread") @Nullable JsonNode createThread,
-			@JsonProperty("upload_attachment") @Nullable JsonNode uploadAttachment,
-			@JsonProperty("tag_thread") @Nullable JsonNode tagThread,
-			@Nullable JsonNode follow
+			boolean view,
+			boolean edit,
+			boolean delete,
+			@JsonProperty("create_thread") boolean createThread,
+			@JsonProperty("upload_attachment") boolean uploadAttachment,
+			@JsonProperty("tag_thread") boolean tagThread,
+			boolean follow
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchPostsResponseDataForum(
-			@JsonProperty("forum_id") Double forumId,
-			@JsonProperty("forum_title") @Nullable String forumTitle,
-			@JsonProperty("forum_description") @Nullable String forumDescription,
-			@JsonProperty("forum_thread_count") Double forumThreadCount,
-			@JsonProperty("forum_post_count") Double forumPostCount,
-			@JsonProperty("forum_prefixes") @Nullable List<JsonNode> forumPrefixes,
-			@JsonProperty("thread_default_prefix_id") Double threadDefaultPrefixId,
-			@JsonProperty("thread_prefix_is_required") @Nullable JsonNode threadPrefixIsRequired,
-			@Nullable SearchPostsResponseDataForumLinks links,
-			@Nullable SearchPostsResponseDataForumPermissions permissions,
-			@JsonProperty("forum_is_followed") @Nullable JsonNode forumIsFollowed
+			@JsonProperty("forum_id") double forumId,
+			@JsonProperty("forum_title") String forumTitle,
+			@JsonProperty("forum_description") String forumDescription,
+			@JsonProperty("forum_thread_count") double forumThreadCount,
+			@JsonProperty("forum_post_count") double forumPostCount,
+			@JsonProperty("forum_prefixes") List<JsonNode> forumPrefixes,
+			@JsonProperty("thread_default_prefix_id") double threadDefaultPrefixId,
+			@JsonProperty("thread_prefix_is_required") boolean threadPrefixIsRequired,
+			SearchPostsResponseDataForumLinks links,
+			SearchPostsResponseDataForumPermissions permissions,
+			@JsonProperty("forum_is_followed") boolean forumIsFollowed
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchPostsResponseData(
-			@JsonProperty("content_type") @Nullable String contentType,
-			@JsonProperty("content_id") Double contentId,
-			@JsonProperty("thread_id") Double threadId,
-			@JsonProperty("forum_id") Double forumId,
-			@JsonProperty("thread_title") @Nullable String threadTitle,
-			@JsonProperty("thread_view_count") Double threadViewCount,
-			@JsonProperty("creator_user_id") Double creatorUserId,
-			@JsonProperty("creator_username") @Nullable String creatorUsername,
-			@JsonProperty("creator_username_html") @Nullable String creatorUsernameHtml,
-			@JsonProperty("thread_create_date") Double threadCreateDate,
-			@JsonProperty("thread_update_date") Double threadUpdateDate,
-			@JsonProperty("user_is_ignored") @Nullable JsonNode userIsIgnored,
-			@JsonProperty("thread_post_count") Double threadPostCount,
-			@JsonProperty("thread_is_published") @Nullable JsonNode threadIsPublished,
-			@JsonProperty("thread_is_deleted") @Nullable JsonNode threadIsDeleted,
-			@JsonProperty("thread_is_sticky") @Nullable JsonNode threadIsSticky,
-			@JsonProperty("thread_is_followed") @Nullable JsonNode threadIsFollowed,
-			@JsonProperty("first_post") @Nullable SearchPostsResponseDataFirstPost firstPost,
-			@JsonProperty("thread_prefixes") @Nullable List<JsonNode> threadPrefixes,
-			@JsonProperty("thread_tags") @Nullable List<JsonNode> threadTags,
-			@Nullable SearchPostsResponseDataLinks links,
-			@Nullable SearchPostsResponseDataPermissions permissions,
-			@Nullable SearchPostsResponseDataForum forum
+			@JsonProperty("content_type") String contentType,
+			@JsonProperty("content_id") double contentId,
+			@JsonProperty("thread_id") double threadId,
+			@JsonProperty("forum_id") double forumId,
+			@JsonProperty("thread_title") String threadTitle,
+			@JsonProperty("thread_view_count") double threadViewCount,
+			@JsonProperty("creator_user_id") double creatorUserId,
+			@JsonProperty("creator_username") String creatorUsername,
+			@JsonProperty("creator_username_html") String creatorUsernameHtml,
+			@JsonProperty("thread_create_date") double threadCreateDate,
+			@JsonProperty("thread_update_date") double threadUpdateDate,
+			@JsonProperty("user_is_ignored") boolean userIsIgnored,
+			@JsonProperty("thread_post_count") double threadPostCount,
+			@JsonProperty("thread_is_published") boolean threadIsPublished,
+			@JsonProperty("thread_is_deleted") boolean threadIsDeleted,
+			@JsonProperty("thread_is_sticky") boolean threadIsSticky,
+			@JsonProperty("thread_is_followed") boolean threadIsFollowed,
+			@JsonProperty("first_post") SearchPostsResponseDataFirstPost firstPost,
+			@JsonProperty("thread_prefixes") List<JsonNode> threadPrefixes,
+			@JsonProperty("thread_tags") List<JsonNode> threadTags,
+			SearchPostsResponseDataLinks links,
+			SearchPostsResponseDataPermissions permissions,
+			SearchPostsResponseDataForum forum
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchPostsResponseLinks(
-			Double pages,
-			Double page,
-			@Nullable String next
+			double pages,
+			double page,
+			String next
 		) {}
 
 		public record SearchUsersBody(
@@ -5961,8 +5967,8 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchUsersResponse(
-			@Nullable List<JsonNode> users,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<Resp_UserModel> users,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record SearchProfilePostsBody(
@@ -5973,71 +5979,73 @@ public final class Types {
 			/** Page number of results. */
 			Long page,
 			/** Number of results in a page. */
-			Long limit
+			Long limit,
+			/** The time in milliseconds (e.g. 1767214800) before last content date. */
+			Long before
 		) {
 			public SearchProfilePostsBody() {
-				this(null, null, null, null);
+				this(null, null, null, null, null);
 			}
 		}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchProfilePostsResponse(
-			@Nullable List<SearchProfilePostsResponseData> data,
-			@JsonProperty("data_total") Double dataTotal,
-			@Nullable SearchProfilePostsResponseLinks links,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<SearchProfilePostsResponseData> data,
+			@JsonProperty("data_total") double dataTotal,
+			SearchProfilePostsResponseLinks links,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchProfilePostsResponseDataLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@Nullable String timeline,
-			@JsonProperty("timeline_user") @Nullable String timelineUser,
-			@Nullable String poster,
-			@Nullable String likes,
-			@Nullable String comments,
-			@Nullable String report,
-			@JsonProperty("poster_avatar") @Nullable String posterAvatar
+			String permalink,
+			String detail,
+			String timeline,
+			@JsonProperty("timeline_user") String timelineUser,
+			String poster,
+			String likes,
+			String comments,
+			String report,
+			@JsonProperty("poster_avatar") String posterAvatar
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchProfilePostsResponseDataPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode edit,
-			@Nullable JsonNode delete,
-			@Nullable JsonNode like,
-			@Nullable JsonNode comment,
-			@Nullable JsonNode report
+			boolean view,
+			boolean edit,
+			boolean delete,
+			boolean like,
+			boolean comment,
+			boolean report
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchProfilePostsResponseData(
-			@JsonProperty("content_type") @Nullable String contentType,
-			@JsonProperty("content_id") Double contentId,
-			@JsonProperty("profile_post_id") Double profilePostId,
-			@JsonProperty("timeline_user_id") Double timelineUserId,
-			@JsonProperty("poster_user_id") Double posterUserId,
-			@JsonProperty("poster_username") @Nullable String posterUsername,
-			@JsonProperty("poster_username_html") @Nullable String posterUsernameHtml,
-			@JsonProperty("post_create_date") Double postCreateDate,
-			@JsonProperty("post_body") @Nullable String postBody,
-			@JsonProperty("post_like_count") Double postLikeCount,
-			@JsonProperty("post_comment_count") Double postCommentCount,
-			@JsonProperty("timeline_username") @Nullable String timelineUsername,
-			@JsonProperty("user_is_ignored") @Nullable JsonNode userIsIgnored,
-			@JsonProperty("post_is_published") @Nullable JsonNode postIsPublished,
-			@JsonProperty("post_is_deleted") @Nullable JsonNode postIsDeleted,
-			@Nullable SearchProfilePostsResponseDataLinks links,
-			@Nullable SearchProfilePostsResponseDataPermissions permissions,
-			@JsonProperty("timeline_user") @Nullable JsonNode timelineUser
+			@JsonProperty("content_type") String contentType,
+			@JsonProperty("content_id") double contentId,
+			@JsonProperty("profile_post_id") double profilePostId,
+			@JsonProperty("timeline_user_id") double timelineUserId,
+			@JsonProperty("poster_user_id") double posterUserId,
+			@JsonProperty("poster_username") String posterUsername,
+			@JsonProperty("poster_username_html") String posterUsernameHtml,
+			@JsonProperty("post_create_date") double postCreateDate,
+			@JsonProperty("post_body") String postBody,
+			@JsonProperty("post_like_count") double postLikeCount,
+			@JsonProperty("post_comment_count") double postCommentCount,
+			@JsonProperty("timeline_username") String timelineUsername,
+			@JsonProperty("user_is_ignored") boolean userIsIgnored,
+			@JsonProperty("post_is_published") boolean postIsPublished,
+			@JsonProperty("post_is_deleted") boolean postIsDeleted,
+			SearchProfilePostsResponseDataLinks links,
+			SearchProfilePostsResponseDataPermissions permissions,
+			@JsonProperty("timeline_user") Resp_UserModel timelineUser
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchProfilePostsResponseLinks(
-			Double pages,
-			Double page,
-			@Nullable String next
+			double pages,
+			double page,
+			String next
 		) {}
 
 		public record SearchTaggedBody(
@@ -6057,158 +6065,158 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchTaggedResponse(
-			@Nullable List<SearchTaggedResponseData> data,
-			@JsonProperty("data_total") Double dataTotal,
-			@JsonProperty("search_tags") @Nullable JsonNode searchTags,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<SearchTaggedResponseData> data,
+			@JsonProperty("data_total") double dataTotal,
+			@JsonProperty("search_tags") JsonNode searchTags,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchTaggedResponseDataFirstPostLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@Nullable String thread,
-			@Nullable String poster,
-			@Nullable String likes,
-			@Nullable String report,
-			@Nullable String attachments,
-			@JsonProperty("poster_avatar") @Nullable String posterAvatar
+			String permalink,
+			String detail,
+			String thread,
+			String poster,
+			String likes,
+			String report,
+			String attachments,
+			@JsonProperty("poster_avatar") String posterAvatar
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchTaggedResponseDataFirstPostPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode edit,
-			@Nullable JsonNode delete,
-			@Nullable JsonNode reply,
-			@Nullable JsonNode like,
-			@Nullable JsonNode report,
-			@JsonProperty("upload_attachment") @Nullable JsonNode uploadAttachment
+			boolean view,
+			boolean edit,
+			boolean delete,
+			boolean reply,
+			boolean like,
+			boolean report,
+			@JsonProperty("upload_attachment") boolean uploadAttachment
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchTaggedResponseDataFirstPost(
-			@JsonProperty("post_id") Double postId,
-			@JsonProperty("thread_id") Double threadId,
-			@JsonProperty("poster_user_id") Double posterUserId,
-			@JsonProperty("poster_username") @Nullable String posterUsername,
-			@JsonProperty("poster_username_html") @Nullable String posterUsernameHtml,
-			@JsonProperty("post_create_date") Double postCreateDate,
-			@JsonProperty("post_body") @Nullable String postBody,
-			@JsonProperty("post_body_html") @Nullable String postBodyHtml,
-			@JsonProperty("post_body_plain_text") @Nullable String postBodyPlainText,
-			@Nullable String signature,
-			@JsonProperty("signature_html") @Nullable String signatureHtml,
-			@JsonProperty("signature_plain_text") @Nullable String signaturePlainText,
-			@JsonProperty("post_like_count") Double postLikeCount,
-			@JsonProperty("post_attachment_count") Double postAttachmentCount,
-			@JsonProperty("user_is_ignored") @Nullable JsonNode userIsIgnored,
-			@JsonProperty("post_is_published") @Nullable JsonNode postIsPublished,
-			@JsonProperty("post_is_deleted") @Nullable JsonNode postIsDeleted,
-			@JsonProperty("post_update_date") Double postUpdateDate,
-			@JsonProperty("post_is_first_post") @Nullable JsonNode postIsFirstPost,
-			@Nullable SearchTaggedResponseDataFirstPostLinks links,
-			@Nullable SearchTaggedResponseDataFirstPostPermissions permissions
+			@JsonProperty("post_id") double postId,
+			@JsonProperty("thread_id") double threadId,
+			@JsonProperty("poster_user_id") double posterUserId,
+			@JsonProperty("poster_username") String posterUsername,
+			@JsonProperty("poster_username_html") String posterUsernameHtml,
+			@JsonProperty("post_create_date") double postCreateDate,
+			@JsonProperty("post_body") String postBody,
+			@JsonProperty("post_body_html") String postBodyHtml,
+			@JsonProperty("post_body_plain_text") String postBodyPlainText,
+			String signature,
+			@JsonProperty("signature_html") String signatureHtml,
+			@JsonProperty("signature_plain_text") String signaturePlainText,
+			@JsonProperty("post_like_count") double postLikeCount,
+			@JsonProperty("post_attachment_count") double postAttachmentCount,
+			@JsonProperty("user_is_ignored") boolean userIsIgnored,
+			@JsonProperty("post_is_published") boolean postIsPublished,
+			@JsonProperty("post_is_deleted") boolean postIsDeleted,
+			@JsonProperty("post_update_date") double postUpdateDate,
+			@JsonProperty("post_is_first_post") boolean postIsFirstPost,
+			SearchTaggedResponseDataFirstPostLinks links,
+			SearchTaggedResponseDataFirstPostPermissions permissions
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchTaggedResponseDataLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@Nullable String followers,
-			@Nullable String forum,
-			@Nullable String posts,
-			@JsonProperty("first_poster") @Nullable String firstPoster,
-			@JsonProperty("first_poster_avatar") @Nullable String firstPosterAvatar,
-			@JsonProperty("first_post") @Nullable String firstPost,
-			@JsonProperty("last_post") @Nullable String lastPost
+			String permalink,
+			String detail,
+			String followers,
+			String forum,
+			String posts,
+			@JsonProperty("first_poster") String firstPoster,
+			@JsonProperty("first_poster_avatar") String firstPosterAvatar,
+			@JsonProperty("first_post") String firstPost,
+			@JsonProperty("last_post") String lastPost
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchTaggedResponseDataPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode delete,
-			@Nullable JsonNode follow,
-			@Nullable JsonNode post,
-			@JsonProperty("upload_attachment") @Nullable JsonNode uploadAttachment,
-			@Nullable JsonNode edit,
-			@JsonProperty("edit_title") @Nullable JsonNode editTitle,
-			@JsonProperty("edit_tags") @Nullable JsonNode editTags
+			boolean view,
+			boolean delete,
+			boolean follow,
+			boolean post,
+			@JsonProperty("upload_attachment") boolean uploadAttachment,
+			boolean edit,
+			@JsonProperty("edit_title") boolean editTitle,
+			@JsonProperty("edit_tags") boolean editTags
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchTaggedResponseDataForumForumPrefixesGroupPrefixes(
-			@JsonProperty("prefix_id") Double prefixId,
-			@JsonProperty("prefix_title") @Nullable String prefixTitle
+			@JsonProperty("prefix_id") double prefixId,
+			@JsonProperty("prefix_title") String prefixTitle
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchTaggedResponseDataForumForumPrefixes(
-			@JsonProperty("group_title") @Nullable String groupTitle,
-			@JsonProperty("group_prefixes") @Nullable List<SearchTaggedResponseDataForumForumPrefixesGroupPrefixes> groupPrefixes
+			@JsonProperty("group_title") String groupTitle,
+			@JsonProperty("group_prefixes") List<SearchTaggedResponseDataForumForumPrefixesGroupPrefixes> groupPrefixes
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchTaggedResponseDataForumLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@JsonProperty("sub-categories") @Nullable String subCategories,
-			@JsonProperty("sub-forums") @Nullable String subForums,
-			@Nullable String threads,
-			@Nullable String followers
+			String permalink,
+			String detail,
+			@JsonProperty("sub-categories") String subCategories,
+			@JsonProperty("sub-forums") String subForums,
+			String threads,
+			String followers
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchTaggedResponseDataForumPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode edit,
-			@Nullable JsonNode delete,
-			@JsonProperty("create_thread") @Nullable JsonNode createThread,
-			@JsonProperty("upload_attachment") @Nullable JsonNode uploadAttachment,
-			@JsonProperty("tag_thread") @Nullable JsonNode tagThread,
-			@Nullable JsonNode follow
+			boolean view,
+			boolean edit,
+			boolean delete,
+			@JsonProperty("create_thread") boolean createThread,
+			@JsonProperty("upload_attachment") boolean uploadAttachment,
+			@JsonProperty("tag_thread") boolean tagThread,
+			boolean follow
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchTaggedResponseDataForum(
-			@JsonProperty("forum_id") Double forumId,
-			@JsonProperty("forum_title") @Nullable String forumTitle,
-			@JsonProperty("forum_description") @Nullable String forumDescription,
-			@JsonProperty("forum_thread_count") Double forumThreadCount,
-			@JsonProperty("forum_post_count") Double forumPostCount,
-			@JsonProperty("forum_prefixes") @Nullable List<SearchTaggedResponseDataForumForumPrefixes> forumPrefixes,
-			@JsonProperty("thread_default_prefix_id") Double threadDefaultPrefixId,
-			@JsonProperty("thread_prefix_is_required") @Nullable JsonNode threadPrefixIsRequired,
-			@Nullable SearchTaggedResponseDataForumLinks links,
-			@Nullable SearchTaggedResponseDataForumPermissions permissions,
-			@JsonProperty("forum_is_followed") @Nullable JsonNode forumIsFollowed
+			@JsonProperty("forum_id") double forumId,
+			@JsonProperty("forum_title") String forumTitle,
+			@JsonProperty("forum_description") String forumDescription,
+			@JsonProperty("forum_thread_count") double forumThreadCount,
+			@JsonProperty("forum_post_count") double forumPostCount,
+			@JsonProperty("forum_prefixes") List<SearchTaggedResponseDataForumForumPrefixes> forumPrefixes,
+			@JsonProperty("thread_default_prefix_id") double threadDefaultPrefixId,
+			@JsonProperty("thread_prefix_is_required") boolean threadPrefixIsRequired,
+			SearchTaggedResponseDataForumLinks links,
+			SearchTaggedResponseDataForumPermissions permissions,
+			@JsonProperty("forum_is_followed") boolean forumIsFollowed
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchTaggedResponseData(
-			@JsonProperty("content_type") @Nullable String contentType,
-			@JsonProperty("content_id") Double contentId,
-			@JsonProperty("thread_id") Double threadId,
-			@JsonProperty("forum_id") Double forumId,
-			@JsonProperty("thread_title") @Nullable String threadTitle,
-			@JsonProperty("thread_view_count") Double threadViewCount,
-			@JsonProperty("creator_user_id") Double creatorUserId,
-			@JsonProperty("creator_username") @Nullable String creatorUsername,
-			@JsonProperty("creator_username_html") @Nullable String creatorUsernameHtml,
-			@JsonProperty("thread_create_date") Double threadCreateDate,
-			@JsonProperty("thread_update_date") Double threadUpdateDate,
-			@JsonProperty("user_is_ignored") @Nullable JsonNode userIsIgnored,
-			@JsonProperty("thread_post_count") Double threadPostCount,
-			@JsonProperty("thread_is_published") @Nullable JsonNode threadIsPublished,
-			@JsonProperty("thread_is_deleted") @Nullable JsonNode threadIsDeleted,
-			@JsonProperty("thread_is_sticky") @Nullable JsonNode threadIsSticky,
-			@JsonProperty("thread_is_followed") @Nullable JsonNode threadIsFollowed,
-			@JsonProperty("first_post") @Nullable SearchTaggedResponseDataFirstPost firstPost,
-			@JsonProperty("thread_prefixes") @Nullable List<JsonNode> threadPrefixes,
-			@JsonProperty("thread_tags") @Nullable JsonNode threadTags,
-			@Nullable SearchTaggedResponseDataLinks links,
-			@Nullable SearchTaggedResponseDataPermissions permissions,
-			@Nullable SearchTaggedResponseDataForum forum
+			@JsonProperty("content_type") String contentType,
+			@JsonProperty("content_id") double contentId,
+			@JsonProperty("thread_id") double threadId,
+			@JsonProperty("forum_id") double forumId,
+			@JsonProperty("thread_title") String threadTitle,
+			@JsonProperty("thread_view_count") double threadViewCount,
+			@JsonProperty("creator_user_id") double creatorUserId,
+			@JsonProperty("creator_username") String creatorUsername,
+			@JsonProperty("creator_username_html") String creatorUsernameHtml,
+			@JsonProperty("thread_create_date") double threadCreateDate,
+			@JsonProperty("thread_update_date") double threadUpdateDate,
+			@JsonProperty("user_is_ignored") boolean userIsIgnored,
+			@JsonProperty("thread_post_count") double threadPostCount,
+			@JsonProperty("thread_is_published") boolean threadIsPublished,
+			@JsonProperty("thread_is_deleted") boolean threadIsDeleted,
+			@JsonProperty("thread_is_sticky") boolean threadIsSticky,
+			@JsonProperty("thread_is_followed") boolean threadIsFollowed,
+			@JsonProperty("first_post") SearchTaggedResponseDataFirstPost firstPost,
+			@JsonProperty("thread_prefixes") List<JsonNode> threadPrefixes,
+			@JsonProperty("thread_tags") JsonNode threadTags,
+			SearchTaggedResponseDataLinks links,
+			SearchTaggedResponseDataPermissions permissions,
+			SearchTaggedResponseDataForum forum
 		) {}
 
 		public record SearchResultsParams(
@@ -6224,158 +6232,158 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchResultsResponse(
-			@Nullable List<SearchResultsResponseData> data,
-			@JsonProperty("data_total") Double dataTotal,
-			@JsonProperty("search_tags") @Nullable JsonNode searchTags,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<SearchResultsResponseData> data,
+			@JsonProperty("data_total") double dataTotal,
+			@JsonProperty("search_tags") JsonNode searchTags,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchResultsResponseDataFirstPostLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@Nullable String thread,
-			@Nullable String poster,
-			@Nullable String likes,
-			@Nullable String report,
-			@Nullable String attachments,
-			@JsonProperty("poster_avatar") @Nullable String posterAvatar
+			String permalink,
+			String detail,
+			String thread,
+			String poster,
+			String likes,
+			String report,
+			String attachments,
+			@JsonProperty("poster_avatar") String posterAvatar
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchResultsResponseDataFirstPostPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode edit,
-			@Nullable JsonNode delete,
-			@Nullable JsonNode reply,
-			@Nullable JsonNode like,
-			@Nullable JsonNode report,
-			@JsonProperty("upload_attachment") @Nullable JsonNode uploadAttachment
+			boolean view,
+			boolean edit,
+			boolean delete,
+			boolean reply,
+			boolean like,
+			boolean report,
+			@JsonProperty("upload_attachment") boolean uploadAttachment
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchResultsResponseDataFirstPost(
-			@JsonProperty("post_id") Double postId,
-			@JsonProperty("thread_id") Double threadId,
-			@JsonProperty("poster_user_id") Double posterUserId,
-			@JsonProperty("poster_username") @Nullable String posterUsername,
-			@JsonProperty("poster_username_html") @Nullable String posterUsernameHtml,
-			@JsonProperty("post_create_date") Double postCreateDate,
-			@JsonProperty("post_body") @Nullable String postBody,
-			@JsonProperty("post_body_html") @Nullable String postBodyHtml,
-			@JsonProperty("post_body_plain_text") @Nullable String postBodyPlainText,
-			@Nullable String signature,
-			@JsonProperty("signature_html") @Nullable String signatureHtml,
-			@JsonProperty("signature_plain_text") @Nullable String signaturePlainText,
-			@JsonProperty("post_like_count") Double postLikeCount,
-			@JsonProperty("post_attachment_count") Double postAttachmentCount,
-			@JsonProperty("user_is_ignored") @Nullable JsonNode userIsIgnored,
-			@JsonProperty("post_is_published") @Nullable JsonNode postIsPublished,
-			@JsonProperty("post_is_deleted") @Nullable JsonNode postIsDeleted,
-			@JsonProperty("post_update_date") Double postUpdateDate,
-			@JsonProperty("post_is_first_post") @Nullable JsonNode postIsFirstPost,
-			@Nullable SearchResultsResponseDataFirstPostLinks links,
-			@Nullable SearchResultsResponseDataFirstPostPermissions permissions
+			@JsonProperty("post_id") double postId,
+			@JsonProperty("thread_id") double threadId,
+			@JsonProperty("poster_user_id") double posterUserId,
+			@JsonProperty("poster_username") String posterUsername,
+			@JsonProperty("poster_username_html") String posterUsernameHtml,
+			@JsonProperty("post_create_date") double postCreateDate,
+			@JsonProperty("post_body") String postBody,
+			@JsonProperty("post_body_html") String postBodyHtml,
+			@JsonProperty("post_body_plain_text") String postBodyPlainText,
+			String signature,
+			@JsonProperty("signature_html") String signatureHtml,
+			@JsonProperty("signature_plain_text") String signaturePlainText,
+			@JsonProperty("post_like_count") double postLikeCount,
+			@JsonProperty("post_attachment_count") double postAttachmentCount,
+			@JsonProperty("user_is_ignored") boolean userIsIgnored,
+			@JsonProperty("post_is_published") boolean postIsPublished,
+			@JsonProperty("post_is_deleted") boolean postIsDeleted,
+			@JsonProperty("post_update_date") double postUpdateDate,
+			@JsonProperty("post_is_first_post") boolean postIsFirstPost,
+			SearchResultsResponseDataFirstPostLinks links,
+			SearchResultsResponseDataFirstPostPermissions permissions
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchResultsResponseDataLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@Nullable String followers,
-			@Nullable String forum,
-			@Nullable String posts,
-			@JsonProperty("first_poster") @Nullable String firstPoster,
-			@JsonProperty("first_poster_avatar") @Nullable String firstPosterAvatar,
-			@JsonProperty("first_post") @Nullable String firstPost,
-			@JsonProperty("last_post") @Nullable String lastPost
+			String permalink,
+			String detail,
+			String followers,
+			String forum,
+			String posts,
+			@JsonProperty("first_poster") String firstPoster,
+			@JsonProperty("first_poster_avatar") String firstPosterAvatar,
+			@JsonProperty("first_post") String firstPost,
+			@JsonProperty("last_post") String lastPost
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchResultsResponseDataPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode delete,
-			@Nullable JsonNode follow,
-			@Nullable JsonNode post,
-			@JsonProperty("upload_attachment") @Nullable JsonNode uploadAttachment,
-			@Nullable JsonNode edit,
-			@JsonProperty("edit_title") @Nullable JsonNode editTitle,
-			@JsonProperty("edit_tags") @Nullable JsonNode editTags
+			boolean view,
+			boolean delete,
+			boolean follow,
+			boolean post,
+			@JsonProperty("upload_attachment") boolean uploadAttachment,
+			boolean edit,
+			@JsonProperty("edit_title") boolean editTitle,
+			@JsonProperty("edit_tags") boolean editTags
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchResultsResponseDataForumForumPrefixesGroupPrefixes(
-			@JsonProperty("prefix_id") Double prefixId,
-			@JsonProperty("prefix_title") @Nullable String prefixTitle
+			@JsonProperty("prefix_id") double prefixId,
+			@JsonProperty("prefix_title") String prefixTitle
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchResultsResponseDataForumForumPrefixes(
-			@JsonProperty("group_title") @Nullable String groupTitle,
-			@JsonProperty("group_prefixes") @Nullable List<SearchResultsResponseDataForumForumPrefixesGroupPrefixes> groupPrefixes
+			@JsonProperty("group_title") String groupTitle,
+			@JsonProperty("group_prefixes") List<SearchResultsResponseDataForumForumPrefixesGroupPrefixes> groupPrefixes
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchResultsResponseDataForumLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@JsonProperty("sub-categories") @Nullable String subCategories,
-			@JsonProperty("sub-forums") @Nullable String subForums,
-			@Nullable String threads,
-			@Nullable String followers
+			String permalink,
+			String detail,
+			@JsonProperty("sub-categories") String subCategories,
+			@JsonProperty("sub-forums") String subForums,
+			String threads,
+			String followers
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchResultsResponseDataForumPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode edit,
-			@Nullable JsonNode delete,
-			@JsonProperty("create_thread") @Nullable JsonNode createThread,
-			@JsonProperty("upload_attachment") @Nullable JsonNode uploadAttachment,
-			@JsonProperty("tag_thread") @Nullable JsonNode tagThread,
-			@Nullable JsonNode follow
+			boolean view,
+			boolean edit,
+			boolean delete,
+			@JsonProperty("create_thread") boolean createThread,
+			@JsonProperty("upload_attachment") boolean uploadAttachment,
+			@JsonProperty("tag_thread") boolean tagThread,
+			boolean follow
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchResultsResponseDataForum(
-			@JsonProperty("forum_id") Double forumId,
-			@JsonProperty("forum_title") @Nullable String forumTitle,
-			@JsonProperty("forum_description") @Nullable String forumDescription,
-			@JsonProperty("forum_thread_count") Double forumThreadCount,
-			@JsonProperty("forum_post_count") Double forumPostCount,
-			@JsonProperty("forum_prefixes") @Nullable List<SearchResultsResponseDataForumForumPrefixes> forumPrefixes,
-			@JsonProperty("thread_default_prefix_id") Double threadDefaultPrefixId,
-			@JsonProperty("thread_prefix_is_required") @Nullable JsonNode threadPrefixIsRequired,
-			@Nullable SearchResultsResponseDataForumLinks links,
-			@Nullable SearchResultsResponseDataForumPermissions permissions,
-			@JsonProperty("forum_is_followed") @Nullable JsonNode forumIsFollowed
+			@JsonProperty("forum_id") double forumId,
+			@JsonProperty("forum_title") String forumTitle,
+			@JsonProperty("forum_description") String forumDescription,
+			@JsonProperty("forum_thread_count") double forumThreadCount,
+			@JsonProperty("forum_post_count") double forumPostCount,
+			@JsonProperty("forum_prefixes") List<SearchResultsResponseDataForumForumPrefixes> forumPrefixes,
+			@JsonProperty("thread_default_prefix_id") double threadDefaultPrefixId,
+			@JsonProperty("thread_prefix_is_required") boolean threadPrefixIsRequired,
+			SearchResultsResponseDataForumLinks links,
+			SearchResultsResponseDataForumPermissions permissions,
+			@JsonProperty("forum_is_followed") boolean forumIsFollowed
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record SearchResultsResponseData(
-			@JsonProperty("content_type") @Nullable String contentType,
-			@JsonProperty("content_id") Double contentId,
-			@JsonProperty("thread_id") Double threadId,
-			@JsonProperty("forum_id") Double forumId,
-			@JsonProperty("thread_title") @Nullable String threadTitle,
-			@JsonProperty("thread_view_count") Double threadViewCount,
-			@JsonProperty("creator_user_id") Double creatorUserId,
-			@JsonProperty("creator_username") @Nullable String creatorUsername,
-			@JsonProperty("creator_username_html") @Nullable String creatorUsernameHtml,
-			@JsonProperty("thread_create_date") Double threadCreateDate,
-			@JsonProperty("thread_update_date") Double threadUpdateDate,
-			@JsonProperty("user_is_ignored") @Nullable JsonNode userIsIgnored,
-			@JsonProperty("thread_post_count") Double threadPostCount,
-			@JsonProperty("thread_is_published") @Nullable JsonNode threadIsPublished,
-			@JsonProperty("thread_is_deleted") @Nullable JsonNode threadIsDeleted,
-			@JsonProperty("thread_is_sticky") @Nullable JsonNode threadIsSticky,
-			@JsonProperty("thread_is_followed") @Nullable JsonNode threadIsFollowed,
-			@JsonProperty("first_post") @Nullable SearchResultsResponseDataFirstPost firstPost,
-			@JsonProperty("thread_prefixes") @Nullable List<JsonNode> threadPrefixes,
-			@JsonProperty("thread_tags") @Nullable JsonNode threadTags,
-			@Nullable SearchResultsResponseDataLinks links,
-			@Nullable SearchResultsResponseDataPermissions permissions,
-			@Nullable SearchResultsResponseDataForum forum
+			@JsonProperty("content_type") String contentType,
+			@JsonProperty("content_id") double contentId,
+			@JsonProperty("thread_id") double threadId,
+			@JsonProperty("forum_id") double forumId,
+			@JsonProperty("thread_title") String threadTitle,
+			@JsonProperty("thread_view_count") double threadViewCount,
+			@JsonProperty("creator_user_id") double creatorUserId,
+			@JsonProperty("creator_username") String creatorUsername,
+			@JsonProperty("creator_username_html") String creatorUsernameHtml,
+			@JsonProperty("thread_create_date") double threadCreateDate,
+			@JsonProperty("thread_update_date") double threadUpdateDate,
+			@JsonProperty("user_is_ignored") boolean userIsIgnored,
+			@JsonProperty("thread_post_count") double threadPostCount,
+			@JsonProperty("thread_is_published") boolean threadIsPublished,
+			@JsonProperty("thread_is_deleted") boolean threadIsDeleted,
+			@JsonProperty("thread_is_sticky") boolean threadIsSticky,
+			@JsonProperty("thread_is_followed") boolean threadIsFollowed,
+			@JsonProperty("first_post") SearchResultsResponseDataFirstPost firstPost,
+			@JsonProperty("thread_prefixes") List<JsonNode> threadPrefixes,
+			@JsonProperty("thread_tags") JsonNode threadTags,
+			SearchResultsResponseDataLinks links,
+			SearchResultsResponseDataPermissions permissions,
+			SearchResultsResponseDataForum forum
 		) {}
 
 	}
@@ -6389,12 +6397,12 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record BatchExecuteResponse(
-			@Nullable BatchExecuteResponseJobs jobs
+			BatchExecuteResponseJobs jobs
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record BatchExecuteResponseJobs(
-			@JsonProperty("job_id") @Nullable JsonNode jobId
+			@JsonProperty("job_id") JsonNode jobId
 		) {}
 
 	}
@@ -6417,78 +6425,78 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ChatboxIndexResponse(
-			@Nullable List<ChatboxIndexResponseRooms> rooms,
-			@Nullable JsonNode ban,
-			@Nullable List<ChatboxIndexResponseIgnore> ignore,
-			@Nullable ChatboxIndexResponsePermissions permissions,
-			@Nullable List<String> commands,
-			@Nullable ChatboxIndexResponseRoomsOnline roomsOnline,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<ChatboxIndexResponseRooms> rooms,
+			JsonNode ban,
+			List<ChatboxIndexResponseIgnore> ignore,
+			ChatboxIndexResponsePermissions permissions,
+			List<String> commands,
+			ChatboxIndexResponseRoomsOnline roomsOnline,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ChatboxIndexResponseRooms(
-			@JsonProperty("can_report") @Nullable JsonNode canReport,
-			@Nullable JsonNode eng,
-			@Nullable JsonNode market,
-			@JsonProperty("room_id") Double roomId,
-			@Nullable String title
+			@JsonProperty("can_report") boolean canReport,
+			boolean eng,
+			boolean market,
+			@JsonProperty("room_id") double roomId,
+			String title
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ChatboxIndexResponseIgnoreRenderedAvatars(
-			@Nullable String l,
-			@Nullable String m,
-			@Nullable String s
+			String l,
+			String m,
+			String s
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ChatboxIndexResponseIgnoreRendered(
-			@Nullable String username,
-			@Nullable ChatboxIndexResponseIgnoreRenderedAvatars avatars,
-			@Nullable String link
+			String username,
+			ChatboxIndexResponseIgnoreRenderedAvatars avatars,
+			String link
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ChatboxIndexResponseIgnore(
-			@JsonProperty("avatar_date") Double avatarDate,
-			@JsonProperty("background_date") Double backgroundDate,
-			@JsonProperty("contest_count") Double contestCount,
-			@JsonProperty("custom_title") @Nullable String customTitle,
-			@JsonProperty("display_banner_id") Double displayBannerId,
-			@JsonProperty("display_icon_group_id") Double displayIconGroupId,
-			@JsonProperty("display_style_group_id") Double displayStyleGroupId,
-			@JsonProperty("is_admin") @Nullable JsonNode isAdmin,
-			@JsonProperty("is_banned") @Nullable JsonNode isBanned,
-			@JsonProperty("is_moderator") @Nullable JsonNode isModerator,
-			@JsonProperty("is_staff") @Nullable JsonNode isStaff,
-			@JsonProperty("last_activity") Double lastActivity,
-			@JsonProperty("like2_count") Double like2Count,
-			@JsonProperty("like_count") Double likeCount,
-			@JsonProperty("message_count") Double messageCount,
-			@JsonProperty("register_date") Double registerDate,
-			@Nullable ChatboxIndexResponseIgnoreRendered rendered,
-			@JsonProperty("short_link") @Nullable JsonNode shortLink,
-			@JsonProperty("trophy_points") Double trophyPoints,
-			@JsonProperty("uniq_banner") @Nullable JsonNode uniqBanner,
-			@JsonProperty("uniq_username_css") @Nullable String uniqUsernameCss,
-			@JsonProperty("user_id") Double userId,
-			@Nullable String username
+			@JsonProperty("avatar_date") double avatarDate,
+			@JsonProperty("background_date") double backgroundDate,
+			@JsonProperty("contest_count") double contestCount,
+			@JsonProperty("custom_title") String customTitle,
+			@JsonProperty("display_banner_id") double displayBannerId,
+			@JsonProperty("display_icon_group_id") double displayIconGroupId,
+			@JsonProperty("display_style_group_id") double displayStyleGroupId,
+			@JsonProperty("is_admin") boolean isAdmin,
+			@JsonProperty("is_banned") boolean isBanned,
+			@JsonProperty("is_moderator") boolean isModerator,
+			@JsonProperty("is_staff") boolean isStaff,
+			@JsonProperty("last_activity") double lastActivity,
+			@JsonProperty("like2_count") double like2Count,
+			@JsonProperty("like_count") double likeCount,
+			@JsonProperty("message_count") double messageCount,
+			@JsonProperty("register_date") double registerDate,
+			ChatboxIndexResponseIgnoreRendered rendered,
+			@JsonProperty("short_link") JsonNode shortLink,
+			@JsonProperty("trophy_points") double trophyPoints,
+			@JsonProperty("uniq_banner") JsonNode uniqBanner,
+			@JsonProperty("uniq_username_css") String uniqUsernameCss,
+			@JsonProperty("user_id") double userId,
+			String username
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ChatboxIndexResponsePermissions(
-			@Nullable JsonNode deleteAnyMessage,
-			@Nullable JsonNode editAnyMessage,
-			@Nullable JsonNode viewAnyMessage,
-			@Nullable JsonNode viewMessages,
-			@Nullable JsonNode postMessage,
-			@Nullable JsonNode ban
+			boolean deleteAnyMessage,
+			boolean editAnyMessage,
+			boolean viewAnyMessage,
+			boolean viewMessages,
+			boolean postMessage,
+			boolean ban
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ChatboxIndexResponseRoomsOnline(
-			@JsonProperty("chat:0") Double chat_0
+			@JsonProperty("chat:0") double chat_0
 		) {}
 
 		public record ChatboxGetMessagesParams(
@@ -6504,8 +6512,8 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ChatboxGetMessagesResponse(
-			@Nullable List<JsonNode> messages,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<Resp_ChatboxMessageModel> messages,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record ChatboxPostMessageBody(
@@ -6523,8 +6531,8 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ChatboxPostMessageResponse(
-			@Nullable JsonNode message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			Resp_ChatboxMessageModel message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record ChatboxEditMessageBody(
@@ -6537,8 +6545,8 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ChatboxEditMessageResponse(
-			@Nullable JsonNode message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			Resp_ChatboxMessageModel message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record ChatboxDeleteMessageBody(
@@ -6551,7 +6559,7 @@ public final class Types {
 		public record ChatboxDeleteMessageResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record ChatboxOnlineParams(
@@ -6562,57 +6570,57 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ChatboxOnlineResponse(
-			@Nullable List<ChatboxOnlineResponseUsers> users,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<ChatboxOnlineResponseUsers> users,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ChatboxOnlineResponseUsersRenderedAvatars(
-			@Nullable String l,
-			@Nullable String m,
-			@Nullable String s
+			String l,
+			String m,
+			String s
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ChatboxOnlineResponseUsersRendered(
-			@Nullable String username,
-			@Nullable ChatboxOnlineResponseUsersRenderedAvatars avatars,
-			@Nullable String link
+			String username,
+			ChatboxOnlineResponseUsersRenderedAvatars avatars,
+			String link
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ChatboxOnlineResponseUsersUniqBanner(
-			@JsonProperty("banner_css") @Nullable String bannerCss,
-			@JsonProperty("banner_text") @Nullable String bannerText,
-			@JsonProperty("banner_icon") @Nullable String bannerIcon,
-			@JsonProperty("username_icon") @Nullable String usernameIcon
+			@JsonProperty("banner_css") String bannerCss,
+			@JsonProperty("banner_text") String bannerText,
+			@JsonProperty("banner_icon") String bannerIcon,
+			@JsonProperty("username_icon") String usernameIcon
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ChatboxOnlineResponseUsers(
-			@JsonProperty("avatar_date") Double avatarDate,
-			@JsonProperty("background_date") Double backgroundDate,
-			@JsonProperty("contest_count") Double contestCount,
-			@JsonProperty("custom_title") @Nullable String customTitle,
-			@JsonProperty("display_banner_id") Double displayBannerId,
-			@JsonProperty("display_icon_group_id") Double displayIconGroupId,
-			@JsonProperty("display_style_group_id") Double displayStyleGroupId,
-			@JsonProperty("is_admin") @Nullable JsonNode isAdmin,
-			@JsonProperty("is_banned") @Nullable JsonNode isBanned,
-			@JsonProperty("is_moderator") @Nullable JsonNode isModerator,
-			@JsonProperty("is_staff") @Nullable JsonNode isStaff,
-			@JsonProperty("last_activity") Double lastActivity,
-			@JsonProperty("like2_count") Double like2Count,
-			@JsonProperty("like_count") Double likeCount,
-			@JsonProperty("message_count") Double messageCount,
-			@JsonProperty("register_date") Double registerDate,
-			@Nullable ChatboxOnlineResponseUsersRendered rendered,
-			@JsonProperty("short_link") @Nullable String shortLink,
-			@JsonProperty("trophy_points") Double trophyPoints,
-			@JsonProperty("uniq_banner") @Nullable ChatboxOnlineResponseUsersUniqBanner uniqBanner,
-			@JsonProperty("uniq_username_css") @Nullable String uniqUsernameCss,
-			@JsonProperty("user_id") Double userId,
-			@Nullable String username
+			@JsonProperty("avatar_date") double avatarDate,
+			@JsonProperty("background_date") double backgroundDate,
+			@JsonProperty("contest_count") double contestCount,
+			@JsonProperty("custom_title") String customTitle,
+			@JsonProperty("display_banner_id") double displayBannerId,
+			@JsonProperty("display_icon_group_id") double displayIconGroupId,
+			@JsonProperty("display_style_group_id") double displayStyleGroupId,
+			@JsonProperty("is_admin") boolean isAdmin,
+			@JsonProperty("is_banned") boolean isBanned,
+			@JsonProperty("is_moderator") boolean isModerator,
+			@JsonProperty("is_staff") boolean isStaff,
+			@JsonProperty("last_activity") double lastActivity,
+			@JsonProperty("like2_count") double like2Count,
+			@JsonProperty("like_count") double likeCount,
+			@JsonProperty("message_count") double messageCount,
+			@JsonProperty("register_date") double registerDate,
+			ChatboxOnlineResponseUsersRendered rendered,
+			@JsonProperty("short_link") String shortLink,
+			@JsonProperty("trophy_points") double trophyPoints,
+			@JsonProperty("uniq_banner") ChatboxOnlineResponseUsersUniqBanner uniqBanner,
+			@JsonProperty("uniq_username_css") String uniqUsernameCss,
+			@JsonProperty("user_id") double userId,
+			String username
 		) {}
 
 		public record ChatboxReportReasonsParams(
@@ -6623,8 +6631,8 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ChatboxReportReasonsResponse(
-			@Nullable List<String> reasons,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<String> reasons,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record ChatboxReportBody(
@@ -6639,7 +6647,7 @@ public final class Types {
 		public record ChatboxReportResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record ChatboxGetLeaderboardParams(
@@ -6653,98 +6661,98 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ChatboxGetLeaderboardResponse(
-			@Nullable List<ChatboxGetLeaderboardResponseLeaderboard> leaderboard,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<ChatboxGetLeaderboardResponseLeaderboard> leaderboard,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ChatboxGetLeaderboardResponseLeaderboardRenderedAvatars(
-			@Nullable String l,
-			@Nullable String m,
-			@Nullable String s
+			String l,
+			String m,
+			String s
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ChatboxGetLeaderboardResponseLeaderboardRendered(
-			@Nullable String username,
-			@Nullable ChatboxGetLeaderboardResponseLeaderboardRenderedAvatars avatars,
-			@Nullable String link
+			String username,
+			ChatboxGetLeaderboardResponseLeaderboardRenderedAvatars avatars,
+			String link
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ChatboxGetLeaderboardResponseLeaderboardUniqBanner(
-			@JsonProperty("banner_css") @Nullable String bannerCss,
-			@JsonProperty("banner_text") @Nullable String bannerText,
-			@JsonProperty("banner_icon") @Nullable String bannerIcon
+			@JsonProperty("banner_css") String bannerCss,
+			@JsonProperty("banner_text") String bannerText,
+			@JsonProperty("banner_icon") String bannerIcon
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ChatboxGetLeaderboardResponseLeaderboard(
-			Double count,
-			@JsonProperty("user_id") Double userId,
-			@JsonProperty("avatar_date") Double avatarDate,
-			@JsonProperty("background_date") Double backgroundDate,
-			@JsonProperty("contest_count") Double contestCount,
-			@JsonProperty("custom_title") @Nullable String customTitle,
-			@JsonProperty("display_banner_id") Double displayBannerId,
-			@JsonProperty("display_icon_group_id") Double displayIconGroupId,
-			@JsonProperty("display_style_group_id") Double displayStyleGroupId,
-			@JsonProperty("is_banned") @Nullable JsonNode isBanned,
-			@JsonProperty("last_activity") Double lastActivity,
-			@JsonProperty("like2_count") Double like2Count,
-			@JsonProperty("like_count") Double likeCount,
-			@JsonProperty("message_count") Double messageCount,
-			@JsonProperty("register_date") Double registerDate,
-			@Nullable ChatboxGetLeaderboardResponseLeaderboardRendered rendered,
-			@JsonProperty("short_link") @Nullable JsonNode shortLink,
-			@JsonProperty("trophy_points") Double trophyPoints,
-			@JsonProperty("uniq_banner") @Nullable ChatboxGetLeaderboardResponseLeaderboardUniqBanner uniqBanner,
-			@JsonProperty("uniq_username_css") @Nullable String uniqUsernameCss,
-			@Nullable String username
+			double count,
+			@JsonProperty("user_id") double userId,
+			@JsonProperty("avatar_date") double avatarDate,
+			@JsonProperty("background_date") double backgroundDate,
+			@JsonProperty("contest_count") double contestCount,
+			@JsonProperty("custom_title") String customTitle,
+			@JsonProperty("display_banner_id") double displayBannerId,
+			@JsonProperty("display_icon_group_id") double displayIconGroupId,
+			@JsonProperty("display_style_group_id") double displayStyleGroupId,
+			@JsonProperty("is_banned") boolean isBanned,
+			@JsonProperty("last_activity") double lastActivity,
+			@JsonProperty("like2_count") double like2Count,
+			@JsonProperty("like_count") double likeCount,
+			@JsonProperty("message_count") double messageCount,
+			@JsonProperty("register_date") double registerDate,
+			ChatboxGetLeaderboardResponseLeaderboardRendered rendered,
+			@JsonProperty("short_link") JsonNode shortLink,
+			@JsonProperty("trophy_points") double trophyPoints,
+			@JsonProperty("uniq_banner") ChatboxGetLeaderboardResponseLeaderboardUniqBanner uniqBanner,
+			@JsonProperty("uniq_username_css") String uniqUsernameCss,
+			String username
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ChatboxGetIgnoreResponse(
-			@Nullable List<ChatboxGetIgnoreResponseIgnored> ignored,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<ChatboxGetIgnoreResponseIgnored> ignored,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ChatboxGetIgnoreResponseIgnoredRenderedAvatars(
-			@Nullable String l,
-			@Nullable String m,
-			@Nullable String s
+			String l,
+			String m,
+			String s
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ChatboxGetIgnoreResponseIgnoredRendered(
-			@Nullable String username,
-			@Nullable ChatboxGetIgnoreResponseIgnoredRenderedAvatars avatars,
-			@Nullable String link
+			String username,
+			ChatboxGetIgnoreResponseIgnoredRenderedAvatars avatars,
+			String link
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ChatboxGetIgnoreResponseIgnored(
-			@JsonProperty("avatar_date") Double avatarDate,
-			@JsonProperty("background_date") Double backgroundDate,
-			@JsonProperty("contest_count") Double contestCount,
-			@JsonProperty("custom_title") @Nullable String customTitle,
-			@JsonProperty("display_banner_id") Double displayBannerId,
-			@JsonProperty("display_icon_group_id") Double displayIconGroupId,
-			@JsonProperty("display_style_group_id") Double displayStyleGroupId,
-			@JsonProperty("is_banned") @Nullable JsonNode isBanned,
-			@JsonProperty("last_activity") Double lastActivity,
-			@JsonProperty("like2_count") Double like2Count,
-			@JsonProperty("like_count") Double likeCount,
-			@JsonProperty("message_count") Double messageCount,
-			@JsonProperty("register_date") Double registerDate,
-			@Nullable ChatboxGetIgnoreResponseIgnoredRendered rendered,
-			@JsonProperty("short_link") @Nullable JsonNode shortLink,
-			@JsonProperty("trophy_points") Double trophyPoints,
-			@JsonProperty("uniq_banner") @Nullable JsonNode uniqBanner,
-			@JsonProperty("uniq_username_css") @Nullable String uniqUsernameCss,
-			@JsonProperty("user_id") Double userId,
-			@Nullable String username
+			@JsonProperty("avatar_date") double avatarDate,
+			@JsonProperty("background_date") double backgroundDate,
+			@JsonProperty("contest_count") double contestCount,
+			@JsonProperty("custom_title") String customTitle,
+			@JsonProperty("display_banner_id") double displayBannerId,
+			@JsonProperty("display_icon_group_id") double displayIconGroupId,
+			@JsonProperty("display_style_group_id") double displayStyleGroupId,
+			@JsonProperty("is_banned") boolean isBanned,
+			@JsonProperty("last_activity") double lastActivity,
+			@JsonProperty("like2_count") double like2Count,
+			@JsonProperty("like_count") double likeCount,
+			@JsonProperty("message_count") double messageCount,
+			@JsonProperty("register_date") double registerDate,
+			ChatboxGetIgnoreResponseIgnoredRendered rendered,
+			@JsonProperty("short_link") JsonNode shortLink,
+			@JsonProperty("trophy_points") double trophyPoints,
+			@JsonProperty("uniq_banner") JsonNode uniqBanner,
+			@JsonProperty("uniq_username_css") String uniqUsernameCss,
+			@JsonProperty("user_id") double userId,
+			String username
 		) {}
 
 		public record ChatboxPostIgnoreBody(
@@ -6756,7 +6764,7 @@ public final class Types {
 		public record ChatboxPostIgnoreResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record ChatboxDeleteIgnoreBody(
@@ -6768,7 +6776,7 @@ public final class Types {
 		public record ChatboxDeleteIgnoreResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 	}
@@ -6791,35 +6799,35 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record FormsListResponse(
-			@Nullable List<FormsListResponseForms> forms,
-			Double formsPerPage,
-			Double page,
-			Double totalForms,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<FormsListResponseForms> forms,
+			double formsPerPage,
+			double page,
+			double totalForms,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record FormsListResponseFormsFieldsFieldChoices(
-			@Nullable String buy,
-			@Nullable String sell
+			String buy,
+			String sell
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record FormsListResponseFormsFields(
-			@JsonProperty("field_id") Double fieldId,
-			@Nullable String title,
-			@Nullable FormsListResponseFormsFieldsFieldChoices fieldChoices,
-			Double required,
-			@JsonProperty("max_length") Double maxLength,
-			@JsonProperty("default_value") @Nullable String defaultValue
+			@JsonProperty("field_id") double fieldId,
+			String title,
+			FormsListResponseFormsFieldsFieldChoices fieldChoices,
+			double required,
+			@JsonProperty("max_length") double maxLength,
+			@JsonProperty("default_value") String defaultValue
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record FormsListResponseForms(
-			@JsonProperty("form_id") Double formId,
-			@Nullable String title,
-			@Nullable String description,
-			@Nullable List<FormsListResponseFormsFields> fields
+			@JsonProperty("form_id") double formId,
+			String title,
+			String description,
+			List<FormsListResponseFormsFields> fields
 		) {}
 
 		@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "form_id")
@@ -6844,54 +6852,54 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record FormsCreateResponse(
-			@Nullable String message,
-			@Nullable FormsCreateResponseContent content,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			String message,
+			FormsCreateResponseContent content,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record FormsCreateResponseContentLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@Nullable String followers,
-			@Nullable String forum,
-			@Nullable String posts,
-			@JsonProperty("first_poster") @Nullable String firstPoster,
-			@JsonProperty("first_poster_avatar") @Nullable String firstPosterAvatar,
-			@JsonProperty("first_post") @Nullable String firstPost
+			String permalink,
+			String detail,
+			String followers,
+			String forum,
+			String posts,
+			@JsonProperty("first_poster") String firstPoster,
+			@JsonProperty("first_poster_avatar") String firstPosterAvatar,
+			@JsonProperty("first_post") String firstPost
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record FormsCreateResponseContentPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode delete,
-			@Nullable JsonNode follow,
-			@Nullable JsonNode post
+			boolean view,
+			boolean delete,
+			boolean follow,
+			boolean post
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record FormsCreateResponseContent(
-			@JsonProperty("thread_id") Double threadId,
-			@JsonProperty("forum_id") Double forumId,
-			@JsonProperty("thread_title") @Nullable String threadTitle,
-			@JsonProperty("thread_view_count") Double threadViewCount,
-			@JsonProperty("creator_user_id") Double creatorUserId,
-			@JsonProperty("creator_username") @Nullable String creatorUsername,
-			@JsonProperty("creator_username_html") @Nullable String creatorUsernameHtml,
-			@JsonProperty("thread_create_date") Double threadCreateDate,
-			@JsonProperty("thread_update_date") Double threadUpdateDate,
-			@JsonProperty("user_is_ignored") @Nullable JsonNode userIsIgnored,
-			@JsonProperty("thread_post_count") Double threadPostCount,
-			@JsonProperty("thread_is_published") @Nullable JsonNode threadIsPublished,
-			@JsonProperty("thread_is_deleted") @Nullable JsonNode threadIsDeleted,
-			@JsonProperty("thread_is_sticky") @Nullable JsonNode threadIsSticky,
-			@JsonProperty("thread_is_closed") @Nullable JsonNode threadIsClosed,
-			@JsonProperty("thread_is_followed") @Nullable JsonNode threadIsFollowed,
-			@JsonProperty("thread_prefixes") @Nullable List<JsonNode> threadPrefixes,
-			@JsonProperty("thread_tags") @Nullable List<JsonNode> threadTags,
-			@Nullable FormsCreateResponseContentLinks links,
-			@Nullable FormsCreateResponseContentPermissions permissions,
-			@JsonProperty("node_title") @Nullable String nodeTitle
+			@JsonProperty("thread_id") double threadId,
+			@JsonProperty("forum_id") double forumId,
+			@JsonProperty("thread_title") String threadTitle,
+			@JsonProperty("thread_view_count") double threadViewCount,
+			@JsonProperty("creator_user_id") double creatorUserId,
+			@JsonProperty("creator_username") String creatorUsername,
+			@JsonProperty("creator_username_html") String creatorUsernameHtml,
+			@JsonProperty("thread_create_date") double threadCreateDate,
+			@JsonProperty("thread_update_date") double threadUpdateDate,
+			@JsonProperty("user_is_ignored") boolean userIsIgnored,
+			@JsonProperty("thread_post_count") double threadPostCount,
+			@JsonProperty("thread_is_published") boolean threadIsPublished,
+			@JsonProperty("thread_is_deleted") boolean threadIsDeleted,
+			@JsonProperty("thread_is_sticky") boolean threadIsSticky,
+			@JsonProperty("thread_is_closed") boolean threadIsClosed,
+			@JsonProperty("thread_is_followed") boolean threadIsFollowed,
+			@JsonProperty("thread_prefixes") List<JsonNode> threadPrefixes,
+			@JsonProperty("thread_tags") List<JsonNode> threadTags,
+			FormsCreateResponseContentLinks links,
+			FormsCreateResponseContentPermissions permissions,
+			@JsonProperty("node_title") String nodeTitle
 		) {}
 
 	}

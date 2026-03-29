@@ -1,8 +1,18 @@
 package com.lolzteam.api.runtime;
 
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.core.JsonToken;
+import com.fasterxml.jackson.databind.BeanDescription;
+import com.fasterxml.jackson.databind.DeserializationConfig;
+import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.JavaType;
+import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.deser.BeanDeserializerModifier;
+import com.fasterxml.jackson.databind.deser.DeserializationProblemHandler;
+import com.fasterxml.jackson.databind.module.SimpleModule;
 import java.io.ByteArrayOutputStream;
 import java.io.Closeable;
 import java.io.IOException;
@@ -60,6 +70,10 @@ public final class LolzteamHttpClient implements Closeable {
 
     this.objectMapper =
         new ObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+    this.objectMapper.addHandler(new TypeMismatchHandler());
+    var module = new SimpleModule("LolzteamTypeMismatch");
+    module.setDeserializerModifier(new SafeRecordDeserializerModifier());
+    this.objectMapper.registerModule(module);
 
     if (httpClient != null) {
       this.client = httpClient;
@@ -447,6 +461,109 @@ public final class LolzteamHttpClient implements Closeable {
 
   private static String encode(String value) {
     return URLEncoder.encode(value, StandardCharsets.UTF_8);
+  }
+
+  /**
+   * Handles type mismatches during deserialization by returning sensible defaults instead of
+   * throwing. The Lolzteam API occasionally returns mismatched JSON types (e.g. object where array
+   * expected, string where number expected).
+   */
+  private static final class TypeMismatchHandler extends DeserializationProblemHandler {
+
+    @Override
+    public Object handleUnexpectedToken(
+        DeserializationContext ctxt,
+        JavaType targetType,
+        JsonToken t,
+        JsonParser p,
+        String failureMsg)
+        throws IOException {
+      p.skipChildren();
+      return defaultFor(targetType);
+    }
+
+    @Override
+    public Object handleWeirdStringValue(
+        DeserializationContext ctxt,
+        Class<?> targetType,
+        String valueToConvert,
+        String failureMsg)
+        throws IOException {
+      return defaultForClass(targetType);
+    }
+
+    @Override
+    public Object handleWeirdNumberValue(
+        DeserializationContext ctxt,
+        Class<?> targetType,
+        Number valueToConvert,
+        String failureMsg)
+        throws IOException {
+      return defaultForClass(targetType);
+    }
+
+    @Override
+    public Object handleMissingInstantiator(
+        DeserializationContext ctxt,
+        Class<?> instClass,
+        com.fasterxml.jackson.databind.deser.ValueInstantiator vi,
+        JsonParser p,
+        String msg)
+        throws IOException {
+      p.skipChildren();
+      return null;
+    }
+
+    private static Object defaultFor(JavaType type) {
+      if (type == null) return null;
+      return defaultForClass(type.getRawClass());
+    }
+
+    private static Object defaultForClass(Class<?> raw) {
+      if (raw == null) return null;
+      if (raw == boolean.class || raw == Boolean.class) return false;
+      if (raw == int.class || raw == Integer.class) return 0;
+      if (raw == long.class || raw == Long.class) return 0L;
+      if (raw == double.class || raw == Double.class) return 0.0d;
+      if (raw == float.class || raw == Float.class) return 0.0f;
+      if (raw == String.class) return "";
+      if (List.class.isAssignableFrom(raw)) return new ArrayList<>();
+      return null;
+    }
+  }
+
+  /**
+   * Wraps record deserializers to catch ClassCastExceptions that occur when the API returns a
+   * mismatched type that Jackson coerces but then fails to pass to the record constructor.
+   */
+  private static final class SafeRecordDeserializerModifier extends BeanDeserializerModifier {
+
+    @Override
+    public JsonDeserializer<?> modifyDeserializer(
+        DeserializationConfig config, BeanDescription beanDesc, JsonDeserializer<?> deserializer) {
+      if (beanDesc.getBeanClass().isRecord()) {
+        return new SafeRecordDeserializer(deserializer);
+      }
+      return deserializer;
+    }
+  }
+
+  private static final class SafeRecordDeserializer extends JsonDeserializer<Object> {
+
+    private final JsonDeserializer<?> delegate;
+
+    SafeRecordDeserializer(JsonDeserializer<?> delegate) {
+      this.delegate = delegate;
+    }
+
+    @Override
+    public Object deserialize(JsonParser p, DeserializationContext ctxt) throws IOException {
+      try {
+        return delegate.deserialize(p, ctxt);
+      } catch (ClassCastException e) {
+        return null;
+      }
+    }
   }
 
   private static URI parseProxyUri(String url) {

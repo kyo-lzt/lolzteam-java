@@ -1819,254 +1819,254 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record DiscountModel(
-			@JsonProperty("category_id") Double categoryId,
-			@JsonProperty("discount_id") Double discountId,
-			@JsonProperty("discount_percent") Double discountPercent,
-			@JsonProperty("discount_user_id") Double discountUserId,
-			@JsonProperty("max_price") Double maxPrice,
-			@JsonProperty("min_price") Double minPrice,
-			@JsonProperty("user_id") Double userId
+			@JsonProperty("category_id") double categoryId,
+			@JsonProperty("discount_id") double discountId,
+			@JsonProperty("discount_percent") double discountPercent,
+			@JsonProperty("discount_user_id") double discountUserId,
+			@JsonProperty("max_price") double maxPrice,
+			@JsonProperty("min_price") double minPrice,
+			@JsonProperty("user_id") double userId
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UserModel(
-			@JsonProperty("active_items_count") Double activeItemsCount,
-			@JsonProperty("activity_visible") @Nullable JsonNode activityVisible,
-			Double age,
-			@Nullable String balance,
-			@Nullable List<UserModelBalances> balances,
-			@JsonProperty("bump_item_period") Double bumpItemPeriod,
-			@JsonProperty("can_edit") @Nullable JsonNode canEdit,
-			@JsonProperty("can_follow") @Nullable JsonNode canFollow,
-			@JsonProperty("can_ignore") @Nullable JsonNode canIgnore,
-			@JsonProperty("can_post_profile") @Nullable JsonNode canPostProfile,
-			@JsonProperty("can_view_profile") @Nullable JsonNode canViewProfile,
-			@JsonProperty("can_view_profile_posts") @Nullable JsonNode canViewProfilePosts,
-			@JsonProperty("can_warn") @Nullable JsonNode canWarn,
-			@JsonProperty("contest_count") Double contestCount,
-			@JsonProperty("conv_welcome_message") @Nullable String convWelcomeMessage,
-			Double convertedBalance,
-			Double convertedDeposit,
-			Double convertedHold,
-			@Nullable String currency,
-			@Nullable String currencyPhrase,
-			@JsonProperty("custom_account_download_format") @Nullable String customAccountDownloadFormat,
-			@JsonProperty("custom_fields") @Nullable UserModelCustomFields customFields,
-			@JsonProperty("custom_title") @Nullable String customTitle,
-			Double deposit,
-			@Nullable UserModelDob dob,
-			@JsonProperty("feedback_data") @Nullable JsonNode feedbackData,
-			@Nullable String hold,
-			@Nullable String homepage,
-			@JsonProperty("imap_data") @Nullable UserModelImapData imapData,
-			@JsonProperty("is_admin") @Nullable JsonNode isAdmin,
-			@JsonProperty("is_banned") @Nullable JsonNode isBanned,
-			@JsonProperty("is_followed") @Nullable JsonNode isFollowed,
-			@JsonProperty("is_ignored") @Nullable JsonNode isIgnored,
-			@JsonProperty("is_moderator") @Nullable JsonNode isModerator,
-			@JsonProperty("is_staff") @Nullable JsonNode isStaff,
-			@JsonProperty("is_super_admin") @Nullable JsonNode isSuperAdmin,
-			@JsonProperty("joined_date") Double joinedDate,
-			@JsonProperty("last_activity") Double lastActivity,
-			@JsonProperty("like2_count") Double like2Count,
-			@JsonProperty("like_count") Double likeCount,
-			@Nullable String location,
-			@JsonProperty("market_custom_title") @Nullable String marketCustomTitle,
-			@JsonProperty("max_discount_percent") Double maxDiscountPercent,
-			@JsonProperty("message_count") Double messageCount,
-			@JsonProperty("paid_mail_left") Double paidMailLeft,
-			@JsonProperty("public_tags") @Nullable List<UserModelPublicTags> publicTags,
-			@JsonProperty("register_date") Double registerDate,
-			@Nullable UserModelRendered rendered,
-			@JsonProperty("restore_count") Double restoreCount,
-			@JsonProperty("restore_data") @Nullable JsonNode restoreData,
-			@JsonProperty("short_link") @Nullable String shortLink,
-			@JsonProperty("sold_items_count") Double soldItemsCount,
-			@Nullable List<UserModelTags> tags,
-			@JsonProperty("telegram_client") @Nullable UserModelTelegramClient telegramClient,
-			@JsonProperty("trophy_points") Double trophyPoints,
-			@JsonProperty("user_allow_ask_discount") @Nullable JsonNode userAllowAskDiscount,
-			@JsonProperty("user_id") Double userId,
-			@JsonProperty("user_title") @Nullable String userTitle,
-			@Nullable String username,
-			@JsonProperty("view_url") @Nullable String viewUrl,
-			@Nullable JsonNode visible,
-			@JsonProperty("warning_points") Double warningPoints
+			@JsonProperty("active_items_count") double activeItemsCount,
+			@JsonProperty("activity_visible") boolean activityVisible,
+			double age,
+			String balance,
+			List<UserModelBalances> balances,
+			@JsonProperty("bump_item_period") double bumpItemPeriod,
+			@JsonProperty("can_edit") boolean canEdit,
+			@JsonProperty("can_follow") boolean canFollow,
+			@JsonProperty("can_ignore") boolean canIgnore,
+			@JsonProperty("can_post_profile") boolean canPostProfile,
+			@JsonProperty("can_view_profile") boolean canViewProfile,
+			@JsonProperty("can_view_profile_posts") boolean canViewProfilePosts,
+			@JsonProperty("can_warn") boolean canWarn,
+			@JsonProperty("contest_count") double contestCount,
+			@JsonProperty("conv_welcome_message") String convWelcomeMessage,
+			double convertedBalance,
+			double convertedDeposit,
+			double convertedHold,
+			String currency,
+			String currencyPhrase,
+			@JsonProperty("custom_account_download_format") String customAccountDownloadFormat,
+			@JsonProperty("custom_fields") UserModelCustomFields customFields,
+			@JsonProperty("custom_title") String customTitle,
+			double deposit,
+			UserModelDob dob,
+			@JsonProperty("feedback_data") JsonNode feedbackData,
+			String hold,
+			String homepage,
+			@JsonProperty("imap_data") UserModelImapData imapData,
+			@JsonProperty("is_admin") boolean isAdmin,
+			@JsonProperty("is_banned") boolean isBanned,
+			@JsonProperty("is_followed") boolean isFollowed,
+			@JsonProperty("is_ignored") boolean isIgnored,
+			@JsonProperty("is_moderator") boolean isModerator,
+			@JsonProperty("is_staff") boolean isStaff,
+			@JsonProperty("is_super_admin") boolean isSuperAdmin,
+			@JsonProperty("joined_date") double joinedDate,
+			@JsonProperty("last_activity") double lastActivity,
+			@JsonProperty("like2_count") double like2Count,
+			@JsonProperty("like_count") double likeCount,
+			String location,
+			@JsonProperty("market_custom_title") String marketCustomTitle,
+			@JsonProperty("max_discount_percent") double maxDiscountPercent,
+			@JsonProperty("message_count") double messageCount,
+			@JsonProperty("paid_mail_left") double paidMailLeft,
+			@JsonProperty("public_tags") List<UserModelPublicTags> publicTags,
+			@JsonProperty("register_date") double registerDate,
+			UserModelRendered rendered,
+			@JsonProperty("restore_count") double restoreCount,
+			@JsonProperty("restore_data") JsonNode restoreData,
+			@JsonProperty("short_link") String shortLink,
+			@JsonProperty("sold_items_count") double soldItemsCount,
+			List<UserModelTags> tags,
+			@JsonProperty("telegram_client") UserModelTelegramClient telegramClient,
+			@JsonProperty("trophy_points") double trophyPoints,
+			@JsonProperty("user_allow_ask_discount") boolean userAllowAskDiscount,
+			@JsonProperty("user_id") double userId,
+			@JsonProperty("user_title") String userTitle,
+			String username,
+			@JsonProperty("view_url") String viewUrl,
+			boolean visible,
+			@JsonProperty("warning_points") double warningPoints
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UserModelBalances(
-			@Nullable String balance,
-			@JsonProperty("balance_id") Double balanceId,
-			Double convertedBalance,
-			@JsonProperty("custom_title") @Nullable JsonNode customTitle,
-			@Nullable String fullTitle,
-			@JsonProperty("merchant_id") Double merchantId,
-			@Nullable String title,
-			@Nullable String type,
-			@JsonProperty("user_id") Double userId
+			String balance,
+			@JsonProperty("balance_id") double balanceId,
+			double convertedBalance,
+			@JsonProperty("custom_title") JsonNode customTitle,
+			String fullTitle,
+			@JsonProperty("merchant_id") double merchantId,
+			String title,
+			String type,
+			@JsonProperty("user_id") double userId
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UserModelCustomFields(
-			@Nullable String _4,
-			@Nullable List<JsonNode> allowSelfUnban,
-			@JsonProperty("ban_reason") @Nullable String banReason,
-			@Nullable String discord,
-			@Nullable String github,
-			@Nullable String jabber,
-			@Nullable String lztAwardUserTrophy,
-			@Nullable String lztLikesIncreasing,
-			@Nullable String lztLikesZeroing,
-			@Nullable String lztSympathyIncreasing,
-			@Nullable String lztSympathyZeroing,
-			@Nullable String lztUnbanAmount,
-			@Nullable String maecenasValue,
-			@Nullable String scamURL,
-			@Nullable String steam,
-			@Nullable String telegram,
-			@Nullable String vk,
-			@Nullable String favoritePorn,
-			@Nullable String favoriteVape,
-			@Nullable String favoriteAnime,
-			@Nullable String matrix
+			String _4,
+			List<JsonNode> allowSelfUnban,
+			@JsonProperty("ban_reason") String banReason,
+			String discord,
+			String github,
+			String jabber,
+			String lztAwardUserTrophy,
+			String lztLikesIncreasing,
+			String lztLikesZeroing,
+			String lztSympathyIncreasing,
+			String lztSympathyZeroing,
+			String lztUnbanAmount,
+			String maecenasValue,
+			String scamURL,
+			String steam,
+			String telegram,
+			String vk,
+			String favoritePorn,
+			String favoriteVape,
+			String favoriteAnime,
+			String matrix
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UserModelDob(
-			Double year,
-			Double month,
-			Double day
+			double year,
+			double month,
+			double day
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UserModelImapDataDomainZone(
-			@Nullable String domain,
-			@JsonProperty("imap_server") @Nullable String imapServer,
-			Double port,
-			@Nullable JsonNode secure
+			String domain,
+			@JsonProperty("imap_server") String imapServer,
+			double port,
+			boolean secure
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UserModelImapData(
-			@JsonProperty("domain.zone") @Nullable UserModelImapDataDomainZone domainZone
+			@JsonProperty("domain.zone") UserModelImapDataDomainZone domainZone
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UserModelPublicTags(
-			@JsonProperty("background_color") @Nullable String backgroundColor,
-			@JsonProperty("tag_id") Double tagId,
-			@Nullable String title
+			@JsonProperty("background_color") String backgroundColor,
+			@JsonProperty("tag_id") double tagId,
+			String title
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UserModelRenderedAvatars(
-			@Nullable String l,
-			@Nullable String m,
-			@Nullable String s
+			String l,
+			String m,
+			String s
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UserModelRenderedBackgrounds(
-			@Nullable String l,
-			@Nullable String m
+			String l,
+			String m
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UserModelRendered(
-			@Nullable String username,
-			@Nullable UserModelRenderedAvatars avatars,
-			@Nullable UserModelRenderedBackgrounds backgrounds,
-			@Nullable String link
+			String username,
+			UserModelRenderedAvatars avatars,
+			UserModelRenderedBackgrounds backgrounds,
+			String link
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UserModelTags(
-			@JsonProperty("tag_id") Double tagId,
-			@Nullable String title,
-			@Nullable JsonNode isDefault,
-			@Nullable JsonNode forOwnedAccountsOnly,
-			@Nullable String bc
+			@JsonProperty("tag_id") double tagId,
+			String title,
+			boolean isDefault,
+			boolean forOwnedAccountsOnly,
+			String bc
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record UserModelTelegramClient(
-			@JsonProperty("telegram_api_id") @Nullable String telegramApiId,
-			@JsonProperty("telegram_api_hash") @Nullable String telegramApiHash,
-			@JsonProperty("telegram_device_model") @Nullable String telegramDeviceModel,
-			@JsonProperty("telegram_system_version") @Nullable String telegramSystemVersion,
-			@JsonProperty("telegram_app_version") @Nullable String telegramAppVersion,
-			@JsonProperty("telegram_system_lang_code") @Nullable String telegramSystemLangCode,
-			@JsonProperty("telegram_lang_code") @Nullable String telegramLangCode,
-			@JsonProperty("telegram_lang_pack") @Nullable String telegramLangPack
+			@JsonProperty("telegram_api_id") String telegramApiId,
+			@JsonProperty("telegram_api_hash") String telegramApiHash,
+			@JsonProperty("telegram_device_model") String telegramDeviceModel,
+			@JsonProperty("telegram_system_version") String telegramSystemVersion,
+			@JsonProperty("telegram_app_version") String telegramAppVersion,
+			@JsonProperty("telegram_system_lang_code") String telegramSystemLangCode,
+			@JsonProperty("telegram_lang_code") String telegramLangCode,
+			@JsonProperty("telegram_lang_pack") String telegramLangPack
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record BalanceModel(
-			@Nullable String balance,
-			@JsonProperty("balance_id") Double balanceId,
-			@JsonProperty("custom_title") @Nullable JsonNode customTitle,
-			@Nullable String fullTitle,
-			@JsonProperty("merchant_id") Double merchantId,
-			@Nullable String title,
-			@Nullable String type,
-			@JsonProperty("user_id") Double userId
+			String balance,
+			@JsonProperty("balance_id") double balanceId,
+			@JsonProperty("custom_title") JsonNode customTitle,
+			String fullTitle,
+			@JsonProperty("merchant_id") double merchantId,
+			String title,
+			String type,
+			@JsonProperty("user_id") double userId
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ExtraModel(
 			@Nullable String proxy,
-			@JsonProperty("close_item") @Nullable JsonNode closeItem,
+			@JsonProperty("close_item") Boolean closeItem,
 			@Nullable String region,
 			@Nullable String service,
 			@Nullable String system,
 			@Nullable String confirmationCode,
 			@Nullable String cookies,
-			@JsonProperty("login_without_cookies") @Nullable JsonNode loginWithoutCookies,
-			@JsonProperty("cookie_login") @Nullable JsonNode cookieLogin,
+			@JsonProperty("login_without_cookies") Boolean loginWithoutCookies,
+			@JsonProperty("cookie_login") Boolean cookieLogin,
 			@JsonProperty("mfa_file") @Nullable String mfaFile,
 			@JsonProperty("dota2_mmr") Double dota2Mmr,
-			@JsonProperty("ea_games") @Nullable JsonNode eaGames,
-			@JsonProperty("uplay_games") @Nullable JsonNode uplayGames,
-			@JsonProperty("the_quarry") @Nullable JsonNode theQuarry,
-			@Nullable JsonNode warframe,
-			@Nullable JsonNode ark,
-			@JsonProperty("ark_ascended") @Nullable JsonNode arkAscended,
+			@JsonProperty("ea_games") Boolean eaGames,
+			@JsonProperty("uplay_games") Boolean uplayGames,
+			@JsonProperty("the_quarry") Boolean theQuarry,
+			Boolean warframe,
+			Boolean ark,
+			@JsonProperty("ark_ascended") Boolean arkAscended,
 			@JsonProperty("genshin_currency") Double genshinCurrency,
 			@JsonProperty("honkai_currency") Double honkaiCurrency,
 			@JsonProperty("zenless_currency") Double zenlessCurrency,
 			@Nullable String password,
 			@Nullable String telegramClient,
 			@Nullable String telegramJson,
-			@Nullable JsonNode checkChannels,
-			@Nullable JsonNode checkSpam,
-			@Nullable JsonNode checkHypixelBan
+			Boolean checkChannels,
+			Boolean checkSpam,
+			Boolean checkHypixelBan
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ConfirmationCodeModel(
-			@Nullable JsonNode item,
-			@Nullable ConfirmationCodeModelCodeData codeData
+			ItemModel item,
+			ConfirmationCodeModelCodeData codeData
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ConfirmationCodeModelCodeData(
-			@Nullable String code,
-			Double date,
-			@Nullable String textPlain
+			String code,
+			double date,
+			String textPlain
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ItemListModel(
-			@Nullable List<JsonNode> items,
-			Double totalItems,
-			@Nullable JsonNode totalItemsPrice,
-			@Nullable JsonNode hasNextPage,
-			Double perPage,
-			Double page,
-			@Nullable String searchUrl,
-			@Nullable List<JsonNode> stickyItems,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<ItemFromListModel> items,
+			double totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			double perPage,
+			double page,
+			String searchUrl,
+			List<ItemFromListModel> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
@@ -2091,25 +2091,25 @@ public final class Types {
 			@JsonProperty("item_domain") @Nullable String itemDomain,
 			@JsonProperty("resale_item_origin") @Nullable String resaleItemOrigin,
 			Double isIgnored,
-			@Nullable JsonNode guarantee,
-			@Nullable JsonNode canViewLoginData,
-			@Nullable JsonNode canUpdateItemStats,
-			@Nullable JsonNode canViewEmailLoginData,
-			@Nullable JsonNode showGetEmailCodeButton,
-			@Nullable JsonNode canOpenItem,
-			@Nullable JsonNode canCloseItem,
-			@Nullable JsonNode canEditItem,
-			@Nullable JsonNode canDeleteItem,
-			@Nullable JsonNode canStickItem,
-			@Nullable JsonNode canUnstickItem,
+			Boolean guarantee,
+			Boolean canViewLoginData,
+			Boolean canUpdateItemStats,
+			Boolean canViewEmailLoginData,
+			Boolean showGetEmailCodeButton,
+			Boolean canOpenItem,
+			Boolean canCloseItem,
+			Boolean canEditItem,
+			Boolean canDeleteItem,
+			Boolean canStickItem,
+			Boolean canUnstickItem,
 			@Nullable ItemFromListModelBumpSettings bumpSettings,
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBuyItem,
+			Boolean canBumpItem,
+			Boolean canBuyItem,
 			@JsonProperty("rub_price") Double rubPrice,
 			@JsonProperty("price_currency") @Nullable String priceCurrency,
-			@Nullable JsonNode canValidateAccount,
-			@Nullable JsonNode canResellItemAfterPurchase,
-			@Nullable JsonNode canViewAccountLink,
+			Boolean canValidateAccount,
+			Boolean canResellItemAfterPurchase,
+			Boolean canViewAccountLink,
 			@Nullable String itemOriginPhrase,
 			@Nullable List<String> tags,
 			@JsonProperty("note_text") @Nullable String noteText,
@@ -2120,8 +2120,8 @@ public final class Types {
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ItemFromListModelBumpSettings(
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBumpItemGlobally,
+			Boolean canBumpItem,
+			Boolean canBumpItemGlobally,
 			@Nullable String shortErrorPhrase,
 			@Nullable String errorPhrase
 		) {}
@@ -2141,240 +2141,240 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ItemModel(
-			@JsonProperty("item_id") Double itemId,
-			@JsonProperty("item_state") @Nullable String itemState,
-			@JsonProperty("category_id") Double categoryId,
-			@JsonProperty("published_date") Double publishedDate,
-			@Nullable String title,
-			@Nullable String description,
-			Double price,
-			@JsonProperty("update_stat_date") Double updateStatDate,
-			@JsonProperty("refreshed_date") Double refreshedDate,
-			@JsonProperty("edit_date") Double editDate,
-			@JsonProperty("pending_deletion_date") Double pendingDeletionDate,
-			@Nullable String login,
-			@JsonProperty("temp_email") @Nullable String tempEmail,
-			@JsonProperty("view_count") Double viewCount,
-			@JsonProperty("is_sticky") Double isSticky,
-			@Nullable String information,
-			@JsonProperty("item_origin") @Nullable String itemOrigin,
-			@JsonProperty("extended_guarantee") Double extendedGuarantee,
-			Double nsb,
-			@JsonProperty("allow_ask_discount") Double allowAskDiscount,
-			@JsonProperty("title_en") @Nullable String titleEn,
-			@JsonProperty("description_en") @Nullable String descriptionEn,
-			@JsonProperty("information_en") @Nullable String informationEn,
-			@JsonProperty("email_type") @Nullable String emailType,
-			@JsonProperty("email_provider") @Nullable String emailProvider,
-			@JsonProperty("item_domain") @Nullable String itemDomain,
-			@JsonProperty("resale_item_origin") @Nullable String resaleItemOrigin,
-			@JsonProperty("note_text") @Nullable String noteText,
-			@JsonProperty("content_type") @Nullable JsonNode contentType,
-			@JsonProperty("content_id") @Nullable JsonNode contentId,
-			@JsonProperty("delete_date") Double deleteDate,
-			@JsonProperty("delete_user_id") Double deleteUserId,
-			@JsonProperty("delete_username") @Nullable String deleteUsername,
-			@JsonProperty("delete_reason") @Nullable String deleteReason,
-			@JsonProperty("user_allow_ask_discount") Double userAllowAskDiscount,
-			@JsonProperty("max_discount_percent") Double maxDiscountPercent,
-			@JsonProperty("market_custom_title") @Nullable String marketCustomTitle,
-			@JsonProperty("feedback_data") @Nullable String feedbackData,
-			@JsonProperty("buyer_display_icon_group_id") Double buyerDisplayIconGroupId,
-			@JsonProperty("buyer_uniq_banner") @Nullable String buyerUniqBanner,
-			@JsonProperty("buyer_avatar_date") Double buyerAvatarDate,
-			@JsonProperty("buyer_user_group_id") Double buyerUserGroupId,
-			@JsonProperty("is_fave") @Nullable JsonNode isFave,
-			@JsonProperty("in_cart") @Nullable JsonNode inCart,
-			@JsonProperty("cart_price") @Nullable JsonNode cartPrice,
-			@Nullable JsonNode canResellItem,
-			Double priceWithSellerFee,
-			@Nullable ItemModelGuarantee guarantee,
-			@Nullable JsonNode canViewLoginData,
-			@Nullable JsonNode canUpdateItemStats,
-			@Nullable JsonNode canReportItem,
-			@Nullable JsonNode canViewItemViews,
-			@Nullable ItemModelLoginData loginData,
-			@Nullable JsonNode canViewEmailLoginData,
-			@Nullable ItemModelCopyFormatData copyFormatData,
-			@Nullable JsonNode showGetEmailCodeButton,
-			@Nullable JsonNode getEmailCodeDisplayLogin,
-			@Nullable ItemModelBuyer buyer,
-			@Nullable JsonNode isPersonalAccount,
-			@JsonProperty("rub_price") Double rubPrice,
-			@JsonProperty("price_currency") @Nullable String priceCurrency,
-			@Nullable String priceWithSellerFeeLabel,
-			@Nullable JsonNode canValidateAccount,
-			@Nullable JsonNode canResellItemAfterPurchase,
-			@Nullable JsonNode isSmallExf,
-			@JsonProperty("account_last_activity") Double accountLastActivity,
-			@Nullable JsonNode canViewAccountLink,
-			@Nullable List<ItemModelAccountLinks> accountLinks,
-			@Nullable String accountLink,
-			@Nullable List<String> imagePreviewLinks,
-			@Nullable JsonNode canChangePassword,
-			@Nullable JsonNode canChangeEmailPassword,
-			@Nullable JsonNode uniqueKeyExists,
-			@Nullable String itemOriginPhrase,
-			@Nullable JsonNode visitorIsAuthor,
-			@Nullable JsonNode canAskDiscount,
-			@Nullable JsonNode tags,
-			@Nullable ItemModelCustomFields customFields,
-			@Nullable List<JsonNode> externalAuth,
-			@Nullable JsonNode isTrusted,
-			@Nullable JsonNode isBirthdayToday,
-			@Nullable JsonNode isIgnored,
-			Double deposit,
-			@Nullable List<ItemModelExtraPrices> extraPrices,
-			@Nullable JsonNode canViewAccountLoginAndTempEmail,
-			@Nullable ItemModelBumpSettings bumpSettings,
-			@Nullable JsonNode canCheckGuarantee,
-			@Nullable JsonNode canShareItem,
-			@Nullable JsonNode canCheckAiPrice,
-			Double aiPrice,
-			Double aiPriceCheckDate,
-			@Nullable JsonNode needToRequireVideoToViewLoginData,
-			@Nullable JsonNode canCheckAutoBuyPrice,
-			Double autoBuyPrice,
-			Double autoBuyPriceCheckDate,
-			@Nullable String descriptionHtml,
-			@Nullable String descriptionEnHtml,
-			@Nullable String descriptionPlain,
-			@Nullable String descriptionEnPlain,
-			@Nullable ItemModelSeller seller
+			@JsonProperty("item_id") double itemId,
+			@JsonProperty("item_state") String itemState,
+			@JsonProperty("category_id") double categoryId,
+			@JsonProperty("published_date") double publishedDate,
+			String title,
+			String description,
+			double price,
+			@JsonProperty("update_stat_date") double updateStatDate,
+			@JsonProperty("refreshed_date") double refreshedDate,
+			@JsonProperty("edit_date") double editDate,
+			@JsonProperty("pending_deletion_date") double pendingDeletionDate,
+			String login,
+			@JsonProperty("temp_email") String tempEmail,
+			@JsonProperty("view_count") double viewCount,
+			@JsonProperty("is_sticky") double isSticky,
+			String information,
+			@JsonProperty("item_origin") String itemOrigin,
+			@JsonProperty("extended_guarantee") double extendedGuarantee,
+			double nsb,
+			@JsonProperty("allow_ask_discount") double allowAskDiscount,
+			@JsonProperty("title_en") String titleEn,
+			@JsonProperty("description_en") String descriptionEn,
+			@JsonProperty("information_en") String informationEn,
+			@JsonProperty("email_type") String emailType,
+			@JsonProperty("email_provider") String emailProvider,
+			@JsonProperty("item_domain") String itemDomain,
+			@JsonProperty("resale_item_origin") String resaleItemOrigin,
+			@JsonProperty("note_text") String noteText,
+			@JsonProperty("content_type") JsonNode contentType,
+			@JsonProperty("content_id") JsonNode contentId,
+			@JsonProperty("delete_date") double deleteDate,
+			@JsonProperty("delete_user_id") double deleteUserId,
+			@JsonProperty("delete_username") String deleteUsername,
+			@JsonProperty("delete_reason") String deleteReason,
+			@JsonProperty("user_allow_ask_discount") double userAllowAskDiscount,
+			@JsonProperty("max_discount_percent") double maxDiscountPercent,
+			@JsonProperty("market_custom_title") String marketCustomTitle,
+			@JsonProperty("feedback_data") String feedbackData,
+			@JsonProperty("buyer_display_icon_group_id") double buyerDisplayIconGroupId,
+			@JsonProperty("buyer_uniq_banner") String buyerUniqBanner,
+			@JsonProperty("buyer_avatar_date") double buyerAvatarDate,
+			@JsonProperty("buyer_user_group_id") double buyerUserGroupId,
+			@JsonProperty("is_fave") JsonNode isFave,
+			@JsonProperty("in_cart") JsonNode inCart,
+			@JsonProperty("cart_price") JsonNode cartPrice,
+			boolean canResellItem,
+			double priceWithSellerFee,
+			ItemModelGuarantee guarantee,
+			boolean canViewLoginData,
+			boolean canUpdateItemStats,
+			boolean canReportItem,
+			boolean canViewItemViews,
+			ItemModelLoginData loginData,
+			boolean canViewEmailLoginData,
+			ItemModelCopyFormatData copyFormatData,
+			boolean showGetEmailCodeButton,
+			JsonNode getEmailCodeDisplayLogin,
+			ItemModelBuyer buyer,
+			boolean isPersonalAccount,
+			@JsonProperty("rub_price") double rubPrice,
+			@JsonProperty("price_currency") String priceCurrency,
+			String priceWithSellerFeeLabel,
+			boolean canValidateAccount,
+			boolean canResellItemAfterPurchase,
+			boolean isSmallExf,
+			@JsonProperty("account_last_activity") double accountLastActivity,
+			boolean canViewAccountLink,
+			List<ItemModelAccountLinks> accountLinks,
+			String accountLink,
+			List<String> imagePreviewLinks,
+			boolean canChangePassword,
+			boolean canChangeEmailPassword,
+			boolean uniqueKeyExists,
+			String itemOriginPhrase,
+			boolean visitorIsAuthor,
+			boolean canAskDiscount,
+			JsonNode tags,
+			ItemModelCustomFields customFields,
+			List<JsonNode> externalAuth,
+			boolean isTrusted,
+			boolean isBirthdayToday,
+			boolean isIgnored,
+			double deposit,
+			List<ItemModelExtraPrices> extraPrices,
+			boolean canViewAccountLoginAndTempEmail,
+			ItemModelBumpSettings bumpSettings,
+			boolean canCheckGuarantee,
+			boolean canShareItem,
+			boolean canCheckAiPrice,
+			double aiPrice,
+			double aiPriceCheckDate,
+			boolean needToRequireVideoToViewLoginData,
+			boolean canCheckAutoBuyPrice,
+			double autoBuyPrice,
+			double autoBuyPriceCheckDate,
+			String descriptionHtml,
+			String descriptionEnHtml,
+			String descriptionPlain,
+			String descriptionEnPlain,
+			ItemModelSeller seller
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ItemModelGuarantee(
-			Double duration,
-			@Nullable String class_,
-			@Nullable String durationPhrase,
-			Double endDate,
-			@Nullable JsonNode active,
-			@Nullable JsonNode cancelled,
-			Double remainingTime,
-			@Nullable String remainingTimePhrase,
-			@Nullable String cancelledReason,
-			@Nullable String cancelledReasonPhrase
+			double duration,
+			String class_,
+			String durationPhrase,
+			double endDate,
+			boolean active,
+			boolean cancelled,
+			double remainingTime,
+			String remainingTimePhrase,
+			String cancelledReason,
+			String cancelledReasonPhrase
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ItemModelLoginData(
-			@Nullable String raw,
-			@Nullable String encodedRaw,
-			@Nullable String login,
-			@Nullable String password,
-			@Nullable String encodedPassword,
-			@Nullable String oldPassword,
-			@Nullable JsonNode encodedOldPassword
+			String raw,
+			String encodedRaw,
+			String login,
+			String password,
+			String encodedPassword,
+			String oldPassword,
+			JsonNode encodedOldPassword
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ItemModelCopyFormatData(
-			@JsonProperty("title_link") @Nullable String titleLink,
-			@JsonProperty("login_data") @Nullable String loginData,
-			@Nullable String full
+			@JsonProperty("title_link") String titleLink,
+			@JsonProperty("login_data") String loginData,
+			String full
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ItemModelBuyer(
-			@JsonProperty("user_id") Double userId,
-			@JsonProperty("operation_date") Double operationDate,
-			@Nullable JsonNode visitorIsBuyer,
-			@Nullable String username,
-			@JsonProperty("is_banned") Double isBanned,
-			@JsonProperty("display_style_group_id") Double displayStyleGroupId,
-			@JsonProperty("display_icon_group_id") Double displayIconGroupId,
-			@JsonProperty("uniq_username_css") @Nullable String uniqUsernameCss,
-			@JsonProperty("uniq_banner") @Nullable String uniqBanner,
-			@JsonProperty("user_group_id") Double userGroupId
+			@JsonProperty("user_id") double userId,
+			@JsonProperty("operation_date") double operationDate,
+			boolean visitorIsBuyer,
+			String username,
+			@JsonProperty("is_banned") double isBanned,
+			@JsonProperty("display_style_group_id") double displayStyleGroupId,
+			@JsonProperty("display_icon_group_id") double displayIconGroupId,
+			@JsonProperty("uniq_username_css") String uniqUsernameCss,
+			@JsonProperty("uniq_banner") String uniqBanner,
+			@JsonProperty("user_group_id") double userGroupId
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ItemModelAccountLinks(
-			@Nullable String link,
-			@Nullable String text,
-			@Nullable String iconClass
+			String link,
+			String text,
+			String iconClass
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ItemModelCustomFields(
-			@Nullable String _4,
-			@Nullable List<JsonNode> allowSelfUnban,
-			@JsonProperty("ban_reason") @Nullable String banReason,
-			@Nullable String discord,
-			@Nullable String github,
-			@Nullable String jabber,
-			@Nullable String lztUnbanAmount,
-			@Nullable String steam,
-			@Nullable String telegram,
-			@Nullable String vk
+			String _4,
+			List<JsonNode> allowSelfUnban,
+			@JsonProperty("ban_reason") String banReason,
+			String discord,
+			String github,
+			String jabber,
+			String lztUnbanAmount,
+			String steam,
+			String telegram,
+			String vk
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ItemModelExtraPrices(
-			@Nullable String currency,
-			@Nullable String price,
-			Double priceValue
+			String currency,
+			String price,
+			double priceValue
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ItemModelBumpSettings(
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBumpItemGlobally,
-			@Nullable JsonNode shortErrorPhrase,
-			@Nullable JsonNode nextAllowedBumpDate,
-			@Nullable JsonNode errorPhrase
+			boolean canBumpItem,
+			boolean canBumpItemGlobally,
+			JsonNode shortErrorPhrase,
+			JsonNode nextAllowedBumpDate,
+			JsonNode errorPhrase
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ItemModelSellerContacts(
-			@JsonProperty("ban_reason") @Nullable String banReason,
-			@Nullable String telegram
+			@JsonProperty("ban_reason") String banReason,
+			String telegram
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ItemModelSeller(
-			@JsonProperty("user_id") Double userId,
-			@Nullable String username,
-			@JsonProperty("avatar_date") Double avatarDate,
-			@JsonProperty("is_banned") Double isBanned,
-			@JsonProperty("display_style_group_id") Double displayStyleGroupId,
-			@JsonProperty("joined_date") Double joinedDate,
-			@JsonProperty("sold_items_count") Double soldItemsCount,
-			@JsonProperty("active_items_count") Double activeItemsCount,
-			@JsonProperty("restore_data") @Nullable String restoreData,
-			@JsonProperty("effective_last_activity") Double effectiveLastActivity,
-			@JsonProperty("restore_percents") @Nullable JsonNode restorePercents,
-			@Nullable JsonNode isOnline,
-			@Nullable ItemModelSellerContacts contacts
+			@JsonProperty("user_id") double userId,
+			String username,
+			@JsonProperty("avatar_date") double avatarDate,
+			@JsonProperty("is_banned") double isBanned,
+			@JsonProperty("display_style_group_id") double displayStyleGroupId,
+			@JsonProperty("joined_date") double joinedDate,
+			@JsonProperty("sold_items_count") double soldItemsCount,
+			@JsonProperty("active_items_count") double activeItemsCount,
+			@JsonProperty("restore_data") String restoreData,
+			@JsonProperty("effective_last_activity") double effectiveLastActivity,
+			@JsonProperty("restore_percents") JsonNode restorePercents,
+			boolean isOnline,
+			ItemModelSellerContacts contacts
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record InvoiceModel(
-			@JsonProperty("additional_data") @Nullable String additionalData,
-			Double amount,
-			@Nullable String comment,
-			@JsonProperty("expires_at") Double expiresAt,
-			@JsonProperty("invoice_date") Double invoiceDate,
-			@JsonProperty("invoice_id") Double invoiceId,
-			@JsonProperty("is_test") @Nullable JsonNode isTest,
-			@JsonProperty("merchant_id") Double merchantId,
-			@JsonProperty("paid_date") Double paidDate,
-			@JsonProperty("payer_user_id") Double payerUserId,
-			@JsonProperty("payment_id") @Nullable String paymentId,
-			@JsonProperty("resend_attempts") Double resendAttempts,
-			@Nullable String status,
-			@Nullable String url,
-			@JsonProperty("url_callback") @Nullable String urlCallback,
-			@JsonProperty("url_success") @Nullable String urlSuccess,
-			@JsonProperty("user_id") Double userId
+			@JsonProperty("additional_data") String additionalData,
+			double amount,
+			String comment,
+			@JsonProperty("expires_at") double expiresAt,
+			@JsonProperty("invoice_date") double invoiceDate,
+			@JsonProperty("invoice_id") double invoiceId,
+			@JsonProperty("is_test") boolean isTest,
+			@JsonProperty("merchant_id") double merchantId,
+			@JsonProperty("paid_date") double paidDate,
+			@JsonProperty("payer_user_id") double payerUserId,
+			@JsonProperty("payment_id") String paymentId,
+			@JsonProperty("resend_attempts") double resendAttempts,
+			String status,
+			String url,
+			@JsonProperty("url_callback") String urlCallback,
+			@JsonProperty("url_success") String urlSuccess,
+			@JsonProperty("user_id") double userId
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record Resp_SystemInfo(
-			@JsonProperty("visitor_id") Double visitorId,
-			Double time,
-			@JsonProperty("log_id") Double logId
+			@JsonProperty("visitor_id") double visitorId,
+			double time,
+			@JsonProperty("log_id") double logId
 		) {}
 
 	// ─── CategoryApi Types ────────────────────────────────────────
@@ -2435,15 +2435,15 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryAllResponse(
-			@Nullable List<JsonNode> items,
-			Double totalItems,
-			@Nullable JsonNode totalItemsPrice,
-			@Nullable JsonNode hasNextPage,
-			Double perPage,
-			Double page,
-			@Nullable String searchUrl,
-			@Nullable List<JsonNode> stickyItems,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<ItemFromListModel> items,
+			double totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			double perPage,
+			double page,
+			String searchUrl,
+			List<ItemFromListModel> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record CategorySteamParams(
@@ -2693,222 +2693,222 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategorySteamResponse(
-			@Nullable List<CategorySteamResponseItems> items,
-			Double totalItems,
-			@Nullable JsonNode totalItemsPrice,
-			@Nullable JsonNode hasNextPage,
-			Double perPage,
-			Double page,
-			@Nullable JsonNode wasCached,
-			Double cacheTTL,
-			Double lastModified,
-			Double serverTime,
-			@Nullable String searchUrl,
-			@Nullable List<JsonNode> stickyItems,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<CategorySteamResponseItems> items,
+			double totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			double perPage,
+			double page,
+			boolean wasCached,
+			double cacheTTL,
+			double lastModified,
+			double serverTime,
+			String searchUrl,
+			List<JsonNode> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategorySteamResponseItemsSteamFullGames(
-			@Nullable JsonNode list,
-			Double total
+			JsonNode list,
+			double total
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategorySteamResponseItemsGuarantee(
-			Double duration,
-			@Nullable String class_,
-			@Nullable String durationPhrase,
-			@Nullable JsonNode endDate,
-			@Nullable JsonNode active,
-			@Nullable JsonNode cancelled,
-			@Nullable JsonNode remainingTime
+			double duration,
+			String class_,
+			String durationPhrase,
+			JsonNode endDate,
+			JsonNode active,
+			JsonNode cancelled,
+			JsonNode remainingTime
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategorySteamResponseItemsBumpSettings(
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBumpItemGlobally,
-			@Nullable JsonNode shortErrorPhrase,
-			@Nullable JsonNode errorPhrase
+			boolean canBumpItem,
+			boolean canBumpItemGlobally,
+			JsonNode shortErrorPhrase,
+			JsonNode errorPhrase
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategorySteamResponseItemsSteamData(
-			@JsonProperty("steam_ban_type_id") @Nullable List<JsonNode> steamBanTypeId
+			@JsonProperty("steam_ban_type_id") List<JsonNode> steamBanTypeId
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategorySteamResponseItemsSteamTransactions(
-			@Nullable String date,
-			@Nullable String product,
-			@Nullable String type,
-			@Nullable String source,
-			@Nullable String amount
+			String date,
+			String product,
+			String type,
+			String source,
+			String amount
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategorySteamResponseItemsAccountLinks(
-			@Nullable String link,
-			@Nullable String text,
-			@Nullable String iconClass
+			String link,
+			String text,
+			String iconClass
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategorySteamResponseItemsSeller(
-			@JsonProperty("user_id") Double userId,
-			@JsonProperty("sold_items_count") Double soldItemsCount,
-			@JsonProperty("active_items_count") Double activeItemsCount,
-			@JsonProperty("restore_data") @Nullable String restoreData,
-			@Nullable String username,
-			@JsonProperty("avatar_date") Double avatarDate,
-			@JsonProperty("is_banned") Double isBanned,
-			@JsonProperty("display_style_group_id") Double displayStyleGroupId,
-			@JsonProperty("restore_percents") Double restorePercents
+			@JsonProperty("user_id") double userId,
+			@JsonProperty("sold_items_count") double soldItemsCount,
+			@JsonProperty("active_items_count") double activeItemsCount,
+			@JsonProperty("restore_data") String restoreData,
+			String username,
+			@JsonProperty("avatar_date") double avatarDate,
+			@JsonProperty("is_banned") double isBanned,
+			@JsonProperty("display_style_group_id") double displayStyleGroupId,
+			@JsonProperty("restore_percents") double restorePercents
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategorySteamResponseItems(
-			@JsonProperty("item_id") Double itemId,
-			@JsonProperty("item_state") @Nullable String itemState,
-			@JsonProperty("category_id") Double categoryId,
-			@JsonProperty("published_date") Double publishedDate,
-			@Nullable String title,
-			@Nullable String description,
-			Double price,
-			@JsonProperty("update_stat_date") Double updateStatDate,
-			@JsonProperty("refreshed_date") Double refreshedDate,
-			@JsonProperty("edit_date") Double editDate,
-			@JsonProperty("view_count") Double viewCount,
-			@JsonProperty("is_sticky") Double isSticky,
-			@JsonProperty("item_origin") @Nullable String itemOrigin,
-			@JsonProperty("extended_guarantee") Double extendedGuarantee,
-			Double nsb,
-			@JsonProperty("allow_ask_discount") Double allowAskDiscount,
-			@JsonProperty("title_en") @Nullable String titleEn,
-			@JsonProperty("description_en") @Nullable String descriptionEn,
-			@JsonProperty("email_type") @Nullable String emailType,
-			@JsonProperty("email_provider") @Nullable String emailProvider,
-			@JsonProperty("item_domain") @Nullable String itemDomain,
-			@JsonProperty("resale_item_origin") @Nullable String resaleItemOrigin,
-			@JsonProperty("steam_item_id") Double steamItemId,
-			@JsonProperty("steam_country") @Nullable String steamCountry,
-			@JsonProperty("steam_register_date") Double steamRegisterDate,
-			@JsonProperty("steam_last_activity") Double steamLastActivity,
-			@JsonProperty("steam_full_games") @Nullable CategorySteamResponseItemsSteamFullGames steamFullGames,
-			@JsonProperty("steam_community_ban") Double steamCommunityBan,
-			@JsonProperty("steam_bans") @Nullable String steamBans,
-			@JsonProperty("steam_cs2_profile_rank") Double steamCs2ProfileRank,
-			@JsonProperty("steam_balance") @Nullable String steamBalance,
-			@JsonProperty("steam_cs2_rank_id") Double steamCs2RankId,
-			@JsonProperty("steam_is_limited") Double steamIsLimited,
-			@JsonProperty("steam_level") Double steamLevel,
-			@JsonProperty("steam_friend_count") Double steamFriendCount,
-			@JsonProperty("steam_cs2_last_activity") Double steamCs2LastActivity,
-			@JsonProperty("steam_dota2_solo_mmr") Double steamDota2SoloMmr,
-			@JsonProperty("steam_cs2_ban_date") Double steamCs2BanDate,
-			@JsonProperty("steam_converted_balance") Double steamConvertedBalance,
-			@JsonProperty("steam_cards_count") Double steamCardsCount,
-			@JsonProperty("steam_cards_games") Double steamCardsGames,
-			@JsonProperty("steam_pubg_inv_value") Double steamPubgInvValue,
-			@JsonProperty("steam_cs2_inv_value") Double steamCs2InvValue,
-			@JsonProperty("steam_dota2_inv_value") Double steamDota2InvValue,
-			@JsonProperty("steam_tf2_inv_value") Double steamTf2InvValue,
-			@JsonProperty("steam_rust_inv_value") Double steamRustInvValue,
-			@JsonProperty("steam_cs2_wingman_rank_id") Double steamCs2WingmanRankId,
-			@JsonProperty("steam_game_count") Double steamGameCount,
-			@JsonProperty("steam_steam_inv_value") Double steamSteamInvValue,
-			@JsonProperty("steam_inv_value") Double steamInvValue,
-			@JsonProperty("steam_cs2_win_count") Double steamCs2WinCount,
-			@JsonProperty("steam_dota2_game_count") Double steamDota2GameCount,
-			@JsonProperty("steam_dota2_lose_count") Double steamDota2LoseCount,
-			@JsonProperty("steam_dota2_win_count") Double steamDota2WinCount,
-			@JsonProperty("steam_hours_played_recently") @Nullable String steamHoursPlayedRecently,
-			@JsonProperty("steam_faceit_level") Double steamFaceitLevel,
-			@JsonProperty("steam_points") Double steamPoints,
-			@JsonProperty("steam_last_transaction_date") Double steamLastTransactionDate,
-			@JsonProperty("steam_relevant_game_count") Double steamRelevantGameCount,
-			@JsonProperty("steam_gift_count") Double steamGiftCount,
-			@JsonProperty("steam_limit_spent") @Nullable String steamLimitSpent,
-			@JsonProperty("steam_dota2_behavior") Double steamDota2Behavior,
-			@JsonProperty("steam_mfa") Double steamMfa,
-			@JsonProperty("steam_market") Double steamMarket,
-			@JsonProperty("steam_market_restrictions") Double steamMarketRestrictions,
-			@JsonProperty("steam_market_ban_end_date") Double steamMarketBanEndDate,
-			@JsonProperty("steam_unturned_inv_value") Double steamUnturnedInvValue,
-			@JsonProperty("steam_cs2_last_launched") Double steamCs2LastLaunched,
-			@JsonProperty("steam_kf2_inv_value") Double steamKf2InvValue,
-			@JsonProperty("steam_dst_inv_value") Double steamDstInvValue,
-			@JsonProperty("steam_cs2_premier_elo") Double steamCs2PremierElo,
-			@JsonProperty("steam_has_activated_keys") Double steamHasActivatedKeys,
-			@JsonProperty("steam_cs2_ban_type") Double steamCs2BanType,
-			@JsonProperty("steam_rust_kill_player") Double steamRustKillPlayer,
-			@JsonProperty("steam_rust_deaths") Double steamRustDeaths,
-			@JsonProperty("steam_total_gifts_rub") Double steamTotalGiftsRub,
-			@JsonProperty("steam_total_refunds_rub") Double steamTotalRefundsRub,
-			@JsonProperty("steam_total_ingame_rub") Double steamTotalIngameRub,
-			@JsonProperty("steam_total_games_rub") Double steamTotalGamesRub,
-			@JsonProperty("steam_total_purchased_rub") Double steamTotalPurchasedRub,
-			@JsonProperty("steam_dota2_last_match_date") Double steamDota2LastMatchDate,
-			@JsonProperty("feedback_data") @Nullable String feedbackData,
-			@Nullable JsonNode isIgnored,
-			Double priceWithSellerFee,
-			@Nullable CategorySteamResponseItemsGuarantee guarantee,
-			@Nullable JsonNode canViewLoginData,
-			@Nullable JsonNode canUpdateItemStats,
-			@Nullable JsonNode canReportItem,
-			@Nullable JsonNode canViewEmailLoginData,
-			@Nullable JsonNode showGetEmailCodeButton,
-			@Nullable JsonNode canOpenItem,
-			@Nullable JsonNode canCloseItem,
-			@Nullable JsonNode canEditItem,
-			@Nullable JsonNode canDeleteItem,
-			@Nullable JsonNode canStickItem,
-			@Nullable JsonNode canUnstickItem,
-			@Nullable CategorySteamResponseItemsBumpSettings bumpSettings,
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBuyItem,
-			@JsonProperty("rub_price") Double rubPrice,
-			@JsonProperty("price_currency") @Nullable String priceCurrency,
-			@Nullable JsonNode canValidateAccount,
-			@Nullable JsonNode canResellItemAfterPurchase,
-			@Nullable CategorySteamResponseItemsSteamData steamData,
-			@Nullable JsonNode isSmallExf,
-			@JsonProperty("account_last_activity") Double accountLastActivity,
-			@Nullable JsonNode hasCs2,
-			@Nullable JsonNode hasDota2,
-			@Nullable JsonNode hasPubg,
-			@Nullable JsonNode hasTf2,
-			@Nullable JsonNode hasRust,
-			@JsonProperty("steam_cs2_ban_date_active") @Nullable JsonNode steamCs2BanDateActive,
-			@Nullable JsonNode dota2CalibrationWarning,
-			@Nullable JsonNode displayConvertedBalance,
-			@Nullable List<JsonNode> inventoryValue,
-			@Nullable List<JsonNode> steamCs2Medals,
-			@Nullable JsonNode cs2RankExpired,
-			Double steamDota2WinRate,
-			@Nullable List<CategorySteamResponseItemsSteamTransactions> steamTransactions,
-			@Nullable JsonNode hasPossibleBanInDota2,
-			@Nullable JsonNode chineseAccount,
-			@Nullable List<JsonNode> cs2MapsRanks,
-			@Nullable List<JsonNode> cs2PremierElo,
-			@Nullable JsonNode steamLifetimeTradeBan,
-			@Nullable JsonNode canViewAccountLink,
-			@Nullable List<CategorySteamResponseItemsAccountLinks> accountLinks,
-			@Nullable String accountLink,
-			@Nullable String emailLoginUrl,
-			@Nullable JsonNode canChangePassword,
-			@Nullable String itemOriginPhrase,
-			@JsonProperty("sold_items_category_count") Double soldItemsCategoryCount,
-			@JsonProperty("restore_items_category_count") Double restoreItemsCategoryCount,
-			@Nullable List<JsonNode> tags,
-			@JsonProperty("note_text") @Nullable JsonNode noteText,
-			@Nullable JsonNode hasPendingAutoBuy,
-			@Nullable String descriptionHtml,
-			@Nullable String descriptionEnHtml,
-			@Nullable String descriptionPlain,
-			@Nullable String descriptionEnPlain,
-			@Nullable CategorySteamResponseItemsSeller seller
+			@JsonProperty("item_id") double itemId,
+			@JsonProperty("item_state") String itemState,
+			@JsonProperty("category_id") double categoryId,
+			@JsonProperty("published_date") double publishedDate,
+			String title,
+			String description,
+			double price,
+			@JsonProperty("update_stat_date") double updateStatDate,
+			@JsonProperty("refreshed_date") double refreshedDate,
+			@JsonProperty("edit_date") double editDate,
+			@JsonProperty("view_count") double viewCount,
+			@JsonProperty("is_sticky") double isSticky,
+			@JsonProperty("item_origin") String itemOrigin,
+			@JsonProperty("extended_guarantee") double extendedGuarantee,
+			double nsb,
+			@JsonProperty("allow_ask_discount") double allowAskDiscount,
+			@JsonProperty("title_en") String titleEn,
+			@JsonProperty("description_en") String descriptionEn,
+			@JsonProperty("email_type") String emailType,
+			@JsonProperty("email_provider") String emailProvider,
+			@JsonProperty("item_domain") String itemDomain,
+			@JsonProperty("resale_item_origin") String resaleItemOrigin,
+			@JsonProperty("steam_item_id") double steamItemId,
+			@JsonProperty("steam_country") String steamCountry,
+			@JsonProperty("steam_register_date") double steamRegisterDate,
+			@JsonProperty("steam_last_activity") double steamLastActivity,
+			@JsonProperty("steam_full_games") CategorySteamResponseItemsSteamFullGames steamFullGames,
+			@JsonProperty("steam_community_ban") double steamCommunityBan,
+			@JsonProperty("steam_bans") String steamBans,
+			@JsonProperty("steam_cs2_profile_rank") double steamCs2ProfileRank,
+			@JsonProperty("steam_balance") String steamBalance,
+			@JsonProperty("steam_cs2_rank_id") double steamCs2RankId,
+			@JsonProperty("steam_is_limited") double steamIsLimited,
+			@JsonProperty("steam_level") double steamLevel,
+			@JsonProperty("steam_friend_count") double steamFriendCount,
+			@JsonProperty("steam_cs2_last_activity") double steamCs2LastActivity,
+			@JsonProperty("steam_dota2_solo_mmr") double steamDota2SoloMmr,
+			@JsonProperty("steam_cs2_ban_date") double steamCs2BanDate,
+			@JsonProperty("steam_converted_balance") double steamConvertedBalance,
+			@JsonProperty("steam_cards_count") double steamCardsCount,
+			@JsonProperty("steam_cards_games") double steamCardsGames,
+			@JsonProperty("steam_pubg_inv_value") double steamPubgInvValue,
+			@JsonProperty("steam_cs2_inv_value") double steamCs2InvValue,
+			@JsonProperty("steam_dota2_inv_value") double steamDota2InvValue,
+			@JsonProperty("steam_tf2_inv_value") double steamTf2InvValue,
+			@JsonProperty("steam_rust_inv_value") double steamRustInvValue,
+			@JsonProperty("steam_cs2_wingman_rank_id") double steamCs2WingmanRankId,
+			@JsonProperty("steam_game_count") double steamGameCount,
+			@JsonProperty("steam_steam_inv_value") double steamSteamInvValue,
+			@JsonProperty("steam_inv_value") double steamInvValue,
+			@JsonProperty("steam_cs2_win_count") double steamCs2WinCount,
+			@JsonProperty("steam_dota2_game_count") double steamDota2GameCount,
+			@JsonProperty("steam_dota2_lose_count") double steamDota2LoseCount,
+			@JsonProperty("steam_dota2_win_count") double steamDota2WinCount,
+			@JsonProperty("steam_hours_played_recently") String steamHoursPlayedRecently,
+			@JsonProperty("steam_faceit_level") double steamFaceitLevel,
+			@JsonProperty("steam_points") double steamPoints,
+			@JsonProperty("steam_last_transaction_date") double steamLastTransactionDate,
+			@JsonProperty("steam_relevant_game_count") double steamRelevantGameCount,
+			@JsonProperty("steam_gift_count") double steamGiftCount,
+			@JsonProperty("steam_limit_spent") String steamLimitSpent,
+			@JsonProperty("steam_dota2_behavior") double steamDota2Behavior,
+			@JsonProperty("steam_mfa") double steamMfa,
+			@JsonProperty("steam_market") double steamMarket,
+			@JsonProperty("steam_market_restrictions") double steamMarketRestrictions,
+			@JsonProperty("steam_market_ban_end_date") double steamMarketBanEndDate,
+			@JsonProperty("steam_unturned_inv_value") double steamUnturnedInvValue,
+			@JsonProperty("steam_cs2_last_launched") double steamCs2LastLaunched,
+			@JsonProperty("steam_kf2_inv_value") double steamKf2InvValue,
+			@JsonProperty("steam_dst_inv_value") double steamDstInvValue,
+			@JsonProperty("steam_cs2_premier_elo") double steamCs2PremierElo,
+			@JsonProperty("steam_has_activated_keys") double steamHasActivatedKeys,
+			@JsonProperty("steam_cs2_ban_type") double steamCs2BanType,
+			@JsonProperty("steam_rust_kill_player") double steamRustKillPlayer,
+			@JsonProperty("steam_rust_deaths") double steamRustDeaths,
+			@JsonProperty("steam_total_gifts_rub") double steamTotalGiftsRub,
+			@JsonProperty("steam_total_refunds_rub") double steamTotalRefundsRub,
+			@JsonProperty("steam_total_ingame_rub") double steamTotalIngameRub,
+			@JsonProperty("steam_total_games_rub") double steamTotalGamesRub,
+			@JsonProperty("steam_total_purchased_rub") double steamTotalPurchasedRub,
+			@JsonProperty("steam_dota2_last_match_date") double steamDota2LastMatchDate,
+			@JsonProperty("feedback_data") String feedbackData,
+			boolean isIgnored,
+			double priceWithSellerFee,
+			CategorySteamResponseItemsGuarantee guarantee,
+			boolean canViewLoginData,
+			boolean canUpdateItemStats,
+			boolean canReportItem,
+			boolean canViewEmailLoginData,
+			boolean showGetEmailCodeButton,
+			boolean canOpenItem,
+			boolean canCloseItem,
+			boolean canEditItem,
+			boolean canDeleteItem,
+			boolean canStickItem,
+			boolean canUnstickItem,
+			CategorySteamResponseItemsBumpSettings bumpSettings,
+			boolean canBumpItem,
+			boolean canBuyItem,
+			@JsonProperty("rub_price") double rubPrice,
+			@JsonProperty("price_currency") String priceCurrency,
+			boolean canValidateAccount,
+			boolean canResellItemAfterPurchase,
+			CategorySteamResponseItemsSteamData steamData,
+			boolean isSmallExf,
+			@JsonProperty("account_last_activity") double accountLastActivity,
+			boolean hasCs2,
+			boolean hasDota2,
+			boolean hasPubg,
+			boolean hasTf2,
+			boolean hasRust,
+			@JsonProperty("steam_cs2_ban_date_active") boolean steamCs2BanDateActive,
+			boolean dota2CalibrationWarning,
+			boolean displayConvertedBalance,
+			List<JsonNode> inventoryValue,
+			List<JsonNode> steamCs2Medals,
+			boolean cs2RankExpired,
+			double steamDota2WinRate,
+			List<CategorySteamResponseItemsSteamTransactions> steamTransactions,
+			boolean hasPossibleBanInDota2,
+			boolean chineseAccount,
+			List<JsonNode> cs2MapsRanks,
+			List<JsonNode> cs2PremierElo,
+			boolean steamLifetimeTradeBan,
+			boolean canViewAccountLink,
+			List<CategorySteamResponseItemsAccountLinks> accountLinks,
+			String accountLink,
+			String emailLoginUrl,
+			boolean canChangePassword,
+			String itemOriginPhrase,
+			@JsonProperty("sold_items_category_count") double soldItemsCategoryCount,
+			@JsonProperty("restore_items_category_count") double restoreItemsCategoryCount,
+			List<JsonNode> tags,
+			@JsonProperty("note_text") JsonNode noteText,
+			boolean hasPendingAutoBuy,
+			String descriptionHtml,
+			String descriptionEnHtml,
+			String descriptionPlain,
+			String descriptionEnPlain,
+			CategorySteamResponseItemsSeller seller
 		) {}
 
 		public record CategoryFortniteParams(
@@ -3070,204 +3070,204 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryFortniteResponse(
-			@Nullable List<CategoryFortniteResponseItems> items,
-			Double totalItems,
-			@Nullable JsonNode totalItemsPrice,
-			@Nullable JsonNode hasNextPage,
-			Double perPage,
-			Double page,
-			@Nullable JsonNode wasCached,
-			Double cacheTTL,
-			Double lastModified,
-			Double serverTime,
-			@Nullable String searchUrl,
-			@Nullable List<JsonNode> stickyItems,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<CategoryFortniteResponseItems> items,
+			double totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			double perPage,
+			double page,
+			boolean wasCached,
+			double cacheTTL,
+			double lastModified,
+			double serverTime,
+			String searchUrl,
+			List<JsonNode> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryFortniteResponseItemsBumpSettings(
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBumpItemGlobally,
-			@Nullable JsonNode shortErrorPhrase,
-			@Nullable JsonNode errorPhrase
+			boolean canBumpItem,
+			boolean canBumpItemGlobally,
+			JsonNode shortErrorPhrase,
+			JsonNode errorPhrase
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryFortniteResponseItemsFortniteSkins(
-			@Nullable String id,
-			@Nullable String title,
-			@Nullable String rarity,
-			@Nullable String type,
-			@JsonProperty("from_shop") Double fromShop
+			String id,
+			String title,
+			String rarity,
+			String type,
+			@JsonProperty("from_shop") double fromShop
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryFortniteResponseItemsFortnitePickaxe(
-			@Nullable String id,
-			@Nullable String title,
-			@Nullable String rarity,
-			@Nullable String type,
-			@JsonProperty("from_shop") Double fromShop
+			String id,
+			String title,
+			String rarity,
+			String type,
+			@JsonProperty("from_shop") double fromShop
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryFortniteResponseItemsFortniteDance(
-			@Nullable String id,
-			@Nullable String title,
-			@Nullable String rarity,
-			@Nullable String type,
-			@JsonProperty("from_shop") Double fromShop
+			String id,
+			String title,
+			String rarity,
+			String type,
+			@JsonProperty("from_shop") double fromShop
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryFortniteResponseItemsFortniteGliders(
-			@Nullable String id,
-			@Nullable String title,
-			@Nullable String rarity,
-			@Nullable String type,
-			@JsonProperty("from_shop") Double fromShop
+			String id,
+			String title,
+			String rarity,
+			String type,
+			@JsonProperty("from_shop") double fromShop
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryFortniteResponseItemsFortnitePastSeasons(
-			Double numWins,
-			Double seasonXp,
-			@Nullable JsonNode purchasedVIP,
-			Double survivorPrestige,
-			Double seasonLevel,
-			Double numLowBracket,
-			Double bookLevel,
-			Double numRoyalRoyales,
-			Double seasonNumber,
-			Double survivorTier,
-			Double numHighBracket
+			double numWins,
+			double seasonXp,
+			boolean purchasedVIP,
+			double survivorPrestige,
+			double seasonLevel,
+			double numLowBracket,
+			double bookLevel,
+			double numRoyalRoyales,
+			double seasonNumber,
+			double survivorTier,
+			double numHighBracket
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryFortniteResponseItemsFortniteTransactions(
-			Double date,
-			@Nullable String title,
-			@Nullable String presentmentTotal,
-			@Nullable String orderType
+			double date,
+			String title,
+			String presentmentTotal,
+			String orderType
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryFortniteResponseItemsShopCounts(
-			Double shopSkinsCount,
-			Double shopPickaxesCount,
-			Double shopDancesCount,
-			Double shopGlidersCount
+			double shopSkinsCount,
+			double shopPickaxesCount,
+			double shopDancesCount,
+			double shopGlidersCount
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryFortniteResponseItemsSeller(
-			@JsonProperty("user_id") Double userId,
-			@JsonProperty("sold_items_count") Double soldItemsCount,
-			@JsonProperty("active_items_count") Double activeItemsCount,
-			@JsonProperty("restore_data") @Nullable String restoreData,
-			@Nullable String username,
-			@JsonProperty("avatar_date") Double avatarDate,
-			@JsonProperty("is_banned") Double isBanned,
-			@JsonProperty("display_style_group_id") Double displayStyleGroupId,
-			@JsonProperty("restore_percents") Double restorePercents
+			@JsonProperty("user_id") double userId,
+			@JsonProperty("sold_items_count") double soldItemsCount,
+			@JsonProperty("active_items_count") double activeItemsCount,
+			@JsonProperty("restore_data") String restoreData,
+			String username,
+			@JsonProperty("avatar_date") double avatarDate,
+			@JsonProperty("is_banned") double isBanned,
+			@JsonProperty("display_style_group_id") double displayStyleGroupId,
+			@JsonProperty("restore_percents") double restorePercents
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryFortniteResponseItems(
-			@JsonProperty("item_id") Double itemId,
-			@JsonProperty("item_state") @Nullable String itemState,
-			@JsonProperty("category_id") Double categoryId,
-			@JsonProperty("published_date") Double publishedDate,
-			@Nullable String title,
-			@Nullable String description,
-			Double price,
-			@JsonProperty("update_stat_date") Double updateStatDate,
-			@JsonProperty("refreshed_date") Double refreshedDate,
-			@JsonProperty("edit_date") Double editDate,
-			@JsonProperty("view_count") Double viewCount,
-			@JsonProperty("is_sticky") Double isSticky,
-			@JsonProperty("item_origin") @Nullable String itemOrigin,
-			@JsonProperty("extended_guarantee") Double extendedGuarantee,
-			Double nsb,
-			@JsonProperty("allow_ask_discount") Double allowAskDiscount,
-			@JsonProperty("title_en") @Nullable String titleEn,
-			@JsonProperty("description_en") @Nullable String descriptionEn,
-			@JsonProperty("email_type") @Nullable String emailType,
-			@JsonProperty("email_provider") @Nullable String emailProvider,
-			@JsonProperty("item_domain") @Nullable String itemDomain,
-			@JsonProperty("resale_item_origin") @Nullable String resaleItemOrigin,
-			@JsonProperty("fortnite_item_id") Double fortniteItemId,
-			@JsonProperty("fortnite_platform") @Nullable String fortnitePlatform,
-			@JsonProperty("fortnite_register_date") Double fortniteRegisterDate,
-			@JsonProperty("fortnite_last_activity") Double fortniteLastActivity,
-			@JsonProperty("fortnite_book_level") Double fortniteBookLevel,
-			@JsonProperty("fortnite_lifetime_wins") Double fortniteLifetimeWins,
-			@JsonProperty("fortnite_level") Double fortniteLevel,
-			@JsonProperty("fortnite_season_num") Double fortniteSeasonNum,
-			@JsonProperty("fortnite_books_purchased") Double fortniteBooksPurchased,
-			@JsonProperty("fortnite_balance") Double fortniteBalance,
-			@JsonProperty("fortnite_skin_count") Double fortniteSkinCount,
-			@JsonProperty("fortnite_change_email") Double fortniteChangeEmail,
-			@JsonProperty("fortnite_rl_purchases") Double fortniteRlPurchases,
-			@JsonProperty("fortnite_next_change_email_date") Double fortniteNextChangeEmailDate,
-			@JsonProperty("fortnite_last_trans_date") Double fortniteLastTransDate,
-			@JsonProperty("fortnite_xbox_linkable") Double fortniteXboxLinkable,
-			@JsonProperty("fortnite_psn_linkable") Double fortnitePsnLinkable,
-			@JsonProperty("fortnite_shop_skins_count") Double fortniteShopSkinsCount,
-			@JsonProperty("fortnite_shop_pickaxes_count") Double fortniteShopPickaxesCount,
-			@JsonProperty("fortnite_shop_dances_count") Double fortniteShopDancesCount,
-			@JsonProperty("fortnite_shop_gliders_count") Double fortniteShopGlidersCount,
-			@JsonProperty("feedback_data") @Nullable String feedbackData,
-			@Nullable JsonNode isIgnored,
-			Double priceWithSellerFee,
-			@Nullable JsonNode guarantee,
-			@Nullable JsonNode canViewLoginData,
-			@Nullable JsonNode canUpdateItemStats,
-			@Nullable JsonNode canReportItem,
-			@Nullable JsonNode canViewEmailLoginData,
-			@Nullable JsonNode showGetEmailCodeButton,
-			@Nullable JsonNode canOpenItem,
-			@Nullable JsonNode canCloseItem,
-			@Nullable JsonNode canEditItem,
-			@Nullable JsonNode canDeleteItem,
-			@Nullable JsonNode canStickItem,
-			@Nullable JsonNode canUnstickItem,
-			@Nullable CategoryFortniteResponseItemsBumpSettings bumpSettings,
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBuyItem,
-			@JsonProperty("rub_price") Double rubPrice,
-			@JsonProperty("price_currency") @Nullable String priceCurrency,
-			@Nullable JsonNode canValidateAccount,
-			@Nullable JsonNode canResellItemAfterPurchase,
-			@Nullable List<CategoryFortniteResponseItemsFortniteSkins> fortniteSkins,
-			@Nullable List<CategoryFortniteResponseItemsFortnitePickaxe> fortnitePickaxe,
-			@Nullable List<CategoryFortniteResponseItemsFortniteDance> fortniteDance,
-			@Nullable List<CategoryFortniteResponseItemsFortniteGliders> fortniteGliders,
-			@JsonProperty("fortnite_pickaxe_count") Double fortnitePickaxeCount,
-			@JsonProperty("fortnite_dance_count") Double fortniteDanceCount,
-			@JsonProperty("fortnite_glider_count") Double fortniteGliderCount,
-			@Nullable List<CategoryFortniteResponseItemsFortnitePastSeasons> fortnitePastSeasons,
-			@Nullable JsonNode isSmallExf,
-			@JsonProperty("account_last_activity") Double accountLastActivity,
-			@Nullable List<CategoryFortniteResponseItemsFortniteTransactions> fortniteTransactions,
-			@Nullable String domain,
-			@Nullable CategoryFortniteResponseItemsShopCounts shopCounts,
-			@Nullable JsonNode canViewAccountLink,
-			@Nullable List<JsonNode> accountLinks,
-			@Nullable String emailLoginUrl,
-			@Nullable JsonNode canChangePassword,
-			@Nullable String itemOriginPhrase,
-			@JsonProperty("sold_items_category_count") Double soldItemsCategoryCount,
-			@JsonProperty("restore_items_category_count") Double restoreItemsCategoryCount,
-			@Nullable List<JsonNode> tags,
-			@JsonProperty("note_text") @Nullable JsonNode noteText,
-			@Nullable JsonNode hasPendingAutoBuy,
-			@Nullable String descriptionHtml,
-			@Nullable String descriptionEnHtml,
-			@Nullable String descriptionPlain,
-			@Nullable String descriptionEnPlain,
-			@Nullable CategoryFortniteResponseItemsSeller seller
+			@JsonProperty("item_id") double itemId,
+			@JsonProperty("item_state") String itemState,
+			@JsonProperty("category_id") double categoryId,
+			@JsonProperty("published_date") double publishedDate,
+			String title,
+			String description,
+			double price,
+			@JsonProperty("update_stat_date") double updateStatDate,
+			@JsonProperty("refreshed_date") double refreshedDate,
+			@JsonProperty("edit_date") double editDate,
+			@JsonProperty("view_count") double viewCount,
+			@JsonProperty("is_sticky") double isSticky,
+			@JsonProperty("item_origin") String itemOrigin,
+			@JsonProperty("extended_guarantee") double extendedGuarantee,
+			double nsb,
+			@JsonProperty("allow_ask_discount") double allowAskDiscount,
+			@JsonProperty("title_en") String titleEn,
+			@JsonProperty("description_en") String descriptionEn,
+			@JsonProperty("email_type") String emailType,
+			@JsonProperty("email_provider") String emailProvider,
+			@JsonProperty("item_domain") String itemDomain,
+			@JsonProperty("resale_item_origin") String resaleItemOrigin,
+			@JsonProperty("fortnite_item_id") double fortniteItemId,
+			@JsonProperty("fortnite_platform") String fortnitePlatform,
+			@JsonProperty("fortnite_register_date") double fortniteRegisterDate,
+			@JsonProperty("fortnite_last_activity") double fortniteLastActivity,
+			@JsonProperty("fortnite_book_level") double fortniteBookLevel,
+			@JsonProperty("fortnite_lifetime_wins") double fortniteLifetimeWins,
+			@JsonProperty("fortnite_level") double fortniteLevel,
+			@JsonProperty("fortnite_season_num") double fortniteSeasonNum,
+			@JsonProperty("fortnite_books_purchased") double fortniteBooksPurchased,
+			@JsonProperty("fortnite_balance") double fortniteBalance,
+			@JsonProperty("fortnite_skin_count") double fortniteSkinCount,
+			@JsonProperty("fortnite_change_email") double fortniteChangeEmail,
+			@JsonProperty("fortnite_rl_purchases") double fortniteRlPurchases,
+			@JsonProperty("fortnite_next_change_email_date") double fortniteNextChangeEmailDate,
+			@JsonProperty("fortnite_last_trans_date") double fortniteLastTransDate,
+			@JsonProperty("fortnite_xbox_linkable") double fortniteXboxLinkable,
+			@JsonProperty("fortnite_psn_linkable") double fortnitePsnLinkable,
+			@JsonProperty("fortnite_shop_skins_count") double fortniteShopSkinsCount,
+			@JsonProperty("fortnite_shop_pickaxes_count") double fortniteShopPickaxesCount,
+			@JsonProperty("fortnite_shop_dances_count") double fortniteShopDancesCount,
+			@JsonProperty("fortnite_shop_gliders_count") double fortniteShopGlidersCount,
+			@JsonProperty("feedback_data") String feedbackData,
+			boolean isIgnored,
+			double priceWithSellerFee,
+			JsonNode guarantee,
+			boolean canViewLoginData,
+			boolean canUpdateItemStats,
+			boolean canReportItem,
+			boolean canViewEmailLoginData,
+			boolean showGetEmailCodeButton,
+			boolean canOpenItem,
+			boolean canCloseItem,
+			boolean canEditItem,
+			boolean canDeleteItem,
+			boolean canStickItem,
+			boolean canUnstickItem,
+			CategoryFortniteResponseItemsBumpSettings bumpSettings,
+			boolean canBumpItem,
+			boolean canBuyItem,
+			@JsonProperty("rub_price") double rubPrice,
+			@JsonProperty("price_currency") String priceCurrency,
+			boolean canValidateAccount,
+			boolean canResellItemAfterPurchase,
+			List<CategoryFortniteResponseItemsFortniteSkins> fortniteSkins,
+			List<CategoryFortniteResponseItemsFortnitePickaxe> fortnitePickaxe,
+			List<CategoryFortniteResponseItemsFortniteDance> fortniteDance,
+			List<CategoryFortniteResponseItemsFortniteGliders> fortniteGliders,
+			@JsonProperty("fortnite_pickaxe_count") double fortnitePickaxeCount,
+			@JsonProperty("fortnite_dance_count") double fortniteDanceCount,
+			@JsonProperty("fortnite_glider_count") double fortniteGliderCount,
+			List<CategoryFortniteResponseItemsFortnitePastSeasons> fortnitePastSeasons,
+			boolean isSmallExf,
+			@JsonProperty("account_last_activity") double accountLastActivity,
+			List<CategoryFortniteResponseItemsFortniteTransactions> fortniteTransactions,
+			String domain,
+			CategoryFortniteResponseItemsShopCounts shopCounts,
+			boolean canViewAccountLink,
+			List<JsonNode> accountLinks,
+			String emailLoginUrl,
+			boolean canChangePassword,
+			String itemOriginPhrase,
+			@JsonProperty("sold_items_category_count") double soldItemsCategoryCount,
+			@JsonProperty("restore_items_category_count") double restoreItemsCategoryCount,
+			List<JsonNode> tags,
+			@JsonProperty("note_text") JsonNode noteText,
+			boolean hasPendingAutoBuy,
+			String descriptionHtml,
+			String descriptionEnHtml,
+			String descriptionPlain,
+			String descriptionEnPlain,
+			CategoryFortniteResponseItemsSeller seller
 		) {}
 
 		public record CategoryMihoyoParams(
@@ -3443,331 +3443,331 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryMihoyoResponse(
-			@Nullable List<CategoryMihoyoResponseItems> items,
-			Double totalItems,
-			@Nullable JsonNode totalItemsPrice,
-			@Nullable JsonNode hasNextPage,
-			Double perPage,
-			Double page,
-			@Nullable JsonNode wasCached,
-			Double cacheTTL,
-			Double lastModified,
-			Double serverTime,
-			@Nullable String searchUrl,
-			@Nullable List<JsonNode> stickyItems,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<CategoryMihoyoResponseItems> items,
+			double totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			double perPage,
+			double page,
+			boolean wasCached,
+			double cacheTTL,
+			double lastModified,
+			double serverTime,
+			String searchUrl,
+			List<JsonNode> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryMihoyoResponseItemsBumpSettings(
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBumpItemGlobally,
-			@Nullable JsonNode shortErrorPhrase,
-			@Nullable JsonNode errorPhrase
+			boolean canBumpItem,
+			boolean canBumpItemGlobally,
+			JsonNode shortErrorPhrase,
+			JsonNode errorPhrase
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryMihoyoResponseItemsMihoyoLinkedAccounts(
-			@Nullable List<String> links,
-			@Nullable JsonNode legacy
+			List<String> links,
+			boolean legacy
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryMihoyoResponseItemsHonkaiCharactersEquip(
-			Double id,
-			Double level,
-			Double rank,
-			@Nullable String name,
-			@Nullable String desc,
-			@Nullable String icon,
-			Double rarity
+			double id,
+			double level,
+			double rank,
+			String name,
+			String desc,
+			String icon,
+			double rarity
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryMihoyoResponseItemsHonkaiCharactersRelicsMainProperty(
-			@JsonProperty("property_type") Double propertyType,
-			@Nullable String value,
-			Double times
+			@JsonProperty("property_type") double propertyType,
+			String value,
+			double times
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryMihoyoResponseItemsHonkaiCharactersRelicsProperties(
-			@JsonProperty("property_type") Double propertyType,
-			@Nullable String value,
-			Double times
+			@JsonProperty("property_type") double propertyType,
+			String value,
+			double times
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryMihoyoResponseItemsHonkaiCharactersRelics(
-			Double id,
-			Double level,
-			Double pos,
-			@Nullable String name,
-			@Nullable String desc,
-			@Nullable String icon,
-			Double rarity,
-			@JsonProperty("main_property") @Nullable CategoryMihoyoResponseItemsHonkaiCharactersRelicsMainProperty mainProperty,
-			@Nullable List<CategoryMihoyoResponseItemsHonkaiCharactersRelicsProperties> properties
+			double id,
+			double level,
+			double pos,
+			String name,
+			String desc,
+			String icon,
+			double rarity,
+			@JsonProperty("main_property") CategoryMihoyoResponseItemsHonkaiCharactersRelicsMainProperty mainProperty,
+			List<CategoryMihoyoResponseItemsHonkaiCharactersRelicsProperties> properties
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryMihoyoResponseItemsHonkaiCharactersOrnamentsMainProperty(
-			@JsonProperty("property_type") Double propertyType,
-			@Nullable String value,
-			Double times
+			@JsonProperty("property_type") double propertyType,
+			String value,
+			double times
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryMihoyoResponseItemsHonkaiCharactersOrnamentsProperties(
-			@JsonProperty("property_type") Double propertyType,
-			@Nullable String value,
-			Double times
+			@JsonProperty("property_type") double propertyType,
+			String value,
+			double times
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryMihoyoResponseItemsHonkaiCharactersOrnaments(
-			Double id,
-			Double level,
-			Double pos,
-			@Nullable String name,
-			@Nullable String desc,
-			@Nullable String icon,
-			Double rarity,
-			@JsonProperty("main_property") @Nullable CategoryMihoyoResponseItemsHonkaiCharactersOrnamentsMainProperty mainProperty,
-			@Nullable List<CategoryMihoyoResponseItemsHonkaiCharactersOrnamentsProperties> properties
+			double id,
+			double level,
+			double pos,
+			String name,
+			String desc,
+			String icon,
+			double rarity,
+			@JsonProperty("main_property") CategoryMihoyoResponseItemsHonkaiCharactersOrnamentsMainProperty mainProperty,
+			List<CategoryMihoyoResponseItemsHonkaiCharactersOrnamentsProperties> properties
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryMihoyoResponseItemsHonkaiCharacters(
-			Double id,
-			Double level,
-			@Nullable String name,
-			@Nullable String element,
-			@Nullable String icon,
-			Double rarity,
-			Double rank,
-			@Nullable String image,
-			@Nullable CategoryMihoyoResponseItemsHonkaiCharactersEquip equip,
-			@Nullable List<CategoryMihoyoResponseItemsHonkaiCharactersRelics> relics,
-			@Nullable List<CategoryMihoyoResponseItemsHonkaiCharactersOrnaments> ornaments,
-			@JsonProperty("base_type") Double baseType,
-			@JsonProperty("figure_path") @Nullable String figurePath,
-			@Nullable String elementImage
+			double id,
+			double level,
+			String name,
+			String element,
+			String icon,
+			double rarity,
+			double rank,
+			String image,
+			CategoryMihoyoResponseItemsHonkaiCharactersEquip equip,
+			List<CategoryMihoyoResponseItemsHonkaiCharactersRelics> relics,
+			List<CategoryMihoyoResponseItemsHonkaiCharactersOrnaments> ornaments,
+			@JsonProperty("base_type") double baseType,
+			@JsonProperty("figure_path") String figurePath,
+			String elementImage
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryMihoyoResponseItemsGenshinCharactersWeapon(
-			Double id,
-			@Nullable String name,
-			@Nullable String icon,
-			Double type,
-			Double rarity,
-			Double level,
-			@JsonProperty("promote_level") Double promoteLevel,
-			@JsonProperty("type_name") @Nullable String typeName,
-			@Nullable String desc,
-			@JsonProperty("affix_level") Double affixLevel
+			double id,
+			String name,
+			String icon,
+			double type,
+			double rarity,
+			double level,
+			@JsonProperty("promote_level") double promoteLevel,
+			@JsonProperty("type_name") String typeName,
+			String desc,
+			@JsonProperty("affix_level") double affixLevel
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryMihoyoResponseItemsGenshinCharactersReliquaries(
-			Double id,
-			@Nullable String name,
-			@Nullable String icon,
-			Double pos,
-			Double rarity,
-			Double level,
-			@JsonProperty("pos_name") @Nullable String posName
+			double id,
+			String name,
+			String icon,
+			double pos,
+			double rarity,
+			double level,
+			@JsonProperty("pos_name") String posName
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryMihoyoResponseItemsGenshinCharacters(
-			Double id,
-			@Nullable String image,
-			@Nullable String icon,
-			@Nullable String name,
-			@Nullable String element,
-			Double fetter,
-			Double level,
-			Double rarity,
-			@Nullable CategoryMihoyoResponseItemsGenshinCharactersWeapon weapon,
-			@Nullable List<CategoryMihoyoResponseItemsGenshinCharactersReliquaries> reliquaries,
-			@JsonProperty("actived_constellation_num") Double activedConstellationNum,
-			@Nullable List<JsonNode> costumes,
-			@Nullable JsonNode external,
-			@Nullable String background
+			double id,
+			String image,
+			String icon,
+			String name,
+			String element,
+			double fetter,
+			double level,
+			double rarity,
+			CategoryMihoyoResponseItemsGenshinCharactersWeapon weapon,
+			List<CategoryMihoyoResponseItemsGenshinCharactersReliquaries> reliquaries,
+			@JsonProperty("actived_constellation_num") double activedConstellationNum,
+			List<JsonNode> costumes,
+			JsonNode external,
+			String background
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryMihoyoResponseItemsZenlessCharactersWeaponProperties(
-			@JsonProperty("property_name") @Nullable String propertyName,
-			@JsonProperty("property_id") Double propertyId,
-			@Nullable String base
+			@JsonProperty("property_name") String propertyName,
+			@JsonProperty("property_id") double propertyId,
+			String base
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryMihoyoResponseItemsZenlessCharactersWeaponMainProperties(
-			@JsonProperty("property_name") @Nullable String propertyName,
-			@JsonProperty("property_id") Double propertyId,
-			@Nullable String base
+			@JsonProperty("property_name") String propertyName,
+			@JsonProperty("property_id") double propertyId,
+			String base
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryMihoyoResponseItemsZenlessCharactersWeapon(
-			Double id,
-			Double level,
-			@Nullable String name,
-			Double star,
-			@Nullable String icon,
-			Double rarity,
-			@Nullable List<CategoryMihoyoResponseItemsZenlessCharactersWeaponProperties> properties,
-			@JsonProperty("main_properties") @Nullable List<CategoryMihoyoResponseItemsZenlessCharactersWeaponMainProperties> mainProperties,
-			@JsonProperty("talent_title") @Nullable String talentTitle,
-			@JsonProperty("talent_content") @Nullable String talentContent,
-			Double profession,
-			@Nullable String starIcon,
-			@Nullable String rarityIcon
+			double id,
+			double level,
+			String name,
+			double star,
+			String icon,
+			double rarity,
+			List<CategoryMihoyoResponseItemsZenlessCharactersWeaponProperties> properties,
+			@JsonProperty("main_properties") List<CategoryMihoyoResponseItemsZenlessCharactersWeaponMainProperties> mainProperties,
+			@JsonProperty("talent_title") String talentTitle,
+			@JsonProperty("talent_content") String talentContent,
+			double profession,
+			String starIcon,
+			String rarityIcon
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryMihoyoResponseItemsZenlessCharacters(
-			Double id,
-			Double level,
-			@JsonProperty("name_mi18n") @Nullable String nameMi18n,
-			@JsonProperty("full_name_mi18n") @Nullable String fullNameMi18n,
-			@JsonProperty("element_type") Double elementType,
-			@JsonProperty("camp_name_mi18n") @Nullable String campNameMi18n,
-			@JsonProperty("avatar_profession") Double avatarProfession,
-			Double rarity,
-			@Nullable CategoryMihoyoResponseItemsZenlessCharactersWeapon weapon,
-			Double rank,
-			@Nullable String name,
-			@Nullable String rarityIcon,
-			@Nullable String elementIcon,
-			@Nullable String professionIcon
+			double id,
+			double level,
+			@JsonProperty("name_mi18n") String nameMi18n,
+			@JsonProperty("full_name_mi18n") String fullNameMi18n,
+			@JsonProperty("element_type") double elementType,
+			@JsonProperty("camp_name_mi18n") String campNameMi18n,
+			@JsonProperty("avatar_profession") double avatarProfession,
+			double rarity,
+			CategoryMihoyoResponseItemsZenlessCharactersWeapon weapon,
+			double rank,
+			String name,
+			String rarityIcon,
+			String elementIcon,
+			String professionIcon
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryMihoyoResponseItemsAccountLinks(
-			@Nullable String link,
-			@Nullable String text,
-			@Nullable String iconClass
+			String link,
+			String text,
+			String iconClass
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryMihoyoResponseItemsSeller(
-			@JsonProperty("user_id") Double userId,
-			@JsonProperty("sold_items_count") Double soldItemsCount,
-			@JsonProperty("active_items_count") Double activeItemsCount,
-			@JsonProperty("restore_data") @Nullable String restoreData,
-			@Nullable String username,
-			@JsonProperty("avatar_date") Double avatarDate,
-			@JsonProperty("is_banned") Double isBanned,
-			@JsonProperty("display_style_group_id") Double displayStyleGroupId,
-			@JsonProperty("restore_percents") Double restorePercents
+			@JsonProperty("user_id") double userId,
+			@JsonProperty("sold_items_count") double soldItemsCount,
+			@JsonProperty("active_items_count") double activeItemsCount,
+			@JsonProperty("restore_data") String restoreData,
+			String username,
+			@JsonProperty("avatar_date") double avatarDate,
+			@JsonProperty("is_banned") double isBanned,
+			@JsonProperty("display_style_group_id") double displayStyleGroupId,
+			@JsonProperty("restore_percents") double restorePercents
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryMihoyoResponseItems(
-			@JsonProperty("item_id") Double itemId,
-			@JsonProperty("item_state") @Nullable String itemState,
-			@JsonProperty("category_id") Double categoryId,
-			@JsonProperty("published_date") Double publishedDate,
-			@Nullable String title,
-			@Nullable String description,
-			Double price,
-			@JsonProperty("update_stat_date") Double updateStatDate,
-			@JsonProperty("refreshed_date") Double refreshedDate,
-			@JsonProperty("edit_date") Double editDate,
-			@JsonProperty("view_count") Double viewCount,
-			@JsonProperty("is_sticky") Double isSticky,
-			@JsonProperty("item_origin") @Nullable String itemOrigin,
-			@JsonProperty("extended_guarantee") Double extendedGuarantee,
-			Double nsb,
-			@JsonProperty("allow_ask_discount") Double allowAskDiscount,
-			@JsonProperty("title_en") @Nullable String titleEn,
-			@JsonProperty("description_en") @Nullable String descriptionEn,
-			@JsonProperty("email_type") @Nullable String emailType,
-			@JsonProperty("email_provider") @Nullable String emailProvider,
-			@JsonProperty("item_domain") @Nullable String itemDomain,
-			@JsonProperty("resale_item_origin") @Nullable String resaleItemOrigin,
-			@JsonProperty("mihoyo_item_id") Double mihoyoItemId,
-			@JsonProperty("mihoyo_id") Double mihoyoId,
-			@JsonProperty("mihoyo_email") Double mihoyoEmail,
-			@JsonProperty("mihoyo_has_linked_accounts") Double mihoyoHasLinkedAccounts,
-			@JsonProperty("mihoyo_region") @Nullable String mihoyoRegion,
-			@JsonProperty("mihoyo_last_activity") Double mihoyoLastActivity,
-			@JsonProperty("mihoyo_genshin_level") Double mihoyoGenshinLevel,
-			@JsonProperty("mihoyo_genshin_character_count") Double mihoyoGenshinCharacterCount,
-			@JsonProperty("mihoyo_genshin_achievement_count") Double mihoyoGenshinAchievementCount,
-			@JsonProperty("mihoyo_genshin_abyss_process") @Nullable String mihoyoGenshinAbyssProcess,
-			@JsonProperty("mihoyo_genshin_legendary_characters_count") Double mihoyoGenshinLegendaryCharactersCount,
-			@JsonProperty("mihoyo_genshin_constellations_count") Double mihoyoGenshinConstellationsCount,
-			@JsonProperty("mihoyo_genshin_legendary_weapons_count") Double mihoyoGenshinLegendaryWeaponsCount,
-			@JsonProperty("mihoyo_genshin_activity_days") Double mihoyoGenshinActivityDays,
-			@JsonProperty("mihoyo_genshin_currency") Double mihoyoGenshinCurrency,
-			@JsonProperty("mihoyo_honkai_level") Double mihoyoHonkaiLevel,
-			@JsonProperty("mihoyo_honkai_character_count") Double mihoyoHonkaiCharacterCount,
-			@JsonProperty("mihoyo_honkai_achievement_count") Double mihoyoHonkaiAchievementCount,
-			@JsonProperty("mihoyo_honkai_abyss_process") @Nullable String mihoyoHonkaiAbyssProcess,
-			@JsonProperty("mihoyo_honkai_legendary_characters_count") Double mihoyoHonkaiLegendaryCharactersCount,
-			@JsonProperty("mihoyo_honkai_eidolons_count") Double mihoyoHonkaiEidolonsCount,
-			@JsonProperty("mihoyo_honkai_legendary_weapons_count") Double mihoyoHonkaiLegendaryWeaponsCount,
-			@JsonProperty("mihoyo_honkai_activity_days") Double mihoyoHonkaiActivityDays,
-			@JsonProperty("mihoyo_honkai_currency") Double mihoyoHonkaiCurrency,
-			@JsonProperty("mihoyo_zenless_level") Double mihoyoZenlessLevel,
-			@JsonProperty("mihoyo_zenless_character_count") Double mihoyoZenlessCharacterCount,
-			@JsonProperty("mihoyo_zenless_achievement_count") Double mihoyoZenlessAchievementCount,
-			@JsonProperty("mihoyo_zenless_abyss_process") @Nullable String mihoyoZenlessAbyssProcess,
-			@JsonProperty("mihoyo_zenless_legendary_characters_count") Double mihoyoZenlessLegendaryCharactersCount,
-			@JsonProperty("mihoyo_zenless_cinemas_count") Double mihoyoZenlessCinemasCount,
-			@JsonProperty("mihoyo_zenless_legendary_weapons_count") Double mihoyoZenlessLegendaryWeaponsCount,
-			@JsonProperty("mihoyo_zenless_activity_days") Double mihoyoZenlessActivityDays,
-			@JsonProperty("mihoyo_zenless_currency") Double mihoyoZenlessCurrency,
-			@JsonProperty("feedback_data") @Nullable String feedbackData,
-			@Nullable JsonNode isIgnored,
-			Double priceWithSellerFee,
-			@Nullable JsonNode guarantee,
-			@Nullable JsonNode canViewLoginData,
-			@Nullable JsonNode canUpdateItemStats,
-			@Nullable JsonNode canReportItem,
-			@Nullable JsonNode canViewEmailLoginData,
-			@Nullable JsonNode showGetEmailCodeButton,
-			@Nullable JsonNode canOpenItem,
-			@Nullable JsonNode canCloseItem,
-			@Nullable JsonNode canEditItem,
-			@Nullable JsonNode canDeleteItem,
-			@Nullable JsonNode canStickItem,
-			@Nullable JsonNode canUnstickItem,
-			@Nullable CategoryMihoyoResponseItemsBumpSettings bumpSettings,
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBuyItem,
-			@JsonProperty("rub_price") Double rubPrice,
-			@JsonProperty("price_currency") @Nullable String priceCurrency,
-			@Nullable JsonNode canValidateAccount,
-			@Nullable JsonNode canResellItemAfterPurchase,
-			@Nullable String mihoyoRegionPhrase,
-			@Nullable CategoryMihoyoResponseItemsMihoyoLinkedAccounts mihoyoLinkedAccounts,
-			@Nullable String mihoyoLinkedAccountsString,
-			@Nullable List<CategoryMihoyoResponseItemsHonkaiCharacters> honkaiCharacters,
-			@Nullable List<CategoryMihoyoResponseItemsGenshinCharacters> genshinCharacters,
-			@Nullable List<CategoryMihoyoResponseItemsZenlessCharacters> zenlessCharacters,
-			@Nullable JsonNode canViewAccountLink,
-			@Nullable List<CategoryMihoyoResponseItemsAccountLinks> accountLinks,
-			@Nullable String accountLink,
-			@Nullable String emailLoginUrl,
-			@Nullable JsonNode canChangePassword,
-			@Nullable String itemOriginPhrase,
-			@JsonProperty("sold_items_category_count") Double soldItemsCategoryCount,
-			@JsonProperty("restore_items_category_count") Double restoreItemsCategoryCount,
-			@Nullable List<JsonNode> tags,
-			@JsonProperty("note_text") @Nullable JsonNode noteText,
-			@Nullable JsonNode hasPendingAutoBuy,
-			@Nullable String descriptionHtml,
-			@Nullable String descriptionEnHtml,
-			@Nullable String descriptionPlain,
-			@Nullable String descriptionEnPlain,
-			@Nullable CategoryMihoyoResponseItemsSeller seller
+			@JsonProperty("item_id") double itemId,
+			@JsonProperty("item_state") String itemState,
+			@JsonProperty("category_id") double categoryId,
+			@JsonProperty("published_date") double publishedDate,
+			String title,
+			String description,
+			double price,
+			@JsonProperty("update_stat_date") double updateStatDate,
+			@JsonProperty("refreshed_date") double refreshedDate,
+			@JsonProperty("edit_date") double editDate,
+			@JsonProperty("view_count") double viewCount,
+			@JsonProperty("is_sticky") double isSticky,
+			@JsonProperty("item_origin") String itemOrigin,
+			@JsonProperty("extended_guarantee") double extendedGuarantee,
+			double nsb,
+			@JsonProperty("allow_ask_discount") double allowAskDiscount,
+			@JsonProperty("title_en") String titleEn,
+			@JsonProperty("description_en") String descriptionEn,
+			@JsonProperty("email_type") String emailType,
+			@JsonProperty("email_provider") String emailProvider,
+			@JsonProperty("item_domain") String itemDomain,
+			@JsonProperty("resale_item_origin") String resaleItemOrigin,
+			@JsonProperty("mihoyo_item_id") double mihoyoItemId,
+			@JsonProperty("mihoyo_id") double mihoyoId,
+			@JsonProperty("mihoyo_email") double mihoyoEmail,
+			@JsonProperty("mihoyo_has_linked_accounts") double mihoyoHasLinkedAccounts,
+			@JsonProperty("mihoyo_region") String mihoyoRegion,
+			@JsonProperty("mihoyo_last_activity") double mihoyoLastActivity,
+			@JsonProperty("mihoyo_genshin_level") double mihoyoGenshinLevel,
+			@JsonProperty("mihoyo_genshin_character_count") double mihoyoGenshinCharacterCount,
+			@JsonProperty("mihoyo_genshin_achievement_count") double mihoyoGenshinAchievementCount,
+			@JsonProperty("mihoyo_genshin_abyss_process") String mihoyoGenshinAbyssProcess,
+			@JsonProperty("mihoyo_genshin_legendary_characters_count") double mihoyoGenshinLegendaryCharactersCount,
+			@JsonProperty("mihoyo_genshin_constellations_count") double mihoyoGenshinConstellationsCount,
+			@JsonProperty("mihoyo_genshin_legendary_weapons_count") double mihoyoGenshinLegendaryWeaponsCount,
+			@JsonProperty("mihoyo_genshin_activity_days") double mihoyoGenshinActivityDays,
+			@JsonProperty("mihoyo_genshin_currency") double mihoyoGenshinCurrency,
+			@JsonProperty("mihoyo_honkai_level") double mihoyoHonkaiLevel,
+			@JsonProperty("mihoyo_honkai_character_count") double mihoyoHonkaiCharacterCount,
+			@JsonProperty("mihoyo_honkai_achievement_count") double mihoyoHonkaiAchievementCount,
+			@JsonProperty("mihoyo_honkai_abyss_process") String mihoyoHonkaiAbyssProcess,
+			@JsonProperty("mihoyo_honkai_legendary_characters_count") double mihoyoHonkaiLegendaryCharactersCount,
+			@JsonProperty("mihoyo_honkai_eidolons_count") double mihoyoHonkaiEidolonsCount,
+			@JsonProperty("mihoyo_honkai_legendary_weapons_count") double mihoyoHonkaiLegendaryWeaponsCount,
+			@JsonProperty("mihoyo_honkai_activity_days") double mihoyoHonkaiActivityDays,
+			@JsonProperty("mihoyo_honkai_currency") double mihoyoHonkaiCurrency,
+			@JsonProperty("mihoyo_zenless_level") double mihoyoZenlessLevel,
+			@JsonProperty("mihoyo_zenless_character_count") double mihoyoZenlessCharacterCount,
+			@JsonProperty("mihoyo_zenless_achievement_count") double mihoyoZenlessAchievementCount,
+			@JsonProperty("mihoyo_zenless_abyss_process") String mihoyoZenlessAbyssProcess,
+			@JsonProperty("mihoyo_zenless_legendary_characters_count") double mihoyoZenlessLegendaryCharactersCount,
+			@JsonProperty("mihoyo_zenless_cinemas_count") double mihoyoZenlessCinemasCount,
+			@JsonProperty("mihoyo_zenless_legendary_weapons_count") double mihoyoZenlessLegendaryWeaponsCount,
+			@JsonProperty("mihoyo_zenless_activity_days") double mihoyoZenlessActivityDays,
+			@JsonProperty("mihoyo_zenless_currency") double mihoyoZenlessCurrency,
+			@JsonProperty("feedback_data") String feedbackData,
+			boolean isIgnored,
+			double priceWithSellerFee,
+			JsonNode guarantee,
+			boolean canViewLoginData,
+			boolean canUpdateItemStats,
+			boolean canReportItem,
+			boolean canViewEmailLoginData,
+			boolean showGetEmailCodeButton,
+			boolean canOpenItem,
+			boolean canCloseItem,
+			boolean canEditItem,
+			boolean canDeleteItem,
+			boolean canStickItem,
+			boolean canUnstickItem,
+			CategoryMihoyoResponseItemsBumpSettings bumpSettings,
+			boolean canBumpItem,
+			boolean canBuyItem,
+			@JsonProperty("rub_price") double rubPrice,
+			@JsonProperty("price_currency") String priceCurrency,
+			boolean canValidateAccount,
+			boolean canResellItemAfterPurchase,
+			String mihoyoRegionPhrase,
+			CategoryMihoyoResponseItemsMihoyoLinkedAccounts mihoyoLinkedAccounts,
+			String mihoyoLinkedAccountsString,
+			List<CategoryMihoyoResponseItemsHonkaiCharacters> honkaiCharacters,
+			List<CategoryMihoyoResponseItemsGenshinCharacters> genshinCharacters,
+			List<CategoryMihoyoResponseItemsZenlessCharacters> zenlessCharacters,
+			boolean canViewAccountLink,
+			List<CategoryMihoyoResponseItemsAccountLinks> accountLinks,
+			String accountLink,
+			String emailLoginUrl,
+			boolean canChangePassword,
+			String itemOriginPhrase,
+			@JsonProperty("sold_items_category_count") double soldItemsCategoryCount,
+			@JsonProperty("restore_items_category_count") double restoreItemsCategoryCount,
+			List<JsonNode> tags,
+			@JsonProperty("note_text") JsonNode noteText,
+			boolean hasPendingAutoBuy,
+			String descriptionHtml,
+			String descriptionEnHtml,
+			String descriptionPlain,
+			String descriptionEnPlain,
+			CategoryMihoyoResponseItemsSeller seller
 		) {}
 
 		public record CategoryRiotParams(
@@ -3935,166 +3935,166 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryRiotResponse(
-			@Nullable List<CategoryRiotResponseItems> items,
-			Double totalItems,
-			@Nullable JsonNode totalItemsPrice,
-			@Nullable JsonNode hasNextPage,
-			Double perPage,
-			Double page,
-			@Nullable JsonNode wasCached,
-			Double cacheTTL,
-			Double lastModified,
-			Double serverTime,
-			@Nullable String searchUrl,
-			@Nullable List<JsonNode> stickyItems,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<CategoryRiotResponseItems> items,
+			double totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			double perPage,
+			double page,
+			boolean wasCached,
+			double cacheTTL,
+			double lastModified,
+			double serverTime,
+			String searchUrl,
+			List<JsonNode> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryRiotResponseItemsBumpSettings(
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBumpItemGlobally,
-			@Nullable JsonNode shortErrorPhrase,
-			@Nullable JsonNode errorPhrase
+			boolean canBumpItem,
+			boolean canBumpItemGlobally,
+			JsonNode shortErrorPhrase,
+			JsonNode errorPhrase
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryRiotResponseItemsValorantInventory(
-			@Nullable List<String> WeaponSkins,
-			@Nullable List<String> Agent,
-			@Nullable List<String> Buddy
+			List<String> WeaponSkins,
+			List<String> Agent,
+			List<String> Buddy
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryRiotResponseItemsLolInventory(
-			@Nullable List<Double> Champion,
-			@Nullable List<Double> Skin
+			List<Double> Champion,
+			List<Double> Skin
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryRiotResponseItemsAccountLinks(
-			@Nullable String link,
-			@Nullable String text,
-			@Nullable String iconClass
+			String link,
+			String text,
+			String iconClass
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryRiotResponseItemsSeller(
-			@JsonProperty("user_id") Double userId,
-			@JsonProperty("sold_items_count") Double soldItemsCount,
-			@JsonProperty("active_items_count") Double activeItemsCount,
-			@JsonProperty("restore_data") @Nullable String restoreData,
-			@Nullable String username,
-			@JsonProperty("avatar_date") Double avatarDate,
-			@JsonProperty("is_banned") Double isBanned,
-			@JsonProperty("display_style_group_id") Double displayStyleGroupId,
-			@JsonProperty("restore_percents") Double restorePercents
+			@JsonProperty("user_id") double userId,
+			@JsonProperty("sold_items_count") double soldItemsCount,
+			@JsonProperty("active_items_count") double activeItemsCount,
+			@JsonProperty("restore_data") String restoreData,
+			String username,
+			@JsonProperty("avatar_date") double avatarDate,
+			@JsonProperty("is_banned") double isBanned,
+			@JsonProperty("display_style_group_id") double displayStyleGroupId,
+			@JsonProperty("restore_percents") double restorePercents
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryRiotResponseItems(
-			@JsonProperty("item_id") Double itemId,
-			@JsonProperty("item_state") @Nullable String itemState,
-			@JsonProperty("category_id") Double categoryId,
-			@JsonProperty("published_date") Double publishedDate,
-			@Nullable String title,
-			@Nullable String description,
-			Double price,
-			@JsonProperty("update_stat_date") Double updateStatDate,
-			@JsonProperty("refreshed_date") Double refreshedDate,
-			@JsonProperty("edit_date") Double editDate,
-			@JsonProperty("view_count") Double viewCount,
-			@JsonProperty("is_sticky") Double isSticky,
-			@JsonProperty("item_origin") @Nullable String itemOrigin,
-			@JsonProperty("extended_guarantee") Double extendedGuarantee,
-			Double nsb,
-			@JsonProperty("allow_ask_discount") Double allowAskDiscount,
-			@JsonProperty("title_en") @Nullable String titleEn,
-			@JsonProperty("description_en") @Nullable String descriptionEn,
-			@JsonProperty("email_type") @Nullable String emailType,
-			@JsonProperty("email_provider") @Nullable String emailProvider,
-			@JsonProperty("item_domain") @Nullable String itemDomain,
-			@JsonProperty("resale_item_origin") @Nullable String resaleItemOrigin,
-			@JsonProperty("riot_item_id") Double riotItemId,
-			@JsonProperty("riot_id") @Nullable String riotId,
-			@JsonProperty("riot_account_verified") Double riotAccountVerified,
-			@JsonProperty("riot_email_verified") Double riotEmailVerified,
-			@JsonProperty("riot_country") @Nullable String riotCountry,
-			@JsonProperty("riot_password_change") Double riotPasswordChange,
-			@JsonProperty("riot_phone_verified") Double riotPhoneVerified,
-			@JsonProperty("riot_last_activity") Double riotLastActivity,
-			@JsonProperty("riot_valorant_wallet_vp") Double riotValorantWalletVp,
-			@JsonProperty("riot_valorant_wallet_rp") Double riotValorantWalletRp,
-			@JsonProperty("riot_valorant_wallet_fa") Double riotValorantWalletFa,
-			@JsonProperty("riot_valorant_level") Double riotValorantLevel,
-			@JsonProperty("riot_username") @Nullable String riotUsername,
-			@JsonProperty("riot_valorant_rank") Double riotValorantRank,
-			@JsonProperty("riot_valorant_region") @Nullable String riotValorantRegion,
-			@JsonProperty("riot_valorant_skin_count") Double riotValorantSkinCount,
-			@JsonProperty("riot_valorant_agent_count") Double riotValorantAgentCount,
-			@JsonProperty("riot_valorant_previous_rank") Double riotValorantPreviousRank,
-			@JsonProperty("riot_valorant_last_rank") Double riotValorantLastRank,
-			@JsonProperty("riot_valorant_rank_type") @Nullable String riotValorantRankType,
-			@JsonProperty("riot_valorant_inventory_value") Double riotValorantInventoryValue,
-			@JsonProperty("riot_valorant_knife") Double riotValorantKnife,
-			@JsonProperty("riot_lol_region") @Nullable String riotLolRegion,
-			@JsonProperty("riot_lol_skin_count") Double riotLolSkinCount,
-			@JsonProperty("riot_lol_champion_count") Double riotLolChampionCount,
-			@JsonProperty("riot_lol_level") Double riotLolLevel,
-			@JsonProperty("riot_lol_wallet_blue") Double riotLolWalletBlue,
-			@JsonProperty("riot_lol_wallet_orange") Double riotLolWalletOrange,
-			@JsonProperty("riot_lol_wallet_mythic") Double riotLolWalletMythic,
-			@JsonProperty("riot_lol_wallet_riot") Double riotLolWalletRiot,
-			@JsonProperty("riot_lol_rank") @Nullable String riotLolRank,
-			@JsonProperty("riot_lol_rank_win_rate") Double riotLolRankWinRate,
-			@JsonProperty("feedback_data") @Nullable String feedbackData,
-			@Nullable JsonNode isIgnored,
-			Double priceWithSellerFee,
-			@Nullable JsonNode guarantee,
-			@Nullable JsonNode canViewLoginData,
-			@Nullable JsonNode canUpdateItemStats,
-			@Nullable JsonNode canReportItem,
-			@Nullable JsonNode canViewEmailLoginData,
-			@Nullable JsonNode showGetEmailCodeButton,
-			@Nullable JsonNode canOpenItem,
-			@Nullable JsonNode canCloseItem,
-			@Nullable JsonNode canEditItem,
-			@Nullable JsonNode canDeleteItem,
-			@Nullable JsonNode canStickItem,
-			@Nullable JsonNode canUnstickItem,
-			@Nullable CategoryRiotResponseItemsBumpSettings bumpSettings,
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBuyItem,
-			@JsonProperty("rub_price") Double rubPrice,
-			@JsonProperty("price_currency") @Nullable String priceCurrency,
-			@Nullable JsonNode canValidateAccount,
-			@Nullable JsonNode canResellItemAfterPurchase,
-			@Nullable String valorantRegionPhrase,
-			@Nullable String valorantRankTitle,
-			@Nullable String valorantRankImgPath,
-			@Nullable String valorantPreviousRankTitle,
-			@Nullable String valorantLastRankTitle,
-			@Nullable String lolRegionPhrase,
-			@Nullable JsonNode isSmallExf,
-			@JsonProperty("account_last_activity") Double accountLastActivity,
-			@Nullable CategoryRiotResponseItemsValorantInventory valorantInventory,
-			@Nullable CategoryRiotResponseItemsLolInventory lolInventory,
-			@Nullable JsonNode canViewAccountLink,
-			@Nullable List<CategoryRiotResponseItemsAccountLinks> accountLinks,
-			@Nullable String accountLink,
-			@Nullable String emailLoginUrl,
-			@Nullable JsonNode canChangePassword,
-			@Nullable String itemOriginPhrase,
-			@JsonProperty("sold_items_category_count") Double soldItemsCategoryCount,
-			@JsonProperty("restore_items_category_count") Double restoreItemsCategoryCount,
-			@Nullable List<JsonNode> tags,
-			@JsonProperty("note_text") @Nullable JsonNode noteText,
-			@Nullable JsonNode hasPendingAutoBuy,
-			@Nullable String descriptionHtml,
-			@Nullable String descriptionEnHtml,
-			@Nullable String descriptionPlain,
-			@Nullable String descriptionEnPlain,
-			@Nullable CategoryRiotResponseItemsSeller seller
+			@JsonProperty("item_id") double itemId,
+			@JsonProperty("item_state") String itemState,
+			@JsonProperty("category_id") double categoryId,
+			@JsonProperty("published_date") double publishedDate,
+			String title,
+			String description,
+			double price,
+			@JsonProperty("update_stat_date") double updateStatDate,
+			@JsonProperty("refreshed_date") double refreshedDate,
+			@JsonProperty("edit_date") double editDate,
+			@JsonProperty("view_count") double viewCount,
+			@JsonProperty("is_sticky") double isSticky,
+			@JsonProperty("item_origin") String itemOrigin,
+			@JsonProperty("extended_guarantee") double extendedGuarantee,
+			double nsb,
+			@JsonProperty("allow_ask_discount") double allowAskDiscount,
+			@JsonProperty("title_en") String titleEn,
+			@JsonProperty("description_en") String descriptionEn,
+			@JsonProperty("email_type") String emailType,
+			@JsonProperty("email_provider") String emailProvider,
+			@JsonProperty("item_domain") String itemDomain,
+			@JsonProperty("resale_item_origin") String resaleItemOrigin,
+			@JsonProperty("riot_item_id") double riotItemId,
+			@JsonProperty("riot_id") String riotId,
+			@JsonProperty("riot_account_verified") double riotAccountVerified,
+			@JsonProperty("riot_email_verified") double riotEmailVerified,
+			@JsonProperty("riot_country") String riotCountry,
+			@JsonProperty("riot_password_change") double riotPasswordChange,
+			@JsonProperty("riot_phone_verified") double riotPhoneVerified,
+			@JsonProperty("riot_last_activity") double riotLastActivity,
+			@JsonProperty("riot_valorant_wallet_vp") double riotValorantWalletVp,
+			@JsonProperty("riot_valorant_wallet_rp") double riotValorantWalletRp,
+			@JsonProperty("riot_valorant_wallet_fa") double riotValorantWalletFa,
+			@JsonProperty("riot_valorant_level") double riotValorantLevel,
+			@JsonProperty("riot_username") String riotUsername,
+			@JsonProperty("riot_valorant_rank") double riotValorantRank,
+			@JsonProperty("riot_valorant_region") String riotValorantRegion,
+			@JsonProperty("riot_valorant_skin_count") double riotValorantSkinCount,
+			@JsonProperty("riot_valorant_agent_count") double riotValorantAgentCount,
+			@JsonProperty("riot_valorant_previous_rank") double riotValorantPreviousRank,
+			@JsonProperty("riot_valorant_last_rank") double riotValorantLastRank,
+			@JsonProperty("riot_valorant_rank_type") String riotValorantRankType,
+			@JsonProperty("riot_valorant_inventory_value") double riotValorantInventoryValue,
+			@JsonProperty("riot_valorant_knife") double riotValorantKnife,
+			@JsonProperty("riot_lol_region") String riotLolRegion,
+			@JsonProperty("riot_lol_skin_count") double riotLolSkinCount,
+			@JsonProperty("riot_lol_champion_count") double riotLolChampionCount,
+			@JsonProperty("riot_lol_level") double riotLolLevel,
+			@JsonProperty("riot_lol_wallet_blue") double riotLolWalletBlue,
+			@JsonProperty("riot_lol_wallet_orange") double riotLolWalletOrange,
+			@JsonProperty("riot_lol_wallet_mythic") double riotLolWalletMythic,
+			@JsonProperty("riot_lol_wallet_riot") double riotLolWalletRiot,
+			@JsonProperty("riot_lol_rank") String riotLolRank,
+			@JsonProperty("riot_lol_rank_win_rate") double riotLolRankWinRate,
+			@JsonProperty("feedback_data") String feedbackData,
+			boolean isIgnored,
+			double priceWithSellerFee,
+			JsonNode guarantee,
+			boolean canViewLoginData,
+			boolean canUpdateItemStats,
+			boolean canReportItem,
+			boolean canViewEmailLoginData,
+			boolean showGetEmailCodeButton,
+			boolean canOpenItem,
+			boolean canCloseItem,
+			boolean canEditItem,
+			boolean canDeleteItem,
+			boolean canStickItem,
+			boolean canUnstickItem,
+			CategoryRiotResponseItemsBumpSettings bumpSettings,
+			boolean canBumpItem,
+			boolean canBuyItem,
+			@JsonProperty("rub_price") double rubPrice,
+			@JsonProperty("price_currency") String priceCurrency,
+			boolean canValidateAccount,
+			boolean canResellItemAfterPurchase,
+			String valorantRegionPhrase,
+			String valorantRankTitle,
+			String valorantRankImgPath,
+			String valorantPreviousRankTitle,
+			String valorantLastRankTitle,
+			String lolRegionPhrase,
+			boolean isSmallExf,
+			@JsonProperty("account_last_activity") double accountLastActivity,
+			CategoryRiotResponseItemsValorantInventory valorantInventory,
+			CategoryRiotResponseItemsLolInventory lolInventory,
+			boolean canViewAccountLink,
+			List<CategoryRiotResponseItemsAccountLinks> accountLinks,
+			String accountLink,
+			String emailLoginUrl,
+			boolean canChangePassword,
+			String itemOriginPhrase,
+			@JsonProperty("sold_items_category_count") double soldItemsCategoryCount,
+			@JsonProperty("restore_items_category_count") double restoreItemsCategoryCount,
+			List<JsonNode> tags,
+			@JsonProperty("note_text") JsonNode noteText,
+			boolean hasPendingAutoBuy,
+			String descriptionHtml,
+			String descriptionEnHtml,
+			String descriptionPlain,
+			String descriptionEnPlain,
+			CategoryRiotResponseItemsSeller seller
 		) {}
 
 		public record CategoryTelegramParams(
@@ -4240,125 +4240,125 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryTelegramResponse(
-			@Nullable List<CategoryTelegramResponseItems> items,
-			Double totalItems,
-			@Nullable JsonNode totalItemsPrice,
-			@Nullable JsonNode hasNextPage,
-			Double perPage,
-			Double page,
-			@Nullable JsonNode wasCached,
-			Double cacheTTL,
-			Double lastModified,
-			Double serverTime,
-			@Nullable String searchUrl,
-			@Nullable List<JsonNode> stickyItems,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<CategoryTelegramResponseItems> items,
+			double totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			double perPage,
+			double page,
+			boolean wasCached,
+			double cacheTTL,
+			double lastModified,
+			double serverTime,
+			String searchUrl,
+			List<JsonNode> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryTelegramResponseItemsBumpSettings(
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBumpItemGlobally,
-			@Nullable JsonNode shortErrorPhrase,
-			@Nullable JsonNode errorPhrase
+			boolean canBumpItem,
+			boolean canBumpItemGlobally,
+			JsonNode shortErrorPhrase,
+			JsonNode errorPhrase
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryTelegramResponseItemsTelegramGroupCounters(
-			Double chats,
-			Double channels,
-			Double conversations,
-			Double admin
+			double chats,
+			double channels,
+			double conversations,
+			double admin
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryTelegramResponseItemsSeller(
-			@JsonProperty("user_id") Double userId,
-			@JsonProperty("sold_items_count") Double soldItemsCount,
-			@JsonProperty("active_items_count") Double activeItemsCount,
-			@JsonProperty("restore_data") @Nullable String restoreData,
-			@Nullable String username,
-			@JsonProperty("avatar_date") Double avatarDate,
-			@JsonProperty("is_banned") Double isBanned,
-			@JsonProperty("display_style_group_id") Double displayStyleGroupId,
-			@JsonProperty("restore_percents") @Nullable JsonNode restorePercents
+			@JsonProperty("user_id") double userId,
+			@JsonProperty("sold_items_count") double soldItemsCount,
+			@JsonProperty("active_items_count") double activeItemsCount,
+			@JsonProperty("restore_data") String restoreData,
+			String username,
+			@JsonProperty("avatar_date") double avatarDate,
+			@JsonProperty("is_banned") double isBanned,
+			@JsonProperty("display_style_group_id") double displayStyleGroupId,
+			@JsonProperty("restore_percents") JsonNode restorePercents
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryTelegramResponseItems(
-			@JsonProperty("item_id") Double itemId,
-			@JsonProperty("item_state") @Nullable String itemState,
-			@JsonProperty("category_id") Double categoryId,
-			@JsonProperty("published_date") Double publishedDate,
-			@Nullable String title,
-			@Nullable String description,
-			Double price,
-			@JsonProperty("update_stat_date") Double updateStatDate,
-			@JsonProperty("refreshed_date") Double refreshedDate,
-			@JsonProperty("edit_date") Double editDate,
-			@JsonProperty("view_count") Double viewCount,
-			@JsonProperty("is_sticky") Double isSticky,
-			@JsonProperty("item_origin") @Nullable String itemOrigin,
-			@JsonProperty("extended_guarantee") Double extendedGuarantee,
-			Double nsb,
-			@JsonProperty("allow_ask_discount") Double allowAskDiscount,
-			@JsonProperty("title_en") @Nullable String titleEn,
-			@JsonProperty("description_en") @Nullable String descriptionEn,
-			@JsonProperty("email_type") @Nullable String emailType,
-			@JsonProperty("email_provider") @Nullable JsonNode emailProvider,
-			@JsonProperty("item_domain") @Nullable String itemDomain,
-			@JsonProperty("resale_item_origin") @Nullable String resaleItemOrigin,
-			@JsonProperty("telegram_item_id") Double telegramItemId,
-			@JsonProperty("telegram_country") @Nullable String telegramCountry,
-			@JsonProperty("telegram_last_seen") Double telegramLastSeen,
-			@JsonProperty("telegram_premium") Double telegramPremium,
-			@JsonProperty("telegram_stars_count") Double telegramStarsCount,
-			@JsonProperty("telegram_birthday") Double telegramBirthday,
-			@JsonProperty("telegram_password") Double telegramPassword,
-			@JsonProperty("telegram_premium_expires") Double telegramPremiumExpires,
-			@JsonProperty("telegram_spam_block") @Nullable JsonNode telegramSpamBlock,
-			@JsonProperty("telegram_channels_count") Double telegramChannelsCount,
-			@JsonProperty("telegram_chats_count") Double telegramChatsCount,
-			@JsonProperty("telegram_admin_count") Double telegramAdminCount,
-			@JsonProperty("telegram_admin_subs_count") Double telegramAdminSubsCount,
-			@JsonProperty("telegram_conversations_count") Double telegramConversationsCount,
-			@JsonProperty("telegram_id_count") Double telegramIdCount,
-			@JsonProperty("telegram_contacts_count") Double telegramContactsCount,
-			@JsonProperty("feedback_data") @Nullable String feedbackData,
-			@Nullable JsonNode isIgnored,
-			Double priceWithSellerFee,
-			@Nullable JsonNode guarantee,
-			@Nullable JsonNode canViewLoginData,
-			@Nullable JsonNode canUpdateItemStats,
-			@Nullable JsonNode canReportItem,
-			@Nullable JsonNode canViewEmailLoginData,
-			@Nullable JsonNode showGetEmailCodeButton,
-			@Nullable JsonNode canOpenItem,
-			@Nullable JsonNode canCloseItem,
-			@Nullable JsonNode canEditItem,
-			@Nullable JsonNode canDeleteItem,
-			@Nullable JsonNode canStickItem,
-			@Nullable JsonNode canUnstickItem,
-			@Nullable CategoryTelegramResponseItemsBumpSettings bumpSettings,
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBuyItem,
-			@JsonProperty("rub_price") Double rubPrice,
-			@JsonProperty("price_currency") @Nullable String priceCurrency,
-			@Nullable JsonNode canValidateAccount,
-			@Nullable JsonNode canResellItemAfterPurchase,
-			@JsonProperty("telegram_group_counters") @Nullable CategoryTelegramResponseItemsTelegramGroupCounters telegramGroupCounters,
-			@Nullable JsonNode canViewAccountLink,
-			@Nullable List<JsonNode> accountLinks,
-			@Nullable JsonNode canChangePassword,
-			@Nullable String itemOriginPhrase,
-			@Nullable List<JsonNode> tags,
-			@JsonProperty("note_text") @Nullable JsonNode noteText,
-			@Nullable JsonNode hasPendingAutoBuy,
-			@Nullable String descriptionHtml,
-			@Nullable String descriptionEnHtml,
-			@Nullable String descriptionPlain,
-			@Nullable String descriptionEnPlain,
-			@Nullable CategoryTelegramResponseItemsSeller seller
+			@JsonProperty("item_id") double itemId,
+			@JsonProperty("item_state") String itemState,
+			@JsonProperty("category_id") double categoryId,
+			@JsonProperty("published_date") double publishedDate,
+			String title,
+			String description,
+			double price,
+			@JsonProperty("update_stat_date") double updateStatDate,
+			@JsonProperty("refreshed_date") double refreshedDate,
+			@JsonProperty("edit_date") double editDate,
+			@JsonProperty("view_count") double viewCount,
+			@JsonProperty("is_sticky") double isSticky,
+			@JsonProperty("item_origin") String itemOrigin,
+			@JsonProperty("extended_guarantee") double extendedGuarantee,
+			double nsb,
+			@JsonProperty("allow_ask_discount") double allowAskDiscount,
+			@JsonProperty("title_en") String titleEn,
+			@JsonProperty("description_en") String descriptionEn,
+			@JsonProperty("email_type") String emailType,
+			@JsonProperty("email_provider") JsonNode emailProvider,
+			@JsonProperty("item_domain") String itemDomain,
+			@JsonProperty("resale_item_origin") String resaleItemOrigin,
+			@JsonProperty("telegram_item_id") double telegramItemId,
+			@JsonProperty("telegram_country") String telegramCountry,
+			@JsonProperty("telegram_last_seen") double telegramLastSeen,
+			@JsonProperty("telegram_premium") double telegramPremium,
+			@JsonProperty("telegram_stars_count") double telegramStarsCount,
+			@JsonProperty("telegram_birthday") double telegramBirthday,
+			@JsonProperty("telegram_password") double telegramPassword,
+			@JsonProperty("telegram_premium_expires") double telegramPremiumExpires,
+			@JsonProperty("telegram_spam_block") JsonNode telegramSpamBlock,
+			@JsonProperty("telegram_channels_count") double telegramChannelsCount,
+			@JsonProperty("telegram_chats_count") double telegramChatsCount,
+			@JsonProperty("telegram_admin_count") double telegramAdminCount,
+			@JsonProperty("telegram_admin_subs_count") double telegramAdminSubsCount,
+			@JsonProperty("telegram_conversations_count") double telegramConversationsCount,
+			@JsonProperty("telegram_id_count") double telegramIdCount,
+			@JsonProperty("telegram_contacts_count") double telegramContactsCount,
+			@JsonProperty("feedback_data") String feedbackData,
+			boolean isIgnored,
+			double priceWithSellerFee,
+			JsonNode guarantee,
+			boolean canViewLoginData,
+			boolean canUpdateItemStats,
+			boolean canReportItem,
+			boolean canViewEmailLoginData,
+			boolean showGetEmailCodeButton,
+			boolean canOpenItem,
+			boolean canCloseItem,
+			boolean canEditItem,
+			boolean canDeleteItem,
+			boolean canStickItem,
+			boolean canUnstickItem,
+			CategoryTelegramResponseItemsBumpSettings bumpSettings,
+			boolean canBumpItem,
+			boolean canBuyItem,
+			@JsonProperty("rub_price") double rubPrice,
+			@JsonProperty("price_currency") String priceCurrency,
+			boolean canValidateAccount,
+			boolean canResellItemAfterPurchase,
+			@JsonProperty("telegram_group_counters") CategoryTelegramResponseItemsTelegramGroupCounters telegramGroupCounters,
+			boolean canViewAccountLink,
+			List<JsonNode> accountLinks,
+			boolean canChangePassword,
+			String itemOriginPhrase,
+			List<JsonNode> tags,
+			@JsonProperty("note_text") JsonNode noteText,
+			boolean hasPendingAutoBuy,
+			String descriptionHtml,
+			String descriptionEnHtml,
+			String descriptionPlain,
+			String descriptionEnPlain,
+			CategoryTelegramResponseItemsSeller seller
 		) {}
 
 		public record CategorySupercellParams(
@@ -4514,140 +4514,140 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategorySupercellResponse(
-			@Nullable List<CategorySupercellResponseItems> items,
-			Double totalItems,
-			@Nullable JsonNode totalItemsPrice,
-			@Nullable JsonNode hasNextPage,
-			Double perPage,
-			Double page,
-			@Nullable JsonNode wasCached,
-			Double cacheTTL,
-			Double lastModified,
-			Double serverTime,
-			@Nullable String searchUrl,
-			@Nullable List<JsonNode> stickyItems,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<CategorySupercellResponseItems> items,
+			double totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			double perPage,
+			double page,
+			boolean wasCached,
+			double cacheTTL,
+			double lastModified,
+			double serverTime,
+			String searchUrl,
+			List<JsonNode> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategorySupercellResponseItemsBumpSettings(
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBumpItemGlobally,
-			@Nullable JsonNode shortErrorPhrase,
-			@Nullable JsonNode errorPhrase
+			boolean canBumpItem,
+			boolean canBumpItemGlobally,
+			JsonNode shortErrorPhrase,
+			JsonNode errorPhrase
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategorySupercellResponseItemsAccountLinks(
-			@Nullable String link,
-			@Nullable String text,
-			@Nullable String iconClass
+			String link,
+			String text,
+			String iconClass
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategorySupercellResponseItemsSeller(
-			@JsonProperty("user_id") Double userId,
-			@JsonProperty("sold_items_count") Double soldItemsCount,
-			@JsonProperty("active_items_count") Double activeItemsCount,
-			@JsonProperty("restore_data") @Nullable String restoreData,
-			@Nullable String username,
-			@JsonProperty("avatar_date") Double avatarDate,
-			@JsonProperty("is_banned") Double isBanned,
-			@JsonProperty("display_style_group_id") Double displayStyleGroupId,
-			@JsonProperty("restore_percents") @Nullable JsonNode restorePercents
+			@JsonProperty("user_id") double userId,
+			@JsonProperty("sold_items_count") double soldItemsCount,
+			@JsonProperty("active_items_count") double activeItemsCount,
+			@JsonProperty("restore_data") String restoreData,
+			String username,
+			@JsonProperty("avatar_date") double avatarDate,
+			@JsonProperty("is_banned") double isBanned,
+			@JsonProperty("display_style_group_id") double displayStyleGroupId,
+			@JsonProperty("restore_percents") JsonNode restorePercents
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategorySupercellResponseItems(
-			@JsonProperty("item_id") Double itemId,
-			@JsonProperty("item_state") @Nullable String itemState,
-			@JsonProperty("category_id") Double categoryId,
-			@JsonProperty("published_date") Double publishedDate,
-			@Nullable String title,
-			@Nullable String description,
-			Double price,
-			@JsonProperty("update_stat_date") Double updateStatDate,
-			@JsonProperty("refreshed_date") Double refreshedDate,
-			@JsonProperty("edit_date") Double editDate,
-			@JsonProperty("view_count") Double viewCount,
-			@JsonProperty("is_sticky") Double isSticky,
-			@JsonProperty("item_origin") @Nullable String itemOrigin,
-			@JsonProperty("extended_guarantee") Double extendedGuarantee,
-			Double nsb,
-			@JsonProperty("allow_ask_discount") Double allowAskDiscount,
-			@JsonProperty("title_en") @Nullable String titleEn,
-			@JsonProperty("description_en") @Nullable String descriptionEn,
-			@JsonProperty("email_type") @Nullable String emailType,
-			@JsonProperty("email_provider") @Nullable String emailProvider,
-			@JsonProperty("item_domain") @Nullable String itemDomain,
-			@JsonProperty("resale_item_origin") @Nullable String resaleItemOrigin,
-			@JsonProperty("supercell_item_id") Double supercellItemId,
-			@JsonProperty("supercell_id") @Nullable String supercellId,
-			@JsonProperty("supercell_arena") @Nullable String supercellArena,
-			@JsonProperty("supercell_brawler_count") Double supercellBrawlerCount,
-			@JsonProperty("supercell_last_activity") Double supercellLastActivity,
-			@JsonProperty("supercell_legendary_brawler_count") Double supercellLegendaryBrawlerCount,
-			@JsonProperty("supercell_town_hall_level") Double supercellTownHallLevel,
-			@JsonProperty("supercell_builder_hall_level") Double supercellBuilderHallLevel,
-			@JsonProperty("supercell_builder_hall_cup_count") Double supercellBuilderHallCupCount,
-			@JsonProperty("supercell_phone") Double supercellPhone,
-			@JsonProperty("supercell_laser_level") Double supercellLaserLevel,
-			@JsonProperty("supercell_scroll_level") Double supercellScrollLevel,
-			@JsonProperty("supercell_magic_level") Double supercellMagicLevel,
-			@JsonProperty("supercell_laser_trophies") Double supercellLaserTrophies,
-			@JsonProperty("supercell_scroll_trophies") Double supercellScrollTrophies,
-			@JsonProperty("supercell_magic_trophies") Double supercellMagicTrophies,
-			@JsonProperty("supercell_laser_victories") Double supercellLaserVictories,
-			@JsonProperty("supercell_scroll_victories") Double supercellScrollVictories,
-			@JsonProperty("supercell_magic_victories") Double supercellMagicVictories,
-			@JsonProperty("supercell_laser_battle_pass") Double supercellLaserBattlePass,
-			@JsonProperty("supercell_scroll_battle_pass") Double supercellScrollBattlePass,
-			@JsonProperty("supercell_magic_battle_pass") Double supercellMagicBattlePass,
-			@JsonProperty("supercell_systems") @Nullable String supercellSystems,
-			@JsonProperty("supercell_king_level") Double supercellKingLevel,
-			@JsonProperty("supercell_total_heroes_level") Double supercellTotalHeroesLevel,
-			@JsonProperty("supercell_total_troops_level") Double supercellTotalTroopsLevel,
-			@JsonProperty("supercell_total_spells_level") Double supercellTotalSpellsLevel,
-			@JsonProperty("supercell_total_builder_heroes_level") Double supercellTotalBuilderHeroesLevel,
-			@JsonProperty("supercell_total_builder_troops_level") Double supercellTotalBuilderTroopsLevel,
-			@JsonProperty("feedback_data") @Nullable String feedbackData,
-			@Nullable JsonNode isIgnored,
-			Double priceWithSellerFee,
-			@Nullable JsonNode guarantee,
-			@Nullable JsonNode canViewLoginData,
-			@Nullable JsonNode canUpdateItemStats,
-			@Nullable JsonNode canReportItem,
-			@Nullable JsonNode canViewEmailLoginData,
-			@Nullable JsonNode showGetEmailCodeButton,
-			@Nullable JsonNode canOpenItem,
-			@Nullable JsonNode canCloseItem,
-			@Nullable JsonNode canEditItem,
-			@Nullable JsonNode canDeleteItem,
-			@Nullable JsonNode canStickItem,
-			@Nullable JsonNode canUnstickItem,
-			@Nullable CategorySupercellResponseItemsBumpSettings bumpSettings,
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBuyItem,
-			@JsonProperty("rub_price") Double rubPrice,
-			@JsonProperty("price_currency") @Nullable String priceCurrency,
-			@Nullable JsonNode canValidateAccount,
-			@Nullable JsonNode canResellItemAfterPurchase,
-			@Nullable JsonNode isSmallExf,
-			@Nullable List<JsonNode> supercellBrawlers,
-			@Nullable JsonNode canViewAccountLink,
-			@Nullable List<CategorySupercellResponseItemsAccountLinks> accountLinks,
-			@Nullable String accountLink,
-			@Nullable String emailLoginUrl,
-			@Nullable JsonNode canChangePassword,
-			@Nullable String itemOriginPhrase,
-			@Nullable List<JsonNode> tags,
-			@JsonProperty("note_text") @Nullable JsonNode noteText,
-			@Nullable JsonNode hasPendingAutoBuy,
-			@Nullable String descriptionHtml,
-			@Nullable String descriptionEnHtml,
-			@Nullable String descriptionPlain,
-			@Nullable String descriptionEnPlain,
-			@Nullable CategorySupercellResponseItemsSeller seller
+			@JsonProperty("item_id") double itemId,
+			@JsonProperty("item_state") String itemState,
+			@JsonProperty("category_id") double categoryId,
+			@JsonProperty("published_date") double publishedDate,
+			String title,
+			String description,
+			double price,
+			@JsonProperty("update_stat_date") double updateStatDate,
+			@JsonProperty("refreshed_date") double refreshedDate,
+			@JsonProperty("edit_date") double editDate,
+			@JsonProperty("view_count") double viewCount,
+			@JsonProperty("is_sticky") double isSticky,
+			@JsonProperty("item_origin") String itemOrigin,
+			@JsonProperty("extended_guarantee") double extendedGuarantee,
+			double nsb,
+			@JsonProperty("allow_ask_discount") double allowAskDiscount,
+			@JsonProperty("title_en") String titleEn,
+			@JsonProperty("description_en") String descriptionEn,
+			@JsonProperty("email_type") String emailType,
+			@JsonProperty("email_provider") String emailProvider,
+			@JsonProperty("item_domain") String itemDomain,
+			@JsonProperty("resale_item_origin") String resaleItemOrigin,
+			@JsonProperty("supercell_item_id") double supercellItemId,
+			@JsonProperty("supercell_id") String supercellId,
+			@JsonProperty("supercell_arena") String supercellArena,
+			@JsonProperty("supercell_brawler_count") double supercellBrawlerCount,
+			@JsonProperty("supercell_last_activity") double supercellLastActivity,
+			@JsonProperty("supercell_legendary_brawler_count") double supercellLegendaryBrawlerCount,
+			@JsonProperty("supercell_town_hall_level") double supercellTownHallLevel,
+			@JsonProperty("supercell_builder_hall_level") double supercellBuilderHallLevel,
+			@JsonProperty("supercell_builder_hall_cup_count") double supercellBuilderHallCupCount,
+			@JsonProperty("supercell_phone") double supercellPhone,
+			@JsonProperty("supercell_laser_level") double supercellLaserLevel,
+			@JsonProperty("supercell_scroll_level") double supercellScrollLevel,
+			@JsonProperty("supercell_magic_level") double supercellMagicLevel,
+			@JsonProperty("supercell_laser_trophies") double supercellLaserTrophies,
+			@JsonProperty("supercell_scroll_trophies") double supercellScrollTrophies,
+			@JsonProperty("supercell_magic_trophies") double supercellMagicTrophies,
+			@JsonProperty("supercell_laser_victories") double supercellLaserVictories,
+			@JsonProperty("supercell_scroll_victories") double supercellScrollVictories,
+			@JsonProperty("supercell_magic_victories") double supercellMagicVictories,
+			@JsonProperty("supercell_laser_battle_pass") double supercellLaserBattlePass,
+			@JsonProperty("supercell_scroll_battle_pass") double supercellScrollBattlePass,
+			@JsonProperty("supercell_magic_battle_pass") double supercellMagicBattlePass,
+			@JsonProperty("supercell_systems") String supercellSystems,
+			@JsonProperty("supercell_king_level") double supercellKingLevel,
+			@JsonProperty("supercell_total_heroes_level") double supercellTotalHeroesLevel,
+			@JsonProperty("supercell_total_troops_level") double supercellTotalTroopsLevel,
+			@JsonProperty("supercell_total_spells_level") double supercellTotalSpellsLevel,
+			@JsonProperty("supercell_total_builder_heroes_level") double supercellTotalBuilderHeroesLevel,
+			@JsonProperty("supercell_total_builder_troops_level") double supercellTotalBuilderTroopsLevel,
+			@JsonProperty("feedback_data") String feedbackData,
+			boolean isIgnored,
+			double priceWithSellerFee,
+			JsonNode guarantee,
+			boolean canViewLoginData,
+			boolean canUpdateItemStats,
+			boolean canReportItem,
+			boolean canViewEmailLoginData,
+			boolean showGetEmailCodeButton,
+			boolean canOpenItem,
+			boolean canCloseItem,
+			boolean canEditItem,
+			boolean canDeleteItem,
+			boolean canStickItem,
+			boolean canUnstickItem,
+			CategorySupercellResponseItemsBumpSettings bumpSettings,
+			boolean canBumpItem,
+			boolean canBuyItem,
+			@JsonProperty("rub_price") double rubPrice,
+			@JsonProperty("price_currency") String priceCurrency,
+			boolean canValidateAccount,
+			boolean canResellItemAfterPurchase,
+			boolean isSmallExf,
+			List<JsonNode> supercellBrawlers,
+			boolean canViewAccountLink,
+			List<CategorySupercellResponseItemsAccountLinks> accountLinks,
+			String accountLink,
+			String emailLoginUrl,
+			boolean canChangePassword,
+			String itemOriginPhrase,
+			List<JsonNode> tags,
+			@JsonProperty("note_text") JsonNode noteText,
+			boolean hasPendingAutoBuy,
+			String descriptionHtml,
+			String descriptionEnHtml,
+			String descriptionPlain,
+			String descriptionEnPlain,
+			CategorySupercellResponseItemsSeller seller
 		) {}
 
 		public record CategoryEaParams(
@@ -4743,141 +4743,141 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryEaResponse(
-			@Nullable List<CategoryEaResponseItems> items,
-			Double totalItems,
-			@Nullable JsonNode totalItemsPrice,
-			@Nullable JsonNode hasNextPage,
-			Double perPage,
-			Double page,
-			@Nullable JsonNode wasCached,
-			Double cacheTTL,
-			Double lastModified,
-			Double serverTime,
-			@Nullable String searchUrl,
-			@Nullable List<JsonNode> stickyItems,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<CategoryEaResponseItems> items,
+			double totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			double perPage,
+			double page,
+			boolean wasCached,
+			double cacheTTL,
+			double lastModified,
+			double serverTime,
+			String searchUrl,
+			List<JsonNode> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryEaResponseItemsEaGamesApexLegends(
-			@JsonProperty("game_id") @Nullable String gameId,
-			@Nullable String title,
-			@JsonProperty("last_activity") Double lastActivity,
-			@JsonProperty("total_played") Double totalPlayed,
-			@Nullable String img
+			@JsonProperty("game_id") String gameId,
+			String title,
+			@JsonProperty("last_activity") double lastActivity,
+			@JsonProperty("total_played") double totalPlayed,
+			String img
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryEaResponseItemsEaGames(
-			@JsonProperty("apex-legends") @Nullable CategoryEaResponseItemsEaGamesApexLegends apexLegends
+			@JsonProperty("apex-legends") CategoryEaResponseItemsEaGamesApexLegends apexLegends
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryEaResponseItemsBumpSettings(
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBumpItemGlobally,
-			@Nullable JsonNode shortErrorPhrase,
-			@Nullable JsonNode errorPhrase
+			boolean canBumpItem,
+			boolean canBumpItemGlobally,
+			JsonNode shortErrorPhrase,
+			JsonNode errorPhrase
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryEaResponseItemsAccountLinks(
-			@Nullable String link,
-			@Nullable String text,
-			@Nullable String iconClass
+			String link,
+			String text,
+			String iconClass
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryEaResponseItemsSeller(
-			@JsonProperty("user_id") Double userId,
-			@JsonProperty("sold_items_count") Double soldItemsCount,
-			@JsonProperty("active_items_count") Double activeItemsCount,
-			@JsonProperty("restore_data") @Nullable String restoreData,
-			@Nullable String username,
-			@JsonProperty("avatar_date") Double avatarDate,
-			@JsonProperty("is_banned") Double isBanned,
-			@JsonProperty("display_style_group_id") Double displayStyleGroupId,
-			@JsonProperty("restore_percents") Double restorePercents
+			@JsonProperty("user_id") double userId,
+			@JsonProperty("sold_items_count") double soldItemsCount,
+			@JsonProperty("active_items_count") double activeItemsCount,
+			@JsonProperty("restore_data") String restoreData,
+			String username,
+			@JsonProperty("avatar_date") double avatarDate,
+			@JsonProperty("is_banned") double isBanned,
+			@JsonProperty("display_style_group_id") double displayStyleGroupId,
+			@JsonProperty("restore_percents") double restorePercents
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryEaResponseItems(
-			@JsonProperty("item_id") Double itemId,
-			@JsonProperty("item_state") @Nullable String itemState,
-			@JsonProperty("category_id") Double categoryId,
-			@JsonProperty("published_date") Double publishedDate,
-			@Nullable String title,
-			@Nullable String description,
-			Double price,
-			@JsonProperty("update_stat_date") Double updateStatDate,
-			@JsonProperty("refreshed_date") Double refreshedDate,
-			@JsonProperty("edit_date") Double editDate,
-			@JsonProperty("view_count") Double viewCount,
-			@JsonProperty("is_sticky") Double isSticky,
-			@JsonProperty("item_origin") @Nullable String itemOrigin,
-			@JsonProperty("extended_guarantee") Double extendedGuarantee,
-			Double nsb,
-			@JsonProperty("allow_ask_discount") Double allowAskDiscount,
-			@JsonProperty("title_en") @Nullable String titleEn,
-			@JsonProperty("description_en") @Nullable String descriptionEn,
-			@JsonProperty("email_type") @Nullable String emailType,
-			@JsonProperty("email_provider") @Nullable String emailProvider,
-			@JsonProperty("item_domain") @Nullable String itemDomain,
-			@JsonProperty("resale_item_origin") @Nullable String resaleItemOrigin,
-			@JsonProperty("ea_item_id") Double eaItemId,
-			@JsonProperty("ea_id") Double eaId,
-			@JsonProperty("ea_country") @Nullable String eaCountry,
-			@JsonProperty("ea_games") @Nullable CategoryEaResponseItemsEaGames eaGames,
-			@JsonProperty("ea_game_count") Double eaGameCount,
-			@JsonProperty("ea_last_activity") Double eaLastActivity,
-			@JsonProperty("ea_al_level") Double eaAlLevel,
-			@JsonProperty("ea_al_rank_score") Double eaAlRankScore,
-			@JsonProperty("ea_subscription") @Nullable String eaSubscription,
-			@JsonProperty("ea_subscription_end_date") Double eaSubscriptionEndDate,
-			@JsonProperty("ea_username") @Nullable String eaUsername,
-			@JsonProperty("ea_xbox_connected") Double eaXboxConnected,
-			@JsonProperty("ea_steam_connected") Double eaSteamConnected,
-			@JsonProperty("ea_psn_connected") Double eaPsnConnected,
-			@JsonProperty("ea_bans") @Nullable List<JsonNode> eaBans,
-			@JsonProperty("ea_has_ban") Double eaHasBan,
-			@JsonProperty("feedback_data") @Nullable String feedbackData,
-			@Nullable JsonNode isIgnored,
-			Double priceWithSellerFee,
-			@Nullable JsonNode guarantee,
-			@Nullable JsonNode canViewLoginData,
-			@Nullable JsonNode canUpdateItemStats,
-			@Nullable JsonNode canReportItem,
-			@Nullable JsonNode canViewEmailLoginData,
-			@Nullable JsonNode showGetEmailCodeButton,
-			@Nullable JsonNode canOpenItem,
-			@Nullable JsonNode canCloseItem,
-			@Nullable JsonNode canEditItem,
-			@Nullable JsonNode canDeleteItem,
-			@Nullable JsonNode canStickItem,
-			@Nullable JsonNode canUnstickItem,
-			@Nullable CategoryEaResponseItemsBumpSettings bumpSettings,
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBuyItem,
-			@JsonProperty("rub_price") Double rubPrice,
-			@JsonProperty("price_currency") @Nullable String priceCurrency,
-			@Nullable JsonNode canValidateAccount,
-			@Nullable JsonNode canResellItemAfterPurchase,
-			@Nullable JsonNode canViewAccountLink,
-			@Nullable List<CategoryEaResponseItemsAccountLinks> accountLinks,
-			@Nullable String accountLink,
-			@Nullable String emailLoginUrl,
-			@Nullable JsonNode canChangePassword,
-			@Nullable String itemOriginPhrase,
-			@JsonProperty("sold_items_category_count") Double soldItemsCategoryCount,
-			@JsonProperty("restore_items_category_count") Double restoreItemsCategoryCount,
-			@Nullable List<JsonNode> tags,
-			@JsonProperty("note_text") @Nullable JsonNode noteText,
-			@Nullable JsonNode hasPendingAutoBuy,
-			@Nullable String descriptionHtml,
-			@Nullable String descriptionEnHtml,
-			@Nullable String descriptionPlain,
-			@Nullable String descriptionEnPlain,
-			@Nullable CategoryEaResponseItemsSeller seller
+			@JsonProperty("item_id") double itemId,
+			@JsonProperty("item_state") String itemState,
+			@JsonProperty("category_id") double categoryId,
+			@JsonProperty("published_date") double publishedDate,
+			String title,
+			String description,
+			double price,
+			@JsonProperty("update_stat_date") double updateStatDate,
+			@JsonProperty("refreshed_date") double refreshedDate,
+			@JsonProperty("edit_date") double editDate,
+			@JsonProperty("view_count") double viewCount,
+			@JsonProperty("is_sticky") double isSticky,
+			@JsonProperty("item_origin") String itemOrigin,
+			@JsonProperty("extended_guarantee") double extendedGuarantee,
+			double nsb,
+			@JsonProperty("allow_ask_discount") double allowAskDiscount,
+			@JsonProperty("title_en") String titleEn,
+			@JsonProperty("description_en") String descriptionEn,
+			@JsonProperty("email_type") String emailType,
+			@JsonProperty("email_provider") String emailProvider,
+			@JsonProperty("item_domain") String itemDomain,
+			@JsonProperty("resale_item_origin") String resaleItemOrigin,
+			@JsonProperty("ea_item_id") double eaItemId,
+			@JsonProperty("ea_id") double eaId,
+			@JsonProperty("ea_country") String eaCountry,
+			@JsonProperty("ea_games") CategoryEaResponseItemsEaGames eaGames,
+			@JsonProperty("ea_game_count") double eaGameCount,
+			@JsonProperty("ea_last_activity") double eaLastActivity,
+			@JsonProperty("ea_al_level") double eaAlLevel,
+			@JsonProperty("ea_al_rank_score") double eaAlRankScore,
+			@JsonProperty("ea_subscription") String eaSubscription,
+			@JsonProperty("ea_subscription_end_date") double eaSubscriptionEndDate,
+			@JsonProperty("ea_username") String eaUsername,
+			@JsonProperty("ea_xbox_connected") double eaXboxConnected,
+			@JsonProperty("ea_steam_connected") double eaSteamConnected,
+			@JsonProperty("ea_psn_connected") double eaPsnConnected,
+			@JsonProperty("ea_bans") List<JsonNode> eaBans,
+			@JsonProperty("ea_has_ban") double eaHasBan,
+			@JsonProperty("feedback_data") String feedbackData,
+			boolean isIgnored,
+			double priceWithSellerFee,
+			JsonNode guarantee,
+			boolean canViewLoginData,
+			boolean canUpdateItemStats,
+			boolean canReportItem,
+			boolean canViewEmailLoginData,
+			boolean showGetEmailCodeButton,
+			boolean canOpenItem,
+			boolean canCloseItem,
+			boolean canEditItem,
+			boolean canDeleteItem,
+			boolean canStickItem,
+			boolean canUnstickItem,
+			CategoryEaResponseItemsBumpSettings bumpSettings,
+			boolean canBumpItem,
+			boolean canBuyItem,
+			@JsonProperty("rub_price") double rubPrice,
+			@JsonProperty("price_currency") String priceCurrency,
+			boolean canValidateAccount,
+			boolean canResellItemAfterPurchase,
+			boolean canViewAccountLink,
+			List<CategoryEaResponseItemsAccountLinks> accountLinks,
+			String accountLink,
+			String emailLoginUrl,
+			boolean canChangePassword,
+			String itemOriginPhrase,
+			@JsonProperty("sold_items_category_count") double soldItemsCategoryCount,
+			@JsonProperty("restore_items_category_count") double restoreItemsCategoryCount,
+			List<JsonNode> tags,
+			@JsonProperty("note_text") JsonNode noteText,
+			boolean hasPendingAutoBuy,
+			String descriptionHtml,
+			String descriptionEnHtml,
+			String descriptionPlain,
+			String descriptionEnPlain,
+			CategoryEaResponseItemsSeller seller
 		) {}
 
 		public record CategoryWotParams(
@@ -5001,127 +5001,127 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryWotResponse(
-			@Nullable List<CategoryWotResponseItems> items,
-			Double totalItems,
-			@Nullable JsonNode totalItemsPrice,
-			@Nullable JsonNode hasNextPage,
-			Double perPage,
-			Double page,
-			@Nullable JsonNode wasCached,
-			Double cacheTTL,
-			Double lastModified,
-			Double serverTime,
-			@Nullable String searchUrl,
-			@Nullable List<JsonNode> stickyItems,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<CategoryWotResponseItems> items,
+			double totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			double perPage,
+			double page,
+			boolean wasCached,
+			double cacheTTL,
+			double lastModified,
+			double serverTime,
+			String searchUrl,
+			List<JsonNode> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryWotResponseItemsBumpSettings(
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBumpItemGlobally,
-			@Nullable JsonNode shortErrorPhrase,
-			@Nullable JsonNode errorPhrase
+			boolean canBumpItem,
+			boolean canBumpItemGlobally,
+			JsonNode shortErrorPhrase,
+			JsonNode errorPhrase
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryWotResponseItemsSeller(
-			@JsonProperty("user_id") Double userId,
-			@JsonProperty("sold_items_count") Double soldItemsCount,
-			@JsonProperty("active_items_count") Double activeItemsCount,
-			@JsonProperty("restore_data") @Nullable String restoreData,
-			@Nullable String username,
-			@JsonProperty("avatar_date") Double avatarDate,
-			@JsonProperty("is_banned") Double isBanned,
-			@JsonProperty("display_style_group_id") Double displayStyleGroupId,
-			@JsonProperty("restore_percents") Double restorePercents
+			@JsonProperty("user_id") double userId,
+			@JsonProperty("sold_items_count") double soldItemsCount,
+			@JsonProperty("active_items_count") double activeItemsCount,
+			@JsonProperty("restore_data") String restoreData,
+			String username,
+			@JsonProperty("avatar_date") double avatarDate,
+			@JsonProperty("is_banned") double isBanned,
+			@JsonProperty("display_style_group_id") double displayStyleGroupId,
+			@JsonProperty("restore_percents") double restorePercents
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryWotResponseItems(
-			@JsonProperty("item_id") Double itemId,
-			@JsonProperty("item_state") @Nullable String itemState,
-			@JsonProperty("category_id") Double categoryId,
-			@JsonProperty("published_date") Double publishedDate,
-			@Nullable String title,
-			@Nullable String description,
-			Double price,
-			@JsonProperty("update_stat_date") Double updateStatDate,
-			@JsonProperty("refreshed_date") Double refreshedDate,
-			@JsonProperty("edit_date") Double editDate,
-			@JsonProperty("view_count") Double viewCount,
-			@JsonProperty("is_sticky") Double isSticky,
-			@JsonProperty("item_origin") @Nullable String itemOrigin,
-			@JsonProperty("extended_guarantee") Double extendedGuarantee,
-			Double nsb,
-			@JsonProperty("allow_ask_discount") Double allowAskDiscount,
-			@JsonProperty("title_en") @Nullable String titleEn,
-			@JsonProperty("description_en") @Nullable String descriptionEn,
-			@JsonProperty("email_type") @Nullable String emailType,
-			@JsonProperty("email_provider") @Nullable JsonNode emailProvider,
-			@JsonProperty("item_domain") @Nullable String itemDomain,
-			@JsonProperty("resale_item_origin") @Nullable String resaleItemOrigin,
-			@JsonProperty("wot_item_id") Double wotItemId,
-			@JsonProperty("wot_last_activity") Double wotLastActivity,
-			@JsonProperty("wot_register_date") Double wotRegisterDate,
-			@JsonProperty("wot_mobile") Double wotMobile,
-			@JsonProperty("wot_premium") Double wotPremium,
-			@JsonProperty("wot_premium_expires") Double wotPremiumExpires,
-			@JsonProperty("wot_gold") Double wotGold,
-			@JsonProperty("wot_credits") Double wotCredits,
-			@JsonProperty("wot_battle_count") Double wotBattleCount,
-			@JsonProperty("wot_win_count") Double wotWinCount,
-			@JsonProperty("wot_loss_count") Double wotLossCount,
-			@JsonProperty("wot_win_count_percents") Double wotWinCountPercents,
-			@JsonProperty("wot_top_tanks") Double wotTopTanks,
-			@JsonProperty("wot_premium_tanks") Double wotPremiumTanks,
-			@JsonProperty("wot_top_premium_tanks") Double wotTopPremiumTanks,
-			@JsonProperty("wot_region") @Nullable String wotRegion,
-			@JsonProperty("wot_blitz") Double wotBlitz,
-			@JsonProperty("feedback_data") @Nullable String feedbackData,
-			@Nullable JsonNode isIgnored,
-			Double priceWithSellerFee,
-			@Nullable JsonNode guarantee,
-			@Nullable JsonNode canViewLoginData,
-			@Nullable JsonNode canUpdateItemStats,
-			@Nullable JsonNode canReportItem,
-			@Nullable JsonNode canViewEmailLoginData,
-			@Nullable JsonNode showGetEmailCodeButton,
-			@Nullable JsonNode canOpenItem,
-			@Nullable JsonNode canCloseItem,
-			@Nullable JsonNode canEditItem,
-			@Nullable JsonNode canDeleteItem,
-			@Nullable JsonNode canStickItem,
-			@Nullable JsonNode canUnstickItem,
-			@Nullable CategoryWotResponseItemsBumpSettings bumpSettings,
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBuyItem,
-			@JsonProperty("rub_price") Double rubPrice,
-			@JsonProperty("price_currency") @Nullable String priceCurrency,
-			@Nullable JsonNode canValidateAccount,
-			@Nullable JsonNode canResellItemAfterPurchase,
-			@Nullable String wotRegionPhrase,
-			@Nullable JsonNode isSmallExf,
-			@JsonProperty("account_last_activity") Double accountLastActivity,
-			@Nullable JsonNode wotTanks,
-			Double wotPremiumTankCount,
-			Double wotTankCount,
-			@Nullable String wotLauncherTitle,
-			@JsonProperty("wot_has_clan") @Nullable JsonNode wotHasClan,
-			@Nullable JsonNode canViewAccountLink,
-			@Nullable List<JsonNode> accountLinks,
-			@Nullable JsonNode canChangePassword,
-			@Nullable String itemOriginPhrase,
-			@JsonProperty("sold_items_category_count") Double soldItemsCategoryCount,
-			@JsonProperty("restore_items_category_count") Double restoreItemsCategoryCount,
-			@Nullable List<JsonNode> tags,
-			@JsonProperty("note_text") @Nullable JsonNode noteText,
-			@Nullable JsonNode hasPendingAutoBuy,
-			@Nullable String descriptionHtml,
-			@Nullable String descriptionEnHtml,
-			@Nullable String descriptionPlain,
-			@Nullable String descriptionEnPlain,
-			@Nullable CategoryWotResponseItemsSeller seller
+			@JsonProperty("item_id") double itemId,
+			@JsonProperty("item_state") String itemState,
+			@JsonProperty("category_id") double categoryId,
+			@JsonProperty("published_date") double publishedDate,
+			String title,
+			String description,
+			double price,
+			@JsonProperty("update_stat_date") double updateStatDate,
+			@JsonProperty("refreshed_date") double refreshedDate,
+			@JsonProperty("edit_date") double editDate,
+			@JsonProperty("view_count") double viewCount,
+			@JsonProperty("is_sticky") double isSticky,
+			@JsonProperty("item_origin") String itemOrigin,
+			@JsonProperty("extended_guarantee") double extendedGuarantee,
+			double nsb,
+			@JsonProperty("allow_ask_discount") double allowAskDiscount,
+			@JsonProperty("title_en") String titleEn,
+			@JsonProperty("description_en") String descriptionEn,
+			@JsonProperty("email_type") String emailType,
+			@JsonProperty("email_provider") JsonNode emailProvider,
+			@JsonProperty("item_domain") String itemDomain,
+			@JsonProperty("resale_item_origin") String resaleItemOrigin,
+			@JsonProperty("wot_item_id") double wotItemId,
+			@JsonProperty("wot_last_activity") double wotLastActivity,
+			@JsonProperty("wot_register_date") double wotRegisterDate,
+			@JsonProperty("wot_mobile") double wotMobile,
+			@JsonProperty("wot_premium") double wotPremium,
+			@JsonProperty("wot_premium_expires") double wotPremiumExpires,
+			@JsonProperty("wot_gold") double wotGold,
+			@JsonProperty("wot_credits") double wotCredits,
+			@JsonProperty("wot_battle_count") double wotBattleCount,
+			@JsonProperty("wot_win_count") double wotWinCount,
+			@JsonProperty("wot_loss_count") double wotLossCount,
+			@JsonProperty("wot_win_count_percents") double wotWinCountPercents,
+			@JsonProperty("wot_top_tanks") double wotTopTanks,
+			@JsonProperty("wot_premium_tanks") double wotPremiumTanks,
+			@JsonProperty("wot_top_premium_tanks") double wotTopPremiumTanks,
+			@JsonProperty("wot_region") String wotRegion,
+			@JsonProperty("wot_blitz") double wotBlitz,
+			@JsonProperty("feedback_data") String feedbackData,
+			boolean isIgnored,
+			double priceWithSellerFee,
+			JsonNode guarantee,
+			boolean canViewLoginData,
+			boolean canUpdateItemStats,
+			boolean canReportItem,
+			boolean canViewEmailLoginData,
+			boolean showGetEmailCodeButton,
+			boolean canOpenItem,
+			boolean canCloseItem,
+			boolean canEditItem,
+			boolean canDeleteItem,
+			boolean canStickItem,
+			boolean canUnstickItem,
+			CategoryWotResponseItemsBumpSettings bumpSettings,
+			boolean canBumpItem,
+			boolean canBuyItem,
+			@JsonProperty("rub_price") double rubPrice,
+			@JsonProperty("price_currency") String priceCurrency,
+			boolean canValidateAccount,
+			boolean canResellItemAfterPurchase,
+			String wotRegionPhrase,
+			boolean isSmallExf,
+			@JsonProperty("account_last_activity") double accountLastActivity,
+			JsonNode wotTanks,
+			double wotPremiumTankCount,
+			double wotTankCount,
+			String wotLauncherTitle,
+			@JsonProperty("wot_has_clan") boolean wotHasClan,
+			boolean canViewAccountLink,
+			List<JsonNode> accountLinks,
+			boolean canChangePassword,
+			String itemOriginPhrase,
+			@JsonProperty("sold_items_category_count") double soldItemsCategoryCount,
+			@JsonProperty("restore_items_category_count") double restoreItemsCategoryCount,
+			List<JsonNode> tags,
+			@JsonProperty("note_text") JsonNode noteText,
+			boolean hasPendingAutoBuy,
+			String descriptionHtml,
+			String descriptionEnHtml,
+			String descriptionPlain,
+			String descriptionEnPlain,
+			CategoryWotResponseItemsSeller seller
 		) {}
 
 		public record CategoryWotBlitzParams(
@@ -5245,127 +5245,127 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryWotBlitzResponse(
-			@Nullable List<CategoryWotBlitzResponseItems> items,
-			Double totalItems,
-			@Nullable JsonNode totalItemsPrice,
-			@Nullable JsonNode hasNextPage,
-			Double perPage,
-			Double page,
-			@Nullable JsonNode wasCached,
-			Double cacheTTL,
-			Double lastModified,
-			Double serverTime,
-			@Nullable String searchUrl,
-			@Nullable List<JsonNode> stickyItems,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<CategoryWotBlitzResponseItems> items,
+			double totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			double perPage,
+			double page,
+			boolean wasCached,
+			double cacheTTL,
+			double lastModified,
+			double serverTime,
+			String searchUrl,
+			List<JsonNode> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryWotBlitzResponseItemsBumpSettings(
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBumpItemGlobally,
-			@Nullable JsonNode shortErrorPhrase,
-			@Nullable JsonNode errorPhrase
+			boolean canBumpItem,
+			boolean canBumpItemGlobally,
+			JsonNode shortErrorPhrase,
+			JsonNode errorPhrase
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryWotBlitzResponseItemsSeller(
-			@JsonProperty("user_id") Double userId,
-			@JsonProperty("sold_items_count") Double soldItemsCount,
-			@JsonProperty("active_items_count") Double activeItemsCount,
-			@JsonProperty("restore_data") @Nullable String restoreData,
-			@Nullable String username,
-			@JsonProperty("avatar_date") Double avatarDate,
-			@JsonProperty("is_banned") Double isBanned,
-			@JsonProperty("display_style_group_id") Double displayStyleGroupId,
-			@JsonProperty("restore_percents") Double restorePercents
+			@JsonProperty("user_id") double userId,
+			@JsonProperty("sold_items_count") double soldItemsCount,
+			@JsonProperty("active_items_count") double activeItemsCount,
+			@JsonProperty("restore_data") String restoreData,
+			String username,
+			@JsonProperty("avatar_date") double avatarDate,
+			@JsonProperty("is_banned") double isBanned,
+			@JsonProperty("display_style_group_id") double displayStyleGroupId,
+			@JsonProperty("restore_percents") double restorePercents
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryWotBlitzResponseItems(
-			@JsonProperty("item_id") Double itemId,
-			@JsonProperty("item_state") @Nullable String itemState,
-			@JsonProperty("category_id") Double categoryId,
-			@JsonProperty("published_date") Double publishedDate,
-			@Nullable String title,
-			@Nullable String description,
-			Double price,
-			@JsonProperty("update_stat_date") Double updateStatDate,
-			@JsonProperty("refreshed_date") Double refreshedDate,
-			@JsonProperty("edit_date") Double editDate,
-			@JsonProperty("view_count") Double viewCount,
-			@JsonProperty("is_sticky") Double isSticky,
-			@JsonProperty("item_origin") @Nullable String itemOrigin,
-			@JsonProperty("extended_guarantee") Double extendedGuarantee,
-			Double nsb,
-			@JsonProperty("allow_ask_discount") Double allowAskDiscount,
-			@JsonProperty("title_en") @Nullable String titleEn,
-			@JsonProperty("description_en") @Nullable String descriptionEn,
-			@JsonProperty("email_type") @Nullable String emailType,
-			@JsonProperty("email_provider") @Nullable JsonNode emailProvider,
-			@JsonProperty("item_domain") @Nullable String itemDomain,
-			@JsonProperty("resale_item_origin") @Nullable String resaleItemOrigin,
-			@JsonProperty("wot_item_id") Double wotItemId,
-			@JsonProperty("wot_last_activity") Double wotLastActivity,
-			@JsonProperty("wot_register_date") Double wotRegisterDate,
-			@JsonProperty("wot_mobile") Double wotMobile,
-			@JsonProperty("wot_premium") Double wotPremium,
-			@JsonProperty("wot_premium_expires") Double wotPremiumExpires,
-			@JsonProperty("wot_gold") Double wotGold,
-			@JsonProperty("wot_credits") Double wotCredits,
-			@JsonProperty("wot_battle_count") Double wotBattleCount,
-			@JsonProperty("wot_win_count") Double wotWinCount,
-			@JsonProperty("wot_loss_count") Double wotLossCount,
-			@JsonProperty("wot_win_count_percents") Double wotWinCountPercents,
-			@JsonProperty("wot_top_tanks") Double wotTopTanks,
-			@JsonProperty("wot_premium_tanks") Double wotPremiumTanks,
-			@JsonProperty("wot_top_premium_tanks") Double wotTopPremiumTanks,
-			@JsonProperty("wot_region") @Nullable String wotRegion,
-			@JsonProperty("wot_blitz") Double wotBlitz,
-			@JsonProperty("feedback_data") @Nullable String feedbackData,
-			@Nullable JsonNode isIgnored,
-			Double priceWithSellerFee,
-			@Nullable JsonNode guarantee,
-			@Nullable JsonNode canViewLoginData,
-			@Nullable JsonNode canUpdateItemStats,
-			@Nullable JsonNode canReportItem,
-			@Nullable JsonNode canViewEmailLoginData,
-			@Nullable JsonNode showGetEmailCodeButton,
-			@Nullable JsonNode canOpenItem,
-			@Nullable JsonNode canCloseItem,
-			@Nullable JsonNode canEditItem,
-			@Nullable JsonNode canDeleteItem,
-			@Nullable JsonNode canStickItem,
-			@Nullable JsonNode canUnstickItem,
-			@Nullable CategoryWotBlitzResponseItemsBumpSettings bumpSettings,
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBuyItem,
-			@JsonProperty("rub_price") Double rubPrice,
-			@JsonProperty("price_currency") @Nullable String priceCurrency,
-			@Nullable JsonNode canValidateAccount,
-			@Nullable JsonNode canResellItemAfterPurchase,
-			@Nullable String wotRegionPhrase,
-			@Nullable JsonNode isSmallExf,
-			@JsonProperty("account_last_activity") Double accountLastActivity,
-			@Nullable JsonNode wotTanks,
-			Double wotPremiumTankCount,
-			Double wotTankCount,
-			@Nullable String wotLauncherTitle,
-			@JsonProperty("wot_has_clan") @Nullable JsonNode wotHasClan,
-			@Nullable JsonNode canViewAccountLink,
-			@Nullable List<JsonNode> accountLinks,
-			@Nullable JsonNode canChangePassword,
-			@Nullable String itemOriginPhrase,
-			@JsonProperty("sold_items_category_count") Double soldItemsCategoryCount,
-			@JsonProperty("restore_items_category_count") Double restoreItemsCategoryCount,
-			@Nullable List<JsonNode> tags,
-			@JsonProperty("note_text") @Nullable JsonNode noteText,
-			@Nullable JsonNode hasPendingAutoBuy,
-			@Nullable String descriptionHtml,
-			@Nullable String descriptionEnHtml,
-			@Nullable String descriptionPlain,
-			@Nullable String descriptionEnPlain,
-			@Nullable CategoryWotBlitzResponseItemsSeller seller
+			@JsonProperty("item_id") double itemId,
+			@JsonProperty("item_state") String itemState,
+			@JsonProperty("category_id") double categoryId,
+			@JsonProperty("published_date") double publishedDate,
+			String title,
+			String description,
+			double price,
+			@JsonProperty("update_stat_date") double updateStatDate,
+			@JsonProperty("refreshed_date") double refreshedDate,
+			@JsonProperty("edit_date") double editDate,
+			@JsonProperty("view_count") double viewCount,
+			@JsonProperty("is_sticky") double isSticky,
+			@JsonProperty("item_origin") String itemOrigin,
+			@JsonProperty("extended_guarantee") double extendedGuarantee,
+			double nsb,
+			@JsonProperty("allow_ask_discount") double allowAskDiscount,
+			@JsonProperty("title_en") String titleEn,
+			@JsonProperty("description_en") String descriptionEn,
+			@JsonProperty("email_type") String emailType,
+			@JsonProperty("email_provider") JsonNode emailProvider,
+			@JsonProperty("item_domain") String itemDomain,
+			@JsonProperty("resale_item_origin") String resaleItemOrigin,
+			@JsonProperty("wot_item_id") double wotItemId,
+			@JsonProperty("wot_last_activity") double wotLastActivity,
+			@JsonProperty("wot_register_date") double wotRegisterDate,
+			@JsonProperty("wot_mobile") double wotMobile,
+			@JsonProperty("wot_premium") double wotPremium,
+			@JsonProperty("wot_premium_expires") double wotPremiumExpires,
+			@JsonProperty("wot_gold") double wotGold,
+			@JsonProperty("wot_credits") double wotCredits,
+			@JsonProperty("wot_battle_count") double wotBattleCount,
+			@JsonProperty("wot_win_count") double wotWinCount,
+			@JsonProperty("wot_loss_count") double wotLossCount,
+			@JsonProperty("wot_win_count_percents") double wotWinCountPercents,
+			@JsonProperty("wot_top_tanks") double wotTopTanks,
+			@JsonProperty("wot_premium_tanks") double wotPremiumTanks,
+			@JsonProperty("wot_top_premium_tanks") double wotTopPremiumTanks,
+			@JsonProperty("wot_region") String wotRegion,
+			@JsonProperty("wot_blitz") double wotBlitz,
+			@JsonProperty("feedback_data") String feedbackData,
+			boolean isIgnored,
+			double priceWithSellerFee,
+			JsonNode guarantee,
+			boolean canViewLoginData,
+			boolean canUpdateItemStats,
+			boolean canReportItem,
+			boolean canViewEmailLoginData,
+			boolean showGetEmailCodeButton,
+			boolean canOpenItem,
+			boolean canCloseItem,
+			boolean canEditItem,
+			boolean canDeleteItem,
+			boolean canStickItem,
+			boolean canUnstickItem,
+			CategoryWotBlitzResponseItemsBumpSettings bumpSettings,
+			boolean canBumpItem,
+			boolean canBuyItem,
+			@JsonProperty("rub_price") double rubPrice,
+			@JsonProperty("price_currency") String priceCurrency,
+			boolean canValidateAccount,
+			boolean canResellItemAfterPurchase,
+			String wotRegionPhrase,
+			boolean isSmallExf,
+			@JsonProperty("account_last_activity") double accountLastActivity,
+			JsonNode wotTanks,
+			double wotPremiumTankCount,
+			double wotTankCount,
+			String wotLauncherTitle,
+			@JsonProperty("wot_has_clan") boolean wotHasClan,
+			boolean canViewAccountLink,
+			List<JsonNode> accountLinks,
+			boolean canChangePassword,
+			String itemOriginPhrase,
+			@JsonProperty("sold_items_category_count") double soldItemsCategoryCount,
+			@JsonProperty("restore_items_category_count") double restoreItemsCategoryCount,
+			List<JsonNode> tags,
+			@JsonProperty("note_text") JsonNode noteText,
+			boolean hasPendingAutoBuy,
+			String descriptionHtml,
+			String descriptionEnHtml,
+			String descriptionPlain,
+			String descriptionEnPlain,
+			CategoryWotBlitzResponseItemsSeller seller
 		) {}
 
 		public record CategoryGiftsParams(
@@ -5425,105 +5425,105 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryGiftsResponse(
-			@Nullable List<CategoryGiftsResponseItems> items,
-			Double totalItems,
-			@Nullable JsonNode totalItemsPrice,
-			@Nullable JsonNode hasNextPage,
-			Double perPage,
-			Double page,
-			@Nullable JsonNode wasCached,
-			Double cacheTTL,
-			Double lastModified,
-			Double serverTime,
-			@Nullable String searchUrl,
-			@Nullable List<JsonNode> stickyItems,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<CategoryGiftsResponseItems> items,
+			double totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			double perPage,
+			double page,
+			boolean wasCached,
+			double cacheTTL,
+			double lastModified,
+			double serverTime,
+			String searchUrl,
+			List<JsonNode> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryGiftsResponseItemsBumpSettings(
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBumpItemGlobally,
-			@Nullable JsonNode shortErrorPhrase,
-			@Nullable JsonNode errorPhrase
+			boolean canBumpItem,
+			boolean canBumpItemGlobally,
+			JsonNode shortErrorPhrase,
+			JsonNode errorPhrase
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryGiftsResponseItemsSeller(
-			@JsonProperty("user_id") Double userId,
-			@JsonProperty("sold_items_count") Double soldItemsCount,
-			@JsonProperty("active_items_count") Double activeItemsCount,
-			@JsonProperty("restore_data") @Nullable String restoreData,
-			@Nullable String username,
-			@JsonProperty("avatar_date") Double avatarDate,
-			@JsonProperty("is_banned") Double isBanned,
-			@JsonProperty("display_style_group_id") Double displayStyleGroupId,
-			@JsonProperty("restore_percents") @Nullable JsonNode restorePercents
+			@JsonProperty("user_id") double userId,
+			@JsonProperty("sold_items_count") double soldItemsCount,
+			@JsonProperty("active_items_count") double activeItemsCount,
+			@JsonProperty("restore_data") String restoreData,
+			String username,
+			@JsonProperty("avatar_date") double avatarDate,
+			@JsonProperty("is_banned") double isBanned,
+			@JsonProperty("display_style_group_id") double displayStyleGroupId,
+			@JsonProperty("restore_percents") JsonNode restorePercents
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryGiftsResponseItems(
-			@JsonProperty("item_id") Double itemId,
-			@JsonProperty("item_state") @Nullable String itemState,
-			@JsonProperty("category_id") Double categoryId,
-			@JsonProperty("published_date") Double publishedDate,
-			@Nullable String title,
-			@Nullable String description,
-			Double price,
-			@JsonProperty("update_stat_date") Double updateStatDate,
-			@JsonProperty("refreshed_date") Double refreshedDate,
-			@JsonProperty("edit_date") Double editDate,
-			@JsonProperty("view_count") Double viewCount,
-			@JsonProperty("is_sticky") Double isSticky,
-			@JsonProperty("item_origin") @Nullable String itemOrigin,
-			@JsonProperty("extended_guarantee") Double extendedGuarantee,
-			Double nsb,
-			@JsonProperty("allow_ask_discount") Double allowAskDiscount,
-			@JsonProperty("title_en") @Nullable String titleEn,
-			@JsonProperty("description_en") @Nullable String descriptionEn,
-			@JsonProperty("email_type") @Nullable String emailType,
-			@JsonProperty("email_provider") @Nullable JsonNode emailProvider,
-			@JsonProperty("item_domain") @Nullable String itemDomain,
-			@JsonProperty("resale_item_origin") @Nullable String resaleItemOrigin,
-			@JsonProperty("gifts_item_id") Double giftsItemId,
-			@JsonProperty("gifts_service") @Nullable String giftsService,
-			@JsonProperty("gifts_duration") Double giftsDuration,
-			@JsonProperty("gifts_type") @Nullable String giftsType,
-			@JsonProperty("feedback_data") @Nullable String feedbackData,
-			@Nullable JsonNode isIgnored,
-			Double priceWithSellerFee,
-			@Nullable JsonNode guarantee,
-			@Nullable JsonNode canViewLoginData,
-			@Nullable JsonNode canUpdateItemStats,
-			@Nullable JsonNode canReportItem,
-			@Nullable JsonNode canViewEmailLoginData,
-			@Nullable JsonNode showGetEmailCodeButton,
-			@Nullable JsonNode canOpenItem,
-			@Nullable JsonNode canCloseItem,
-			@Nullable JsonNode canEditItem,
-			@Nullable JsonNode canDeleteItem,
-			@Nullable JsonNode canStickItem,
-			@Nullable JsonNode canUnstickItem,
-			@Nullable CategoryGiftsResponseItemsBumpSettings bumpSettings,
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBuyItem,
-			@JsonProperty("rub_price") Double rubPrice,
-			@JsonProperty("price_currency") @Nullable String priceCurrency,
-			@Nullable JsonNode canValidateAccount,
-			@Nullable JsonNode canResellItemAfterPurchase,
-			@Nullable String giftsSubscriptionName,
-			@Nullable String giftsServiceName,
-			@Nullable JsonNode canViewAccountLink,
-			@Nullable JsonNode canChangePassword,
-			@Nullable String itemOriginPhrase,
-			@Nullable List<JsonNode> tags,
-			@JsonProperty("note_text") @Nullable JsonNode noteText,
-			@Nullable JsonNode hasPendingAutoBuy,
-			@Nullable String descriptionHtml,
-			@Nullable String descriptionEnHtml,
-			@Nullable String descriptionPlain,
-			@Nullable String descriptionEnPlain,
-			@Nullable CategoryGiftsResponseItemsSeller seller
+			@JsonProperty("item_id") double itemId,
+			@JsonProperty("item_state") String itemState,
+			@JsonProperty("category_id") double categoryId,
+			@JsonProperty("published_date") double publishedDate,
+			String title,
+			String description,
+			double price,
+			@JsonProperty("update_stat_date") double updateStatDate,
+			@JsonProperty("refreshed_date") double refreshedDate,
+			@JsonProperty("edit_date") double editDate,
+			@JsonProperty("view_count") double viewCount,
+			@JsonProperty("is_sticky") double isSticky,
+			@JsonProperty("item_origin") String itemOrigin,
+			@JsonProperty("extended_guarantee") double extendedGuarantee,
+			double nsb,
+			@JsonProperty("allow_ask_discount") double allowAskDiscount,
+			@JsonProperty("title_en") String titleEn,
+			@JsonProperty("description_en") String descriptionEn,
+			@JsonProperty("email_type") String emailType,
+			@JsonProperty("email_provider") JsonNode emailProvider,
+			@JsonProperty("item_domain") String itemDomain,
+			@JsonProperty("resale_item_origin") String resaleItemOrigin,
+			@JsonProperty("gifts_item_id") double giftsItemId,
+			@JsonProperty("gifts_service") String giftsService,
+			@JsonProperty("gifts_duration") double giftsDuration,
+			@JsonProperty("gifts_type") String giftsType,
+			@JsonProperty("feedback_data") String feedbackData,
+			boolean isIgnored,
+			double priceWithSellerFee,
+			JsonNode guarantee,
+			boolean canViewLoginData,
+			boolean canUpdateItemStats,
+			boolean canReportItem,
+			boolean canViewEmailLoginData,
+			boolean showGetEmailCodeButton,
+			boolean canOpenItem,
+			boolean canCloseItem,
+			boolean canEditItem,
+			boolean canDeleteItem,
+			boolean canStickItem,
+			boolean canUnstickItem,
+			CategoryGiftsResponseItemsBumpSettings bumpSettings,
+			boolean canBumpItem,
+			boolean canBuyItem,
+			@JsonProperty("rub_price") double rubPrice,
+			@JsonProperty("price_currency") String priceCurrency,
+			boolean canValidateAccount,
+			boolean canResellItemAfterPurchase,
+			String giftsSubscriptionName,
+			String giftsServiceName,
+			boolean canViewAccountLink,
+			boolean canChangePassword,
+			String itemOriginPhrase,
+			List<JsonNode> tags,
+			@JsonProperty("note_text") JsonNode noteText,
+			boolean hasPendingAutoBuy,
+			String descriptionHtml,
+			String descriptionEnHtml,
+			String descriptionPlain,
+			String descriptionEnPlain,
+			CategoryGiftsResponseItemsSeller seller
 		) {}
 
 		public record CategoryEpicGamesParams(
@@ -5611,128 +5611,128 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryEpicGamesResponse(
-			@Nullable List<CategoryEpicGamesResponseItems> items,
-			Double totalItems,
-			@Nullable JsonNode totalItemsPrice,
-			@Nullable JsonNode hasNextPage,
-			Double perPage,
-			Double page,
-			@Nullable JsonNode wasCached,
-			Double cacheTTL,
-			Double lastModified,
-			Double serverTime,
-			@Nullable String searchUrl,
-			@Nullable List<JsonNode> stickyItems,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<CategoryEpicGamesResponseItems> items,
+			double totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			double perPage,
+			double page,
+			boolean wasCached,
+			double cacheTTL,
+			double lastModified,
+			double serverTime,
+			String searchUrl,
+			List<JsonNode> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryEpicGamesResponseItemsBumpSettings(
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBumpItemGlobally,
-			@Nullable JsonNode shortErrorPhrase,
-			@Nullable JsonNode errorPhrase
+			boolean canBumpItem,
+			boolean canBumpItemGlobally,
+			JsonNode shortErrorPhrase,
+			JsonNode errorPhrase
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryEpicGamesResponseItemsEgTransactions(
-			Double date,
-			@Nullable String title,
-			@Nullable String presentmentTotal,
-			@Nullable String orderType
+			double date,
+			String title,
+			String presentmentTotal,
+			String orderType
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryEpicGamesResponseItemsSeller(
-			@JsonProperty("user_id") Double userId,
-			@JsonProperty("sold_items_count") Double soldItemsCount,
-			@JsonProperty("active_items_count") Double activeItemsCount,
-			@JsonProperty("restore_data") @Nullable String restoreData,
-			@Nullable String username,
-			@JsonProperty("avatar_date") Double avatarDate,
-			@JsonProperty("is_banned") Double isBanned,
-			@JsonProperty("display_style_group_id") Double displayStyleGroupId,
-			@JsonProperty("restore_percents") Double restorePercents
+			@JsonProperty("user_id") double userId,
+			@JsonProperty("sold_items_count") double soldItemsCount,
+			@JsonProperty("active_items_count") double activeItemsCount,
+			@JsonProperty("restore_data") String restoreData,
+			String username,
+			@JsonProperty("avatar_date") double avatarDate,
+			@JsonProperty("is_banned") double isBanned,
+			@JsonProperty("display_style_group_id") double displayStyleGroupId,
+			@JsonProperty("restore_percents") double restorePercents
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryEpicGamesResponseItems(
-			@JsonProperty("item_id") Double itemId,
-			@JsonProperty("item_state") @Nullable String itemState,
-			@JsonProperty("category_id") Double categoryId,
-			@JsonProperty("published_date") Double publishedDate,
-			@Nullable String title,
-			@Nullable String description,
-			Double price,
-			@JsonProperty("update_stat_date") Double updateStatDate,
-			@JsonProperty("refreshed_date") Double refreshedDate,
-			@JsonProperty("edit_date") Double editDate,
-			@JsonProperty("view_count") Double viewCount,
-			@JsonProperty("is_sticky") Double isSticky,
-			@JsonProperty("item_origin") @Nullable String itemOrigin,
-			@JsonProperty("extended_guarantee") Double extendedGuarantee,
-			Double nsb,
-			@JsonProperty("allow_ask_discount") Double allowAskDiscount,
-			@JsonProperty("title_en") @Nullable String titleEn,
-			@JsonProperty("description_en") @Nullable String descriptionEn,
-			@JsonProperty("email_type") @Nullable String emailType,
-			@JsonProperty("email_provider") @Nullable String emailProvider,
-			@JsonProperty("item_domain") @Nullable String itemDomain,
-			@JsonProperty("resale_item_origin") @Nullable String resaleItemOrigin,
-			@JsonProperty("eg_item_id") Double egItemId,
-			@JsonProperty("eg_country") @Nullable String egCountry,
-			@JsonProperty("eg_code_redemption_history") @Nullable List<JsonNode> egCodeRedemptionHistory,
-			@JsonProperty("eg_coupons") @Nullable List<JsonNode> egCoupons,
-			@JsonProperty("eg_games") @Nullable JsonNode egGames,
-			@JsonProperty("eg_change_email") Double egChangeEmail,
-			@JsonProperty("eg_can_update_display_name") Double egCanUpdateDisplayName,
-			@JsonProperty("eg_last_activity") Double egLastActivity,
-			@JsonProperty("eg_payment_methods") @Nullable List<JsonNode> egPaymentMethods,
-			@JsonProperty("eg_rl_purchases") Double egRlPurchases,
-			@JsonProperty("eg_username") @Nullable String egUsername,
-			@JsonProperty("eg_rewards_balance") Double egRewardsBalance,
-			@JsonProperty("eg_rewards_expiration_date") Double egRewardsExpirationDate,
-			@JsonProperty("eg_next_change_email_date") Double egNextChangeEmailDate,
-			@JsonProperty("eg_game_count") Double egGameCount,
-			@JsonProperty("eg_balance") Double egBalance,
-			@JsonProperty("feedback_data") @Nullable String feedbackData,
-			@Nullable JsonNode isIgnored,
-			Double priceWithSellerFee,
-			@Nullable JsonNode guarantee,
-			@Nullable JsonNode canViewLoginData,
-			@Nullable JsonNode canUpdateItemStats,
-			@Nullable JsonNode canReportItem,
-			@Nullable JsonNode canViewEmailLoginData,
-			@Nullable JsonNode showGetEmailCodeButton,
-			@Nullable JsonNode canOpenItem,
-			@Nullable JsonNode canCloseItem,
-			@Nullable JsonNode canEditItem,
-			@Nullable JsonNode canDeleteItem,
-			@Nullable JsonNode canStickItem,
-			@Nullable JsonNode canUnstickItem,
-			@Nullable CategoryEpicGamesResponseItemsBumpSettings bumpSettings,
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBuyItem,
-			@JsonProperty("rub_price") Double rubPrice,
-			@JsonProperty("price_currency") @Nullable String priceCurrency,
-			@Nullable JsonNode canValidateAccount,
-			@Nullable JsonNode canResellItemAfterPurchase,
-			@Nullable List<CategoryEpicGamesResponseItemsEgTransactions> egTransactions,
-			@Nullable JsonNode canViewAccountLink,
-			@Nullable List<JsonNode> accountLinks,
-			@Nullable String emailLoginUrl,
-			@Nullable JsonNode canChangePassword,
-			@Nullable String itemOriginPhrase,
-			@JsonProperty("sold_items_category_count") Double soldItemsCategoryCount,
-			@JsonProperty("restore_items_category_count") Double restoreItemsCategoryCount,
-			@Nullable List<JsonNode> tags,
-			@JsonProperty("note_text") @Nullable JsonNode noteText,
-			@Nullable JsonNode hasPendingAutoBuy,
-			@Nullable String descriptionHtml,
-			@Nullable String descriptionEnHtml,
-			@Nullable String descriptionPlain,
-			@Nullable String descriptionEnPlain,
-			@Nullable CategoryEpicGamesResponseItemsSeller seller
+			@JsonProperty("item_id") double itemId,
+			@JsonProperty("item_state") String itemState,
+			@JsonProperty("category_id") double categoryId,
+			@JsonProperty("published_date") double publishedDate,
+			String title,
+			String description,
+			double price,
+			@JsonProperty("update_stat_date") double updateStatDate,
+			@JsonProperty("refreshed_date") double refreshedDate,
+			@JsonProperty("edit_date") double editDate,
+			@JsonProperty("view_count") double viewCount,
+			@JsonProperty("is_sticky") double isSticky,
+			@JsonProperty("item_origin") String itemOrigin,
+			@JsonProperty("extended_guarantee") double extendedGuarantee,
+			double nsb,
+			@JsonProperty("allow_ask_discount") double allowAskDiscount,
+			@JsonProperty("title_en") String titleEn,
+			@JsonProperty("description_en") String descriptionEn,
+			@JsonProperty("email_type") String emailType,
+			@JsonProperty("email_provider") String emailProvider,
+			@JsonProperty("item_domain") String itemDomain,
+			@JsonProperty("resale_item_origin") String resaleItemOrigin,
+			@JsonProperty("eg_item_id") double egItemId,
+			@JsonProperty("eg_country") String egCountry,
+			@JsonProperty("eg_code_redemption_history") List<JsonNode> egCodeRedemptionHistory,
+			@JsonProperty("eg_coupons") List<JsonNode> egCoupons,
+			@JsonProperty("eg_games") JsonNode egGames,
+			@JsonProperty("eg_change_email") double egChangeEmail,
+			@JsonProperty("eg_can_update_display_name") double egCanUpdateDisplayName,
+			@JsonProperty("eg_last_activity") double egLastActivity,
+			@JsonProperty("eg_payment_methods") List<JsonNode> egPaymentMethods,
+			@JsonProperty("eg_rl_purchases") double egRlPurchases,
+			@JsonProperty("eg_username") String egUsername,
+			@JsonProperty("eg_rewards_balance") double egRewardsBalance,
+			@JsonProperty("eg_rewards_expiration_date") double egRewardsExpirationDate,
+			@JsonProperty("eg_next_change_email_date") double egNextChangeEmailDate,
+			@JsonProperty("eg_game_count") double egGameCount,
+			@JsonProperty("eg_balance") double egBalance,
+			@JsonProperty("feedback_data") String feedbackData,
+			boolean isIgnored,
+			double priceWithSellerFee,
+			JsonNode guarantee,
+			boolean canViewLoginData,
+			boolean canUpdateItemStats,
+			boolean canReportItem,
+			boolean canViewEmailLoginData,
+			boolean showGetEmailCodeButton,
+			boolean canOpenItem,
+			boolean canCloseItem,
+			boolean canEditItem,
+			boolean canDeleteItem,
+			boolean canStickItem,
+			boolean canUnstickItem,
+			CategoryEpicGamesResponseItemsBumpSettings bumpSettings,
+			boolean canBumpItem,
+			boolean canBuyItem,
+			@JsonProperty("rub_price") double rubPrice,
+			@JsonProperty("price_currency") String priceCurrency,
+			boolean canValidateAccount,
+			boolean canResellItemAfterPurchase,
+			List<CategoryEpicGamesResponseItemsEgTransactions> egTransactions,
+			boolean canViewAccountLink,
+			List<JsonNode> accountLinks,
+			String emailLoginUrl,
+			boolean canChangePassword,
+			String itemOriginPhrase,
+			@JsonProperty("sold_items_category_count") double soldItemsCategoryCount,
+			@JsonProperty("restore_items_category_count") double restoreItemsCategoryCount,
+			List<JsonNode> tags,
+			@JsonProperty("note_text") JsonNode noteText,
+			boolean hasPendingAutoBuy,
+			String descriptionHtml,
+			String descriptionEnHtml,
+			String descriptionPlain,
+			String descriptionEnPlain,
+			CategoryEpicGamesResponseItemsSeller seller
 		) {}
 
 		public record CategoryEscapeFromTarkovParams(
@@ -5806,125 +5806,125 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryEscapeFromTarkovResponse(
-			@Nullable List<CategoryEscapeFromTarkovResponseItems> items,
-			Double totalItems,
-			@Nullable JsonNode totalItemsPrice,
-			@Nullable JsonNode hasNextPage,
-			Double perPage,
-			Double page,
-			@Nullable JsonNode wasCached,
-			Double cacheTTL,
-			Double lastModified,
-			Double serverTime,
-			@Nullable String searchUrl,
-			@Nullable List<JsonNode> stickyItems,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<CategoryEscapeFromTarkovResponseItems> items,
+			double totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			double perPage,
+			double page,
+			boolean wasCached,
+			double cacheTTL,
+			double lastModified,
+			double serverTime,
+			String searchUrl,
+			List<JsonNode> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryEscapeFromTarkovResponseItemsBumpSettings(
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBumpItemGlobally,
-			@Nullable JsonNode shortErrorPhrase,
-			@Nullable JsonNode errorPhrase
+			boolean canBumpItem,
+			boolean canBumpItemGlobally,
+			JsonNode shortErrorPhrase,
+			JsonNode errorPhrase
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryEscapeFromTarkovResponseItemsSeller(
-			@JsonProperty("user_id") Double userId,
-			@JsonProperty("sold_items_count") Double soldItemsCount,
-			@JsonProperty("active_items_count") Double activeItemsCount,
-			@JsonProperty("restore_data") @Nullable String restoreData,
-			@Nullable String username,
-			@JsonProperty("avatar_date") Double avatarDate,
-			@JsonProperty("is_banned") Double isBanned,
-			@JsonProperty("display_style_group_id") Double displayStyleGroupId,
-			@JsonProperty("restore_percents") Double restorePercents
+			@JsonProperty("user_id") double userId,
+			@JsonProperty("sold_items_count") double soldItemsCount,
+			@JsonProperty("active_items_count") double activeItemsCount,
+			@JsonProperty("restore_data") String restoreData,
+			String username,
+			@JsonProperty("avatar_date") double avatarDate,
+			@JsonProperty("is_banned") double isBanned,
+			@JsonProperty("display_style_group_id") double displayStyleGroupId,
+			@JsonProperty("restore_percents") double restorePercents
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryEscapeFromTarkovResponseItems(
-			@JsonProperty("item_id") Double itemId,
-			@JsonProperty("item_state") @Nullable String itemState,
-			@JsonProperty("category_id") Double categoryId,
-			@JsonProperty("published_date") Double publishedDate,
-			@Nullable String title,
-			@Nullable String description,
-			Double price,
-			@JsonProperty("update_stat_date") Double updateStatDate,
-			@JsonProperty("refreshed_date") Double refreshedDate,
-			@JsonProperty("edit_date") Double editDate,
-			@JsonProperty("view_count") Double viewCount,
-			@JsonProperty("is_sticky") Double isSticky,
-			@JsonProperty("item_origin") @Nullable String itemOrigin,
-			@JsonProperty("extended_guarantee") Double extendedGuarantee,
-			Double nsb,
-			@JsonProperty("allow_ask_discount") Double allowAskDiscount,
-			@JsonProperty("title_en") @Nullable String titleEn,
-			@JsonProperty("description_en") @Nullable String descriptionEn,
-			@JsonProperty("email_type") @Nullable String emailType,
-			@JsonProperty("email_provider") @Nullable String emailProvider,
-			@JsonProperty("item_domain") @Nullable String itemDomain,
-			@JsonProperty("resale_item_origin") @Nullable String resaleItemOrigin,
-			@JsonProperty("tarkov_item_id") Double tarkovItemId,
-			@JsonProperty("tarkov_game_version") @Nullable String tarkovGameVersion,
-			@JsonProperty("tarkov_register_date") Double tarkovRegisterDate,
-			@JsonProperty("tarkov_level") Double tarkovLevel,
-			@JsonProperty("tarkov_exp") Double tarkovExp,
-			@JsonProperty("tarkov_last_activity") Double tarkovLastActivity,
-			@JsonProperty("tarkov_side") @Nullable String tarkovSide,
-			@JsonProperty("tarkov_rubles") Double tarkovRubles,
-			@JsonProperty("tarkov_secured_container") @Nullable String tarkovSecuredContainer,
-			@JsonProperty("tarkov_euros") Double tarkovEuros,
-			@JsonProperty("tarkov_dollars") Double tarkovDollars,
-			@JsonProperty("tarkov_kd") Double tarkovKd,
-			@JsonProperty("tarkov_deaths") Double tarkovDeaths,
-			@JsonProperty("tarkov_kills") Double tarkovKills,
-			@JsonProperty("tarkov_sessions") Double tarkovSessions,
-			@JsonProperty("tarkov_region") @Nullable String tarkovRegion,
-			@JsonProperty("tarkov_total_in_game") Double tarkovTotalInGame,
-			@JsonProperty("tarkov_mail_forwarding") Double tarkovMailForwarding,
-			@JsonProperty("tarkov_username") @Nullable String tarkovUsername,
-			@JsonProperty("tarkov_purchase_date") Double tarkovPurchaseDate,
-			@JsonProperty("feedback_data") @Nullable String feedbackData,
-			@Nullable JsonNode isIgnored,
-			Double priceWithSellerFee,
-			@Nullable JsonNode guarantee,
-			@Nullable JsonNode canViewLoginData,
-			@Nullable JsonNode canUpdateItemStats,
-			@Nullable JsonNode canReportItem,
-			@Nullable JsonNode canViewEmailLoginData,
-			@Nullable JsonNode showGetEmailCodeButton,
-			@Nullable JsonNode canOpenItem,
-			@Nullable JsonNode canCloseItem,
-			@Nullable JsonNode canEditItem,
-			@Nullable JsonNode canDeleteItem,
-			@Nullable JsonNode canStickItem,
-			@Nullable JsonNode canUnstickItem,
-			@Nullable CategoryEscapeFromTarkovResponseItemsBumpSettings bumpSettings,
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBuyItem,
-			@JsonProperty("rub_price") Double rubPrice,
-			@JsonProperty("price_currency") @Nullable String priceCurrency,
-			@Nullable JsonNode canValidateAccount,
-			@Nullable JsonNode canResellItemAfterPurchase,
-			@Nullable String tarkovRegionPhrase,
-			@Nullable String tarkovGameVersionPhrase,
-			@Nullable String accountDomain,
-			@Nullable JsonNode canViewAccountLink,
-			@Nullable String emailLoginUrl,
-			@Nullable JsonNode canChangePassword,
-			@Nullable String itemOriginPhrase,
-			@JsonProperty("sold_items_category_count") Double soldItemsCategoryCount,
-			@JsonProperty("restore_items_category_count") Double restoreItemsCategoryCount,
-			@Nullable List<JsonNode> tags,
-			@JsonProperty("note_text") @Nullable JsonNode noteText,
-			@Nullable JsonNode hasPendingAutoBuy,
-			@Nullable String descriptionHtml,
-			@Nullable String descriptionEnHtml,
-			@Nullable String descriptionPlain,
-			@Nullable String descriptionEnPlain,
-			@Nullable CategoryEscapeFromTarkovResponseItemsSeller seller
+			@JsonProperty("item_id") double itemId,
+			@JsonProperty("item_state") String itemState,
+			@JsonProperty("category_id") double categoryId,
+			@JsonProperty("published_date") double publishedDate,
+			String title,
+			String description,
+			double price,
+			@JsonProperty("update_stat_date") double updateStatDate,
+			@JsonProperty("refreshed_date") double refreshedDate,
+			@JsonProperty("edit_date") double editDate,
+			@JsonProperty("view_count") double viewCount,
+			@JsonProperty("is_sticky") double isSticky,
+			@JsonProperty("item_origin") String itemOrigin,
+			@JsonProperty("extended_guarantee") double extendedGuarantee,
+			double nsb,
+			@JsonProperty("allow_ask_discount") double allowAskDiscount,
+			@JsonProperty("title_en") String titleEn,
+			@JsonProperty("description_en") String descriptionEn,
+			@JsonProperty("email_type") String emailType,
+			@JsonProperty("email_provider") String emailProvider,
+			@JsonProperty("item_domain") String itemDomain,
+			@JsonProperty("resale_item_origin") String resaleItemOrigin,
+			@JsonProperty("tarkov_item_id") double tarkovItemId,
+			@JsonProperty("tarkov_game_version") String tarkovGameVersion,
+			@JsonProperty("tarkov_register_date") double tarkovRegisterDate,
+			@JsonProperty("tarkov_level") double tarkovLevel,
+			@JsonProperty("tarkov_exp") double tarkovExp,
+			@JsonProperty("tarkov_last_activity") double tarkovLastActivity,
+			@JsonProperty("tarkov_side") String tarkovSide,
+			@JsonProperty("tarkov_rubles") double tarkovRubles,
+			@JsonProperty("tarkov_secured_container") String tarkovSecuredContainer,
+			@JsonProperty("tarkov_euros") double tarkovEuros,
+			@JsonProperty("tarkov_dollars") double tarkovDollars,
+			@JsonProperty("tarkov_kd") double tarkovKd,
+			@JsonProperty("tarkov_deaths") double tarkovDeaths,
+			@JsonProperty("tarkov_kills") double tarkovKills,
+			@JsonProperty("tarkov_sessions") double tarkovSessions,
+			@JsonProperty("tarkov_region") String tarkovRegion,
+			@JsonProperty("tarkov_total_in_game") double tarkovTotalInGame,
+			@JsonProperty("tarkov_mail_forwarding") double tarkovMailForwarding,
+			@JsonProperty("tarkov_username") String tarkovUsername,
+			@JsonProperty("tarkov_purchase_date") double tarkovPurchaseDate,
+			@JsonProperty("feedback_data") String feedbackData,
+			boolean isIgnored,
+			double priceWithSellerFee,
+			JsonNode guarantee,
+			boolean canViewLoginData,
+			boolean canUpdateItemStats,
+			boolean canReportItem,
+			boolean canViewEmailLoginData,
+			boolean showGetEmailCodeButton,
+			boolean canOpenItem,
+			boolean canCloseItem,
+			boolean canEditItem,
+			boolean canDeleteItem,
+			boolean canStickItem,
+			boolean canUnstickItem,
+			CategoryEscapeFromTarkovResponseItemsBumpSettings bumpSettings,
+			boolean canBumpItem,
+			boolean canBuyItem,
+			@JsonProperty("rub_price") double rubPrice,
+			@JsonProperty("price_currency") String priceCurrency,
+			boolean canValidateAccount,
+			boolean canResellItemAfterPurchase,
+			String tarkovRegionPhrase,
+			String tarkovGameVersionPhrase,
+			String accountDomain,
+			boolean canViewAccountLink,
+			String emailLoginUrl,
+			boolean canChangePassword,
+			String itemOriginPhrase,
+			@JsonProperty("sold_items_category_count") double soldItemsCategoryCount,
+			@JsonProperty("restore_items_category_count") double restoreItemsCategoryCount,
+			List<JsonNode> tags,
+			@JsonProperty("note_text") JsonNode noteText,
+			boolean hasPendingAutoBuy,
+			String descriptionHtml,
+			String descriptionEnHtml,
+			String descriptionPlain,
+			String descriptionEnPlain,
+			CategoryEscapeFromTarkovResponseItemsSeller seller
 		) {}
 
 		public record CategorySocialClubParams(
@@ -5994,128 +5994,128 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategorySocialClubResponse(
-			@Nullable List<CategorySocialClubResponseItems> items,
-			Double totalItems,
-			@Nullable JsonNode totalItemsPrice,
-			@Nullable JsonNode hasNextPage,
-			Double perPage,
-			Double page,
-			@Nullable JsonNode wasCached,
-			Double cacheTTL,
-			Double lastModified,
-			Double serverTime,
-			@Nullable String searchUrl,
-			@Nullable List<JsonNode> stickyItems,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<CategorySocialClubResponseItems> items,
+			double totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			double perPage,
+			double page,
+			boolean wasCached,
+			double cacheTTL,
+			double lastModified,
+			double serverTime,
+			String searchUrl,
+			List<JsonNode> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategorySocialClubResponseItemsSocialclubGames(
-			Double id,
-			@Nullable String name,
-			@Nullable String defaultPlatform,
-			@Nullable String platform,
-			@Nullable String lastSeen,
-			@JsonProperty("internal_game_id") Double internalGameId,
-			@JsonProperty("app_id") @Nullable String appId,
-			@Nullable String title,
-			@Nullable String abbr,
-			@JsonProperty("category_id") Double categoryId,
-			@Nullable String img,
-			@Nullable String url,
-			@Nullable JsonNode ru
+			double id,
+			String name,
+			String defaultPlatform,
+			String platform,
+			String lastSeen,
+			@JsonProperty("internal_game_id") double internalGameId,
+			@JsonProperty("app_id") String appId,
+			String title,
+			String abbr,
+			@JsonProperty("category_id") double categoryId,
+			String img,
+			String url,
+			JsonNode ru
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategorySocialClubResponseItemsBumpSettings(
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBumpItemGlobally,
-			@Nullable JsonNode shortErrorPhrase,
-			@Nullable JsonNode errorPhrase
+			boolean canBumpItem,
+			boolean canBumpItemGlobally,
+			JsonNode shortErrorPhrase,
+			JsonNode errorPhrase
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategorySocialClubResponseItemsSeller(
-			@JsonProperty("user_id") Double userId,
-			@JsonProperty("sold_items_count") Double soldItemsCount,
-			@JsonProperty("active_items_count") Double activeItemsCount,
-			@JsonProperty("restore_data") @Nullable String restoreData,
-			@Nullable String username,
-			@JsonProperty("avatar_date") Double avatarDate,
-			@JsonProperty("is_banned") Double isBanned,
-			@JsonProperty("display_style_group_id") Double displayStyleGroupId,
-			@JsonProperty("restore_percents") @Nullable JsonNode restorePercents
+			@JsonProperty("user_id") double userId,
+			@JsonProperty("sold_items_count") double soldItemsCount,
+			@JsonProperty("active_items_count") double activeItemsCount,
+			@JsonProperty("restore_data") String restoreData,
+			String username,
+			@JsonProperty("avatar_date") double avatarDate,
+			@JsonProperty("is_banned") double isBanned,
+			@JsonProperty("display_style_group_id") double displayStyleGroupId,
+			@JsonProperty("restore_percents") JsonNode restorePercents
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategorySocialClubResponseItems(
-			@JsonProperty("item_id") Double itemId,
-			@JsonProperty("item_state") @Nullable String itemState,
-			@JsonProperty("category_id") Double categoryId,
-			@JsonProperty("published_date") Double publishedDate,
-			@Nullable String title,
-			@Nullable String description,
-			Double price,
-			@JsonProperty("update_stat_date") Double updateStatDate,
-			@JsonProperty("refreshed_date") Double refreshedDate,
-			@JsonProperty("edit_date") Double editDate,
-			@JsonProperty("view_count") Double viewCount,
-			@JsonProperty("is_sticky") Double isSticky,
-			@JsonProperty("item_origin") @Nullable String itemOrigin,
-			@JsonProperty("extended_guarantee") Double extendedGuarantee,
-			Double nsb,
-			@JsonProperty("allow_ask_discount") Double allowAskDiscount,
-			@JsonProperty("title_en") @Nullable String titleEn,
-			@JsonProperty("description_en") @Nullable String descriptionEn,
-			@JsonProperty("email_type") @Nullable String emailType,
-			@JsonProperty("email_provider") @Nullable String emailProvider,
-			@JsonProperty("item_domain") @Nullable String itemDomain,
-			@JsonProperty("resale_item_origin") @Nullable String resaleItemOrigin,
-			@JsonProperty("socialclub_item_id") Double socialclubItemId,
-			@JsonProperty("socialclub_level") Double socialclubLevel,
-			@JsonProperty("socialclub_cash") Double socialclubCash,
-			@JsonProperty("socialclub_bank_cash") Double socialclubBankCash,
-			@JsonProperty("socialclub_games") @Nullable List<CategorySocialClubResponseItemsSocialclubGames> socialclubGames,
-			@JsonProperty("socialclub_last_activity") Double socialclubLastActivity,
-			@JsonProperty("socialclub_has_gtav") Double socialclubHasGtav,
-			@JsonProperty("socialclub_has_rdr2") Double socialclubHasRdr2,
-			@JsonProperty("feedback_data") @Nullable String feedbackData,
-			@Nullable JsonNode isIgnored,
-			Double priceWithSellerFee,
-			@Nullable JsonNode guarantee,
-			@Nullable JsonNode canViewLoginData,
-			@Nullable JsonNode canUpdateItemStats,
-			@Nullable JsonNode canReportItem,
-			@Nullable JsonNode canViewEmailLoginData,
-			@Nullable JsonNode showGetEmailCodeButton,
-			@Nullable JsonNode canOpenItem,
-			@Nullable JsonNode canCloseItem,
-			@Nullable JsonNode canEditItem,
-			@Nullable JsonNode canDeleteItem,
-			@Nullable JsonNode canStickItem,
-			@Nullable JsonNode canUnstickItem,
-			@Nullable CategorySocialClubResponseItemsBumpSettings bumpSettings,
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBuyItem,
-			@JsonProperty("rub_price") Double rubPrice,
-			@JsonProperty("price_currency") @Nullable String priceCurrency,
-			@Nullable JsonNode canValidateAccount,
-			@Nullable JsonNode canResellItemAfterPurchase,
-			@Nullable JsonNode isSmallExf,
-			@JsonProperty("account_last_activity") Double accountLastActivity,
-			@Nullable JsonNode canViewAccountLink,
-			@Nullable List<JsonNode> accountLinks,
-			@Nullable String emailLoginUrl,
-			@Nullable JsonNode canChangePassword,
-			@Nullable String itemOriginPhrase,
-			@Nullable List<JsonNode> tags,
-			@JsonProperty("note_text") @Nullable JsonNode noteText,
-			@Nullable JsonNode hasPendingAutoBuy,
-			@Nullable String descriptionHtml,
-			@Nullable String descriptionEnHtml,
-			@Nullable String descriptionPlain,
-			@Nullable String descriptionEnPlain,
-			@Nullable CategorySocialClubResponseItemsSeller seller
+			@JsonProperty("item_id") double itemId,
+			@JsonProperty("item_state") String itemState,
+			@JsonProperty("category_id") double categoryId,
+			@JsonProperty("published_date") double publishedDate,
+			String title,
+			String description,
+			double price,
+			@JsonProperty("update_stat_date") double updateStatDate,
+			@JsonProperty("refreshed_date") double refreshedDate,
+			@JsonProperty("edit_date") double editDate,
+			@JsonProperty("view_count") double viewCount,
+			@JsonProperty("is_sticky") double isSticky,
+			@JsonProperty("item_origin") String itemOrigin,
+			@JsonProperty("extended_guarantee") double extendedGuarantee,
+			double nsb,
+			@JsonProperty("allow_ask_discount") double allowAskDiscount,
+			@JsonProperty("title_en") String titleEn,
+			@JsonProperty("description_en") String descriptionEn,
+			@JsonProperty("email_type") String emailType,
+			@JsonProperty("email_provider") String emailProvider,
+			@JsonProperty("item_domain") String itemDomain,
+			@JsonProperty("resale_item_origin") String resaleItemOrigin,
+			@JsonProperty("socialclub_item_id") double socialclubItemId,
+			@JsonProperty("socialclub_level") double socialclubLevel,
+			@JsonProperty("socialclub_cash") double socialclubCash,
+			@JsonProperty("socialclub_bank_cash") double socialclubBankCash,
+			@JsonProperty("socialclub_games") List<CategorySocialClubResponseItemsSocialclubGames> socialclubGames,
+			@JsonProperty("socialclub_last_activity") double socialclubLastActivity,
+			@JsonProperty("socialclub_has_gtav") double socialclubHasGtav,
+			@JsonProperty("socialclub_has_rdr2") double socialclubHasRdr2,
+			@JsonProperty("feedback_data") String feedbackData,
+			boolean isIgnored,
+			double priceWithSellerFee,
+			JsonNode guarantee,
+			boolean canViewLoginData,
+			boolean canUpdateItemStats,
+			boolean canReportItem,
+			boolean canViewEmailLoginData,
+			boolean showGetEmailCodeButton,
+			boolean canOpenItem,
+			boolean canCloseItem,
+			boolean canEditItem,
+			boolean canDeleteItem,
+			boolean canStickItem,
+			boolean canUnstickItem,
+			CategorySocialClubResponseItemsBumpSettings bumpSettings,
+			boolean canBumpItem,
+			boolean canBuyItem,
+			@JsonProperty("rub_price") double rubPrice,
+			@JsonProperty("price_currency") String priceCurrency,
+			boolean canValidateAccount,
+			boolean canResellItemAfterPurchase,
+			boolean isSmallExf,
+			@JsonProperty("account_last_activity") double accountLastActivity,
+			boolean canViewAccountLink,
+			List<JsonNode> accountLinks,
+			String emailLoginUrl,
+			boolean canChangePassword,
+			String itemOriginPhrase,
+			List<JsonNode> tags,
+			@JsonProperty("note_text") JsonNode noteText,
+			boolean hasPendingAutoBuy,
+			String descriptionHtml,
+			String descriptionEnHtml,
+			String descriptionPlain,
+			String descriptionEnPlain,
+			CategorySocialClubResponseItemsSeller seller
 		) {}
 
 		public record CategoryUplayParams(
@@ -6229,151 +6229,151 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryUplayResponse(
-			@Nullable List<CategoryUplayResponseItems> items,
-			Double totalItems,
-			@Nullable JsonNode totalItemsPrice,
-			@Nullable JsonNode hasNextPage,
-			Double perPage,
-			Double page,
-			@Nullable JsonNode wasCached,
-			Double cacheTTL,
-			Double lastModified,
-			Double serverTime,
-			@Nullable String searchUrl,
-			@Nullable List<JsonNode> stickyItems,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<CategoryUplayResponseItems> items,
+			double totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			double perPage,
+			double page,
+			boolean wasCached,
+			double cacheTTL,
+			double lastModified,
+			double serverTime,
+			String searchUrl,
+			List<JsonNode> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryUplayResponseItemsUplayGamesFfffffffFfffFfffFfffFfffffffffff(
-			@Nullable String title,
-			@Nullable String img,
-			Double pvpTimePlayed,
-			Double pveTimePlayed,
-			@Nullable String abbr,
-			@Nullable String gameId
+			String title,
+			String img,
+			double pvpTimePlayed,
+			double pveTimePlayed,
+			String abbr,
+			String gameId
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryUplayResponseItemsUplayGames(
-			@JsonProperty("ffffffff-ffff-ffff-ffff-ffffffffffff") @Nullable CategoryUplayResponseItemsUplayGamesFfffffffFfffFfffFfffFfffffffffff ffffffffFfffFfffFfffFfffffffffff
+			@JsonProperty("ffffffff-ffff-ffff-ffff-ffffffffffff") CategoryUplayResponseItemsUplayGamesFfffffffFfffFfffFfffFfffffffffff ffffffffFfffFfffFfffFfffffffffff
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryUplayResponseItemsBumpSettings(
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBumpItemGlobally,
-			@Nullable JsonNode shortErrorPhrase,
-			@Nullable JsonNode errorPhrase
+			boolean canBumpItem,
+			boolean canBumpItemGlobally,
+			JsonNode shortErrorPhrase,
+			JsonNode errorPhrase
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryUplayResponseItemsR6Operators(
-			@Nullable String img,
-			@Nullable String name,
-			@Nullable String url
+			String img,
+			String name,
+			String url
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryUplayResponseItemsSeller(
-			@JsonProperty("user_id") Double userId,
-			@JsonProperty("sold_items_count") Double soldItemsCount,
-			@JsonProperty("active_items_count") Double activeItemsCount,
-			@JsonProperty("restore_data") @Nullable String restoreData,
-			@Nullable String username,
-			@JsonProperty("avatar_date") Double avatarDate,
-			@JsonProperty("is_banned") Double isBanned,
-			@JsonProperty("display_style_group_id") Double displayStyleGroupId,
-			@JsonProperty("restore_percents") Double restorePercents
+			@JsonProperty("user_id") double userId,
+			@JsonProperty("sold_items_count") double soldItemsCount,
+			@JsonProperty("active_items_count") double activeItemsCount,
+			@JsonProperty("restore_data") String restoreData,
+			String username,
+			@JsonProperty("avatar_date") double avatarDate,
+			@JsonProperty("is_banned") double isBanned,
+			@JsonProperty("display_style_group_id") double displayStyleGroupId,
+			@JsonProperty("restore_percents") double restorePercents
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryUplayResponseItems(
-			@JsonProperty("item_id") Double itemId,
-			@JsonProperty("item_state") @Nullable String itemState,
-			@JsonProperty("category_id") Double categoryId,
-			@JsonProperty("published_date") Double publishedDate,
-			@Nullable String title,
-			@Nullable String description,
-			Double price,
-			@JsonProperty("update_stat_date") Double updateStatDate,
-			@JsonProperty("refreshed_date") Double refreshedDate,
-			@JsonProperty("edit_date") Double editDate,
-			@JsonProperty("view_count") Double viewCount,
-			@JsonProperty("is_sticky") Double isSticky,
-			@JsonProperty("item_origin") @Nullable String itemOrigin,
-			@JsonProperty("extended_guarantee") Double extendedGuarantee,
-			Double nsb,
-			@JsonProperty("allow_ask_discount") Double allowAskDiscount,
-			@JsonProperty("title_en") @Nullable String titleEn,
-			@JsonProperty("description_en") @Nullable String descriptionEn,
-			@JsonProperty("email_type") @Nullable String emailType,
-			@JsonProperty("email_provider") @Nullable String emailProvider,
-			@JsonProperty("item_domain") @Nullable String itemDomain,
-			@JsonProperty("resale_item_origin") @Nullable String resaleItemOrigin,
-			@JsonProperty("uplay_item_id") Double uplayItemId,
-			@JsonProperty("uplay_last_activity") Double uplayLastActivity,
-			@JsonProperty("uplay_country") @Nullable String uplayCountry,
-			@JsonProperty("uplay_created_date") Double uplayCreatedDate,
-			@JsonProperty("uplay_games") @Nullable CategoryUplayResponseItemsUplayGames uplayGames,
-			@JsonProperty("uplay_game_count") Double uplayGameCount,
-			@JsonProperty("uplay_r6_level") Double uplayR6Level,
-			@JsonProperty("uplay_r6_ban") Double uplayR6Ban,
-			@JsonProperty("uplay_r6_operators") @Nullable String uplayR6Operators,
-			@JsonProperty("uplay_r6_operators_count") Double uplayR6OperatorsCount,
-			@JsonProperty("uplay_r6_skins") @Nullable String uplayR6Skins,
-			@JsonProperty("uplay_r6_skins_count") Double uplayR6SkinsCount,
-			@JsonProperty("uplay_subscription") @Nullable String uplaySubscription,
-			@JsonProperty("uplay_subscription_end_date") Double uplaySubscriptionEndDate,
-			@JsonProperty("uplay_xbox_connected") Double uplayXboxConnected,
-			@JsonProperty("uplay_psn_connected") Double uplayPsnConnected,
-			@JsonProperty("uplay_steam_connected") Double uplaySteamConnected,
-			@JsonProperty("uplay_r6_rank") Double uplayR6Rank,
-			@JsonProperty("feedback_data") @Nullable String feedbackData,
-			@Nullable JsonNode isIgnored,
-			Double priceWithSellerFee,
-			@Nullable JsonNode guarantee,
-			@Nullable JsonNode canViewLoginData,
-			@Nullable JsonNode canUpdateItemStats,
-			@Nullable JsonNode canReportItem,
-			@Nullable JsonNode canViewEmailLoginData,
-			@Nullable JsonNode showGetEmailCodeButton,
-			@Nullable JsonNode canOpenItem,
-			@Nullable JsonNode canCloseItem,
-			@Nullable JsonNode canEditItem,
-			@Nullable JsonNode canDeleteItem,
-			@Nullable JsonNode canStickItem,
-			@Nullable JsonNode canUnstickItem,
-			@Nullable CategoryUplayResponseItemsBumpSettings bumpSettings,
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBuyItem,
-			@JsonProperty("rub_price") Double rubPrice,
-			@JsonProperty("price_currency") @Nullable String priceCurrency,
-			@Nullable JsonNode canValidateAccount,
-			@Nullable JsonNode canResellItemAfterPurchase,
-			@Nullable String uplayLinkedAccounts,
-			@JsonProperty("uplay_r6_steam_warning") @Nullable JsonNode uplayR6SteamWarning,
-			@JsonProperty("uplay_r6_external_warning") @Nullable JsonNode uplayR6ExternalWarning,
-			@JsonProperty("uplay_r6") @Nullable JsonNode uplayR6,
-			@JsonProperty("uplay_r6_ban_active") @Nullable JsonNode uplayR6BanActive,
-			@Nullable JsonNode isSmallExf,
-			@JsonProperty("account_last_activity") Double accountLastActivity,
-			@Nullable List<JsonNode> r6Skins,
-			@Nullable List<CategoryUplayResponseItemsR6Operators> r6Operators,
-			@Nullable JsonNode canViewAccountLink,
-			@Nullable String emailLoginUrl,
-			@Nullable JsonNode canChangePassword,
-			@Nullable String itemOriginPhrase,
-			@JsonProperty("sold_items_category_count") Double soldItemsCategoryCount,
-			@JsonProperty("restore_items_category_count") Double restoreItemsCategoryCount,
-			@Nullable List<JsonNode> tags,
-			@JsonProperty("note_text") @Nullable JsonNode noteText,
-			@Nullable JsonNode hasPendingAutoBuy,
-			@Nullable String descriptionHtml,
-			@Nullable String descriptionEnHtml,
-			@Nullable String descriptionPlain,
-			@Nullable String descriptionEnPlain,
-			@Nullable CategoryUplayResponseItemsSeller seller
+			@JsonProperty("item_id") double itemId,
+			@JsonProperty("item_state") String itemState,
+			@JsonProperty("category_id") double categoryId,
+			@JsonProperty("published_date") double publishedDate,
+			String title,
+			String description,
+			double price,
+			@JsonProperty("update_stat_date") double updateStatDate,
+			@JsonProperty("refreshed_date") double refreshedDate,
+			@JsonProperty("edit_date") double editDate,
+			@JsonProperty("view_count") double viewCount,
+			@JsonProperty("is_sticky") double isSticky,
+			@JsonProperty("item_origin") String itemOrigin,
+			@JsonProperty("extended_guarantee") double extendedGuarantee,
+			double nsb,
+			@JsonProperty("allow_ask_discount") double allowAskDiscount,
+			@JsonProperty("title_en") String titleEn,
+			@JsonProperty("description_en") String descriptionEn,
+			@JsonProperty("email_type") String emailType,
+			@JsonProperty("email_provider") String emailProvider,
+			@JsonProperty("item_domain") String itemDomain,
+			@JsonProperty("resale_item_origin") String resaleItemOrigin,
+			@JsonProperty("uplay_item_id") double uplayItemId,
+			@JsonProperty("uplay_last_activity") double uplayLastActivity,
+			@JsonProperty("uplay_country") String uplayCountry,
+			@JsonProperty("uplay_created_date") double uplayCreatedDate,
+			@JsonProperty("uplay_games") CategoryUplayResponseItemsUplayGames uplayGames,
+			@JsonProperty("uplay_game_count") double uplayGameCount,
+			@JsonProperty("uplay_r6_level") double uplayR6Level,
+			@JsonProperty("uplay_r6_ban") double uplayR6Ban,
+			@JsonProperty("uplay_r6_operators") String uplayR6Operators,
+			@JsonProperty("uplay_r6_operators_count") double uplayR6OperatorsCount,
+			@JsonProperty("uplay_r6_skins") String uplayR6Skins,
+			@JsonProperty("uplay_r6_skins_count") double uplayR6SkinsCount,
+			@JsonProperty("uplay_subscription") String uplaySubscription,
+			@JsonProperty("uplay_subscription_end_date") double uplaySubscriptionEndDate,
+			@JsonProperty("uplay_xbox_connected") double uplayXboxConnected,
+			@JsonProperty("uplay_psn_connected") double uplayPsnConnected,
+			@JsonProperty("uplay_steam_connected") double uplaySteamConnected,
+			@JsonProperty("uplay_r6_rank") double uplayR6Rank,
+			@JsonProperty("feedback_data") String feedbackData,
+			boolean isIgnored,
+			double priceWithSellerFee,
+			JsonNode guarantee,
+			boolean canViewLoginData,
+			boolean canUpdateItemStats,
+			boolean canReportItem,
+			boolean canViewEmailLoginData,
+			boolean showGetEmailCodeButton,
+			boolean canOpenItem,
+			boolean canCloseItem,
+			boolean canEditItem,
+			boolean canDeleteItem,
+			boolean canStickItem,
+			boolean canUnstickItem,
+			CategoryUplayResponseItemsBumpSettings bumpSettings,
+			boolean canBumpItem,
+			boolean canBuyItem,
+			@JsonProperty("rub_price") double rubPrice,
+			@JsonProperty("price_currency") String priceCurrency,
+			boolean canValidateAccount,
+			boolean canResellItemAfterPurchase,
+			String uplayLinkedAccounts,
+			@JsonProperty("uplay_r6_steam_warning") boolean uplayR6SteamWarning,
+			@JsonProperty("uplay_r6_external_warning") boolean uplayR6ExternalWarning,
+			@JsonProperty("uplay_r6") boolean uplayR6,
+			@JsonProperty("uplay_r6_ban_active") boolean uplayR6BanActive,
+			boolean isSmallExf,
+			@JsonProperty("account_last_activity") double accountLastActivity,
+			List<JsonNode> r6Skins,
+			List<CategoryUplayResponseItemsR6Operators> r6Operators,
+			boolean canViewAccountLink,
+			String emailLoginUrl,
+			boolean canChangePassword,
+			String itemOriginPhrase,
+			@JsonProperty("sold_items_category_count") double soldItemsCategoryCount,
+			@JsonProperty("restore_items_category_count") double restoreItemsCategoryCount,
+			List<JsonNode> tags,
+			@JsonProperty("note_text") JsonNode noteText,
+			boolean hasPendingAutoBuy,
+			String descriptionHtml,
+			String descriptionEnHtml,
+			String descriptionPlain,
+			String descriptionEnPlain,
+			CategoryUplayResponseItemsSeller seller
 		) {}
 
 		public record CategoryDiscordParams(
@@ -6507,116 +6507,116 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryDiscordResponse(
-			@Nullable List<CategoryDiscordResponseItems> items,
-			Double totalItems,
-			@Nullable JsonNode totalItemsPrice,
-			@Nullable JsonNode hasNextPage,
-			Double perPage,
-			Double page,
-			@Nullable JsonNode wasCached,
-			Double cacheTTL,
-			Double lastModified,
-			Double serverTime,
-			@Nullable String searchUrl,
-			@Nullable List<JsonNode> stickyItems,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<CategoryDiscordResponseItems> items,
+			double totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			double perPage,
+			double page,
+			boolean wasCached,
+			double cacheTTL,
+			double lastModified,
+			double serverTime,
+			String searchUrl,
+			List<JsonNode> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryDiscordResponseItemsBumpSettings(
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBumpItemGlobally,
-			@Nullable JsonNode shortErrorPhrase,
-			@Nullable JsonNode errorPhrase
+			boolean canBumpItem,
+			boolean canBumpItemGlobally,
+			JsonNode shortErrorPhrase,
+			JsonNode errorPhrase
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryDiscordResponseItemsSeller(
-			@JsonProperty("user_id") Double userId,
-			@JsonProperty("sold_items_count") Double soldItemsCount,
-			@JsonProperty("active_items_count") Double activeItemsCount,
-			@JsonProperty("restore_data") @Nullable String restoreData,
-			@Nullable String username,
-			@JsonProperty("avatar_date") Double avatarDate,
-			@JsonProperty("is_banned") Double isBanned,
-			@JsonProperty("display_style_group_id") Double displayStyleGroupId,
-			@JsonProperty("restore_percents") @Nullable JsonNode restorePercents
+			@JsonProperty("user_id") double userId,
+			@JsonProperty("sold_items_count") double soldItemsCount,
+			@JsonProperty("active_items_count") double activeItemsCount,
+			@JsonProperty("restore_data") String restoreData,
+			String username,
+			@JsonProperty("avatar_date") double avatarDate,
+			@JsonProperty("is_banned") double isBanned,
+			@JsonProperty("display_style_group_id") double displayStyleGroupId,
+			@JsonProperty("restore_percents") JsonNode restorePercents
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryDiscordResponseItems(
-			@JsonProperty("item_id") Double itemId,
-			@JsonProperty("item_state") @Nullable String itemState,
-			@JsonProperty("category_id") Double categoryId,
-			@JsonProperty("published_date") Double publishedDate,
-			@Nullable String title,
-			@Nullable String description,
-			Double price,
-			@JsonProperty("update_stat_date") Double updateStatDate,
-			@JsonProperty("refreshed_date") Double refreshedDate,
-			@JsonProperty("edit_date") Double editDate,
-			@JsonProperty("view_count") Double viewCount,
-			@JsonProperty("is_sticky") Double isSticky,
-			@JsonProperty("item_origin") @Nullable String itemOrigin,
-			@JsonProperty("extended_guarantee") Double extendedGuarantee,
-			Double nsb,
-			@JsonProperty("allow_ask_discount") Double allowAskDiscount,
-			@JsonProperty("title_en") @Nullable String titleEn,
-			@JsonProperty("description_en") @Nullable String descriptionEn,
-			@JsonProperty("email_type") @Nullable String emailType,
-			@JsonProperty("email_provider") @Nullable String emailProvider,
-			@JsonProperty("item_domain") @Nullable String itemDomain,
-			@JsonProperty("resale_item_origin") @Nullable String resaleItemOrigin,
-			@JsonProperty("discord_item_id") Double discordItemId,
-			@JsonProperty("discord_chat_count") Double discordChatCount,
-			@JsonProperty("discord_verified") Double discordVerified,
-			@JsonProperty("discord_condition") @Nullable String discordCondition,
-			@JsonProperty("discord_gifts") Double discordGifts,
-			@JsonProperty("discord_billing") Double discordBilling,
-			@JsonProperty("discord_register_date") Double discordRegisterDate,
-			@JsonProperty("discord_locale") @Nullable String discordLocale,
-			@JsonProperty("discord_nitro_end_date") Double discordNitroEndDate,
-			@JsonProperty("discord_available_boosts") Double discordAvailableBoosts,
-			@JsonProperty("discord_nitro_type") Double discordNitroType,
-			@JsonProperty("discord_admin_members_count") Double discordAdminMembersCount,
-			@JsonProperty("discord_admin_servers_count") Double discordAdminServersCount,
-			@JsonProperty("discord_admin_servers") @Nullable String discordAdminServers,
-			@JsonProperty("feedback_data") @Nullable String feedbackData,
-			@Nullable JsonNode isIgnored,
-			Double priceWithSellerFee,
-			@Nullable JsonNode guarantee,
-			@Nullable JsonNode canViewLoginData,
-			@Nullable JsonNode canUpdateItemStats,
-			@Nullable JsonNode canReportItem,
-			@Nullable JsonNode canViewEmailLoginData,
-			@Nullable JsonNode showGetEmailCodeButton,
-			@Nullable JsonNode canOpenItem,
-			@Nullable JsonNode canCloseItem,
-			@Nullable JsonNode canEditItem,
-			@Nullable JsonNode canDeleteItem,
-			@Nullable JsonNode canStickItem,
-			@Nullable JsonNode canUnstickItem,
-			@Nullable CategoryDiscordResponseItemsBumpSettings bumpSettings,
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBuyItem,
-			@JsonProperty("rub_price") Double rubPrice,
-			@JsonProperty("price_currency") @Nullable String priceCurrency,
-			@Nullable JsonNode canValidateAccount,
-			@Nullable JsonNode canResellItemAfterPurchase,
-			@Nullable String discordAccountConditionLabel,
-			@Nullable String discordLocaleTitle,
-			@Nullable JsonNode canViewAccountLink,
-			@Nullable String emailLoginUrl,
-			@Nullable JsonNode canChangePassword,
-			@Nullable String itemOriginPhrase,
-			@Nullable List<JsonNode> tags,
-			@JsonProperty("note_text") @Nullable JsonNode noteText,
-			@Nullable JsonNode hasPendingAutoBuy,
-			@Nullable String descriptionHtml,
-			@Nullable String descriptionEnHtml,
-			@Nullable String descriptionPlain,
-			@Nullable String descriptionEnPlain,
-			@Nullable CategoryDiscordResponseItemsSeller seller
+			@JsonProperty("item_id") double itemId,
+			@JsonProperty("item_state") String itemState,
+			@JsonProperty("category_id") double categoryId,
+			@JsonProperty("published_date") double publishedDate,
+			String title,
+			String description,
+			double price,
+			@JsonProperty("update_stat_date") double updateStatDate,
+			@JsonProperty("refreshed_date") double refreshedDate,
+			@JsonProperty("edit_date") double editDate,
+			@JsonProperty("view_count") double viewCount,
+			@JsonProperty("is_sticky") double isSticky,
+			@JsonProperty("item_origin") String itemOrigin,
+			@JsonProperty("extended_guarantee") double extendedGuarantee,
+			double nsb,
+			@JsonProperty("allow_ask_discount") double allowAskDiscount,
+			@JsonProperty("title_en") String titleEn,
+			@JsonProperty("description_en") String descriptionEn,
+			@JsonProperty("email_type") String emailType,
+			@JsonProperty("email_provider") String emailProvider,
+			@JsonProperty("item_domain") String itemDomain,
+			@JsonProperty("resale_item_origin") String resaleItemOrigin,
+			@JsonProperty("discord_item_id") double discordItemId,
+			@JsonProperty("discord_chat_count") double discordChatCount,
+			@JsonProperty("discord_verified") double discordVerified,
+			@JsonProperty("discord_condition") String discordCondition,
+			@JsonProperty("discord_gifts") double discordGifts,
+			@JsonProperty("discord_billing") double discordBilling,
+			@JsonProperty("discord_register_date") double discordRegisterDate,
+			@JsonProperty("discord_locale") String discordLocale,
+			@JsonProperty("discord_nitro_end_date") double discordNitroEndDate,
+			@JsonProperty("discord_available_boosts") double discordAvailableBoosts,
+			@JsonProperty("discord_nitro_type") double discordNitroType,
+			@JsonProperty("discord_admin_members_count") double discordAdminMembersCount,
+			@JsonProperty("discord_admin_servers_count") double discordAdminServersCount,
+			@JsonProperty("discord_admin_servers") String discordAdminServers,
+			@JsonProperty("feedback_data") String feedbackData,
+			boolean isIgnored,
+			double priceWithSellerFee,
+			JsonNode guarantee,
+			boolean canViewLoginData,
+			boolean canUpdateItemStats,
+			boolean canReportItem,
+			boolean canViewEmailLoginData,
+			boolean showGetEmailCodeButton,
+			boolean canOpenItem,
+			boolean canCloseItem,
+			boolean canEditItem,
+			boolean canDeleteItem,
+			boolean canStickItem,
+			boolean canUnstickItem,
+			CategoryDiscordResponseItemsBumpSettings bumpSettings,
+			boolean canBumpItem,
+			boolean canBuyItem,
+			@JsonProperty("rub_price") double rubPrice,
+			@JsonProperty("price_currency") String priceCurrency,
+			boolean canValidateAccount,
+			boolean canResellItemAfterPurchase,
+			String discordAccountConditionLabel,
+			String discordLocaleTitle,
+			boolean canViewAccountLink,
+			String emailLoginUrl,
+			boolean canChangePassword,
+			String itemOriginPhrase,
+			List<JsonNode> tags,
+			@JsonProperty("note_text") JsonNode noteText,
+			boolean hasPendingAutoBuy,
+			String descriptionHtml,
+			String descriptionEnHtml,
+			String descriptionPlain,
+			String descriptionEnPlain,
+			CategoryDiscordResponseItemsSeller seller
 		) {}
 
 		public record CategoryTikTokParams(
@@ -6702,129 +6702,129 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryTikTokResponse(
-			@Nullable List<CategoryTikTokResponseItems> items,
-			Double totalItems,
-			@Nullable JsonNode totalItemsPrice,
-			@Nullable JsonNode hasNextPage,
-			Double perPage,
-			Double page,
-			@Nullable JsonNode wasCached,
-			Double cacheTTL,
-			Double lastModified,
-			Double serverTime,
-			@Nullable String searchUrl,
-			@Nullable List<JsonNode> stickyItems,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<CategoryTikTokResponseItems> items,
+			double totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			double perPage,
+			double page,
+			boolean wasCached,
+			double cacheTTL,
+			double lastModified,
+			double serverTime,
+			String searchUrl,
+			List<JsonNode> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryTikTokResponseItemsBumpSettings(
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBumpItemGlobally,
-			@Nullable JsonNode shortErrorPhrase,
-			@Nullable JsonNode errorPhrase
+			boolean canBumpItem,
+			boolean canBumpItemGlobally,
+			JsonNode shortErrorPhrase,
+			JsonNode errorPhrase
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryTikTokResponseItemsAccountLinks(
-			@Nullable String link,
-			@Nullable String text,
-			@Nullable String iconClass
+			String link,
+			String text,
+			String iconClass
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryTikTokResponseItemsSeller(
-			@JsonProperty("user_id") Double userId,
-			@JsonProperty("sold_items_count") Double soldItemsCount,
-			@JsonProperty("active_items_count") Double activeItemsCount,
-			@JsonProperty("restore_data") @Nullable String restoreData,
-			@Nullable String username,
-			@JsonProperty("avatar_date") Double avatarDate,
-			@JsonProperty("is_banned") Double isBanned,
-			@JsonProperty("display_style_group_id") Double displayStyleGroupId,
-			@JsonProperty("restore_percents") Double restorePercents
+			@JsonProperty("user_id") double userId,
+			@JsonProperty("sold_items_count") double soldItemsCount,
+			@JsonProperty("active_items_count") double activeItemsCount,
+			@JsonProperty("restore_data") String restoreData,
+			String username,
+			@JsonProperty("avatar_date") double avatarDate,
+			@JsonProperty("is_banned") double isBanned,
+			@JsonProperty("display_style_group_id") double displayStyleGroupId,
+			@JsonProperty("restore_percents") double restorePercents
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryTikTokResponseItems(
-			@JsonProperty("item_id") Double itemId,
-			@JsonProperty("item_state") @Nullable String itemState,
-			@JsonProperty("category_id") Double categoryId,
-			@JsonProperty("published_date") Double publishedDate,
-			@Nullable String title,
-			@Nullable String description,
-			Double price,
-			@JsonProperty("update_stat_date") Double updateStatDate,
-			@JsonProperty("refreshed_date") Double refreshedDate,
-			@JsonProperty("edit_date") Double editDate,
-			@JsonProperty("view_count") Double viewCount,
-			@JsonProperty("is_sticky") Double isSticky,
-			@JsonProperty("item_origin") @Nullable String itemOrigin,
-			@JsonProperty("extended_guarantee") Double extendedGuarantee,
-			Double nsb,
-			@JsonProperty("allow_ask_discount") Double allowAskDiscount,
-			@JsonProperty("title_en") @Nullable String titleEn,
-			@JsonProperty("description_en") @Nullable String descriptionEn,
-			@JsonProperty("email_type") @Nullable String emailType,
-			@JsonProperty("email_provider") @Nullable JsonNode emailProvider,
-			@JsonProperty("item_domain") @Nullable String itemDomain,
-			@JsonProperty("resale_item_origin") @Nullable String resaleItemOrigin,
-			@JsonProperty("tt_item_id") Double ttItemId,
-			@JsonProperty("tt_id") Double ttId,
-			@JsonProperty("tt_permalink") @Nullable String ttPermalink,
-			@JsonProperty("tt_uniqueId") @Nullable String ttUniqueId,
-			@JsonProperty("tt_verified") Double ttVerified,
-			@JsonProperty("tt_createTime") Double ttCreateTime,
-			@JsonProperty("tt_privateAccount") Double ttPrivateAccount,
-			@JsonProperty("tt_followers") Double ttFollowers,
-			@JsonProperty("tt_following") Double ttFollowing,
-			@JsonProperty("tt_likes") Double ttLikes,
-			@JsonProperty("tt_videos") Double ttVideos,
-			@JsonProperty("tt_screen_name") @Nullable String ttScreenName,
-			@JsonProperty("tt_hasEmail") Double ttHasEmail,
-			@JsonProperty("tt_hasMobile") Double ttHasMobile,
-			@JsonProperty("tt_top_country") @Nullable String ttTopCountry,
-			@JsonProperty("tt_countries") @Nullable String ttCountries,
-			@JsonProperty("tt_coins") Double ttCoins,
-			@JsonProperty("tt_hasLivePermission") Double ttHasLivePermission,
-			@JsonProperty("tt_cookie_login") Double ttCookieLogin,
-			@JsonProperty("feedback_data") @Nullable String feedbackData,
-			@Nullable JsonNode isIgnored,
-			Double priceWithSellerFee,
-			@Nullable JsonNode guarantee,
-			@Nullable JsonNode canViewLoginData,
-			@Nullable JsonNode canUpdateItemStats,
-			@Nullable JsonNode canReportItem,
-			@Nullable JsonNode canViewEmailLoginData,
-			@Nullable JsonNode showGetEmailCodeButton,
-			@Nullable JsonNode canOpenItem,
-			@Nullable JsonNode canCloseItem,
-			@Nullable JsonNode canEditItem,
-			@Nullable JsonNode canDeleteItem,
-			@Nullable JsonNode canStickItem,
-			@Nullable JsonNode canUnstickItem,
-			@Nullable CategoryTikTokResponseItemsBumpSettings bumpSettings,
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBuyItem,
-			@JsonProperty("rub_price") Double rubPrice,
-			@JsonProperty("price_currency") @Nullable String priceCurrency,
-			@Nullable JsonNode canValidateAccount,
-			@Nullable JsonNode canResellItemAfterPurchase,
-			@Nullable JsonNode canViewAccountLink,
-			@Nullable List<CategoryTikTokResponseItemsAccountLinks> accountLinks,
-			@Nullable String accountLink,
-			@Nullable JsonNode canChangePassword,
-			@Nullable String itemOriginPhrase,
-			@JsonProperty("sold_items_category_count") Double soldItemsCategoryCount,
-			@JsonProperty("restore_items_category_count") Double restoreItemsCategoryCount,
-			@Nullable List<JsonNode> tags,
-			@JsonProperty("note_text") @Nullable JsonNode noteText,
-			@Nullable JsonNode hasPendingAutoBuy,
-			@Nullable String descriptionHtml,
-			@Nullable String descriptionEnHtml,
-			@Nullable String descriptionPlain,
-			@Nullable String descriptionEnPlain,
-			@Nullable CategoryTikTokResponseItemsSeller seller
+			@JsonProperty("item_id") double itemId,
+			@JsonProperty("item_state") String itemState,
+			@JsonProperty("category_id") double categoryId,
+			@JsonProperty("published_date") double publishedDate,
+			String title,
+			String description,
+			double price,
+			@JsonProperty("update_stat_date") double updateStatDate,
+			@JsonProperty("refreshed_date") double refreshedDate,
+			@JsonProperty("edit_date") double editDate,
+			@JsonProperty("view_count") double viewCount,
+			@JsonProperty("is_sticky") double isSticky,
+			@JsonProperty("item_origin") String itemOrigin,
+			@JsonProperty("extended_guarantee") double extendedGuarantee,
+			double nsb,
+			@JsonProperty("allow_ask_discount") double allowAskDiscount,
+			@JsonProperty("title_en") String titleEn,
+			@JsonProperty("description_en") String descriptionEn,
+			@JsonProperty("email_type") String emailType,
+			@JsonProperty("email_provider") JsonNode emailProvider,
+			@JsonProperty("item_domain") String itemDomain,
+			@JsonProperty("resale_item_origin") String resaleItemOrigin,
+			@JsonProperty("tt_item_id") double ttItemId,
+			@JsonProperty("tt_id") double ttId,
+			@JsonProperty("tt_permalink") String ttPermalink,
+			@JsonProperty("tt_uniqueId") String ttUniqueId,
+			@JsonProperty("tt_verified") double ttVerified,
+			@JsonProperty("tt_createTime") double ttCreateTime,
+			@JsonProperty("tt_privateAccount") double ttPrivateAccount,
+			@JsonProperty("tt_followers") double ttFollowers,
+			@JsonProperty("tt_following") double ttFollowing,
+			@JsonProperty("tt_likes") double ttLikes,
+			@JsonProperty("tt_videos") double ttVideos,
+			@JsonProperty("tt_screen_name") String ttScreenName,
+			@JsonProperty("tt_hasEmail") double ttHasEmail,
+			@JsonProperty("tt_hasMobile") double ttHasMobile,
+			@JsonProperty("tt_top_country") String ttTopCountry,
+			@JsonProperty("tt_countries") String ttCountries,
+			@JsonProperty("tt_coins") double ttCoins,
+			@JsonProperty("tt_hasLivePermission") double ttHasLivePermission,
+			@JsonProperty("tt_cookie_login") double ttCookieLogin,
+			@JsonProperty("feedback_data") String feedbackData,
+			boolean isIgnored,
+			double priceWithSellerFee,
+			JsonNode guarantee,
+			boolean canViewLoginData,
+			boolean canUpdateItemStats,
+			boolean canReportItem,
+			boolean canViewEmailLoginData,
+			boolean showGetEmailCodeButton,
+			boolean canOpenItem,
+			boolean canCloseItem,
+			boolean canEditItem,
+			boolean canDeleteItem,
+			boolean canStickItem,
+			boolean canUnstickItem,
+			CategoryTikTokResponseItemsBumpSettings bumpSettings,
+			boolean canBumpItem,
+			boolean canBuyItem,
+			@JsonProperty("rub_price") double rubPrice,
+			@JsonProperty("price_currency") String priceCurrency,
+			boolean canValidateAccount,
+			boolean canResellItemAfterPurchase,
+			boolean canViewAccountLink,
+			List<CategoryTikTokResponseItemsAccountLinks> accountLinks,
+			String accountLink,
+			boolean canChangePassword,
+			String itemOriginPhrase,
+			@JsonProperty("sold_items_category_count") double soldItemsCategoryCount,
+			@JsonProperty("restore_items_category_count") double restoreItemsCategoryCount,
+			List<JsonNode> tags,
+			@JsonProperty("note_text") JsonNode noteText,
+			boolean hasPendingAutoBuy,
+			String descriptionHtml,
+			String descriptionEnHtml,
+			String descriptionPlain,
+			String descriptionEnPlain,
+			CategoryTikTokResponseItemsSeller seller
 		) {}
 
 		public record CategoryInstagramParams(
@@ -6904,120 +6904,120 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryInstagramResponse(
-			@Nullable List<CategoryInstagramResponseItems> items,
-			Double totalItems,
-			@Nullable JsonNode totalItemsPrice,
-			@Nullable JsonNode hasNextPage,
-			Double perPage,
-			Double page,
-			@Nullable JsonNode wasCached,
-			Double cacheTTL,
-			Double lastModified,
-			Double serverTime,
-			@Nullable String searchUrl,
-			@Nullable List<JsonNode> stickyItems,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<CategoryInstagramResponseItems> items,
+			double totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			double perPage,
+			double page,
+			boolean wasCached,
+			double cacheTTL,
+			double lastModified,
+			double serverTime,
+			String searchUrl,
+			List<JsonNode> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryInstagramResponseItemsBumpSettings(
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBumpItemGlobally,
-			@Nullable JsonNode shortErrorPhrase,
-			@Nullable JsonNode errorPhrase
+			boolean canBumpItem,
+			boolean canBumpItemGlobally,
+			JsonNode shortErrorPhrase,
+			JsonNode errorPhrase
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryInstagramResponseItemsAccountLinks(
-			@Nullable String link,
-			@Nullable String text,
-			@Nullable String iconClass
+			String link,
+			String text,
+			String iconClass
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryInstagramResponseItemsSeller(
-			@JsonProperty("user_id") Double userId,
-			@JsonProperty("sold_items_count") Double soldItemsCount,
-			@JsonProperty("active_items_count") Double activeItemsCount,
-			@JsonProperty("restore_data") @Nullable String restoreData,
-			@Nullable String username,
-			@JsonProperty("avatar_date") Double avatarDate,
-			@JsonProperty("is_banned") Double isBanned,
-			@JsonProperty("display_style_group_id") Double displayStyleGroupId,
-			@JsonProperty("restore_percents") @Nullable JsonNode restorePercents
+			@JsonProperty("user_id") double userId,
+			@JsonProperty("sold_items_count") double soldItemsCount,
+			@JsonProperty("active_items_count") double activeItemsCount,
+			@JsonProperty("restore_data") String restoreData,
+			String username,
+			@JsonProperty("avatar_date") double avatarDate,
+			@JsonProperty("is_banned") double isBanned,
+			@JsonProperty("display_style_group_id") double displayStyleGroupId,
+			@JsonProperty("restore_percents") JsonNode restorePercents
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryInstagramResponseItems(
-			@JsonProperty("item_id") Double itemId,
-			@JsonProperty("item_state") @Nullable String itemState,
-			@JsonProperty("category_id") Double categoryId,
-			@JsonProperty("published_date") Double publishedDate,
-			@Nullable String title,
-			@Nullable String description,
-			Double price,
-			@JsonProperty("update_stat_date") Double updateStatDate,
-			@JsonProperty("refreshed_date") Double refreshedDate,
-			@JsonProperty("edit_date") Double editDate,
-			@JsonProperty("view_count") Double viewCount,
-			@JsonProperty("is_sticky") Double isSticky,
-			@JsonProperty("item_origin") @Nullable String itemOrigin,
-			@JsonProperty("extended_guarantee") Double extendedGuarantee,
-			Double nsb,
-			@JsonProperty("allow_ask_discount") Double allowAskDiscount,
-			@JsonProperty("title_en") @Nullable String titleEn,
-			@JsonProperty("description_en") @Nullable String descriptionEn,
-			@JsonProperty("email_type") @Nullable String emailType,
-			@JsonProperty("email_provider") @Nullable String emailProvider,
-			@JsonProperty("item_domain") @Nullable String itemDomain,
-			@JsonProperty("resale_item_origin") @Nullable String resaleItemOrigin,
-			@JsonProperty("instagram_item_id") Double instagramItemId,
-			@JsonProperty("instagram_id") @Nullable String instagramId,
-			@JsonProperty("instagram_follower_count") Double instagramFollowerCount,
-			@JsonProperty("instagram_follow_count") Double instagramFollowCount,
-			@JsonProperty("instagram_post_count") Double instagramPostCount,
-			@JsonProperty("instagram_country") @Nullable String instagramCountry,
-			@JsonProperty("instagram_username") @Nullable String instagramUsername,
-			@JsonProperty("instagram_mobile") Double instagramMobile,
-			@JsonProperty("instagram_register_date") Double instagramRegisterDate,
-			@JsonProperty("instagram_has_cookies") Double instagramHasCookies,
-			@JsonProperty("instagram_login_without_cookies") Double instagramLoginWithoutCookies,
-			@JsonProperty("feedback_data") @Nullable String feedbackData,
-			@Nullable JsonNode isIgnored,
-			Double priceWithSellerFee,
-			@Nullable JsonNode guarantee,
-			@Nullable JsonNode canViewLoginData,
-			@Nullable JsonNode canUpdateItemStats,
-			@Nullable JsonNode canReportItem,
-			@Nullable JsonNode canViewEmailLoginData,
-			@Nullable JsonNode showGetEmailCodeButton,
-			@Nullable JsonNode canOpenItem,
-			@Nullable JsonNode canCloseItem,
-			@Nullable JsonNode canEditItem,
-			@Nullable JsonNode canDeleteItem,
-			@Nullable JsonNode canStickItem,
-			@Nullable JsonNode canUnstickItem,
-			@Nullable CategoryInstagramResponseItemsBumpSettings bumpSettings,
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBuyItem,
-			@JsonProperty("rub_price") Double rubPrice,
-			@JsonProperty("price_currency") @Nullable String priceCurrency,
-			@Nullable JsonNode canValidateAccount,
-			@Nullable JsonNode canResellItemAfterPurchase,
-			@Nullable JsonNode canViewAccountLink,
-			@Nullable List<CategoryInstagramResponseItemsAccountLinks> accountLinks,
-			@Nullable String accountLink,
-			@Nullable String emailLoginUrl,
-			@Nullable JsonNode canChangePassword,
-			@Nullable String itemOriginPhrase,
-			@Nullable List<JsonNode> tags,
-			@JsonProperty("note_text") @Nullable JsonNode noteText,
-			@Nullable JsonNode hasPendingAutoBuy,
-			@Nullable String descriptionHtml,
-			@Nullable String descriptionEnHtml,
-			@Nullable String descriptionPlain,
-			@Nullable String descriptionEnPlain,
-			@Nullable CategoryInstagramResponseItemsSeller seller
+			@JsonProperty("item_id") double itemId,
+			@JsonProperty("item_state") String itemState,
+			@JsonProperty("category_id") double categoryId,
+			@JsonProperty("published_date") double publishedDate,
+			String title,
+			String description,
+			double price,
+			@JsonProperty("update_stat_date") double updateStatDate,
+			@JsonProperty("refreshed_date") double refreshedDate,
+			@JsonProperty("edit_date") double editDate,
+			@JsonProperty("view_count") double viewCount,
+			@JsonProperty("is_sticky") double isSticky,
+			@JsonProperty("item_origin") String itemOrigin,
+			@JsonProperty("extended_guarantee") double extendedGuarantee,
+			double nsb,
+			@JsonProperty("allow_ask_discount") double allowAskDiscount,
+			@JsonProperty("title_en") String titleEn,
+			@JsonProperty("description_en") String descriptionEn,
+			@JsonProperty("email_type") String emailType,
+			@JsonProperty("email_provider") String emailProvider,
+			@JsonProperty("item_domain") String itemDomain,
+			@JsonProperty("resale_item_origin") String resaleItemOrigin,
+			@JsonProperty("instagram_item_id") double instagramItemId,
+			@JsonProperty("instagram_id") String instagramId,
+			@JsonProperty("instagram_follower_count") double instagramFollowerCount,
+			@JsonProperty("instagram_follow_count") double instagramFollowCount,
+			@JsonProperty("instagram_post_count") double instagramPostCount,
+			@JsonProperty("instagram_country") String instagramCountry,
+			@JsonProperty("instagram_username") String instagramUsername,
+			@JsonProperty("instagram_mobile") double instagramMobile,
+			@JsonProperty("instagram_register_date") double instagramRegisterDate,
+			@JsonProperty("instagram_has_cookies") double instagramHasCookies,
+			@JsonProperty("instagram_login_without_cookies") double instagramLoginWithoutCookies,
+			@JsonProperty("feedback_data") String feedbackData,
+			boolean isIgnored,
+			double priceWithSellerFee,
+			JsonNode guarantee,
+			boolean canViewLoginData,
+			boolean canUpdateItemStats,
+			boolean canReportItem,
+			boolean canViewEmailLoginData,
+			boolean showGetEmailCodeButton,
+			boolean canOpenItem,
+			boolean canCloseItem,
+			boolean canEditItem,
+			boolean canDeleteItem,
+			boolean canStickItem,
+			boolean canUnstickItem,
+			CategoryInstagramResponseItemsBumpSettings bumpSettings,
+			boolean canBumpItem,
+			boolean canBuyItem,
+			@JsonProperty("rub_price") double rubPrice,
+			@JsonProperty("price_currency") String priceCurrency,
+			boolean canValidateAccount,
+			boolean canResellItemAfterPurchase,
+			boolean canViewAccountLink,
+			List<CategoryInstagramResponseItemsAccountLinks> accountLinks,
+			String accountLink,
+			String emailLoginUrl,
+			boolean canChangePassword,
+			String itemOriginPhrase,
+			List<JsonNode> tags,
+			@JsonProperty("note_text") JsonNode noteText,
+			boolean hasPendingAutoBuy,
+			String descriptionHtml,
+			String descriptionEnHtml,
+			String descriptionPlain,
+			String descriptionEnPlain,
+			CategoryInstagramResponseItemsSeller seller
 		) {}
 
 		public record CategoryBattleNetParams(
@@ -7101,139 +7101,139 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryBattleNetResponse(
-			@Nullable List<CategoryBattleNetResponseItems> items,
-			Double totalItems,
-			@Nullable JsonNode totalItemsPrice,
-			@Nullable JsonNode hasNextPage,
-			Double perPage,
-			Double page,
-			@Nullable JsonNode wasCached,
-			Double cacheTTL,
-			Double lastModified,
-			Double serverTime,
-			@Nullable String searchUrl,
-			@Nullable List<JsonNode> stickyItems,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<CategoryBattleNetResponseItems> items,
+			double totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			double perPage,
+			double page,
+			boolean wasCached,
+			double cacheTTL,
+			double lastModified,
+			double serverTime,
+			String searchUrl,
+			List<JsonNode> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryBattleNetResponseItemsGuarantee(
-			Double duration,
-			@Nullable String class_,
-			@Nullable String durationPhrase,
-			@Nullable JsonNode endDate,
-			@Nullable JsonNode active,
-			@Nullable JsonNode cancelled,
-			@Nullable JsonNode remainingTime
+			double duration,
+			String class_,
+			String durationPhrase,
+			JsonNode endDate,
+			JsonNode active,
+			JsonNode cancelled,
+			JsonNode remainingTime
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryBattleNetResponseItemsBumpSettings(
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBumpItemGlobally,
-			@Nullable JsonNode shortErrorPhrase,
-			@Nullable JsonNode errorPhrase
+			boolean canBumpItem,
+			boolean canBumpItemGlobally,
+			JsonNode shortErrorPhrase,
+			JsonNode errorPhrase
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryBattleNetResponseItemsBattlenetTransactions(
-			Double date,
-			@Nullable String productTitle,
-			@Nullable String formattedTotal,
-			@Nullable String total
+			double date,
+			String productTitle,
+			String formattedTotal,
+			String total
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryBattleNetResponseItemsSeller(
-			@JsonProperty("user_id") Double userId,
-			@JsonProperty("sold_items_count") Double soldItemsCount,
-			@JsonProperty("active_items_count") Double activeItemsCount,
-			@JsonProperty("restore_data") @Nullable String restoreData,
-			@Nullable String username,
-			@JsonProperty("avatar_date") Double avatarDate,
-			@JsonProperty("is_banned") Double isBanned,
-			@JsonProperty("display_style_group_id") Double displayStyleGroupId,
-			@JsonProperty("restore_percents") Double restorePercents
+			@JsonProperty("user_id") double userId,
+			@JsonProperty("sold_items_count") double soldItemsCount,
+			@JsonProperty("active_items_count") double activeItemsCount,
+			@JsonProperty("restore_data") String restoreData,
+			String username,
+			@JsonProperty("avatar_date") double avatarDate,
+			@JsonProperty("is_banned") double isBanned,
+			@JsonProperty("display_style_group_id") double displayStyleGroupId,
+			@JsonProperty("restore_percents") double restorePercents
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryBattleNetResponseItems(
-			@JsonProperty("item_id") Double itemId,
-			@JsonProperty("item_state") @Nullable String itemState,
-			@JsonProperty("category_id") Double categoryId,
-			@JsonProperty("published_date") Double publishedDate,
-			@Nullable String title,
-			@Nullable String description,
-			Double price,
-			@JsonProperty("update_stat_date") Double updateStatDate,
-			@JsonProperty("refreshed_date") Double refreshedDate,
-			@JsonProperty("edit_date") Double editDate,
-			@JsonProperty("view_count") Double viewCount,
-			@JsonProperty("is_sticky") Double isSticky,
-			@JsonProperty("item_origin") @Nullable String itemOrigin,
-			@JsonProperty("extended_guarantee") Double extendedGuarantee,
-			Double nsb,
-			@JsonProperty("allow_ask_discount") Double allowAskDiscount,
-			@JsonProperty("title_en") @Nullable String titleEn,
-			@JsonProperty("description_en") @Nullable String descriptionEn,
-			@JsonProperty("email_type") @Nullable String emailType,
-			@JsonProperty("email_provider") @Nullable String emailProvider,
-			@JsonProperty("item_domain") @Nullable String itemDomain,
-			@JsonProperty("resale_item_origin") @Nullable String resaleItemOrigin,
-			@JsonProperty("battlenet_item_id") Double battlenetItemId,
-			@JsonProperty("battlenet_balance") @Nullable String battlenetBalance,
-			@JsonProperty("battlenet_country") @Nullable String battlenetCountry,
-			@JsonProperty("battlenet_last_activity") Double battlenetLastActivity,
-			@JsonProperty("battlenet_mobile") Double battlenetMobile,
-			@JsonProperty("battlenet_bans") @Nullable String battlenetBans,
-			@JsonProperty("battlenet_can_change_tag") Double battlenetCanChangeTag,
-			@JsonProperty("battlenet_real_id_enabled") Double battlenetRealIdEnabled,
-			@JsonProperty("battlenet_change_full_name") Double battlenetChangeFullName,
-			@JsonProperty("battlenet_parent_control") Double battlenetParentControl,
-			@JsonProperty("battlenet_converted_balance") Double battlenetConvertedBalance,
-			@JsonProperty("feedback_data") @Nullable String feedbackData,
-			@Nullable JsonNode isIgnored,
-			Double priceWithSellerFee,
-			@Nullable CategoryBattleNetResponseItemsGuarantee guarantee,
-			@Nullable JsonNode canViewLoginData,
-			@Nullable JsonNode canUpdateItemStats,
-			@Nullable JsonNode canReportItem,
-			@Nullable JsonNode canViewEmailLoginData,
-			@Nullable JsonNode showGetEmailCodeButton,
-			@Nullable JsonNode canOpenItem,
-			@Nullable JsonNode canCloseItem,
-			@Nullable JsonNode canEditItem,
-			@Nullable JsonNode canDeleteItem,
-			@Nullable JsonNode canStickItem,
-			@Nullable JsonNode canUnstickItem,
-			@Nullable CategoryBattleNetResponseItemsBumpSettings bumpSettings,
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBuyItem,
-			@JsonProperty("rub_price") Double rubPrice,
-			@JsonProperty("price_currency") @Nullable String priceCurrency,
-			@Nullable JsonNode canValidateAccount,
-			@Nullable JsonNode canResellItemAfterPurchase,
-			@Nullable JsonNode isSmallExf,
-			@JsonProperty("account_last_activity") Double accountLastActivity,
-			@Nullable JsonNode battlenetGames,
-			@Nullable JsonNode hasOverwatch,
-			@Nullable List<CategoryBattleNetResponseItemsBattlenetTransactions> battlenetTransactions,
-			@Nullable JsonNode displayConvertedBalance,
-			@Nullable JsonNode canViewAccountLink,
-			@Nullable List<JsonNode> accountLinks,
-			@Nullable String emailLoginUrl,
-			@Nullable JsonNode canChangePassword,
-			@Nullable String itemOriginPhrase,
-			@JsonProperty("sold_items_category_count") Double soldItemsCategoryCount,
-			@JsonProperty("restore_items_category_count") Double restoreItemsCategoryCount,
-			@Nullable List<JsonNode> tags,
-			@JsonProperty("note_text") @Nullable JsonNode noteText,
-			@Nullable JsonNode hasPendingAutoBuy,
-			@Nullable String descriptionHtml,
-			@Nullable String descriptionEnHtml,
-			@Nullable String descriptionPlain,
-			@Nullable String descriptionEnPlain,
-			@Nullable CategoryBattleNetResponseItemsSeller seller
+			@JsonProperty("item_id") double itemId,
+			@JsonProperty("item_state") String itemState,
+			@JsonProperty("category_id") double categoryId,
+			@JsonProperty("published_date") double publishedDate,
+			String title,
+			String description,
+			double price,
+			@JsonProperty("update_stat_date") double updateStatDate,
+			@JsonProperty("refreshed_date") double refreshedDate,
+			@JsonProperty("edit_date") double editDate,
+			@JsonProperty("view_count") double viewCount,
+			@JsonProperty("is_sticky") double isSticky,
+			@JsonProperty("item_origin") String itemOrigin,
+			@JsonProperty("extended_guarantee") double extendedGuarantee,
+			double nsb,
+			@JsonProperty("allow_ask_discount") double allowAskDiscount,
+			@JsonProperty("title_en") String titleEn,
+			@JsonProperty("description_en") String descriptionEn,
+			@JsonProperty("email_type") String emailType,
+			@JsonProperty("email_provider") String emailProvider,
+			@JsonProperty("item_domain") String itemDomain,
+			@JsonProperty("resale_item_origin") String resaleItemOrigin,
+			@JsonProperty("battlenet_item_id") double battlenetItemId,
+			@JsonProperty("battlenet_balance") String battlenetBalance,
+			@JsonProperty("battlenet_country") String battlenetCountry,
+			@JsonProperty("battlenet_last_activity") double battlenetLastActivity,
+			@JsonProperty("battlenet_mobile") double battlenetMobile,
+			@JsonProperty("battlenet_bans") String battlenetBans,
+			@JsonProperty("battlenet_can_change_tag") double battlenetCanChangeTag,
+			@JsonProperty("battlenet_real_id_enabled") double battlenetRealIdEnabled,
+			@JsonProperty("battlenet_change_full_name") double battlenetChangeFullName,
+			@JsonProperty("battlenet_parent_control") double battlenetParentControl,
+			@JsonProperty("battlenet_converted_balance") double battlenetConvertedBalance,
+			@JsonProperty("feedback_data") String feedbackData,
+			boolean isIgnored,
+			double priceWithSellerFee,
+			CategoryBattleNetResponseItemsGuarantee guarantee,
+			boolean canViewLoginData,
+			boolean canUpdateItemStats,
+			boolean canReportItem,
+			boolean canViewEmailLoginData,
+			boolean showGetEmailCodeButton,
+			boolean canOpenItem,
+			boolean canCloseItem,
+			boolean canEditItem,
+			boolean canDeleteItem,
+			boolean canStickItem,
+			boolean canUnstickItem,
+			CategoryBattleNetResponseItemsBumpSettings bumpSettings,
+			boolean canBumpItem,
+			boolean canBuyItem,
+			@JsonProperty("rub_price") double rubPrice,
+			@JsonProperty("price_currency") String priceCurrency,
+			boolean canValidateAccount,
+			boolean canResellItemAfterPurchase,
+			boolean isSmallExf,
+			@JsonProperty("account_last_activity") double accountLastActivity,
+			JsonNode battlenetGames,
+			boolean hasOverwatch,
+			List<CategoryBattleNetResponseItemsBattlenetTransactions> battlenetTransactions,
+			boolean displayConvertedBalance,
+			boolean canViewAccountLink,
+			List<JsonNode> accountLinks,
+			String emailLoginUrl,
+			boolean canChangePassword,
+			String itemOriginPhrase,
+			@JsonProperty("sold_items_category_count") double soldItemsCategoryCount,
+			@JsonProperty("restore_items_category_count") double restoreItemsCategoryCount,
+			List<JsonNode> tags,
+			@JsonProperty("note_text") JsonNode noteText,
+			boolean hasPendingAutoBuy,
+			String descriptionHtml,
+			String descriptionEnHtml,
+			String descriptionPlain,
+			String descriptionEnPlain,
+			CategoryBattleNetResponseItemsSeller seller
 		) {}
 
 		public record CategoryChatGPTParams(
@@ -7313,119 +7313,119 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryChatGPTResponse(
-			@Nullable List<CategoryChatGPTResponseItems> items,
-			Double totalItems,
-			@Nullable JsonNode totalItemsPrice,
-			@Nullable JsonNode hasNextPage,
-			Double perPage,
-			Double page,
-			@Nullable JsonNode wasCached,
-			Double cacheTTL,
-			Double lastModified,
-			Double serverTime,
-			@Nullable String searchUrl,
-			@Nullable List<JsonNode> stickyItems,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<CategoryChatGPTResponseItems> items,
+			double totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			double perPage,
+			double page,
+			boolean wasCached,
+			double cacheTTL,
+			double lastModified,
+			double serverTime,
+			String searchUrl,
+			List<JsonNode> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryChatGPTResponseItemsCopyFormatData(
-			@JsonProperty("title_link") @Nullable String titleLink
+			@JsonProperty("title_link") String titleLink
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryChatGPTResponseItemsBumpSettings(
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBumpItemGlobally,
-			@Nullable JsonNode shortErrorPhrase,
-			@Nullable JsonNode errorPhrase
+			boolean canBumpItem,
+			boolean canBumpItemGlobally,
+			JsonNode shortErrorPhrase,
+			JsonNode errorPhrase
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryChatGPTResponseItemsSeller(
-			@JsonProperty("user_id") Double userId,
-			@JsonProperty("sold_items_count") Double soldItemsCount,
-			@JsonProperty("active_items_count") Double activeItemsCount,
-			@JsonProperty("restore_data") @Nullable String restoreData,
-			@Nullable String username,
-			@JsonProperty("avatar_date") Double avatarDate,
-			@JsonProperty("is_banned") Double isBanned,
-			@JsonProperty("display_style_group_id") Double displayStyleGroupId,
-			@JsonProperty("restore_percents") @Nullable JsonNode restorePercents
+			@JsonProperty("user_id") double userId,
+			@JsonProperty("sold_items_count") double soldItemsCount,
+			@JsonProperty("active_items_count") double activeItemsCount,
+			@JsonProperty("restore_data") String restoreData,
+			String username,
+			@JsonProperty("avatar_date") double avatarDate,
+			@JsonProperty("is_banned") double isBanned,
+			@JsonProperty("display_style_group_id") double displayStyleGroupId,
+			@JsonProperty("restore_percents") JsonNode restorePercents
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryChatGPTResponseItems(
-			@JsonProperty("item_id") Double itemId,
-			@JsonProperty("item_state") @Nullable String itemState,
-			@JsonProperty("category_id") Double categoryId,
-			@JsonProperty("published_date") Double publishedDate,
-			@Nullable String title,
-			@Nullable String description,
-			Double price,
-			@JsonProperty("update_stat_date") Double updateStatDate,
-			@JsonProperty("refreshed_date") Double refreshedDate,
-			@JsonProperty("edit_date") Double editDate,
-			@JsonProperty("view_count") Double viewCount,
-			@JsonProperty("is_sticky") Double isSticky,
-			@JsonProperty("item_origin") @Nullable String itemOrigin,
-			@JsonProperty("extended_guarantee") Double extendedGuarantee,
-			Double nsb,
-			@JsonProperty("allow_ask_discount") Double allowAskDiscount,
-			@JsonProperty("title_en") @Nullable String titleEn,
-			@JsonProperty("description_en") @Nullable String descriptionEn,
-			@JsonProperty("email_type") @Nullable String emailType,
-			@JsonProperty("email_provider") @Nullable String emailProvider,
-			@JsonProperty("item_domain") @Nullable String itemDomain,
-			@JsonProperty("resale_item_origin") @Nullable String resaleItemOrigin,
-			@JsonProperty("chatgpt_item_id") Double chatgptItemId,
-			@JsonProperty("chatgpt_country") @Nullable String chatgptCountry,
-			@JsonProperty("chatgpt_register_date") Double chatgptRegisterDate,
-			@JsonProperty("chatgpt_phone") Double chatgptPhone,
-			@JsonProperty("chatgpt_subscription") @Nullable String chatgptSubscription,
-			@JsonProperty("chatgpt_subscription_ends") Double chatgptSubscriptionEnds,
-			@JsonProperty("chatgpt_subscription_auto_renew") Double chatgptSubscriptionAutoRenew,
-			@JsonProperty("feedback_data") @Nullable String feedbackData,
-			@Nullable JsonNode isIgnored,
-			Double priceWithSellerFee,
-			@Nullable JsonNode guarantee,
-			@Nullable JsonNode canViewLoginData,
-			@Nullable JsonNode canUpdateItemStats,
-			@Nullable JsonNode canReportItem,
-			@Nullable JsonNode canViewItemViews,
-			@Nullable JsonNode canViewEmailLoginData,
-			@Nullable CategoryChatGPTResponseItemsCopyFormatData copyFormatData,
-			@Nullable JsonNode showGetEmailCodeButton,
-			@Nullable JsonNode canOpenItem,
-			@Nullable JsonNode canCloseItem,
-			@Nullable JsonNode canEditItem,
-			@Nullable JsonNode canDeleteItem,
-			@Nullable JsonNode canStickItem,
-			@Nullable JsonNode canUnstickItem,
-			@Nullable CategoryChatGPTResponseItemsBumpSettings bumpSettings,
-			@Nullable JsonNode isPersonalAccount,
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBuyItem,
-			@JsonProperty("rub_price") Double rubPrice,
-			@JsonProperty("price_currency") @Nullable String priceCurrency,
-			@Nullable String priceWithSellerFeeLabel,
-			@Nullable JsonNode canValidateAccount,
-			@Nullable JsonNode canResellItemAfterPurchase,
-			@Nullable String gptSubType,
-			@Nullable JsonNode canViewAccountLink,
-			@Nullable String emailLoginUrl,
-			@Nullable JsonNode canChangePassword,
-			@Nullable JsonNode canChangeEmailPassword,
-			@Nullable JsonNode uniqueKeyExists,
-			@Nullable String itemOriginPhrase,
-			@Nullable List<JsonNode> tags,
-			@JsonProperty("note_text") @Nullable JsonNode noteText,
-			@Nullable JsonNode hasPendingAutoBuy,
-			@Nullable String descriptionHtml,
-			@Nullable String descriptionEnHtml,
-			@Nullable String descriptionPlain,
-			@Nullable String descriptionEnPlain,
-			@Nullable CategoryChatGPTResponseItemsSeller seller
+			@JsonProperty("item_id") double itemId,
+			@JsonProperty("item_state") String itemState,
+			@JsonProperty("category_id") double categoryId,
+			@JsonProperty("published_date") double publishedDate,
+			String title,
+			String description,
+			double price,
+			@JsonProperty("update_stat_date") double updateStatDate,
+			@JsonProperty("refreshed_date") double refreshedDate,
+			@JsonProperty("edit_date") double editDate,
+			@JsonProperty("view_count") double viewCount,
+			@JsonProperty("is_sticky") double isSticky,
+			@JsonProperty("item_origin") String itemOrigin,
+			@JsonProperty("extended_guarantee") double extendedGuarantee,
+			double nsb,
+			@JsonProperty("allow_ask_discount") double allowAskDiscount,
+			@JsonProperty("title_en") String titleEn,
+			@JsonProperty("description_en") String descriptionEn,
+			@JsonProperty("email_type") String emailType,
+			@JsonProperty("email_provider") String emailProvider,
+			@JsonProperty("item_domain") String itemDomain,
+			@JsonProperty("resale_item_origin") String resaleItemOrigin,
+			@JsonProperty("chatgpt_item_id") double chatgptItemId,
+			@JsonProperty("chatgpt_country") String chatgptCountry,
+			@JsonProperty("chatgpt_register_date") double chatgptRegisterDate,
+			@JsonProperty("chatgpt_phone") double chatgptPhone,
+			@JsonProperty("chatgpt_subscription") String chatgptSubscription,
+			@JsonProperty("chatgpt_subscription_ends") double chatgptSubscriptionEnds,
+			@JsonProperty("chatgpt_subscription_auto_renew") double chatgptSubscriptionAutoRenew,
+			@JsonProperty("feedback_data") String feedbackData,
+			boolean isIgnored,
+			double priceWithSellerFee,
+			JsonNode guarantee,
+			boolean canViewLoginData,
+			boolean canUpdateItemStats,
+			boolean canReportItem,
+			boolean canViewItemViews,
+			boolean canViewEmailLoginData,
+			CategoryChatGPTResponseItemsCopyFormatData copyFormatData,
+			boolean showGetEmailCodeButton,
+			boolean canOpenItem,
+			boolean canCloseItem,
+			boolean canEditItem,
+			boolean canDeleteItem,
+			boolean canStickItem,
+			boolean canUnstickItem,
+			CategoryChatGPTResponseItemsBumpSettings bumpSettings,
+			boolean isPersonalAccount,
+			boolean canBumpItem,
+			boolean canBuyItem,
+			@JsonProperty("rub_price") double rubPrice,
+			@JsonProperty("price_currency") String priceCurrency,
+			String priceWithSellerFeeLabel,
+			boolean canValidateAccount,
+			boolean canResellItemAfterPurchase,
+			String gptSubType,
+			boolean canViewAccountLink,
+			String emailLoginUrl,
+			boolean canChangePassword,
+			boolean canChangeEmailPassword,
+			boolean uniqueKeyExists,
+			String itemOriginPhrase,
+			List<JsonNode> tags,
+			@JsonProperty("note_text") JsonNode noteText,
+			boolean hasPendingAutoBuy,
+			String descriptionHtml,
+			String descriptionEnHtml,
+			String descriptionPlain,
+			String descriptionEnPlain,
+			CategoryChatGPTResponseItemsSeller seller
 		) {}
 
 		public record CategoryVpnParams(
@@ -7487,106 +7487,106 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryVpnResponse(
-			@Nullable List<CategoryVpnResponseItems> items,
-			Double totalItems,
-			@Nullable JsonNode totalItemsPrice,
-			@Nullable JsonNode hasNextPage,
-			Double perPage,
-			Double page,
-			@Nullable JsonNode wasCached,
-			Double cacheTTL,
-			Double lastModified,
-			Double serverTime,
-			@Nullable String searchUrl,
-			@Nullable List<JsonNode> stickyItems,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<CategoryVpnResponseItems> items,
+			double totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			double perPage,
+			double page,
+			boolean wasCached,
+			double cacheTTL,
+			double lastModified,
+			double serverTime,
+			String searchUrl,
+			List<JsonNode> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryVpnResponseItemsBumpSettings(
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBumpItemGlobally,
-			@Nullable JsonNode shortErrorPhrase,
-			@Nullable JsonNode errorPhrase
+			boolean canBumpItem,
+			boolean canBumpItemGlobally,
+			JsonNode shortErrorPhrase,
+			JsonNode errorPhrase
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryVpnResponseItemsSeller(
-			@JsonProperty("user_id") Double userId,
-			@JsonProperty("sold_items_count") Double soldItemsCount,
-			@JsonProperty("active_items_count") Double activeItemsCount,
-			@JsonProperty("restore_data") @Nullable String restoreData,
-			@Nullable String username,
-			@JsonProperty("avatar_date") Double avatarDate,
-			@JsonProperty("is_banned") Double isBanned,
-			@JsonProperty("display_style_group_id") Double displayStyleGroupId,
-			@JsonProperty("restore_percents") Double restorePercents
+			@JsonProperty("user_id") double userId,
+			@JsonProperty("sold_items_count") double soldItemsCount,
+			@JsonProperty("active_items_count") double activeItemsCount,
+			@JsonProperty("restore_data") String restoreData,
+			String username,
+			@JsonProperty("avatar_date") double avatarDate,
+			@JsonProperty("is_banned") double isBanned,
+			@JsonProperty("display_style_group_id") double displayStyleGroupId,
+			@JsonProperty("restore_percents") double restorePercents
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryVpnResponseItems(
-			@JsonProperty("item_id") Double itemId,
-			@JsonProperty("item_state") @Nullable String itemState,
-			@JsonProperty("category_id") Double categoryId,
-			@JsonProperty("published_date") Double publishedDate,
-			@Nullable String title,
-			@Nullable String description,
-			Double price,
-			@JsonProperty("update_stat_date") Double updateStatDate,
-			@JsonProperty("refreshed_date") Double refreshedDate,
-			@JsonProperty("edit_date") Double editDate,
-			@JsonProperty("view_count") Double viewCount,
-			@JsonProperty("is_sticky") Double isSticky,
-			@JsonProperty("item_origin") @Nullable String itemOrigin,
-			@JsonProperty("extended_guarantee") Double extendedGuarantee,
-			Double nsb,
-			@JsonProperty("allow_ask_discount") Double allowAskDiscount,
-			@JsonProperty("title_en") @Nullable String titleEn,
-			@JsonProperty("description_en") @Nullable String descriptionEn,
-			@JsonProperty("email_type") @Nullable String emailType,
-			@JsonProperty("email_provider") @Nullable JsonNode emailProvider,
-			@JsonProperty("item_domain") @Nullable String itemDomain,
-			@JsonProperty("resale_item_origin") @Nullable String resaleItemOrigin,
-			@JsonProperty("vpn_item_id") Double vpnItemId,
-			@JsonProperty("vpn_service") @Nullable String vpnService,
-			@JsonProperty("vpn_expire_date") Double vpnExpireDate,
-			@JsonProperty("vpn_renewable") Double vpnRenewable,
-			@JsonProperty("feedback_data") @Nullable String feedbackData,
-			@Nullable JsonNode isIgnored,
-			Double priceWithSellerFee,
-			@Nullable JsonNode guarantee,
-			@Nullable JsonNode canViewLoginData,
-			@Nullable JsonNode canUpdateItemStats,
-			@Nullable JsonNode canReportItem,
-			@Nullable JsonNode canViewEmailLoginData,
-			@Nullable JsonNode showGetEmailCodeButton,
-			@Nullable JsonNode canOpenItem,
-			@Nullable JsonNode canCloseItem,
-			@Nullable JsonNode canEditItem,
-			@Nullable JsonNode canDeleteItem,
-			@Nullable JsonNode canStickItem,
-			@Nullable JsonNode canUnstickItem,
-			@Nullable CategoryVpnResponseItemsBumpSettings bumpSettings,
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBuyItem,
-			@JsonProperty("rub_price") Double rubPrice,
-			@JsonProperty("price_currency") @Nullable String priceCurrency,
-			@Nullable JsonNode canValidateAccount,
-			@Nullable JsonNode canResellItemAfterPurchase,
-			@Nullable String vpnProductTitle,
-			@Nullable JsonNode canViewAccountLink,
-			@Nullable JsonNode canChangePassword,
-			@Nullable String itemOriginPhrase,
-			@JsonProperty("sold_items_category_count") Double soldItemsCategoryCount,
-			@JsonProperty("restore_items_category_count") Double restoreItemsCategoryCount,
-			@Nullable List<JsonNode> tags,
-			@JsonProperty("note_text") @Nullable JsonNode noteText,
-			@Nullable JsonNode hasPendingAutoBuy,
-			@Nullable String descriptionHtml,
-			@Nullable String descriptionEnHtml,
-			@Nullable String descriptionPlain,
-			@Nullable String descriptionEnPlain,
-			@Nullable CategoryVpnResponseItemsSeller seller
+			@JsonProperty("item_id") double itemId,
+			@JsonProperty("item_state") String itemState,
+			@JsonProperty("category_id") double categoryId,
+			@JsonProperty("published_date") double publishedDate,
+			String title,
+			String description,
+			double price,
+			@JsonProperty("update_stat_date") double updateStatDate,
+			@JsonProperty("refreshed_date") double refreshedDate,
+			@JsonProperty("edit_date") double editDate,
+			@JsonProperty("view_count") double viewCount,
+			@JsonProperty("is_sticky") double isSticky,
+			@JsonProperty("item_origin") String itemOrigin,
+			@JsonProperty("extended_guarantee") double extendedGuarantee,
+			double nsb,
+			@JsonProperty("allow_ask_discount") double allowAskDiscount,
+			@JsonProperty("title_en") String titleEn,
+			@JsonProperty("description_en") String descriptionEn,
+			@JsonProperty("email_type") String emailType,
+			@JsonProperty("email_provider") JsonNode emailProvider,
+			@JsonProperty("item_domain") String itemDomain,
+			@JsonProperty("resale_item_origin") String resaleItemOrigin,
+			@JsonProperty("vpn_item_id") double vpnItemId,
+			@JsonProperty("vpn_service") String vpnService,
+			@JsonProperty("vpn_expire_date") double vpnExpireDate,
+			@JsonProperty("vpn_renewable") double vpnRenewable,
+			@JsonProperty("feedback_data") String feedbackData,
+			boolean isIgnored,
+			double priceWithSellerFee,
+			JsonNode guarantee,
+			boolean canViewLoginData,
+			boolean canUpdateItemStats,
+			boolean canReportItem,
+			boolean canViewEmailLoginData,
+			boolean showGetEmailCodeButton,
+			boolean canOpenItem,
+			boolean canCloseItem,
+			boolean canEditItem,
+			boolean canDeleteItem,
+			boolean canStickItem,
+			boolean canUnstickItem,
+			CategoryVpnResponseItemsBumpSettings bumpSettings,
+			boolean canBumpItem,
+			boolean canBuyItem,
+			@JsonProperty("rub_price") double rubPrice,
+			@JsonProperty("price_currency") String priceCurrency,
+			boolean canValidateAccount,
+			boolean canResellItemAfterPurchase,
+			String vpnProductTitle,
+			boolean canViewAccountLink,
+			boolean canChangePassword,
+			String itemOriginPhrase,
+			@JsonProperty("sold_items_category_count") double soldItemsCategoryCount,
+			@JsonProperty("restore_items_category_count") double restoreItemsCategoryCount,
+			List<JsonNode> tags,
+			@JsonProperty("note_text") JsonNode noteText,
+			boolean hasPendingAutoBuy,
+			String descriptionHtml,
+			String descriptionEnHtml,
+			String descriptionPlain,
+			String descriptionEnPlain,
+			CategoryVpnResponseItemsSeller seller
 		) {}
 
 		public record CategoryRobloxParams(
@@ -7714,144 +7714,144 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryRobloxResponse(
-			@Nullable List<CategoryRobloxResponseItems> items,
-			Double totalItems,
-			@Nullable JsonNode totalItemsPrice,
-			@Nullable JsonNode hasNextPage,
-			Double perPage,
-			Double page,
-			@Nullable JsonNode wasCached,
-			Double cacheTTL,
-			Double lastModified,
-			Double serverTime,
-			@Nullable String searchUrl,
-			@Nullable List<JsonNode> stickyItems,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<CategoryRobloxResponseItems> items,
+			double totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			double perPage,
+			double page,
+			boolean wasCached,
+			double cacheTTL,
+			double lastModified,
+			double serverTime,
+			String searchUrl,
+			List<JsonNode> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryRobloxResponseItemsBumpSettings(
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBumpItemGlobally,
-			@Nullable JsonNode shortErrorPhrase,
-			@Nullable JsonNode errorPhrase
+			boolean canBumpItem,
+			boolean canBumpItemGlobally,
+			JsonNode shortErrorPhrase,
+			JsonNode errorPhrase
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryRobloxResponseItemsRobloxGameDonationsDetails(
-			@Nullable String product,
-			Double amount,
-			@Nullable String type
+			String product,
+			double amount,
+			String type
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryRobloxResponseItemsAccountLinks(
-			@Nullable String link,
-			@Nullable String text,
-			@Nullable String iconClass
+			String link,
+			String text,
+			String iconClass
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryRobloxResponseItemsSeller(
-			@JsonProperty("user_id") Double userId,
-			@JsonProperty("sold_items_count") Double soldItemsCount,
-			@JsonProperty("active_items_count") Double activeItemsCount,
-			@JsonProperty("restore_data") @Nullable String restoreData,
-			@Nullable String username,
-			@JsonProperty("avatar_date") Double avatarDate,
-			@JsonProperty("is_banned") Double isBanned,
-			@JsonProperty("display_style_group_id") Double displayStyleGroupId,
-			@JsonProperty("restore_percents") Double restorePercents
+			@JsonProperty("user_id") double userId,
+			@JsonProperty("sold_items_count") double soldItemsCount,
+			@JsonProperty("active_items_count") double activeItemsCount,
+			@JsonProperty("restore_data") String restoreData,
+			String username,
+			@JsonProperty("avatar_date") double avatarDate,
+			@JsonProperty("is_banned") double isBanned,
+			@JsonProperty("display_style_group_id") double displayStyleGroupId,
+			@JsonProperty("restore_percents") double restorePercents
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryRobloxResponseItems(
-			@JsonProperty("item_id") Double itemId,
-			@JsonProperty("item_state") @Nullable String itemState,
-			@JsonProperty("category_id") Double categoryId,
-			@JsonProperty("published_date") Double publishedDate,
-			@Nullable String title,
-			@Nullable String description,
-			Double price,
-			@JsonProperty("update_stat_date") Double updateStatDate,
-			@JsonProperty("refreshed_date") Double refreshedDate,
-			@JsonProperty("edit_date") Double editDate,
-			@JsonProperty("view_count") Double viewCount,
-			@JsonProperty("is_sticky") Double isSticky,
-			@JsonProperty("item_origin") @Nullable String itemOrigin,
-			@JsonProperty("extended_guarantee") Double extendedGuarantee,
-			Double nsb,
-			@JsonProperty("allow_ask_discount") Double allowAskDiscount,
-			@JsonProperty("title_en") @Nullable String titleEn,
-			@JsonProperty("description_en") @Nullable String descriptionEn,
-			@JsonProperty("email_type") @Nullable String emailType,
-			@JsonProperty("email_provider") @Nullable String emailProvider,
-			@JsonProperty("item_domain") @Nullable String itemDomain,
-			@JsonProperty("resale_item_origin") @Nullable String resaleItemOrigin,
-			@JsonProperty("roblox_item_id") Double robloxItemId,
-			@JsonProperty("roblox_id") Double robloxId,
-			@JsonProperty("roblox_email_verified") Double robloxEmailVerified,
-			@JsonProperty("roblox_robux") Double robloxRobux,
-			@JsonProperty("roblox_username") @Nullable String robloxUsername,
-			@JsonProperty("roblox_country") @Nullable String robloxCountry,
-			@JsonProperty("roblox_register_date") Double robloxRegisterDate,
-			@JsonProperty("roblox_friends") Double robloxFriends,
-			@JsonProperty("roblox_followers") Double robloxFollowers,
-			@JsonProperty("roblox_subscription") @Nullable String robloxSubscription,
-			@JsonProperty("roblox_subscription_end_date") Double robloxSubscriptionEndDate,
-			@JsonProperty("roblox_xbox_connected") Double robloxXboxConnected,
-			@JsonProperty("roblox_incoming_robux_total") Double robloxIncomingRobuxTotal,
-			@JsonProperty("roblox_limited_price") Double robloxLimitedPrice,
-			@JsonProperty("roblox_verified") Double robloxVerified,
-			@JsonProperty("roblox_age_verified") Double robloxAgeVerified,
-			@JsonProperty("roblox_psn_connected") Double robloxPsnConnected,
-			@JsonProperty("roblox_subscription_auto_renew") Double robloxSubscriptionAutoRenew,
-			@JsonProperty("roblox_game_pass_total_robux") Double robloxGamePassTotalRobux,
-			@JsonProperty("roblox_game_donations") @Nullable String robloxGameDonations,
-			@JsonProperty("roblox_inventory_price") Double robloxInventoryPrice,
-			@JsonProperty("roblox_ugc_limited_price") Double robloxUgcLimitedPrice,
-			@JsonProperty("roblox_credit_balance") Double robloxCreditBalance,
-			@JsonProperty("feedback_data") @Nullable String feedbackData,
-			@Nullable JsonNode isIgnored,
-			Double priceWithSellerFee,
-			@Nullable JsonNode guarantee,
-			@Nullable JsonNode canViewLoginData,
-			@Nullable JsonNode canUpdateItemStats,
-			@Nullable JsonNode canReportItem,
-			@Nullable JsonNode canViewEmailLoginData,
-			@Nullable JsonNode showGetEmailCodeButton,
-			@Nullable JsonNode canOpenItem,
-			@Nullable JsonNode canCloseItem,
-			@Nullable JsonNode canEditItem,
-			@Nullable JsonNode canDeleteItem,
-			@Nullable JsonNode canStickItem,
-			@Nullable JsonNode canUnstickItem,
-			@Nullable CategoryRobloxResponseItemsBumpSettings bumpSettings,
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBuyItem,
-			@JsonProperty("rub_price") Double rubPrice,
-			@JsonProperty("price_currency") @Nullable String priceCurrency,
-			@Nullable JsonNode canValidateAccount,
-			@Nullable JsonNode canResellItemAfterPurchase,
-			@Nullable String robloxLinkedAccounts,
-			@Nullable String creditBalance,
-			@Nullable List<CategoryRobloxResponseItemsRobloxGameDonationsDetails> robloxGameDonationsDetails,
-			@Nullable JsonNode canViewAccountLink,
-			@Nullable List<CategoryRobloxResponseItemsAccountLinks> accountLinks,
-			@Nullable String accountLink,
-			@Nullable String emailLoginUrl,
-			@Nullable JsonNode canChangePassword,
-			@Nullable String itemOriginPhrase,
-			@JsonProperty("sold_items_category_count") Double soldItemsCategoryCount,
-			@JsonProperty("restore_items_category_count") Double restoreItemsCategoryCount,
-			@Nullable List<JsonNode> tags,
-			@JsonProperty("note_text") @Nullable JsonNode noteText,
-			@Nullable JsonNode hasPendingAutoBuy,
-			@Nullable String descriptionHtml,
-			@Nullable String descriptionEnHtml,
-			@Nullable String descriptionPlain,
-			@Nullable String descriptionEnPlain,
-			@Nullable CategoryRobloxResponseItemsSeller seller
+			@JsonProperty("item_id") double itemId,
+			@JsonProperty("item_state") String itemState,
+			@JsonProperty("category_id") double categoryId,
+			@JsonProperty("published_date") double publishedDate,
+			String title,
+			String description,
+			double price,
+			@JsonProperty("update_stat_date") double updateStatDate,
+			@JsonProperty("refreshed_date") double refreshedDate,
+			@JsonProperty("edit_date") double editDate,
+			@JsonProperty("view_count") double viewCount,
+			@JsonProperty("is_sticky") double isSticky,
+			@JsonProperty("item_origin") String itemOrigin,
+			@JsonProperty("extended_guarantee") double extendedGuarantee,
+			double nsb,
+			@JsonProperty("allow_ask_discount") double allowAskDiscount,
+			@JsonProperty("title_en") String titleEn,
+			@JsonProperty("description_en") String descriptionEn,
+			@JsonProperty("email_type") String emailType,
+			@JsonProperty("email_provider") String emailProvider,
+			@JsonProperty("item_domain") String itemDomain,
+			@JsonProperty("resale_item_origin") String resaleItemOrigin,
+			@JsonProperty("roblox_item_id") double robloxItemId,
+			@JsonProperty("roblox_id") double robloxId,
+			@JsonProperty("roblox_email_verified") double robloxEmailVerified,
+			@JsonProperty("roblox_robux") double robloxRobux,
+			@JsonProperty("roblox_username") String robloxUsername,
+			@JsonProperty("roblox_country") String robloxCountry,
+			@JsonProperty("roblox_register_date") double robloxRegisterDate,
+			@JsonProperty("roblox_friends") double robloxFriends,
+			@JsonProperty("roblox_followers") double robloxFollowers,
+			@JsonProperty("roblox_subscription") String robloxSubscription,
+			@JsonProperty("roblox_subscription_end_date") double robloxSubscriptionEndDate,
+			@JsonProperty("roblox_xbox_connected") double robloxXboxConnected,
+			@JsonProperty("roblox_incoming_robux_total") double robloxIncomingRobuxTotal,
+			@JsonProperty("roblox_limited_price") double robloxLimitedPrice,
+			@JsonProperty("roblox_verified") double robloxVerified,
+			@JsonProperty("roblox_age_verified") double robloxAgeVerified,
+			@JsonProperty("roblox_psn_connected") double robloxPsnConnected,
+			@JsonProperty("roblox_subscription_auto_renew") double robloxSubscriptionAutoRenew,
+			@JsonProperty("roblox_game_pass_total_robux") double robloxGamePassTotalRobux,
+			@JsonProperty("roblox_game_donations") String robloxGameDonations,
+			@JsonProperty("roblox_inventory_price") double robloxInventoryPrice,
+			@JsonProperty("roblox_ugc_limited_price") double robloxUgcLimitedPrice,
+			@JsonProperty("roblox_credit_balance") double robloxCreditBalance,
+			@JsonProperty("feedback_data") String feedbackData,
+			boolean isIgnored,
+			double priceWithSellerFee,
+			JsonNode guarantee,
+			boolean canViewLoginData,
+			boolean canUpdateItemStats,
+			boolean canReportItem,
+			boolean canViewEmailLoginData,
+			boolean showGetEmailCodeButton,
+			boolean canOpenItem,
+			boolean canCloseItem,
+			boolean canEditItem,
+			boolean canDeleteItem,
+			boolean canStickItem,
+			boolean canUnstickItem,
+			CategoryRobloxResponseItemsBumpSettings bumpSettings,
+			boolean canBumpItem,
+			boolean canBuyItem,
+			@JsonProperty("rub_price") double rubPrice,
+			@JsonProperty("price_currency") String priceCurrency,
+			boolean canValidateAccount,
+			boolean canResellItemAfterPurchase,
+			String robloxLinkedAccounts,
+			String creditBalance,
+			List<CategoryRobloxResponseItemsRobloxGameDonationsDetails> robloxGameDonationsDetails,
+			boolean canViewAccountLink,
+			List<CategoryRobloxResponseItemsAccountLinks> accountLinks,
+			String accountLink,
+			String emailLoginUrl,
+			boolean canChangePassword,
+			String itemOriginPhrase,
+			@JsonProperty("sold_items_category_count") double soldItemsCategoryCount,
+			@JsonProperty("restore_items_category_count") double restoreItemsCategoryCount,
+			List<JsonNode> tags,
+			@JsonProperty("note_text") JsonNode noteText,
+			boolean hasPendingAutoBuy,
+			String descriptionHtml,
+			String descriptionEnHtml,
+			String descriptionPlain,
+			String descriptionEnPlain,
+			CategoryRobloxResponseItemsSeller seller
 		) {}
 
 		public record CategoryWarfaceParams(
@@ -7925,124 +7925,124 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryWarfaceResponse(
-			@Nullable List<CategoryWarfaceResponseItems> items,
-			Double totalItems,
-			@Nullable JsonNode totalItemsPrice,
-			@Nullable JsonNode hasNextPage,
-			Double perPage,
-			Double page,
-			@Nullable JsonNode wasCached,
-			Double cacheTTL,
-			Double lastModified,
-			Double serverTime,
-			@Nullable String searchUrl,
-			@Nullable List<JsonNode> stickyItems,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<CategoryWarfaceResponseItems> items,
+			double totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			double perPage,
+			double page,
+			boolean wasCached,
+			double cacheTTL,
+			double lastModified,
+			double serverTime,
+			String searchUrl,
+			List<JsonNode> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryWarfaceResponseItemsBumpSettings(
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBumpItemGlobally,
-			@Nullable JsonNode shortErrorPhrase,
-			@Nullable JsonNode errorPhrase
+			boolean canBumpItem,
+			boolean canBumpItemGlobally,
+			JsonNode shortErrorPhrase,
+			JsonNode errorPhrase
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryWarfaceResponseItemsWfServers(
-			Double id,
-			Double rank,
-			@Nullable String title
+			double id,
+			double rank,
+			String title
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryWarfaceResponseItemsSeller(
-			@JsonProperty("user_id") Double userId,
-			@JsonProperty("sold_items_count") Double soldItemsCount,
-			@JsonProperty("active_items_count") Double activeItemsCount,
-			@JsonProperty("restore_data") @Nullable String restoreData,
-			@Nullable String username,
-			@JsonProperty("avatar_date") Double avatarDate,
-			@JsonProperty("is_banned") Double isBanned,
-			@JsonProperty("display_style_group_id") Double displayStyleGroupId,
-			@JsonProperty("restore_percents") Double restorePercents
+			@JsonProperty("user_id") double userId,
+			@JsonProperty("sold_items_count") double soldItemsCount,
+			@JsonProperty("active_items_count") double activeItemsCount,
+			@JsonProperty("restore_data") String restoreData,
+			String username,
+			@JsonProperty("avatar_date") double avatarDate,
+			@JsonProperty("is_banned") double isBanned,
+			@JsonProperty("display_style_group_id") double displayStyleGroupId,
+			@JsonProperty("restore_percents") double restorePercents
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryWarfaceResponseItems(
-			@JsonProperty("item_id") Double itemId,
-			@JsonProperty("item_state") @Nullable String itemState,
-			@JsonProperty("category_id") Double categoryId,
-			@JsonProperty("published_date") Double publishedDate,
-			@Nullable String title,
-			@Nullable String description,
-			Double price,
-			@JsonProperty("update_stat_date") Double updateStatDate,
-			@JsonProperty("refreshed_date") Double refreshedDate,
-			@JsonProperty("edit_date") Double editDate,
-			@JsonProperty("view_count") Double viewCount,
-			@JsonProperty("is_sticky") Double isSticky,
-			@JsonProperty("item_origin") @Nullable String itemOrigin,
-			@JsonProperty("extended_guarantee") Double extendedGuarantee,
-			Double nsb,
-			@JsonProperty("allow_ask_discount") Double allowAskDiscount,
-			@JsonProperty("title_en") @Nullable String titleEn,
-			@JsonProperty("description_en") @Nullable String descriptionEn,
-			@JsonProperty("email_type") @Nullable String emailType,
-			@JsonProperty("email_provider") @Nullable JsonNode emailProvider,
-			@JsonProperty("item_domain") @Nullable String itemDomain,
-			@JsonProperty("resale_item_origin") @Nullable String resaleItemOrigin,
-			@JsonProperty("wf_item_id") Double wfItemId,
-			@JsonProperty("wf_players") @Nullable JsonNode wfPlayers,
-			@JsonProperty("wf_server_1") Double wfServer_1,
-			@JsonProperty("wf_server_2") Double wfServer_2,
-			@JsonProperty("wf_server_3") Double wfServer_3,
-			@JsonProperty("wf_mobile") Double wfMobile,
-			@JsonProperty("wf_bonus_rank") Double wfBonusRank,
-			@JsonProperty("wf_mail_mobile") Double wfMailMobile,
-			@JsonProperty("wf_last_game_date") Double wfLastGameDate,
-			@JsonProperty("wf_loan") @Nullable JsonNode wfLoan,
-			@JsonProperty("wf_active_loan") Double wfActiveLoan,
-			@JsonProperty("wf_rank") Double wfRank,
-			@JsonProperty("feedback_data") @Nullable String feedbackData,
-			@Nullable JsonNode isIgnored,
-			Double priceWithSellerFee,
-			@Nullable JsonNode guarantee,
-			@Nullable JsonNode canViewLoginData,
-			@Nullable JsonNode canUpdateItemStats,
-			@Nullable JsonNode canReportItem,
-			@Nullable JsonNode canViewEmailLoginData,
-			@Nullable JsonNode showGetEmailCodeButton,
-			@Nullable JsonNode canOpenItem,
-			@Nullable JsonNode canCloseItem,
-			@Nullable JsonNode canEditItem,
-			@Nullable JsonNode canDeleteItem,
-			@Nullable JsonNode canStickItem,
-			@Nullable JsonNode canUnstickItem,
-			@Nullable CategoryWarfaceResponseItemsBumpSettings bumpSettings,
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBuyItem,
-			@JsonProperty("rub_price") Double rubPrice,
-			@JsonProperty("price_currency") @Nullable String priceCurrency,
-			@Nullable JsonNode canValidateAccount,
-			@Nullable JsonNode canResellItemAfterPurchase,
-			@Nullable JsonNode isSmallExf,
-			@JsonProperty("account_last_activity") Double accountLastActivity,
-			@JsonProperty("wf_servers") @Nullable List<CategoryWarfaceResponseItemsWfServers> wfServers,
-			@Nullable String domain,
-			@Nullable JsonNode canViewAccountLink,
-			@Nullable JsonNode canChangePassword,
-			@Nullable String itemOriginPhrase,
-			@JsonProperty("sold_items_category_count") Double soldItemsCategoryCount,
-			@JsonProperty("restore_items_category_count") Double restoreItemsCategoryCount,
-			@Nullable List<JsonNode> tags,
-			@JsonProperty("note_text") @Nullable JsonNode noteText,
-			@Nullable JsonNode hasPendingAutoBuy,
-			@Nullable String descriptionHtml,
-			@Nullable String descriptionEnHtml,
-			@Nullable String descriptionPlain,
-			@Nullable String descriptionEnPlain,
-			@Nullable CategoryWarfaceResponseItemsSeller seller
+			@JsonProperty("item_id") double itemId,
+			@JsonProperty("item_state") String itemState,
+			@JsonProperty("category_id") double categoryId,
+			@JsonProperty("published_date") double publishedDate,
+			String title,
+			String description,
+			double price,
+			@JsonProperty("update_stat_date") double updateStatDate,
+			@JsonProperty("refreshed_date") double refreshedDate,
+			@JsonProperty("edit_date") double editDate,
+			@JsonProperty("view_count") double viewCount,
+			@JsonProperty("is_sticky") double isSticky,
+			@JsonProperty("item_origin") String itemOrigin,
+			@JsonProperty("extended_guarantee") double extendedGuarantee,
+			double nsb,
+			@JsonProperty("allow_ask_discount") double allowAskDiscount,
+			@JsonProperty("title_en") String titleEn,
+			@JsonProperty("description_en") String descriptionEn,
+			@JsonProperty("email_type") String emailType,
+			@JsonProperty("email_provider") JsonNode emailProvider,
+			@JsonProperty("item_domain") String itemDomain,
+			@JsonProperty("resale_item_origin") String resaleItemOrigin,
+			@JsonProperty("wf_item_id") double wfItemId,
+			@JsonProperty("wf_players") boolean wfPlayers,
+			@JsonProperty("wf_server_1") double wfServer_1,
+			@JsonProperty("wf_server_2") double wfServer_2,
+			@JsonProperty("wf_server_3") double wfServer_3,
+			@JsonProperty("wf_mobile") double wfMobile,
+			@JsonProperty("wf_bonus_rank") double wfBonusRank,
+			@JsonProperty("wf_mail_mobile") double wfMailMobile,
+			@JsonProperty("wf_last_game_date") double wfLastGameDate,
+			@JsonProperty("wf_loan") boolean wfLoan,
+			@JsonProperty("wf_active_loan") double wfActiveLoan,
+			@JsonProperty("wf_rank") double wfRank,
+			@JsonProperty("feedback_data") String feedbackData,
+			boolean isIgnored,
+			double priceWithSellerFee,
+			JsonNode guarantee,
+			boolean canViewLoginData,
+			boolean canUpdateItemStats,
+			boolean canReportItem,
+			boolean canViewEmailLoginData,
+			boolean showGetEmailCodeButton,
+			boolean canOpenItem,
+			boolean canCloseItem,
+			boolean canEditItem,
+			boolean canDeleteItem,
+			boolean canStickItem,
+			boolean canUnstickItem,
+			CategoryWarfaceResponseItemsBumpSettings bumpSettings,
+			boolean canBumpItem,
+			boolean canBuyItem,
+			@JsonProperty("rub_price") double rubPrice,
+			@JsonProperty("price_currency") String priceCurrency,
+			boolean canValidateAccount,
+			boolean canResellItemAfterPurchase,
+			boolean isSmallExf,
+			@JsonProperty("account_last_activity") double accountLastActivity,
+			@JsonProperty("wf_servers") List<CategoryWarfaceResponseItemsWfServers> wfServers,
+			String domain,
+			boolean canViewAccountLink,
+			boolean canChangePassword,
+			String itemOriginPhrase,
+			@JsonProperty("sold_items_category_count") double soldItemsCategoryCount,
+			@JsonProperty("restore_items_category_count") double restoreItemsCategoryCount,
+			List<JsonNode> tags,
+			@JsonProperty("note_text") JsonNode noteText,
+			boolean hasPendingAutoBuy,
+			String descriptionHtml,
+			String descriptionEnHtml,
+			String descriptionPlain,
+			String descriptionEnPlain,
+			CategoryWarfaceResponseItemsSeller seller
 		) {}
 
 		public record CategoryMinecraftParams(
@@ -8166,135 +8166,135 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryMinecraftResponse(
-			@Nullable List<CategoryMinecraftResponseItems> items,
-			Double totalItems,
-			@Nullable JsonNode totalItemsPrice,
-			@Nullable JsonNode hasNextPage,
-			Double perPage,
-			Double page,
-			@Nullable JsonNode wasCached,
-			Double cacheTTL,
-			Double lastModified,
-			Double serverTime,
-			@Nullable String searchUrl,
-			@Nullable List<JsonNode> stickyItems,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<CategoryMinecraftResponseItems> items,
+			double totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			double perPage,
+			double page,
+			boolean wasCached,
+			double cacheTTL,
+			double lastModified,
+			double serverTime,
+			String searchUrl,
+			List<JsonNode> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryMinecraftResponseItemsBumpSettings(
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBumpItemGlobally,
-			@Nullable JsonNode shortErrorPhrase,
-			@Nullable JsonNode errorPhrase
+			boolean canBumpItem,
+			boolean canBumpItemGlobally,
+			JsonNode shortErrorPhrase,
+			JsonNode errorPhrase
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryMinecraftResponseItemsAccountLinks(
-			@Nullable String link,
-			@Nullable String text,
-			@Nullable String iconClass
+			String link,
+			String text,
+			String iconClass
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryMinecraftResponseItemsSeller(
-			@JsonProperty("user_id") Double userId,
-			@JsonProperty("sold_items_count") Double soldItemsCount,
-			@JsonProperty("active_items_count") Double activeItemsCount,
-			@JsonProperty("restore_data") @Nullable String restoreData,
-			@Nullable String username,
-			@JsonProperty("avatar_date") Double avatarDate,
-			@JsonProperty("is_banned") Double isBanned,
-			@JsonProperty("display_style_group_id") Double displayStyleGroupId,
-			@JsonProperty("restore_percents") @Nullable JsonNode restorePercents
+			@JsonProperty("user_id") double userId,
+			@JsonProperty("sold_items_count") double soldItemsCount,
+			@JsonProperty("active_items_count") double activeItemsCount,
+			@JsonProperty("restore_data") String restoreData,
+			String username,
+			@JsonProperty("avatar_date") double avatarDate,
+			@JsonProperty("is_banned") double isBanned,
+			@JsonProperty("display_style_group_id") double displayStyleGroupId,
+			@JsonProperty("restore_percents") JsonNode restorePercents
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryMinecraftResponseItems(
-			@JsonProperty("item_id") Double itemId,
-			@JsonProperty("item_state") @Nullable String itemState,
-			@JsonProperty("category_id") Double categoryId,
-			@JsonProperty("published_date") Double publishedDate,
-			@Nullable String title,
-			@Nullable String description,
-			Double price,
-			@JsonProperty("update_stat_date") Double updateStatDate,
-			@JsonProperty("refreshed_date") Double refreshedDate,
-			@JsonProperty("edit_date") Double editDate,
-			@JsonProperty("view_count") Double viewCount,
-			@JsonProperty("is_sticky") Double isSticky,
-			@JsonProperty("item_origin") @Nullable String itemOrigin,
-			@JsonProperty("extended_guarantee") Double extendedGuarantee,
-			Double nsb,
-			@JsonProperty("allow_ask_discount") Double allowAskDiscount,
-			@JsonProperty("title_en") @Nullable String titleEn,
-			@JsonProperty("description_en") @Nullable String descriptionEn,
-			@JsonProperty("email_type") @Nullable String emailType,
-			@JsonProperty("email_provider") @Nullable String emailProvider,
-			@JsonProperty("item_domain") @Nullable String itemDomain,
-			@JsonProperty("resale_item_origin") @Nullable String resaleItemOrigin,
-			@JsonProperty("minecraft_item_id") Double minecraftItemId,
-			@JsonProperty("minecraft_id") @Nullable String minecraftId,
-			@JsonProperty("minecraft_nickname") @Nullable String minecraftNickname,
-			@JsonProperty("minecraft_country") @Nullable String minecraftCountry,
-			@JsonProperty("minecraft_skin") @Nullable String minecraftSkin,
-			@JsonProperty("minecraft_java") Double minecraftJava,
-			@JsonProperty("minecraft_bedrock") Double minecraftBedrock,
-			@JsonProperty("minecraft_can_change_nickname") Double minecraftCanChangeNickname,
-			@JsonProperty("minecraft_created_at") Double minecraftCreatedAt,
-			@JsonProperty("minecraft_hypixel_rank") @Nullable String minecraftHypixelRank,
-			@JsonProperty("minecraft_hypixel_level") Double minecraftHypixelLevel,
-			@JsonProperty("minecraft_hypixel_achievement") Double minecraftHypixelAchievement,
-			@JsonProperty("minecraft_hypixel_last_login") Double minecraftHypixelLastLogin,
-			@JsonProperty("minecraft_hypixel_ban") Double minecraftHypixelBan,
-			@JsonProperty("minecraft_hypixel_ban_reason") @Nullable String minecraftHypixelBanReason,
-			@JsonProperty("minecraft_hypixel_skyblock_level") Double minecraftHypixelSkyblockLevel,
-			@JsonProperty("minecraft_hypixel_skyblock_net_worth") Double minecraftHypixelSkyblockNetWorth,
-			@JsonProperty("minecraft_dungeons") Double minecraftDungeons,
-			@JsonProperty("minecraft_legends") Double minecraftLegends,
-			@JsonProperty("minecraft_capes_count") Double minecraftCapesCount,
-			@JsonProperty("minecraft_capes") @Nullable List<JsonNode> minecraftCapes,
-			@JsonProperty("minecraft_subscription_name") @Nullable String minecraftSubscriptionName,
-			@JsonProperty("minecraft_subscription_ends") Double minecraftSubscriptionEnds,
-			@JsonProperty("minecraft_subscription_auto_renew") Double minecraftSubscriptionAutoRenew,
-			@JsonProperty("minecraft_email_reset_date") Double minecraftEmailResetDate,
-			@JsonProperty("feedback_data") @Nullable String feedbackData,
-			@Nullable JsonNode isIgnored,
-			Double priceWithSellerFee,
-			@Nullable JsonNode guarantee,
-			@Nullable JsonNode canViewLoginData,
-			@Nullable JsonNode canUpdateItemStats,
-			@Nullable JsonNode canReportItem,
-			@Nullable JsonNode canViewEmailLoginData,
-			@Nullable JsonNode showGetEmailCodeButton,
-			@Nullable JsonNode canOpenItem,
-			@Nullable JsonNode canCloseItem,
-			@Nullable JsonNode canEditItem,
-			@Nullable JsonNode canDeleteItem,
-			@Nullable JsonNode canStickItem,
-			@Nullable JsonNode canUnstickItem,
-			@Nullable CategoryMinecraftResponseItemsBumpSettings bumpSettings,
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBuyItem,
-			@JsonProperty("rub_price") Double rubPrice,
-			@JsonProperty("price_currency") @Nullable String priceCurrency,
-			@Nullable JsonNode canValidateAccount,
-			@Nullable JsonNode canResellItemAfterPurchase,
-			@Nullable JsonNode minecraftHasPaidLicense,
-			@Nullable JsonNode canViewAccountLink,
-			@Nullable List<CategoryMinecraftResponseItemsAccountLinks> accountLinks,
-			@Nullable String accountLink,
-			@Nullable String emailLoginUrl,
-			@Nullable JsonNode canChangePassword,
-			@Nullable String itemOriginPhrase,
-			@Nullable List<JsonNode> tags,
-			@JsonProperty("note_text") @Nullable JsonNode noteText,
-			@Nullable JsonNode hasPendingAutoBuy,
-			@Nullable String descriptionHtml,
-			@Nullable String descriptionEnHtml,
-			@Nullable String descriptionPlain,
-			@Nullable String descriptionEnPlain,
-			@Nullable CategoryMinecraftResponseItemsSeller seller
+			@JsonProperty("item_id") double itemId,
+			@JsonProperty("item_state") String itemState,
+			@JsonProperty("category_id") double categoryId,
+			@JsonProperty("published_date") double publishedDate,
+			String title,
+			String description,
+			double price,
+			@JsonProperty("update_stat_date") double updateStatDate,
+			@JsonProperty("refreshed_date") double refreshedDate,
+			@JsonProperty("edit_date") double editDate,
+			@JsonProperty("view_count") double viewCount,
+			@JsonProperty("is_sticky") double isSticky,
+			@JsonProperty("item_origin") String itemOrigin,
+			@JsonProperty("extended_guarantee") double extendedGuarantee,
+			double nsb,
+			@JsonProperty("allow_ask_discount") double allowAskDiscount,
+			@JsonProperty("title_en") String titleEn,
+			@JsonProperty("description_en") String descriptionEn,
+			@JsonProperty("email_type") String emailType,
+			@JsonProperty("email_provider") String emailProvider,
+			@JsonProperty("item_domain") String itemDomain,
+			@JsonProperty("resale_item_origin") String resaleItemOrigin,
+			@JsonProperty("minecraft_item_id") double minecraftItemId,
+			@JsonProperty("minecraft_id") String minecraftId,
+			@JsonProperty("minecraft_nickname") String minecraftNickname,
+			@JsonProperty("minecraft_country") String minecraftCountry,
+			@JsonProperty("minecraft_skin") String minecraftSkin,
+			@JsonProperty("minecraft_java") double minecraftJava,
+			@JsonProperty("minecraft_bedrock") double minecraftBedrock,
+			@JsonProperty("minecraft_can_change_nickname") double minecraftCanChangeNickname,
+			@JsonProperty("minecraft_created_at") double minecraftCreatedAt,
+			@JsonProperty("minecraft_hypixel_rank") String minecraftHypixelRank,
+			@JsonProperty("minecraft_hypixel_level") double minecraftHypixelLevel,
+			@JsonProperty("minecraft_hypixel_achievement") double minecraftHypixelAchievement,
+			@JsonProperty("minecraft_hypixel_last_login") double minecraftHypixelLastLogin,
+			@JsonProperty("minecraft_hypixel_ban") double minecraftHypixelBan,
+			@JsonProperty("minecraft_hypixel_ban_reason") String minecraftHypixelBanReason,
+			@JsonProperty("minecraft_hypixel_skyblock_level") double minecraftHypixelSkyblockLevel,
+			@JsonProperty("minecraft_hypixel_skyblock_net_worth") double minecraftHypixelSkyblockNetWorth,
+			@JsonProperty("minecraft_dungeons") double minecraftDungeons,
+			@JsonProperty("minecraft_legends") double minecraftLegends,
+			@JsonProperty("minecraft_capes_count") double minecraftCapesCount,
+			@JsonProperty("minecraft_capes") List<JsonNode> minecraftCapes,
+			@JsonProperty("minecraft_subscription_name") String minecraftSubscriptionName,
+			@JsonProperty("minecraft_subscription_ends") double minecraftSubscriptionEnds,
+			@JsonProperty("minecraft_subscription_auto_renew") double minecraftSubscriptionAutoRenew,
+			@JsonProperty("minecraft_email_reset_date") double minecraftEmailResetDate,
+			@JsonProperty("feedback_data") String feedbackData,
+			boolean isIgnored,
+			double priceWithSellerFee,
+			JsonNode guarantee,
+			boolean canViewLoginData,
+			boolean canUpdateItemStats,
+			boolean canReportItem,
+			boolean canViewEmailLoginData,
+			boolean showGetEmailCodeButton,
+			boolean canOpenItem,
+			boolean canCloseItem,
+			boolean canEditItem,
+			boolean canDeleteItem,
+			boolean canStickItem,
+			boolean canUnstickItem,
+			CategoryMinecraftResponseItemsBumpSettings bumpSettings,
+			boolean canBumpItem,
+			boolean canBuyItem,
+			@JsonProperty("rub_price") double rubPrice,
+			@JsonProperty("price_currency") String priceCurrency,
+			boolean canValidateAccount,
+			boolean canResellItemAfterPurchase,
+			boolean minecraftHasPaidLicense,
+			boolean canViewAccountLink,
+			List<CategoryMinecraftResponseItemsAccountLinks> accountLinks,
+			String accountLink,
+			String emailLoginUrl,
+			boolean canChangePassword,
+			String itemOriginPhrase,
+			List<JsonNode> tags,
+			@JsonProperty("note_text") JsonNode noteText,
+			boolean hasPendingAutoBuy,
+			String descriptionHtml,
+			String descriptionEnHtml,
+			String descriptionPlain,
+			String descriptionEnPlain,
+			CategoryMinecraftResponseItemsSeller seller
 		) {}
 
 		public record CategoryHytaleParams(
@@ -8354,124 +8354,124 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryHytaleResponse(
-			@Nullable List<CategoryHytaleResponseItems> items,
-			Double totalItems,
-			@Nullable JsonNode totalItemsPrice,
-			@Nullable JsonNode hasNextPage,
-			Double perPage,
-			Double page,
-			@Nullable JsonNode wasCached,
-			Double cacheTTL,
-			Double lastModified,
-			Double serverTime,
-			@Nullable String searchUrl,
-			@Nullable List<JsonNode> stickyItems,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<CategoryHytaleResponseItems> items,
+			double totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			double perPage,
+			double page,
+			boolean wasCached,
+			double cacheTTL,
+			double lastModified,
+			double serverTime,
+			String searchUrl,
+			List<JsonNode> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryHytaleResponseItemsCategory(
-			@JsonProperty("category_id") Double categoryId,
-			@JsonProperty("category_title") @Nullable String categoryTitle,
-			@JsonProperty("category_name") @Nullable String categoryName,
-			@JsonProperty("category_url") @Nullable String categoryUrl
+			@JsonProperty("category_id") double categoryId,
+			@JsonProperty("category_title") String categoryTitle,
+			@JsonProperty("category_name") String categoryName,
+			@JsonProperty("category_url") String categoryUrl
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryHytaleResponseItemsCopyFormatData(
-			@JsonProperty("title_link") @Nullable String titleLink
+			@JsonProperty("title_link") String titleLink
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryHytaleResponseItemsSeller(
-			@JsonProperty("user_id") Double userId,
-			@JsonProperty("sold_items_count") Double soldItemsCount,
-			@JsonProperty("active_items_count") Double activeItemsCount,
-			@JsonProperty("restore_data") @Nullable String restoreData,
-			@Nullable String username,
-			@JsonProperty("avatar_date") Double avatarDate,
-			@JsonProperty("is_banned") Double isBanned,
-			@JsonProperty("display_style_group_id") Double displayStyleGroupId,
-			@JsonProperty("restore_percents") @Nullable JsonNode restorePercents
+			@JsonProperty("user_id") double userId,
+			@JsonProperty("sold_items_count") double soldItemsCount,
+			@JsonProperty("active_items_count") double activeItemsCount,
+			@JsonProperty("restore_data") String restoreData,
+			String username,
+			@JsonProperty("avatar_date") double avatarDate,
+			@JsonProperty("is_banned") double isBanned,
+			@JsonProperty("display_style_group_id") double displayStyleGroupId,
+			@JsonProperty("restore_percents") JsonNode restorePercents
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryHytaleResponseItems(
-			@JsonProperty("item_id") Double itemId,
-			@JsonProperty("item_state") @Nullable String itemState,
-			@JsonProperty("category_id") Double categoryId,
-			@JsonProperty("published_date") Double publishedDate,
-			@Nullable String title,
-			@Nullable String description,
-			Double price,
-			@JsonProperty("update_stat_date") Double updateStatDate,
-			@JsonProperty("refreshed_date") Double refreshedDate,
-			@JsonProperty("edit_date") Double editDate,
-			@JsonProperty("pending_deletion_date") Double pendingDeletionDate,
-			@JsonProperty("view_count") Double viewCount,
-			@JsonProperty("is_sticky") Double isSticky,
-			@JsonProperty("item_origin") @Nullable String itemOrigin,
-			@JsonProperty("extended_guarantee") Double extendedGuarantee,
-			Double nsb,
-			@JsonProperty("allow_ask_discount") Double allowAskDiscount,
-			@JsonProperty("title_en") @Nullable String titleEn,
-			@JsonProperty("description_en") @Nullable String descriptionEn,
-			@JsonProperty("email_type") @Nullable String emailType,
-			@JsonProperty("email_provider") @Nullable String emailProvider,
-			@JsonProperty("item_domain") @Nullable String itemDomain,
-			@JsonProperty("resale_item_origin") @Nullable String resaleItemOrigin,
-			@JsonProperty("auto_bump_period") Double autoBumpPeriod,
-			@JsonProperty("rub_price") Double rubPrice,
-			@Nullable JsonNode discount,
-			@JsonProperty("hytale_item_id") Double hytaleItemId,
-			@JsonProperty("hytale_profiles") Double hytaleProfiles,
-			@JsonProperty("hytale_edition") @Nullable String hytaleEdition,
-			@JsonProperty("feedback_data") @Nullable String feedbackData,
-			@JsonProperty("max_discount_percent") Double maxDiscountPercent,
-			@Nullable JsonNode isIgnored,
-			Double priceWithSellerFee,
-			@Nullable CategoryHytaleResponseItemsCategory category,
-			@Nullable JsonNode guarantee,
-			@Nullable JsonNode canViewLoginData,
-			@Nullable JsonNode canViewTempEmail,
-			@Nullable JsonNode canUpdateItemStats,
-			@Nullable JsonNode canReportItem,
-			@Nullable JsonNode canViewItemViews,
-			@Nullable JsonNode canManagePublicTag,
-			@Nullable JsonNode canViewEmailLoginData,
-			@Nullable CategoryHytaleResponseItemsCopyFormatData copyFormatData,
-			@Nullable JsonNode showGetEmailCodeButton,
-			@Nullable JsonNode canOpenItem,
-			@Nullable JsonNode canCloseItem,
-			@Nullable JsonNode canEditItem,
-			@Nullable JsonNode canDeleteItem,
-			@Nullable JsonNode canStickItem,
-			@Nullable JsonNode canUnstickItem,
-			@Nullable JsonNode canBumpItem,
-			@Nullable String canNotBumpItemReason,
-			@Nullable JsonNode buyer,
-			@Nullable JsonNode isPersonalAccount,
-			@Nullable JsonNode canBuyItem,
-			@JsonProperty("price_currency") @Nullable String priceCurrency,
-			@Nullable String priceWithSellerFeeLabel,
-			@Nullable JsonNode canValidateAccount,
-			@Nullable JsonNode canResellItem,
-			@Nullable JsonNode canViewAccountLink,
-			@Nullable List<JsonNode> imagePreviewLinks,
-			@Nullable String emailLoginUrl,
-			@Nullable JsonNode canChangePassword,
-			@Nullable JsonNode canChangeEmailPassword,
-			@Nullable JsonNode uniqueKeyExists,
-			@Nullable String itemOriginPhrase,
-			@Nullable List<JsonNode> tags,
-			@JsonProperty("public_tag") @Nullable JsonNode publicTag,
-			@JsonProperty("note_text") @Nullable JsonNode noteText,
-			@Nullable JsonNode hasPendingAutoBuy,
-			@Nullable String descriptionHtml,
-			@Nullable String descriptionEnHtml,
-			@Nullable String descriptionPlain,
-			@Nullable String descriptionEnPlain,
-			@Nullable CategoryHytaleResponseItemsSeller seller
+			@JsonProperty("item_id") double itemId,
+			@JsonProperty("item_state") String itemState,
+			@JsonProperty("category_id") double categoryId,
+			@JsonProperty("published_date") double publishedDate,
+			String title,
+			String description,
+			double price,
+			@JsonProperty("update_stat_date") double updateStatDate,
+			@JsonProperty("refreshed_date") double refreshedDate,
+			@JsonProperty("edit_date") double editDate,
+			@JsonProperty("pending_deletion_date") double pendingDeletionDate,
+			@JsonProperty("view_count") double viewCount,
+			@JsonProperty("is_sticky") double isSticky,
+			@JsonProperty("item_origin") String itemOrigin,
+			@JsonProperty("extended_guarantee") double extendedGuarantee,
+			double nsb,
+			@JsonProperty("allow_ask_discount") double allowAskDiscount,
+			@JsonProperty("title_en") String titleEn,
+			@JsonProperty("description_en") String descriptionEn,
+			@JsonProperty("email_type") String emailType,
+			@JsonProperty("email_provider") String emailProvider,
+			@JsonProperty("item_domain") String itemDomain,
+			@JsonProperty("resale_item_origin") String resaleItemOrigin,
+			@JsonProperty("auto_bump_period") double autoBumpPeriod,
+			@JsonProperty("rub_price") double rubPrice,
+			boolean discount,
+			@JsonProperty("hytale_item_id") double hytaleItemId,
+			@JsonProperty("hytale_profiles") double hytaleProfiles,
+			@JsonProperty("hytale_edition") String hytaleEdition,
+			@JsonProperty("feedback_data") String feedbackData,
+			@JsonProperty("max_discount_percent") double maxDiscountPercent,
+			boolean isIgnored,
+			double priceWithSellerFee,
+			CategoryHytaleResponseItemsCategory category,
+			JsonNode guarantee,
+			boolean canViewLoginData,
+			boolean canViewTempEmail,
+			boolean canUpdateItemStats,
+			boolean canReportItem,
+			boolean canViewItemViews,
+			boolean canManagePublicTag,
+			boolean canViewEmailLoginData,
+			CategoryHytaleResponseItemsCopyFormatData copyFormatData,
+			boolean showGetEmailCodeButton,
+			boolean canOpenItem,
+			boolean canCloseItem,
+			boolean canEditItem,
+			boolean canDeleteItem,
+			boolean canStickItem,
+			boolean canUnstickItem,
+			boolean canBumpItem,
+			String canNotBumpItemReason,
+			JsonNode buyer,
+			boolean isPersonalAccount,
+			boolean canBuyItem,
+			@JsonProperty("price_currency") String priceCurrency,
+			String priceWithSellerFeeLabel,
+			boolean canValidateAccount,
+			boolean canResellItem,
+			boolean canViewAccountLink,
+			List<JsonNode> imagePreviewLinks,
+			String emailLoginUrl,
+			boolean canChangePassword,
+			boolean canChangeEmailPassword,
+			boolean uniqueKeyExists,
+			String itemOriginPhrase,
+			List<JsonNode> tags,
+			@JsonProperty("public_tag") JsonNode publicTag,
+			@JsonProperty("note_text") JsonNode noteText,
+			boolean hasPendingAutoBuy,
+			String descriptionHtml,
+			String descriptionEnHtml,
+			String descriptionPlain,
+			String descriptionEnPlain,
+			CategoryHytaleResponseItemsSeller seller
 		) {}
 
 		public record CategoryListParams(
@@ -8485,24 +8485,24 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryListResponse(
-			@Nullable CategoryListResponseCategory category,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			CategoryListResponseCategory category,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryListResponseCategoryLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@JsonProperty("sub-categories") @Nullable String subCategories,
-			@JsonProperty("sub-forums") @Nullable String subForums
+			String permalink,
+			String detail,
+			@JsonProperty("sub-categories") String subCategories,
+			@JsonProperty("sub-forums") String subForums
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryListResponseCategory(
-			@JsonProperty("category_id") Double categoryId,
-			@JsonProperty("category_title") @Nullable String categoryTitle,
-			@JsonProperty("category_description") @Nullable String categoryDescription,
-			@Nullable CategoryListResponseCategoryLinks links
+			@JsonProperty("category_id") double categoryId,
+			@JsonProperty("category_title") String categoryTitle,
+			@JsonProperty("category_description") String categoryDescription,
+			CategoryListResponseCategoryLinks links
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
@@ -8510,71 +8510,71 @@ public final class Types {
 			@Nullable CategoryParamsResponseCategory category,
 			@Nullable List<CategoryParamsResponseParams> params,
 			@JsonProperty("base_params") @Nullable JsonNode baseParams,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryParamsResponseCategory(
-			@JsonProperty("category_id") Double categoryId,
-			@JsonProperty("sub_category_id") Double subCategoryId,
-			@JsonProperty("category_order") Double categoryOrder,
-			@JsonProperty("category_title") @Nullable String categoryTitle,
-			@JsonProperty("category_name") @Nullable String categoryName,
-			@JsonProperty("category_url") @Nullable String categoryUrl,
-			@JsonProperty("category_description_html") @Nullable String categoryDescriptionHtml,
-			@JsonProperty("category_login_url") @Nullable String categoryLoginUrl,
-			@JsonProperty("add_item_available") Double addItemAvailable,
-			@JsonProperty("mass_upload_item_available") Double massUploadItemAvailable,
-			@JsonProperty("has_guarantee") Double hasGuarantee,
-			@JsonProperty("has_account_link") Double hasAccountLink,
-			@JsonProperty("require_temp_email") Double requireTempEmail,
-			@JsonProperty("recovery_link") @Nullable String recoveryLink,
-			@JsonProperty("check_button_enabled") Double checkButtonEnabled,
-			@JsonProperty("checker_enabled") Double checkerEnabled,
-			@JsonProperty("support_personal_proxy") Double supportPersonalProxy,
-			@JsonProperty("support_email_login_data") Double supportEmailLoginData,
-			@JsonProperty("require_email_login_data") Double requireEmailLoginData,
-			@JsonProperty("display_in_list") Double displayInList,
-			@JsonProperty("category_description_html_en") @Nullable String categoryDescriptionHtmlEn,
-			@JsonProperty("category_h1_html_en") @Nullable String categoryH1HtmlEn,
-			@JsonProperty("account_price_min") Double accountPriceMin,
-			@JsonProperty("require_video_recording") Double requireVideoRecording,
-			@JsonProperty("top_queries") @Nullable String topQueries,
-			@JsonProperty("require_eld_for_native_accs") Double requireEldForNativeAccs,
-			@JsonProperty("can_be_resold") Double canBeResold,
-			@JsonProperty("support_temp_email") Double supportTempEmail,
-			@Nullable String cookies,
-			@JsonProperty("login_type") @Nullable String loginType,
-			@JsonProperty("guest_hidden") Double guestHidden,
-			@JsonProperty("available_temp_email") Double availableTempEmail,
-			@JsonProperty("resale_duration_limit_days") Double resaleDurationLimitDays,
-			@JsonProperty("buy_without_validation") Double buyWithoutValidation,
-			@JsonProperty("max_invalid_upload_tries") Double maxInvalidUploadTries
+			@JsonProperty("category_id") double categoryId,
+			@JsonProperty("sub_category_id") double subCategoryId,
+			@JsonProperty("category_order") double categoryOrder,
+			@JsonProperty("category_title") String categoryTitle,
+			@JsonProperty("category_name") String categoryName,
+			@JsonProperty("category_url") String categoryUrl,
+			@JsonProperty("category_description_html") String categoryDescriptionHtml,
+			@JsonProperty("category_login_url") String categoryLoginUrl,
+			@JsonProperty("add_item_available") double addItemAvailable,
+			@JsonProperty("mass_upload_item_available") double massUploadItemAvailable,
+			@JsonProperty("has_guarantee") double hasGuarantee,
+			@JsonProperty("has_account_link") double hasAccountLink,
+			@JsonProperty("require_temp_email") double requireTempEmail,
+			@JsonProperty("recovery_link") String recoveryLink,
+			@JsonProperty("check_button_enabled") double checkButtonEnabled,
+			@JsonProperty("checker_enabled") double checkerEnabled,
+			@JsonProperty("support_personal_proxy") double supportPersonalProxy,
+			@JsonProperty("support_email_login_data") double supportEmailLoginData,
+			@JsonProperty("require_email_login_data") double requireEmailLoginData,
+			@JsonProperty("display_in_list") double displayInList,
+			@JsonProperty("category_description_html_en") String categoryDescriptionHtmlEn,
+			@JsonProperty("category_h1_html_en") String categoryH1HtmlEn,
+			@JsonProperty("account_price_min") double accountPriceMin,
+			@JsonProperty("require_video_recording") double requireVideoRecording,
+			@JsonProperty("top_queries") String topQueries,
+			@JsonProperty("require_eld_for_native_accs") double requireEldForNativeAccs,
+			@JsonProperty("can_be_resold") double canBeResold,
+			@JsonProperty("support_temp_email") double supportTempEmail,
+			String cookies,
+			@JsonProperty("login_type") String loginType,
+			@JsonProperty("guest_hidden") double guestHidden,
+			@JsonProperty("available_temp_email") double availableTempEmail,
+			@JsonProperty("resale_duration_limit_days") double resaleDurationLimitDays,
+			@JsonProperty("buy_without_validation") double buyWithoutValidation,
+			@JsonProperty("max_invalid_upload_tries") double maxInvalidUploadTries
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryParamsResponseParams(
-			@Nullable String name,
-			@Nullable String input,
-			@Nullable String description,
-			@Nullable List<String> values
+			String name,
+			String input,
+			String description,
+			List<String> values
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryGamesResponse(
 			@Nullable List<CategoryGamesResponseGames> games,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CategoryGamesResponseGames(
-			@JsonProperty("app_id") @Nullable String appId,
-			@Nullable String title,
-			@Nullable String abbr,
-			@JsonProperty("category_id") Double categoryId,
-			@Nullable String img,
-			@Nullable String url,
-			@Nullable String ru
+			@JsonProperty("app_id") String appId,
+			String title,
+			String abbr,
+			@JsonProperty("category_id") double categoryId,
+			String img,
+			String url,
+			String ru
 		) {}
 
 	}
@@ -8647,15 +8647,15 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ListUserResponse(
-			@Nullable List<JsonNode> items,
-			Double totalItems,
-			@Nullable JsonNode totalItemsPrice,
-			@Nullable JsonNode hasNextPage,
-			Double perPage,
-			Double page,
-			@Nullable String searchUrl,
-			@Nullable List<JsonNode> stickyItems,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<ItemFromListModel> items,
+			double totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			double perPage,
+			double page,
+			String searchUrl,
+			List<ItemFromListModel> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record ListOrdersParams(
@@ -8697,15 +8697,15 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ListOrdersResponse(
-			@Nullable List<JsonNode> items,
-			Double totalItems,
-			@Nullable JsonNode totalItemsPrice,
-			@Nullable JsonNode hasNextPage,
-			Double perPage,
-			Double page,
-			@Nullable String searchUrl,
-			@Nullable List<JsonNode> stickyItems,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<ItemFromListModel> items,
+			double totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			double perPage,
+			double page,
+			String searchUrl,
+			List<ItemFromListModel> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record ListStatesParams(
@@ -8719,117 +8719,117 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ListStatesResponse(
-			@Nullable ListStatesResponseUserItemStates userItemStates,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			ListStatesResponseUserItemStates userItemStates,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ListStatesResponseUserItemStatesStickied(
-			@JsonProperty("item_state") @Nullable String itemState,
-			@JsonProperty("item_count") Double itemCount,
-			@Nullable String title,
-			Double stickyLimit
+			@JsonProperty("item_state") String itemState,
+			@JsonProperty("item_count") double itemCount,
+			String title,
+			double stickyLimit
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ListStatesResponseUserItemStatesDiscountRequest(
-			@JsonProperty("item_state") @Nullable String itemState,
-			@JsonProperty("item_count") Double itemCount,
-			@Nullable String title
+			@JsonProperty("item_state") String itemState,
+			@JsonProperty("item_count") double itemCount,
+			String title
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ListStatesResponseUserItemStatesInBuyersFavorites(
-			@JsonProperty("item_state") @Nullable String itemState,
-			@JsonProperty("item_count") Double itemCount,
-			@Nullable String title
+			@JsonProperty("item_state") String itemState,
+			@JsonProperty("item_count") double itemCount,
+			String title
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ListStatesResponseUserItemStatesActive(
-			@JsonProperty("item_count") Double itemCount,
-			@JsonProperty("item_state") @Nullable String itemState,
-			@Nullable String title
+			@JsonProperty("item_count") double itemCount,
+			@JsonProperty("item_state") String itemState,
+			String title
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ListStatesResponseUserItemStatesPaid(
-			@JsonProperty("item_count") Double itemCount,
-			@JsonProperty("item_state") @Nullable String itemState,
-			@Nullable String title
+			@JsonProperty("item_count") double itemCount,
+			@JsonProperty("item_state") String itemState,
+			String title
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ListStatesResponseUserItemStatesClosed(
-			@JsonProperty("item_state") @Nullable String itemState,
-			@JsonProperty("item_count") Double itemCount,
-			@Nullable String title
+			@JsonProperty("item_state") String itemState,
+			@JsonProperty("item_count") double itemCount,
+			String title
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ListStatesResponseUserItemStatesDeleted(
-			@JsonProperty("item_count") Double itemCount,
-			@JsonProperty("item_state") @Nullable String itemState,
-			@Nullable String title
+			@JsonProperty("item_count") double itemCount,
+			@JsonProperty("item_state") String itemState,
+			String title
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ListStatesResponseUserItemStatesAwaiting(
-			@JsonProperty("item_count") Double itemCount,
-			@JsonProperty("item_state") @Nullable String itemState,
-			@Nullable String title
+			@JsonProperty("item_count") double itemCount,
+			@JsonProperty("item_state") String itemState,
+			String title
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ListStatesResponseUserItemStatesPreActive(
-			@JsonProperty("item_state") @Nullable String itemState,
-			@JsonProperty("item_count") Double itemCount,
-			@Nullable String title
+			@JsonProperty("item_state") String itemState,
+			@JsonProperty("item_count") double itemCount,
+			String title
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ListStatesResponseUserItemStatesPreUpload(
-			@JsonProperty("item_state") @Nullable String itemState,
-			@JsonProperty("item_count") Double itemCount,
-			@Nullable String title
+			@JsonProperty("item_state") String itemState,
+			@JsonProperty("item_count") double itemCount,
+			String title
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ListStatesResponseUserItemStatesPendingDeletion(
-			@JsonProperty("item_state") @Nullable String itemState,
-			@JsonProperty("item_count") Double itemCount,
-			@Nullable String title
+			@JsonProperty("item_state") String itemState,
+			@JsonProperty("item_count") double itemCount,
+			String title
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ListStatesResponseUserItemStatesClosedInactive(
-			@JsonProperty("item_count") Double itemCount,
-			@JsonProperty("item_state") @Nullable String itemState,
-			@Nullable String title
+			@JsonProperty("item_count") double itemCount,
+			@JsonProperty("item_state") String itemState,
+			String title
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ListStatesResponseUserItemStatesAutoBump(
-			@JsonProperty("item_state") @Nullable String itemState,
-			@JsonProperty("item_count") Double itemCount,
-			@Nullable String title
+			@JsonProperty("item_state") String itemState,
+			@JsonProperty("item_count") double itemCount,
+			String title
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ListStatesResponseUserItemStates(
-			@Nullable ListStatesResponseUserItemStatesStickied stickied,
-			@JsonProperty("discount_request") @Nullable ListStatesResponseUserItemStatesDiscountRequest discountRequest,
-			@JsonProperty("in_buyers_favorites") @Nullable ListStatesResponseUserItemStatesInBuyersFavorites inBuyersFavorites,
-			@Nullable ListStatesResponseUserItemStatesActive active,
-			@Nullable ListStatesResponseUserItemStatesPaid paid,
-			@Nullable ListStatesResponseUserItemStatesClosed closed,
-			@Nullable ListStatesResponseUserItemStatesDeleted deleted,
-			@Nullable ListStatesResponseUserItemStatesAwaiting awaiting,
-			@JsonProperty("pre_active") @Nullable ListStatesResponseUserItemStatesPreActive preActive,
-			@JsonProperty("pre_upload") @Nullable ListStatesResponseUserItemStatesPreUpload preUpload,
-			@JsonProperty("pending_deletion") @Nullable ListStatesResponseUserItemStatesPendingDeletion pendingDeletion,
-			@JsonProperty("closed_inactive") @Nullable ListStatesResponseUserItemStatesClosedInactive closedInactive,
-			@JsonProperty("auto_bump") @Nullable ListStatesResponseUserItemStatesAutoBump autoBump
+			ListStatesResponseUserItemStatesStickied stickied,
+			@JsonProperty("discount_request") ListStatesResponseUserItemStatesDiscountRequest discountRequest,
+			@JsonProperty("in_buyers_favorites") ListStatesResponseUserItemStatesInBuyersFavorites inBuyersFavorites,
+			ListStatesResponseUserItemStatesActive active,
+			ListStatesResponseUserItemStatesPaid paid,
+			ListStatesResponseUserItemStatesClosed closed,
+			ListStatesResponseUserItemStatesDeleted deleted,
+			ListStatesResponseUserItemStatesAwaiting awaiting,
+			@JsonProperty("pre_active") ListStatesResponseUserItemStatesPreActive preActive,
+			@JsonProperty("pre_upload") ListStatesResponseUserItemStatesPreUpload preUpload,
+			@JsonProperty("pending_deletion") ListStatesResponseUserItemStatesPendingDeletion pendingDeletion,
+			@JsonProperty("closed_inactive") ListStatesResponseUserItemStatesClosedInactive closedInactive,
+			@JsonProperty("auto_bump") ListStatesResponseUserItemStatesAutoBump autoBump
 		) {}
 
 		public record ListDownloadParams(
@@ -8930,15 +8930,15 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ListFavoritesResponse(
-			@Nullable List<JsonNode> items,
-			Double totalItems,
-			@Nullable JsonNode totalItemsPrice,
-			@Nullable JsonNode hasNextPage,
-			Double perPage,
-			Double page,
-			@Nullable String searchUrl,
-			@Nullable List<JsonNode> stickyItems,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<ItemFromListModel> items,
+			double totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			double perPage,
+			double page,
+			String searchUrl,
+			List<ItemFromListModel> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record ListViewedParams(
@@ -8974,15 +8974,15 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ListViewedResponse(
-			@Nullable List<JsonNode> items,
-			Double totalItems,
-			@Nullable JsonNode totalItemsPrice,
-			@Nullable JsonNode hasNextPage,
-			Double perPage,
-			Double page,
-			@Nullable String searchUrl,
-			@Nullable List<JsonNode> stickyItems,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<ItemFromListModel> items,
+			double totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			double perPage,
+			double page,
+			String searchUrl,
+			List<ItemFromListModel> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 	}
@@ -9005,27 +9005,27 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingGetResponse(
-			@Nullable JsonNode item,
-			@Nullable JsonNode canStickItem,
-			@Nullable JsonNode canUnstickItem,
-			@Nullable JsonNode canBuyItem,
-			@Nullable String cannotBuyItemError,
-			@Nullable JsonNode canCloseItem,
-			@Nullable JsonNode canOpenItem,
-			@Nullable JsonNode canReportItem,
-			@Nullable JsonNode canEditItem,
-			@Nullable JsonNode canDeleteItem,
-			@Nullable JsonNode canCancelConfirmedBuy,
-			@Nullable JsonNode canViewItemHistory,
-			@Nullable JsonNode faveCount,
-			@Nullable JsonNode isVisibleItem,
-			@Nullable JsonNode canViewLoginData,
-			@Nullable JsonNode showToFavouritesButton,
-			@Nullable String itemLink,
-			@Nullable JsonNode canChangeOwner,
-			@Nullable List<Double> sameItemsIds,
-			Double sameItemsCount,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			ItemModel item,
+			boolean canStickItem,
+			boolean canUnstickItem,
+			boolean canBuyItem,
+			String cannotBuyItemError,
+			boolean canCloseItem,
+			boolean canOpenItem,
+			boolean canReportItem,
+			boolean canEditItem,
+			boolean canDeleteItem,
+			boolean canCancelConfirmedBuy,
+			boolean canViewItemHistory,
+			boolean faveCount,
+			boolean isVisibleItem,
+			boolean canViewLoginData,
+			boolean showToFavouritesButton,
+			String itemLink,
+			boolean canChangeOwner,
+			List<Double> sameItemsIds,
+			double sameItemsCount,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record ManagingDeleteBody(
@@ -9036,9 +9036,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingDeleteResponse(
-			@Nullable String status,
-			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record ManagingCreateClaimBody(
@@ -9051,14 +9051,14 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingCreateClaimResponse(
-			@Nullable ManagingCreateClaimResponseThread thread,
-			@JsonProperty("system_info") @Nullable ManagingCreateClaimResponseSystemInfo systemInfo
+			ManagingCreateClaimResponseThread thread,
+			@JsonProperty("system_info") ManagingCreateClaimResponseSystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingCreateClaimResponseThreadFirstPostLikeUsers(
-			@JsonProperty("user_id") Double userId,
-			@Nullable String username,
+			@JsonProperty("user_id") double userId,
+			String username,
 			@JsonProperty("display_style_group_id") Double displayStyleGroupId,
 			@JsonProperty("is_banned") Double isBanned,
 			@JsonProperty("uniq_username_css") @Nullable String uniqUsernameCss
@@ -9066,152 +9066,152 @@ public final class Types {
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingCreateClaimResponseThreadFirstPostLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@Nullable String thread,
-			@Nullable String poster,
-			@Nullable String likes,
-			@Nullable String report,
-			@Nullable String attachments,
-			@JsonProperty("poster_avatar") @Nullable String posterAvatar
+			String permalink,
+			String detail,
+			String thread,
+			String poster,
+			String likes,
+			String report,
+			String attachments,
+			@JsonProperty("poster_avatar") String posterAvatar
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingCreateClaimResponseThreadFirstPostPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode edit,
-			@Nullable JsonNode delete,
-			@Nullable JsonNode reply,
-			@Nullable JsonNode like,
-			@Nullable JsonNode report,
-			@JsonProperty("upload_attachment") @Nullable JsonNode uploadAttachment
+			boolean view,
+			boolean edit,
+			boolean delete,
+			boolean reply,
+			boolean like,
+			boolean report,
+			@JsonProperty("upload_attachment") boolean uploadAttachment
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingCreateClaimResponseThreadFirstPost(
-			@JsonProperty("post_id") Double postId,
-			@JsonProperty("thread_id") Double threadId,
-			@JsonProperty("poster_user_id") Double posterUserId,
-			@JsonProperty("poster_username") @Nullable String posterUsername,
-			@JsonProperty("post_create_date") Double postCreateDate,
-			@JsonProperty("post_body") @Nullable String postBody,
-			@JsonProperty("post_body_html") @Nullable String postBodyHtml,
-			@JsonProperty("post_body_plain_text") @Nullable String postBodyPlainText,
-			@Nullable String signature,
-			@JsonProperty("signature_html") @Nullable String signatureHtml,
-			@JsonProperty("signature_plain_text") @Nullable String signaturePlainText,
-			@JsonProperty("post_like_count") Double postLikeCount,
-			@JsonProperty("post_attachment_count") Double postAttachmentCount,
-			@JsonProperty("like_users") @Nullable List<ManagingCreateClaimResponseThreadFirstPostLikeUsers> likeUsers,
-			@JsonProperty("user_is_ignored") @Nullable JsonNode userIsIgnored,
-			@JsonProperty("post_is_published") @Nullable JsonNode postIsPublished,
-			@JsonProperty("post_is_deleted") @Nullable JsonNode postIsDeleted,
-			@JsonProperty("post_update_date") Double postUpdateDate,
-			@JsonProperty("post_is_first_post") @Nullable JsonNode postIsFirstPost,
-			@Nullable ManagingCreateClaimResponseThreadFirstPostLinks links,
-			@Nullable ManagingCreateClaimResponseThreadFirstPostPermissions permissions
+			@JsonProperty("post_id") double postId,
+			@JsonProperty("thread_id") double threadId,
+			@JsonProperty("poster_user_id") double posterUserId,
+			@JsonProperty("poster_username") String posterUsername,
+			@JsonProperty("post_create_date") double postCreateDate,
+			@JsonProperty("post_body") String postBody,
+			@JsonProperty("post_body_html") String postBodyHtml,
+			@JsonProperty("post_body_plain_text") String postBodyPlainText,
+			String signature,
+			@JsonProperty("signature_html") String signatureHtml,
+			@JsonProperty("signature_plain_text") String signaturePlainText,
+			@JsonProperty("post_like_count") double postLikeCount,
+			@JsonProperty("post_attachment_count") double postAttachmentCount,
+			@JsonProperty("like_users") List<ManagingCreateClaimResponseThreadFirstPostLikeUsers> likeUsers,
+			@JsonProperty("user_is_ignored") boolean userIsIgnored,
+			@JsonProperty("post_is_published") boolean postIsPublished,
+			@JsonProperty("post_is_deleted") boolean postIsDeleted,
+			@JsonProperty("post_update_date") double postUpdateDate,
+			@JsonProperty("post_is_first_post") boolean postIsFirstPost,
+			ManagingCreateClaimResponseThreadFirstPostLinks links,
+			ManagingCreateClaimResponseThreadFirstPostPermissions permissions
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingCreateClaimResponseThreadLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@Nullable String followers,
-			@Nullable String forum,
-			@Nullable String posts,
-			@JsonProperty("first_poster") @Nullable String firstPoster,
-			@JsonProperty("first_poster_avatar") @Nullable String firstPosterAvatar,
-			@JsonProperty("first_post") @Nullable String firstPost,
-			@JsonProperty("last_poster") @Nullable String lastPoster,
-			@JsonProperty("last_post") @Nullable String lastPost
+			String permalink,
+			String detail,
+			String followers,
+			String forum,
+			String posts,
+			@JsonProperty("first_poster") String firstPoster,
+			@JsonProperty("first_poster_avatar") String firstPosterAvatar,
+			@JsonProperty("first_post") String firstPost,
+			@JsonProperty("last_poster") String lastPoster,
+			@JsonProperty("last_post") String lastPost
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingCreateClaimResponseThreadPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode delete,
-			@Nullable JsonNode follow,
-			@Nullable JsonNode post,
-			@JsonProperty("upload_attachment") @Nullable JsonNode uploadAttachment,
-			@Nullable JsonNode edit
+			boolean view,
+			boolean delete,
+			boolean follow,
+			boolean post,
+			@JsonProperty("upload_attachment") boolean uploadAttachment,
+			boolean edit
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingCreateClaimResponseThreadForumForumPrefixesGroupPrefixes(
-			@JsonProperty("prefix_id") Double prefixId,
-			@JsonProperty("prefix_title") @Nullable String prefixTitle
+			@JsonProperty("prefix_id") double prefixId,
+			@JsonProperty("prefix_title") String prefixTitle
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingCreateClaimResponseThreadForumForumPrefixes(
-			@JsonProperty("group_title") @Nullable String groupTitle,
-			@JsonProperty("group_prefixes") @Nullable List<ManagingCreateClaimResponseThreadForumForumPrefixesGroupPrefixes> groupPrefixes
+			@JsonProperty("group_title") String groupTitle,
+			@JsonProperty("group_prefixes") List<ManagingCreateClaimResponseThreadForumForumPrefixesGroupPrefixes> groupPrefixes
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingCreateClaimResponseThreadForumLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@JsonProperty("sub-categories") @Nullable String subCategories,
-			@JsonProperty("sub-forums") @Nullable String subForums,
-			@Nullable String threads,
-			@Nullable String followers
+			String permalink,
+			String detail,
+			@JsonProperty("sub-categories") String subCategories,
+			@JsonProperty("sub-forums") String subForums,
+			String threads,
+			String followers
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingCreateClaimResponseThreadForumPermissions(
-			@Nullable JsonNode view,
-			@Nullable JsonNode edit,
-			@Nullable JsonNode delete,
-			@JsonProperty("create_thread") @Nullable JsonNode createThread,
-			@JsonProperty("upload_attachment") @Nullable JsonNode uploadAttachment,
-			@JsonProperty("tag_thread") @Nullable JsonNode tagThread,
-			@Nullable JsonNode follow
+			boolean view,
+			boolean edit,
+			boolean delete,
+			@JsonProperty("create_thread") boolean createThread,
+			@JsonProperty("upload_attachment") boolean uploadAttachment,
+			@JsonProperty("tag_thread") boolean tagThread,
+			boolean follow
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingCreateClaimResponseThreadForum(
-			@JsonProperty("forum_id") Double forumId,
-			@JsonProperty("forum_title") @Nullable String forumTitle,
-			@JsonProperty("forum_description") @Nullable String forumDescription,
-			@JsonProperty("forum_thread_count") Double forumThreadCount,
-			@JsonProperty("forum_post_count") Double forumPostCount,
-			@JsonProperty("forum_prefixes") @Nullable List<ManagingCreateClaimResponseThreadForumForumPrefixes> forumPrefixes,
-			@JsonProperty("thread_default_prefix_id") Double threadDefaultPrefixId,
-			@JsonProperty("thread_prefix_is_required") @Nullable JsonNode threadPrefixIsRequired,
-			@Nullable ManagingCreateClaimResponseThreadForumLinks links,
-			@Nullable ManagingCreateClaimResponseThreadForumPermissions permissions,
-			@JsonProperty("forum_is_followed") @Nullable JsonNode forumIsFollowed
+			@JsonProperty("forum_id") double forumId,
+			@JsonProperty("forum_title") String forumTitle,
+			@JsonProperty("forum_description") String forumDescription,
+			@JsonProperty("forum_thread_count") double forumThreadCount,
+			@JsonProperty("forum_post_count") double forumPostCount,
+			@JsonProperty("forum_prefixes") List<ManagingCreateClaimResponseThreadForumForumPrefixes> forumPrefixes,
+			@JsonProperty("thread_default_prefix_id") double threadDefaultPrefixId,
+			@JsonProperty("thread_prefix_is_required") boolean threadPrefixIsRequired,
+			ManagingCreateClaimResponseThreadForumLinks links,
+			ManagingCreateClaimResponseThreadForumPermissions permissions,
+			@JsonProperty("forum_is_followed") boolean forumIsFollowed
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingCreateClaimResponseThread(
-			@JsonProperty("thread_id") Double threadId,
-			@JsonProperty("forum_id") Double forumId,
-			@JsonProperty("thread_title") @Nullable String threadTitle,
-			@JsonProperty("thread_view_count") Double threadViewCount,
-			@JsonProperty("creator_user_id") Double creatorUserId,
-			@JsonProperty("creator_username") @Nullable String creatorUsername,
-			@JsonProperty("thread_create_date") Double threadCreateDate,
-			@JsonProperty("thread_update_date") Double threadUpdateDate,
-			@JsonProperty("user_is_ignored") @Nullable JsonNode userIsIgnored,
-			@JsonProperty("thread_post_count") Double threadPostCount,
-			@JsonProperty("thread_is_published") @Nullable JsonNode threadIsPublished,
-			@JsonProperty("thread_is_deleted") @Nullable JsonNode threadIsDeleted,
-			@JsonProperty("thread_is_sticky") @Nullable JsonNode threadIsSticky,
-			@JsonProperty("thread_is_followed") @Nullable JsonNode threadIsFollowed,
-			@JsonProperty("first_post") @Nullable ManagingCreateClaimResponseThreadFirstPost firstPost,
-			@JsonProperty("thread_prefixes") @Nullable List<JsonNode> threadPrefixes,
-			@JsonProperty("thread_tags") @Nullable List<JsonNode> threadTags,
-			@Nullable ManagingCreateClaimResponseThreadLinks links,
-			@Nullable ManagingCreateClaimResponseThreadPermissions permissions,
-			@Nullable ManagingCreateClaimResponseThreadForum forum
+			@JsonProperty("thread_id") double threadId,
+			@JsonProperty("forum_id") double forumId,
+			@JsonProperty("thread_title") String threadTitle,
+			@JsonProperty("thread_view_count") double threadViewCount,
+			@JsonProperty("creator_user_id") double creatorUserId,
+			@JsonProperty("creator_username") String creatorUsername,
+			@JsonProperty("thread_create_date") double threadCreateDate,
+			@JsonProperty("thread_update_date") double threadUpdateDate,
+			@JsonProperty("user_is_ignored") boolean userIsIgnored,
+			@JsonProperty("thread_post_count") double threadPostCount,
+			@JsonProperty("thread_is_published") boolean threadIsPublished,
+			@JsonProperty("thread_is_deleted") boolean threadIsDeleted,
+			@JsonProperty("thread_is_sticky") boolean threadIsSticky,
+			@JsonProperty("thread_is_followed") boolean threadIsFollowed,
+			@JsonProperty("first_post") ManagingCreateClaimResponseThreadFirstPost firstPost,
+			@JsonProperty("thread_prefixes") List<JsonNode> threadPrefixes,
+			@JsonProperty("thread_tags") List<JsonNode> threadTags,
+			ManagingCreateClaimResponseThreadLinks links,
+			ManagingCreateClaimResponseThreadPermissions permissions,
+			ManagingCreateClaimResponseThreadForum forum
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingCreateClaimResponseSystemInfo(
-			@JsonProperty("visitor_id") Double visitorId,
-			Double time
+			@JsonProperty("visitor_id") double visitorId,
+			double time
 		) {}
 
 		public record ManagingBulkGetBody(
@@ -9227,9 +9227,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingBulkGetResponse(
-			@Nullable List<JsonNode> items,
-			@JsonProperty("left_item_id") @Nullable List<Double> leftItemId,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<JsonNode> items,
+			@JsonProperty("left_item_id") List<Double> leftItemId,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record ManagingSteamInventoryValueParams(
@@ -9250,22 +9250,22 @@ public final class Types {
 			@Nullable String query,
 			@Nullable ManagingSteamInventoryValueResponseData data,
 			Double appId,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingSteamInventoryValueResponseData(
-			@Nullable JsonNode items,
-			@JsonProperty("steam_id") @Nullable String steamId,
-			Double appId,
-			@Nullable String appTitle,
-			Double totalValue,
-			Double itemCount,
-			Double marketableItemCount,
-			@Nullable String currency,
-			@Nullable String currencyIcon,
-			@Nullable String language,
-			Double time
+			JsonNode items,
+			@JsonProperty("steam_id") String steamId,
+			double appId,
+			String appTitle,
+			double totalValue,
+			double itemCount,
+			double marketableItemCount,
+			String currency,
+			String currencyIcon,
+			String language,
+			double time
 		) {}
 
 		public record ManagingSteamValueParams(
@@ -9288,22 +9288,22 @@ public final class Types {
 			@Nullable String query,
 			@Nullable ManagingSteamValueResponseData data,
 			Double appId,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingSteamValueResponseData(
-			@Nullable JsonNode items,
-			@JsonProperty("steam_id") @Nullable String steamId,
-			Double appId,
-			@Nullable String appTitle,
-			Double totalValue,
-			Double itemCount,
-			Double marketableItemCount,
-			@Nullable String currency,
-			@Nullable String currencyIcon,
-			@Nullable String language,
-			Double time
+			JsonNode items,
+			@JsonProperty("steam_id") String steamId,
+			double appId,
+			String appTitle,
+			double totalValue,
+			double itemCount,
+			double marketableItemCount,
+			String currency,
+			String currencyIcon,
+			String language,
+			double time
 		) {}
 
 		public record ManagingSteamPreviewParams(
@@ -9353,19 +9353,19 @@ public final class Types {
 		public record ManagingEditResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingAIPriceResponse(
-			Double price,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			double price,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingAutoBuyPriceResponse(
-			Double price,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			double price,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record ManagingNoteBody(
@@ -9379,9 +9379,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingNoteResponse(
-			@Nullable String status,
-			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record ManagingSteamUpdateValueBody(
@@ -9399,16 +9399,16 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingSteamUpdateValueResponse(
-			@Nullable String status,
-			@Nullable JsonNode item,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			String status,
+			ItemModel item,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingBumpResponse(
-			@Nullable String status,
-			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record ManagingAutoBumpBody(
@@ -9419,30 +9419,30 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingAutoBumpResponse(
-			@Nullable String status,
-			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingAutoBumpDisableResponse(
-			@Nullable String status,
-			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingOpenResponse(
-			@Nullable String status,
-			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingCloseResponse(
-			@Nullable String status,
-			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record ManagingImageParams(
@@ -9453,21 +9453,21 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingImageResponse(
-			@Nullable String base64,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			String base64,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingEmailCodeResponse(
-			@Nullable JsonNode item,
-			@Nullable ManagingEmailCodeResponseCodeData codeData
+			ItemModel item,
+			ManagingEmailCodeResponseCodeData codeData
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingEmailCodeResponseCodeData(
-			@Nullable String code,
-			Double date,
-			@Nullable String textPlain
+			String code,
+			double date,
+			String textPlain
 		) {}
 
 		public record ManagingGetLetters2Params(
@@ -9487,76 +9487,76 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingGetLetters2Response(
-			@Nullable String email,
-			@Nullable List<ManagingGetLetters2ResponseLetters> letters,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			String email,
+			List<ManagingGetLetters2ResponseLetters> letters,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingGetLetters2ResponseLetters(
-			@Nullable String textHtml,
-			@Nullable String textPlain,
-			@Nullable String from,
-			Double date
+			String textHtml,
+			String textPlain,
+			String from,
+			double date
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingSteamGetMafileResponse(
-			@Nullable ManagingSteamGetMafileResponseMaFile maFile,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			ManagingSteamGetMafileResponseMaFile maFile,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingSteamGetMafileResponseMaFileSession(
-			@Nullable String SessionID,
-			@Nullable String AccessToken,
-			@Nullable String RefreshToken,
-			@Nullable String SteamID,
-			@Nullable String SteamLoginSecure
+			String SessionID,
+			String AccessToken,
+			String RefreshToken,
+			String SteamID,
+			String SteamLoginSecure
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingSteamGetMafileResponseMaFile(
-			@JsonProperty("shared_secret") @Nullable String sharedSecret,
-			@JsonProperty("serial_number") Double serialNumber,
-			@JsonProperty("revocation_code") @Nullable String revocationCode,
-			@Nullable String uri,
-			@JsonProperty("account_name") @Nullable String accountName,
-			@JsonProperty("token_gid") @Nullable String tokenGid,
-			@JsonProperty("identity_secret") @Nullable String identitySecret,
-			@Nullable String secret_1,
-			@JsonProperty("device_id") @Nullable String deviceId,
-			@JsonProperty("fully_enrolled") @Nullable JsonNode fullyEnrolled,
-			@Nullable ManagingSteamGetMafileResponseMaFileSession Session
+			@JsonProperty("shared_secret") String sharedSecret,
+			@JsonProperty("serial_number") double serialNumber,
+			@JsonProperty("revocation_code") String revocationCode,
+			String uri,
+			@JsonProperty("account_name") String accountName,
+			@JsonProperty("token_gid") String tokenGid,
+			@JsonProperty("identity_secret") String identitySecret,
+			String secret_1,
+			@JsonProperty("device_id") String deviceId,
+			@JsonProperty("fully_enrolled") boolean fullyEnrolled,
+			ManagingSteamGetMafileResponseMaFileSession Session
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingSteamAddMafileResponse(
-			@Nullable String status,
-			@Nullable String message,
-			@Nullable JsonNode item,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			String status,
+			String message,
+			ItemModel item,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingSteamRemoveMafileResponse(
-			@Nullable String status,
-			@Nullable String message,
-			@Nullable JsonNode item,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			String status,
+			String message,
+			ItemModel item,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingSteamMafileCodeResponse(
-			@Nullable JsonNode item,
-			@Nullable ManagingSteamMafileCodeResponseCodeData codeData
+			ItemModel item,
+			ManagingSteamMafileCodeResponseCodeData codeData
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingSteamMafileCodeResponseCodeData(
-			@Nullable String code,
-			Double date,
-			@Nullable String textPlain
+			String code,
+			double date,
+			String textPlain
 		) {}
 
 		public record ManagingSteamSDABody(
@@ -9572,15 +9572,15 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingSteamSDAResponse(
-			@Nullable String status,
-			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingTelegramCodeResponse(
-			@Nullable JsonNode item,
-			@Nullable ManagingTelegramCodeResponseCodes codes
+			ItemModel item,
+			ManagingTelegramCodeResponseCodes codes
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
@@ -9593,14 +9593,14 @@ public final class Types {
 		public record ManagingTelegramResetAuthResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingRefuseGuaranteeResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record ManagingDeclineVideoRecordingBody(
@@ -9613,13 +9613,13 @@ public final class Types {
 		public record ManagingDeclineVideoRecordingResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingCheckGuaranteeResponse(
-			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record ManagingChangePasswordBody(
@@ -9635,17 +9635,17 @@ public final class Types {
 		public record ManagingChangePasswordResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("new_password") @Nullable String newPassword
+			@JsonProperty("new_password") String newPassword
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingTempEmailPasswordResponse(
-			@Nullable ManagingTempEmailPasswordResponseItem item
+			ManagingTempEmailPasswordResponseItem item
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingTempEmailPasswordResponseItem(
-			@Nullable String account
+			String account
 		) {}
 
 		public record ManagingTagBody(
@@ -9656,20 +9656,20 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingTagResponse(
-			Double itemId,
-			@Nullable ManagingTagResponseTag tag,
-			Double addedTagId,
-			@Nullable List<Double> deleteTags,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			double itemId,
+			ManagingTagResponseTag tag,
+			double addedTagId,
+			List<Double> deleteTags,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingTagResponseTag(
-			@JsonProperty("tag_id") Double tagId,
-			@Nullable String title,
-			@Nullable JsonNode isDefault,
-			@Nullable JsonNode forOwnedAccountsOnly,
-			@Nullable String bc
+			@JsonProperty("tag_id") double tagId,
+			String title,
+			boolean isDefault,
+			boolean forOwnedAccountsOnly,
+			String bc
 		) {}
 
 		public record ManagingUntagBody(
@@ -9680,20 +9680,20 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingUntagResponse(
-			Double itemId,
-			@Nullable ManagingUntagResponseTag tag,
-			Double addedTagId,
-			@Nullable List<Double> deleteTags,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			double itemId,
+			ManagingUntagResponseTag tag,
+			double addedTagId,
+			List<Double> deleteTags,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingUntagResponseTag(
-			@JsonProperty("tag_id") Double tagId,
-			@Nullable String title,
-			@Nullable JsonNode isDefault,
-			@Nullable JsonNode forOwnedAccountsOnly,
-			@Nullable String bc
+			@JsonProperty("tag_id") double tagId,
+			String title,
+			boolean isDefault,
+			boolean forOwnedAccountsOnly,
+			String bc
 		) {}
 
 		public record ManagingPublicTagBody(
@@ -9704,20 +9704,20 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingPublicTagResponse(
-			Double itemId,
-			@Nullable ManagingPublicTagResponseTag tag,
-			Double addedTagId,
-			@Nullable List<Double> deleteTags,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			double itemId,
+			ManagingPublicTagResponseTag tag,
+			double addedTagId,
+			List<Double> deleteTags,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingPublicTagResponseTag(
-			@JsonProperty("tag_id") Double tagId,
-			@Nullable String title,
-			@Nullable JsonNode isDefault,
-			@Nullable JsonNode forOwnedAccountsOnly,
-			@Nullable String bc
+			@JsonProperty("tag_id") double tagId,
+			String title,
+			boolean isDefault,
+			boolean forOwnedAccountsOnly,
+			String bc
 		) {}
 
 		public record ManagingPublicUntagBody(
@@ -9728,48 +9728,48 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingPublicUntagResponse(
-			Double itemId,
-			@Nullable ManagingPublicUntagResponseTag tag,
-			Double addedTagId,
-			@Nullable List<Double> deleteTags,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			double itemId,
+			ManagingPublicUntagResponseTag tag,
+			double addedTagId,
+			List<Double> deleteTags,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingPublicUntagResponseTag(
-			@JsonProperty("tag_id") Double tagId,
-			@Nullable String title,
-			@Nullable JsonNode isDefault,
-			@Nullable JsonNode forOwnedAccountsOnly,
-			@Nullable String bc
+			@JsonProperty("tag_id") double tagId,
+			String title,
+			boolean isDefault,
+			boolean forOwnedAccountsOnly,
+			String bc
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingFavoriteResponse(
-			@Nullable String status,
-			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingUnfavoriteResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingStickResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ManagingUnstickResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record ManagingTransferBody(
@@ -9784,7 +9784,7 @@ public final class Types {
 		public record ManagingTransferResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 	}
@@ -9809,97 +9809,97 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfileClaimsResponse(
-			@Nullable List<ProfileClaimsResponseClaims> claims,
-			@Nullable ProfileClaimsResponseStats stats,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<ProfileClaimsResponseClaims> claims,
+			ProfileClaimsResponseStats stats,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfileClaimsResponseClaimsAuthorLinks(
-			@Nullable String permalink,
-			@Nullable String detail,
-			@Nullable String avatar,
-			@JsonProperty("avatar_big") @Nullable String avatarBig,
-			@JsonProperty("avatar_small") @Nullable String avatarSmall,
-			@Nullable String followers,
-			@Nullable String followings,
-			@Nullable String ignore,
-			@Nullable String timeline
+			String permalink,
+			String detail,
+			String avatar,
+			@JsonProperty("avatar_big") String avatarBig,
+			@JsonProperty("avatar_small") String avatarSmall,
+			String followers,
+			String followings,
+			String ignore,
+			String timeline
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfileClaimsResponseClaimsAuthorPermissions(
-			@Nullable JsonNode edit,
-			@Nullable JsonNode follow,
-			@Nullable JsonNode ignore
+			boolean edit,
+			boolean follow,
+			boolean ignore
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfileClaimsResponseClaimsAuthorFields(
-			@Nullable String id,
-			@Nullable String title,
-			@Nullable String description,
-			@Nullable String position,
-			@JsonProperty("is_required") @Nullable JsonNode isRequired
+			String id,
+			String title,
+			String description,
+			String position,
+			@JsonProperty("is_required") boolean isRequired
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfileClaimsResponseClaimsAuthor(
-			@JsonProperty("user_id") Double userId,
-			@Nullable String username,
-			@JsonProperty("username_html") @Nullable String usernameHtml,
-			@JsonProperty("user_message_count") Double userMessageCount,
-			@JsonProperty("user_register_date") Double userRegisterDate,
-			@JsonProperty("user_like_count") Double userLikeCount,
-			@JsonProperty("user_like2_count") Double userLike2Count,
-			@JsonProperty("contest_count") Double contestCount,
-			@JsonProperty("trophy_count") Double trophyCount,
-			@JsonProperty("custom_title") @Nullable String customTitle,
-			@JsonProperty("is_banned") Double isBanned,
-			@JsonProperty("user_title") @Nullable String userTitle,
-			@JsonProperty("user_is_valid") @Nullable JsonNode userIsValid,
-			@JsonProperty("user_is_verified") @Nullable JsonNode userIsVerified,
-			@JsonProperty("user_is_followed") @Nullable JsonNode userIsFollowed,
-			@JsonProperty("user_last_seen_date") Double userLastSeenDate,
-			@Nullable ProfileClaimsResponseClaimsAuthorLinks links,
-			@Nullable ProfileClaimsResponseClaimsAuthorPermissions permissions,
-			@JsonProperty("user_is_ignored") @Nullable JsonNode userIsIgnored,
-			@JsonProperty("user_is_visitor") @Nullable JsonNode userIsVisitor,
-			@JsonProperty("user_group_id") Double userGroupId,
-			@JsonProperty("ban_reason") @Nullable String banReason,
-			@Nullable List<ProfileClaimsResponseClaimsAuthorFields> fields
+			@JsonProperty("user_id") double userId,
+			String username,
+			@JsonProperty("username_html") String usernameHtml,
+			@JsonProperty("user_message_count") double userMessageCount,
+			@JsonProperty("user_register_date") double userRegisterDate,
+			@JsonProperty("user_like_count") double userLikeCount,
+			@JsonProperty("user_like2_count") double userLike2Count,
+			@JsonProperty("contest_count") double contestCount,
+			@JsonProperty("trophy_count") double trophyCount,
+			@JsonProperty("custom_title") String customTitle,
+			@JsonProperty("is_banned") double isBanned,
+			@JsonProperty("user_title") String userTitle,
+			@JsonProperty("user_is_valid") boolean userIsValid,
+			@JsonProperty("user_is_verified") boolean userIsVerified,
+			@JsonProperty("user_is_followed") boolean userIsFollowed,
+			@JsonProperty("user_last_seen_date") double userLastSeenDate,
+			ProfileClaimsResponseClaimsAuthorLinks links,
+			ProfileClaimsResponseClaimsAuthorPermissions permissions,
+			@JsonProperty("user_is_ignored") boolean userIsIgnored,
+			@JsonProperty("user_is_visitor") boolean userIsVisitor,
+			@JsonProperty("user_group_id") double userGroupId,
+			@JsonProperty("ban_reason") String banReason,
+			List<ProfileClaimsResponseClaimsAuthorFields> fields
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfileClaimsResponseClaims(
-			@JsonProperty("thread_id") Double threadId,
-			@JsonProperty("claim_date") Double claimDate,
-			@JsonProperty("claim_state") @Nullable String claimState,
-			@JsonProperty("message_body") @Nullable String messageBody,
-			@JsonProperty("amount_formatted") @Nullable String amountFormatted,
-			@Nullable ProfileClaimsResponseClaimsAuthor author
+			@JsonProperty("thread_id") double threadId,
+			@JsonProperty("claim_date") double claimDate,
+			@JsonProperty("claim_state") String claimState,
+			@JsonProperty("message_body") String messageBody,
+			@JsonProperty("amount_formatted") String amountFormatted,
+			ProfileClaimsResponseClaimsAuthor author
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfileClaimsResponseStatsMarket(
-			Double total,
-			Double solved,
-			Double settled,
-			Double rejected
+			double total,
+			double solved,
+			double settled,
+			double rejected
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfileClaimsResponseStatsNoMarket(
-			Double total,
-			Double solved,
-			Double settled,
-			Double rejected
+			double total,
+			double solved,
+			double settled,
+			double rejected
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfileClaimsResponseStats(
-			@Nullable ProfileClaimsResponseStatsMarket market,
-			@Nullable ProfileClaimsResponseStatsNoMarket noMarket
+			ProfileClaimsResponseStatsMarket market,
+			ProfileClaimsResponseStatsNoMarket noMarket
 		) {}
 
 		public record ProfileGetParams(
@@ -9913,8 +9913,8 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProfileGetResponse(
-			@Nullable JsonNode user,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			UserModel user,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record ProfileEditBody(
@@ -9950,7 +9950,7 @@ public final class Types {
 		public record ProfileEditResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 	}
@@ -10015,15 +10015,15 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CartGetResponse(
-			@Nullable List<JsonNode> items,
-			Double totalItems,
-			@Nullable JsonNode totalItemsPrice,
-			@Nullable JsonNode hasNextPage,
-			Double perPage,
-			Double page,
-			@Nullable String searchUrl,
-			@Nullable List<JsonNode> stickyItems,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<ItemFromListModel> items,
+			double totalItems,
+			JsonNode totalItemsPrice,
+			boolean hasNextPage,
+			double perPage,
+			double page,
+			String searchUrl,
+			List<ItemFromListModel> stickyItems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record CartAddBody(
@@ -10034,8 +10034,8 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CartAddResponse(
-			@Nullable JsonNode success,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			boolean success,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record CartDeleteBody(
@@ -10049,8 +10049,8 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CartDeleteResponse(
-			@Nullable JsonNode success,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			boolean success,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 	}
@@ -10075,317 +10075,317 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PurchasingFastBuyResponse(
-			@Nullable String status,
-			@Nullable PurchasingFastBuyResponseItem item,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			String status,
+			PurchasingFastBuyResponseItem item,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PurchasingFastBuyResponseItemGuarantee(
-			Double duration,
-			@Nullable String class_,
-			@Nullable String durationPhrase,
-			Double endDate,
-			@Nullable JsonNode active,
-			@Nullable JsonNode cancelled,
-			Double remainingTime,
-			@Nullable String remainingTimePhrase
+			double duration,
+			String class_,
+			String durationPhrase,
+			double endDate,
+			boolean active,
+			boolean cancelled,
+			double remainingTime,
+			String remainingTimePhrase
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PurchasingFastBuyResponseItemLoginData(
-			@Nullable String raw,
-			@Nullable String encodedRaw,
-			@Nullable String login,
-			@Nullable String password,
-			@Nullable String encodedPassword,
-			@Nullable String oldPassword,
-			@Nullable JsonNode encodedOldPassword
+			String raw,
+			String encodedRaw,
+			String login,
+			String password,
+			String encodedPassword,
+			String oldPassword,
+			JsonNode encodedOldPassword
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PurchasingFastBuyResponseItemEmailLoginData(
-			@Nullable String raw,
-			@Nullable String encodedRaw,
-			@Nullable String login,
-			@Nullable String password,
-			@Nullable String encodedPassword,
-			@Nullable String oldPassword,
-			@Nullable String encodedOldPassword
+			String raw,
+			String encodedRaw,
+			String login,
+			String password,
+			String encodedPassword,
+			String oldPassword,
+			String encodedOldPassword
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PurchasingFastBuyResponseItemBuyer(
-			@JsonProperty("user_id") Double userId,
-			@JsonProperty("operation_date") Double operationDate,
-			@Nullable JsonNode visitorIsBuyer,
-			@Nullable String username,
-			@JsonProperty("is_banned") Double isBanned,
-			@JsonProperty("display_style_group_id") Double displayStyleGroupId,
-			@JsonProperty("uniq_username_css") @Nullable String uniqUsernameCss,
-			@JsonProperty("user_group_id") Double userGroupId
+			@JsonProperty("user_id") double userId,
+			@JsonProperty("operation_date") double operationDate,
+			boolean visitorIsBuyer,
+			String username,
+			@JsonProperty("is_banned") double isBanned,
+			@JsonProperty("display_style_group_id") double displayStyleGroupId,
+			@JsonProperty("uniq_username_css") String uniqUsernameCss,
+			@JsonProperty("user_group_id") double userGroupId
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PurchasingFastBuyResponseItemAccountLinks(
-			@Nullable String link,
-			@Nullable String text,
-			@Nullable String iconClass
+			String link,
+			String text,
+			String iconClass
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PurchasingFastBuyResponseItemExtraPrices(
-			@Nullable String currency,
-			@Nullable String price
+			String currency,
+			String price
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PurchasingFastBuyResponseItemBumpSettings(
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBumpItemGlobally,
-			@Nullable JsonNode shortErrorPhrase,
-			@Nullable JsonNode errorPhrase
+			boolean canBumpItem,
+			boolean canBumpItemGlobally,
+			JsonNode shortErrorPhrase,
+			JsonNode errorPhrase
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PurchasingFastBuyResponseItemSeller(
-			@JsonProperty("user_id") Double userId,
-			@Nullable String username,
-			@JsonProperty("avatar_date") Double avatarDate,
-			@JsonProperty("is_banned") Double isBanned,
-			@JsonProperty("display_style_group_id") Double displayStyleGroupId,
-			@JsonProperty("joined_date") Double joinedDate,
-			@JsonProperty("sold_items_count") Double soldItemsCount,
-			@JsonProperty("active_items_count") Double activeItemsCount,
-			@JsonProperty("restore_data") @Nullable String restoreData,
-			@JsonProperty("restore_percents") Double restorePercents,
-			@Nullable JsonNode isOnline
+			@JsonProperty("user_id") double userId,
+			String username,
+			@JsonProperty("avatar_date") double avatarDate,
+			@JsonProperty("is_banned") double isBanned,
+			@JsonProperty("display_style_group_id") double displayStyleGroupId,
+			@JsonProperty("joined_date") double joinedDate,
+			@JsonProperty("sold_items_count") double soldItemsCount,
+			@JsonProperty("active_items_count") double activeItemsCount,
+			@JsonProperty("restore_data") String restoreData,
+			@JsonProperty("restore_percents") double restorePercents,
+			boolean isOnline
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PurchasingFastBuyResponseItem(
-			@JsonProperty("item_id") Double itemId,
-			@JsonProperty("item_state") @Nullable String itemState,
-			@JsonProperty("category_id") Double categoryId,
-			@JsonProperty("published_date") Double publishedDate,
-			@Nullable String title,
-			@Nullable String description,
-			Double price,
-			@JsonProperty("update_stat_date") Double updateStatDate,
-			@JsonProperty("refreshed_date") Double refreshedDate,
-			@JsonProperty("edit_date") Double editDate,
-			@Nullable String login,
-			@JsonProperty("temp_email") @Nullable String tempEmail,
-			@JsonProperty("view_count") Double viewCount,
-			@JsonProperty("is_sticky") Double isSticky,
-			@Nullable String information,
-			@JsonProperty("item_origin") @Nullable String itemOrigin,
-			@JsonProperty("extended_guarantee") Double extendedGuarantee,
-			Double nsb,
-			@JsonProperty("allow_ask_discount") Double allowAskDiscount,
-			@JsonProperty("title_en") @Nullable String titleEn,
-			@JsonProperty("description_en") @Nullable String descriptionEn,
-			@JsonProperty("information_en") @Nullable String informationEn,
-			@JsonProperty("email_type") @Nullable String emailType,
-			@JsonProperty("email_provider") @Nullable String emailProvider,
-			@JsonProperty("item_domain") @Nullable String itemDomain,
-			@JsonProperty("resale_item_origin") @Nullable String resaleItemOrigin,
-			@JsonProperty("user_allow_ask_discount") Double userAllowAskDiscount,
-			@JsonProperty("max_discount_percent") Double maxDiscountPercent,
-			@JsonProperty("market_custom_title") @Nullable String marketCustomTitle,
-			@JsonProperty("feedback_data") @Nullable String feedbackData,
-			@JsonProperty("buyer_avatar_date") Double buyerAvatarDate,
-			@JsonProperty("buyer_user_group_id") Double buyerUserGroupId,
-			Double priceWithSellerFee,
-			@Nullable PurchasingFastBuyResponseItemGuarantee guarantee,
-			@Nullable JsonNode canViewLoginData,
-			@Nullable JsonNode canUpdateItemStats,
-			@Nullable JsonNode canReportItem,
-			@Nullable PurchasingFastBuyResponseItemLoginData loginData,
-			@Nullable JsonNode canViewEmailLoginData,
-			@Nullable PurchasingFastBuyResponseItemEmailLoginData emailLoginData,
-			@Nullable JsonNode showGetEmailCodeButton,
-			@Nullable String getEmailCodeDisplayLogin,
-			@Nullable PurchasingFastBuyResponseItemBuyer buyer,
-			@Nullable JsonNode isPersonalAccount,
-			@JsonProperty("sold_items_category_count") Double soldItemsCategoryCount,
-			@JsonProperty("restore_items_category_count") Double restoreItemsCategoryCount,
-			@JsonProperty("rub_price") Double rubPrice,
-			@JsonProperty("price_currency") @Nullable String priceCurrency,
-			@Nullable JsonNode canValidateAccount,
-			@Nullable JsonNode canResellItemAfterPurchase,
-			@JsonProperty("account_last_activity") Double accountLastActivity,
-			@Nullable JsonNode displayConvertedBalance,
-			@Nullable JsonNode canViewAccountLink,
-			@Nullable List<PurchasingFastBuyResponseItemAccountLinks> accountLinks,
-			@Nullable String accountLink,
-			@Nullable String emailLoginUrl,
-			@Nullable JsonNode canChangePassword,
-			@Nullable String itemOriginPhrase,
-			@Nullable JsonNode visitorIsAuthor,
-			@Nullable JsonNode canAskDiscount,
-			@Nullable JsonNode tags,
-			@Nullable List<JsonNode> customFields,
-			@Nullable List<JsonNode> externalAuth,
-			@Nullable JsonNode isTrusted,
-			@Nullable JsonNode isBirthdayToday,
-			@Nullable JsonNode isIgnored,
-			Double deposit,
-			@Nullable List<PurchasingFastBuyResponseItemExtraPrices> extraPrices,
-			@Nullable JsonNode canViewAccountLoginAndTempEmail,
-			@Nullable PurchasingFastBuyResponseItemBumpSettings bumpSettings,
-			@Nullable JsonNode canCheckGuarantee,
-			@Nullable JsonNode needToRequireVideoToViewLoginData,
-			@Nullable String descriptionHtml,
-			@Nullable String descriptionEnHtml,
-			@Nullable String descriptionPlain,
-			@Nullable String descriptionEnPlain,
-			@Nullable PurchasingFastBuyResponseItemSeller seller
+			@JsonProperty("item_id") double itemId,
+			@JsonProperty("item_state") String itemState,
+			@JsonProperty("category_id") double categoryId,
+			@JsonProperty("published_date") double publishedDate,
+			String title,
+			String description,
+			double price,
+			@JsonProperty("update_stat_date") double updateStatDate,
+			@JsonProperty("refreshed_date") double refreshedDate,
+			@JsonProperty("edit_date") double editDate,
+			String login,
+			@JsonProperty("temp_email") String tempEmail,
+			@JsonProperty("view_count") double viewCount,
+			@JsonProperty("is_sticky") double isSticky,
+			String information,
+			@JsonProperty("item_origin") String itemOrigin,
+			@JsonProperty("extended_guarantee") double extendedGuarantee,
+			double nsb,
+			@JsonProperty("allow_ask_discount") double allowAskDiscount,
+			@JsonProperty("title_en") String titleEn,
+			@JsonProperty("description_en") String descriptionEn,
+			@JsonProperty("information_en") String informationEn,
+			@JsonProperty("email_type") String emailType,
+			@JsonProperty("email_provider") String emailProvider,
+			@JsonProperty("item_domain") String itemDomain,
+			@JsonProperty("resale_item_origin") String resaleItemOrigin,
+			@JsonProperty("user_allow_ask_discount") double userAllowAskDiscount,
+			@JsonProperty("max_discount_percent") double maxDiscountPercent,
+			@JsonProperty("market_custom_title") String marketCustomTitle,
+			@JsonProperty("feedback_data") String feedbackData,
+			@JsonProperty("buyer_avatar_date") double buyerAvatarDate,
+			@JsonProperty("buyer_user_group_id") double buyerUserGroupId,
+			double priceWithSellerFee,
+			PurchasingFastBuyResponseItemGuarantee guarantee,
+			boolean canViewLoginData,
+			boolean canUpdateItemStats,
+			boolean canReportItem,
+			PurchasingFastBuyResponseItemLoginData loginData,
+			boolean canViewEmailLoginData,
+			PurchasingFastBuyResponseItemEmailLoginData emailLoginData,
+			boolean showGetEmailCodeButton,
+			String getEmailCodeDisplayLogin,
+			PurchasingFastBuyResponseItemBuyer buyer,
+			boolean isPersonalAccount,
+			@JsonProperty("sold_items_category_count") double soldItemsCategoryCount,
+			@JsonProperty("restore_items_category_count") double restoreItemsCategoryCount,
+			@JsonProperty("rub_price") double rubPrice,
+			@JsonProperty("price_currency") String priceCurrency,
+			boolean canValidateAccount,
+			boolean canResellItemAfterPurchase,
+			@JsonProperty("account_last_activity") double accountLastActivity,
+			boolean displayConvertedBalance,
+			boolean canViewAccountLink,
+			List<PurchasingFastBuyResponseItemAccountLinks> accountLinks,
+			String accountLink,
+			String emailLoginUrl,
+			boolean canChangePassword,
+			String itemOriginPhrase,
+			boolean visitorIsAuthor,
+			boolean canAskDiscount,
+			JsonNode tags,
+			List<JsonNode> customFields,
+			List<JsonNode> externalAuth,
+			boolean isTrusted,
+			boolean isBirthdayToday,
+			boolean isIgnored,
+			double deposit,
+			List<PurchasingFastBuyResponseItemExtraPrices> extraPrices,
+			boolean canViewAccountLoginAndTempEmail,
+			PurchasingFastBuyResponseItemBumpSettings bumpSettings,
+			boolean canCheckGuarantee,
+			boolean needToRequireVideoToViewLoginData,
+			String descriptionHtml,
+			String descriptionEnHtml,
+			String descriptionPlain,
+			String descriptionEnPlain,
+			PurchasingFastBuyResponseItemSeller seller
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PurchasingCheckResponse(
-			@Nullable String status,
-			@Nullable PurchasingCheckResponseItem item,
-			@Nullable JsonNode requireVideoRecording,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			String status,
+			PurchasingCheckResponseItem item,
+			boolean requireVideoRecording,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PurchasingCheckResponseItemGuarantee(
-			Double duration,
-			@Nullable String class_,
-			@Nullable String durationPhrase,
-			@Nullable JsonNode endDate,
-			@Nullable JsonNode active,
-			@Nullable JsonNode cancelled,
-			@Nullable JsonNode remainingTime
+			double duration,
+			String class_,
+			String durationPhrase,
+			JsonNode endDate,
+			JsonNode active,
+			JsonNode cancelled,
+			JsonNode remainingTime
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PurchasingCheckResponseItemAccountLinks(
-			@Nullable String link,
-			@Nullable String text,
-			@Nullable String iconClass
+			String link,
+			String text,
+			String iconClass
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PurchasingCheckResponseItemExtraPrices(
-			@Nullable String currency,
-			@Nullable String price
+			String currency,
+			String price
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PurchasingCheckResponseItemBumpSettings(
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBumpItemGlobally,
-			@Nullable JsonNode shortErrorPhrase,
-			@Nullable JsonNode errorPhrase
+			boolean canBumpItem,
+			boolean canBumpItemGlobally,
+			JsonNode shortErrorPhrase,
+			JsonNode errorPhrase
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PurchasingCheckResponseItemSeller(
-			@JsonProperty("user_id") Double userId,
-			@Nullable String username,
-			@JsonProperty("avatar_date") Double avatarDate,
-			@JsonProperty("is_banned") Double isBanned,
-			@JsonProperty("display_style_group_id") Double displayStyleGroupId,
-			@JsonProperty("joined_date") Double joinedDate,
-			@JsonProperty("sold_items_count") Double soldItemsCount,
-			@JsonProperty("active_items_count") Double activeItemsCount,
-			@JsonProperty("restore_data") @Nullable String restoreData,
-			@JsonProperty("restore_percents") @Nullable JsonNode restorePercents,
-			@Nullable JsonNode isOnline
+			@JsonProperty("user_id") double userId,
+			String username,
+			@JsonProperty("avatar_date") double avatarDate,
+			@JsonProperty("is_banned") double isBanned,
+			@JsonProperty("display_style_group_id") double displayStyleGroupId,
+			@JsonProperty("joined_date") double joinedDate,
+			@JsonProperty("sold_items_count") double soldItemsCount,
+			@JsonProperty("active_items_count") double activeItemsCount,
+			@JsonProperty("restore_data") String restoreData,
+			@JsonProperty("restore_percents") JsonNode restorePercents,
+			boolean isOnline
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PurchasingCheckResponseItem(
-			@JsonProperty("item_id") Double itemId,
-			@JsonProperty("item_state") @Nullable String itemState,
-			@JsonProperty("category_id") Double categoryId,
-			@JsonProperty("published_date") Double publishedDate,
-			@Nullable String title,
-			@Nullable String description,
-			Double price,
-			@JsonProperty("update_stat_date") Double updateStatDate,
-			@JsonProperty("refreshed_date") Double refreshedDate,
-			@JsonProperty("edit_date") Double editDate,
-			@JsonProperty("view_count") Double viewCount,
-			@JsonProperty("is_sticky") Double isSticky,
-			@JsonProperty("item_origin") @Nullable String itemOrigin,
-			@JsonProperty("extended_guarantee") Double extendedGuarantee,
-			Double nsb,
-			@JsonProperty("allow_ask_discount") Double allowAskDiscount,
-			@JsonProperty("title_en") @Nullable String titleEn,
-			@JsonProperty("description_en") @Nullable String descriptionEn,
-			@JsonProperty("email_type") @Nullable String emailType,
-			@JsonProperty("email_provider") @Nullable String emailProvider,
-			@JsonProperty("item_domain") @Nullable String itemDomain,
-			@JsonProperty("resale_item_origin") @Nullable String resaleItemOrigin,
-			@JsonProperty("user_allow_ask_discount") Double userAllowAskDiscount,
-			@JsonProperty("max_discount_percent") Double maxDiscountPercent,
-			@JsonProperty("market_custom_title") @Nullable String marketCustomTitle,
-			@JsonProperty("feedback_data") @Nullable String feedbackData,
-			@JsonProperty("category_title") @Nullable String categoryTitle,
-			@JsonProperty("category_url") @Nullable String categoryUrl,
-			@JsonProperty("require_temp_email") Double requireTempEmail,
-			@JsonProperty("available_temp_email") Double availableTempEmail,
-			@JsonProperty("check_button_enabled") Double checkButtonEnabled,
-			@JsonProperty("checker_enabled") Double checkerEnabled,
-			@JsonProperty("buy_without_validation") Double buyWithoutValidation,
-			@JsonProperty("has_guarantee") Double hasGuarantee,
-			@JsonProperty("require_video_recording") Double requireVideoRecording,
-			@JsonProperty("can_be_resold") Double canBeResold,
-			@JsonProperty("login_type") @Nullable String loginType,
-			@JsonProperty("require_email_login_data") Double requireEmailLoginData,
-			@JsonProperty("category_prefix_id") Double categoryPrefixId,
-			@JsonProperty("ask_user_id") @Nullable JsonNode askUserId,
-			@JsonProperty("ask_item_id") @Nullable JsonNode askItemId,
-			@JsonProperty("ask_date") @Nullable JsonNode askDate,
-			@JsonProperty("discount_price") @Nullable JsonNode discountPrice,
-			@JsonProperty("discount_accepted") @Nullable JsonNode discountAccepted,
-			@JsonProperty("user_alerted") @Nullable JsonNode userAlerted,
-			@Nullable JsonNode message,
-			@JsonProperty("min_price") Double minPrice,
-			Double priceWithSellerFee,
-			@Nullable PurchasingCheckResponseItemGuarantee guarantee,
-			@Nullable JsonNode canViewLoginData,
-			@Nullable JsonNode canUpdateItemStats,
-			@Nullable JsonNode canReportItem,
-			@Nullable JsonNode canViewEmailLoginData,
-			@Nullable JsonNode showGetEmailCodeButton,
-			@Nullable JsonNode isPersonalAccount,
-			@JsonProperty("rub_price") Double rubPrice,
-			@JsonProperty("price_currency") @Nullable String priceCurrency,
-			@Nullable JsonNode canValidateAccount,
-			@Nullable JsonNode canResellItemAfterPurchase,
-			@Nullable JsonNode isSmallExf,
-			@JsonProperty("account_last_activity") Double accountLastActivity,
-			@Nullable JsonNode canViewAccountLink,
-			@Nullable List<PurchasingCheckResponseItemAccountLinks> accountLinks,
-			@Nullable String accountLink,
-			@Nullable String emailLoginUrl,
-			@Nullable JsonNode canChangePassword,
-			@Nullable String itemOriginPhrase,
-			@Nullable JsonNode visitorIsAuthor,
-			@Nullable JsonNode canAskDiscount,
-			@Nullable List<JsonNode> tags,
-			@Nullable List<JsonNode> customFields,
-			@Nullable List<JsonNode> externalAuth,
-			@Nullable JsonNode isTrusted,
-			@Nullable JsonNode isBirthdayToday,
-			@Nullable JsonNode isIgnored,
-			Double deposit,
-			@Nullable List<PurchasingCheckResponseItemExtraPrices> extraPrices,
-			@Nullable JsonNode canViewAccountLoginAndTempEmail,
-			@Nullable PurchasingCheckResponseItemBumpSettings bumpSettings,
-			@Nullable JsonNode canCheckGuarantee,
-			@Nullable JsonNode needToRequireVideoToViewLoginData,
-			@Nullable String descriptionHtml,
-			@Nullable String descriptionEnHtml,
-			@Nullable String descriptionPlain,
-			@Nullable String descriptionEnPlain,
-			@Nullable PurchasingCheckResponseItemSeller seller
+			@JsonProperty("item_id") double itemId,
+			@JsonProperty("item_state") String itemState,
+			@JsonProperty("category_id") double categoryId,
+			@JsonProperty("published_date") double publishedDate,
+			String title,
+			String description,
+			double price,
+			@JsonProperty("update_stat_date") double updateStatDate,
+			@JsonProperty("refreshed_date") double refreshedDate,
+			@JsonProperty("edit_date") double editDate,
+			@JsonProperty("view_count") double viewCount,
+			@JsonProperty("is_sticky") double isSticky,
+			@JsonProperty("item_origin") String itemOrigin,
+			@JsonProperty("extended_guarantee") double extendedGuarantee,
+			double nsb,
+			@JsonProperty("allow_ask_discount") double allowAskDiscount,
+			@JsonProperty("title_en") String titleEn,
+			@JsonProperty("description_en") String descriptionEn,
+			@JsonProperty("email_type") String emailType,
+			@JsonProperty("email_provider") String emailProvider,
+			@JsonProperty("item_domain") String itemDomain,
+			@JsonProperty("resale_item_origin") String resaleItemOrigin,
+			@JsonProperty("user_allow_ask_discount") double userAllowAskDiscount,
+			@JsonProperty("max_discount_percent") double maxDiscountPercent,
+			@JsonProperty("market_custom_title") String marketCustomTitle,
+			@JsonProperty("feedback_data") String feedbackData,
+			@JsonProperty("category_title") String categoryTitle,
+			@JsonProperty("category_url") String categoryUrl,
+			@JsonProperty("require_temp_email") double requireTempEmail,
+			@JsonProperty("available_temp_email") double availableTempEmail,
+			@JsonProperty("check_button_enabled") double checkButtonEnabled,
+			@JsonProperty("checker_enabled") double checkerEnabled,
+			@JsonProperty("buy_without_validation") double buyWithoutValidation,
+			@JsonProperty("has_guarantee") double hasGuarantee,
+			@JsonProperty("require_video_recording") double requireVideoRecording,
+			@JsonProperty("can_be_resold") double canBeResold,
+			@JsonProperty("login_type") String loginType,
+			@JsonProperty("require_email_login_data") double requireEmailLoginData,
+			@JsonProperty("category_prefix_id") double categoryPrefixId,
+			@JsonProperty("ask_user_id") JsonNode askUserId,
+			@JsonProperty("ask_item_id") JsonNode askItemId,
+			@JsonProperty("ask_date") JsonNode askDate,
+			@JsonProperty("discount_price") JsonNode discountPrice,
+			@JsonProperty("discount_accepted") JsonNode discountAccepted,
+			@JsonProperty("user_alerted") JsonNode userAlerted,
+			JsonNode message,
+			@JsonProperty("min_price") double minPrice,
+			double priceWithSellerFee,
+			PurchasingCheckResponseItemGuarantee guarantee,
+			boolean canViewLoginData,
+			boolean canUpdateItemStats,
+			boolean canReportItem,
+			boolean canViewEmailLoginData,
+			boolean showGetEmailCodeButton,
+			boolean isPersonalAccount,
+			@JsonProperty("rub_price") double rubPrice,
+			@JsonProperty("price_currency") String priceCurrency,
+			boolean canValidateAccount,
+			boolean canResellItemAfterPurchase,
+			boolean isSmallExf,
+			@JsonProperty("account_last_activity") double accountLastActivity,
+			boolean canViewAccountLink,
+			List<PurchasingCheckResponseItemAccountLinks> accountLinks,
+			String accountLink,
+			String emailLoginUrl,
+			boolean canChangePassword,
+			String itemOriginPhrase,
+			boolean visitorIsAuthor,
+			boolean canAskDiscount,
+			List<JsonNode> tags,
+			List<JsonNode> customFields,
+			List<JsonNode> externalAuth,
+			boolean isTrusted,
+			boolean isBirthdayToday,
+			boolean isIgnored,
+			double deposit,
+			List<PurchasingCheckResponseItemExtraPrices> extraPrices,
+			boolean canViewAccountLoginAndTempEmail,
+			PurchasingCheckResponseItemBumpSettings bumpSettings,
+			boolean canCheckGuarantee,
+			boolean needToRequireVideoToViewLoginData,
+			String descriptionHtml,
+			String descriptionEnHtml,
+			String descriptionPlain,
+			String descriptionEnPlain,
+			PurchasingCheckResponseItemSeller seller
 		) {}
 
 		public record PurchasingConfirmBody(
@@ -10402,25 +10402,25 @@ public final class Types {
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PurchasingConfirmResponse(
 			@Nullable String status,
-			@Nullable PurchasingConfirmResponseItem item,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			PurchasingConfirmResponseItem item,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PurchasingConfirmResponseItemLoginData(
-			@Nullable String raw,
-			@Nullable String encodedRaw,
-			@Nullable String login,
-			@Nullable String password,
-			@Nullable String encodedPassword,
-			@Nullable String oldPassword,
-			@Nullable String encodedOldPassword,
-			@Nullable JsonNode adviceToChangePassword
+			String raw,
+			String encodedRaw,
+			String login,
+			String password,
+			String encodedPassword,
+			String oldPassword,
+			String encodedOldPassword,
+			boolean adviceToChangePassword
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PurchasingConfirmResponseItem(
-			@Nullable PurchasingConfirmResponseItemLoginData loginData
+			PurchasingConfirmResponseItemLoginData loginData
 		) {}
 
 		public record PurchasingDiscountRequestBody(
@@ -10438,14 +10438,14 @@ public final class Types {
 		public record PurchasingDiscountRequestResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PurchasingDiscountCancelResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 	}
@@ -10459,9 +10459,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CustomDiscountsGetResponse(
-			@Nullable List<JsonNode> discounts,
-			Double total,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<DiscountModel> discounts,
+			double total,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record CustomDiscountsCreateBody(
@@ -10484,9 +10484,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CustomDiscountsCreateResponse(
-			@Nullable JsonNode discount,
-			Double total,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			DiscountModel discount,
+			double total,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record CustomDiscountsEditBody(
@@ -10506,9 +10506,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record CustomDiscountsEditResponse(
-			@Nullable List<JsonNode> discounts,
-			Double total,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<DiscountModel> discounts,
+			double total,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record CustomDiscountsDeleteBody(
@@ -10521,7 +10521,7 @@ public final class Types {
 		public record CustomDiscountsDeleteResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 	}
@@ -10578,9 +10578,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PublishingFastSellResponse(
-			@Nullable JsonNode item,
-			@Nullable String itemLink,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			ItemModel item,
+			String itemLink,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record PublishingAddBody(
@@ -10625,9 +10625,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PublishingAddResponse(
-			@Nullable String status,
-			@Nullable JsonNode item,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			String status,
+			ItemModel item,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record PublishingCheckBody(
@@ -10656,172 +10656,172 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PublishingCheckResponse(
-			@Nullable String status,
-			@Nullable PublishingCheckResponseItem item,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			String status,
+			PublishingCheckResponseItem item,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PublishingCheckResponseItemGuarantee(
-			Double duration,
-			@Nullable String class_,
-			@Nullable String durationPhrase,
-			Double endDate,
-			@Nullable JsonNode active,
-			@Nullable JsonNode cancelled,
-			Double remainingTime,
-			@Nullable String remainingTimePhrase
+			double duration,
+			String class_,
+			String durationPhrase,
+			double endDate,
+			boolean active,
+			boolean cancelled,
+			double remainingTime,
+			String remainingTimePhrase
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PublishingCheckResponseItemLoginData(
-			@Nullable String raw,
-			@Nullable String encodedRaw,
-			@Nullable String login,
-			@Nullable String password,
-			@Nullable String encodedPassword,
-			@Nullable String oldPassword,
-			@Nullable JsonNode encodedOldPassword
+			String raw,
+			String encodedRaw,
+			String login,
+			String password,
+			String encodedPassword,
+			String oldPassword,
+			JsonNode encodedOldPassword
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PublishingCheckResponseItemEmailLoginData(
-			@Nullable String raw,
-			@Nullable String encodedRaw,
-			@Nullable String login,
-			@Nullable String password,
-			@Nullable String encodedPassword,
-			@Nullable String oldPassword,
-			@Nullable String encodedOldPassword
+			String raw,
+			String encodedRaw,
+			String login,
+			String password,
+			String encodedPassword,
+			String oldPassword,
+			String encodedOldPassword
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PublishingCheckResponseItemBuyer(
-			@JsonProperty("user_id") Double userId,
-			@JsonProperty("operation_date") Double operationDate,
-			@Nullable JsonNode visitorIsBuyer,
-			@Nullable String username,
-			@JsonProperty("is_banned") Double isBanned,
-			@JsonProperty("display_style_group_id") Double displayStyleGroupId,
-			@JsonProperty("uniq_username_css") @Nullable String uniqUsernameCss,
-			@JsonProperty("user_group_id") Double userGroupId
+			@JsonProperty("user_id") double userId,
+			@JsonProperty("operation_date") double operationDate,
+			boolean visitorIsBuyer,
+			String username,
+			@JsonProperty("is_banned") double isBanned,
+			@JsonProperty("display_style_group_id") double displayStyleGroupId,
+			@JsonProperty("uniq_username_css") String uniqUsernameCss,
+			@JsonProperty("user_group_id") double userGroupId
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PublishingCheckResponseItemAccountLinks(
-			@Nullable String link,
-			@Nullable String text,
-			@Nullable String iconClass
+			String link,
+			String text,
+			String iconClass
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PublishingCheckResponseItemExtraPrices(
-			@Nullable String currency,
-			@Nullable String price
+			String currency,
+			String price
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PublishingCheckResponseItemBumpSettings(
-			@Nullable JsonNode canBumpItem,
-			@Nullable JsonNode canBumpItemGlobally,
-			@Nullable JsonNode shortErrorPhrase,
-			@Nullable JsonNode errorPhrase
+			boolean canBumpItem,
+			boolean canBumpItemGlobally,
+			JsonNode shortErrorPhrase,
+			JsonNode errorPhrase
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PublishingCheckResponseItemSeller(
-			@JsonProperty("user_id") Double userId,
-			@Nullable String username,
-			@JsonProperty("avatar_date") Double avatarDate,
-			@JsonProperty("is_banned") Double isBanned,
-			@JsonProperty("display_style_group_id") Double displayStyleGroupId,
-			@JsonProperty("joined_date") Double joinedDate,
-			@JsonProperty("sold_items_count") Double soldItemsCount,
-			@JsonProperty("active_items_count") Double activeItemsCount,
-			@JsonProperty("restore_data") @Nullable String restoreData,
-			@JsonProperty("restore_percents") Double restorePercents,
-			@Nullable JsonNode isOnline
+			@JsonProperty("user_id") double userId,
+			String username,
+			@JsonProperty("avatar_date") double avatarDate,
+			@JsonProperty("is_banned") double isBanned,
+			@JsonProperty("display_style_group_id") double displayStyleGroupId,
+			@JsonProperty("joined_date") double joinedDate,
+			@JsonProperty("sold_items_count") double soldItemsCount,
+			@JsonProperty("active_items_count") double activeItemsCount,
+			@JsonProperty("restore_data") String restoreData,
+			@JsonProperty("restore_percents") double restorePercents,
+			boolean isOnline
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PublishingCheckResponseItem(
-			@JsonProperty("item_id") Double itemId,
-			@JsonProperty("item_state") @Nullable String itemState,
-			@JsonProperty("category_id") Double categoryId,
-			@JsonProperty("published_date") Double publishedDate,
-			@Nullable String title,
-			@Nullable String description,
-			Double price,
-			@JsonProperty("update_stat_date") Double updateStatDate,
-			@JsonProperty("refreshed_date") Double refreshedDate,
-			@JsonProperty("edit_date") Double editDate,
-			@Nullable String login,
-			@JsonProperty("temp_email") @Nullable String tempEmail,
-			@JsonProperty("view_count") Double viewCount,
-			@JsonProperty("is_sticky") Double isSticky,
-			@Nullable String information,
-			@JsonProperty("item_origin") @Nullable String itemOrigin,
-			@JsonProperty("extended_guarantee") Double extendedGuarantee,
-			Double nsb,
-			@JsonProperty("allow_ask_discount") Double allowAskDiscount,
-			@JsonProperty("title_en") @Nullable String titleEn,
-			@JsonProperty("description_en") @Nullable String descriptionEn,
-			@JsonProperty("information_en") @Nullable String informationEn,
-			@JsonProperty("email_type") @Nullable String emailType,
-			@JsonProperty("email_provider") @Nullable String emailProvider,
-			@JsonProperty("item_domain") @Nullable String itemDomain,
-			@JsonProperty("resale_item_origin") @Nullable String resaleItemOrigin,
-			@JsonProperty("user_allow_ask_discount") Double userAllowAskDiscount,
-			@JsonProperty("max_discount_percent") Double maxDiscountPercent,
-			@JsonProperty("market_custom_title") @Nullable String marketCustomTitle,
-			@JsonProperty("feedback_data") @Nullable String feedbackData,
-			@JsonProperty("buyer_avatar_date") Double buyerAvatarDate,
-			@JsonProperty("buyer_user_group_id") Double buyerUserGroupId,
-			Double priceWithSellerFee,
-			@Nullable PublishingCheckResponseItemGuarantee guarantee,
-			@Nullable JsonNode canViewLoginData,
-			@Nullable JsonNode canUpdateItemStats,
-			@Nullable JsonNode canReportItem,
-			@Nullable PublishingCheckResponseItemLoginData loginData,
-			@Nullable JsonNode canViewEmailLoginData,
-			@Nullable PublishingCheckResponseItemEmailLoginData emailLoginData,
-			@Nullable JsonNode showGetEmailCodeButton,
-			@Nullable String getEmailCodeDisplayLogin,
-			@Nullable PublishingCheckResponseItemBuyer buyer,
-			@Nullable JsonNode isPersonalAccount,
-			@JsonProperty("sold_items_category_count") Double soldItemsCategoryCount,
-			@JsonProperty("restore_items_category_count") Double restoreItemsCategoryCount,
-			@JsonProperty("rub_price") Double rubPrice,
-			@JsonProperty("price_currency") @Nullable String priceCurrency,
-			@Nullable JsonNode canValidateAccount,
-			@Nullable JsonNode canResellItemAfterPurchase,
-			@JsonProperty("account_last_activity") Double accountLastActivity,
-			@Nullable JsonNode displayConvertedBalance,
-			@Nullable JsonNode canViewAccountLink,
-			@Nullable List<PublishingCheckResponseItemAccountLinks> accountLinks,
-			@Nullable String accountLink,
-			@Nullable String emailLoginUrl,
-			@Nullable JsonNode canChangePassword,
-			@Nullable String itemOriginPhrase,
-			@Nullable JsonNode visitorIsAuthor,
-			@Nullable JsonNode canAskDiscount,
-			@Nullable JsonNode tags,
-			@Nullable List<JsonNode> customFields,
-			@Nullable List<JsonNode> externalAuth,
-			@Nullable JsonNode isTrusted,
-			@Nullable JsonNode isBirthdayToday,
-			@Nullable JsonNode isIgnored,
-			Double deposit,
-			@Nullable List<PublishingCheckResponseItemExtraPrices> extraPrices,
-			@Nullable JsonNode canViewAccountLoginAndTempEmail,
-			@Nullable PublishingCheckResponseItemBumpSettings bumpSettings,
-			@Nullable JsonNode canCheckGuarantee,
-			@Nullable JsonNode needToRequireVideoToViewLoginData,
-			@Nullable String descriptionHtml,
-			@Nullable String descriptionEnHtml,
-			@Nullable String descriptionPlain,
-			@Nullable String descriptionEnPlain,
-			@Nullable PublishingCheckResponseItemSeller seller
+			@JsonProperty("item_id") double itemId,
+			@JsonProperty("item_state") String itemState,
+			@JsonProperty("category_id") double categoryId,
+			@JsonProperty("published_date") double publishedDate,
+			String title,
+			String description,
+			double price,
+			@JsonProperty("update_stat_date") double updateStatDate,
+			@JsonProperty("refreshed_date") double refreshedDate,
+			@JsonProperty("edit_date") double editDate,
+			String login,
+			@JsonProperty("temp_email") String tempEmail,
+			@JsonProperty("view_count") double viewCount,
+			@JsonProperty("is_sticky") double isSticky,
+			String information,
+			@JsonProperty("item_origin") String itemOrigin,
+			@JsonProperty("extended_guarantee") double extendedGuarantee,
+			double nsb,
+			@JsonProperty("allow_ask_discount") double allowAskDiscount,
+			@JsonProperty("title_en") String titleEn,
+			@JsonProperty("description_en") String descriptionEn,
+			@JsonProperty("information_en") String informationEn,
+			@JsonProperty("email_type") String emailType,
+			@JsonProperty("email_provider") String emailProvider,
+			@JsonProperty("item_domain") String itemDomain,
+			@JsonProperty("resale_item_origin") String resaleItemOrigin,
+			@JsonProperty("user_allow_ask_discount") double userAllowAskDiscount,
+			@JsonProperty("max_discount_percent") double maxDiscountPercent,
+			@JsonProperty("market_custom_title") String marketCustomTitle,
+			@JsonProperty("feedback_data") String feedbackData,
+			@JsonProperty("buyer_avatar_date") double buyerAvatarDate,
+			@JsonProperty("buyer_user_group_id") double buyerUserGroupId,
+			double priceWithSellerFee,
+			PublishingCheckResponseItemGuarantee guarantee,
+			boolean canViewLoginData,
+			boolean canUpdateItemStats,
+			boolean canReportItem,
+			PublishingCheckResponseItemLoginData loginData,
+			boolean canViewEmailLoginData,
+			PublishingCheckResponseItemEmailLoginData emailLoginData,
+			boolean showGetEmailCodeButton,
+			String getEmailCodeDisplayLogin,
+			PublishingCheckResponseItemBuyer buyer,
+			boolean isPersonalAccount,
+			@JsonProperty("sold_items_category_count") double soldItemsCategoryCount,
+			@JsonProperty("restore_items_category_count") double restoreItemsCategoryCount,
+			@JsonProperty("rub_price") double rubPrice,
+			@JsonProperty("price_currency") String priceCurrency,
+			boolean canValidateAccount,
+			boolean canResellItemAfterPurchase,
+			@JsonProperty("account_last_activity") double accountLastActivity,
+			boolean displayConvertedBalance,
+			boolean canViewAccountLink,
+			List<PublishingCheckResponseItemAccountLinks> accountLinks,
+			String accountLink,
+			String emailLoginUrl,
+			boolean canChangePassword,
+			String itemOriginPhrase,
+			boolean visitorIsAuthor,
+			boolean canAskDiscount,
+			JsonNode tags,
+			List<JsonNode> customFields,
+			List<JsonNode> externalAuth,
+			boolean isTrusted,
+			boolean isBirthdayToday,
+			boolean isIgnored,
+			double deposit,
+			List<PublishingCheckResponseItemExtraPrices> extraPrices,
+			boolean canViewAccountLoginAndTempEmail,
+			PublishingCheckResponseItemBumpSettings bumpSettings,
+			boolean canCheckGuarantee,
+			boolean needToRequireVideoToViewLoginData,
+			String descriptionHtml,
+			String descriptionEnHtml,
+			String descriptionPlain,
+			String descriptionEnPlain,
+			PublishingCheckResponseItemSeller seller
 		) {}
 
 		public record PublishingExternalBody(
@@ -10843,7 +10843,7 @@ public final class Types {
 		public record PublishingExternalResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 	}
@@ -10868,8 +10868,8 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsInvoiceGetResponse(
-			@Nullable JsonNode invoice,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			InvoiceModel invoice,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record PaymentsInvoiceCreateBody(
@@ -10904,8 +10904,8 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsInvoiceCreateResponse(
-			@Nullable JsonNode invoice,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			InvoiceModel invoice,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record PaymentsInvoiceListParams(
@@ -10927,590 +10927,590 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsInvoiceListResponse(
-			@Nullable List<JsonNode> invoices,
-			Double count,
-			Double page,
-			Double perPage,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<InvoiceModel> invoices,
+			double count,
+			double page,
+			double perPage,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponse(
-			@Nullable PaymentsCurrencyResponseCurrencyList currencyList,
-			Double lastUpdate,
-			@Nullable String visitorCurrency,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			PaymentsCurrencyResponseCurrencyList currencyList,
+			double lastUpdate,
+			String visitorCurrency,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListBTC(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListETH(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListBNB(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListBCH(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListXMR(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListSOL(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListLTC(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListDASH(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListTON(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListUSDT(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListMATIC(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListTRX(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListDOGE(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListKWD(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListGBP(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListCHF(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListEUR(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListUSD(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListSGD(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListCAD(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListAUD(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListNZD(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListBGN(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListGEL(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListILS(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListQAR(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListPEN(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListAED(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListSAR(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListPLN(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListMYR(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListRON(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListBRL(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListDKK(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListCNY(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListHKD(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListSEK(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListNOK(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListZAR(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListMXN(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListCZK(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListTWD(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListTHB(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListTRY(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListUAH(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListUYU(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListPHP(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListINR(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListRUB(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListRSD(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListJPY(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListHUF(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListKZT(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListCRC(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListCLP(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListARS(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListKRW(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListCOP(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListIDR(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyListVND(
-			@Nullable String title,
-			Double rate,
-			@Nullable String formattedRate,
-			@Nullable String symbol
+			String title,
+			double rate,
+			String formattedRate,
+			String symbol
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCurrencyResponseCurrencyList(
-			@Nullable PaymentsCurrencyResponseCurrencyListBTC BTC,
-			@Nullable PaymentsCurrencyResponseCurrencyListETH ETH,
-			@Nullable PaymentsCurrencyResponseCurrencyListBNB BNB,
-			@Nullable PaymentsCurrencyResponseCurrencyListBCH BCH,
-			@Nullable PaymentsCurrencyResponseCurrencyListXMR XMR,
-			@Nullable PaymentsCurrencyResponseCurrencyListSOL SOL,
-			@Nullable PaymentsCurrencyResponseCurrencyListLTC LTC,
-			@Nullable PaymentsCurrencyResponseCurrencyListDASH DASH,
-			@Nullable PaymentsCurrencyResponseCurrencyListTON TON,
-			@Nullable PaymentsCurrencyResponseCurrencyListUSDT USDT,
-			@Nullable PaymentsCurrencyResponseCurrencyListMATIC MATIC,
-			@Nullable PaymentsCurrencyResponseCurrencyListTRX TRX,
-			@Nullable PaymentsCurrencyResponseCurrencyListDOGE DOGE,
-			@Nullable PaymentsCurrencyResponseCurrencyListKWD KWD,
-			@Nullable PaymentsCurrencyResponseCurrencyListGBP GBP,
-			@Nullable PaymentsCurrencyResponseCurrencyListCHF CHF,
-			@Nullable PaymentsCurrencyResponseCurrencyListEUR EUR,
-			@Nullable PaymentsCurrencyResponseCurrencyListUSD USD,
-			@Nullable PaymentsCurrencyResponseCurrencyListSGD SGD,
-			@Nullable PaymentsCurrencyResponseCurrencyListCAD CAD,
-			@Nullable PaymentsCurrencyResponseCurrencyListAUD AUD,
-			@Nullable PaymentsCurrencyResponseCurrencyListNZD NZD,
-			@Nullable PaymentsCurrencyResponseCurrencyListBGN BGN,
-			@Nullable PaymentsCurrencyResponseCurrencyListGEL GEL,
-			@Nullable PaymentsCurrencyResponseCurrencyListILS ILS,
-			@Nullable PaymentsCurrencyResponseCurrencyListQAR QAR,
-			@Nullable PaymentsCurrencyResponseCurrencyListPEN PEN,
-			@Nullable PaymentsCurrencyResponseCurrencyListAED AED,
-			@Nullable PaymentsCurrencyResponseCurrencyListSAR SAR,
-			@Nullable PaymentsCurrencyResponseCurrencyListPLN PLN,
-			@Nullable PaymentsCurrencyResponseCurrencyListMYR MYR,
-			@Nullable PaymentsCurrencyResponseCurrencyListRON RON,
-			@Nullable PaymentsCurrencyResponseCurrencyListBRL BRL,
-			@Nullable PaymentsCurrencyResponseCurrencyListDKK DKK,
-			@Nullable PaymentsCurrencyResponseCurrencyListCNY CNY,
-			@Nullable PaymentsCurrencyResponseCurrencyListHKD HKD,
-			@Nullable PaymentsCurrencyResponseCurrencyListSEK SEK,
-			@Nullable PaymentsCurrencyResponseCurrencyListNOK NOK,
-			@Nullable PaymentsCurrencyResponseCurrencyListZAR ZAR,
-			@Nullable PaymentsCurrencyResponseCurrencyListMXN MXN,
-			@Nullable PaymentsCurrencyResponseCurrencyListCZK CZK,
-			@Nullable PaymentsCurrencyResponseCurrencyListTWD TWD,
-			@Nullable PaymentsCurrencyResponseCurrencyListTHB THB,
-			@Nullable PaymentsCurrencyResponseCurrencyListTRY TRY,
-			@Nullable PaymentsCurrencyResponseCurrencyListUAH UAH,
-			@Nullable PaymentsCurrencyResponseCurrencyListUYU UYU,
-			@Nullable PaymentsCurrencyResponseCurrencyListPHP PHP,
-			@Nullable PaymentsCurrencyResponseCurrencyListINR INR,
-			@Nullable PaymentsCurrencyResponseCurrencyListRUB RUB,
-			@Nullable PaymentsCurrencyResponseCurrencyListRSD RSD,
-			@Nullable PaymentsCurrencyResponseCurrencyListJPY JPY,
-			@Nullable PaymentsCurrencyResponseCurrencyListHUF HUF,
-			@Nullable PaymentsCurrencyResponseCurrencyListKZT KZT,
-			@Nullable PaymentsCurrencyResponseCurrencyListCRC CRC,
-			@Nullable PaymentsCurrencyResponseCurrencyListCLP CLP,
-			@Nullable PaymentsCurrencyResponseCurrencyListARS ARS,
-			@Nullable PaymentsCurrencyResponseCurrencyListKRW KRW,
-			@Nullable PaymentsCurrencyResponseCurrencyListCOP COP,
-			@Nullable PaymentsCurrencyResponseCurrencyListIDR IDR,
-			@Nullable PaymentsCurrencyResponseCurrencyListVND VND
+			PaymentsCurrencyResponseCurrencyListBTC BTC,
+			PaymentsCurrencyResponseCurrencyListETH ETH,
+			PaymentsCurrencyResponseCurrencyListBNB BNB,
+			PaymentsCurrencyResponseCurrencyListBCH BCH,
+			PaymentsCurrencyResponseCurrencyListXMR XMR,
+			PaymentsCurrencyResponseCurrencyListSOL SOL,
+			PaymentsCurrencyResponseCurrencyListLTC LTC,
+			PaymentsCurrencyResponseCurrencyListDASH DASH,
+			PaymentsCurrencyResponseCurrencyListTON TON,
+			PaymentsCurrencyResponseCurrencyListUSDT USDT,
+			PaymentsCurrencyResponseCurrencyListMATIC MATIC,
+			PaymentsCurrencyResponseCurrencyListTRX TRX,
+			PaymentsCurrencyResponseCurrencyListDOGE DOGE,
+			PaymentsCurrencyResponseCurrencyListKWD KWD,
+			PaymentsCurrencyResponseCurrencyListGBP GBP,
+			PaymentsCurrencyResponseCurrencyListCHF CHF,
+			PaymentsCurrencyResponseCurrencyListEUR EUR,
+			PaymentsCurrencyResponseCurrencyListUSD USD,
+			PaymentsCurrencyResponseCurrencyListSGD SGD,
+			PaymentsCurrencyResponseCurrencyListCAD CAD,
+			PaymentsCurrencyResponseCurrencyListAUD AUD,
+			PaymentsCurrencyResponseCurrencyListNZD NZD,
+			PaymentsCurrencyResponseCurrencyListBGN BGN,
+			PaymentsCurrencyResponseCurrencyListGEL GEL,
+			PaymentsCurrencyResponseCurrencyListILS ILS,
+			PaymentsCurrencyResponseCurrencyListQAR QAR,
+			PaymentsCurrencyResponseCurrencyListPEN PEN,
+			PaymentsCurrencyResponseCurrencyListAED AED,
+			PaymentsCurrencyResponseCurrencyListSAR SAR,
+			PaymentsCurrencyResponseCurrencyListPLN PLN,
+			PaymentsCurrencyResponseCurrencyListMYR MYR,
+			PaymentsCurrencyResponseCurrencyListRON RON,
+			PaymentsCurrencyResponseCurrencyListBRL BRL,
+			PaymentsCurrencyResponseCurrencyListDKK DKK,
+			PaymentsCurrencyResponseCurrencyListCNY CNY,
+			PaymentsCurrencyResponseCurrencyListHKD HKD,
+			PaymentsCurrencyResponseCurrencyListSEK SEK,
+			PaymentsCurrencyResponseCurrencyListNOK NOK,
+			PaymentsCurrencyResponseCurrencyListZAR ZAR,
+			PaymentsCurrencyResponseCurrencyListMXN MXN,
+			PaymentsCurrencyResponseCurrencyListCZK CZK,
+			PaymentsCurrencyResponseCurrencyListTWD TWD,
+			PaymentsCurrencyResponseCurrencyListTHB THB,
+			PaymentsCurrencyResponseCurrencyListTRY TRY,
+			PaymentsCurrencyResponseCurrencyListUAH UAH,
+			PaymentsCurrencyResponseCurrencyListUYU UYU,
+			PaymentsCurrencyResponseCurrencyListPHP PHP,
+			PaymentsCurrencyResponseCurrencyListINR INR,
+			PaymentsCurrencyResponseCurrencyListRUB RUB,
+			PaymentsCurrencyResponseCurrencyListRSD RSD,
+			PaymentsCurrencyResponseCurrencyListJPY JPY,
+			PaymentsCurrencyResponseCurrencyListHUF HUF,
+			PaymentsCurrencyResponseCurrencyListKZT KZT,
+			PaymentsCurrencyResponseCurrencyListCRC CRC,
+			PaymentsCurrencyResponseCurrencyListCLP CLP,
+			PaymentsCurrencyResponseCurrencyListARS ARS,
+			PaymentsCurrencyResponseCurrencyListKRW KRW,
+			PaymentsCurrencyResponseCurrencyListCOP COP,
+			PaymentsCurrencyResponseCurrencyListIDR IDR,
+			PaymentsCurrencyResponseCurrencyListVND VND
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsBalanceListResponse(
-			@Nullable PaymentsBalanceListResponseFrom from,
-			@Nullable PaymentsBalanceListResponseTo to,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			PaymentsBalanceListResponseFrom from,
+			PaymentsBalanceListResponseTo to,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsBalanceListResponseFromBalance(
-			@Nullable String balance,
-			Double convertedBalance,
-			@Nullable String fullTitle,
-			@Nullable String title,
-			@Nullable String type
+			String balance,
+			double convertedBalance,
+			String fullTitle,
+			String title,
+			String type
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsBalanceListResponseFrom(
-			@Nullable PaymentsBalanceListResponseFromBalance balance,
-			@JsonProperty("12345") @Nullable JsonNode _12345
+			PaymentsBalanceListResponseFromBalance balance,
+			@JsonProperty("12345") BalanceModel _12345
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsBalanceListResponseTo(
-			@Nullable JsonNode balance
+			UserModel balance
 		) {}
 
 		public record PaymentsBalanceExchangeBody(
@@ -11525,29 +11525,29 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsBalanceExchangeResponse(
-			@Nullable PaymentsBalanceExchangeResponseFrom from,
-			@Nullable PaymentsBalanceExchangeResponseTo to,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			PaymentsBalanceExchangeResponseFrom from,
+			PaymentsBalanceExchangeResponseTo to,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsBalanceExchangeResponseFromBalance(
-			@Nullable String balance,
-			Double convertedBalance,
-			@Nullable String fullTitle,
-			@Nullable String title,
-			@Nullable String type
+			String balance,
+			double convertedBalance,
+			String fullTitle,
+			String title,
+			String type
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsBalanceExchangeResponseFrom(
-			@Nullable PaymentsBalanceExchangeResponseFromBalance balance,
-			@JsonProperty("12345") @Nullable JsonNode _12345
+			PaymentsBalanceExchangeResponseFromBalance balance,
+			@JsonProperty("12345") BalanceModel _12345
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsBalanceExchangeResponseTo(
-			@Nullable JsonNode balance
+			UserModel balance
 		) {}
 
 		public record PaymentsTransferBody(
@@ -11578,9 +11578,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsTransferResponse(
-			@Nullable String status,
-			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record PaymentsFeeParams(
@@ -11594,17 +11594,17 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsFeeResponse(
-			@JsonProperty("commission_percentage") Double commissionPercentage,
-			Double spentCurrentMonth,
-			@Nullable PaymentsFeeResponseCalculator calculator,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("commission_percentage") double commissionPercentage,
+			double spentCurrentMonth,
+			PaymentsFeeResponseCalculator calculator,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsFeeResponseCalculator(
-			Double inputAmount,
-			Double commissionAmount,
-			Double totalOutputAmount
+			double inputAmount,
+			double commissionAmount,
+			double totalOutputAmount
 		) {}
 
 		public record PaymentsCancelBody(
@@ -11615,9 +11615,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsCancelResponse(
-			@Nullable String status,
-			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record PaymentsHistoryParams(
@@ -11659,169 +11659,169 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsHistoryResponse(
-			@Nullable JsonNode payments,
-			@Nullable String perPage,
-			Double page,
-			@Nullable String pageNavLink,
-			@Nullable PaymentsHistoryResponsePageNavParams pageNavParams,
-			@Nullable String periodLabel,
-			@Nullable String periodLabelPhrase,
-			@Nullable JsonNode filterDatesDefault,
-			@Nullable PaymentsHistoryResponseInput input,
-			@Nullable JsonNode paymentStats,
-			@Nullable JsonNode hasNextPage,
-			Double lastOperationId,
-			@Nullable String nextPageHref,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			JsonNode payments,
+			String perPage,
+			double page,
+			String pageNavLink,
+			PaymentsHistoryResponsePageNavParams pageNavParams,
+			String periodLabel,
+			String periodLabelPhrase,
+			boolean filterDatesDefault,
+			PaymentsHistoryResponseInput input,
+			JsonNode paymentStats,
+			boolean hasNextPage,
+			double lastOperationId,
+			String nextPageHref,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsHistoryResponsePageNavParams(
-			@Nullable String type,
-			@Nullable String startDate,
-			@Nullable String endDate
+			String type,
+			String startDate,
+			String endDate
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsHistoryResponseInput(
-			@JsonProperty("user_id") Double userId,
-			@Nullable String type,
-			@Nullable String startDate,
-			@Nullable String endDate,
-			Double page,
-			@JsonProperty("period_label") @Nullable String periodLabel,
-			@Nullable String receiver,
-			@Nullable String sender,
-			@Nullable String comment,
-			@Nullable String pmin,
-			@Nullable String pmax,
-			@JsonProperty("category_id") Double categoryId,
-			@Nullable String wallet,
-			@JsonProperty("is_hold") @Nullable JsonNode isHold,
-			@Nullable String currency,
-			@JsonProperty("operation_id_lt") Double operationIdLt
+			@JsonProperty("user_id") double userId,
+			String type,
+			String startDate,
+			String endDate,
+			double page,
+			@JsonProperty("period_label") String periodLabel,
+			String receiver,
+			String sender,
+			String comment,
+			String pmin,
+			String pmax,
+			@JsonProperty("category_id") double categoryId,
+			String wallet,
+			@JsonProperty("is_hold") boolean isHold,
+			String currency,
+			@JsonProperty("operation_id_lt") double operationIdLt
 		) {}
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsPayoutServicesResponse(
-			@Nullable List<PaymentsPayoutServicesResponseSystems> systems,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<PaymentsPayoutServicesResponseSystems> systems,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsPayoutServicesResponseSystemsProvidersBEP20(
-			@Nullable String title,
-			@Nullable JsonNode isUnavailable
+			String title,
+			boolean isUnavailable
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsPayoutServicesResponseSystemsProvidersTRC20(
-			@Nullable String title,
-			@Nullable JsonNode isUnavailable
+			String title,
+			boolean isUnavailable
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsPayoutServicesResponseSystemsProvidersERC20(
-			@Nullable String title,
-			@Nullable JsonNode isUnavailable
+			String title,
+			boolean isUnavailable
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsPayoutServicesResponseSystemsProvidersTRX(
-			@Nullable String title,
-			@Nullable JsonNode isUnavailable
+			String title,
+			boolean isUnavailable
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsPayoutServicesResponseSystemsProvidersBTC(
-			@Nullable String title,
-			@Nullable JsonNode isUnavailable
+			String title,
+			boolean isUnavailable
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsPayoutServicesResponseSystemsProvidersTON(
-			@Nullable String title,
-			@Nullable JsonNode isUnavailable
+			String title,
+			boolean isUnavailable
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsPayoutServicesResponseSystemsProvidersETH(
-			@Nullable String title,
-			@Nullable JsonNode isUnavailable
+			String title,
+			boolean isUnavailable
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsPayoutServicesResponseSystemsProvidersLTC(
-			@Nullable String title,
-			@Nullable JsonNode isUnavailable
+			String title,
+			boolean isUnavailable
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsPayoutServicesResponseSystemsProvidersBNB(
-			@Nullable String title,
-			@Nullable JsonNode isUnavailable
+			String title,
+			boolean isUnavailable
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsPayoutServicesResponseSystemsProvidersDASH(
-			@Nullable String title,
-			@Nullable JsonNode isUnavailable
+			String title,
+			boolean isUnavailable
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsPayoutServicesResponseSystemsProvidersDOGE(
-			@Nullable String title,
-			@Nullable JsonNode isUnavailable
+			String title,
+			boolean isUnavailable
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsPayoutServicesResponseSystemsProvidersXMR(
-			@Nullable String title,
-			@Nullable JsonNode isUnavailable
+			String title,
+			boolean isUnavailable
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsPayoutServicesResponseSystemsProvidersSOL(
-			@Nullable String title,
-			@Nullable JsonNode isUnavailable
+			String title,
+			boolean isUnavailable
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsPayoutServicesResponseSystemsProvidersBCH(
-			@Nullable String title,
-			@Nullable JsonNode isUnavailable
+			String title,
+			boolean isUnavailable
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsPayoutServicesResponseSystemsProviders(
-			@Nullable PaymentsPayoutServicesResponseSystemsProvidersBEP20 BEP20,
-			@Nullable PaymentsPayoutServicesResponseSystemsProvidersTRC20 TRC20,
-			@Nullable PaymentsPayoutServicesResponseSystemsProvidersERC20 ERC20,
-			@Nullable PaymentsPayoutServicesResponseSystemsProvidersTRX TRX,
-			@Nullable PaymentsPayoutServicesResponseSystemsProvidersBTC BTC,
-			@Nullable PaymentsPayoutServicesResponseSystemsProvidersTON TON,
-			@Nullable PaymentsPayoutServicesResponseSystemsProvidersETH ETH,
-			@Nullable PaymentsPayoutServicesResponseSystemsProvidersLTC LTC,
-			@Nullable PaymentsPayoutServicesResponseSystemsProvidersBNB BNB,
-			@Nullable PaymentsPayoutServicesResponseSystemsProvidersDASH DASH,
-			@Nullable PaymentsPayoutServicesResponseSystemsProvidersDOGE DOGE,
-			@Nullable PaymentsPayoutServicesResponseSystemsProvidersXMR XMR,
-			@Nullable PaymentsPayoutServicesResponseSystemsProvidersSOL SOL,
-			@Nullable PaymentsPayoutServicesResponseSystemsProvidersBCH BCH
+			PaymentsPayoutServicesResponseSystemsProvidersBEP20 BEP20,
+			PaymentsPayoutServicesResponseSystemsProvidersTRC20 TRC20,
+			PaymentsPayoutServicesResponseSystemsProvidersERC20 ERC20,
+			PaymentsPayoutServicesResponseSystemsProvidersTRX TRX,
+			PaymentsPayoutServicesResponseSystemsProvidersBTC BTC,
+			PaymentsPayoutServicesResponseSystemsProvidersTON TON,
+			PaymentsPayoutServicesResponseSystemsProvidersETH ETH,
+			PaymentsPayoutServicesResponseSystemsProvidersLTC LTC,
+			PaymentsPayoutServicesResponseSystemsProvidersBNB BNB,
+			PaymentsPayoutServicesResponseSystemsProvidersDASH DASH,
+			PaymentsPayoutServicesResponseSystemsProvidersDOGE DOGE,
+			PaymentsPayoutServicesResponseSystemsProvidersXMR XMR,
+			PaymentsPayoutServicesResponseSystemsProvidersSOL SOL,
+			PaymentsPayoutServicesResponseSystemsProvidersBCH BCH
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record PaymentsPayoutServicesResponseSystems(
-			@Nullable String system,
-			@Nullable String commission,
-			Double min,
-			Double max,
-			@JsonProperty("instant_payout") @Nullable JsonNode instantPayout,
-			@JsonProperty("problematic_payout") @Nullable JsonNode problematicPayout,
-			@JsonProperty("is_unavailable") @Nullable JsonNode isUnavailable,
-			@Nullable JsonNode p2p,
-			@JsonProperty("has_wallet") @Nullable JsonNode hasWallet,
-			@Nullable PaymentsPayoutServicesResponseSystemsProviders providers
+			String system,
+			String commission,
+			double min,
+			double max,
+			@JsonProperty("instant_payout") boolean instantPayout,
+			@JsonProperty("problematic_payout") boolean problematicPayout,
+			@JsonProperty("is_unavailable") boolean isUnavailable,
+			boolean p2p,
+			@JsonProperty("has_wallet") boolean hasWallet,
+			PaymentsPayoutServicesResponseSystemsProviders providers
 		) {}
 
 		public record PaymentsPayoutBody(
@@ -11841,7 +11841,7 @@ public final class Types {
 		public record PaymentsPayoutResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 	}
@@ -11855,8 +11855,8 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record AutoPaymentsListResponse(
-			@Nullable JsonNode payments,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			JsonNode payments,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record AutoPaymentsCreateBody(
@@ -11879,10 +11879,10 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record AutoPaymentsCreateResponse(
-			@Nullable String status,
-			@Nullable String message,
-			@JsonProperty("auto_payment_id") Double autoPaymentId,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			String status,
+			String message,
+			@JsonProperty("auto_payment_id") double autoPaymentId,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 		public record AutoPaymentsDeleteBody(
@@ -11893,9 +11893,9 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record AutoPaymentsDeleteResponse(
-			@Nullable String status,
-			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			String status,
+			String message,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 
 	}
@@ -11909,24 +11909,24 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProxyGetResponse(
-			@Nullable List<ProxyGetResponseProxies> proxies,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			List<ProxyGetResponseProxies> proxies,
+			@JsonProperty("system_info") Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProxyGetResponseProxiesProxy(
-			@JsonProperty("proxy_id") Double proxyId,
-			@JsonProperty("user_id") Double userId,
-			@JsonProperty("proxy_ip") @Nullable String proxyIp,
-			@JsonProperty("proxy_port") Double proxyPort,
-			@JsonProperty("proxy_user") @Nullable String proxyUser,
-			@JsonProperty("proxy_pass") @Nullable String proxyPass,
-			@Nullable String proxyString
+			@JsonProperty("proxy_id") double proxyId,
+			@JsonProperty("user_id") double userId,
+			@JsonProperty("proxy_ip") String proxyIp,
+			@JsonProperty("proxy_port") double proxyPort,
+			@JsonProperty("proxy_user") String proxyUser,
+			@JsonProperty("proxy_pass") String proxyPass,
+			String proxyString
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record ProxyGetResponseProxies(
-			@Nullable ProxyGetResponseProxiesProxy proxy
+			ProxyGetResponseProxiesProxy proxy
 		) {}
 
 		public record ProxyAddBody(
@@ -11950,7 +11950,7 @@ public final class Types {
 		public record ProxyAddResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record ProxyDeleteBody(
@@ -11968,7 +11968,7 @@ public final class Types {
 		public record ProxyDeleteResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 	}
@@ -11996,7 +11996,7 @@ public final class Types {
 		public record ImapCreateResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 		public record ImapDeleteBody(
@@ -12009,7 +12009,7 @@ public final class Types {
 		public record ImapDeleteResponse(
 			@Nullable String status,
 			@Nullable String message,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 
 	}
@@ -12023,8 +12023,8 @@ public final class Types {
 
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record BatchBatchResponse(
-			@Nullable BatchBatchResponseJobs jobs,
-			@JsonProperty("system_info") @Nullable JsonNode systemInfo
+			BatchBatchResponseJobs jobs,
+			@JsonProperty("system_info") @Nullable Resp_SystemInfo systemInfo
 		) {}
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
@@ -12035,7 +12035,7 @@ public final class Types {
 	
 		@JsonIgnoreProperties(ignoreUnknown = true)
 		public record BatchBatchResponseJobs(
-			@JsonProperty("job_id") @Nullable BatchBatchResponseJobsJobId jobId
+			@JsonProperty("job_id") BatchBatchResponseJobsJobId jobId
 		) {}
 
 	}
