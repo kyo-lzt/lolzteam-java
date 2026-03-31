@@ -45,6 +45,29 @@ public final class Types {
 		}
 	}
 
+	public enum Origin {
+		BRUTE("brute"),
+		PHISHING("phishing"),
+		STEALER("stealer"),
+		AUTOREG("autoreg"),
+		PERSONAL("personal"),
+		RESALE("resale"),
+		DUMMY("dummy"),
+		SELF_REGISTRATION("self_registration"),
+		RETRIEVE_VIA_SUPPORT("retrieve_via_support");
+
+		private final String value;
+
+		Origin(String value) {
+			this.value = value;
+		}
+
+		@JsonValue
+		public String getValue() {
+			return value;
+		}
+	}
+
 	public enum Currency {
 		RUB("rub"),
 		UAH("uah"),
@@ -1628,40 +1651,20 @@ public final class Types {
 		}
 	}
 
-	public enum ManagingItemOrigin {
+	public enum ItemOrigin {
 		BRUTE("brute"),
 		PHISHING("phishing"),
 		STEALER("stealer"),
+		AUTOREG("autoreg"),
 		PERSONAL("personal"),
 		RESALE("resale"),
-		AUTOREG("autoreg"),
-		DUMMY("dummy");
-
-		private final String value;
-
-		ManagingItemOrigin(String value) {
-			this.value = value;
-		}
-
-		@JsonValue
-		public String getValue() {
-			return value;
-		}
-	}
-
-	public enum PublishingItemOrigin {
-		BRUTE("brute"),
-		PHISHING("phishing"),
-		STEALER("stealer"),
-		PERSONAL("personal"),
-		RESALE("resale"),
-		AUTOREG("autoreg"),
 		DUMMY("dummy"),
-		SELF_REGISTRATION("self_registration");
+		SELF_REGISTRATION("self_registration"),
+		RETRIEVE_VIA_SUPPORT("retrieve_via_support");
 
 		private final String value;
 
-		PublishingItemOrigin(String value) {
+		ItemOrigin(String value) {
 			this.value = value;
 		}
 
@@ -2404,7 +2407,7 @@ public final class Types {
 			/** List of tag ids that won't be included (Tag list is available via **GET /me**). */
 			@JsonProperty("not_public_tag_id[]") List<Long> notPublicTagId,
 			/** List of account origins. */
-			@JsonProperty("origin[]") JsonNode origin,
+			@JsonProperty("origin[]") Origin origin,
 			/** List of account origins that won't be included. */
 			@JsonProperty("not_origin[]") JsonNode notOrigin,
 			/** Search accounts of user. */
@@ -2466,7 +2469,7 @@ public final class Types {
 			/** List of tag ids that won't be included (Tag list is available via **GET /me**). */
 			@JsonProperty("not_public_tag_id[]") List<Long> notPublicTagId,
 			/** List of account origins. */
-			@JsonProperty("origin[]") JsonNode origin,
+			@JsonProperty("origin[]") Origin origin,
 			/** List of account origins that won't be included. */
 			@JsonProperty("not_origin[]") JsonNode notOrigin,
 			/** Search accounts of user. */
@@ -2931,7 +2934,7 @@ public final class Types {
 			/** List of tag ids that won't be included (Tag list is available via **GET /me**). */
 			@JsonProperty("not_public_tag_id[]") List<Long> notPublicTagId,
 			/** List of account origins. */
-			@JsonProperty("origin[]") JsonNode origin,
+			@JsonProperty("origin[]") Origin origin,
 			/** List of account origins that won't be included. */
 			@JsonProperty("not_origin[]") JsonNode notOrigin,
 			/** Search accounts of user. */
@@ -3290,7 +3293,7 @@ public final class Types {
 			/** List of tag ids that won't be included (Tag list is available via **GET /me**). */
 			@JsonProperty("not_public_tag_id[]") List<Long> notPublicTagId,
 			/** List of account origins. */
-			@JsonProperty("origin[]") JsonNode origin,
+			@JsonProperty("origin[]") Origin origin,
 			/** List of account origins that won't be included. */
 			@JsonProperty("not_origin[]") JsonNode notOrigin,
 			/** Search accounts of user. */
@@ -3790,7 +3793,7 @@ public final class Types {
 			/** List of tag ids that won't be included (Tag list is available via **GET /me**). */
 			@JsonProperty("not_public_tag_id[]") List<Long> notPublicTagId,
 			/** List of account origins. */
-			@JsonProperty("origin[]") JsonNode origin,
+			@JsonProperty("origin[]") Origin origin,
 			/** List of account origins that won't be included. */
 			@JsonProperty("not_origin[]") JsonNode notOrigin,
 			/** Search accounts of user. */
@@ -4117,7 +4120,7 @@ public final class Types {
 			/** List of tag ids that won't be included (Tag list is available via **GET /me**). */
 			@JsonProperty("not_public_tag_id[]") List<Long> notPublicTagId,
 			/** List of account origins. */
-			@JsonProperty("origin[]") JsonNode origin,
+			@JsonProperty("origin[]") Origin origin,
 			/** List of account origins that won't be included. */
 			@JsonProperty("not_origin[]") JsonNode notOrigin,
 			/** Search accounts of user. */
@@ -4381,7 +4384,7 @@ public final class Types {
 			/** List of tag ids that won't be included (Tag list is available via **GET /me**). */
 			@JsonProperty("not_public_tag_id[]") List<Long> notPublicTagId,
 			/** List of account origins. */
-			@JsonProperty("origin[]") JsonNode origin,
+			@JsonProperty("origin[]") Origin origin,
 			/** List of account origins that won't be included. */
 			@JsonProperty("not_origin[]") JsonNode notOrigin,
 			/** Search accounts of user. */
@@ -4670,7 +4673,7 @@ public final class Types {
 			/** List of tag ids that won't be included (Tag list is available via **GET /me**). */
 			@JsonProperty("not_public_tag_id[]") List<Long> notPublicTagId,
 			/** List of account origins. */
-			@JsonProperty("origin[]") JsonNode origin,
+			@JsonProperty("origin[]") Origin origin,
 			/** List of account origins that won't be included. */
 			@JsonProperty("not_origin[]") JsonNode notOrigin,
 			/** Search accounts of user. */
@@ -4900,7 +4903,7 @@ public final class Types {
 			/** List of tag ids that won't be included (Tag list is available via **GET /me**). */
 			@JsonProperty("not_public_tag_id[]") List<Long> notPublicTagId,
 			/** List of account origins. */
-			@JsonProperty("origin[]") JsonNode origin,
+			@JsonProperty("origin[]") Origin origin,
 			/** List of account origins that won't be included. */
 			@JsonProperty("not_origin[]") JsonNode notOrigin,
 			/** Search accounts of user. */
@@ -5144,7 +5147,7 @@ public final class Types {
 			/** List of tag ids that won't be included (Tag list is available via **GET /me**). */
 			@JsonProperty("not_public_tag_id[]") List<Long> notPublicTagId,
 			/** List of account origins. */
-			@JsonProperty("origin[]") JsonNode origin,
+			@JsonProperty("origin[]") Origin origin,
 			/** List of account origins that won't be included. */
 			@JsonProperty("not_origin[]") JsonNode notOrigin,
 			/** Search accounts of user. */
@@ -5388,7 +5391,7 @@ public final class Types {
 			/** List of tag ids that won't be included (Tag list is available via **GET /me**). */
 			@JsonProperty("not_public_tag_id[]") List<Long> notPublicTagId,
 			/** List of account origins. */
-			@JsonProperty("origin[]") JsonNode origin,
+			@JsonProperty("origin[]") Origin origin,
 			/** List of account origins that won't be included. */
 			@JsonProperty("not_origin[]") JsonNode notOrigin,
 			/** Search accounts of user. */
@@ -5546,7 +5549,7 @@ public final class Types {
 			/** List of tag ids that won't be included (Tag list is available via **GET /me**). */
 			@JsonProperty("not_public_tag_id[]") List<Long> notPublicTagId,
 			/** List of account origins. */
-			@JsonProperty("origin[]") JsonNode origin,
+			@JsonProperty("origin[]") Origin origin,
 			/** List of account origins that won't be included. */
 			@JsonProperty("not_origin[]") JsonNode notOrigin,
 			/** Search accounts of user. */
@@ -5755,7 +5758,7 @@ public final class Types {
 			/** List of tag ids that won't be included (Tag list is available via **GET /me**). */
 			@JsonProperty("not_public_tag_id[]") List<Long> notPublicTagId,
 			/** List of account origins. */
-			@JsonProperty("origin[]") JsonNode origin,
+			@JsonProperty("origin[]") Origin origin,
 			/** List of account origins that won't be included. */
 			@JsonProperty("not_origin[]") JsonNode notOrigin,
 			/** Search accounts of user. */
@@ -5947,7 +5950,7 @@ public final class Types {
 			/** List of tag ids that won't be included (Tag list is available via **GET /me**). */
 			@JsonProperty("not_public_tag_id[]") List<Long> notPublicTagId,
 			/** List of account origins. */
-			@JsonProperty("origin[]") JsonNode origin,
+			@JsonProperty("origin[]") Origin origin,
 			/** List of account origins that won't be included. */
 			@JsonProperty("not_origin[]") JsonNode notOrigin,
 			/** Search accounts of user. */
@@ -6138,7 +6141,7 @@ public final class Types {
 			/** List of tag ids that won't be included (Tag list is available via **GET /me**). */
 			@JsonProperty("not_public_tag_id[]") List<Long> notPublicTagId,
 			/** List of account origins. */
-			@JsonProperty("origin[]") JsonNode origin,
+			@JsonProperty("origin[]") Origin origin,
 			/** List of account origins that won't be included. */
 			@JsonProperty("not_origin[]") JsonNode notOrigin,
 			/** Search accounts of user. */
@@ -6396,7 +6399,7 @@ public final class Types {
 			/** List of tag ids that won't be included (Tag list is available via **GET /me**). */
 			@JsonProperty("not_public_tag_id[]") List<Long> notPublicTagId,
 			/** List of account origins. */
-			@JsonProperty("origin[]") JsonNode origin,
+			@JsonProperty("origin[]") Origin origin,
 			/** List of account origins that won't be included. */
 			@JsonProperty("not_origin[]") JsonNode notOrigin,
 			/** Search accounts of user. */
@@ -6639,7 +6642,7 @@ public final class Types {
 			/** List of tag ids that won't be included (Tag list is available via **GET /me**). */
 			@JsonProperty("not_public_tag_id[]") List<Long> notPublicTagId,
 			/** List of account origins. */
-			@JsonProperty("origin[]") JsonNode origin,
+			@JsonProperty("origin[]") Origin origin,
 			/** List of account origins that won't be included. */
 			@JsonProperty("not_origin[]") JsonNode notOrigin,
 			/** Search accounts of user. */
@@ -6847,7 +6850,7 @@ public final class Types {
 			/** List of tag ids that won't be included (Tag list is available via **GET /me**). */
 			@JsonProperty("not_public_tag_id[]") List<Long> notPublicTagId,
 			/** List of account origins. */
-			@JsonProperty("origin[]") JsonNode origin,
+			@JsonProperty("origin[]") Origin origin,
 			/** List of account origins that won't be included. */
 			@JsonProperty("not_origin[]") JsonNode notOrigin,
 			/** Search accounts of user. */
@@ -7040,7 +7043,7 @@ public final class Types {
 			/** List of tag ids that won't be included (Tag list is available via **GET /me**). */
 			@JsonProperty("not_public_tag_id[]") List<Long> notPublicTagId,
 			/** List of account origins. */
-			@JsonProperty("origin[]") JsonNode origin,
+			@JsonProperty("origin[]") Origin origin,
 			/** List of account origins that won't be included. */
 			@JsonProperty("not_origin[]") JsonNode notOrigin,
 			/** Search accounts of user. */
@@ -7256,7 +7259,7 @@ public final class Types {
 			/** List of tag ids that won't be included (Tag list is available via **GET /me**). */
 			@JsonProperty("not_public_tag_id[]") List<Long> notPublicTagId,
 			/** List of account origins. */
-			@JsonProperty("origin[]") JsonNode origin,
+			@JsonProperty("origin[]") Origin origin,
 			/** List of account origins that won't be included. */
 			@JsonProperty("not_origin[]") JsonNode notOrigin,
 			/** Search accounts of user. */
@@ -7448,7 +7451,7 @@ public final class Types {
 			/** List of tag ids that won't be included (Tag list is available via **GET /me**). */
 			@JsonProperty("not_public_tag_id[]") List<Long> notPublicTagId,
 			/** List of account origins. */
-			@JsonProperty("origin[]") JsonNode origin,
+			@JsonProperty("origin[]") Origin origin,
 			/** List of account origins that won't be included. */
 			@JsonProperty("not_origin[]") JsonNode notOrigin,
 			/** Search accounts of user. */
@@ -7609,7 +7612,7 @@ public final class Types {
 			/** List of tag ids that won't be included (Tag list is available via **GET /me**). */
 			@JsonProperty("not_public_tag_id[]") List<Long> notPublicTagId,
 			/** List of account origins. */
-			@JsonProperty("origin[]") JsonNode origin,
+			@JsonProperty("origin[]") Origin origin,
 			/** List of account origins that won't be included. */
 			@JsonProperty("not_origin[]") JsonNode notOrigin,
 			/** Search accounts of user. */
@@ -7874,7 +7877,7 @@ public final class Types {
 			/** List of tag ids that won't be included (Tag list is available via **GET /me**). */
 			@JsonProperty("not_public_tag_id[]") List<Long> notPublicTagId,
 			/** List of account origins. */
-			@JsonProperty("origin[]") JsonNode origin,
+			@JsonProperty("origin[]") Origin origin,
 			/** List of account origins that won't be included. */
 			@JsonProperty("not_origin[]") JsonNode notOrigin,
 			/** Search accounts of user. */
@@ -8065,7 +8068,7 @@ public final class Types {
 			/** List of tag ids that won't be included (Tag list is available via **GET /me**). */
 			@JsonProperty("not_public_tag_id[]") List<Long> notPublicTagId,
 			/** List of account origins. */
-			@JsonProperty("origin[]") JsonNode origin,
+			@JsonProperty("origin[]") Origin origin,
 			/** List of account origins that won't be included. */
 			@JsonProperty("not_origin[]") JsonNode notOrigin,
 			/** Search accounts of user. */
@@ -8317,7 +8320,7 @@ public final class Types {
 			/** List of tag ids that won't be included (Tag list is available via **GET /me**). */
 			@JsonProperty("not_public_tag_id[]") List<Long> notPublicTagId,
 			/** List of account origins. */
-			@JsonProperty("origin[]") JsonNode origin,
+			@JsonProperty("origin[]") Origin origin,
 			/** List of account origins that won't be included. */
 			@JsonProperty("not_origin[]") JsonNode notOrigin,
 			/** Search accounts of user. */
@@ -8606,7 +8609,7 @@ public final class Types {
 			/** Login. */
 			String login,
 			/** List of account origins. */
-			@JsonProperty("origin[]") JsonNode origin,
+			@JsonProperty("origin[]") Origin origin,
 			/** List of account origins that won't be included. */
 			@JsonProperty("not_origin[]") JsonNode notOrigin,
 			/** Order by. */
@@ -8676,7 +8679,7 @@ public final class Types {
 			/** Login. */
 			String login,
 			/** List of account origins. */
-			@JsonProperty("origin[]") JsonNode origin,
+			@JsonProperty("origin[]") Origin origin,
 			/** List of account origins that won't be included. */
 			@JsonProperty("not_origin[]") JsonNode notOrigin,
 			/** Order by. */
@@ -8852,7 +8855,7 @@ public final class Types {
 			/** Maximum price of account (Inclusive). */
 			Long pmax,
 			/** List of account origins. */
-			@JsonProperty("origin[]") JsonNode origin,
+			@JsonProperty("origin[]") Origin origin,
 			/** List of account origins that won't be included. */
 			@JsonProperty("not_origin[]") JsonNode notOrigin,
 			/** Order by. */
@@ -8909,7 +8912,7 @@ public final class Types {
 			/** Maximum price of account (Inclusive). */
 			Long pmax,
 			/** List of account origins. */
-			@JsonProperty("origin[]") JsonNode origin,
+			@JsonProperty("origin[]") Origin origin,
 			/** List of account origins that won't be included. */
 			@JsonProperty("not_origin[]") JsonNode notOrigin,
 			/** Order by. */
@@ -8953,7 +8956,7 @@ public final class Types {
 			/** Maximum price of account (Inclusive). */
 			Long pmax,
 			/** List of account origins. */
-			@JsonProperty("origin[]") JsonNode origin,
+			@JsonProperty("origin[]") Origin origin,
 			/** List of account origins that won't be included. */
 			@JsonProperty("not_origin[]") JsonNode notOrigin,
 			/** Order by. */
@@ -9329,8 +9332,8 @@ public final class Types {
 			/** Current price of account in your currency. */
 			Long price,
 			Currency currency,
-			/** Account origin. Where did you get it from. */
-			@JsonProperty("item_origin") ManagingItemOrigin itemOrigin,
+			/** Account origin. */
+			@JsonProperty("item_origin") ItemOrigin itemOrigin,
 			/** Email login data (email:password format). */
 			@JsonProperty("email_login_data") String emailLoginData,
 			/** Email type. */
@@ -9984,7 +9987,7 @@ public final class Types {
 			/** List of tag ids that won't be included (Tag list is available via **GET /me**). */
 			@JsonProperty("not_public_tag_id[]") List<Long> notPublicTagId,
 			/** List of account origins. */
-			@JsonProperty("origin[]") JsonNode origin,
+			@JsonProperty("origin[]") Origin origin,
 			/** List of account origins that won't be included. */
 			@JsonProperty("not_origin[]") JsonNode notOrigin,
 			/** Search accounts of user. */
@@ -10543,8 +10546,8 @@ public final class Types {
 			/** Accounts category. */
 			@JsonProperty("category_id") CategoryId categoryId,
 			Currency currency,
-			/** Account origin. Where did you get it from. */
-			@JsonProperty("item_origin") PublishingItemOrigin itemOrigin,
+			/** Account origin. */
+			@JsonProperty("item_origin") ItemOrigin itemOrigin,
 			/** Guarantee type. */
 			@JsonProperty("extended_guarantee") ExtendedGuarantee extendedGuarantee,
 			/** Allow users to ask discount for this account. */
@@ -10571,7 +10574,7 @@ public final class Types {
 			@JsonProperty("email_type") EmailType emailType,
 			JsonNode extra
 		) {
-			public PublishingFastSellBody(Double price, CategoryId categoryId, Currency currency, PublishingItemOrigin itemOrigin) {
+			public PublishingFastSellBody(Double price, CategoryId categoryId, Currency currency, ItemOrigin itemOrigin) {
 				this(null, null, price, categoryId, currency, itemOrigin, null, null, null, null, null, null, null, null, null, null, null, null, null);
 			}
 		}
@@ -10593,8 +10596,8 @@ public final class Types {
 			/** Accounts category. */
 			@JsonProperty("category_id") CategoryId categoryId,
 			Currency currency,
-			/** Account origin. Where did you get it from. */
-			@JsonProperty("item_origin") PublishingItemOrigin itemOrigin,
+			/** Account origin. */
+			@JsonProperty("item_origin") ItemOrigin itemOrigin,
 			/** Guarantee type. */
 			@JsonProperty("extended_guarantee") ExtendedGuarantee extendedGuarantee,
 			/** Account public description. */
@@ -10618,7 +10621,7 @@ public final class Types {
 			/** Set this parameter to **true** so that the Market will take a random proxy from its pool for each of your requests. Otherwise, if this parameter is set to **false** or not set, the Market will take a specific proxy from its pool, which is predefined for each item. &gt; This parameter only works with proxies from the Market pool. If you want to use your own proxies, use the proxy_id or extra[proxy] parameter. */
 			@JsonProperty("random_proxy") Boolean randomProxy
 		) {
-			public PublishingAddBody(Double price, CategoryId categoryId, Currency currency, PublishingItemOrigin itemOrigin) {
+			public PublishingAddBody(Double price, CategoryId categoryId, Currency currency, ItemOrigin itemOrigin) {
 				this(null, null, price, categoryId, currency, itemOrigin, null, null, null, null, null, null, null, null, null, null, null);
 			}
 		}

@@ -27,6 +27,7 @@ repositories {
 
 dependencies {
     api(libs.jackson.databind)
+    api(libs.jackson.parameter.names)
 
     testImplementation(libs.junit.api)
     testRuntimeOnly(libs.junit.engine)
@@ -37,7 +38,7 @@ tasks.test {
 }
 
 tasks.withType<JavaCompile> {
-    options.compilerArgs.addAll(listOf("-Xlint:all,-serial", "-Werror"))
+    options.compilerArgs.addAll(listOf("-Xlint:all,-serial", "-Werror", "-parameters"))
 }
 
 mavenPublishing {

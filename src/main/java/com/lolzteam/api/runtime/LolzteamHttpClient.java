@@ -12,6 +12,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.deser.BeanDeserializerModifier;
 import com.fasterxml.jackson.databind.deser.DeserializationProblemHandler;
+import com.fasterxml.jackson.databind.deser.std.DelegatingDeserializer;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import java.io.ByteArrayOutputStream;
 import java.io.Closeable;
@@ -71,9 +72,9 @@ public final class LolzteamHttpClient implements Closeable {
     this.objectMapper =
         new ObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
     this.objectMapper.addHandler(new TypeMismatchHandler());
-    var module = new SimpleModule("LolzteamTypeMismatch");
-    module.setDeserializerModifier(new SafeRecordDeserializerModifier());
-    this.objectMapper.registerModule(module);
+    var safeRecordModule = new SimpleModule("LolzteamSafeRecord");
+    safeRecordModule.setDeserializerModifier(new SafeRecordDeserializerModifier());
+    this.objectMapper.registerModule(safeRecordModule);
 
     if (httpClient != null) {
       this.client = httpClient;
@@ -484,20 +485,14 @@ public final class LolzteamHttpClient implements Closeable {
 
     @Override
     public Object handleWeirdStringValue(
-        DeserializationContext ctxt,
-        Class<?> targetType,
-        String valueToConvert,
-        String failureMsg)
+        DeserializationContext ctxt, Class<?> targetType, String valueToConvert, String failureMsg)
         throws IOException {
       return defaultForClass(targetType);
     }
 
     @Override
     public Object handleWeirdNumberValue(
-        DeserializationContext ctxt,
-        Class<?> targetType,
-        Number valueToConvert,
-        String failureMsg)
+        DeserializationContext ctxt, Class<?> targetType, Number valueToConvert, String failureMsg)
         throws IOException {
       return defaultForClass(targetType);
     }
@@ -510,6 +505,9 @@ public final class LolzteamHttpClient implements Closeable {
         JsonParser p,
         String msg)
         throws IOException {
+      if (instClass.isRecord()) {
+        return NOT_HANDLED;
+      }
       p.skipChildren();
       return null;
     }
@@ -548,18 +546,21 @@ public final class LolzteamHttpClient implements Closeable {
     }
   }
 
-  private static final class SafeRecordDeserializer extends JsonDeserializer<Object> {
-
-    private final JsonDeserializer<?> delegate;
+  private static final class SafeRecordDeserializer extends DelegatingDeserializer {
 
     SafeRecordDeserializer(JsonDeserializer<?> delegate) {
-      this.delegate = delegate;
+      super(delegate);
+    }
+
+    @Override
+    protected JsonDeserializer<?> newDelegatingInstance(JsonDeserializer<?> newDelegate) {
+      return new SafeRecordDeserializer(newDelegate);
     }
 
     @Override
     public Object deserialize(JsonParser p, DeserializationContext ctxt) throws IOException {
       try {
-        return delegate.deserialize(p, ctxt);
+        return super.deserialize(p, ctxt);
       } catch (ClassCastException e) {
         return null;
       }
