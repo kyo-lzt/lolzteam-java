@@ -107,7 +107,8 @@ public final class LolzteamHttpClient implements Closeable {
           // java.net.http.HttpClient ignores SOCKS proxies (JDK-8214516).
           // Use HttpURLConnection with explicit Proxy object instead.
           var port = proxyUri.getPort() != -1 ? proxyUri.getPort() : 1080;
-          socks5Proxy = new Proxy(Proxy.Type.SOCKS, new InetSocketAddress(proxyUri.getHost(), port));
+          socks5Proxy =
+              new Proxy(Proxy.Type.SOCKS, new InetSocketAddress(proxyUri.getHost(), port));
 
           var userInfo = proxyUri.getRawUserInfo();
           if (userInfo != null && !userInfo.isEmpty()) {
@@ -130,8 +131,7 @@ public final class LolzteamHttpClient implements Closeable {
                   protected PasswordAuthentication getPasswordAuthentication() {
                     // SocksSocketImpl in JDK 21+ calls with RequestorType.SERVER
                     // instead of PROXY, so match on host/port instead.
-                    if (proxyHost.equals(getRequestingHost())
-                        && proxyPort == getRequestingPort()) {
+                    if (proxyHost.equals(getRequestingHost()) && proxyPort == getRequestingPort()) {
                       return proxyAuth;
                     }
                     return null;
@@ -338,8 +338,8 @@ public final class LolzteamHttpClient implements Closeable {
   }
 
   /**
-   * Executes a request via {@link HttpURLConnection} through a SOCKS5 proxy. Used because
-   * {@link java.net.http.HttpClient} ignores SOCKS proxies entirely (JDK-8214516).
+   * Executes a request via {@link HttpURLConnection} through a SOCKS5 proxy. Used because {@link
+   * java.net.http.HttpClient} ignores SOCKS proxies entirely (JDK-8214516).
    *
    * @param raw if true, return body as-is; if false, error handling only (caller parses JSON)
    */
