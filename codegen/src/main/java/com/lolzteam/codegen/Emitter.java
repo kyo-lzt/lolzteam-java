@@ -454,7 +454,8 @@ final class Emitter {
 	 */
 	private static String resolvePropertyType(
 		JsonNode propSchema, Set<String> componentSchemaNames, JsonNode rawSpec,
-		String parentTypeName, String propName, List<String> nestedRecords
+		String parentTypeName, String propName, List<String> nestedRecords,
+		boolean isResponse
 	) {
 		if (propSchema == null) return "JsonNode";
 
@@ -484,7 +485,7 @@ final class Emitter {
 			if (items != null) {
 				var itemType = resolvePropertyType(
 					items, componentSchemaNames, rawSpec,
-					parentTypeName, propName, nestedRecords
+					parentTypeName, propName, nestedRecords, isResponse
 				);
 				return "List<" + boxType(itemType) + ">";
 			}
@@ -535,7 +536,8 @@ final class Emitter {
 					var nestedName = parentTypeName
 						+ Naming.capitalizeFirst(Naming.snakeToCamel(Naming.sanitizeName(propName)));
 					var nestedRecord = buildNestedRecord(
-						nestedName, propSchema, componentSchemaNames, rawSpec, nestedRecords
+						nestedName, propSchema, componentSchemaNames, rawSpec, nestedRecords,
+						isResponse
 					);
 					nestedRecords.add(nestedRecord);
 					return nestedName;
@@ -547,7 +549,7 @@ final class Emitter {
 		if (type != null) {
 			return switch (type) {
 				case "string" -> "String";
-				case "integer" -> "long";
+				case "integer" -> isResponse ? "double" : "long";
 				case "number" -> "double";
 				case "boolean" -> "boolean";
 				default -> "JsonNode";
@@ -562,7 +564,7 @@ final class Emitter {
 	 */
 	private static String buildNestedRecord(
 		String recordName, JsonNode schema, Set<String> componentSchemaNames,
-		JsonNode rawSpec, List<String> nestedRecords
+		JsonNode rawSpec, List<String> nestedRecords, boolean isResponse
 	) {
 		var properties = schema.get("properties");
 
@@ -591,7 +593,7 @@ final class Emitter {
 
 			var javaType = resolvePropertyType(
 				propSchema, componentSchemaNames, rawSpec,
-				recordName, jsonName, nestedRecords
+				recordName, jsonName, nestedRecords, isResponse
 			);
 			// Box primitives only for optional fields
 			if (!required) {
@@ -694,7 +696,7 @@ final class Emitter {
 
 			var javaType = resolvePropertyType(
 				propSchema, componentSchemaNames, rawSpec,
-				parentTypeName, jsonName, nestedRecords
+				parentTypeName, jsonName, nestedRecords, true
 			);
 
 			// Box primitives only for optional fields (required fields keep primitive types)
@@ -802,7 +804,7 @@ final class Emitter {
 
 			var javaType = resolvePropertyType(
 				propSchema, componentSchemaNames, rawSpec,
-				schemaName, jsonName, nestedRecords
+				schemaName, jsonName, nestedRecords, true
 			);
 			// Box primitives only for optional fields
 			if (!required) {
