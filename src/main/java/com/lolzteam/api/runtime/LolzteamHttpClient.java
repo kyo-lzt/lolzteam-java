@@ -17,11 +17,14 @@ import com.fasterxml.jackson.databind.module.SimpleModule;
 import java.io.ByteArrayOutputStream;
 import java.io.Closeable;
 import java.io.IOException;
+import java.net.Authenticator;
 import java.net.InetSocketAddress;
+import java.net.PasswordAuthentication;
 import java.net.Proxy;
 import java.net.ProxySelector;
 import java.net.SocketAddress;
 import java.net.URI;
+import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -110,6 +113,31 @@ public final class LolzteamHttpClient implements Closeable {
         } else {
           builder.proxy(
               ProxySelector.of(new InetSocketAddress(proxyUri.getHost(), proxyUri.getPort())));
+        }
+
+        var userInfo = proxyUri.getRawUserInfo();
+        if (userInfo != null && !userInfo.isEmpty()) {
+          var colonIdx = userInfo.indexOf(':');
+          var username =
+              colonIdx >= 0
+                  ? URLDecoder.decode(userInfo.substring(0, colonIdx), StandardCharsets.UTF_8)
+                  : URLDecoder.decode(userInfo, StandardCharsets.UTF_8);
+          var password =
+              colonIdx >= 0
+                  ? URLDecoder.decode(userInfo.substring(colonIdx + 1), StandardCharsets.UTF_8)
+                      .toCharArray()
+                  : new char[0];
+          var proxyAuth = new PasswordAuthentication(username, password);
+          builder.authenticator(
+              new Authenticator() {
+                @Override
+                protected PasswordAuthentication getPasswordAuthentication() {
+                  if (getRequestorType() == RequestorType.PROXY) {
+                    return proxyAuth;
+                  }
+                  return null;
+                }
+              });
         }
       }
 
@@ -205,6 +233,10 @@ public final class LolzteamHttpClient implements Closeable {
       var response = client.send(httpRequest, HttpResponse.BodyHandlers.ofString());
       return handleRawResponse(response);
     } catch (IOException e) {
+      if (isStaleConnection(e)) {
+        return retryOnStaleConnection(options, HttpResponse.BodyHandlers.ofString(),
+            this::handleRawResponse);
+      }
       throw new NetworkException(e);
     } catch (InterruptedException e) {
       Thread.currentThread().interrupt();
@@ -236,6 +268,10 @@ public final class LolzteamHttpClient implements Closeable {
       var response = client.send(httpRequest, HttpResponse.BodyHandlers.ofString());
       return handleResponse(response);
     } catch (IOException e) {
+      if (isStaleConnection(e)) {
+        return retryOnStaleConnection(options, HttpResponse.BodyHandlers.ofString(),
+            this::handleResponse);
+      }
       throw new NetworkException(e);
     } catch (InterruptedException e) {
       Thread.currentThread().interrupt();
@@ -259,6 +295,32 @@ public final class LolzteamHttpClient implements Closeable {
               }
               return CompletableFuture.failedFuture(new NetworkException(cause));
             });
+  }
+
+  /**
+   * Detects stale connection errors from Java's HttpClient. When the server closes a kept-alive
+   * connection and the client tries to reuse it, the HTTP/1.1 header parser receives zero bytes.
+   */
+  private static boolean isStaleConnection(IOException e) {
+    String msg = e.getMessage();
+    return msg != null && msg.contains("header parser received no bytes");
+  }
+
+  /** Retries a request once after a stale connection error, rebuilding the request fresh. */
+  private <T> T retryOnStaleConnection(
+      RequestOptions options,
+      HttpResponse.BodyHandler<String> handler,
+      java.util.function.Function<HttpResponse<String>, T> responseHandler) {
+    var retried = buildHttpRequest(options);
+    try {
+      var response = client.send(retried, handler);
+      return responseHandler.apply(response);
+    } catch (IOException e2) {
+      throw new NetworkException(e2);
+    } catch (InterruptedException e2) {
+      Thread.currentThread().interrupt();
+      throw new NetworkException(e2);
+    }
   }
 
   private HttpRequest buildHttpRequest(RequestOptions options) {
@@ -562,7 +624,11 @@ public final class LolzteamHttpClient implements Closeable {
       try {
         return super.deserialize(p, ctxt);
       } catch (ClassCastException e) {
-        return null;
+        try {
+          return handledType().getDeclaredConstructor().newInstance();
+        } catch (Exception ignored) {
+          return ctxt.handleInstantiationProblem(handledType(), null, e);
+        }
       }
     }
   }

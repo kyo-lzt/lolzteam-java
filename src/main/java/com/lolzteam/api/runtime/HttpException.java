@@ -30,7 +30,8 @@ public non-sealed class HttpException extends LolzteamException {
   public static HttpException create(int statusCode, String body, HttpHeaders headers) {
     return switch (statusCode) {
       case 429 -> new RateLimitException(body, headers);
-      case 401, 403 -> new AuthException(statusCode, body, headers);
+      case 401 -> new AuthException(statusCode, body, headers);
+      case 403 -> new ForbiddenException(statusCode, body, headers);
       case 404 -> new NotFoundException(body, headers);
       case 500, 502, 503, 504 -> new ServerException(statusCode, body, headers);
       default -> new HttpException(statusCode, body, headers);

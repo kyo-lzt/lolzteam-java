@@ -12,7 +12,18 @@ public final class NetworkException extends LolzteamException {
 
   public boolean isTransient() {
     Throwable cause = getCause();
-    return cause instanceof java.net.http.HttpTimeoutException
-        || cause instanceof java.net.ConnectException;
+    if (cause instanceof java.net.http.HttpTimeoutException
+        || cause instanceof java.net.ConnectException) {
+      return true;
+    }
+    // Java HttpClient reuses connections that the server may have already closed.
+    // This manifests as an IOException with "header parser received no bytes".
+    if (cause instanceof java.io.IOException) {
+      String msg = cause.getMessage();
+      if (msg != null && msg.contains("header parser received no bytes")) {
+        return true;
+      }
+    }
+    return false;
   }
 }
