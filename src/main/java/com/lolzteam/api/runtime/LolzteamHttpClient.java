@@ -234,8 +234,8 @@ public final class LolzteamHttpClient implements Closeable {
       return handleRawResponse(response);
     } catch (IOException e) {
       if (isStaleConnection(e)) {
-        return retryOnStaleConnection(options, HttpResponse.BodyHandlers.ofString(),
-            this::handleRawResponse);
+        return retryOnStaleConnection(
+            options, HttpResponse.BodyHandlers.ofString(), this::handleRawResponse);
       }
       throw new NetworkException(e);
     } catch (InterruptedException e) {
@@ -269,8 +269,8 @@ public final class LolzteamHttpClient implements Closeable {
       return handleResponse(response);
     } catch (IOException e) {
       if (isStaleConnection(e)) {
-        return retryOnStaleConnection(options, HttpResponse.BodyHandlers.ofString(),
-            this::handleResponse);
+        return retryOnStaleConnection(
+            options, HttpResponse.BodyHandlers.ofString(), this::handleResponse);
       }
       throw new NetworkException(e);
     } catch (InterruptedException e) {
