@@ -17,21 +17,25 @@ import com.fasterxml.jackson.databind.module.SimpleModule;
 import java.io.ByteArrayOutputStream;
 import java.io.Closeable;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.Authenticator;
+import java.net.HttpURLConnection;
 import java.net.InetSocketAddress;
 import java.net.PasswordAuthentication;
 import java.net.Proxy;
 import java.net.ProxySelector;
-import java.net.SocketAddress;
 import java.net.URI;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.net.http.HttpClient;
+import java.net.http.HttpHeaders;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -50,6 +54,7 @@ public final class LolzteamHttpClient implements Closeable {
   private final RateLimiter searchRateLimiter;
   private final HttpClient client;
   private final boolean ownsClient;
+  private final Proxy socksProxy;
   private final ObjectMapper objectMapper;
 
   public LolzteamHttpClient(ClientConfig config) {
@@ -82,6 +87,7 @@ public final class LolzteamHttpClient implements Closeable {
     if (httpClient != null) {
       this.client = httpClient;
       this.ownsClient = false;
+      this.socksProxy = null;
     } else {
       var builder =
           HttpClient.newBuilder()
@@ -92,57 +98,80 @@ public final class LolzteamHttpClient implements Closeable {
         builder.connectTimeout(config.timeout());
       }
 
+      Proxy socks5Proxy = null;
       if (config.proxy() != null) {
         var proxyUri = parseProxyUri(config.proxy().url());
         var scheme = proxyUri.getScheme().toLowerCase();
-        if ("socks5".equals(scheme)) {
-          var port = proxyUri.getPort() != -1 ? proxyUri.getPort() : 1080;
-          var addr = new InetSocketAddress(proxyUri.getHost(), port);
-          builder.proxy(
-              new ProxySelector() {
-                @Override
-                public List<Proxy> select(URI uri) {
-                  return List.of(new Proxy(Proxy.Type.SOCKS, addr));
-                }
 
-                @Override
-                public void connectFailed(URI uri, SocketAddress sa, IOException ioe) {
-                  // no-op
-                }
-              });
+        if ("socks5".equals(scheme)) {
+          // java.net.http.HttpClient ignores SOCKS proxies (JDK-8214516).
+          // Use HttpURLConnection with explicit Proxy object instead.
+          var port = proxyUri.getPort() != -1 ? proxyUri.getPort() : 1080;
+          socks5Proxy = new Proxy(Proxy.Type.SOCKS, new InetSocketAddress(proxyUri.getHost(), port));
+
+          var userInfo = proxyUri.getRawUserInfo();
+          if (userInfo != null && !userInfo.isEmpty()) {
+            var colonIdx = userInfo.indexOf(':');
+            var username =
+                colonIdx >= 0
+                    ? URLDecoder.decode(userInfo.substring(0, colonIdx), StandardCharsets.UTF_8)
+                    : URLDecoder.decode(userInfo, StandardCharsets.UTF_8);
+            var password =
+                colonIdx >= 0
+                    ? URLDecoder.decode(userInfo.substring(colonIdx + 1), StandardCharsets.UTF_8)
+                        .toCharArray()
+                    : new char[0];
+            var proxyAuth = new PasswordAuthentication(username, password);
+            var proxyHost = proxyUri.getHost();
+            var proxyPort = port;
+            Authenticator.setDefault(
+                new Authenticator() {
+                  @Override
+                  protected PasswordAuthentication getPasswordAuthentication() {
+                    // SocksSocketImpl in JDK 21+ calls with RequestorType.SERVER
+                    // instead of PROXY, so match on host/port instead.
+                    if (proxyHost.equals(getRequestingHost())
+                        && proxyPort == getRequestingPort()) {
+                      return proxyAuth;
+                    }
+                    return null;
+                  }
+                });
+          }
         } else {
           builder.proxy(
               ProxySelector.of(new InetSocketAddress(proxyUri.getHost(), proxyUri.getPort())));
-        }
 
-        var userInfo = proxyUri.getRawUserInfo();
-        if (userInfo != null && !userInfo.isEmpty()) {
-          var colonIdx = userInfo.indexOf(':');
-          var username =
-              colonIdx >= 0
-                  ? URLDecoder.decode(userInfo.substring(0, colonIdx), StandardCharsets.UTF_8)
-                  : URLDecoder.decode(userInfo, StandardCharsets.UTF_8);
-          var password =
-              colonIdx >= 0
-                  ? URLDecoder.decode(userInfo.substring(colonIdx + 1), StandardCharsets.UTF_8)
-                      .toCharArray()
-                  : new char[0];
-          var proxyAuth = new PasswordAuthentication(username, password);
-          builder.authenticator(
-              new Authenticator() {
-                @Override
-                protected PasswordAuthentication getPasswordAuthentication() {
-                  if (getRequestorType() == RequestorType.PROXY) {
-                    return proxyAuth;
+          var userInfo = proxyUri.getRawUserInfo();
+          if (userInfo != null && !userInfo.isEmpty()) {
+            var colonIdx = userInfo.indexOf(':');
+            var username =
+                colonIdx >= 0
+                    ? URLDecoder.decode(userInfo.substring(0, colonIdx), StandardCharsets.UTF_8)
+                    : URLDecoder.decode(userInfo, StandardCharsets.UTF_8);
+            var password =
+                colonIdx >= 0
+                    ? URLDecoder.decode(userInfo.substring(colonIdx + 1), StandardCharsets.UTF_8)
+                        .toCharArray()
+                    : new char[0];
+            var proxyAuth = new PasswordAuthentication(username, password);
+            builder.authenticator(
+                new Authenticator() {
+                  @Override
+                  protected PasswordAuthentication getPasswordAuthentication() {
+                    if (getRequestorType() == RequestorType.PROXY) {
+                      return proxyAuth;
+                    }
+                    return null;
                   }
-                  return null;
-                }
-              });
+                });
+          }
         }
       }
 
       this.client = builder.build();
       this.ownsClient = true;
+      this.socksProxy = socks5Proxy;
     }
   }
 
@@ -228,6 +257,9 @@ public final class LolzteamHttpClient implements Closeable {
   }
 
   private String executeRaw(RequestOptions options) {
+    if (socksProxy != null) {
+      return executeSocks5(options, true);
+    }
     var httpRequest = buildHttpRequest(options);
     try {
       var response = client.send(httpRequest, HttpResponse.BodyHandlers.ofString());
@@ -263,6 +295,14 @@ public final class LolzteamHttpClient implements Closeable {
   }
 
   private JsonNode execute(RequestOptions options) {
+    if (socksProxy != null) {
+      var raw = executeSocks5(options, false);
+      try {
+        return objectMapper.readTree(raw);
+      } catch (IOException e) {
+        throw new NetworkException(e);
+      }
+    }
     var httpRequest = buildHttpRequest(options);
     try {
       var response = client.send(httpRequest, HttpResponse.BodyHandlers.ofString());
@@ -295,6 +335,126 @@ public final class LolzteamHttpClient implements Closeable {
               }
               return CompletableFuture.failedFuture(new NetworkException(cause));
             });
+  }
+
+  /**
+   * Executes a request via {@link HttpURLConnection} through a SOCKS5 proxy. Used because
+   * {@link java.net.http.HttpClient} ignores SOCKS proxies entirely (JDK-8214516).
+   *
+   * @param raw if true, return body as-is; if false, error handling only (caller parses JSON)
+   */
+  private String executeSocks5(RequestOptions options, boolean raw) {
+    var url = new StringBuilder(baseUrl).append(options.path());
+    var queryString = buildQueryString(options.query());
+    if (!queryString.isEmpty()) {
+      url.append('?').append(queryString);
+    }
+
+    HttpURLConnection conn = null;
+    try {
+      conn = (HttpURLConnection) URI.create(url.toString()).toURL().openConnection(socksProxy);
+      conn.setRequestMethod(options.method().toUpperCase());
+      conn.setRequestProperty("Authorization", "Bearer " + token);
+      conn.setInstanceFollowRedirects(true);
+
+      if (timeout != null) {
+        var millis = (int) timeout.toMillis();
+        conn.setConnectTimeout(millis);
+        conn.setReadTimeout(millis);
+      }
+
+      var method = options.method().toUpperCase();
+      if (!"GET".equals(method)) {
+        writeSocks5Body(conn, options, method);
+      }
+
+      var statusCode = conn.getResponseCode();
+      InputStream is =
+          statusCode >= 200 && statusCode < 300 ? conn.getInputStream() : conn.getErrorStream();
+      var bodyText = is != null ? new String(is.readAllBytes(), StandardCharsets.UTF_8) : "";
+
+      if (statusCode < 200 || statusCode >= 300) {
+        throw HttpException.create(statusCode, bodyText, toHttpHeaders(conn));
+      }
+
+      return bodyText;
+    } catch (LolzteamException e) {
+      throw e;
+    } catch (IOException e) {
+      throw new NetworkException(e);
+    } finally {
+      if (conn != null) {
+        conn.disconnect();
+      }
+    }
+  }
+
+  /** Write request body to an {@link HttpURLConnection} for SOCKS5 requests. */
+  private void writeSocks5Body(HttpURLConnection conn, RequestOptions options, String method)
+      throws IOException {
+    if (options.bodyEncoding() == BodyEncoding.MULTIPART) {
+      var boundary = UUID.randomUUID().toString();
+      conn.setRequestProperty("Content-Type", "multipart/form-data; boundary=" + boundary);
+      var baos = new ByteArrayOutputStream();
+      if (options.body() != null && options.body().isObject()) {
+        var fields = options.body().fields();
+        while (fields.hasNext()) {
+          var entry = fields.next();
+          var key = entry.getKey();
+          var value = entry.getValue();
+          if (value.isNull()) continue;
+          if (value.isArray()) {
+            for (var item : value) {
+              if (!item.isNull()) {
+                writeMultipartField(baos, boundary, key, item.asText());
+              }
+            }
+          } else if (value.isObject()) {
+            writeMultipartField(baos, boundary, key, value.toString());
+          } else {
+            writeMultipartField(baos, boundary, key, value.asText());
+          }
+        }
+      }
+      for (var entry : options.byteArrayFields().entrySet()) {
+        writeMultipartFile(baos, boundary, entry.getKey(), entry.getValue());
+      }
+      baos.write(("--" + boundary + "--\r\n").getBytes(StandardCharsets.UTF_8));
+      conn.setDoOutput(true);
+      try (OutputStream os = conn.getOutputStream()) {
+        os.write(baos.toByteArray());
+      }
+    } else if (options.bodyEncoding() == BodyEncoding.JSON && options.body() != null) {
+      conn.setRequestProperty("Content-Type", "application/json");
+      var jsonBytes = objectMapper.writeValueAsBytes(options.body());
+      conn.setDoOutput(true);
+      try (OutputStream os = conn.getOutputStream()) {
+        os.write(jsonBytes);
+      }
+    } else if (options.body() != null) {
+      conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+      var parts = new ArrayList<String>();
+      flattenJsonToFormParams(options.body(), parts);
+      var formData = String.join("&", parts);
+      conn.setDoOutput(true);
+      try (OutputStream os = conn.getOutputStream()) {
+        os.write(formData.getBytes(StandardCharsets.UTF_8));
+      }
+    }
+  }
+
+  /** Convert {@link HttpURLConnection} headers to {@link HttpHeaders} for error handling. */
+  private static HttpHeaders toHttpHeaders(HttpURLConnection conn) {
+    var map = new HashMap<String, List<String>>();
+    var headerFields = conn.getHeaderFields();
+    if (headerFields != null) {
+      for (var entry : headerFields.entrySet()) {
+        if (entry.getKey() != null) {
+          map.put(entry.getKey().toLowerCase(), entry.getValue());
+        }
+      }
+    }
+    return HttpHeaders.of(map, (k, v) -> true);
   }
 
   /**
@@ -663,6 +823,9 @@ public final class LolzteamHttpClient implements Closeable {
     }
     if (searchRateLimiter != null) {
       searchRateLimiter.shutdown();
+    }
+    if (socksProxy != null) {
+      Authenticator.setDefault(null);
     }
     // Java 17's HttpClient has no close() method. The internal executor and connection
     // pool will be reclaimed by GC. HttpClient.close() was added in Java 21 (JDK-8304165).
