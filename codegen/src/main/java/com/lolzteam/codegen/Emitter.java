@@ -14,6 +14,9 @@ final class Emitter {
 
 	private static final String PACKAGE = "com.lolzteam.api.generated";
 
+	/** Fields the API returns as different types depending on context (e.g. boolean OR object). */
+	private static final Set<String> POLYMORPHIC_FIELDS = Set.of("guarantee");
+
 	private Emitter() {
 	}
 
@@ -455,6 +458,11 @@ final class Emitter {
 	) {
 		if (propSchema == null) return "JsonNode";
 
+		// Known polymorphic fields — API returns different types depending on context
+		if (propName != null && POLYMORPHIC_FIELDS.contains(propName)) {
+			return "JsonNode";
+		}
+
 		// Direct $ref to component schema → resolve to the Java type name
 		if (propSchema.isObject() && propSchema.has("$ref")) {
 			var ref = propSchema.get("$ref").asText();
@@ -539,7 +547,7 @@ final class Emitter {
 		if (type != null) {
 			return switch (type) {
 				case "string" -> "String";
-				case "integer" -> "double";
+				case "integer" -> "long";
 				case "number" -> "double";
 				case "boolean" -> "boolean";
 				default -> "JsonNode";
